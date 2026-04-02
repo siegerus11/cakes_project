@@ -12,7 +12,9 @@ const Card = ({ cake }: CardProps) => {
 
 	return (
 		<Link to={AppRoute.ROOT} className={styles.card}>
-			<img src={images[0]} alt={title} width="282" height="282" />
+			<div className={styles.imgWrap}>
+				<img src={images[0]} alt={title} width="282" height="282" />
+			</div>
 			<span className={styles.title}>{title}</span>
 			<div className={styles.bottom}>
 				<span className={styles.cost}>{/* {price}₽ */}3 600 ₽</span>
