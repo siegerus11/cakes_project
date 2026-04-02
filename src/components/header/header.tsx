@@ -31,10 +31,6 @@ const Header = (props: Props) => {
 		setHamburgerMenuState(!hamburgerMenuState);
 	};
 
-	const handleKeyDown = () => {
-		console.log('pressed!');
-	};
-
 	const orginalDocument = document;
 
 	useEffect(() => {
@@ -48,7 +44,7 @@ const Header = (props: Props) => {
 
 	return (
 		<>
-			<header className={styles.header}>
+			<header className={styles.outer}>
 				<div className={styles.wrapper}>
 					<div className={styles.primary}>
 						<Logo />

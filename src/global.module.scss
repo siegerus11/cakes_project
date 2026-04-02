@@ -68,6 +68,8 @@ body {
 	overflow: hidden;
 }
 
+:global(.page) {}
+
 @media (max-width: 1200px) {
 	:global(.container) {
 		max-width: 968px;
