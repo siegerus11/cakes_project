@@ -1,10 +1,29 @@
 .link {
+    width: 98px;
+    height: 56px;
     margin-right: 63px;
-    background: #caff9b;
+    // background-color: #caff9b;
+    color: #ff5b8b;
+    font-family: 'Pribambas', sans-serif;
+    font-size: 33px;
+    font-weight: 400;
+    line-height: 75%;
+    text-decoration: none;
 
-    img {
-        display: block;
-        min-width: 98px;
-        min-height: 56px;
+    &:hover {
+        color: #ff5b8b;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+    .link {
+        margin-right: 32px;
+        width: 64px;
+        height: 38px;
+        font-size: 22px;
+        line-height: 87%;
+        vertical-align: 1px;
     }
 }

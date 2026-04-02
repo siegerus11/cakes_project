@@ -1,18 +1,33 @@
 import { Link } from 'react-router-dom';
 
-import { NAVS } from '../../constants';
+import { Nav } from '../../types/types';
 import styles from './nav-menu.module.scss';
 
-type Props = {};
+type NavMenuProps = {
+	navs: Nav[];
+	onNavLinkClick?: () => void;
+	linkClassName: string;
+};
 
-const NavMenu = (props: Props) => {
+const NavMenu = ({ navs, onNavLinkClick, linkClassName }: NavMenuProps) => {
+	const handleNavLinkClick = () => {
+		if (onNavLinkClick) onNavLinkClick();
+	};
 	return (
 		<nav>
-			{NAVS.map(nav => (
-				<Link className={styles.link} to={nav.path} key={nav.title}>
-					<span>{nav.title}</span>
-				</Link>
-			))}
+			<ul>
+				{navs.map(nav => (
+					<li key={nav.title}>
+						<Link
+							className={linkClassName}
+							to={nav.path}
+							onClick={handleNavLinkClick}
+						>
+							<span>{nav.title}</span>
+						</Link>
+					</li>
+				))}
+			</ul>
 		</nav>
 	);
 };

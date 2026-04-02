@@ -5,13 +5,7 @@ type Props = {};
 const Logo = (props: Props) => {
 	return (
 		<a className={styles.link} href="/">
-			<img
-				className={styles.image}
-				src=""
-				alt="logo-image"
-				width="98"
-				height="56px"
-			/>
+			ВРЕМЯ ВЕСЕЛЬЯ
 		</a>
 	);
 };

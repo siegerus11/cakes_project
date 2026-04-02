@@ -1,7 +1,182 @@
-.button {
-    border: none;
-    border-radius: 22px;
-    padding: 16px 23px;
-    background: #ff4c80;
-    color: #fff;
+@use './libs/bootstrap-reboot.min.scss';
+@use './main.scss';
+@use './components/ui/button/button.module.scss';
+
+:root {
+	--primary-color: #ff4c80;
+	--secondary-color: #f0e2fb;
+	--primary-font: "Inter", sans-serif;
 }
+
+// a:visited,
+// a:hover,
+// a:focus,
+// a:active {
+// 	text-decoration: none;
+// 	color: inherit;
+// }
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+}
+
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	font-family: var(--primary-font);
+	font-weight: 400;
+}
+
+:global(.container) {
+	width: 1200px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+:global(.container_footer) {
+	max-width: 100%;
+}
+
+:global(.visually-hidden) {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	-webkit-clip-path: inset(100%);
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+:global(.page) {}
+
+@media (max-width: 1200px) {
+	:global(.container) {
+		max-width: 968px;
+	}
+
+	:global(.container_footer) {
+		max-width: 100%;
+	}
+
+}
+
+@media (max-width: 992px) {
+	:global(.container) {
+		max-width: 695px;
+	}
+}
+
+@media (max-width: 767px) {
+	:global(.container) {
+		max-width: 540px;
+	}
+}
+
+@media (max-width: 576px) {
+	:global(.container) {
+		max-width: 100%;
+		padding: 0 15px;
+	}
+}
+
+
+// @media (max-width: 1440px) 
+//     .container 
+//         max-width: 1200px
+
+
+// @media (max-width: 1200px) 
+//     .container 
+//         max-width: 968px
+
+
+// @media (max-width: 992px) 
+//     .container 
+//         max-width: 695px
+
+
+// @media (max-width: 767px) 
+//     .container 
+//         max-width: 540px
+
+
+// @media (max-width: 576px) 
+//     .container 
+//         max-width: 100%
+//         padding: 0 15px
+
+
+// @media (max-width: 360px) 
+//     .container 
+//         max-width: 100%
+//         padding: 0 15px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @media (max-width: 1440px) 
+//     .container 
+//         max-width: 1200px
+
+
+// @media (max-width: 1200px) 
+//     .container 
+//         max-width: 968px
+
+
+// @media (max-width: 992px) 
+//     .container 
+//         max-width: 695px
+
+
+// @media (max-width: 767px) 
+//     .container 
+//         max-width: 540px
+
+
+// @media (max-width: 576px) 
+//     .container 
+//         max-width: 100%
+//         padding: 0 15px
+
+
+// @media (max-width: 375px) 
+//     .container 
+//         max-width: 100%
+//         padding: 0 15px

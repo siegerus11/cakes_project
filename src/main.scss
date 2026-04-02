@@ -1,4 +1,4 @@
-@use './libs/bootstrap-reboot.min.scss';
+// main подключён после global
 
 @font-face {
   font-family: inter;
@@ -15,7 +15,7 @@
   font-style: normal;
   font-weight: 500;
   src:
-		url('../fonts/Inter_18pt-Medium.woff') format('woff'),
+    url('../fonts/Inter_18pt-Medium.woff') format('woff'),
     url('../fonts/Inter_18pt-Medium.ttf') format('truetype');
   font-display: swap;
 }
@@ -25,7 +25,7 @@
   font-style: normal;
   font-weight: 600;
   src:
-		url('../fonts/Inter_18pt-SemiBold.woff') format('woff'),
+    url('../fonts/Inter_18pt-SemiBold.woff') format('woff'),
     url('../fonts/Inter_18pt-SemiBold.ttf') format('truetype');
   font-display: swap;
 }
@@ -35,7 +35,7 @@
   font-style: normal;
   font-weight: 700;
   src:
-	  url('../fonts/Inter_18pt-Bold.woff') format('woff'),
+    url('../fonts/Inter_18pt-Bold.woff') format('woff'),
     url('../fonts/Inter_18pt-Bold.ttf') format('truetype');
   font-display: swap;
 }
@@ -45,7 +45,7 @@
   font-style: normal;
   font-weight: 800;
   src:
-	  url('../fonts/Inter_18pt-ExtraBold.woff') format('woff'),
+    url('../fonts/Inter_18pt-ExtraBold.woff') format('woff'),
     url('../fonts/Inter_18pt-ExtraBold.ttf') format('truetype');
   font-display: swap;
 }
@@ -55,98 +55,17 @@
   font-style: normal;
   font-weight: 900;
   src:
-		url('../fonts/Inter_18pt-Black.woff') format('woff'),
+    url('../fonts/Inter_18pt-Black.woff') format('woff'),
     url('../fonts/Inter_18pt-Black.ttf') format('truetype');
   font-display: swap;
 }
 
-* {
-	margin: 0;
-	padding: 0;
+@font-face {
+  font-family: 'Pribambas';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('../public/fonts/Pribambas-Regular.woff') format('woff'),
+    url('../public/fonts/Pribambas-Regular.ttf') format('truetype');
+  font-display: swap;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0;
-	padding: 0;
-}
-
-ul,
-ol {
-	list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-a:visited, 
-a:hover, 
-a:focus,
-a:active {
-	text-decoration: none;
-	color: inherit;
-}
-
-html,
-body {
-	font-family: "Inter", sans-serif;
-	font-weight: 500;
-}
-
-
-
-.container {
-	width: 1200px;
-  margin: 0 auto;
-  padding: 0;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-
-
-// @media (max-width: 1440px) 
-//     .container 
-//         max-width: 1200px
-    
-
-// @media (max-width: 1200px) 
-//     .container 
-//         max-width: 968px
-
-
-// @media (max-width: 992px) 
-//     .container 
-//         max-width: 695px
-    
-
-// @media (max-width: 767px) 
-//     .container 
-//         max-width: 540px
-    
-
-// @media (max-width: 576px) 
-//     .container 
-//         max-width: 100%
-//         padding: 0 15px
-    
-
-// @media (max-width: 375px) 
-//     .container 
-//         max-width: 100%
-//         padding: 0 15px

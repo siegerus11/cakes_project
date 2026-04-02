@@ -5,7 +5,7 @@ root = true
 
 [*]
 indent_style = tab
-indent_size = 4
+indent_size = 2
 end_of_line = lf
 charset = utf-8
 max_line_length = 80
@@ -23,7 +23,7 @@ charset = utf-8
 
 [*.py]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 # Tab indentation (no size specified)
 [Makefile]
