@@ -173,16 +173,16 @@
 	}
 
 	.title {
-		display: -webkit-box;
-		width: 165px;
-		min-height: 40px;
+		// display: -webkit-box;
+		// display: inline-block;
 		font-weight: 400;
 		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
-		white-space: nowrap;
 		overflow: hidden;
+		white-space: nowrap;
 		text-overflow: ellipsis;
-
+		max-width: 165px;
+		min-height: 40px;
 	}
 
 	.cost {
