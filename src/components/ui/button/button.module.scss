@@ -47,6 +47,10 @@
         border-radius: 15px;
     }
 
+    :global(.button_primary) {
+        border-radius: 14px;
+    }
+
     :global(.button) {
         min-width: unset;
         max-width: unset;

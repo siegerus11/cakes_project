@@ -135,7 +135,7 @@
             }
 
             &:nth-child(3) {
-                margin-left: 41px;
+                margin-left: 49px;
             }
         }
     }
@@ -212,6 +212,22 @@
         span {
             max-width: 80px;
             font-size: 11px;
+        }
+    }
+
+    .button {
+        padding: 15px 15px;
+
+        &__text {
+            font-size: 14px;
+            line-height: 129%;
+        }
+
+        span {
+            &:nth-child(3) {
+                font-size: 14px;
+                line-height: 129%;
+            }
         }
     }
 }
