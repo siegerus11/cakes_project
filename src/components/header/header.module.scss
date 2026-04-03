@@ -121,7 +121,23 @@
     }
 
     .button {
-        display: none;
+        justify-content: flex-end;
+        min-width: 340px;
+        margin-right: 0;
+
+        svg {
+            display: none;
+        }
+
+        span {
+            &:nth-child(2) {
+                margin-right: 0;
+            }
+
+            &:nth-child(3) {
+                margin-left: 41px;
+            }
+        }
     }
 }
 

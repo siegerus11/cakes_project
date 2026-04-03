@@ -1,7 +1,8 @@
-import Button from '../ui/button/button';
-import Hamburger from '../ui/hamburger/hamburger';
 import { useState, useEffect, KeyboardEvent } from 'react';
 
+import Button from '../ui/button/button';
+import ButtonController from '../button-controller/button-controller';
+import Hamburger from '../ui/hamburger/hamburger';
 import Logo from '../logo/logo';
 import NavMenu from '../nav-menu/nav-menu';
 import HamburgerPopup from '../hamburger-popup/hamburger-popup';
@@ -63,7 +64,7 @@ const Header = (props: Props) => {
 						</div>
 					</div>
 					<div className={styles.secondary}>
-						<div className={styles.secondary_wrapper}>
+						<ButtonController>
 							<Button
 								className={`button button_primary ${styles.button}`}
 							>
@@ -80,9 +81,7 @@ const Header = (props: Props) => {
 									6 800 ₽
 								</span>
 							</Button>
-							<div className={styles.control}></div>
-						</div>
-
+						</ButtonController>
 						<Hamburger onHamburgerClick={handleHamburgerClick} />
 					</div>
 				</div>
