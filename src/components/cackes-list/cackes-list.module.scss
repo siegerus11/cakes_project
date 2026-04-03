@@ -16,6 +16,7 @@
 @media (max-width: 992px) {
   .list {
     gap: 10px;
+    justify-content: center;
 
     li {
       &:nth-last-child(1) {
@@ -27,4 +28,9 @@
 
 @media (max-width: 767px) {}
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+  .list {
+    margin-top: 15px;
+    justify-content: flex-start;
+  }
+}
