@@ -50,6 +50,26 @@
 			font-size: 15px;
 		}
 	}
+
+	.button {
+		justify-content: flex-end;
+		min-width: 340px;
+		margin-right: 0;
+
+		svg {
+			display: none;
+		}
+
+		span {
+			&:nth-child(2) {
+				margin-right: 0;
+			}
+
+			&:nth-child(3) {
+				margin-left: 49px;
+			}
+		}
+	}
 }
 
 @media (max-width: 767px) {
@@ -80,5 +100,21 @@
 
 	.page {
 		padding: 10px 0 60px 0;
+	}
+
+	.button {
+		padding: 15px 15px;
+
+		&__text {
+			font-size: 14px;
+			line-height: 129%;
+		}
+
+		span {
+			&:nth-child(3) {
+				font-size: 14px;
+				line-height: 129%;
+			}
+		}
 	}
 }

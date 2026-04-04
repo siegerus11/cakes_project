@@ -64,24 +64,22 @@ const Header = (props: Props) => {
 						</div>
 					</div>
 					<div className={styles.secondary}>
-						<ButtonController>
-							<Button
-								className={`button button_primary ${styles.button}`}
+						<Button
+							className={`button button_primary ${styles.button}`}
+						>
+							<svg
+								className={styles.button__icon}
+								viewBox="0 0 40 40"
 							>
-								<svg
-									className={styles.button__icon}
-									viewBox="0 0 40 40"
-								>
-									<use xlinkHref="#cart"></use>
-								</svg>
-								<span className={styles.button__text}>
-									Оформить заказ
-								</span>
-								<span className={styles.button__price}>
-									6 800 ₽
-								</span>
-							</Button>
-						</ButtonController>
+								<use xlinkHref="#cart"></use>
+							</svg>
+							<span className={styles.button__text}>
+								Оформить заказ
+							</span>
+							<span className={styles.button__price}>
+								6 800 ₽
+							</span>
+						</Button>
 						<Hamburger onHamburgerClick={handleHamburgerClick} />
 					</div>
 				</div>
