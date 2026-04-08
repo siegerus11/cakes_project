@@ -46,12 +46,12 @@ export const NAVS: Nav[] = [
 	{
 		title: 'Торты',
 		image: '',
-		path: AppRoute.CONTACTS
+		path: AppRoute.CAKES_CATALOG
 	},
 	{
 		title: 'Бенто-торты',
 		image: '',
-		path: AppRoute.CONTACTS
+		path: AppRoute.BENTO_CAKES_CATALOG
 	}
 ];
 

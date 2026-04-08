@@ -2,7 +2,7 @@ import { CakeOffer } from '../../types/types';
 import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
 import Title from '../../components/title/title';
 import { NAVS } from '../../constants';
-import { getLinkData } from '../../utils/getLinkData';
+import { getNavData } from '../../utils/getLinkData';
 import { useLocation } from 'react-router-dom';
 
 type CatalogPageProps = {
@@ -11,7 +11,7 @@ type CatalogPageProps = {
 
 const CatalogPage = ({ cakes }: CatalogPageProps) => {
 	const { pathname } = useLocation();
-	const pageTitle = getLinkData(pathname, NAVS).title;
+	const pageTitle = getNavData(pathname, NAVS)!.title;
 	return (
 		<>
 			<BreadCrumbs />

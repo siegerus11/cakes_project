@@ -1,12 +1,11 @@
 import Card from '../card/card';
 import { AllCard } from '../card/card';
-import { CakeOffer } from '../../types/types';
-import { AppRoute } from '../../constants';
+import { CakeOffer, RoutePath } from '../../types/types';
 import styles from './cackes-list.module.scss';
 
 type CackesListProps = {
 	cakes: CakeOffer[];
-	path: (typeof AppRoute)[keyof typeof AppRoute];
+	path: RoutePath;
 };
 
 const CackesList = ({ cakes, path }: CackesListProps) => {
