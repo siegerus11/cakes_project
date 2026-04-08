@@ -44,6 +44,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 				<section className={styles.secondary}>
 					<div className={styles.headline}>
 						<Title
+							titleClass="title_wth-arrow"
 							titleText={'Бенто-торты'}
 							path={AppRoute.BENTO_CAKES_CATALOG}
 						/>
