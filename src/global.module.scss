@@ -1,6 +1,7 @@
 @use './libs/bootstrap-reboot.min.scss';
 @use './main.scss';
 @use './components/ui/button/button.module.scss';
+@use './components/title/title.module.scss';
 
 :root {
 	--primary-color: #ff4c80;

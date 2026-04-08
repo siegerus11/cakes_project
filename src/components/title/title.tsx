@@ -4,13 +4,15 @@ import styles from './title.module.scss';
 
 type TitleProps = {
 	titleText: string;
-	path: RoutePath;
+	path?: RoutePath;
+	linkClass?: string;
+	titleClass?: string;
 };
 
-const Title = ({ titleText, path }: TitleProps) => {
+const Title = ({ titleText, path, linkClass, titleClass }: TitleProps) => {
 	return path ? (
-		<Link className={styles.link} to={path}>
-			<h2 className={styles.title}>{titleText}</h2>
+		<Link className={`title-link ${linkClass}`} to={path}>
+			<h2 className={`title ${titleClass}`}>{titleText}</h2>
 		</Link>
 	) : (
 		<h2 className={styles.title}>{titleText}</h2>

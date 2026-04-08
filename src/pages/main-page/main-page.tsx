@@ -25,6 +25,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 				<section className={styles.primary}>
 					<div className={styles.headline}>
 						<Title
+							titleClass="title_wth-arrow"
 							titleText={'Торты'}
 							path={AppRoute.CAKES_CATALOG}
 						/>
