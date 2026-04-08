@@ -35,6 +35,14 @@ function App() {
 						<MainPage cakes={cakeOffers} bentoCakes={bentoCakes} />
 					}
 				/>
+				<Route
+					path={AppRoute.CAKES_CATALOG}
+					element={<CatalogPage cakes={cakeOffers} />}
+				/>
+				<Route
+					path={AppRoute.BENTO_CAKES_CATALOG}
+					element={<CatalogPage cakes={bentoCakes} />}
+				/>
 				<Route path={AppRoute.DELIVERY} element={<DeliveryPage />} />
 				<Route path={AppRoute.FAQ} element={<FaqPage />} />
 				<Route path={AppRoute.REVIEWS} element={<RewievsPage />} />

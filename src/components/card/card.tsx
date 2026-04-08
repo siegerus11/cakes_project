@@ -28,16 +28,17 @@ export default Card;
 
 type AllCardProps = {
 	cake: CakeOffer;
+	path: string;
 };
 
-const AllCard = ({ cake }: AllCardProps) => {
+const AllCard = ({ cake, path }: AllCardProps) => {
 	return (
 		<div className={styles.grid}>
 			{cake.images.map((image, i) => {
 				const keyValue = `${i}-${cake.title}`;
 				return <img src={image} alt="cake-picture" key={keyValue} />;
 			})}
-			<Link className={styles.allButton} to={AppRoute.CATALOG}>
+			<Link className={styles.allButton} to={path}>
 				<span>Открыть все</span>
 			</Link>
 		</div>
