@@ -33,6 +33,10 @@
 	}
 }
 
+.button {
+	display: none;
+}
+
 .secondary {
 	margin-top: 38px;
 }
@@ -52,6 +56,7 @@
 	}
 
 	.button {
+		display: flex;
 		justify-content: flex-end;
 		min-width: 340px;
 		margin-right: 0;

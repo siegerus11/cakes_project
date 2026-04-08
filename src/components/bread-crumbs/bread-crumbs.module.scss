@@ -1,0 +1,24 @@
+.component {
+  display: flex;
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 133%;
+  color: #bababa;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%) rotate(270deg);
+    left: auto;
+    right: -26px;
+    width: 17px;
+    height: 10px;
+    background: url('../../../../images/arrow-sm-gray.svg') center/cover no-repeat;
+
+  }
+}

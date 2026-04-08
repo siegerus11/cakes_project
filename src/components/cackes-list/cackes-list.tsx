@@ -1,13 +1,15 @@
 import Card from '../card/card';
 import { AllCard } from '../card/card';
 import { CakeOffer } from '../../types/types';
+import { AppRoute } from '../../constants';
 import styles from './cackes-list.module.scss';
 
 type CackesListProps = {
 	cakes: CakeOffer[];
+	path: (typeof AppRoute)[keyof typeof AppRoute];
 };
 
-const CackesList = ({ cakes }: CackesListProps) => {
+const CackesList = ({ cakes, path }: CackesListProps) => {
 	return (
 		<ul className={styles.list}>
 			{cakes.map(cake => {
@@ -18,7 +20,7 @@ const CackesList = ({ cakes }: CackesListProps) => {
 				);
 			})}
 			<li>
-				<AllCard cake={cakes[0]} />
+				<AllCard cake={cakes[0]} path={path} />
 			</li>
 		</ul>
 	);

@@ -4,6 +4,8 @@ export const AppRoute = {
 	ROOT: '/',
 	ABOUT: '/about',
 	CATALOG: '/catalog',
+	CAKES_CATALOG: '/catalog/cakes',
+	BENTO_CAKES_CATALOG: '/catalog/bento-cakes',
 	DELIVERY: '/delivery',
 	FAQ: '/faq',
 	REVIEWS: '/reviews',

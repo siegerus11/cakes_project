@@ -24,27 +24,39 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 			<div className={`page ${styles.page}`}>
 				<section className={styles.primary}>
 					<div className={styles.headline}>
-						<Title titleText={'Торты'} />
+						<Title
+							titleText={'Торты'}
+							path={AppRoute.CAKES_CATALOG}
+						/>
 						<Link
-							to={AppRoute.CATALOG}
+							to={AppRoute.CAKES_CATALOG}
 							className={styles.headline__link}
 						>
 							Открыть все
 						</Link>
 					</div>
-					<CackeList cakes={splicedCakes} />
+					<CackeList
+						cakes={splicedCakes}
+						path={AppRoute.CAKES_CATALOG}
+					/>
 				</section>
 				<section className={styles.secondary}>
 					<div className={styles.headline}>
-						<Title titleText={'Бенто-торты'} />
+						<Title
+							titleText={'Бенто-торты'}
+							path={AppRoute.BENTO_CAKES_CATALOG}
+						/>
 						<Link
-							to={AppRoute.CATALOG}
+							to={AppRoute.BENTO_CAKES_CATALOG}
 							className={styles.headline__link}
 						>
 							Открыть все
 						</Link>
 					</div>
-					<CackeList cakes={splicedBentoCakes} />
+					<CackeList
+						cakes={splicedBentoCakes}
+						path={AppRoute.BENTO_CAKES_CATALOG}
+					/>
 				</section>
 				<Clauses />
 			</div>
