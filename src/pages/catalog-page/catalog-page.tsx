@@ -7,9 +7,6 @@ type CatalogPageProps = {
 };
 
 const CatalogPage = ({ cakes }: CatalogPageProps) => {
-	const location = useLocation();
-	console.log(location.pathname.includes('catalog'));
-
 	return (
 		<>
 			<BreadCrumbs />

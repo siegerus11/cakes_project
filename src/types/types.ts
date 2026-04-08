@@ -1,5 +1,7 @@
 import { AppRoute } from '../constants';
 
+export type RoutePath = (typeof AppRoute)[keyof typeof AppRoute];
+
 export type Nav = {
 	title:
 		| 'О нас'
@@ -10,7 +12,7 @@ export type Nav = {
 		| 'Контакты'
 		| 'Каталог десертов';
 	image: string;
-	path: (typeof AppRoute)[keyof typeof AppRoute];
+	path: RoutePath;
 };
 
 export type CakeOffer = {

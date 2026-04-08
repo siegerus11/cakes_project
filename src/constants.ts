@@ -43,4 +43,9 @@ export const NAVS: Nav[] = [
 		image: '',
 		path: AppRoute.CONTACTS
 	}
+	// {
+	// 	title: 'Отзывы11',
+	// 	image: '',
+	// 	path: AppRoute.BENTO_CAKES_CATALOG
+	// }
 ];
