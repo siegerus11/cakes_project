@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import Title from './title/title';
+import Title from '../../components/title/title';
 import styles from './main-page.module.scss';
 import { AppRoute } from '../../constants';
 import { CakeOffer } from '../../types/types';

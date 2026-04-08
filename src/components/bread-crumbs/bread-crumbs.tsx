@@ -12,14 +12,14 @@ const BreadCrumbs = (props: BreadCrumbsProps) => {
 	const linkPath = getLinkData(pathname, NAVS)?.path;
 
 	return (
-		<div className={styles.component}>
+		<nav className={styles.component}>
 			<Link className={styles.link} to={AppRoute.ROOT}>
 				Главная
 			</Link>
 			<Link className={styles.link} to={linkPath}>
 				{linkTitle}
 			</Link>
-		</div>
+		</nav>
 	);
 };
 
