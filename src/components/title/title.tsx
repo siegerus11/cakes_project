@@ -15,7 +15,7 @@ const Title = ({ titleText, path, linkClass, titleClass }: TitleProps) => {
 			<h2 className={`title ${titleClass}`}>{titleText}</h2>
 		</Link>
 	) : (
-		<h2 className={styles.title}>{titleText}</h2>
+		<h2 className={`title ${titleClass}`}>{titleText}</h2>
 	);
 };
 

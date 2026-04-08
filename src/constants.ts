@@ -42,10 +42,17 @@ export const NAVS: Nav[] = [
 		title: 'Контакты',
 		image: '',
 		path: AppRoute.CONTACTS
+	},
+	{
+		title: 'Торты',
+		image: '',
+		path: AppRoute.CONTACTS
+	},
+	{
+		title: 'Бенто-торты',
+		image: '',
+		path: AppRoute.CONTACTS
 	}
-	// {
-	// 	title: 'Отзывы11',
-	// 	image: '',
-	// 	path: AppRoute.BENTO_CAKES_CATALOG
-	// }
 ];
+
+export const HEADER_NAVS: Nav[] = [...NAVS].splice(0, 6);
