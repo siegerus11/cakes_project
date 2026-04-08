@@ -6,6 +6,8 @@ import { AppRoute } from '../../constants';
 import { CakeOffer } from '../../types/types';
 import CackeList from '../../components/cackes-list/cackes-list';
 import Clauses from '../../components/clause/clauses';
+import ButtonController from '../../components/button-controller/button-controller';
+import Button from '../../components/ui/button/button';
 
 type MainPageProps = {
 	cakes: CakeOffer[];
@@ -46,6 +48,15 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 				</section>
 				<Clauses />
 			</div>
+			<ButtonController>
+				<Button className={`button button_primary ${styles.button}`}>
+					<svg className={styles.button__icon} viewBox="0 0 40 40">
+						<use xlinkHref="#cart"></use>
+					</svg>
+					<span className={styles.button__text}>Оформить заказ</span>
+					<span className={styles.button__price}>6 800 ₽</span>
+				</Button>
+			</ButtonController>
 		</>
 	);
 };
