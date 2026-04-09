@@ -3,6 +3,8 @@ import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
 import Title from '../../components/title/title';
 import SortList from '../../components/sort-list/sort-list';
 import CardsList from '../../components/cards-list/cards-list';
+import NotFoundCake from './no-found-cake/no-found-cake';
+import Clauses from '../../components/clause/clauses';
 import { NAVS } from '../../constants';
 import { getNavData } from '../../utils/getLinkData';
 import { useLocation } from 'react-router-dom';
@@ -19,10 +21,13 @@ const CatalogPage = ({ cakes }: CatalogPageProps) => {
 		<>
 			<BreadCrumbs />
 			<section className={`page ${styles.component}`}>
+				<h1 className="visually-hidden">Каталог тортов</h1>
 				<Title titleText={pageTitle} />
 				<hr />
 				<SortList />
 				<CardsList cakes={cakes} isMainPage={false} />
+				<NotFoundCake />
+				<Clauses />
 			</section>
 		</>
 	);

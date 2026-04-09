@@ -8,10 +8,10 @@ export const cakeOffers: CakeOffer[] = [
 		isBento: false,
 		title: 'Короткое',
 		images: [
-			'../../../public/images/pictures/cake1.png',
-			'../../../public/images/pictures/cake2.png',
-			'../../../public/images/pictures/cake1.png',
-			'../../../public/images/pictures/cake2.png'
+			'../../../images/pictures/cake1.png',
+			'../../../images/pictures/cake2.png',
+			'../../../images/pictures/cake1.png',
+			'../../../images/pictures/cake2.png'
 		],
 		price: 3600,
 		filling: {
@@ -65,10 +65,10 @@ export const cakeOffers: CakeOffer[] = [
 		isBento: false,
 		title: 'Длинное название на несколько строк таких',
 		images: [
-			'../../../public/images/pictures/cake3.png',
-			'../../../public/images/pictures/cake2.png',
-			'../../../public/images/pictures/cake3.png',
-			'../../../public/images/pictures/cake2.png'
+			'../../../images/pictures/cake3.png',
+			'../../../images/pictures/cake2.png',
+			'../../../images/pictures/cake3.png',
+			'../../../images/pictures/cake2.png'
 		],
 		price: 3600,
 		filling: {
@@ -122,10 +122,10 @@ export const cakeOffers: CakeOffer[] = [
 		isBento: false,
 		title: 'Торт с ягодами и безе',
 		images: [
-			'../../../public/images/pictures/cake4.png',
-			'../../../public/images/pictures/cake3.png',
-			'../../../public/images/pictures/cake4.png',
-			'../../../public/images/pictures/cake3.png'
+			'../../../images/pictures/cake4.png',
+			'../../../images/pictures/cake3.png',
+			'../../../images/pictures/cake4.png',
+			'../../../images/pictures/cake3.png'
 		],
 		price: 3600,
 		filling: {
@@ -179,10 +179,10 @@ export const cakeOffers: CakeOffer[] = [
 		isBento: false,
 		title: 'Торт с ягодами и безе',
 		images: [
-			'../../../public/images/pictures/cake1.png',
-			'../../../public/images/pictures/cake2.png',
-			'../../../public/images/pictures/cake1.png',
-			'../../../public/images/pictures/cake2.png'
+			'../../../images/pictures/cake1.png',
+			'../../../images/pictures/cake2.png',
+			'../../../images/pictures/cake1.png',
+			'../../../images/pictures/cake2.png'
 		],
 		price: 3600,
 		filling: {
@@ -237,10 +237,10 @@ export const cakeOffers: CakeOffer[] = [
 		isBento: true,
 		title: 'Короткое',
 		images: [
-			'../../../public/images/pictures/cake2.png',
-			'../../../public/images/pictures/cake1.png',
-			'../../../public/images/pictures/cake1.png',
-			'../../../public/images/pictures/cake2.png'
+			'../../../images/pictures/cake2.png',
+			'../../../images/pictures/cake1.png',
+			'../../../images/pictures/cake1.png',
+			'../../../images/pictures/cake2.png'
 		],
 		price: 3600,
 		filling: {
@@ -294,10 +294,10 @@ export const cakeOffers: CakeOffer[] = [
 		isBento: true,
 		title: 'Длинное название на несколько строк таких',
 		images: [
-			'../../../public/images/pictures/cake5.png',
-			'../../../public/images/pictures/cake4.png',
-			'../../../public/images/pictures/cake5.png',
-			'../../../public/images/pictures/cake4.png'
+			'../../../images/pictures/cake5.png',
+			'../../../images/pictures/cake4.png',
+			'../../../images/pictures/cake5.png',
+			'../../../images/pictures/cake4.png'
 		],
 		price: 3600,
 		filling: {
@@ -351,10 +351,10 @@ export const cakeOffers: CakeOffer[] = [
 		isBento: true,
 		title: 'Торт с ягодами и безе',
 		images: [
-			'../../../public/images/pictures/cake2.png',
-			'../../../public/images/pictures/cake1.png',
-			'../../../public/images/pictures/cake1.png',
-			'../../../public/images/pictures/cake2.png'
+			'../../../images/pictures/cake2.png',
+			'../../../images/pictures/cake1.png',
+			'../../../images/pictures/cake1.png',
+			'../../../images/pictures/cake2.png'
 		],
 		price: 3600,
 		filling: {
@@ -408,10 +408,10 @@ export const cakeOffers: CakeOffer[] = [
 		isBento: true,
 		title: 'Торт с ягодами и безе',
 		images: [
-			'../../../public/images/pictures/cake2.png',
-			'../../../public/images/pictures/cake1.png',
-			'../../../public/images/pictures/cake1.png',
-			'../../../public/images/pictures/cake2.png'
+			'../../../images/pictures/cake2.png',
+			'../../../images/pictures/cake1.png',
+			'../../../images/pictures/cake1.png',
+			'../../../images/pictures/cake2.png'
 		],
 		price: 3600,
 		filling: {
