@@ -1,11 +1,11 @@
-import { SORT_KINDS } from '../../constants';
+import { SORT_KINDS } from '../../../constants';
 import styles from './sort-list.module.scss';
 
 type Props = {};
 
 const SortList = (props: Props) => {
 	return (
-		<ul className={styles.list}>
+		<ul className={styles.component}>
 			{SORT_KINDS.map(kind => {
 				return <SortItem sortKind={kind} key={kind} />;
 			})}

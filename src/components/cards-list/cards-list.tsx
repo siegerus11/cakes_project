@@ -12,13 +12,13 @@ type CardsListProps = {
 const CardsList = ({ cakes, isMainPage, path }: CardsListProps) => {
 	const listClass = isMainPage
 		? styles.component
-		: `${styles.component} ${styles.component_mt30} ${styles.component_fw} ${styles.component_rg}`;
+		: `${styles.component} ${styles.component_mt30} ${styles.component_fw} ${styles.component_rg} ${styles.component_jcSpanceBtw}`;
 	return (
 		<ul className={listClass}>
 			{cakes.map(cake => {
 				return (
 					<li key={cake.id}>
-						<Card cake={cake} />
+						<Card cake={cake} isMainPage={isMainPage} />
 					</li>
 				);
 			})}

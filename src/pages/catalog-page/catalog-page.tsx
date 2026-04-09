@@ -1,7 +1,7 @@
 import { CakeOffer } from '../../types/types';
 import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
 import Title from '../../components/title/title';
-import SortList from '../../components/sort-list/sort-list';
+import SortList from './sort-list/sort-list';
 import CardsList from '../../components/cards-list/cards-list';
 import NotFoundCake from './no-found-cake/no-found-cake';
 import Clauses from '../../components/clause/clauses';
@@ -20,7 +20,7 @@ const CatalogPage = ({ cakes }: CatalogPageProps) => {
 	return (
 		<>
 			<BreadCrumbs />
-			<section className={`page ${styles.component}`}>
+			<section className={`page page_catalog ${styles.component}`}>
 				<h1 className="visually-hidden">Каталог тортов</h1>
 				<Title titleText={pageTitle} />
 				<hr />

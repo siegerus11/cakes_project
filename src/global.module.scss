@@ -98,6 +98,16 @@ body {
 	:global(.container) {
 		max-width: 100%;
 		padding: 0 15px;
+
+
+	}
+
+	:global(.page) {
+		&:global(_catalog) {
+			.container {
+				display: none;
+			}
+		}
 	}
 }
 
@@ -134,7 +144,17 @@ body {
 //         padding: 0 15px
 
 
+// @media (max-width: 1440px) {}
 
+// @media (max-width: 1200px) {}
+
+// @media (max-width: 992px) {}
+
+// @media (max-width: 767px) {}
+
+// @media (max-width: 576px) {}
+
+// @media (max-width: 360px) {}
 
 
 

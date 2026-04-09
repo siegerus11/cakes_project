@@ -6,3 +6,23 @@
     margin: 15px 0;
   }
 }
+
+@media (max-width: 1440px) {}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 767px) {
+  .component {
+    padding: 25px 0 90px 0;
+
+    hr {
+      margin-top: 11px;
+    }
+  }
+}
+
+@media (max-width: 576px) {}
+
+@media (max-width: 360px) {}
