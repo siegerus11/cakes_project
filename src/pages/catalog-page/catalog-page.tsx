@@ -29,7 +29,7 @@ const CatalogPage = ({ cakes }: CatalogPageProps) => {
 					<hr />
 					<SortList />
 				</div>
-				<div className="container_catalog-list ">
+				<div className="container_catalog-list container ">
 					<CardsList cakes={cakes} isMainPage={false} />
 				</div>
 				<div className="container">

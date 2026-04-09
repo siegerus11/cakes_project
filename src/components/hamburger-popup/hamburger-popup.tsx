@@ -2,7 +2,7 @@ import NavMenu from '../nav-menu/nav-menu';
 import Button from '../ui/button/button';
 import SocialLinks from '../social-links/social-links';
 import Hamburger from '../ui/hamburger/hamburger';
-import { NAVS } from '../../constants';
+import { LAYOUT_NAVS } from '../../constants';
 import { getSecondaryNavs } from '../../utils/getSecondaryNavs';
 import { Nav } from '../../types/types';
 import styles from './hamburger-popup.module.scss';
@@ -24,7 +24,7 @@ const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
 						isPopup
 					/>
 					<NavMenu
-						navs={getSecondaryNavs(NAVS, true) as Nav[]}
+						navs={getSecondaryNavs(LAYOUT_NAVS, true) as Nav[]}
 						onNavLinkClick={handleNavLinkClick}
 						linkClassName={styles.link}
 					/>
