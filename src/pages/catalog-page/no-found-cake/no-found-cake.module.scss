@@ -28,3 +28,37 @@
   text-align: center;
   color: #2787f5;
 }
+
+@media (max-width: 1440px) {}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 576px) {
+  .component {
+    margin-top: 90px;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 155%;
+  }
+
+  .describe {
+    max-width: 310px;
+    margin-top: 9px;
+    font-size: 14px;
+    line-height: 143%;
+  }
+
+  .link {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 360px) {}
