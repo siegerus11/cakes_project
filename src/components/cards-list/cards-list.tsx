@@ -3,14 +3,18 @@ import { AllCard } from '../card/card';
 import { CakeOffer, RoutePath } from '../../types/types';
 import styles from './cards-list.module.scss';
 
-type CackesListProps = {
+type CardsListProps = {
 	cakes: CakeOffer[];
-	path: RoutePath;
+	isMainPage: boolean;
+	path?: RoutePath;
 };
 
-const CackesList = ({ cakes, path }: CackesListProps) => {
+const CardsList = ({ cakes, isMainPage, path }: CardsListProps) => {
+	const listClass = isMainPage
+		? styles.component
+		: `${styles.component} ${styles.component_mt30} ${styles.component_fw} ${styles.component_rg}`;
 	return (
-		<ul className={styles.list}>
+		<ul className={listClass}>
 			{cakes.map(cake => {
 				return (
 					<li key={cake.id}>
@@ -18,11 +22,13 @@ const CackesList = ({ cakes, path }: CackesListProps) => {
 					</li>
 				);
 			})}
-			<li>
-				<AllCard cake={cakes[0]} path={path} />
-			</li>
+			{isMainPage && (
+				<li>
+					<AllCard cake={cakes[0]} path={path} />
+				</li>
+			)}
 		</ul>
 	);
 };
 
-export default CackesList;
+export default CardsList;

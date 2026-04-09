@@ -4,7 +4,7 @@ import Title from '../../components/title/title';
 import styles from './main-page.module.scss';
 import { AppRoute } from '../../constants';
 import { CakeOffer } from '../../types/types';
-import CackeList from '../../components/cards-list/cards-list';
+import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clauses';
 import ButtonController from '../../components/button-controller/button-controller';
 import Button from '../../components/ui/button/button';
@@ -36,7 +36,8 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 							Открыть все
 						</Link>
 					</div>
-					<CackeList
+					<CardsList
+						isMainPage
 						cakes={splicedCakes}
 						path={AppRoute.CAKES_CATALOG}
 					/>
@@ -55,7 +56,8 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 							Открыть все
 						</Link>
 					</div>
-					<CackeList
+					<CardsList
+						isMainPage
 						cakes={splicedBentoCakes}
 						path={AppRoute.BENTO_CAKES_CATALOG}
 					/>

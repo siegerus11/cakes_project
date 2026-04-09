@@ -2,6 +2,7 @@ import { CakeOffer } from '../../types/types';
 import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
 import Title from '../../components/title/title';
 import SortList from '../../components/sort-list/sort-list';
+import CardsList from '../../components/cards-list/cards-list';
 import { NAVS } from '../../constants';
 import { getNavData } from '../../utils/getLinkData';
 import { useLocation } from 'react-router-dom';
@@ -21,6 +22,7 @@ const CatalogPage = ({ cakes }: CatalogPageProps) => {
 				<Title titleText={pageTitle} />
 				<hr />
 				<SortList />
+				<CardsList cakes={cakes} isMainPage={false} />
 			</section>
 		</>
 	);

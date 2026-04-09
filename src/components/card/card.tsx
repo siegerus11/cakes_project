@@ -28,7 +28,7 @@ export default Card;
 
 type AllCardProps = {
 	cake: CakeOffer;
-	path: string;
+	path?: string;
 };
 
 const AllCard = ({ cake, path }: AllCardProps) => {
@@ -38,7 +38,7 @@ const AllCard = ({ cake, path }: AllCardProps) => {
 				const keyValue = `${i}-${cake.title}`;
 				return <img src={image} alt="cake-picture" key={keyValue} />;
 			})}
-			<Link className={styles.allButton} to={path}>
+			<Link className={styles.allButton} to={path!}>
 				<span>Открыть все</span>
 			</Link>
 		</div>

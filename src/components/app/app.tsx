@@ -18,21 +18,27 @@ import RewievsPage from '../../pages/rewievs-page/rewievs-page';
 import ContactsPage from '../../pages/contacts-page/contacts-page';
 
 function App() {
-	const bentoCakes = cakeOffers.filter(cake => cake.isBento === true);
+	const bentoCakesOffers = cakeOffers.filter(cake => cake.isBento === true);
 	return (
 		<Routes>
 			<Route path={AppRoute.ROOT} element={<MainLayout />}>
 				<Route
 					index
 					element={
-						<MainPage cakes={cakeOffers} bentoCakes={bentoCakes} />
+						<MainPage
+							cakes={cakeOffers}
+							bentoCakes={bentoCakesOffers}
+						/>
 					}
 				/>
 				<Route path={AppRoute.ABOUT} element={<AboutPage />} />
 				<Route
 					path={AppRoute.CATALOG}
 					element={
-						<MainPage cakes={cakeOffers} bentoCakes={bentoCakes} />
+						<MainPage
+							cakes={cakeOffers}
+							bentoCakes={bentoCakesOffers}
+						/>
 					}
 				/>
 				<Route
@@ -41,7 +47,7 @@ function App() {
 				/>
 				<Route
 					path={AppRoute.BENTO_CAKES_CATALOG}
-					element={<CatalogPage cakes={bentoCakes} />}
+					element={<CatalogPage cakes={bentoCakesOffers} />}
 				/>
 				<Route path={AppRoute.DELIVERY} element={<DeliveryPage />} />
 				<Route path={AppRoute.FAQ} element={<FaqPage />} />
