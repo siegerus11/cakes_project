@@ -20,49 +20,51 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 
 	return (
 		<>
-			<h1 className="visually-hidden">Cackes</h1>
-			<div className={`page ${styles.component}`}>
-				<section className={styles.primary}>
-					<div className={styles.headline}>
-						<Title
-							titleClass="title_wth-arrow"
-							titleText={'Торты'}
+			<div className="container">
+				<h1 className="visually-hidden">Cackes</h1>
+				<div className={`page ${styles.component}`}>
+					<section className={styles.primary}>
+						<div className={styles.headline}>
+							<Title
+								titleClass="title_wth-arrow"
+								titleText={'Торты'}
+								path={AppRoute.CAKES_CATALOG}
+							/>
+							<Link
+								to={AppRoute.CAKES_CATALOG}
+								className={styles.headline__link}
+							>
+								Открыть все
+							</Link>
+						</div>
+						<CardsList
+							isMainPage
+							cakes={splicedCakes}
 							path={AppRoute.CAKES_CATALOG}
 						/>
-						<Link
-							to={AppRoute.CAKES_CATALOG}
-							className={styles.headline__link}
-						>
-							Открыть все
-						</Link>
-					</div>
-					<CardsList
-						isMainPage
-						cakes={splicedCakes}
-						path={AppRoute.CAKES_CATALOG}
-					/>
-				</section>
-				<section className={styles.secondary}>
-					<div className={styles.headline}>
-						<Title
-							titleClass="title_wth-arrow"
-							titleText={'Бенто-торты'}
+					</section>
+					<section className={styles.secondary}>
+						<div className={styles.headline}>
+							<Title
+								titleClass="title_wth-arrow"
+								titleText={'Бенто-торты'}
+								path={AppRoute.BENTO_CAKES_CATALOG}
+							/>
+							<Link
+								to={AppRoute.BENTO_CAKES_CATALOG}
+								className={styles.headline__link}
+							>
+								Открыть все
+							</Link>
+						</div>
+						<CardsList
+							isMainPage
+							cakes={splicedBentoCakes}
 							path={AppRoute.BENTO_CAKES_CATALOG}
 						/>
-						<Link
-							to={AppRoute.BENTO_CAKES_CATALOG}
-							className={styles.headline__link}
-						>
-							Открыть все
-						</Link>
-					</div>
-					<CardsList
-						isMainPage
-						cakes={splicedBentoCakes}
-						path={AppRoute.BENTO_CAKES_CATALOG}
-					/>
-				</section>
-				<Clauses />
+					</section>
+					<Clauses />
+				</div>
 			</div>
 			<ButtonController>
 				<Button className={`button button_primary ${styles.button}`}>

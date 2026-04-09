@@ -69,8 +69,6 @@ body {
 	overflow: hidden;
 }
 
-:global(.page) {}
-
 @media (max-width: 1200px) {
 	:global(.container) {
 		max-width: 968px;
@@ -99,14 +97,8 @@ body {
 		max-width: 100%;
 		padding: 0 15px;
 
-
-	}
-
-	:global(.page) {
-		&:global(_catalog) {
-			.container {
-				display: none;
-			}
+		&:global(_catalog-list) {
+			padding: 0 5px;
 		}
 	}
 }

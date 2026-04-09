@@ -43,7 +43,7 @@ const Header = (props: Props) => {
 	}, [hamburgerMenuState]);
 
 	return (
-		<>
+		<div className="container">
 			<header className={styles.outer}>
 				<div className={styles.wrapper}>
 					<div className={styles.primary}>
@@ -87,7 +87,7 @@ const Header = (props: Props) => {
 			{hamburgerMenuState && (
 				<HamburgerPopup onHamburgerClick={handleHamburgerClick} />
 			)}
-		</>
+		</div>
 	);
 };
 

@@ -13,13 +13,17 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 
 	const cardLinkClass = isMainPage
 		? styles.card
-		: `${styles.card} ${styles.card_c}`;
+		: `${styles.card} ${styles.card_catalog}`;
+
+	const cardTitleClass = isMainPage
+		? styles.title
+		: `${styles.title} ${styles.title_catalog}`;
 	return (
 		<Link to={AppRoute.ROOT} className={cardLinkClass}>
 			<div className={styles.imgWrap}>
 				<img src={images[0]} alt={title} width="282" height="282" />
 			</div>
-			<span className={styles.title}>{title}</span>
+			<span className={cardTitleClass}>{title}</span>
 			<div className={styles.bottom}>
 				<span className={styles.cost}>{/* {price}₽ */}3 600 ₽</span>
 				<button className={styles.button}></button>

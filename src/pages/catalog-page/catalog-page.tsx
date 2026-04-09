@@ -19,15 +19,23 @@ const CatalogPage = ({ cakes }: CatalogPageProps) => {
 	const pageTitle = getNavData(pathname, NAVS)!.title;
 	return (
 		<>
-			<BreadCrumbs />
+			<div className="container">
+				<BreadCrumbs />
+			</div>
 			<section className={`page page_catalog ${styles.component}`}>
-				<h1 className="visually-hidden">Каталог тортов</h1>
-				<Title titleText={pageTitle} />
-				<hr />
-				<SortList />
-				<CardsList cakes={cakes} isMainPage={false} />
-				<NotFoundCake />
-				<Clauses />
+				<div className="container">
+					<h1 className="visually-hidden">Каталог тортов</h1>
+					<Title titleText={pageTitle} />
+					<hr />
+					<SortList />
+				</div>
+				<div className="container_catalog-list ">
+					<CardsList cakes={cakes} isMainPage={false} />
+				</div>
+				<div className="container">
+					<NotFoundCake />
+					<Clauses />
+				</div>
 			</section>
 		</>
 	);

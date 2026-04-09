@@ -202,7 +202,7 @@
 	.card {
 		min-width: 155px;
 
-		&_c {
+		&_catalog {
 			min-width: 173px;
 			max-width: unset;
 			width: 100%;
@@ -215,6 +215,10 @@
 		margin-top: 7px;
 		font-size: 14px;
 		line-height: 17px;
+
+		&_catalog {
+			max-width: 173px;
+		}
 	}
 
 	.bottom {
