@@ -8,8 +8,8 @@ type BreadCrumbsProps = {};
 const BreadCrumbs = (props: BreadCrumbsProps) => {
 	const { pathname } = useLocation();
 
-	const linkTitle = getNavData(pathname, NAVS)?.title;
-	const linkPath = getNavData(pathname, NAVS)?.path;
+	const linkTitle = getNavData(pathname, NAVS)!.title;
+	const linkPath = getNavData(pathname, NAVS)!.path;
 
 	return (
 		<nav className={styles.component}>

@@ -1,7 +1,7 @@
 import Card from '../card/card';
 import { AllCard } from '../card/card';
 import { CakeOffer, RoutePath } from '../../types/types';
-import styles from './cackes-list.module.scss';
+import styles from './cards-list.module.scss';
 
 type CackesListProps = {
 	cakes: CakeOffer[];

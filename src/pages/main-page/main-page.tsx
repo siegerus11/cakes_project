@@ -4,7 +4,7 @@ import Title from '../../components/title/title';
 import styles from './main-page.module.scss';
 import { AppRoute } from '../../constants';
 import { CakeOffer } from '../../types/types';
-import CackeList from '../../components/cackes-list/cackes-list';
+import CackeList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clauses';
 import ButtonController from '../../components/button-controller/button-controller';
 import Button from '../../components/ui/button/button';
@@ -21,7 +21,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 	return (
 		<>
 			<h1 className="visually-hidden">Cackes</h1>
-			<div className={`page ${styles.page}`}>
+			<div className={`page ${styles.component}`}>
 				<section className={styles.primary}>
 					<div className={styles.headline}>
 						<Title
