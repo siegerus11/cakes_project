@@ -1,0 +1,48 @@
+:global(.title-link) {
+	text-decoration: none;
+}
+
+:global(.title) {
+	position: relative;
+	font-weight: 700;
+	font-size: 26px;
+	text-decoration: none;
+	color: #000;
+
+	&:global(_wth-arrow) {
+		&:after {
+			content: '';
+			position: absolute;
+			top: 58%;
+			transform: translateY(-50%);
+			right: -30px;
+			width: 18px;
+			height: 18px;
+			background-image: url('../../../../images/nav-arrow-big.svg');
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	:global(.title) {
+		font-size: 24px;
+	}
+}
+
+@media (max-width: 767px) {
+	:global(.title) {
+		font-size: 22px;
+	}
+}
+
+@media (max-width: 576px) {
+	:global(.title) {
+		font-size: 20px;
+
+		&:global(_wth-arrow) {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}

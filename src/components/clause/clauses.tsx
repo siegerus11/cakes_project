@@ -39,8 +39,15 @@ const Clauses = (props: Props) => {
 				repellendus quaerat ad quis vel praesentium voluptas, blanditiis
 				cumque fugit similique.
 			</div>
-			<button className={styles.button} onClick={handleButtonClick}>
-				<span>Показать еще</span>
+			<button
+				className={
+					isVisibleArticle
+						? `${styles.button} ${styles.button_opened}`
+						: styles.button
+				}
+				onClick={handleButtonClick}
+			>
+				<span>{isVisibleArticle ? 'Скрыть' : 'Показать еще '}</span>
 			</button>
 		</div>
 	);

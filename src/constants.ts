@@ -42,5 +42,35 @@ export const NAVS: Nav[] = [
 		title: 'Контакты',
 		image: '',
 		path: AppRoute.CONTACTS
+	},
+	{
+		title: 'Торты',
+		image: '',
+		path: AppRoute.CAKES_CATALOG
+	},
+	{
+		title: 'Бенто-торты',
+		image: '',
+		path: AppRoute.BENTO_CAKES_CATALOG
 	}
 ];
+
+export const LAYOUT_NAVS: Nav[] = [...NAVS].splice(0, 6);
+
+export const SortType = {
+	forFriends: 'Друзьям',
+	forParrents: 'Родителям',
+	forKids: 'Детям',
+	forColleagues: 'Коллегам',
+	forLoved: 'Любимым',
+	forYourTea: 'Себе к чаю'
+};
+
+export const SORT_KINDS = [
+	'Друзьям',
+	'Родителям',
+	'Детям',
+	'Коллегам',
+	'Любимым',
+	'Себе к чаю'
+] as const;

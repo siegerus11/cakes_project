@@ -1,16 +1,25 @@
-import { Link } from 'react-router-dom';
-import { AppRoute } from '../../constants';
+import { Link, useLocation } from 'react-router-dom';
+import { Nav } from '../../types/types';
+import { AppRoute, NAVS } from '../../constants';
+import { getNavData } from '../../utils/getLinkData';
 import styles from './bread-crumbs.module.scss';
 
-type Props = {};
+type BreadCrumbsProps = {};
+const BreadCrumbs = (props: BreadCrumbsProps) => {
+	const { pathname } = useLocation();
 
-const BreadCrumbs = (props: Props) => {
+	const linkTitle = getNavData(pathname, NAVS)!.title;
+	const linkPath = getNavData(pathname, NAVS)!.path;
+
 	return (
-		<div className={styles.component}>
+		<nav className={styles.component}>
 			<Link className={styles.link} to={AppRoute.ROOT}>
 				Главная
 			</Link>
-		</div>
+			<Link className={styles.link} to={linkPath}>
+				{linkTitle}
+			</Link>
+		</nav>
 	);
 };
 

@@ -1,12 +1,11 @@
 import { useState, useEffect, KeyboardEvent } from 'react';
 
 import Button from '../ui/button/button';
-import ButtonController from '../button-controller/button-controller';
 import Hamburger from '../ui/hamburger/hamburger';
 import Logo from '../logo/logo';
 import NavMenu from '../nav-menu/nav-menu';
 import HamburgerPopup from '../hamburger-popup/hamburger-popup';
-import { NAVS } from '../../constants';
+import { LAYOUT_NAVS } from '../../constants';
 import styles from './header.module.scss';
 
 type DocumentKeydownEvtType = {
@@ -44,7 +43,7 @@ const Header = (props: Props) => {
 	}, [hamburgerMenuState]);
 
 	return (
-		<>
+		<div className="container">
 			<header className={styles.outer}>
 				<div className={styles.wrapper}>
 					<div className={styles.primary}>
@@ -83,12 +82,12 @@ const Header = (props: Props) => {
 						<Hamburger onHamburgerClick={handleHamburgerClick} />
 					</div>
 				</div>
-				<NavMenu navs={NAVS} linkClassName={styles.link} />
+				<NavMenu navs={LAYOUT_NAVS} linkClassName={styles.link} />
 			</header>
 			{hamburgerMenuState && (
 				<HamburgerPopup onHamburgerClick={handleHamburgerClick} />
 			)}
-		</>
+		</div>
 	);
 };
 

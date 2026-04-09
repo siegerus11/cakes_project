@@ -1,5 +1,5 @@
-.page {
-	padding: 60px 0 90px 0;
+.component {
+	padding: 94px 0 90px 0;
 }
 
 .headline {
@@ -89,6 +89,10 @@
 }
 
 @media (max-width: 576px) {
+	.component {
+		padding: 43px 0 65px 0;
+	}
+
 	.headline {
 		padding-right: 26px;
 	}

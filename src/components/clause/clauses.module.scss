@@ -41,6 +41,12 @@
 		height: 16px;
 		background-image: url('../../../images/arrow-sm.svg');
 	}
+
+	&_opened {
+		&:after {
+			transform: translateY(-50%) rotate(180deg);
+		}
+	}
 }
 
 @media (max-width: 767px) {

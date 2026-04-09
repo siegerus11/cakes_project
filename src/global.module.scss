@@ -1,6 +1,7 @@
 @use './libs/bootstrap-reboot.min.scss';
 @use './main.scss';
 @use './components/ui/button/button.module.scss';
+@use './components/title/title.module.scss';
 
 :root {
 	--primary-color: #ff4c80;
@@ -68,8 +69,6 @@ body {
 	overflow: hidden;
 }
 
-:global(.page) {}
-
 @media (max-width: 1200px) {
 	:global(.container) {
 		max-width: 968px;
@@ -97,6 +96,10 @@ body {
 	:global(.container) {
 		max-width: 100%;
 		padding: 0 15px;
+
+		&:global(_catalog-list) {
+			padding: 0 5px;
+		}
 	}
 }
 
@@ -133,7 +136,17 @@ body {
 //         padding: 0 15px
 
 
+// @media (max-width: 1440px) {}
 
+// @media (max-width: 1200px) {}
+
+// @media (max-width: 992px) {}
+
+// @media (max-width: 767px) {}
+
+// @media (max-width: 576px) {}
+
+// @media (max-width: 360px) {}
 
 
 

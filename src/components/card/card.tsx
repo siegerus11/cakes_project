@@ -5,17 +5,25 @@ import styles from './card.module.scss';
 
 type CardProps = {
 	cake: CakeOffer;
+	isMainPage: boolean;
 };
 
-const Card = ({ cake }: CardProps) => {
+const Card = ({ cake, isMainPage }: CardProps) => {
 	const { title, images, price } = cake;
 
+	const cardLinkClass = isMainPage
+		? styles.card
+		: `${styles.card} ${styles.card_catalog}`;
+
+	const cardTitleClass = isMainPage
+		? styles.title
+		: `${styles.title} ${styles.title_catalog}`;
 	return (
-		<Link to={AppRoute.ROOT} className={styles.card}>
+		<Link to={AppRoute.ROOT} className={cardLinkClass}>
 			<div className={styles.imgWrap}>
 				<img src={images[0]} alt={title} width="282" height="282" />
 			</div>
-			<span className={styles.title}>{title}</span>
+			<span className={cardTitleClass}>{title}</span>
 			<div className={styles.bottom}>
 				<span className={styles.cost}>{/* {price}₽ */}3 600 ₽</span>
 				<button className={styles.button}></button>
@@ -28,7 +36,7 @@ export default Card;
 
 type AllCardProps = {
 	cake: CakeOffer;
-	path: string;
+	path?: string;
 };
 
 const AllCard = ({ cake, path }: AllCardProps) => {
@@ -38,7 +46,7 @@ const AllCard = ({ cake, path }: AllCardProps) => {
 				const keyValue = `${i}-${cake.title}`;
 				return <img src={image} alt="cake-picture" key={keyValue} />;
 			})}
-			<Link className={styles.allButton} to={path}>
+			<Link className={styles.allButton} to={path!}>
 				<span>Открыть все</span>
 			</Link>
 		</div>

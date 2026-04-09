@@ -1,20 +1,32 @@
-.list {
+.component {
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
   margin-top: 25px;
-  gap: 24px;
+  column-gap: 24px;
   overflow-x: auto;
+
+  &_mt30 {
+    margin-top: 30px;
+  }
+
+  &_fw {
+    flex-wrap: wrap;
+  }
+
+  &_rg {
+    row-gap: 38px;
+  }
 }
 
 @media (max-width: 1200px) {
-  .list {
-    gap: 15px
+  .component {
+    column-gap: 15px
   }
 }
 
 @media (max-width: 992px) {
-  .list {
+  .component {
     gap: 10px;
     justify-content: center;
 
@@ -26,11 +38,18 @@
   }
 }
 
-@media (max-width: 767px) {}
-
 @media (max-width: 576px) {
-  .list {
+  .component {
     margin-top: 15px;
     justify-content: flex-start;
+
+    &_jcSpanceBtw {
+      justify-content: space-between;
+    }
+
+    &_rg {
+      column-gap: 4px;
+      row-gap: 15px;
+    }
   }
 }

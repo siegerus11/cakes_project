@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { Nav } from '../../types/types';
-import { NAVS } from '../../constants';
+import { LAYOUT_NAVS } from '../../constants';
 import SocialLinks from '../social-links/social-links';
 import NavMenu from '../nav-menu/nav-menu';
 import { getSecondaryNavs } from '../../utils/getSecondaryNavs';
@@ -32,7 +32,7 @@ const Footer = (props: Props) => {
 						<li></li>
 					</ul>
 					<NavMenu
-						navs={getSecondaryNavs(NAVS) as Nav[]}
+						navs={getSecondaryNavs(LAYOUT_NAVS) as Nav[]}
 						linkClassName={styles.link}
 					/>
 					<div className={styles.social}>
