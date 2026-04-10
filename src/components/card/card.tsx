@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../../constants';
 import { CakeOffer } from '../../types/types';
+import Button from '../ui/button/button';
 import styles from './card.module.scss';
 
 type CardProps = {
@@ -25,8 +26,8 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 			</div>
 			<span className={cardTitleClass}>{title}</span>
 			<div className={styles.bottom}>
-				<span className={styles.cost}>{/* {price}₽ */}3 600 ₽</span>
-				<button className={styles.button}></button>
+				<span className={styles.cost}>{/* {price}₽ */}3 600 ₽</span>
+				<Button className={`button button_tertiary ${styles.button}`} />
 			</div>
 		</Link>
 	);

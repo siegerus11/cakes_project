@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 
 import Title from '../../components/title/title';
-import styles from './main-page.module.scss';
 import { AppRoute } from '../../constants';
 import { CakeOffer } from '../../types/types';
 import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clauses';
 import ButtonController from '../../components/button-controller/button-controller';
 import Button from '../../components/ui/button/button';
+import styles from './main-page.module.scss';
 
 type MainPageProps = {
 	cakes: CakeOffer[];
@@ -72,7 +72,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						<use xlinkHref="#cart"></use>
 					</svg>
 					<span className={styles.button__text}>Оформить заказ</span>
-					<span className={styles.button__price}>6 800 ₽</span>
+					<span className={styles.button__price}>6 800 ₽</span>
 				</Button>
 			</ButtonController>
 		</>

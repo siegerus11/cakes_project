@@ -31,10 +31,8 @@ const Header = (props: Props) => {
 		setHamburgerMenuState(!hamburgerMenuState);
 	};
 
-	const orginalDocument = document;
-
 	useEffect(() => {
-		let documentElement: DocumentKeydownEvtType = document;
+		const documentElement: DocumentKeydownEvtType = document;
 		const closePopup = (e: KeyboardEvent) => {
 			if (e.key === 'Escape') setHamburgerMenuState(false);
 		};
@@ -76,7 +74,7 @@ const Header = (props: Props) => {
 								Оформить заказ
 							</span>
 							<span className={styles.button__price}>
-								6 800 ₽
+								6 800 ₽
 							</span>
 						</Button>
 						<Hamburger onHamburgerClick={handleHamburgerClick} />

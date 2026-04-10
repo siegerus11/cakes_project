@@ -25,7 +25,7 @@
 	},
 	"overrides": [
 		{
-			"files": ["src/**/*.{js,jsx}"],
+			"files": ["src/**/*.{js,ts,jsx,tsx}"],
 			"rules": {
 				"react/prop-types": "off",
 				"import/order": [
