@@ -26,6 +26,16 @@
     white-space: nowrap;
 }
 
+:global(.button_small) {
+    display: none;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    border: none;
+    background-color: #ff5b8b;
+}
+
 @media (max-width: 1200px) {}
 
 @media (max-width: 992px) {
