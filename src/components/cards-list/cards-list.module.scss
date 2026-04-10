@@ -44,12 +44,20 @@
     justify-content: flex-start;
 
     &_jcSpanceBtw {
-      justify-content: space-between;
+      justify-content: space-around;
     }
 
     &_rg {
       column-gap: 4px;
       row-gap: 15px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .component {
+    &_jcSpanceBtw {
+      justify-content: space-between;
     }
   }
 }
