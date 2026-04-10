@@ -14,7 +14,7 @@ const CardsList = ({ cakes, isMainPage, path }: CardsListProps) => {
 		? styles.component
 		: `${styles.component} ${styles.component_mt30} ${styles.component_fw} ${styles.component_rg} ${styles.component_jcSpanceBtw}`;
 	return (
-		<ul className={listClass}>
+		<ul onClick={() => console.log('!')} className={listClass}>
 			{cakes.map(cake => {
 				return (
 					<li key={cake.id}>
