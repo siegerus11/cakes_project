@@ -26,7 +26,7 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 			</div>
 			<span className={cardTitleClass}>{title}</span>
 			<div className={styles.bottom}>
-				<span className={styles.cost}>{/* {price}₽ */}3 600 ₽</span>
+				<span className={styles.cost}>{/* {price}₽ */}3 600 ₽</span>
 				<Button className={`button button_tertiary ${styles.button}`} />
 			</div>
 		</Link>

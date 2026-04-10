@@ -1,17 +1,18 @@
 import { Nav } from '../types/types';
 
-function getSecondaryNavs(navs: Nav[], isHamburgerNav = false): unknown {
-	const result = navs.map(nav => {
+export const getSecondaryNavs = (
+	navs: Nav[],
+	isHamburgerNav = false
+): unknown => {
+	const resultNavs = navs.map(nav => {
 		if (nav.title === 'Частые вопросы' && isHamburgerNav) {
 			return { ...nav, title: 'Популярные вопросы' };
 		} else if (nav.title === 'Каталог')
 			return { ...nav, title: 'Каталог десертов' };
-		else return nav;
+		return nav;
 	});
-	const temp = result[0];
-	result[0] = result[1];
-	result[1] = temp;
-	return result;
-}
-
-export { getSecondaryNavs };
+	const temp = resultNavs[0];
+	resultNavs[0] = resultNavs[1];
+	resultNavs[1] = temp;
+	return resultNavs;
+};

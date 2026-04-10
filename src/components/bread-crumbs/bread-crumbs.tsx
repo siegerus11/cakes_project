@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Nav } from '../../types/types';
 import { AppRoute, NAVS } from '../../constants';
 import { getNavData } from '../../utils/getLinkData';
 import styles from './bread-crumbs.module.scss';

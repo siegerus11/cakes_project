@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import { Nav } from '../../types/types';
 import { LAYOUT_NAVS } from '../../constants';
 import SocialLinks from '../social-links/social-links';
