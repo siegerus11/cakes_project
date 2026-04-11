@@ -74,3 +74,7 @@ export const SORT_KINDS = [
 	'Любимым',
 	'Себе к чаю'
 ] as const;
+
+export const NameSpace = {
+	Data: 'DATA'
+} as const;

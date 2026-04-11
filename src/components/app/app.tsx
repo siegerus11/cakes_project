@@ -1,8 +1,7 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
 import '../../global.module.scss';
-import { cakeOffers } from '../../mocks/cake-offers/cake-offers';
 import AboutPage from '../../pages/about-page/about-page';
 import CatalogPage from '../../pages/catalog-page/catalog-page';
 import ContactsPage from '../../pages/contacts-page/contacts-page';
@@ -11,46 +10,60 @@ import FaqPage from '../../pages/faq-page/faq-page';
 import MainPage from '../../pages/main-page/main-page';
 import RewievsPage from '../../pages/rewievs-page/rewievs-page';
 import MainLayout from '../layout/main-layout';
+import { useAppSelector } from '../../hooks/store';
+import { cakeOffersSelector } from '../../store/cake-offers-data/cake-offers-data';
 import './app.module.scss';
 
 function App() {
-	const bentoCakesOffers = cakeOffers.filter(cake => cake.isBento === true);
+	const cakeOffers = useAppSelector(cakeOffersSelector);
+	const bentoCakesffers = cakeOffers.filter(cake => cake.isBento === true);
+
 	return (
-		<Routes>
-			<Route path={AppRoute.ROOT} element={<MainLayout />}>
-				<Route
-					index
-					element={
-						<MainPage
-							cakes={cakeOffers}
-							bentoCakes={bentoCakesOffers}
-						/>
-					}
-				/>
-				<Route path={AppRoute.ABOUT} element={<AboutPage />} />
-				<Route
-					path={AppRoute.CATALOG}
-					element={
-						<MainPage
-							cakes={cakeOffers}
-							bentoCakes={bentoCakesOffers}
-						/>
-					}
-				/>
-				<Route
-					path={AppRoute.CAKES_CATALOG}
-					element={<CatalogPage cakes={cakeOffers} />}
-				/>
-				<Route
-					path={AppRoute.BENTO_CAKES_CATALOG}
-					element={<CatalogPage cakes={bentoCakesOffers} />}
-				/>
-				<Route path={AppRoute.DELIVERY} element={<DeliveryPage />} />
-				<Route path={AppRoute.FAQ} element={<FaqPage />} />
-				<Route path={AppRoute.REVIEWS} element={<RewievsPage />} />
-				<Route path={AppRoute.CONTACTS} element={<ContactsPage />} />
-			</Route>
-		</Routes>
+		<BrowserRouter
+			future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+		>
+			<Routes>
+				<Route path={AppRoute.ROOT} element={<MainLayout />}>
+					<Route
+						index
+						element={
+							<MainPage
+								cakes={cakeOffers}
+								bentoCakes={bentoCakesffers}
+							/>
+						}
+					/>
+					<Route path={AppRoute.ABOUT} element={<AboutPage />} />
+					<Route
+						path={AppRoute.CATALOG}
+						element={
+							<MainPage
+								cakes={cakeOffers}
+								bentoCakes={bentoCakesffers}
+							/>
+						}
+					/>
+					<Route
+						path={AppRoute.CAKES_CATALOG}
+						element={<CatalogPage cakes={cakeOffers} />}
+					/>
+					<Route
+						path={AppRoute.BENTO_CAKES_CATALOG}
+						element={<CatalogPage cakes={bentoCakesffers} />}
+					/>
+					<Route
+						path={AppRoute.DELIVERY}
+						element={<DeliveryPage />}
+					/>
+					<Route path={AppRoute.FAQ} element={<FaqPage />} />
+					<Route path={AppRoute.REVIEWS} element={<RewievsPage />} />
+					<Route
+						path={AppRoute.CONTACTS}
+						element={<ContactsPage />}
+					/>
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	);
 }
 
