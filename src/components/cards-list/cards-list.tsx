@@ -1,6 +1,5 @@
-import Card from '../card/card';
-import { AllCard } from '../card/card';
 import { CakeOffer, RoutePath } from '../../types/types';
+import Card, { AllCard } from '../card/card';
 import styles from './cards-list.module.scss';
 
 type CardsListProps = {
@@ -14,7 +13,7 @@ const CardsList = ({ cakes, isMainPage, path }: CardsListProps) => {
 		? styles.component
 		: `${styles.component} ${styles.component_mt30} ${styles.component_fw} ${styles.component_rg} ${styles.component_jcSpanceBtw}`;
 	return (
-		<ul onClick={() => console.log('!')} className={listClass}>
+		<ul className={listClass}>
 			{cakes.map(cake => {
 				return (
 					<li key={cake.id}>

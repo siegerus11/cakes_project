@@ -7,7 +7,7 @@
 		"node": true
 	},
 	"plugins": ["react", "jsx-a11y", "jest", "import", "unused-imports"],
-	"parser": "@typescript-eslint/parser",
+	"parser": "@typescript-eslint/parser", // installed & added by me
 	"extends": [
 		"airbnb",
 		"airbnb/hooks",
@@ -18,6 +18,7 @@
 		"prettier"
 	],
 	"parserOptions": {
+		"project": "./tsconfig.json", // added by me
 		"ecmaFeatures": {
 			"jsx": true
 		},
@@ -26,9 +27,13 @@
 	},
 	"overrides": [
 		{
-			"files": ["src/**/*.{js,ts,jsx,tsx}"],
+			"files": ["src/**/*.{js,ts,jsx,tsx}"], // "ts","tsx" added by me
 			"rules": {
-				"react/prop-types": "off",
+				"react/prop-types": "off", 
+				"react/jsx-filename-extension": ["error", { // added by me
+					"extensions": [".tsx"]
+				}],
+				"import/extensions": ["error", { "ts": "never" }], // added by me
 				"import/order": [
 					"error",
 					{
@@ -69,6 +74,18 @@
 		"react/function-component-definition": "off",
 		"react/react-in-jsx-scope": "off",
 		"react/prop-types": "warn",
-		"semi": "error"
+		"semi": "error",
+		// all after "semi" added by me
+		"react/self-closing-comp": "off",
+		"react/require-default-props": "off",
+		"arrow-body-style": "off"
+	},
+	//"settings" added by me
+	"settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
 	}
 }

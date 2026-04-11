@@ -1,11 +1,11 @@
 import { useState, useEffect, KeyboardEvent } from 'react';
 
-import Button from '../ui/button/button';
-import Hamburger from '../ui/hamburger/hamburger';
+import { LAYOUT_NAVS } from '../../constants';
+import HamburgerPopup from '../hamburger-popup/hamburger-popup';
 import Logo from '../logo/logo';
 import NavMenu from '../nav-menu/nav-menu';
-import HamburgerPopup from '../hamburger-popup/hamburger-popup';
-import { LAYOUT_NAVS } from '../../constants';
+import Button from '../ui/button/button';
+import Hamburger from '../ui/hamburger/hamburger';
 import styles from './header.module.scss';
 
 type DocumentKeydownEvtType = {

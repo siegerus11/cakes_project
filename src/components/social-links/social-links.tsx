@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+
 import styles from './social-links.module.scss';
 
 type SocialLinksProps = {

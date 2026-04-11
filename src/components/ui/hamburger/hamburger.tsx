@@ -1,4 +1,3 @@
-import { MutableRefObject, useRef } from 'react';
 import styles from './hamburger.module.scss';
 
 type HamburgerProps = {
@@ -7,7 +6,6 @@ type HamburgerProps = {
 };
 
 const Hamburger = ({ onHamburgerClick, isPopup }: HamburgerProps) => {
-	const hamburgerRef = useRef<HTMLButtonElement | null>(null);
 	const handleHamburgerClick = () => onHamburgerClick();
 
 	return (
@@ -18,6 +16,7 @@ const Hamburger = ({ onHamburgerClick, isPopup }: HamburgerProps) => {
 					: styles.wrapper
 			}
 			onClick={() => handleHamburgerClick()}
+			type="button"
 		>
 			<div className={styles.item}></div>
 			<div className={styles.item}></div>

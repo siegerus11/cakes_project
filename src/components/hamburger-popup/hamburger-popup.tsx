@@ -1,10 +1,10 @@
-import NavMenu from '../nav-menu/nav-menu';
-import Button from '../ui/button/button';
-import SocialLinks from '../social-links/social-links';
-import Hamburger from '../ui/hamburger/hamburger';
-import { LAYOUT_NAVS } from '../../constants';
-import { getSecondaryNavs } from '../../utils/getSecondaryNavs';
+import { AppRoute, LAYOUT_NAVS } from '../../constants';
 import { Nav } from '../../types/types';
+import { getSecondaryNavs } from '../../utils/getSecondaryNavs';
+import NavMenu from '../nav-menu/nav-menu';
+import SocialLinks from '../social-links/social-links';
+import Button from '../ui/button/button';
+import Hamburger from '../ui/hamburger/hamburger';
 import styles from './hamburger-popup.module.scss';
 
 type HamburgerPopupProps = {
@@ -31,7 +31,7 @@ const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
 					<Button
 						className={`button button_secondary ${styles.button}`}
 						isLink
-						url={'/'}
+						url={AppRoute.ROOT}
 					>
 						<span>Написать в Telegram</span>
 						<svg

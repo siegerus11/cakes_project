@@ -1,9 +1,8 @@
 import { useState } from 'react';
+
 import styles from './clauses.module.scss';
 
-type Props = {};
-
-const Clauses = (props: Props) => {
+const Clauses = () => {
 	const [isVisibleArticle, setiIsVisibleArticle] = useState<boolean>(false);
 
 	const handleButtonClick = () => {
@@ -46,6 +45,7 @@ const Clauses = (props: Props) => {
 						: styles.button
 				}
 				onClick={handleButtonClick}
+				type="button"
 			>
 				<span>{isVisibleArticle ? 'Скрыть' : 'Показать еще '}</span>
 			</button>

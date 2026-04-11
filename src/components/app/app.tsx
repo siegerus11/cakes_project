@@ -1,16 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
+import '../../global.module.scss';
 import { cakeOffers } from '../../mocks/cake-offers/cake-offers';
-import MainLayout from '../layout/main-layout';
-import MainPage from '../../pages/main-page/main-page';
 import AboutPage from '../../pages/about-page/about-page';
 import CatalogPage from '../../pages/catalog-page/catalog-page';
+import ContactsPage from '../../pages/contacts-page/contacts-page';
 import DeliveryPage from '../../pages/delivery-page/delivery-page';
 import FaqPage from '../../pages/faq-page/faq-page';
+import MainPage from '../../pages/main-page/main-page';
 import RewievsPage from '../../pages/rewievs-page/rewievs-page';
-import ContactsPage from '../../pages/contacts-page/contacts-page';
-import '../../global.module.scss';
+import MainLayout from '../layout/main-layout';
 import './app.module.scss';
 
 function App() {

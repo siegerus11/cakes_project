@@ -1,5 +1,6 @@
 import { PropsWithChildren, useLayoutEffect, useRef, useState } from 'react';
 import Draggable from 'react-draggable';
+
 import styles from './button-controller.module.scss';
 
 type ButtonControllerProps = PropsWithChildren<{}>;
@@ -16,7 +17,7 @@ const ButtonController = ({ children }: ButtonControllerProps) => {
 	useLayoutEffect(() => {
 		setOffsetValue(elementRef.current?.offsetTop!);
 		setHeightValue(elementRef.current?.offsetHeight!);
-	});
+	}, []);
 
 	const handleBottomSheetTouchEnd = () => {
 		if (isDraggin) return;

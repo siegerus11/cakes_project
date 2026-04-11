@@ -8,7 +8,7 @@ type ButtonProps = PropsWithChildren<{
 
 const Button = ({ children, className, isLink, url }: ButtonProps) => {
 	return (
-		<>
+		<div>
 			{isLink ? (
 				<a className={`${className}`} href={url}>
 					{children}
@@ -18,7 +18,7 @@ const Button = ({ children, className, isLink, url }: ButtonProps) => {
 					{children}
 				</button>
 			)}
-		</>
+		</div>
 	);
 };
 

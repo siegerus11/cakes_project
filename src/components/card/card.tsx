@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import { AppRoute } from '../../constants';
 import { CakeOffer } from '../../types/types';
 import Button from '../ui/button/button';
@@ -26,7 +27,7 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 			</div>
 			<span className={cardTitleClass}>{title}</span>
 			<div className={styles.bottom}>
-				<span className={styles.cost}>{/* {price}₽ */}3 600 ₽</span>
+				<span className={styles.cost}>{price}</span>
 				<Button className={`button button_tertiary ${styles.button}`} />
 			</div>
 		</Link>
@@ -45,7 +46,7 @@ const AllCard = ({ cake, path }: AllCardProps) => {
 		<div className={styles.grid}>
 			{cake.images.map((image, i) => {
 				const keyValue = `${i}-${cake.title}`;
-				return <img src={image} alt="cake-picture" key={keyValue} />;
+				return <img src={image} alt="cake" key={keyValue} />;
 			})}
 			<Link className={styles.allButton} to={path!}>
 				<span>Открыть все</span>

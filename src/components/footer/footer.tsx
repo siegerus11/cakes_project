@@ -1,14 +1,12 @@
-import { Nav } from '../../types/types';
 import { LAYOUT_NAVS } from '../../constants';
-import SocialLinks from '../social-links/social-links';
-import NavMenu from '../nav-menu/nav-menu';
+import { Nav } from '../../types/types';
 import { getSecondaryNavs } from '../../utils/getSecondaryNavs';
+import NavMenu from '../nav-menu/nav-menu';
+import SocialLinks from '../social-links/social-links';
 import Button from '../ui/button/button';
 import styles from './footer.module.scss';
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
 	return (
 		<div className={styles.wrapper}>
 			<div className="container_footer container">
@@ -57,7 +55,7 @@ const Footer = (props: Props) => {
 						<Button
 							className={`button button_secondary ${styles.button}`}
 							isLink
-							url={'/'}
+							url="/"
 						>
 							<span>Написать в Telegram</span>
 							<svg

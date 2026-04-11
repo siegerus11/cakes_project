@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
+
 import { Nav } from '../../types/types';
-import styles from './nav-menu.module.scss';
 
 type NavMenuProps = {
 	navs: Nav[];

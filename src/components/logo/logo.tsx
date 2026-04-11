@@ -1,8 +1,6 @@
 import styles from './logo.module.scss';
 
-type Props = {};
-
-const Logo = (props: Props) => {
+const Logo = () => {
 	return (
 		<a className={styles.link} href="/">
 			ВРЕМЯ ВЕСЕЛЬЯ

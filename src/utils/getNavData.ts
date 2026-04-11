@@ -1,6 +1,9 @@
 import { Nav } from '../types/types';
 
-export const getNavData = (pathname: string, navs: Nav[]) => {
+export const getNavData = (
+	pathname: string,
+	navs: Nav[]
+): Omit<Nav, 'image'> | undefined => {
 	const resultLink = navs.filter((nav: Nav) => nav.path.includes(pathname));
 
 	if (resultLink.length !== 0) {

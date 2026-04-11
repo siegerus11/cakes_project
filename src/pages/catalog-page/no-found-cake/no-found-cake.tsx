@@ -1,8 +1,6 @@
 import styles from './no-found-cake.module.scss';
 
-type Props = {};
-
-const NotFoundCake = (props: Props) => {
+const NotFoundCake = () => {
 	return (
 		<div className={styles.component}>
 			<h2 className={styles.title}>Не нашли свой торт?</h2>

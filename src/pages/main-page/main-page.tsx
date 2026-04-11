@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 
-import Title from '../../components/title/title';
-import { AppRoute } from '../../constants';
-import { CakeOffer } from '../../types/types';
+import ButtonController from '../../components/button-controller/button-controller';
 import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clauses';
-import ButtonController from '../../components/button-controller/button-controller';
+import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
+import { AppRoute, NAVS } from '../../constants';
+import { CakeOffer } from '../../types/types';
 import styles from './main-page.module.scss';
 
 type MainPageProps = {
@@ -27,7 +27,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						<div className={styles.headline}>
 							<Title
 								titleClass="title_wth-arrow"
-								titleText={'Торты'}
+								titleText={NAVS[6].title}
 								path={AppRoute.CAKES_CATALOG}
 							/>
 							<Link
@@ -47,7 +47,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						<div className={styles.headline}>
 							<Title
 								titleClass="title_wth-arrow"
-								titleText={'Бенто-торты'}
+								titleText={NAVS[7].title}
 								path={AppRoute.BENTO_CAKES_CATALOG}
 							/>
 							<Link

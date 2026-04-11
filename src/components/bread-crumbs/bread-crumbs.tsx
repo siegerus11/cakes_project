@@ -1,10 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
+
 import { AppRoute, NAVS } from '../../constants';
-import { getNavData } from '../../utils/getLinkData';
+import { getNavData } from '../../utils/getNavData';
 import styles from './bread-crumbs.module.scss';
 
-type BreadCrumbsProps = {};
-const BreadCrumbs = (props: BreadCrumbsProps) => {
+const BreadCrumbs = () => {
 	const { pathname } = useLocation();
 
 	const linkTitle = getNavData(pathname, NAVS)!.title;
