@@ -21,7 +21,7 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 		? styles.title
 		: `${styles.title} ${styles.title_catalog}`;
 	return (
-		<Link to={AppRoute.ROOT} className={cardLinkClass}>
+		<Link to={AppRoute.CAKE_OFFER_ARTICLE} className={cardLinkClass}>
 			<div className={styles.imgWrap}>
 				<img src={images[0]} alt={title} width="282" height="282" />
 			</div>

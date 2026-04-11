@@ -5,6 +5,7 @@ export const AppRoute = {
 	ABOUT: '/about',
 	CATALOG: '/catalog',
 	CAKES_CATALOG: '/catalog/cakes',
+	CAKE_OFFER_ARTICLE: '/cake-offer',
 	BENTO_CAKES_CATALOG: '/catalog/bento-cakes',
 	DELIVERY: '/delivery',
 	FAQ: '/faq',
