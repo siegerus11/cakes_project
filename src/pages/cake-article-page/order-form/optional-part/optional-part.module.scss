@@ -1,0 +1,7 @@
+.component {
+  margin-top: 40px;
+}
+
+.title {
+  composes: title from '../filling-part/filling-part.module.scss'
+}

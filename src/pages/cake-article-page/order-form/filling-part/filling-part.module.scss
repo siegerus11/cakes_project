@@ -1,0 +1,62 @@
+.title {
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.wrapper {
+	display: flex;
+	margin-top: 15px;
+	column-gap: 13px;
+}
+
+.card {
+	display: block;
+	max-width: 112px;
+	border-radius: 15px;
+	border: 2px solid transparent;
+
+	&__button {
+		display: block;
+		border: none;
+		background: none;
+		font-size: 13px;
+		line-height: 130%;
+		text-decoration: underline;
+		text-decoration-style: dotted;
+		color: #b1b1b1;
+	}
+
+	&__top {
+		max-width: 110px;
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		min-height: 79px;
+		padding: 10px 20px 13px 12px;
+	}
+
+	&__image {
+		display: block;
+		max-width: 100%;
+		border-radius: 15px 15px 0 0;
+		background-color: var(--secondary-color);
+	}
+
+	&__title {
+		display: block;
+		font-size: 13px;
+		line-height: 130%;
+		white-space: unset;
+		word-break: normal;
+	}
+}
+
+.checkbox {
+	&:checked+.card {
+		border-color: var(--primary-color);
+	}
+}

@@ -1,4 +1,4 @@
-import { useState, useEffect, KeyboardEvent } from 'react';
+import { useState, useEffect } from 'react';
 
 import { LAYOUT_NAVS } from '../../constants';
 import HamburgerPopup from '../hamburger-popup/hamburger-popup';
@@ -8,37 +8,21 @@ import Button from '../ui/button/button';
 import Hamburger from '../ui/hamburger/hamburger';
 import styles from './header.module.scss';
 
-type DocumentKeydownEvtType = {
-	removeEventListener(
-		type: 'keyup' | 'keydown',
-		listener: (event: KeyboardEvent) => any,
-		options?: boolean | EventListenerOptions
-	): void;
-	addEventListener(
-		type: 'keyup' | 'keydown',
-		listener: (event: KeyboardEvent) => any,
-		options?: boolean | EventListenerOptions
-	): void;
-};
-
-type Props = {};
-
-const Header = (props: Props) => {
-	const [hamburgerMenuState, setHamburgerMenuState] =
+const Header = () => {
+	const [hamburgerisVisible, setHamburgerisVisible] =
 		useState<boolean>(false);
 
 	const handleHamburgerClick = () => {
-		setHamburgerMenuState(!hamburgerMenuState);
+		setHamburgerisVisible(!hamburgerisVisible);
 	};
 
 	useEffect(() => {
-		const documentElement: DocumentKeydownEvtType = document;
 		const closePopup = (e: KeyboardEvent) => {
-			if (e.key === 'Escape') setHamburgerMenuState(false);
+			if (e.key === 'Escape') setHamburgerisVisible(false);
 		};
-		documentElement.addEventListener('keydown', closePopup);
-		return () => documentElement.removeEventListener('keydown', closePopup);
-	}, [hamburgerMenuState]);
+		document.addEventListener('keydown', closePopup);
+		return () => document.removeEventListener('keydown', closePopup);
+	}, [hamburgerisVisible]);
 
 	return (
 		<div className="container">
@@ -82,7 +66,7 @@ const Header = (props: Props) => {
 				</div>
 				<NavMenu navs={LAYOUT_NAVS} linkClassName={styles.link} />
 			</header>
-			{hamburgerMenuState && (
+			{hamburgerisVisible && (
 				<HamburgerPopup onHamburgerClick={handleHamburgerClick} />
 			)}
 		</div>

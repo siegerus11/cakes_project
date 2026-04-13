@@ -1,0 +1,72 @@
+.component {
+	width: 100%;
+	margin-top: 40px;
+}
+
+.title {
+	composes: title from '../filling-part/filling-part.module.scss';
+}
+
+.select {
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 17px;
+
+	&__interactor {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding: 16px 20px;
+		border-radius: 11px;
+		background-color: #f7f7f7;
+		cursor: pointer;
+
+		span {
+			display: block;
+			font-size: 16px;
+			line-height: 120%;
+			letter-spacing: 0.4px;
+		}
+	}
+
+	&__dropdown {
+		z-index: 5;
+		position: absolute;
+		top: 52px;
+		left: 0;
+		width: 100%;
+		padding: 16px 20px;
+		border-radius: 11px;
+		background-color: #f7f7f7;
+
+		>div {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 4px 0;
+			margin-bottom: 7px;
+		}
+	}
+
+	label {
+		width: 100%;
+		cursor: pointer;
+	}
+
+	input {
+		display: block;
+		width: 16px;
+		height: 16px;
+		accent-color: var(--primary-color);
+		padding: 5px;
+		cursor: pointer;
+	}
+}
+
+.icon {
+	fill: #939393;
+}
