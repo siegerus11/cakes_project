@@ -26,6 +26,7 @@ export type Filling = {
 		| 'Домашний';
 	description: string;
 	isInclude: boolean;
+	image: string;
 };
 
 export type Optional = {
@@ -37,6 +38,7 @@ export type Optional = {
 		| 'Тут длиный текст, который не помещается в одну строку';
 	price: number;
 	isInclude: boolean;
+	image: string;
 };
 
 export type CakeOffer = {

@@ -1,7 +1,7 @@
 import { ChangeEvent, /* MouseEvent, */ useEffect, useState } from 'react';
 
 import { CakeOffer, Radio } from '../../../../types/types';
-import { createRadioItems } from '../../../../utils/createRadioItems';
+import { createRadioInitial } from '../../../../utils/createRadioInitial';
 import { getPersonQuantity } from '../../../../utils/getPersonQuantity';
 import styles from './weight-part.module.scss';
 
@@ -46,7 +46,7 @@ type WeightPartProps = {
 const WeightPart = ({ cake }: WeightPartProps) => {
 	const [isVisibleSelect, setIsVisibleSelect] = useState(false);
 
-	const initialRadios: Radio[] = createRadioItems(cake.weight);
+	const initialRadios: Radio[] = createRadioInitial(cake.weight);
 	const [radios, setRadios] = useState<Radio[]>(initialRadios);
 
 	const handleRadioChange = (

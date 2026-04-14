@@ -21,8 +21,8 @@ const FillingItem = ({ fill }: FillingItemProps) => {
 				<div className={styles.card__top}>
 					<img
 						className={styles.card__image}
-						src="/"
-						alt="filling"
+						src={fill.image}
+						alt={fill.title}
 						width="110"
 						height="110"
 					/>

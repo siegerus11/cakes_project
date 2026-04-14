@@ -1,7 +1,6 @@
 .component {
-	width: 50%;
-	max-width: 535px;
-	height: 535px;
+	min-width: 535px;
+	max-height: 535px;
 	margin-right: 50px;
 	border-radius: 30px;
 	background-color: var(--secondary-color);

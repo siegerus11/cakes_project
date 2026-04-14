@@ -6,19 +6,22 @@ type OptionalPartItemProps = {
 };
 
 const OptionalPartItem = ({ option }: OptionalPartItemProps) => {
-	const { title, price, isInclude } = option;
+	const { title, name, price, isInclude, image } = option;
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.item}>
 				<div className={styles.image}>
-					<img src="" alt="" />
+					<img src={image} alt={'title'} width="60" height="60" />
 				</div>
 				<div className={styles.side}>
-					<span className={styles.headline}>{title}</span>
-					<span className={styles.price}>{price}</span>
+					<span className={styles.side__headline}>{title}</span>
+					<span className={styles.side__price}>{`+${price} ₽`}</span>
 				</div>
 			</div>
-			<button type="button"></button>
+			<div>
+				<input type="checkbox" id={name} />
+				<label className={styles.label} htmlFor={name}></label>
+			</div>
 		</div>
 	);
 };

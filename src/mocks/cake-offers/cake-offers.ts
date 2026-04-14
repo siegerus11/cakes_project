@@ -19,25 +19,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'homelike',
 				title: 'Домашний',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -46,25 +50,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'classicCandles',
 				title: 'Свечи классические',
 				price: 0,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'numberCandles',
 				title: 'Свечи c цифрами',
 				price: 180,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
 				title: 'Свечи c цифрами',
 				price: 120,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'other',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		]
 	},
@@ -84,25 +92,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'homelike',
 				title: 'Домашний',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -111,25 +123,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'classicCandles',
 				title: 'Свечи классические',
 				price: 0,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'numberCandles',
 				title: 'Свечи c цифрами',
 				price: 180,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
 				title: 'Свечи c цифрами',
 				price: 120,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'other',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		]
 	},
@@ -149,25 +165,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'homelike',
 				title: 'Домашний',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -176,25 +196,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'classicCandles',
 				title: 'Свечи классические',
 				price: 0,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'numberCandles',
 				title: 'Свечи c цифрами',
 				price: 180,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
 				title: 'Свечи c цифрами',
 				price: 120,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'other',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		]
 	},
@@ -214,25 +238,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'homelike',
 				title: 'Домашний',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -241,25 +269,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'classicCandles',
 				title: 'Свечи классические',
 				price: 0,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'numberCandles',
 				title: 'Свечи c цифрами',
 				price: 180,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
 				title: 'Свечи c цифрами',
 				price: 120,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'other',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		]
 	},
@@ -280,25 +312,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'homelike',
 				title: 'Домашний',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -307,25 +343,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'classicCandles',
 				title: 'Свечи классические',
 				price: 0,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'numberCandles',
 				title: 'Свечи c цифрами',
 				price: 180,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
 				title: 'Свечи c цифрами',
 				price: 120,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'other',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		]
 	},
@@ -345,25 +385,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'homelike',
 				title: 'Домашний',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -372,25 +416,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'classicCandles',
 				title: 'Свечи классические',
 				price: 0,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'numberCandles',
 				title: 'Свечи c цифрами',
 				price: 180,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
 				title: 'Свечи c цифрами',
 				price: 120,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'other',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		]
 	},
@@ -410,25 +458,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'homelike',
 				title: 'Домашний',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -437,25 +489,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'classicCandles',
 				title: 'Свечи классические',
 				price: 0,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'numberCandles',
 				title: 'Свечи c цифрами',
 				price: 180,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
 				title: 'Свечи c цифрами',
 				price: 120,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'other',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		]
 	},
@@ -475,25 +531,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'homelike',
 				title: 'Домашний',
 				description: 'Lorem ipsum dolor sit amet consectetur',
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -502,25 +562,29 @@ export const cakeOffers: CakeOffer[] = [
 				name: 'classicCandles',
 				title: 'Свечи классические',
 				price: 0,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'numberCandles',
 				title: 'Свечи c цифрами',
 				price: 180,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
 				title: 'Свечи c цифрами',
 				price: 120,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			},
 			{
 				name: 'other',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
-				isInclude: false
+				isInclude: false,
+				image: '/'
 			}
 		]
 	}
