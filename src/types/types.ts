@@ -33,7 +33,7 @@ export type Optional = {
 	name: 'classicCandles' | 'numberCandles' | 'birthdayTopper' | 'other';
 	title:
 		| 'Свечи классические'
-		| 'Свечи c цифрами'
+		| 'Свечи цифрами'
 		| 'Топпер «С Днем рождения»'
 		| 'Тут длиный текст, который не помещается в одну строку';
 	price: number;
@@ -47,6 +47,7 @@ export type CakeOffer = {
 	title: string;
 	images: string[];
 	price: number;
+	describe: string;
 	filling: Filling[];
 	weight: number[];
 	optionally: Optional[];
@@ -55,4 +56,8 @@ export type CakeOffer = {
 export type Radio = {
 	isChecked: boolean;
 	weightValue: number;
+};
+
+export type CheckBoxValue = {
+	[key: string]: boolean;
 };

@@ -14,6 +14,9 @@ export const cakeOffers: CakeOffer[] = [
 			'../../../images/pictures/cake2.png'
 		],
 		price: 3600,
+		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. 
+		Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
 				name: 'cherryWithYogurt',
@@ -49,20 +52,20 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'classicCandles',
 				title: 'Свечи классические',
-				price: 0,
+				price: 11,
 				isInclude: false,
 				image: '/'
 			},
 			{
 				name: 'numberCandles',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
-				title: 'Свечи c цифрами',
+				title: 'Топпер «С Днем рождения»',
 				price: 120,
 				isInclude: false,
 				image: '/'
@@ -87,6 +90,8 @@ export const cakeOffers: CakeOffer[] = [
 			'../../../images/pictures/cake2.png'
 		],
 		price: 3600,
+		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
 				name: 'cherryWithYogurt',
@@ -128,14 +133,14 @@ export const cakeOffers: CakeOffer[] = [
 			},
 			{
 				name: 'numberCandles',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
-				title: 'Свечи c цифрами',
+				title: 'Топпер «С Днем рождения»',
 				price: 120,
 				isInclude: false,
 				image: '/'
@@ -160,6 +165,8 @@ export const cakeOffers: CakeOffer[] = [
 			'../../../images/pictures/cake3.png'
 		],
 		price: 3600,
+		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
 				name: 'cherryWithYogurt',
@@ -201,14 +208,14 @@ export const cakeOffers: CakeOffer[] = [
 			},
 			{
 				name: 'numberCandles',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 120,
 				isInclude: false,
 				image: '/'
@@ -233,6 +240,8 @@ export const cakeOffers: CakeOffer[] = [
 			'../../../images/pictures/cake2.png'
 		],
 		price: 3600,
+		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
 				name: 'cherryWithYogurt',
@@ -274,14 +283,14 @@ export const cakeOffers: CakeOffer[] = [
 			},
 			{
 				name: 'numberCandles',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 120,
 				isInclude: false,
 				image: '/'
@@ -307,6 +316,8 @@ export const cakeOffers: CakeOffer[] = [
 			'../../../images/pictures/cake2.png'
 		],
 		price: 3600,
+		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
 				name: 'cherryWithYogurt',
@@ -348,14 +359,14 @@ export const cakeOffers: CakeOffer[] = [
 			},
 			{
 				name: 'numberCandles',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 120,
 				isInclude: false,
 				image: '/'
@@ -380,6 +391,8 @@ export const cakeOffers: CakeOffer[] = [
 			'../../../images/pictures/cake4.png'
 		],
 		price: 3600,
+		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
 				name: 'cherryWithYogurt',
@@ -421,14 +434,14 @@ export const cakeOffers: CakeOffer[] = [
 			},
 			{
 				name: 'numberCandles',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 120,
 				isInclude: false,
 				image: '/'
@@ -453,6 +466,8 @@ export const cakeOffers: CakeOffer[] = [
 			'../../../images/pictures/cake2.png'
 		],
 		price: 3600,
+		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
 				name: 'cherryWithYogurt',
@@ -494,14 +509,14 @@ export const cakeOffers: CakeOffer[] = [
 			},
 			{
 				name: 'numberCandles',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 120,
 				isInclude: false,
 				image: '/'
@@ -526,6 +541,8 @@ export const cakeOffers: CakeOffer[] = [
 			'../../../images/pictures/cake2.png'
 		],
 		price: 3600,
+		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
 				name: 'cherryWithYogurt',
@@ -567,14 +584,14 @@ export const cakeOffers: CakeOffer[] = [
 			},
 			{
 				name: 'numberCandles',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
 				name: 'birthdayTopper',
-				title: 'Свечи c цифрами',
+				title: 'Свечи цифрами',
 				price: 120,
 				isInclude: false,
 				image: '/'

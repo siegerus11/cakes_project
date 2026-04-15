@@ -12,7 +12,6 @@
 .card {
 	display: block;
 	max-width: 112px;
-	border-radius: 15px;
 	border: 2px solid transparent;
 
 	&__button {
@@ -24,6 +23,7 @@
 		text-decoration: underline;
 		text-decoration-style: dotted;
 		color: #b1b1b1;
+		max-width: 100%;
 	}
 
 	&__top {
@@ -36,7 +36,11 @@
 		align-items: flex-start;
 		justify-content: space-between;
 		min-height: 79px;
+		max-width: 100%;
 		padding: 10px 20px 13px 12px;
+		overflow-wrap: break-word;
+		background-color: #f7f7f7;
+		border-radius: 0 0 15px 15px;
 	}
 
 	&__image {
@@ -48,10 +52,9 @@
 
 	&__title {
 		display: block;
+		max-width: 76px;
 		font-size: 13px;
 		line-height: 130%;
-		white-space: unset;
-		word-break: normal;
 	}
 }
 

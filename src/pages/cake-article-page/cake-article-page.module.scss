@@ -29,6 +29,8 @@
 }
 
 .main {
+	max-width: 486px;
+
 	&__headline {
 		display: flex;
 		flex-direction: column;

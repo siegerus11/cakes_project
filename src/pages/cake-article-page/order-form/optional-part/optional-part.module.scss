@@ -1,25 +1,28 @@
 .component {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 	row-gap: 15px;
 	margin-top: 40px;
 }
 
 .title {
-	composes: title from '../filling-part/filling-part.module.scss'
+	composes: title from '../filling-part/filling-part.module.scss';
 }
 
 .wrapper {
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 	justify-content: space-between;
+	max-width: 100%;
 
 	label {
 		position: relative;
 		width: 45px;
-		height: 45px;
+		height: 43px;
 		border-radius: 8px;
 		background-color: #F7F7F7;
+		cursor: pointer;
 
 		&::before,
 		&::after {
@@ -84,13 +87,23 @@
 	display: flex;
 	flex-direction: column;
 
-	&__hedline,
+	&__headline,
 	&__price {
+		max-width: 330px;
 		font-size: 16px;
 		line-height: 150%;
 	}
 
 	&__price {
 		color: #b1b1b1;
+	}
+
+	&__headline {
+		letter-spacing: 0.3px;
+
+		&_fz14 {
+			font-size: 14px;
+			line-height: 150%;
+		}
 	}
 }

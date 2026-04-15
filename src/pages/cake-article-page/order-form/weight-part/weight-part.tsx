@@ -40,30 +40,18 @@ const WeightPartRadio = ({
 };
 
 type WeightPartProps = {
-	cake: CakeOffer;
+	radios: Radio[];
+	onRadioChange: (e: ChangeEvent<HTMLInputElement>, idx: number) => void;
 };
 
-const WeightPart = ({ cake }: WeightPartProps) => {
+const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 	const [isVisibleSelect, setIsVisibleSelect] = useState(false);
-
-	const initialRadios: Radio[] = createRadioInitial(cake.weight);
-	const [radios, setRadios] = useState<Radio[]>(initialRadios);
 
 	const handleRadioChange = (
 		e: ChangeEvent<HTMLInputElement>,
 		idx: number
 	) => {
-		setRadios(
-			radios.map((radio, i) => {
-				return i === idx
-					? {
-							...radio,
-							isChecked: true,
-							value: parseFloat(e.target.value)
-					  }
-					: { ...radio, isChecked: false, value: radio.weightValue };
-			})
-		);
+		onRadioChange(e, idx);
 	};
 
 	const handleInteractorClick = () => {
