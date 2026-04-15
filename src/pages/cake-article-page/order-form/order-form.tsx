@@ -4,13 +4,10 @@ import FillingPart from './filling-part/filling-part';
 import WeightPart from './weight-part/weight-part';
 import OptionalPart from './optional-part/optional-part';
 import styles from './order-form.module.scss';
-import {
-	CakeOffer,
-	Radio,
-	CheckBoxValue,
-	Optional
-} from '../../../types/types';
+import { CakeOffer, CheckBoxValue, Radio } from '../../../types/types';
 import { createRadioInitial } from '../../../utils/createRadioInitial';
+import { getPriceByCheckboxValue } from '../../../utils/getPriceByCheckboxValue';
+import { getPricesSum } from '../../../utils/getPricesSum';
 
 type OrderFormProps = {
 	cake: CakeOffer;
@@ -20,47 +17,28 @@ type OrderFormProps = {
 const OrderForm = ({ cake, onSetPriceCounter }: OrderFormProps) => {
 	const initialRadios: Radio[] = createRadioInitial(cake.weight);
 	const [radios, setRadios] = useState<Radio[]>(initialRadios);
-
-	const [optionalCheckBoxValues, setOptionalCheckBoxValues] = useState({
-		classicCandles: false,
-		numberCandles: false,
-		birthdayTopper: false,
-		other: false
-	});
-
-	const getPriceByValue = (
-		array: Optional[],
-		objectValue: CheckBoxValue
-	): number[] => {
-		const filteredChecked = Object.entries(objectValue)
-			.filter(item => item[1] === true)
-			.map(item => item[0]);
-
-		const relativePrices = array.map(objItem => {
-			const res: number[] = [];
-			filteredChecked.forEach(item => {
-				if (objItem.name === item) res.push(objItem.price);
-			});
-			return res;
+	const [optionalCheckBoxValues, setOptionalCheckBoxValues] =
+		useState<CheckBoxValue>({
+			classicCandles: false,
+			numberCandles: false,
+			birthdayTopper: false,
+			other: false
 		});
 
-		console.log(relativePrices.flat(1));
-		return relativePrices.flat(1);
-	};
-
-	const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
+	const handleOptionalCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setOptionalCheckBoxValues({
 			...optionalCheckBoxValues,
 			[e.target.id]: e.target.checked
 		});
-		getPriceByValue(cake.optionally, optionalCheckBoxValues);
 	};
 
-	// useEffect(() => {
-	// 	onSetPriceCounter(
-	// 		getPriceByValue(cake.optionally, optionalCheckBoxValues)!
-	// 	);
-	// }, [optionalCheckBoxValues]);
+	const optionalCheckboxPrices = getPriceByCheckboxValue(
+		cake.optionally,
+		optionalCheckBoxValues
+	);
+	useEffect(() => {
+		onSetPriceCounter(getPricesSum(optionalCheckboxPrices, cake.price));
+	}, [optionalCheckBoxValues]);
 
 	const handleRadioChange = (
 		e: ChangeEvent<HTMLInputElement>,
@@ -90,7 +68,7 @@ const OrderForm = ({ cake, onSetPriceCounter }: OrderFormProps) => {
 					/>
 					<OptionalPart
 						cake={cake}
-						onCheckBoxChange={handleCheckboxChange}
+						onCheckBoxChange={handleOptionalCheckboxChange}
 						checkBoxValues={optionalCheckBoxValues}
 					/>
 				</ol>

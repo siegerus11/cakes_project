@@ -20,9 +20,7 @@ const CakeArticlePage = (props: CakeArticlePageProps) => {
 	const [priceCounter, setPriceCounter] = useState<number>(initialprice);
 
 	const handlePriceCounter = (value: number) => {
-		if (value)
-			setPriceCounter(prevState => (prevState = prevState + value));
-		console.log(value);
+		setPriceCounter(value);
 	};
 
 	return (
@@ -42,7 +40,6 @@ const CakeArticlePage = (props: CakeArticlePageProps) => {
 							<div className={styles.adder}>
 								<span className={styles.adder__price}>
 									{`${priceCounter} ₽`}
-									{/* 4 600 ₽ */}
 								</span>
 								<Button
 									className={`button button_primary ${styles.button}`}

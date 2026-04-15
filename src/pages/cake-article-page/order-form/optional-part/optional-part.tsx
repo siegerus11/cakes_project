@@ -13,7 +13,7 @@ const OptionalPartItem = ({
 	checkBoxValues,
 	onCheckBoxChange
 }: OptionalPartItemProps) => {
-	const { title, name, price, isInclude, image } = option;
+	const { title, name, price, image } = option;
 
 	const maxTitleLength = 30;
 	const headlineClassName =
