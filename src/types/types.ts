@@ -24,6 +24,7 @@ export type Filling = {
 		| 'Суфле с персиками'
 		| 'Лесная ягода'
 		| 'Домашний';
+	price: number;
 	description: string;
 	isInclude: boolean;
 	image: string;

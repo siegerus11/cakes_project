@@ -1,13 +1,21 @@
-import { CakeOffer, Filling } from '../../../../types/types';
+import { ChangeEvent } from 'react';
+import { CakeOffer, CheckBoxValue, Filling } from '../../../../types/types';
 import styles from './filling-part.module.scss';
-
-type FillingItem = {};
 
 type FillingItemProps = {
 	fill: Filling;
+	checkBoxValues: CheckBoxValue;
+	onCheckBoxChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const FillingItem = ({ fill }: FillingItemProps) => {
+const FillingItem = ({
+	fill,
+	checkBoxValues,
+	onCheckBoxChange
+}: FillingItemProps) => {
+	const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
+		onCheckBoxChange(e);
+	};
 	return (
 		<>
 			<input
@@ -16,6 +24,8 @@ const FillingItem = ({ fill }: FillingItemProps) => {
 				hidden={true}
 				name={fill.name}
 				id={fill.name}
+				checked={checkBoxValues[fill.name]}
+				onChange={handleCheckboxChange}
 			/>
 			<label className={styles.card} htmlFor={fill.name}>
 				<div className={styles.card__top}>
@@ -41,15 +51,31 @@ const FillingItem = ({ fill }: FillingItemProps) => {
 
 type FillingPartProps = {
 	cake: CakeOffer;
+	checkBoxValues: CheckBoxValue;
+	onCheckBoxChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const FillingPart = ({ cake }: FillingPartProps) => {
+const FillingPart = ({
+	cake,
+	checkBoxValues,
+	onCheckBoxChange
+}: FillingPartProps) => {
+	const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
+		onCheckBoxChange(e);
+	};
 	return (
 		<li className={styles.component}>
 			<h3 className={styles.title}>Начинка</h3>
 			<div className={styles.wrapper}>
 				{cake.filling.map(fill => {
-					return <FillingItem fill={fill} key={fill.name} />;
+					return (
+						<FillingItem
+							fill={fill}
+							key={fill.name}
+							checkBoxValues={checkBoxValues}
+							onCheckBoxChange={handleCheckboxChange}
+						/>
+					);
 				})}
 			</div>
 		</li>

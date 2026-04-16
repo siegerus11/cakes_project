@@ -1,8 +1,9 @@
-import { Optional, CheckBoxValue } from '../types/types';
-export const getPriceByCheckboxValue = (
-	array: Optional[],
+import { Optional, CheckBoxValue, Filling } from '../types/types';
+
+export function getPricesByCheckboxValue<T extends Optional | Filling>(
+	array: T[],
 	objectValue: CheckBoxValue
-): number[] => {
+): number[] {
 	const filteredChecked = Object.entries(objectValue)
 		.filter(item => item[1] === true)
 		.map(item => item[0]);
@@ -16,4 +17,4 @@ export const getPriceByCheckboxValue = (
 	});
 
 	return relativePrices.flat(1);
-};
+}

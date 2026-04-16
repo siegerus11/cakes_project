@@ -21,6 +21,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -28,6 +29,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -35,6 +37,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -42,6 +45,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'homelike',
 				title: 'Домашний',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -96,6 +100,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -103,6 +108,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -110,6 +116,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -117,6 +124,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'homelike',
 				title: 'Домашний',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -171,6 +179,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -178,6 +187,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -185,6 +195,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -192,6 +203,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'homelike',
 				title: 'Домашний',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -246,6 +258,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -253,6 +266,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -260,6 +274,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -267,6 +282,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'homelike',
 				title: 'Домашний',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -322,6 +338,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -329,6 +346,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -336,6 +354,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -343,6 +362,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'homelike',
 				title: 'Домашний',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -397,6 +417,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -404,6 +425,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -411,6 +433,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -418,6 +441,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'homelike',
 				title: 'Домашний',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -472,6 +496,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -479,6 +504,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -486,6 +512,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -493,6 +520,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'homelike',
 				title: 'Домашний',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -547,6 +575,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'cherryWithYogurt',
 				title: 'Вишня с йогуртом',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -554,6 +583,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'souffleWithPeaches',
 				title: 'Суфле с персиками',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -561,6 +591,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'wildBerry',
 				title: 'Лесная ягода',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
@@ -568,6 +599,7 @@ export const cakeOffers: CakeOffer[] = [
 			{
 				name: 'homelike',
 				title: 'Домашний',
+				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
 				image: '/'
