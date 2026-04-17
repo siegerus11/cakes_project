@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 
 import Button from '../../components/ui/button/button';
 import Title from '../../components/title/title';
@@ -18,7 +18,9 @@ const CakeArticlePage = (props: CakeArticlePageProps) => {
 	const initialprice = activeOffer.price;
 
 	const [priceCounter, setPriceCounter] = useState<number>(initialprice);
-
+	const formattedpriceCounter = `${priceCounter.toString()[0]} ${priceCounter
+		.toString()
+		.slice(1)}`;
 	const handlePriceCounter = (value: number) => {
 		setPriceCounter(value);
 	};
@@ -39,7 +41,7 @@ const CakeArticlePage = (props: CakeArticlePageProps) => {
 							/>
 							<div className={styles.adder}>
 								<span className={styles.adder__price}>
-									{`${priceCounter} ₽`}
+									{`${formattedpriceCounter} ₽`}
 								</span>
 								<Button
 									className={`button button_primary ${styles.button}`}
@@ -51,6 +53,7 @@ const CakeArticlePage = (props: CakeArticlePageProps) => {
 						<OrderForm
 							cake={activeOffer}
 							onSetPriceCounter={handlePriceCounter}
+							initialprice={initialprice}
 						/>
 						<p className={styles.describe}>
 							{activeOffer.describe}

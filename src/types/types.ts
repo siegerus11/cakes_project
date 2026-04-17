@@ -1,4 +1,5 @@
 import { AppRoute } from '../constants';
+import { createInitial } from '../utils/createInitial';
 
 export type RoutePath = (typeof AppRoute)[keyof typeof AppRoute];
 
@@ -55,10 +56,12 @@ export type CakeOffer = {
 };
 
 export type Radio = {
-	isChecked: boolean;
 	weightValue: number;
+	isChecked: boolean;
 };
 
 export type CheckBoxValue = {
 	[key: string]: boolean;
 };
+
+export type Initial = ReturnType<typeof createInitial>;

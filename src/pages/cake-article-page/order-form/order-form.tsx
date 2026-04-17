@@ -15,13 +15,19 @@ import { createRadioInitial } from '../../../utils/createRadioInitial';
 import { getPricesByCheckboxValue } from '../../../utils/getPriceByCheckboxValue';
 import { getPricesSum } from '../../../utils/getPricesSum';
 import { createCheckBoxInitial } from '../../../utils/createCheckboxInitial';
+import { getPricesByRadioValue } from '../../../utils/getPricesByRadioValue';
 
 type OrderFormProps = {
 	cake: CakeOffer;
+	initialprice: number;
 	onSetPriceCounter: (value: number) => void;
 };
 
-const OrderForm = ({ cake, onSetPriceCounter }: OrderFormProps) => {
+const OrderForm = ({
+	cake,
+	initialprice,
+	onSetPriceCounter
+}: OrderFormProps) => {
 	const initialRadios: Radio[] = createRadioInitial(cake.weight);
 	const [radios, setRadios] = useState<Radio[]>(initialRadios);
 
@@ -62,13 +68,16 @@ const OrderForm = ({ cake, onSetPriceCounter }: OrderFormProps) => {
 		cake.filling,
 		fillingCheckBoxValues
 	);
+	const weightRadioPrices = getPricesByRadioValue(radios, cake.price);
 
 	useEffect(() => {
-		onSetPriceCounter(getPricesSum(optionalCheckboxPrices, cake.price));
-	}, [optionalCheckboxValues]);
-	useEffect(() => {
-		onSetPriceCounter(getPricesSum(fillingCheckboxPrices, cake.price));
-	}, [fillingCheckBoxValues]);
+		const groupPrices = [
+			...optionalCheckboxPrices,
+			...fillingCheckboxPrices,
+			...weightRadioPrices
+		];
+		onSetPriceCounter(getPricesSum(groupPrices, initialprice));
+	}, [optionalCheckboxValues, fillingCheckBoxValues, radios]);
 
 	const handleRadioChange = (
 		e: ChangeEvent<HTMLInputElement>,
