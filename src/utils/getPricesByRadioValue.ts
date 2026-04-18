@@ -4,7 +4,7 @@ export const getPricesByRadioValue = (
 	array: Radio[],
 	initialPrice: number
 ): number[] => {
-	const checked = array.find((item: Radio) => item.isChecked === true);
+	const checked = array.find((item: Radio) => item.isChecked);
 	switch (checked?.weightValue) {
 		case 1.5:
 			return [0];
