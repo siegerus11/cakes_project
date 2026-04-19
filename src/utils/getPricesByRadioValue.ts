@@ -10,7 +10,6 @@ export const getPricesByRadioValue = (
 	const multiplier = weightScale[checked?.weightValue!].multiplier;
 
 	if (!checked?.weightValue) return [0];
-	console.log(multiplier);
 
 	return [multiplier * initialPrice];
 };
