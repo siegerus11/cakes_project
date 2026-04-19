@@ -20,11 +20,18 @@ const Slider = ({ cake }: SliderProps) => {
 	const slidesInitial = getSlidesInitial(cake.images);
 	const [slideIndex, setSlideIndex] = useState(0);
 	const [slides, setSlides] = useState<Slide[]>(slidesInitial);
-
 	const handleSlideButtonClick = (num: number) => {
-		if (slideIndex < 0) setSlideIndex(slides.length - 1);
-		if (slideIndex >= slides.length) setSlideIndex(0);
-		setSlideIndex(prevState => prevState + num);
+		setSlideIndex(prevState => {
+			const newIndex = prevState + num;
+			if (newIndex < 0) return 0;
+			else if (newIndex >= slides.length) return slides.length - 1;
+			console.log(slideIndex);
+			return newIndex;
+		});
+	};
+
+	const handleDotsClick = (idx: number) => {
+		setSlideIndex(idx);
 	};
 
 	useEffect(() => {
@@ -35,7 +42,7 @@ const Slider = ({ cake }: SliderProps) => {
 					: { ...slide, isVisible: false };
 			})
 		);
-	}, [slideIndex, setSlideIndex]);
+	}, [slideIndex]);
 
 	return (
 		<div className={styles.component}>
@@ -54,26 +61,39 @@ const Slider = ({ cake }: SliderProps) => {
 						)
 					);
 				})}
-			</div>
-			<button
-				className={styles.back}
-				type="button"
-				onClick={() => handleSlideButtonClick(-1)}
-			>
-				Prev
-			</button>
-			<button
-				className={styles.forward}
-				type="button"
-				onClick={() => handleSlideButtonClick(1)}
-			>
-				Next
-			</button>
-			<div className={styles.dots}>
-				<button></button>
-				<button></button>
-				<button></button>
-				<button></button>
+
+				{slideIndex > 0 && (
+					<button
+						className={styles.back}
+						type="button"
+						onClick={() => handleSlideButtonClick(-1)}
+					></button>
+				)}
+				{slideIndex <= slides.length && (
+					<button
+						className={styles.forward}
+						type="button"
+						onClick={() => handleSlideButtonClick(1)}
+					></button>
+				)}
+				<div className={styles.dots}>
+					{slides.map((slide, i) => {
+						const keyValue = `${Math.random() * i}-${
+							slide.slideSrc
+						}`;
+						return (
+							<button
+								className={
+									i === slideIndex
+										? `${styles.dots__dot} ${styles.dots__dot_active}`
+										: styles.dots__dot
+								}
+								key={keyValue}
+								onClick={() => handleDotsClick(i)}
+							></button>
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	);
