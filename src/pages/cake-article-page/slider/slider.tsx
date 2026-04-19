@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CakeOffer, Slide } from '../../../types/types';
 import styles from './slider.module.scss';
 
 type SliderProps = {
 	cake: CakeOffer;
 };
-let slideIndex = 0;
 
 const Slider = ({ cake }: SliderProps) => {
 	const getSlidesInitial = (array: string[]): Slide[] => {
@@ -19,17 +18,16 @@ const Slider = ({ cake }: SliderProps) => {
 	};
 
 	const slidesInitial = getSlidesInitial(cake.images);
-
+	const [slideIndex, setSlideIndex] = useState(0);
 	const [slides, setSlides] = useState<Slide[]>(slidesInitial);
 
-	const setSlideIndex = (num: number) => {
-		slideIndex = slideIndex + num;
-		if (slideIndex <= 0) slideIndex = slides.length - 1;
-		if (slideIndex >= slides.length) slideIndex = 0;
+	const handleSlideButtonClick = (num: number) => {
+		if (slideIndex < 0) setSlideIndex(slides.length - 1);
+		if (slideIndex >= slides.length) setSlideIndex(0);
+		setSlideIndex(prevState => prevState + num);
 	};
 
-	const handleSlideButtonClick = (num: number) => {
-		setSlideIndex(num);
+	useEffect(() => {
 		setSlides(
 			slides.map((slide, idx) => {
 				return idx === slideIndex
@@ -37,17 +35,7 @@ const Slider = ({ cake }: SliderProps) => {
 					: { ...slide, isVisible: false };
 			})
 		);
-	};
-
-	// useEffect(() => {
-	// 	setSlides(
-	// 		slides.map((slide, idx) => {
-	// 			return idx === slideIndex
-	// 				? { ...slide, isVisible: true }
-	// 				: { ...slide, isVisible: false };
-	// 		})
-	// 	);
-	// }, [slideIndex]);
+	}, [slideIndex, setSlideIndex]);
 
 	return (
 		<div className={styles.component}>
