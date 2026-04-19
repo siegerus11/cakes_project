@@ -1,18 +1,16 @@
 import { Radio } from '../types/types';
+import { weightScale } from '../constants';
 
 export const getPricesByRadioValue = (
 	array: Radio[],
 	initialPrice: number
 ): number[] => {
 	const checked = array.find((item: Radio) => item.isChecked);
-	switch (checked?.weightValue) {
-		case 1.5:
-			return [0];
-		case 3:
-			return [initialPrice / 1.5];
-		case 5:
-			return [initialPrice * 1.5];
-		default:
-			return [0];
-	}
+
+	const multiplier = weightScale[checked?.weightValue!].multiplier;
+
+	if (!checked?.weightValue) return [0];
+	console.log(multiplier);
+
+	return [multiplier * initialPrice];
 };

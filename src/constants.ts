@@ -1,4 +1,4 @@
-import { Nav } from './types/types';
+import { Nav, WeightRelevant } from './types/types';
 
 export const AppRoute = {
 	ROOT: '/',
@@ -79,3 +79,18 @@ export const SORT_KINDS = [
 export const NameSpace = {
 	Data: 'DATA'
 } as const;
+
+export const weightScale: Record<string, WeightRelevant> = {
+	1.5: {
+		multiplier: 0,
+		persons: '10-14'
+	},
+	3: {
+		multiplier: 0.5,
+		persons: '15-18'
+	},
+	5: {
+		multiplier: 1.5,
+		persons: '20-25'
+	}
+};

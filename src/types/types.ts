@@ -64,4 +64,7 @@ export type CheckBoxValue = {
 	[key: string]: boolean;
 };
 
-export type Initial = ReturnType<typeof createInitial>;
+export type WeightRelevant = {
+	multiplier: number;
+	persons: string;
+};
