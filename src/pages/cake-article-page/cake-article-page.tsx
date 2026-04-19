@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+import { useState, Fragment } from 'react';
 
+import Button from '../../components/ui/button/button';
 import Title from '../../components/title/title';
 import { AppRoute } from '../../constants';
 import { cakeOffers } from '../../mocks/cake-offers/cake-offers';
@@ -34,9 +36,6 @@ const CakeArticlePage = (props: CakeArticlePageProps) => {
 							cake={activeOffer}
 							initialprice={initialprice}
 						/>
-						<p className={styles.describe}>
-							{activeOffer.describe}
-						</p>
 					</section>
 				</div>
 			</div>

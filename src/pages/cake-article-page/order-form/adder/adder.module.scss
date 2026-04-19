@@ -1,7 +1,23 @@
+.component {
+  margin-top: 37px;
+
+  &_wrapped {
+    margin-top: 33px;
+    padding: 15px 15px 15px 20px;
+    border-radius: 35px;
+    background-color: #f7f7f7;
+
+    .adder {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
 .adder {
   display: flex;
   align-items: center;
-  margin-top: 37px;
+
 
   &__price {
     min-width: 90px;

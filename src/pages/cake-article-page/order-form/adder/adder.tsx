@@ -3,20 +3,25 @@ import Button from '../../../../components/ui/button/button';
 
 type AdderProps = {
 	priceCounter: number;
+	isWrapped: boolean;
 };
 
-const Adder = ({ priceCounter }: AdderProps) => {
+const Adder = ({ priceCounter, isWrapped }: AdderProps) => {
 	const formattedpriceCounter = `${priceCounter.toString()[0]} ${priceCounter
 		.toString()
 		.slice(1)}`;
+
+	const className = isWrapped
+		? `${styles.component} ${styles.component_wrapped}`
+		: styles.component;
 	return (
-		<div className={styles.component}>
+		<div className={className}>
 			<div className={styles.adder}>
 				<span className={styles.adder__price}>
 					{`${formattedpriceCounter} ₽`}
 				</span>
 				<Button
-					className={`button button_primary ${styles.button}`}
+					className={`button button_primary ${styles.adder__button}`}
 					type={'submit'}
 				>
 					<span>Добавить в корзину</span>

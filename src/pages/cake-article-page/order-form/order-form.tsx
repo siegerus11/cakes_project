@@ -97,7 +97,7 @@ const OrderForm = ({ cake, initialprice }: OrderFormProps) => {
 	return (
 		<div className={styles.component}>
 			<form className={styles.feed}>
-				<Adder priceCounter={priceCounter} />
+				<Adder priceCounter={priceCounter} isWrapped={false} />
 				<ol className={styles.list}>
 					<FillingPart
 						cake={cake}
@@ -114,6 +114,8 @@ const OrderForm = ({ cake, initialprice }: OrderFormProps) => {
 						checkBoxValues={optionalCheckboxValues}
 					/>
 				</ol>
+				<p className={styles.describe}>{cake.describe}</p>
+				<Adder priceCounter={priceCounter} isWrapped />
 			</form>
 		</div>
 	);
