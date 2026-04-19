@@ -27,8 +27,11 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 			</div>
 			<span className={cardTitleClass}>{title}</span>
 			<div className={styles.bottom}>
-				<span className={styles.cost}>{price}</span>
-				<Button className={`button button_tertiary ${styles.button}`} />
+				<span className={styles.cost}>{price} ₽</span>
+				<Button
+					className={`button button_tertiary ${styles.button}`}
+					type={'button'}
+				/>
 			</div>
 		</Link>
 	);

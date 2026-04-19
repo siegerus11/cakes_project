@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState, Fragment } from 'react';
 
-import Button from '../../components/ui/button/button';
 import Title from '../../components/title/title';
 import { AppRoute } from '../../constants';
 import { cakeOffers } from '../../mocks/cake-offers/cake-offers';
@@ -17,14 +15,6 @@ const CakeArticlePage = (props: CakeArticlePageProps) => {
 	const activeOffer = cakeOffers[0];
 	const initialprice = activeOffer.price;
 
-	const [priceCounter, setPriceCounter] = useState<number>(initialprice);
-	const formattedpriceCounter = `${priceCounter.toString()[0]} ${priceCounter
-		.toString()
-		.slice(1)}`;
-	const handlePriceCounter = (value: number) => {
-		setPriceCounter(value);
-	};
-
 	return (
 		<div className={`page ${styles.component}`}>
 			<div className="container_secondary container">
@@ -39,20 +29,9 @@ const CakeArticlePage = (props: CakeArticlePageProps) => {
 								titleText={pageTitle}
 								titleClass={titleClassName}
 							/>
-							<div className={styles.adder}>
-								<span className={styles.adder__price}>
-									{`${formattedpriceCounter} ₽`}
-								</span>
-								<Button
-									className={`button button_primary ${styles.button}`}
-								>
-									<span>Добавить в корзину</span>
-								</Button>
-							</div>
 						</div>
 						<OrderForm
 							cake={activeOffer}
-							onSetPriceCounter={handlePriceCounter}
 							initialprice={initialprice}
 						/>
 						<p className={styles.describe}>

@@ -4,9 +4,10 @@ type ButtonProps = PropsWithChildren<{
 	className: string;
 	isLink?: boolean;
 	url?: string;
+	type: 'button' | 'submit' | 'reset' | undefined;
 }>;
 
-const Button = ({ children, className, isLink, url }: ButtonProps) => {
+const Button = ({ children, className, isLink, url, type }: ButtonProps) => {
 	return (
 		<div>
 			{isLink ? (
@@ -14,7 +15,7 @@ const Button = ({ children, className, isLink, url }: ButtonProps) => {
 					{children}
 				</a>
 			) : (
-				<button className={`${className}`} type="button">
+				<button className={`${className}`} type={type}>
 					{children}
 				</button>
 			)}

@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, useEffect } from 'react';
 
+import Adder from './adder/adder';
 import FillingPart from './filling-part/filling-part';
 import WeightPart from './weight-part/weight-part';
 import OptionalPart from './optional-part/optional-part';
@@ -20,14 +21,11 @@ import { getPricesByRadioValue } from '../../../utils/getPricesByRadioValue';
 type OrderFormProps = {
 	cake: CakeOffer;
 	initialprice: number;
-	onSetPriceCounter: (value: number) => void;
 };
 
-const OrderForm = ({
-	cake,
-	initialprice,
-	onSetPriceCounter
-}: OrderFormProps) => {
+const OrderForm = ({ cake, initialprice }: OrderFormProps) => {
+	const [priceCounter, setPriceCounter] = useState<number>(initialprice);
+
 	const initialRadios: Radio[] = createRadioInitial(cake.weight);
 	const [radios, setRadios] = useState<Radio[]>(initialRadios);
 
@@ -76,7 +74,7 @@ const OrderForm = ({
 			...fillingCheckboxPrices,
 			...weightRadioPrices
 		];
-		onSetPriceCounter(getPricesSum(groupPrices, initialprice));
+		setPriceCounter(getPricesSum(groupPrices, initialprice));
 	}, [optionalCheckboxValues, fillingCheckBoxValues, radios]);
 
 	const handleRadioChange = (
@@ -99,6 +97,7 @@ const OrderForm = ({
 	return (
 		<div className={styles.component}>
 			<form className={styles.feed}>
+				<Adder priceCounter={priceCounter} />
 				<ol className={styles.list}>
 					<FillingPart
 						cake={cake}

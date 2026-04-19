@@ -38,31 +38,6 @@
 	}
 }
 
-.adder {
-	display: flex;
-	align-items: center;
-	margin-top: 37px;
-
-	&__price {
-		min-width: 90px;
-		margin-right: 35px;
-		font-weight: 700;
-		font-size: 24px;
-		letter-spacing: 0.5px;
-	}
-}
-
-.button {
-	font-size: 16px;
-	line-height: 113%;
-	padding: 20px 30px;
-	border-radius: 25px;
-
-	span {
-		letter-spacing: 0.3px;
-	}
-}
-
 .describe {
 	max-width: 484px;
 	margin-top: 52px;
@@ -71,5 +46,4 @@
 	line-height: 150%;
 	letter-spacing: 0.2px;
 	white-space: pre-line;
-	// white-space: pre-wrap;
 }
