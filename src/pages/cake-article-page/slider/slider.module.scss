@@ -5,3 +5,14 @@
 	border-radius: 30px;
 	background-color: var(--secondary-color);
 }
+
+.wrapper {
+	min-width: 100%;
+	height: auto;
+
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+}

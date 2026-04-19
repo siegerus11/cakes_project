@@ -60,6 +60,12 @@ export type Radio = {
 	isChecked: boolean;
 };
 
+export type Slide = {
+	slideSrc: string;
+	slideAlt: 'cake-slide';
+	isVisible: boolean;
+};
+
 export type CheckBoxValue = {
 	[key: string]: boolean;
 };

@@ -24,7 +24,7 @@ const CakeArticlePage = (props: CakeArticlePageProps) => {
 					Назад
 				</Link>
 				<div className={styles.wrapper}>
-					<Slider />
+					<Slider cake={activeOffer} />
 					<section className={styles.main}>
 						<div className={styles.main__headline}>
 							<Title
