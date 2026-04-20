@@ -71,10 +71,11 @@ const CakeArticlePage = () => {
 						<Button
 							className={`button button_primary ${styles.popup__button}`}
 							type="button"
+							onClick={() => handleDescribeClick(null)}
 						>
 							<span>Понятно, спасибо</span>
 						</Button>
-						<ul className={styles.popup__list}>
+						<ul className={styles.popup__toplist}>
 							<li>Вишня</li>
 							<li>
 								Йогуртовый крем на основе натурального йогурта
@@ -84,6 +85,12 @@ const CakeArticlePage = () => {
 							<li>Вишневый сироп</li>
 							<li>Сливочное масло</li>
 							<li>Натуральный ванилин</li>
+						</ul>
+						<ul className={styles.popup__bottomlist}>
+							<li>Калорийность: 200 ккал</li>
+							<li>Белки: 5 г</li>
+							<li>Жиры: 12 г</li>
+							<li>Углеводы: 20 г</li>
 						</ul>
 					</Popup>
 				);

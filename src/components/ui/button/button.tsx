@@ -1,13 +1,21 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, MouseEventHandler } from 'react';
 
 type ButtonProps = PropsWithChildren<{
 	className: string;
 	isLink?: boolean;
 	url?: string;
 	type: 'button' | 'submit' | 'reset' | undefined;
+	onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }>;
 
-const Button = ({ children, className, isLink, url, type }: ButtonProps) => {
+const Button = ({
+	children,
+	className,
+	isLink,
+	url,
+	type,
+	onClick
+}: ButtonProps) => {
 	return (
 		<div>
 			{isLink ? (
@@ -15,7 +23,11 @@ const Button = ({ children, className, isLink, url, type }: ButtonProps) => {
 					{children}
 				</a>
 			) : (
-				<button className={`${className}`} type={type}>
+				<button
+					className={`${className}`}
+					type={type}
+					onClick={onClick}
+				>
 					{children}
 				</button>
 			)}
