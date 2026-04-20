@@ -42,4 +42,8 @@
 .popup {
 	display: none;
 	padding: 27px 30px 30px 30px;
+
+	&_active {
+		display: block;
+	}
 }

@@ -15,6 +15,7 @@ const CakeArticlePage = () => {
 	const activeOffer = cakeOffers[0];
 	const initialprice = activeOffer.price;
 	const popupClass = `popup ${styles.popup}`;
+	const popupClassActive = `popup ${styles.popup} ${styles.popup_active}`;
 	const popupTitleClass = 'title_fz22 title_fw800';
 
 	const { filling } = activeOffer;
@@ -26,7 +27,6 @@ const CakeArticlePage = () => {
 			prevState = idx;
 			return prevState;
 		});
-		console.log(visibilityIndex);
 	};
 	return (
 		<div className={`page ${styles.component}`}>
@@ -56,7 +56,11 @@ const CakeArticlePage = () => {
 				return (
 					<Popup
 						key={keyValue}
-						wrappClass={popupClass}
+						wrappClass={
+							i === visibilityIndex
+								? `${popupClass} ${popupClassActive}`
+								: popupClass
+						}
 						titleClass={popupTitleClass}
 						titleText={fillingItem.title}
 					></Popup>
