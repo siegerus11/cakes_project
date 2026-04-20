@@ -50,8 +50,14 @@
 	}
 }
 
-// @media (max-width: 767px) {}
+@media (max-width: 767px) {}
 
-// @media (max-width: 576px) {}
+@media (max-width: 576px) {
+	.list {
+		li {
+			max-width: 100%;
+		}
+	}
+}
 
-// @media (max-width: 360px) {}
+@media (max-width: 360px) {}
