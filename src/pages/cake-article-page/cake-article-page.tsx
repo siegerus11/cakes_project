@@ -20,14 +20,15 @@ const CakeArticlePage = () => {
 
 	const { filling } = activeOffer;
 
-	const [visibilityIndex, setVisibilityIndex] = useState<number>(0);
+	const [visibilityIndex, setVisibilityIndex] = useState<number | null>(null);
 
-	const handleDescribeClick = (idx: number) => {
+	const handleDescribeClick = (idx: number | null) => {
 		setVisibilityIndex(prevState => {
 			prevState = idx;
 			return prevState;
 		});
 	};
+
 	return (
 		<div className={`page ${styles.component}`}>
 			<div className="container_secondary container">
@@ -63,6 +64,7 @@ const CakeArticlePage = () => {
 						}
 						titleClass={popupTitleClass}
 						titleText={fillingItem.title}
+						onCloseClick={handleDescribeClick}
 					></Popup>
 				);
 			})}
