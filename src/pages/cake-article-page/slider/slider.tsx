@@ -25,7 +25,6 @@ const Slider = ({ cake }: SliderProps) => {
 			const newIndex = prevState + num;
 			if (newIndex < 0) return 0;
 			else if (newIndex >= slides.length) return slides.length - 1;
-			console.log(slideIndex);
 			return newIndex;
 		});
 	};
@@ -69,7 +68,7 @@ const Slider = ({ cake }: SliderProps) => {
 						onClick={() => handleSlideButtonClick(-1)}
 					></button>
 				)}
-				{slideIndex <= slides.length && (
+				{slideIndex < slides.length - 1 && (
 					<button
 						className={styles.forward}
 						type="button"
