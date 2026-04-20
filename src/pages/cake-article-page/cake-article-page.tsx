@@ -1,21 +1,25 @@
 import { Link } from 'react-router-dom';
-import { useState, Fragment } from 'react';
 
-import Button from '../../components/ui/button/button';
+import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
 import { AppRoute } from '../../constants';
 import { cakeOffers } from '../../mocks/cake-offers/cake-offers';
 import Slider from './slider/slider';
 import OrderForm from './order-form/order-form';
 import styles from './cake-article-page.module.scss';
+import { useState } from 'react';
 
-type CakeArticlePageProps = {};
-
-const CakeArticlePage = (props: CakeArticlePageProps) => {
+const CakeArticlePage = () => {
 	const pageTitle = 'Торт с ягодами и безе';
 	const titleClassName = 'title_fz30 title_fw800';
 	const activeOffer = cakeOffers[0];
 	const initialprice = activeOffer.price;
+	const popupClass = `popup ${styles.popup}`;
+	const popupTitleClass = 'title_fz22 title_fw800';
+
+	const { filling } = activeOffer;
+
+	const [visibilityIndex, setVisibilityIndex] = useState<number>(0);
 
 	return (
 		<div className={`page ${styles.component}`}>
@@ -39,6 +43,15 @@ const CakeArticlePage = (props: CakeArticlePageProps) => {
 					</section>
 				</div>
 			</div>
+			{filling.map(fillingItem => {
+				return (
+					<Popup
+						wrappClass={popupClass}
+						titleClass={popupTitleClass}
+						titleText={fillingItem.title}
+					></Popup>
+				);
+			})}
 		</div>
 	);
 };

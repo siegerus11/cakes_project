@@ -26,8 +26,16 @@
 		font-size: 30px;
 	}
 
+	&:global(_fz22) {
+		font-size: 22px;
+	}
+
 	&:global(_fw800) {
 		font-weight: 800;
+	}
+
+	&:global(_fw700) {
+		font-weight: 700;
 	}
 }
 

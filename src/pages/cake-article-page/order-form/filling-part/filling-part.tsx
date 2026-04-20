@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { CakeOffer, CheckBoxValue, Filling } from '../../../../types/types';
 import styles from './filling-part.module.scss';
 
@@ -13,6 +13,7 @@ const FillingItem = ({
 	checkBoxValues,
 	onCheckBoxChange
 }: FillingItemProps) => {
+	const [popupVisible, setPopupVisible] = useState();
 	const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
 		onCheckBoxChange(e);
 	};
