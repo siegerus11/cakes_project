@@ -24,7 +24,7 @@ type OrderFormProps = {
 	onDescribeClick: (idx: number) => void;
 };
 
-const OrderForm = ({ cake, initialprice }: OrderFormProps) => {
+const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const [priceCounter, setPriceCounter] = useState<number>(initialprice);
 
 	const initialRadios: Radio[] = createRadioInitial(cake.weight);
@@ -104,6 +104,7 @@ const OrderForm = ({ cake, initialprice }: OrderFormProps) => {
 						cake={cake}
 						onCheckBoxChange={handleFillingCheckboxChange}
 						checkBoxValues={fillingCheckBoxValues}
+						onDescribeClick={onDescribeClick}
 					/>
 					<WeightPart
 						onRadioChange={handleRadioChange}

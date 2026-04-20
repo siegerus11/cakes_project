@@ -22,8 +22,11 @@ const CakeArticlePage = () => {
 	const [visibilityIndex, setVisibilityIndex] = useState<number>(0);
 
 	const handleDescribeClick = (idx: number) => {
-		console.log(idx);
-		setVisibilityIndex(idx);
+		setVisibilityIndex(prevState => {
+			prevState = idx;
+			return prevState;
+		});
+		console.log(visibilityIndex);
 	};
 	return (
 		<div className={`page ${styles.component}`}>
