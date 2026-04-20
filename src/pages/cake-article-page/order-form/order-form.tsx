@@ -21,6 +21,7 @@ import { getPricesByRadioValue } from '../../../utils/getPricesByRadioValue';
 type OrderFormProps = {
 	cake: CakeOffer;
 	initialprice: number;
+	onDescribeClick: (idx: number) => void;
 };
 
 const OrderForm = ({ cake, initialprice }: OrderFormProps) => {

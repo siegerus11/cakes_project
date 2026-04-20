@@ -3,20 +3,28 @@ import { CakeOffer, CheckBoxValue, Filling } from '../../../../types/types';
 import styles from './filling-part.module.scss';
 
 type FillingItemProps = {
+	index: number;
 	fill: Filling;
 	checkBoxValues: CheckBoxValue;
 	onCheckBoxChange: (e: ChangeEvent<HTMLInputElement>) => void;
+	onDescribeClick: (idx: number) => void;
 };
 
 const FillingItem = ({
+	index,
 	fill,
 	checkBoxValues,
-	onCheckBoxChange
+	onCheckBoxChange,
+	onDescribeClick
 }: FillingItemProps) => {
-	const [popupVisible, setPopupVisible] = useState();
 	const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
 		onCheckBoxChange(e);
 	};
+
+	const handleDescribeClick = (idx: number) => {
+		onDescribeClick(idx);
+	};
+
 	return (
 		<>
 			<input
@@ -41,7 +49,11 @@ const FillingItem = ({
 
 				<div className={styles.card__bottom}>
 					<span className={styles.card__title}>{fill.title}</span>
-					<button className={styles.card__button} type="button">
+					<button
+						className={styles.card__button}
+						type="button"
+						onClick={() => handleDescribeClick(index)}
+					>
 						описание
 					</button>
 				</div>
@@ -54,12 +66,14 @@ type FillingPartProps = {
 	cake: CakeOffer;
 	checkBoxValues: CheckBoxValue;
 	onCheckBoxChange: (e: ChangeEvent<HTMLInputElement>) => void;
+	onDescribeClick: (idx: number) => void;
 };
 
 const FillingPart = ({
 	cake,
 	checkBoxValues,
-	onCheckBoxChange
+	onCheckBoxChange,
+	onDescribeClick
 }: FillingPartProps) => {
 	const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
 		onCheckBoxChange(e);
@@ -68,13 +82,15 @@ const FillingPart = ({
 		<li className={styles.component}>
 			<h3 className={styles.title}>Начинка</h3>
 			<div className={styles.wrapper}>
-				{cake.filling.map(fill => {
+				{cake.filling.map((fill, i) => {
 					return (
 						<FillingItem
+							index={i}
 							fill={fill}
 							key={fill.name}
 							checkBoxValues={checkBoxValues}
 							onCheckBoxChange={handleCheckboxChange}
+							onDescribeClick={onDescribeClick}
 						/>
 					);
 				})}

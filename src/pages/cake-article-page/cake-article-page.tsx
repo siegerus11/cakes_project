@@ -21,6 +21,10 @@ const CakeArticlePage = () => {
 
 	const [visibilityIndex, setVisibilityIndex] = useState<number>(0);
 
+	const handleDescribeClick = (idx: number) => {
+		console.log(idx);
+		setVisibilityIndex(idx);
+	};
 	return (
 		<div className={`page ${styles.component}`}>
 			<div className="container_secondary container">
@@ -39,13 +43,16 @@ const CakeArticlePage = () => {
 						<OrderForm
 							cake={activeOffer}
 							initialprice={initialprice}
+							onDescribeClick={handleDescribeClick}
 						/>
 					</section>
 				</div>
 			</div>
-			{filling.map(fillingItem => {
+			{filling.map((fillingItem, i) => {
+				const keyValue = `${Math.random() * i}-${fillingItem.name}`;
 				return (
 					<Popup
+						key={keyValue}
 						wrappClass={popupClass}
 						titleClass={popupTitleClass}
 						titleText={fillingItem.title}
