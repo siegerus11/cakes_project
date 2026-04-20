@@ -30,7 +30,7 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 				<span className={styles.cost}>{price} ₽</span>
 				<Button
 					className={`button button_tertiary ${styles.button}`}
-					type={'button'}
+					type="button"
 				/>
 			</div>
 		</Link>

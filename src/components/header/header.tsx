@@ -47,7 +47,7 @@ const Header = () => {
 					<div className={styles.secondary}>
 						<Button
 							className={`button button_primary ${styles.button}`}
-							type={'button'}
+							type="button"
 						>
 							<svg
 								className={styles.button__icon}
