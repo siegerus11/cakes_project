@@ -41,7 +41,32 @@
 
 .popup {
 	display: none;
+	min-width: 30%;
 	padding: 27px 30px 30px 30px;
+
+	&__description {
+		margin-top: 15px;
+	}
+
+	&__list {
+		margin-top: 15px;
+		margin-left: 30px;
+		list-style-type: disc;
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 80%;
+		margin: 0 auto;
+		background-color: #ffe4ec;
+
+		span {
+			font-weight: 600;
+			color: #ff4c80;
+		}
+	}
 
 	&_active {
 		display: block;
