@@ -1,4 +1,4 @@
-import Button from '../../../../components/ui/button/button';
+import {SubmitButton} from '../../../../components/ui/button/button';
 import styles from './adder.module.scss';
 
 type AdderProps = {
@@ -20,11 +20,11 @@ const Adder = ({ priceCounter, isWrapped }: AdderProps) => {
 				<span className={styles.adder__price}>
 					{`${formattedpriceCounter} ₽`}
 				</span>
-				<Button
+				<SubmitButton
 					className={`button button_primary ${styles.adder__button}`}
 				>
 					<span>Добавить в корзину</span>
-				</Button>
+				</SubmitButton>
 			</div>
 		</div>
 	);

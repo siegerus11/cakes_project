@@ -1,5 +1,30 @@
 import { PropsWithChildren, MouseEventHandler } from 'react';
 
+type SubmitButtonProps = PropsWithChildren<{
+	className: string;
+	onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
+}>;
+
+const SubmitButton = ({
+	children,
+	className,
+	onClick
+}: SubmitButtonProps) => {
+	return (
+		<div>
+				<button
+					className={`${className}`}
+					type="submit"
+					onClick={onClick}
+				>
+					{children}
+				</button>
+		</div>
+	);
+};
+
+export {SubmitButton};
+
 type ButtonProps = PropsWithChildren<{
 	className: string;
 	isLink?: boolean;
@@ -35,3 +60,6 @@ const Button = ({
 };
 
 export default Button;
+
+
+

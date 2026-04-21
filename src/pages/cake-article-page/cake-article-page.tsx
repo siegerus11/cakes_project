@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
+import ButtonController from '../../components/button-controller/button-controller';
 import { AppRoute } from '../../constants';
 import { cakeOffers } from '../../mocks/cake-offers/cake-offers';
 import styles from './cake-article-page.module.scss';
 import OrderForm from './order-form/order-form';
 import Slider from './slider/slider';
+
 
 const CakeArticlePage = () => {
 	const pageTitle = 'Торт с ягодами и безе';
@@ -28,6 +30,7 @@ const CakeArticlePage = () => {
 	};
 
 	return (
+<>
 		<div className={`page ${styles.component}`}>
 			<div className="container_secondary container">
 				<Link className={styles.back} to={AppRoute.CAKES_CATALOG}>
@@ -95,6 +98,11 @@ const CakeArticlePage = () => {
 				);
 			})}
 		</div>
+			<ButtonController>
+
+			</ButtonController>
+</>
+
 	);
 };
 

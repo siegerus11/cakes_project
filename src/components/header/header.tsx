@@ -4,7 +4,7 @@ import { LAYOUT_NAVS } from '../../constants';
 import HamburgerPopup from '../hamburger-popup/hamburger-popup';
 import Logo from '../logo/logo';
 import NavMenu from '../nav-menu/nav-menu';
-import Button from '../ui/button/button';
+import SubmitButton from '../ui/button/button';
 import Hamburger from '../ui/hamburger/hamburger';
 import styles from './header.module.scss';
 
@@ -45,7 +45,7 @@ const Header = () => {
 						</div>
 					</div>
 					<div className={styles.secondary}>
-						<Button
+						<SubmitButton
 							className={`button button_primary ${styles.button}`}
 						>
 							<svg
@@ -60,7 +60,7 @@ const Header = () => {
 							<span className={styles.button__price}>
 								6 800 ₽
 							</span>
-						</Button>
+						</SubmitButton>
 						<Hamburger onHamburgerClick={handleHamburgerClick} />
 					</div>
 				</div>
