@@ -103,6 +103,14 @@
 	}
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+	.main {
+		padding: 0 15px;
+	}
+
+	.back {
+		display: none;
+	}
+}
 
 // @media (max-width: 360px) {}
