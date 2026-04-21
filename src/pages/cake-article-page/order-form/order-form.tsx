@@ -116,7 +116,10 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 						checkBoxValues={optionalCheckboxValues}
 					/>
 				</ol>
-				<p className={styles.describe}>{cake.describe}</p>
+				<div className={styles.describe}>
+					<button className={styles.describe__arrow} type="button"></button>
+					<p>{cake.describe}</p>
+				</div>
 				<Adder priceCounter={priceCounter} isWrapped />
 			</form>
 		</div>
