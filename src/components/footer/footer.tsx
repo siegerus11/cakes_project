@@ -56,7 +56,6 @@ const Footer = () => {
 							className={`button button_secondary ${styles.button}`}
 							isLink
 							url="/"
-							type="button"
 						>
 							<span>Написать в Telegram</span>
 							<svg

@@ -22,7 +22,6 @@ const Adder = ({ priceCounter, isWrapped }: AdderProps) => {
 				</span>
 				<Button
 					className={`button button_primary ${styles.adder__button}`}
-					type="submit"
 				>
 					<span>Добавить в корзину</span>
 				</Button>

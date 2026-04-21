@@ -70,7 +70,6 @@ const CakeArticlePage = () => {
 						</p>
 						<Button
 							className={`button button_primary ${styles.popup__button}`}
-							type="button"
 							onClick={() => handleDescribeClick(null)}
 						>
 							<span>Понятно, спасибо</span>

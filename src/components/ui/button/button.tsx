@@ -4,7 +4,6 @@ type ButtonProps = PropsWithChildren<{
 	className: string;
 	isLink?: boolean;
 	url?: string;
-	type: 'button' | 'submit' | 'reset' | undefined;
 	onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }>;
 
@@ -13,7 +12,6 @@ const Button = ({
 	className,
 	isLink,
 	url,
-	type,
 	onClick
 }: ButtonProps) => {
 	return (
@@ -23,9 +21,10 @@ const Button = ({
 					{children}
 				</a>
 			) : (
+				
 				<button
 					className={`${className}`}
-					type={type}
+					type="button"
 					onClick={onClick}
 				>
 					{children}
