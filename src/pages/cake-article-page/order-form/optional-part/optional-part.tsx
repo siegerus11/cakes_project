@@ -1,4 +1,5 @@
 import { ChangeEvent } from 'react';
+
 import { CakeOffer, Optional, CheckBoxValue } from '../../../../types/types';
 import styles from './optional-part.module.scss';
 

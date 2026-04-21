@@ -1,4 +1,5 @@
 import { ChangeEvent, useState } from 'react';
+
 import { CakeOffer, CheckBoxValue, Filling } from '../../../../types/types';
 import styles from './filling-part.module.scss';
 
@@ -30,7 +31,7 @@ const FillingItem = ({
 			<input
 				type="checkbox"
 				className={styles.checkbox}
-				hidden={true}
+				hidden
 				name={fill.name}
 				id={fill.name}
 				checked={checkBoxValues[fill.name]}

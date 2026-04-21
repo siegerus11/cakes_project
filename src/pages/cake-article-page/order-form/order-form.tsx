@@ -1,10 +1,5 @@
 import { useState, ChangeEvent, useEffect } from 'react';
 
-import Adder from './adder/adder';
-import FillingPart from './filling-part/filling-part';
-import WeightPart from './weight-part/weight-part';
-import OptionalPart from './optional-part/optional-part';
-import styles from './order-form.module.scss';
 import {
 	CakeOffer,
 	CheckBoxValue,
@@ -12,11 +7,16 @@ import {
 	Optional,
 	Radio
 } from '../../../types/types';
+import { createCheckBoxInitial } from '../../../utils/createCheckboxInitial';
 import { createRadioInitial } from '../../../utils/createRadioInitial';
 import { getPricesByCheckboxValue } from '../../../utils/getPriceByCheckboxValue';
-import { getPricesSum } from '../../../utils/getPricesSum';
-import { createCheckBoxInitial } from '../../../utils/createCheckboxInitial';
 import { getPricesByRadioValue } from '../../../utils/getPricesByRadioValue';
+import { getPricesSum } from '../../../utils/getPricesSum';
+import Adder from './adder/adder';
+import FillingPart from './filling-part/filling-part';
+import OptionalPart from './optional-part/optional-part';
+import styles from './order-form.module.scss';
+import WeightPart from './weight-part/weight-part';
 
 type OrderFormProps = {
 	cake: CakeOffer;
@@ -76,7 +76,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 			...weightRadioPrices
 		];
 		setPriceCounter(getPricesSum(groupPrices, initialprice));
-	}, [optionalCheckboxValues, fillingCheckBoxValues, radios]);
+	}, [optionalCheckboxValues, fillingCheckBoxValues,fillingCheckboxPrices,weightRadioPrices,optionalCheckboxPrices, initialprice , radios]);
 
 	const handleRadioChange = (
 		e: ChangeEvent<HTMLInputElement>,

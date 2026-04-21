@@ -1,5 +1,5 @@
-import styles from './adder.module.scss';
 import Button from '../../../../components/ui/button/button';
+import styles from './adder.module.scss';
 
 type AdderProps = {
 	priceCounter: number;
@@ -22,7 +22,7 @@ const Adder = ({ priceCounter, isWrapped }: AdderProps) => {
 				</span>
 				<Button
 					className={`button button_primary ${styles.adder__button}`}
-					type={'submit'}
+					type="submit"
 				>
 					<span>Добавить в корзину</span>
 				</Button>

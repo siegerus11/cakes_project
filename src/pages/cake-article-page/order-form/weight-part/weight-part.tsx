@@ -78,7 +78,8 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 		<li className={styles.component}>
 			<h3 className={styles.title}>Вес</h3>
 			<div className={styles.select}>
-				<div
+				<button
+					type="button"
 					className={styles.select__interactor}
 					onClick={handleInteractorClick}
 				>
@@ -91,7 +92,7 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 					>
 						<use xlinkHref="#arrow-sm"></use>
 					</svg>
-				</div>
+				</button>
 				{isVisibleSelect && (
 					<div className={styles.select__dropdown}>
 						{radios.map((radio, i) => {

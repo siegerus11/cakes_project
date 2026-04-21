@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react';
+
 import Title from '../title/title';
 import styles from './popup.module.scss';
 

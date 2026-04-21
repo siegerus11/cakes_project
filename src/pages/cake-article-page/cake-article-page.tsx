@@ -1,18 +1,18 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
+import Button from '../../components/ui/button/button';
 import { AppRoute } from '../../constants';
 import { cakeOffers } from '../../mocks/cake-offers/cake-offers';
-import Slider from './slider/slider';
-import OrderForm from './order-form/order-form';
 import styles from './cake-article-page.module.scss';
-import { useState } from 'react';
-import Button from '../../components/ui/button/button';
+import OrderForm from './order-form/order-form';
+import Slider from './slider/slider';
 
 const CakeArticlePage = () => {
 	const pageTitle = 'Торт с ягодами и безе';
-	const titleClassName = 'title_fz30 title_fw800';
+	const titleClassName = `title_fz30 title_fw800 ${styles.main__title}`;
 	const activeOffer = cakeOffers[0];
 	const initialprice = activeOffer.price;
 	const popupClass = `popup ${styles.popup}`;

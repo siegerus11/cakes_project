@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import { CakeOffer, Slide } from '../../../types/types';
 import styles from './slider.module.scss';
 
@@ -12,7 +13,7 @@ const Slider = ({ cake }: SliderProps) => {
 			return {
 				slideSrc: item,
 				slideAlt: 'cake-slide',
-				isVisible: i === 0 ? true : false
+				isVisible: i === 0
 			};
 		});
 	};
@@ -24,7 +25,7 @@ const Slider = ({ cake }: SliderProps) => {
 		setSlideIndex(prevState => {
 			const newIndex = prevState + num;
 			if (newIndex < 0) return 0;
-			else if (newIndex >= slides.length) return slides.length - 1;
+			if (newIndex >= slides.length) return slides.length - 1;
 			return newIndex;
 		});
 	};
@@ -34,8 +35,8 @@ const Slider = ({ cake }: SliderProps) => {
 	};
 
 	useEffect(() => {
-		setSlides(
-			slides.map((slide, idx) => {
+		setSlides((prevState) => 
+			prevState.map((slide, idx) => {
 				return idx === slideIndex
 					? { ...slide, isVisible: true }
 					: { ...slide, isVisible: false };
@@ -82,6 +83,7 @@ const Slider = ({ cake }: SliderProps) => {
 						}`;
 						return (
 							<button
+							type="button"
 								className={
 									i === slideIndex
 										? `${styles.dots__dot} ${styles.dots__dot_active}`
