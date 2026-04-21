@@ -16,7 +16,7 @@
 		"isolatedModules": true,
 		"noEmit": true,
 		"jsx": "react-jsx",
-		"types": ["vite/client", /* "vitest/globals", */ "@testing-library/jest-dom" ]
+		"types": ["vite/client", /* "vitest/globals", */ /* "@testing-library/jest-dom" */ ]
 		/* "typeRoots": ["./node_modules", "./types"] */
 	},
 	"include": ["src", "vite-env.d.ts", "scss.d.ts", /* "vite.config.ts" */] // "vite.config.ts" added y me
