@@ -25,6 +25,9 @@ type OrderFormProps = {
 };
 
 const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
+	const [descriptionVisible, setDescriptionVisible] =
+		useState<boolean>(false);
+
 	const [priceCounter, setPriceCounter] = useState<number>(initialprice);
 
 	const initialRadios: Radio[] = createRadioInitial(cake.weight);
@@ -56,6 +59,11 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 			...fillingCheckBoxValues,
 			[e.target.id]: e.target.checked
 		});
+	};
+
+	const handleMobileArrowClick = () => {
+		console.log(descriptionVisible);
+		setDescriptionVisible(prevState => !prevState);
 	};
 
 	// will be refactoring to store
@@ -124,11 +132,24 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 						checkBoxValues={optionalCheckboxValues}
 					/>
 				</ol>
-				<div className={styles.describe}>
-					<div className={styles.describe__blur}></div>
+				<div
+					className={
+						descriptionVisible
+							? `${styles.describe} ${styles.describe_visible}`
+							: styles.describe
+					}
+				>
+					{descriptionVisible || (
+						<div className={styles.describe__blur}></div>
+					)}
 					<button
-						className={styles.describe__arrow}
+						className={
+							descriptionVisible
+								? `${styles.describe__arrow} ${styles.describe__arrow_active}`
+								: styles.describe__arrow
+						}
 						type="button"
+						onClick={handleMobileArrowClick}
 					></button>
 					{cake.describe}
 				</div>
