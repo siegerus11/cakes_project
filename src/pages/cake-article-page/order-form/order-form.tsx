@@ -76,7 +76,15 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 			...weightRadioPrices
 		];
 		setPriceCounter(getPricesSum(groupPrices, initialprice));
-	}, [optionalCheckboxValues, fillingCheckBoxValues,fillingCheckboxPrices,weightRadioPrices,optionalCheckboxPrices, initialprice , radios]);
+	}, [
+		optionalCheckboxValues,
+		fillingCheckBoxValues,
+		fillingCheckboxPrices,
+		weightRadioPrices,
+		optionalCheckboxPrices,
+		initialprice,
+		radios
+	]);
 
 	const handleRadioChange = (
 		e: ChangeEvent<HTMLInputElement>,
@@ -117,7 +125,11 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 					/>
 				</ol>
 				<div className={styles.describe}>
-					<button className={styles.describe__arrow} type="button"></button>
+					<div className={styles.describe__blur}></div>
+					<button
+						className={styles.describe__arrow}
+						type="button"
+					></button>
 					<p>{cake.describe}</p>
 				</div>
 				<Adder priceCounter={priceCounter} isWrapped />
