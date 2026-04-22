@@ -48,14 +48,14 @@
   }
 
   .adder {
-    justify-content: center;
+    justify-content: space-between;
   }
 }
 
-@media (max-width: 767px) {}
-
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .component {
     display: none;
   }
 }
+
+@media (max-width: 576px) {}

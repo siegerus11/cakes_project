@@ -79,12 +79,17 @@
 
 @media (max-width: 576px) {
 	.wrapper {
+		margin-top: 11px;
 		column-gap: 10px;
 		overflow-x: scroll;
 	}
 
+	.title {
+		font-size: 15px;
+	}
+
 	.card {
-		max-width: 93px;
+		max-width: 95px;
 		border-radius: 14px;
 	}
 
@@ -101,7 +106,10 @@
 	}
 
 	.card__bottom {
-		padding: 8px 19px 9px 9px;
+		min-height: unset;
+		min-height: 73px;
+
+		padding: 8px 19px 9px 7px;
 		border-radius: 0 0 15px 15px;
 	}
 
@@ -110,6 +118,7 @@
 	}
 
 	.card__button {
+		margin-top: 3px;
 		font-size: 12px;
 		line-height: 183%;
 	}

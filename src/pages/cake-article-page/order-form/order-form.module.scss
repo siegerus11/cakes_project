@@ -70,6 +70,15 @@
 
 		li {
 			max-width: 100%;
+
+			&::before {
+				font-size: 15px;
+				line-height: 160%;
+			}
+
+			h3 {
+				margin-left: 23px;
+			}
 		}
 	}
 
