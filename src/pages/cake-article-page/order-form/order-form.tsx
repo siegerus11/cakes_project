@@ -130,7 +130,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 						className={styles.describe__arrow}
 						type="button"
 					></button>
-					<p>{cake.describe}</p>
+					{cake.describe}
 				</div>
 				<Adder priceCounter={priceCounter} isWrapped />
 			</form>

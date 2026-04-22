@@ -90,19 +90,30 @@
 
 	.describe {
 		position: relative;
+		display: -webkit-box;
 		max-height: 54px;
 		margin-top: 14px;
-		overflow-y: hidden;
+		font-size: 14px;
+		line-height: 128%;
+		overflow: hidden;
+		line-clamp: 3;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		text-overflow: ellipsis;
 		background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 244, 1) 100%);
-		order: 2;
 
 		p {
 			font-size: 14px;
 			line-height: 128%;
 			overflow-y: hidden;
+			line-clamp: 2;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			text-overflow: ellipsis;
 		}
 
 		&__arrow {
+			z-index: 10;
 			display: block;
 			position: absolute;
 			right: 0;
@@ -118,14 +129,15 @@
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				transform: translate(-50%, -50%) rotate(90deg);
-				width: 5px;
-				height: 8px;
-				background: url("/images/nav-arrow-sm.svg") no-repeat center / cover;
+				transform: translate(-50%, -50%);
+				width: 9px;
+				height: 6px;
+				background: url("/images/nav-arrow-sm-grey.svg") no-repeat center/cover;
 			}
 		}
 
 		&__blur {
+			z-index: 5;
 			display: block;
 			position: absolute;
 			bottom: 0;
