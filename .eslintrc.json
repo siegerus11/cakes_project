@@ -27,9 +27,18 @@
 	},
 	"overrides": [
 		{
+			"files": ["vite.config.js", "tailwind.config.js", "postcss.config.js"],
+			"parserOptions": {
+				"project": null
+			},
+			"rules": {
+				"import/no-extraneous-dependencies": "off"
+			}
+		},
+		{
 			"files": ["src/**/*.{js,ts,jsx,tsx}"], // "ts","tsx" added by me
 			"rules": {
-				"react/prop-types": "off", 
+				"react/prop-types": "off",
 				"react/jsx-filename-extension": ["error", { // added by me
 					"extensions": [".tsx"]
 				}],
