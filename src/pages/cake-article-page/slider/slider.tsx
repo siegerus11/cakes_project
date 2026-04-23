@@ -19,8 +19,14 @@ const Slider = ({ cake }: SliderProps) => {
 	};
 
 	const slidesInitial = getSlidesInitial(cake.images);
+	const [isSliderVisible, setIsSliderVisible] = useState<boolean>(true);
 	const [slideIndex, setSlideIndex] = useState(0);
 	const [slides, setSlides] = useState<Slide[]>(slidesInitial);
+
+	const handleCloseButtonClick = () => {
+		setIsSliderVisible(prevState => !prevState);
+	};
+
 	const handleSlideButtonClick = (num: number) => {
 		setSlideIndex(prevState => {
 			const newIndex = prevState + num;
@@ -35,7 +41,7 @@ const Slider = ({ cake }: SliderProps) => {
 	};
 
 	useEffect(() => {
-		setSlides((prevState) => 
+		setSlides(prevState =>
 			prevState.map((slide, idx) => {
 				return idx === slideIndex
 					? { ...slide, isVisible: true }
@@ -45,58 +51,71 @@ const Slider = ({ cake }: SliderProps) => {
 	}, [slideIndex]);
 
 	return (
-		<div className={styles.component}>
-			<div className={styles.wrapper}>
-				{slides.map((slide, i) => {
-					const keyValue = `${slide.slideAlt}-${i}`;
-					return (
-						slide.isVisible && (
-							<img
-								src={slide.slideSrc}
-								alt={slide.slideAlt}
-								width="535px"
-								height="535px"
-								key={keyValue}
-							/>
-						)
-					);
-				})}
+		<>
+			{isSliderVisible && (
+				<div className={styles.component}>
+					<div className={styles.wrapper}>
+						{slides.map((slide, i) => {
+							const keyValue = `${slide.slideAlt}-${i}`;
+							return (
+								slide.isVisible && (
+									<img
+										src={slide.slideSrc}
+										alt={slide.slideAlt}
+										width="535px"
+										height="535px"
+										key={keyValue}
+									/>
+								)
+							);
+						})}
 
-				{slideIndex > 0 && (
-					<button
-						className={styles.back}
-						type="button"
-						onClick={() => handleSlideButtonClick(-1)}
-					></button>
-				)}
-				{slideIndex < slides.length - 1 && (
-					<button
-						className={styles.forward}
-						type="button"
-						onClick={() => handleSlideButtonClick(1)}
-					></button>
-				)}
-				<div className={styles.dots}>
-					{slides.map((slide, i) => {
-						const keyValue = `${Math.random() * i}-${
-							slide.slideSrc
-						}`;
-						return (
+						{slideIndex > 0 && (
 							<button
-							type="button"
-								className={
-									i === slideIndex
-										? `${styles.dots__dot} ${styles.dots__dot_active}`
-										: styles.dots__dot
-								}
-								key={keyValue}
-								onClick={() => handleDotsClick(i)}
+								className={styles.back}
+								type="button"
+								onClick={() => handleSlideButtonClick(-1)}
 							></button>
-						);
-					})}
+						)}
+						{slideIndex < slides.length - 1 && (
+							<button
+								className={styles.forward}
+								type="button"
+								onClick={() => handleSlideButtonClick(1)}
+							></button>
+						)}
+						<div className={styles.dots}>
+							{slides.map((slide, i) => {
+								const keyValue = `${Math.random() * i}-${
+									slide.slideSrc
+								}`;
+								return (
+									<button
+										type="button"
+										className={
+											i === slideIndex
+												? `${styles.dots__dot} ${styles.dots__dot_active}`
+												: styles.dots__dot
+										}
+										key={keyValue}
+										onClick={() => handleDotsClick(i)}
+									></button>
+								);
+							})}
+						</div>
+						<button
+							className={styles.close}
+							type="button"
+							onClick={handleCloseButtonClick}
+						>
+							<svg className={styles.cross} viewBox="0 0 18 18">
+								<use xlinkHref="#close"></use>
+							</svg>
+						</button>
+					</div>
 				</div>
-			</div>
-		</div>
+			)}
+		</>
 	);
 };
 

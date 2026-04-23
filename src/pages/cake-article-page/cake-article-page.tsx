@@ -11,7 +11,6 @@ import styles from './cake-article-page.module.scss';
 import OrderForm from './order-form/order-form';
 import Slider from './slider/slider';
 
-
 const CakeArticlePage = () => {
 	const pageTitle = 'Торт с ягодами и безе';
 	const titleClassName = `title_fz30 title_fw800 ${styles.main__title}`;
@@ -20,6 +19,7 @@ const CakeArticlePage = () => {
 	const popupClass = `popup ${styles.popup}`;
 	const popupClassActive = `popup ${styles.popup} ${styles.popup_active}`;
 	const popupTitleClass = 'title_fz22 title_fw800';
+	const buttonClass = `button button_primary ${styles.controller__button}`;
 
 	const { filling } = activeOffer;
 
@@ -30,79 +30,86 @@ const CakeArticlePage = () => {
 	};
 
 	return (
-<>
-		<div className={`page ${styles.component}`}>
-			<div className="container_secondary container">
-				<Link className={styles.back} to={AppRoute.CAKES_CATALOG}>
-					Назад
-				</Link>
-				<div className={styles.wrapper}>
-					<Slider cake={activeOffer} />
-					<section className={styles.main}>
-						<div className={styles.main__headline}>
-							<Title
-								titleText={pageTitle}
-								titleClass={titleClassName}
+		<>
+			<div className={`page ${styles.component}`}>
+				<div className="container_secondary container">
+					<Link className={styles.back} to={AppRoute.CAKES_CATALOG}>
+						Назад
+					</Link>
+					<div className={styles.wrapper}>
+						<Slider cake={activeOffer} />
+						<section className={styles.main}>
+							<div className={styles.main__headline}>
+								<Title
+									titleText={pageTitle}
+									titleClass={titleClassName}
+								/>
+							</div>
+							<OrderForm
+								cake={activeOffer}
+								initialprice={initialprice}
+								onDescribeClick={handleDescribeClick}
 							/>
-						</div>
-						<OrderForm
-							cake={activeOffer}
-							initialprice={initialprice}
-							onDescribeClick={handleDescribeClick}
-						/>
-					</section>
+						</section>
+					</div>
 				</div>
-			</div>
-			{filling.map((fillingItem, i) => {
-				const keyValue = `${Math.random() * i}-${fillingItem.name}`;
-				return (
-					<Popup
-						key={keyValue}
-						wrappClass={
-							i === visibilityIndex
-								? `${popupClass} ${popupClassActive}`
-								: popupClass
-						}
-						titleClass={popupTitleClass}
-						titleText={fillingItem.title}
-						onCloseClick={handleDescribeClick}
-						headlineClass={styles.test}
-					>
-						<p className={styles.popup__description}>
-							{fillingItem.description}
-						</p>
-						<Button
-							className={`button button_primary ${styles.popup__button}`}
-							onClick={() => handleDescribeClick(null)}
+				{filling.map((fillingItem, i) => {
+					const keyValue = `${Math.random() * i}-${fillingItem.name}`;
+					return (
+						<Popup
+							key={keyValue}
+							wrappClass={
+								i === visibilityIndex
+									? `${popupClass} ${popupClassActive}`
+									: popupClass
+							}
+							titleClass={popupTitleClass}
+							titleText={fillingItem.title}
+							onCloseClick={handleDescribeClick}
+							headlineClass={styles.test}
 						>
-							<span>Понятно, спасибо</span>
-						</Button>
-						<ul className={styles.popup__toplist}>
-							<li>Вишня</li>
-							<li>
-								Йогуртовый крем на основе натурального йогурта
-							</li>
-							<li>Сливки</li>
-							<li>Бисквит ванильный</li>
-							<li>Вишневый сироп</li>
-							<li>Сливочное масло</li>
-							<li>Натуральный ванилин</li>
-						</ul>
-						<ul className={styles.popup__bottomlist}>
-							<li>Калорийность: 200 ккал</li>
-							<li>Белки: 5 г</li>
-							<li>Жиры: 12 г</li>
-							<li>Углеводы: 20 г</li>
-						</ul>
-					</Popup>
-				);
-			})}
-		</div>
+							<p className={styles.popup__description}>
+								{fillingItem.description}
+							</p>
+							<Button
+								className={`button button_primary ${styles.popup__button}`}
+								onClick={() => handleDescribeClick(null)}
+							>
+								<span>Понятно, спасибо</span>
+							</Button>
+							<ul className={styles.popup__toplist}>
+								<li>Вишня</li>
+								<li>
+									Йогуртовый крем на основе натурального
+									йогурта
+								</li>
+								<li>Сливки</li>
+								<li>Бисквит ванильный</li>
+								<li>Вишневый сироп</li>
+								<li>Сливочное масло</li>
+								<li>Натуральный ванилин</li>
+							</ul>
+							<ul className={styles.popup__bottomlist}>
+								<li>Калорийность: 200 ккал</li>
+								<li>Белки: 5 г</li>
+								<li>Жиры: 12 г</li>
+								<li>Углеводы: 20 г</li>
+							</ul>
+						</Popup>
+					);
+				})}
+			</div>
 			<ButtonController>
-
+				<div className={styles.controller}>
+					<span className={styles.controller__price}>
+						{initialprice} ₽
+					</span>
+					<Button className={buttonClass}>
+						<span>В корзину</span>
+					</Button>
+				</div>
 			</ButtonController>
-</>
-
+		</>
 	);
 };
 

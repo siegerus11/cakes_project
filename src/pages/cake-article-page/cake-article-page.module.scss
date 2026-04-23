@@ -78,6 +78,28 @@
 	}
 }
 
+.controller {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 10px;
+
+	&__price {
+		font-weight: 700;
+		font-size: 20px;
+	}
+
+	&__button {
+		padding: 15px 69px 15px 68px;
+
+		span {
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 129%;
+		}
+	}
+}
+
 
 
 @media (max-width: 1200px) {
