@@ -24,6 +24,10 @@
 	}
 }
 
+.subtract {
+	display: none;
+}
+
 .wrapper {
 	display: flex;
 	margin-top: 25px;
@@ -155,8 +159,6 @@
 		width: 100%;
 		height: 100%;
 
-		&__wrapper {}
-
 		&__image {
 			display: block;
 		}
@@ -170,6 +172,8 @@
 	}
 
 	.wrapper {
+		position: relative;
+		top: -26px;
 		margin-top: 0;
 	}
 
@@ -184,7 +188,30 @@
 	}
 
 	.back {
-		display: none;
+		// position: absolute;
+		// top: 0;
+		// left: 0;
+		display: block;
+		width: 100%;
+		height: 65px;
+		margin: 0;
+		background-color: #808080;
+
+		span:nth-child(1) {
+			display: none;
+		}
+
+		&__subtract {
+			position: absolute;
+			top: 28px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: block;
+			border-radius: 8px;
+			width: 39px;
+			height: 4px;
+			background-color: rgba(255, 255, 255, 0.5);
+		}
 	}
 
 	.popup {

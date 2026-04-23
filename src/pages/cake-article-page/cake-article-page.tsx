@@ -34,7 +34,8 @@ const CakeArticlePage = () => {
 			<div className={`page ${styles.component}`}>
 				<div className="container_secondary container">
 					<Link className={styles.back} to={AppRoute.CAKES_CATALOG}>
-						Назад
+						<span>Назад</span>
+						<span className={styles.back__subtract}></span>
 					</Link>
 					<div className={styles.wrapper}>
 						<Slider cake={activeOffer} />

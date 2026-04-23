@@ -94,6 +94,7 @@ body {
 		max-width: 540px;
 
 		&:global(_secondary) {
+			// position: relative;
 			max-width: 540px;
 		}
 	}
