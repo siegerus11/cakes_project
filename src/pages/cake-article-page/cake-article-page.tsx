@@ -58,43 +58,55 @@ const CakeArticlePage = () => {
 					return (
 						<Popup
 							key={keyValue}
-							wrappClass={
+							closeClass={styles.popup__close}
+							outerClass={
 								i === visibilityIndex
 									? `${popupClass} ${popupClassActive}`
 									: popupClass
 							}
-							titleClass={popupTitleClass}
-							titleText={fillingItem.title}
-							onCloseClick={handleDescribeClick}
-							headlineClass={styles.test}
+							onCloseClick={() => handleDescribeClick(null)}
 						>
-							<p className={styles.popup__description}>
-								{fillingItem.description}
-							</p>
-							<Button
-								className={`button button_primary ${styles.popup__button}`}
-								onClick={() => handleDescribeClick(null)}
-							>
-								<span>Понятно, спасибо</span>
-							</Button>
-							<ul className={styles.popup__toplist}>
-								<li>Вишня</li>
-								<li>
-									Йогуртовый крем на основе натурального
-									йогурта
-								</li>
-								<li>Сливки</li>
-								<li>Бисквит ванильный</li>
-								<li>Вишневый сироп</li>
-								<li>Сливочное масло</li>
-								<li>Натуральный ванилин</li>
-							</ul>
-							<ul className={styles.popup__bottomlist}>
-								<li>Калорийность: 200 ккал</li>
-								<li>Белки: 5 г</li>
-								<li>Жиры: 12 г</li>
-								<li>Углеводы: 20 г</li>
-							</ul>
+							<div className={styles.popup__image}>
+								<img
+									src={fillingItem.image}
+									alt="filling"
+									width="360"
+									height="360"
+								/>
+							</div>
+							<div className={styles.popup__wrapper}>
+								<Title
+									titleText={fillingItem.title}
+									titleClass={popupTitleClass}
+								/>
+								<p className={styles.popup__description}>
+									{fillingItem.description}
+								</p>
+								<Button
+									className={`button button_primary ${styles.popup__button}`}
+									onClick={() => handleDescribeClick(null)}
+								>
+									<span>Понятно, спасибо</span>
+								</Button>
+								<ul className={styles.popup__toplist}>
+									<li>Вишня</li>
+									<li>
+										Йогуртовый крем на основе натурального
+										йогурта
+									</li>
+									<li>Сливки</li>
+									<li>Бисквит ванильный</li>
+									<li>Вишневый сироп</li>
+									<li>Сливочное масло</li>
+									<li>Натуральный ванилин</li>
+								</ul>
+								<ul className={styles.popup__bottomlist}>
+									<li>Калорийность: 200 ккал</li>
+									<li>Белки: 5 г</li>
+									<li>Жиры: 12 г</li>
+									<li>Углеводы: 20 г</li>
+								</ul>
+							</div>
 						</Popup>
 					);
 				})}

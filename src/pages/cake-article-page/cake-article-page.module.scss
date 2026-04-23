@@ -42,7 +42,10 @@
 .popup {
 	display: none;
 	min-width: 30%;
-	padding: 27px 30px 30px 30px;
+
+	&__wrapper {
+		padding: 27px 30px 30px 30px;
+	}
 
 	&__description {
 		margin-top: 15px;
@@ -73,6 +76,32 @@
 		}
 	}
 
+	&__close {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		border: none;
+		background: none;
+		min-width: 18px;
+		min-height: 18px;
+	}
+
+	&__image {
+		display: none;
+		width: 100%;
+		height: 360px;
+		margin: 0 auto;
+		border-radius: 30px;
+		background-color: var(--secondary-color);
+
+		img {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: cover;
+			border-radius: 30px;
+		}
+	}
+
 	&_active {
 		display: block;
 	}
@@ -100,8 +129,6 @@
 	}
 }
 
-
-
 @media (max-width: 1200px) {
 	.main {
 		max-width: unset;
@@ -122,6 +149,17 @@
 @media (max-width: 767px) {
 	.main {
 		max-width: 100%;
+	}
+
+	.popup {
+		width: 100%;
+		height: 100%;
+
+		&__wrapper {}
+
+		&__image {
+			display: block;
+		}
 	}
 }
 
@@ -147,6 +185,16 @@
 
 	.back {
 		display: none;
+	}
+
+	.popup {
+		width: 100%;
+		height: 100%;
+
+		&__wrapper {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
 	}
 }
 

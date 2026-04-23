@@ -1,5 +1,5 @@
 .component {
-	min-width: 535px;
+	width: 535px;
 	height: 535px;
 	margin-right: 50px;
 	border-radius: 30px;
@@ -131,6 +131,7 @@
 
 @media (max-width: 576px) {
 	.component {
+		width: 100%;
 		min-width: 360px;
 		height: 360px;
 	}

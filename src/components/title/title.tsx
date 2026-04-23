@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { RoutePath } from '../../types/types';
 
 type TitleProps = {
-	titleText: string;
+	titleText?: string;
 	path?: RoutePath;
 	titleClass?: string;
 };
