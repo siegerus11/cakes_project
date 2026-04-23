@@ -24,10 +24,6 @@
 	}
 }
 
-.subtract {
-	display: none;
-}
-
 .wrapper {
 	display: flex;
 	margin-top: 25px;
@@ -47,7 +43,7 @@
 	display: none;
 	min-width: 30%;
 
-	&__wrapper {
+	&__main {
 		padding: 27px 30px 30px 30px;
 	}
 
@@ -78,6 +74,10 @@
 			font-weight: 600;
 			color: #ff4c80;
 		}
+	}
+
+	&__back {
+		display: none;
 	}
 
 	&__close {
@@ -188,9 +188,6 @@
 	}
 
 	.back {
-		// position: absolute;
-		// top: 0;
-		// left: 0;
 		display: block;
 		width: 100%;
 		height: 65px;
@@ -201,7 +198,7 @@
 			display: none;
 		}
 
-		&__subtract {
+		&__item {
 			position: absolute;
 			top: 28px;
 			left: 50%;
@@ -217,10 +214,50 @@
 	.popup {
 		width: 100%;
 		height: 100%;
+		border-radius: unset;
 
 		&__wrapper {
+			position: relative;
+			top: -20px;
+		}
+
+		&__main {
 			padding-left: 10px;
 			padding-right: 10px;
+		}
+
+
+		&__back {
+			display: block;
+			position: relative;
+			width: 100%;
+			min-height: 117px;
+			margin: 0;
+			background-color: #808080;
+
+			span {
+				position: absolute;
+				top: 85px;
+				left: 50%;
+				transform: translateX(-50%);
+				display: block;
+				border-radius: 8px;
+				width: 39px;
+				height: 4px;
+				background-color: rgba(255, 255, 255, 0.5);
+			}
+		}
+
+		&__close {
+			display: none;
+		}
+
+		&__image {
+			border-radius: 25px 25px 0 0;
+
+			img {
+				border-radius: 25px 25px 0 0;
+			}
 		}
 	}
 }

@@ -35,7 +35,7 @@ const CakeArticlePage = () => {
 				<div className="container_secondary container">
 					<Link className={styles.back} to={AppRoute.CAKES_CATALOG}>
 						<span>Назад</span>
-						<span className={styles.back__subtract}></span>
+						<span className={styles.back__item}></span>
 					</Link>
 					<div className={styles.wrapper}>
 						<Slider cake={activeOffer} />
@@ -67,46 +67,56 @@ const CakeArticlePage = () => {
 							}
 							onCloseClick={() => handleDescribeClick(null)}
 						>
-							<div className={styles.popup__image}>
-								<img
-									src={fillingItem.image}
-									alt="filling"
-									width="360"
-									height="360"
-								/>
-							</div>
+							<Link
+								className={styles.popup__back}
+								to={AppRoute.CAKES_CATALOG}
+							>
+								<span></span>
+							</Link>
 							<div className={styles.popup__wrapper}>
-								<Title
-									titleText={fillingItem.title}
-									titleClass={popupTitleClass}
-								/>
-								<p className={styles.popup__description}>
-									{fillingItem.description}
-								</p>
-								<Button
-									className={`button button_primary ${styles.popup__button}`}
-									onClick={() => handleDescribeClick(null)}
-								>
-									<span>Понятно, спасибо</span>
-								</Button>
-								<ul className={styles.popup__toplist}>
-									<li>Вишня</li>
-									<li>
-										Йогуртовый крем на основе натурального
-										йогурта
-									</li>
-									<li>Сливки</li>
-									<li>Бисквит ванильный</li>
-									<li>Вишневый сироп</li>
-									<li>Сливочное масло</li>
-									<li>Натуральный ванилин</li>
-								</ul>
-								<ul className={styles.popup__bottomlist}>
-									<li>Калорийность: 200 ккал</li>
-									<li>Белки: 5 г</li>
-									<li>Жиры: 12 г</li>
-									<li>Углеводы: 20 г</li>
-								</ul>
+								<div className={styles.popup__image}>
+									<img
+										src={fillingItem.image}
+										alt="filling"
+										width="360"
+										height="360"
+									/>
+								</div>
+								<main className={styles.popup__main}>
+									<Title
+										titleText={fillingItem.title}
+										titleClass={popupTitleClass}
+									/>
+									<p className={styles.popup__description}>
+										{fillingItem.description}
+									</p>
+									<Button
+										className={`button button_primary ${styles.popup__button}`}
+										onClick={() =>
+											handleDescribeClick(null)
+										}
+									>
+										<span>Понятно, спасибо</span>
+									</Button>
+									<ul className={styles.popup__toplist}>
+										<li>Вишня</li>
+										<li>
+											Йогуртовый крем на основе
+											натурального йогурта
+										</li>
+										<li>Сливки</li>
+										<li>Бисквит ванильный</li>
+										<li>Вишневый сироп</li>
+										<li>Сливочное масло</li>
+										<li>Натуральный ванилин</li>
+									</ul>
+									<ul className={styles.popup__bottomlist}>
+										<li>Калорийность: 200 ккал</li>
+										<li>Белки: 5 г</li>
+										<li>Жиры: 12 г</li>
+										<li>Углеводы: 20 г</li>
+									</ul>
+								</main>
 							</div>
 						</Popup>
 					);
