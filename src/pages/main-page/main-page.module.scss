@@ -58,23 +58,13 @@
 	.button {
 		display: flex;
 		align-items: center;
+		justify-content: center;
+		column-gap: 60px;
 		min-width: 340px;
 		margin: 0 auto;
 
 		svg {
 			display: none;
-		}
-
-		span {
-			&:nth-child(2) {
-				flex: 1;
-				text-align: center;
-				margin-left: 52px;
-			}
-
-			&:nth-child(3) {
-				margin-left: auto;
-			}
 		}
 	}
 }
@@ -114,18 +104,47 @@
 	}
 
 	.button {
+		justify-content: unset;
 		padding: 15px 15px;
+		column-gap: unset;
 
 		&__text {
+			flex: 1;
+			text-align: center;
+			margin-left: 52px;
 			font-size: 14px;
 			line-height: 129%;
 		}
 
 		span {
 			&:nth-child(3) {
+				margin-left: auto;
 				font-size: 14px;
 				line-height: 129%;
 			}
 		}
 	}
+
+	// .button {
+	// 	display: flex;
+	// 	align-items: center;
+	// 	min-width: 340px;
+	// 	margin: 0 auto;
+
+	// 	svg {
+	// 		display: none;
+	// 	}
+
+	// 	span {
+	// 		&:nth-child(2) {
+	// 			flex: 1;
+	// 			text-align: center;
+	// 			margin-left: 52px;
+	// 		}
+
+	// 		&:nth-child(3) {
+	// 			margin-left: auto;
+	// 		}
+	// 	}
+	// }
 }
