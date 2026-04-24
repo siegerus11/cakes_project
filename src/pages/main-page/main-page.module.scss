@@ -57,9 +57,9 @@
 
 	.button {
 		display: flex;
-		justify-content: flex-end;
+		align-items: center;
 		min-width: 340px;
-		margin-right: 0;
+		margin: 0 auto;
 
 		svg {
 			display: none;
@@ -67,11 +67,13 @@
 
 		span {
 			&:nth-child(2) {
-				margin-right: 0;
+				flex: 1;
+				text-align: center;
+				margin-left: 52px;
 			}
 
 			&:nth-child(3) {
-				margin-left: 49px;
+				margin-left: auto;
 			}
 		}
 	}
