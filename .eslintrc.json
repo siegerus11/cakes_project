@@ -7,7 +7,7 @@
 		"node": true
 	},
 	"plugins": ["react", "jsx-a11y", "jest", "import", "unused-imports"],
-	"parser": "@typescript-eslint/parser", // installed & added by me
+	"parser": "@typescript-eslint/parser",
 	"extends": [
 		"airbnb",
 		"airbnb/hooks",
@@ -18,7 +18,7 @@
 		"prettier"
 	],
 	"parserOptions": {
-		"project": "./tsconfig.json", // added by me
+		"project": "./tsconfig.json",
 		"ecmaFeatures": {
 			"jsx": true
 		},
@@ -36,13 +36,13 @@
 			}
 		},
 		{
-			"files": ["src/**/*.{js,ts,jsx,tsx}"], // "ts","tsx" added by me
+			"files": ["src/**/*.{js,ts,jsx,tsx}"],
 			"rules": {
 				"react/prop-types": "off",
-				"react/jsx-filename-extension": ["error", { // added by me
+				"react/jsx-filename-extension": ["error", {
 					"extensions": [".tsx"]
 				}],
-				"import/extensions": ["error", { "ts": "never" }], // added by me
+				"import/extensions": ["error", { "ts": "never" }],
 				"import/order": [
 					"error",
 					{
@@ -84,17 +84,15 @@
 		"react/react-in-jsx-scope": "off",
 		"react/prop-types": "warn",
 		"semi": "error",
-		// all after "semi" added by me
 		"react/self-closing-comp": "off",
 		"react/require-default-props": "off",
 		"arrow-body-style": "off"
 	},
-	//"settings" added by me
 	"settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
+    	"import/resolver": {
+      		"node": {
+        		"extensions": [".js", ".jsx", ".ts", ".tsx"]
+      		}
+    	}
 	}
 }
