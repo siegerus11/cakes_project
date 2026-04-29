@@ -1,13 +1,13 @@
 .component {
-	margin-top: 34px;
+	margin-top: 2.125rem;
 	display: flex;
 }
 
 .link {
-	margin-right: 32px;
+	margin-right: 2rem;
 	position: relative;
 	text-decoration: none;
-	font-size: 15px;
+	font-size: 0.9375rem;
 	line-height: 133%;
 	color: #bababa;
 
@@ -19,9 +19,9 @@
 		top: 55%;
 		transform: translateY(-50%) rotate(270deg);
 		left: auto;
-		right: -26px;
-		width: 17px;
-		height: 10px;
+		right: -1.625rem;
+		width: 1.0625rem;
+		height: 0.625rem;
 		background: url('/images/arrow-sm-gray.svg') center/cover no-repeat;
 	}
 
@@ -33,7 +33,7 @@
 }
 
 
-@media (max-width: 1440px) {}
+@media (max-width: 90rem) {}
 
 @media (max-width: 1200px) {}
 
@@ -41,35 +41,35 @@
 
 @media (max-width: 767px) {
 	.component {
-		margin-top: 20px;
+		margin-top: 1.25rem;
 	}
 
 	.link {
-		margin-right: 29px;
-		font-size: 13px;
+		margin-right: 1.8125rem;
+		font-size: 0.8125rem;
 
 		&:after {
-			width: 13px;
-			height: 5px;
-			right: -21px;
+			width: 0.8125rem;
+			height: 0.3125rem;
+			right: -1.3125rem;
 		}
 	}
 }
 
 @media (max-width: 576px) {
 	.component {
-		margin-top: 15px;
+		margin-top: 0.9375rem;
 	}
 
 	.link {
-		margin-right: 29px;
-		font-size: 11px;
+		margin-right: 1.8125rem;
+		font-size: 0.6875rem;
 		line-height: 182%;
 
 		&:after {
-			width: 13px;
-			height: 5px;
-			right: -21px;
+			width: 0.8125rem;
+			height: 0.3125rem;
+			right: -1.3125rem;
 		}
 	}
 }

@@ -1,6 +1,6 @@
 .card {
 	display: block;
-	min-width: 282px;
+	min-width: 17.625rem;
 	text-decoration: none;
 	color: #000;
 
@@ -13,16 +13,16 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		border-radius: 20px;
+		border-radius: 1.25rem;
 	}
 }
 
 .title {
 	display: block;
-	max-width: 210px;
-	margin-top: 11px;
-	line-height: 22px;
-	font-size: 18px;
+	max-width: 13.125rem;
+	margin-top: 0.6875rem;
+	line-height: 1.375rem;
+	font-size: 1.125rem;
 	font-weight: 600;
 }
 
@@ -30,20 +30,20 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-top: 5px;
+	margin-top: 0.3125rem;
 }
 
 .cost {
 	font-weight: 400;
-	font-size: 16px;
-	line-height: 19px;
+	font-size: 1rem;
+	line-height: 1.1875rem;
 }
 
 .grid {
 	composes: card;
 	display: grid;
-	grid-template-columns: repeat(2, 141px);
-	grid-template-rows: repeat(2, 141px);
+	grid-template-columns: repeat(2, 8.8125rem);
+	grid-template-rows: repeat(2, 8.8125rem);
 	position: relative;
 
 	img {
@@ -52,19 +52,19 @@
 
 	img {
 		&:nth-child(1) {
-			border-radius: 20px 0 0 0;
+			border-radius: 1.25rem 0 0 0;
 		}
 
 		&:nth-child(2) {
-			border-radius: 0 20px 0 0;
+			border-radius: 0 1.25rem 0 0;
 		}
 
 		&:nth-child(3) {
-			border-radius: 0 0 0 20px;
+			border-radius: 0 0 0 1.25rem;
 		}
 
 		&:nth-child(4) {
-			border-radius: 0 0 20px 0;
+			border-radius: 0 0 1.25rem 0;
 		}
 	}
 }
@@ -77,9 +77,9 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	border-radius: 50px;
-	padding: 15px 53px 15px 25px;
-	min-width: 188px;
+	border-radius: 3.125rem;
+	padding: 0.9375rem 3.3125rem 0.9375rem 1.5625rem;
+	min-width: 11.75rem;
 	text-decoration: none;
 	background-color: #fff;
 	color: #000;
@@ -87,8 +87,8 @@
 	span {
 		position: relative;
 		font-weight: 600;
-		font-size: 17px;
-		line-height: 21px;
+		font-size: 1.0625rem;
+		line-height: 1.3125rem;
 		white-space: nowrap;
 
 		&:after {
@@ -96,9 +96,9 @@
 			position: absolute;
 			top: 58%;
 			transform: translateY(-50%);
-			right: -30px;
-			width: 18px;
-			height: 18px;
+			right: -1.875rem;
+			width: 1.125rem;
+			height: 1.125rem;
 			background-image: url('/images/nav-arrow-big.svg');
 		}
 	}
@@ -107,14 +107,14 @@
 .button {
 	display: none;
 	position: relative;
-	width: 32px;
-	height: 32px;
+	width: 2rem;
+	height: 2rem;
 
 	&::before {
 		content: '';
 		position: absolute;
-		width: 12px;
-		height: 2px;
+		width: 0.75rem;
+		height: 0.125rem;
 		background-color: #fff;
 		left: 50%;
 		top: 50%;
@@ -124,8 +124,8 @@
 	&::after {
 		content: '';
 		position: absolute;
-		width: 2px;
-		height: 12px;
+		width: 0.125rem;
+		height: 0.75rem;
 		background-color: #fff;
 		left: 50%;
 		top: 50%;
@@ -136,34 +136,34 @@
 @media (max-width: 1200px) {
 
 	.card {
-		min-width: 225px;
+		min-width: 14.0625rem;
 	}
 
 	.grid {
-		grid-template-columns: repeat(2, 112px);
-		grid-template-rows: repeat(2, 112px);
+		grid-template-columns: repeat(2, 7rem);
+		grid-template-rows: repeat(2, 7rem);
 	}
 }
 
 @media (max-width: 992px) {
 	.card {
-		min-width: 225px;
+		min-width: 14.0625rem;
 
 		&_catalog {
-			min-width: 190px;
-			max-width: 190px;
+			min-width: 11.875rem;
+			max-width: 11.875rem;
 			width: 100%;
 		}
 	}
 
 	.title {
 		max-width: unset;
-		min-height: 44px;
-		font-size: 16px;
+		min-height: 2.75rem;
+		font-size: 1rem;
 	}
 
 	.cost {
-		font-size: 15px;
+		font-size: 0.9375rem;
 	}
 
 	.button {
@@ -173,23 +173,23 @@
 
 @media (max-width: 767px) {
 	.card {
-		min-width: 165px;
+		min-width: 10.3125rem;
 		background-color: #fafafa;
 
 		&_catalog {
-			min-width: 173px;
-			max-width: 173px;
+			min-width: 10.8125rem;
+			max-width: 10.8125rem;
 		}
 
 		img {
-			border-radius: 14px 14px 0 0;
+			border-radius: 0.875rem 0.875rem 0 0;
 		}
 	}
 
 	.title {
 		display: -webkit-box;
-		max-width: 165px;
-		padding: 0 12px;
+		max-width: 10.3125rem;
+		padding: 0 0.75rem;
 		font-weight: 400;
 		line-clamp: 2;
 		-webkit-line-clamp: 2;
@@ -203,7 +203,7 @@
 	}
 
 	.bottom {
-		padding: 0 12px 12px 12px;
+		padding: 0 0.75rem 0.75rem 0.75rem;
 	}
 
 	.button {
@@ -213,28 +213,28 @@
 
 @media (max-width: 576px) {
 	.card {
-		min-width: 155px;
+		min-width: 9.6875rem;
 
 		&_catalog {
-			min-width: 173px;
+			min-width: 10.8125rem;
 			max-width: unset;
 			width: 100%;
 		}
 	}
 
 	.title {
-		max-width: 155px;
-		min-height: 34px;
-		margin-top: 7px;
-		font-size: 14px;
-		line-height: 17px;
+		max-width: 9.6875rem;
+		min-height: 2.125rem;
+		margin-top: 0.4375rem;
+		font-size: 0.875rem;
+		line-height: 1.0625rem;
 
 		&_catalog {
-			max-width: 173px;
+			max-width: 10.8125rem;
 		}
 	}
 
 	.bottom {
-		margin-top: 9px;
+		margin-top: 0.5625rem;
 	}
 }

@@ -1,10 +1,10 @@
 .component {
-  margin-top: 37px;
+  margin-top: 2.3125rem;
 
   &_wrapped {
-    margin-top: 33px;
-    padding: 15px 15px 15px 20px;
-    border-radius: 35px;
+    margin-top: 2.0625rem;
+    padding: 0.9375rem 0.9375rem 0.9375rem 1.25rem;
+    border-radius: 2.1875rem;
     background-color: #f7f7f7;
 
     .adder {
@@ -20,21 +20,21 @@
 
 
   &__price {
-    min-width: 90px;
-    margin-right: 35px;
+    min-width: 5.625rem;
+    margin-right: 2.1875rem;
     font-weight: 700;
-    font-size: 24px;
-    letter-spacing: 0.5px;
+    font-size: 1.5rem;
+    letter-spacing: 0.0313rem;
   }
 
   &__button {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 113%;
-    padding: 20px 30px;
-    border-radius: 25px;
+    padding: 1.25rem 1.875rem;
+    border-radius: 1.5625rem;
 
     span {
-      letter-spacing: 0.3px;
+      letter-spacing: 0.0187rem;
     }
   }
 }
@@ -44,7 +44,7 @@
 
 @media (max-width: 992px) {
   .component {
-    margin-top: 27px;
+    margin-top: 1.6875rem;
   }
 
   .adder {

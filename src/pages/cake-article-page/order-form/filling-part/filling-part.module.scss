@@ -1,26 +1,26 @@
 .title {
 	font-weight: 600;
-	font-size: 16px;
+	font-size: 1rem;
 }
 
 .wrapper {
 	display: flex;
-	margin-top: 15px;
-	column-gap: 13px;
+	margin-top: 0.9375rem;
+	column-gap: 0.8125rem;
 }
 
 .card {
 	display: block;
-	max-width: 112px;
-	border: 2px solid transparent;
-	border-radius: 15px;
+	max-width: 7rem;
+	border: 0.125rem solid transparent;
+	border-radius: 0.9375rem;
 }
 
 .card__button {
 	display: block;
 	border: none;
 	background: none;
-	font-size: 13px;
+	font-size: 0.8125rem;
 	line-height: 130%;
 	text-decoration: underline;
 	text-decoration-style: dotted;
@@ -33,33 +33,33 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
-	min-height: 79px;
+	min-height: 4.9375rem;
 	max-width: 100%;
-	padding: 10px 20px 13px 12px;
+	padding: 0.625rem 1.25rem 0.8125rem 0.75rem;
 	overflow-wrap: break-word;
 	background-color: #f7f7f7;
-	border-radius: 0 0 15px 15px;
+	border-radius: 0 0 0.9375rem 0.9375rem;
 }
 
 .card__top {
 	display: block;
-	width: 108px;
-	height: 110px;
-	border-radius: 15px 15px 0 0;
+	width: 6.75rem;
+	height: 6.875rem;
+	border-radius: 0.9375rem 0.9375rem 0 0;
 	background-color: var(--secondary-color);
 
 	img {
 		max-width: 100%;
 		max-height: 100%;
 		object-fit: cover;
-		border-radius: 15px 15px 0 0;
+		border-radius: 0.9375rem 0.9375rem 0 0;
 	}
 }
 
 .card__title {
 	display: block;
-	max-width: 76px;
-	font-size: 13px;
+	max-width: 4.75rem;
+	font-size: 0.8125rem;
 	line-height: 130%;
 }
 
@@ -69,7 +69,7 @@
 
 @media (max-width: 1200px) {
 	.wrapper {
-		column-gap: 9px
+		column-gap: 0.5625rem
 	}
 }
 
@@ -79,48 +79,48 @@
 
 @media (max-width: 576px) {
 	.wrapper {
-		margin-top: 11px;
-		column-gap: 10px;
+		margin-top: 0.6875rem;
+		column-gap: 0.625rem;
 		overflow-x: scroll;
 	}
 
 	.title {
 		font-weight: 800;
-		font-size: 15px;
+		font-size: 0.9375rem;
 	}
 
 	.card {
-		max-width: 95px;
-		border-radius: 14px;
+		max-width: 5.9375rem;
+		border-radius: 0.875rem;
 	}
 
 	.card__top {
-		max-width: 91px;
-		max-height: 93px;
-		border-radius: 14px 14px 0 0;
+		max-width: 5.6875rem;
+		max-height: 5.8125rem;
+		border-radius: 0.875rem 0.875rem 0 0;
 
 		img {
 			width: 100%;
 			height: 100%;
-			border-radius: 14px 14px 0 0;
+			border-radius: 0.875rem 0.875rem 0 0;
 		}
 	}
 
 	.card__bottom {
 		min-height: unset;
-		min-height: 73px;
+		min-height: 4.5625rem;
 
-		padding: 8px 19px 9px 7px;
-		border-radius: 0 0 15px 15px;
+		padding: 0.5rem 1.1875rem 0.5625rem 0.4375rem;
+		border-radius: 0 0 0.9375rem 0.9375rem;
 	}
 
 	.card__title {
-		font-size: 12px;
+		font-size: 0.75rem;
 	}
 
 	.card__button {
-		margin-top: 3px;
-		font-size: 12px;
+		margin-top: 0.1875rem;
+		font-size: 0.75rem;
 		line-height: 183%;
 	}
 }

@@ -1,13 +1,13 @@
 .component {
-  padding: 56px 0 90px 0;
+  padding: 3.5rem 0 5.625rem 0;
 
   hr {
     color: #f6f6f6;
-    margin: 15px 0;
+    margin: 0.9375rem 0;
   }
 }
 
-@media (max-width: 1440px) {}
+@media (max-width: 90rem) {}
 
 @media (max-width: 1200px) {}
 
@@ -15,10 +15,10 @@
 
 @media (max-width: 767px) {
   .component {
-    padding: 25px 0 90px 0;
+    padding: 1.5625rem 0 5.625rem 0;
 
     hr {
-      margin-top: 11px;
+      margin-top: 0.6875rem;
     }
   }
 }
