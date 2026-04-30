@@ -1,15 +1,15 @@
 .outer {
-	margin-top: 7.5rem;
+	margin-top: 120px;
 }
 
 .main {
-	max-width: 54.6875rem;
-	max-height: 7.5rem;
-	margin-top: 1.5625rem;
+	max-width: 875px;
+	max-height: 120px;
+	margin-top: 25px;
 	font-weight: 400;
-	font-size: 0.9375rem;
+	font-size: 15px;
 	line-height: 160%;
-	letter-spacing: 0.0063rem;
+	letter-spacing: 0.1px;
 	color: #858585;
 	overflow-y: hidden;
 
@@ -20,12 +20,12 @@
 
 .button {
 	position: relative;
-	margin-top: 0.3125rem;
+	margin-top: 5px;
 	font-weight: 400;
-	font-size: 1rem;
+	font-size: 16px;
 	line-height: 150%;
 	text-align: center;
-	letter-spacing: 0.0063rem;
+	letter-spacing: 0.1px;
 	background-color: #fff;
 	border: none;
 	color: #2787f5;
@@ -35,10 +35,10 @@
 		position: absolute;
 		top: 50%;
 		left: auto;
-		right: -1.4375rem;
+		right: -23px;
 		transform: translateY(-50%);
-		width: 1rem;
-		height: 1rem;
+		width: 16px;
+		height: 16px;
 		background-image: url('/images/arrow-sm.svg');
 	}
 
@@ -51,19 +51,19 @@
 
 @media (max-width: 767px) {
 	.outer {
-		margin-top: 5.3125rem;
+		margin-top: 85px;
 	}
 }
 
 @media (max-width: 576px) {
 	.outer {
-		margin-top: 4.0625rem;
+		margin-top: 65px;
 	}
 
 	.main {
-		max-height: 6.5625rem;
-		margin-top: 1.25rem;
-		font-size: 0.8125rem;
+		max-height: 105px;
+		margin-top: 20px;
+		font-size: 13px;
 
 		&_opened {
 			max-height: unset;
@@ -71,6 +71,6 @@
 	}
 
 	.button {
-		font-size: 0.8125rem;
+		font-size: 13px;
 	}
 }

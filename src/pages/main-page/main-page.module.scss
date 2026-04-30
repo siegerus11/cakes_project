@@ -1,5 +1,5 @@
 .component {
-	padding: 5.875rem 0 5.625rem 0;
+	padding: 94px 0 90px 0;
 }
 
 .headline {
@@ -11,7 +11,7 @@
 		display: none;
 		position: relative;
 		font-weight: 600;
-		font-size: 0.75rem;
+		font-size: 12px;
 		line-height: 125%;
 		text-decoration: none;
 		color: #000;
@@ -21,10 +21,10 @@
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
-			right: -1.5625rem;
-			width: 1.125rem;
-			height: 1.125rem;
-			border-radius: 6.25rem;
+			right: -25px;
+			width: 18px;
+			height: 18px;
+			border-radius: 100px;
 			background-color: #f6f6f6;
 			background-image: url('/images/nav-arrow-sm.svg');
 			background-repeat: no-repeat;
@@ -38,12 +38,12 @@
 }
 
 .secondary {
-	margin-top: 2.375rem;
+	margin-top: 38px;
 }
 
 @media (max-width: 992px) {
 	.page {
-		padding: 0.625rem 0 5.625rem 0;
+		padding: 10px 0 90px 0;
 	}
 
 	.headline {
@@ -51,7 +51,7 @@
 
 		&__link {
 			display: block;
-			font-size: 0.9375rem;
+			font-size: 15px;
 		}
 	}
 
@@ -59,8 +59,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		column-gap: 3.75rem;
-		min-width: 21.25rem;
+		column-gap: 60px;
+		min-width: 340px;
 		margin: 0 auto;
 
 		svg {
@@ -75,51 +75,51 @@
 
 		&__link {
 			display: block;
-			font-size: 0.875rem;
+			font-size: 14px;
 		}
 	}
 }
 
 @media (max-width: 576px) {
 	.component {
-		padding: 2.6875rem 0 4.0625rem 0;
+		padding: 43px 0 65px 0;
 	}
 
 	.headline {
-		padding-right: 1.625rem;
+		padding-right: 26px;
 	}
 
 	.headline {
 		&__link {
-			font-size: 0.75rem;
+			font-size: 12px;
 		}
 	}
 
 	.secondary {
-		margin-top: 2.5625rem;
+		margin-top: 41px;
 	}
 
 	.page {
-		padding: 0.625rem 0 3.75rem 0;
+		padding: 10px 0 60px 0;
 	}
 
 	.button {
 		justify-content: unset;
-		padding: 0.9375rem 0.9375rem;
+		padding: 15px 15px;
 		column-gap: unset;
 
 		&__text {
 			flex: 1;
 			text-align: center;
-			margin-left: 3.25rem;
-			font-size: 0.875rem;
+			margin-left: 52px;
+			font-size: 14px;
 			line-height: 129%;
 		}
 
 		span {
 			&:nth-child(3) {
 				margin-left: auto;
-				font-size: 0.875rem;
+				font-size: 14px;
 				line-height: 129%;
 			}
 		}
@@ -128,7 +128,7 @@
 	// .button {
 	// 	display: flex;
 	// 	align-items: center;
-	// 	min-width: 21.25rem;
+	// 	min-width: 340px;
 	// 	margin: 0 auto;
 
 	// 	svg {
@@ -139,7 +139,7 @@
 	// 		&:nth-child(2) {
 	// 			flex: 1;
 	// 			text-align: center;
-	// 			margin-left: 3.25rem;
+	// 			margin-left: 52px;
 	// 		}
 
 	// 		&:nth-child(3) {
