@@ -6,6 +6,7 @@ type Props = {};
 const AboutPage = (props: Props) => {
 	return (
 		<div className="page about-page">
+			<p>test</p>
 			<BreadCrumbs />
 		</div>
 	);
