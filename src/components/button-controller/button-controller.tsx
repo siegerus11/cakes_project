@@ -3,9 +3,13 @@ import Draggable from 'react-draggable';
 
 import styles from './button-controller.module.scss';
 
-type ButtonControllerProps = PropsWithChildren<{}>;
+type ButtonControllerProps = PropsWithChildren<{
+	outerClass: string;
+}>;
 
-const ButtonController = ({ children }: ButtonControllerProps) => {
+const ButtonController = ({ children, outerClass }: ButtonControllerProps) => {
+const componentClass = `${styles.component} ${outerClass}`;
+
 	const elementRef = useRef<HTMLDivElement | null>(null);
 	const [offsetValue, setOffsetValue] = useState<number>(0);
 	const [heightValue, setHeightValue] = useState<number>(0);
@@ -39,7 +43,7 @@ const ButtonController = ({ children }: ButtonControllerProps) => {
 			}}
 			onDrag={() => setIsDraggin(true)}
 		>
-			<div className={styles.component} ref={elementRef}>
+			<div className={componentClass} ref={elementRef}>
 				<div className={styles.inner}>{children}</div>
 				<div
 					className={styles.content}

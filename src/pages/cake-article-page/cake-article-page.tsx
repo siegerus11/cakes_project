@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import ButtonController from '../../components/button-controller/button-controller';
 import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
-import ButtonController from '../../components/button-controller/button-controller';
 import { AppRoute } from '../../constants';
 import { cakeOffers } from '../../mocks/cake-offers/cake-offers';
 import styles from './cake-article-page.module.scss';
@@ -122,8 +122,8 @@ const CakeArticlePage = () => {
 					);
 				})}
 			</div>
-			<ButtonController>
-				<div className={styles.controller}>
+			<ButtonController outerClass={styles.controller}>
+				<div className={styles.controller__wrapper}>
 					<span className={styles.controller__price}>
 						{initialprice} ₽
 					</span>

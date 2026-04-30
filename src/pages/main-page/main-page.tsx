@@ -66,7 +66,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 					<Clauses />
 				</div>
 			</div>
-			<ButtonController>
+			<ButtonController outerClass={styles.controller}>
 				<Button className={`button button_primary ${styles.button}`}>
 					<svg className={styles.button__icon} viewBox="0 0 40 40">
 						<use xlinkHref="#cart"></use>
