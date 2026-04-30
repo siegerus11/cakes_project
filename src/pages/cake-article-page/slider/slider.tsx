@@ -2,6 +2,9 @@ import { useState, useEffect, TouchEvent } from 'react';
 import { Slide } from '../../../types/types';
 import { createSlidesInitial } from '../../../utils/createSlidesInitial';
 // import { useSlider } from '../../../hooks/useSlider';
+
+import { useSlider } from '../../../hooks/useSlider';
+
 import { CakeOffer } from '../../../types/types';
 import styles from './slider.module.scss';
 
@@ -99,7 +102,7 @@ const Slider = ({ cake }: SliderProps) => {
 	} = useSlider(cake.images);
 
 	return (
-		<>
+		<div>
 			{isSliderVisible && (
 				<div className={styles.component}>
 					<div
@@ -172,7 +175,7 @@ const Slider = ({ cake }: SliderProps) => {
 					</div>
 				</div>
 			)}
-		</>
+		</div>
 	);
 };
 

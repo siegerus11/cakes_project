@@ -7,5 +7,11 @@
 	},
 	"css.validate": false,
 	"scss.validate": false,
-	"stylelint.validate": ["css", "postcss", "scss"]
+	"stylelint.validate": ["css", "postcss", "scss"],
+	"json.schemas": [
+		{
+			"fileMatch": [".eslintrc.json"],
+			"url": "https://cdn.jsdelivr.net/npm/@eslint/eslintrc@latest/dist/eslintrc.schema.json"
+		}
+	]
 }
