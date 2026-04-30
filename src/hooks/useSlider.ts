@@ -56,7 +56,7 @@ function useSlider(imagesSrc: string[]) {
 		const touchDifference = touchEndX - touchStartX;
 		const touchLength = Math.abs(touchEndX - touchStartX);
 		const touchMinLength = 50;
-		console.log(touchLength);
+
 		function toggleSlide() {
 			if (touchLength < touchMinLength) return;
 			if (touchDifference > 0) handleSlideButtonClick(-1);
