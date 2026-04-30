@@ -1,7 +1,7 @@
 .wrapper {
 	width: 100%;
-	padding: 3.125rem 7.5rem 2.875rem 7.5rem;
-	border-radius: 2.1875rem 2.1875rem 0 0;
+	padding: 50px 120px 46px 120px;
+	border-radius: 35px 35px 0 0;
 	background-color: #303030;
 
 	>div>div {
@@ -13,10 +13,10 @@
 
 	nav {
 		margin-right: auto;
-		margin-left: 3.8125rem;
+		margin-left: 61px;
 
 		li {
-			margin-bottom: 0.5625rem;
+			margin-bottom: 9px;
 
 			&:nth-last-child(1) {
 				margin-bottom: 0;
@@ -26,16 +26,16 @@
 }
 
 .link {
-	font-size: 1rem;
+	font-size: 16px;
 	color: #ccc;
 	text-decoration: none;
 }
 
 .side {
-	min-width: 15.3125rem;
+	min-width: 245px;
 
 	li {
-		margin-bottom: 0.4375rem;
+		margin-bottom: 7px;
 
 		&:nth-child(3) {
 			margin-bottom: 0;
@@ -55,74 +55,74 @@
 	justify-content: flex-start;
 
 	&__icon {
-		width: 2.5rem;
-		margin-right: 0.9375rem;
+		width: 40px;
+		margin-right: 15px;
 	}
 }
 
 .button {
-	min-height: 3.0625rem;
-	margin-top: 1.875rem;
+	min-height: 49px;
+	margin-top: 30px;
 
 	span {
-		margin-right: 0.4375rem;
+		margin-right: 7px;
 		line-height: 100%;
 		color: #fff;
 	}
 
 	&__icon {
-		width: 0.9375rem;
+		width: 15px;
 	}
 }
 
 @media (max-width: 1200px) {
 	.wrapper {
-		padding: 3.125rem 4.0625rem 2.875rem 4.0625rem;
+		padding: 50px 65px 46px 65px;
 	}
 }
 
 @media (max-width: 992px) {
 	.wrapper {
-		padding: 3.125rem 2.5rem 2.875rem 2.5rem;
+		padding: 50px 40px 46px 40px;
 
 		nav {
 			margin-left: unset;
 			margin-right: unset;
 
 			li {
-				margin-bottom: 0.5rem;
+				margin-bottom: 8px;
 			}
 		}
 	}
 
 	.side {
 		li {
-			margin-bottom: 0.3125rem;
+			margin-bottom: 5px;
 		}
 	}
 
 	.social {
 		&__icon {
-			margin-right: 0.75rem;
+			margin-right: 12px;
 		}
 	}
 
 	.button {
 		min-height: unset;
-		margin-top: 1.5625rem;
+		margin-top: 25px;
 	}
 }
 
 @media (max-width: 767px) {
 	.wrapper {
 		border-radius: 0;
-		padding: 1.4375rem 0 2rem 0;
+		padding: 23px 0 32px 0;
 
 		nav {
 			order: 1;
 
 			li {
-				margin-bottom: 0.375rem;
+				margin-bottom: 6px;
 			}
 		}
 
@@ -135,27 +135,27 @@
 	}
 
 	.side {
-		margin-top: 1.8125rem;
+		margin-top: 29px;
 		order: 3;
 	}
 
 	.social {
-		margin-top: 1.5625rem;
+		margin-top: 25px;
 		order: 2;
 
 		&__icon {
-			margin-right: 0.9375rem;
+			margin-right: 15px;
 		}
 	}
 
 	.link {
-		font-size: 0.875rem;
+		font-size: 14px;
 	}
 
 	.button {
 		min-width: unset;
-		min-height: 2.9375rem;
-		margin-top: 1.8125rem;
+		min-height: 47px;
+		margin-top: 29px;
 		width: 100%;
 	}
 }

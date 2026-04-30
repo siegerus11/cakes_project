@@ -1,10 +1,10 @@
 .component {
-  margin-top: 7.5rem;
+  margin-top: 120px;
 }
 
 .title {
   font-weight: 900;
-  font-size: 1.875rem;
+  font-size: 30px;
   line-height: 103%;
   text-align: center;
   color: #ff5b8b;
@@ -12,9 +12,9 @@
 
 .describe {
   margin: 0 auto;
-  margin-top: 1.3125rem;
-  max-width: 28.125rem;
-  font-size: 1.0625rem;
+  margin-top: 21px;
+  max-width: 450px;
+  font-size: 17px;
   line-height: 150%;
   text-align: center;
   color: #000;
@@ -22,14 +22,14 @@
 
 .link {
   display: block;
-  margin-top: 1.75rem;
+  margin-top: 28px;
   text-decoration: underline;
   text-decoration-skip-ink: none;
   text-align: center;
   color: #2787f5;
 }
 
-@media (max-width: 90rem) {}
+@media (max-width: 1440px) {}
 
 @media (max-width: 1200px) {}
 
@@ -39,24 +39,24 @@
 
 @media (max-width: 576px) {
   .component {
-    margin-top: 5.625rem;
+    margin-top: 90px;
   }
 
   .title {
-    font-size: 1.25rem;
+    font-size: 20px;
     line-height: 155%;
   }
 
   .describe {
-    max-width: 19.375rem;
-    margin-top: 0.5625rem;
-    font-size: 0.875rem;
+    max-width: 310px;
+    margin-top: 9px;
+    font-size: 14px;
     line-height: 143%;
   }
 
   .link {
-    margin-top: 1.25rem;
-    font-size: 0.875rem;
+    margin-top: 20px;
+    font-size: 14px;
   }
 
 }

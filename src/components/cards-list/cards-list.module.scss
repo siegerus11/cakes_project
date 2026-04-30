@@ -2,12 +2,12 @@
 	display: flex;
 	align-items: stretch;
 	justify-content: flex-start;
-	margin-top: 1.5625rem;
-	column-gap: 1.5rem;
+	margin-top: 25px;
+	column-gap: 24px;
 	overflow-x: auto;
 
 	&_mt30 {
-		margin-top: 1.875rem;
+		margin-top: 30px;
 	}
 
 	&_fw {
@@ -15,19 +15,19 @@
 	}
 
 	&_rg {
-		row-gap: 2.375rem;
+		row-gap: 38px;
 	}
 }
 
 @media (max-width: 1200px) {
 	.component {
-		column-gap: 0.9375rem
+		column-gap: 15px
 	}
 }
 
 @media (max-width: 992px) {
 	.component {
-		gap: 0.625rem;
+		gap: 10px;
 		justify-content: center;
 
 		li {
@@ -40,7 +40,7 @@
 
 @media (max-width: 576px) {
 	.component {
-		margin-top: 0.9375rem;
+		margin-top: 15px;
 		justify-content: flex-start;
 
 		&_jcSpanceBtw {
@@ -48,13 +48,13 @@
 		}
 
 		&_rg {
-			column-gap: 0.25rem;
-			row-gap: 0.9375rem;
+			column-gap: 4px;
+			row-gap: 15px;
 		}
 	}
 }
 
-@media (max-width: 25rem) {
+@media (max-width: 400px) {
 	.component {
 		&_jcSpanceBtw {
 			justify-content: space-between;

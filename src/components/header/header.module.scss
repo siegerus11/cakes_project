@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.3125rem 0;
+    padding: 21px 0;
 }
 
 .primary,
@@ -16,10 +16,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    min-width: 26.5rem;
-    max-height: 3.25rem;
-    padding: 1.0625rem 1.5625rem;
-    border-radius: 1.125rem;
+    min-width: 424px;
+    max-height: 52px;
+    padding: 17px 25px;
+    border-radius: 18px;
     background: #f7f7f7;
 
     &__input {
@@ -27,7 +27,7 @@
         border: none;
         outline: none;
         background: #f7f7f7;
-        font-size: 1rem;
+        font-size: 16px;
 
         &::placeholder {
             color: #b1b1b1;
@@ -35,25 +35,25 @@
     }
 
     &__icon {
-        width: 1.0625rem;
-        height: 1rem;
-        margin-right: 0.5rem;
+        width: 17px;
+        height: 16px;
+        margin-right: 8px;
     }
 }
 
 .button {
-    min-width: 18.1875rem;
-    max-height: 3.25rem;
-    margin-right: 1.875rem;
+    min-width: 291px;
+    max-height: 52px;
+    margin-right: 30px;
 
     &__icon {
-        width: 1rem;
-        margin-right: 0.5rem;
+        width: 16px;
+        margin-right: 8px;
     }
 
     &__text {
-        font-size: 1rem;
-        margin-right: 1.875rem;
+        font-size: 16px;
+        margin-right: 30px;
         font-weight: 600;
     }
 }
@@ -61,9 +61,9 @@
 .outer {
     nav ul {
         display: grid;
-        grid-template-columns: repeat(6, 11.25rem);
-        grid-template-rows: repeat(1, 12.5rem);
-        column-gap: 1.4375rem;
+        grid-template-columns: repeat(6, 180px);
+        grid-template-rows: repeat(1, 200px);
+        column-gap: 23px;
     }
 }
 
@@ -73,42 +73,42 @@
     justify-content: flex-end;
     width: 100%;
     height: 100%;
-    padding: 0 0 1.1875rem 1.5rem;
-    border-radius: 1.5625rem;
+    padding: 0 0 19px 24px;
+    border-radius: 25px;
     background-color: #f0e2fb;
     text-decoration: none;
 
     span {
-        max-width: 6.25rem;
+        max-width: 100px;
         color: #fff;
         font-weight: 600;
-        font-size: 1.25rem;
+        font-size: 20px;
         line-height: 115%;
     }
 }
 
 @media (max-width: 1200px) {
     .outer nav ul {
-        grid-template-columns: repeat(6, 9.375rem);
-        grid-template-rows: repeat(1, 10.625rem);
-        column-gap: 0.8125rem;
+        grid-template-columns: repeat(6, 150px);
+        grid-template-rows: repeat(1, 170px);
+        column-gap: 13px;
         margin: 0 auto;
     }
 }
 
 @media (max-width: 992px) {
     .outer nav ul {
-        grid-template-columns: repeat(6, 8.125rem);
-        grid-template-rows: repeat(1, 9.375rem);
-        column-gap: 0.6875rem;
+        grid-template-columns: repeat(6, 130px);
+        grid-template-rows: repeat(1, 150px);
+        column-gap: 11px;
         overflow-x: scroll;
     }
 
     .link {
-        padding: 0 0 0.625rem 0.875rem;
+        padding: 0 0 10px 14px;
 
         span {
-            font-size: 1.1875rem;
+            font-size: 19px;
         }
     }
 
@@ -119,36 +119,36 @@
 
 @media (max-width: 767px) {
     .outer nav ul {
-        grid-template-columns: repeat(6, 7.5rem);
-        grid-template-rows: repeat(1, 8.75rem);
+        grid-template-columns: repeat(6, 120px);
+        grid-template-rows: repeat(1, 140px);
     }
 
     .search {
         min-width: unset;
 
         &__input {
-            font-size: 1rem;
+            font-size: 16px;
 
             &::placeholder {
-                font-size: 1rem;
+                font-size: 16px;
             }
         }
     }
 
     .logo {
-        margin-right: 2.8125rem;
+        margin-right: 45px;
     }
 
     .link {
         span {
-            font-size: 1.125rem;
+            font-size: 18px;
         }
     }
 }
 
 @media (max-width: 576px) {
     .wrapper {
-        padding: 1rem 0;
+        padding: 16px 0;
     }
 
     .primary {
@@ -156,38 +156,38 @@
     }
 
     .outer nav ul {
-        grid-template-columns: repeat(6, 6.1875rem);
-        grid-template-rows: repeat(1, 6.875rem);
-        column-gap: 0.5rem;
+        grid-template-columns: repeat(6, 99px);
+        grid-template-rows: repeat(1, 110px);
+        column-gap: 8px;
     }
 
     .search {
-        max-width: 12.125rem;
-        max-height: 2.625rem;
-        padding: 0.75rem 0.9375rem;
-        border-radius: 0.75rem;
+        max-width: 194px;
+        max-height: 42px;
+        padding: 12px 15px;
+        border-radius: 12px;
 
         &__input {
-            font-size: 0.875rem;
+            font-size: 14px;
 
             &::placeholder {
-                font-size: 0.875rem;
+                font-size: 14px;
             }
         }
 
         &__icon {
-            width: 1.1875rem;
-            height: 1.25rem;
+            width: 19px;
+            height: 20px;
         }
     }
 
     .link {
-        padding: 0 0 0.3125rem 0.5rem;
-        border-radius: 0.875rem;
+        padding: 0 0 5px 8px;
+        border-radius: 14px;
 
         span {
-            max-width: 5rem;
-            font-size: 0.6875rem;
+            max-width: 80px;
+            font-size: 11px;
         }
     }
 }
@@ -219,13 +219,13 @@
 
 // &:nth-child(3),
 // &:nth-child(4) {
-//     padding-bottom: 0.9375rem;
+//     padding-bottom: 15px;
 // }
 
 // &:nth-child(1) {
-//     padding-left: 1.5rem;
+//     padding-left: 24px;
 // }
 
 // &:nth-child(2) {
-//     padding-left: 1.625rem;
+//     padding-left: 26px;
 // }

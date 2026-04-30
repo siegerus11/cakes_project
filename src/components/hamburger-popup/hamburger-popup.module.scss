@@ -13,60 +13,60 @@
         flex-direction: column;
         align-items: center;
         margin: 0 auto;
-        padding: 2.3125rem 0 1.8125rem 0;
+        padding: 37px 0 29px 0;
         width: 100%;
         height: 100%;
     }
 
     .link {
         font-weight: 600;
-        font-size: 1.0625rem;
+        font-size: 17px;
         text-decoration: none;
         color: #000;
     }
 
     nav {
-        margin-top: 0.625rem;
+        margin-top: 10px;
 
         li {
-            padding: 1rem 0.9375rem 1rem 0.625rem;
+            padding: 16px 15px 16px 10px;
         }
     }
 }
 
 .button {
-    min-height: 3.0625rem;
-    margin-top: 1.125rem;
+    min-height: 49px;
+    margin-top: 18px;
 
     &__icon {
-        width: 0.875rem;
+        width: 14px;
     }
 
     span {
-        font-size: 0.875rem;
-        margin-right: 0.4375rem;
+        font-size: 14px;
+        margin-right: 7px;
         color: #fff;
     }
 }
 
 .icon {
     display: block;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-top: 1.8125rem;
-    margin-right: 0.9375rem;
+    width: 40px;
+    height: 40px;
+    margin-top: 29px;
+    margin-right: 15px;
 }
 
 @media (max-width: 992px) {
     .button {
-        padding: 0.9375rem 3.125rem;
+        padding: 15px 50px;
     }
 }
 
 @media (max-width: 576px) {
     .wrapper {
         >div>div {
-            padding: 1.8125rem 0 1.8125rem 0;
+            padding: 29px 0 29px 0;
         }
 
         nav {
@@ -81,8 +81,8 @@
     }
 
     .button {
-        min-height: 2.9375rem;
-        padding: 0.8125rem 5.125rem;
+        min-height: 47px;
+        padding: 13px 82px;
     }
 
     .link {
@@ -95,7 +95,7 @@
     .wrapper {
         nav {
             li {
-                padding: 1rem 0.9375rem 1rem 0.625rem;
+                padding: 16px 15px 16px 10px;
             }
         }
     }

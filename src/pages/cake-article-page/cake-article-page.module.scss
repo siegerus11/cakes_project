@@ -1,12 +1,12 @@
 .component {
 	position: relative;
-	padding: 1.25rem 0 10.0625rem 0;
+	padding: 20px 0 161px 0;
 }
 
 .back {
 	position: relative;
-	margin-left: 1.8125rem;
-	font-size: 1rem;
+	margin-left: 29px;
+	font-size: 16px;
 	line-height: 169%;
 	text-decoration: none;
 	color: #000;
@@ -17,20 +17,20 @@
 		top: 50%;
 		transform: translateY(-50%) rotate(180deg);
 		right: auto;
-		left: -1.75rem;
-		width: 1.125rem;
-		height: 1.125rem;
+		left: -28px;
+		width: 18px;
+		height: 18px;
 		background-image: url('/images/nav-arrow-big.svg');
 	}
 }
 
 .wrapper {
 	display: flex;
-	margin-top: 1.5625rem;
+	margin-top: 25px;
 }
 
 .main {
-	max-width: 30.375rem;
+	max-width: 486px;
 
 	&__headline {
 		display: flex;
@@ -44,21 +44,21 @@
 	min-width: 30%;
 
 	&__main {
-		padding: 1.6875rem 1.875rem 1.875rem 1.875rem;
+		padding: 27px 30px 30px 30px;
 	}
 
 	&__description {
-		margin-top: 0.9375rem;
+		margin-top: 15px;
 	}
 
 	&__toplist {
-		margin-top: 0.9375rem;
-		margin-left: 1.875rem;
+		margin-top: 15px;
+		margin-left: 30px;
 		list-style-type: disc;
 	}
 
 	&__bottomlist {
-		margin-top: 1.25rem;
+		margin-top: 20px;
 		list-style-type: none;
 	}
 
@@ -82,27 +82,27 @@
 
 	&__close {
 		position: absolute;
-		top: 0.9375rem;
-		right: 0.9375rem;
+		top: 15px;
+		right: 15px;
 		border: none;
 		background: none;
-		min-width: 1.125rem;
-		min-height: 1.125rem;
+		min-width: 18px;
+		min-height: 18px;
 	}
 
 	&__image {
 		display: none;
 		width: 100%;
-		height: 22.5rem;
+		height: 360px;
 		margin: 0 auto;
-		border-radius: 1.875rem;
+		border-radius: 30px;
 		background-color: var(--secondary-color);
 
 		img {
 			max-width: 100%;
 			max-height: 100%;
 			object-fit: cover;
-			border-radius: 1.875rem;
+			border-radius: 30px;
 		}
 	}
 
@@ -115,19 +115,19 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding-left: 0.625rem;
+	padding-left: 10px;
 
 	&__price {
 		font-weight: 700;
-		font-size: 1.25rem;
+		font-size: 20px;
 	}
 
 	&__button {
-		padding: 0.9375rem 4.3125rem 0.9375rem 4.25rem;
+		padding: 15px 69px 15px 68px;
 
 		span {
 			font-weight: 700;
-			font-size: 0.875rem;
+			font-size: 14px;
 			line-height: 129%;
 		}
 	}
@@ -141,7 +141,7 @@
 
 @media (max-width: 992px) {
 	.main {
-		margin-top: 1.875rem;
+		margin-top: 30px;
 	}
 
 	.wrapper {
@@ -168,21 +168,21 @@
 @media (max-width: 576px) {
 	.component {
 		padding-top: 0;
-		padding-bottom: 7.5rem;
+		padding-bottom: 120px;
 	}
 
 	.wrapper {
 		position: relative;
-		top: -1.625rem;
+		top: -26px;
 		margin-top: 0;
 	}
 
 	.main {
-		margin-top: 1.3125rem;
-		padding: 0 0.9375rem;
+		margin-top: 21px;
+		padding: 0 15px;
 
 		&__title {
-			font-size: 1.5rem;
+			font-size: 24px;
 			font-weight: 900;
 		}
 	}
@@ -190,7 +190,7 @@
 	.back {
 		display: block;
 		width: 100%;
-		height: 4.0625rem;
+		height: 65px;
 		margin: 0;
 		background-color: #808080;
 
@@ -200,13 +200,13 @@
 
 		&__item {
 			position: absolute;
-			top: 1.75rem;
+			top: 28px;
 			left: 50%;
 			transform: translateX(-50%);
 			display: block;
-			border-radius: 0.5rem;
-			width: 2.4375rem;
-			height: 0.25rem;
+			border-radius: 8px;
+			width: 39px;
+			height: 4px;
 			background-color: rgba(255, 255, 255, 0.5);
 		}
 	}
@@ -222,12 +222,12 @@
 
 		&__wrapper {
 			position: relative;
-			top: -1.25rem;
+			top: -20px;
 		}
 
 		&__main {
-			padding-left: 0.625rem;
-			padding-right: 0.625rem;
+			padding-left: 10px;
+			padding-right: 10px;
 		}
 
 
@@ -235,19 +235,19 @@
 			display: block;
 			position: relative;
 			width: 100%;
-			min-height: 7.3125rem;
+			min-height: 117px;
 			margin: 0;
 			background-color: #808080;
 
 			span {
 				position: absolute;
-				top: 5.3125rem;
+				top: 85px;
 				left: 50%;
 				transform: translateX(-50%);
 				display: block;
-				border-radius: 0.5rem;
-				width: 2.4375rem;
-				height: 0.25rem;
+				border-radius: 8px;
+				width: 39px;
+				height: 4px;
 				background-color: rgba(255, 255, 255, 0.5);
 			}
 		}
@@ -257,10 +257,10 @@
 		}
 
 		&__image {
-			border-radius: 1.5625rem 1.5625rem 0 0;
+			border-radius: 25px 25px 0 0;
 
 			img {
-				border-radius: 1.5625rem 1.5625rem 0 0;
+				border-radius: 25px 25px 0 0;
 			}
 		}
 	}

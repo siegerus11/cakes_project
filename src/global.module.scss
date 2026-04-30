@@ -38,12 +38,12 @@ body {
 }
 
 :global(.container) {
-	width: 75rem;
+	width: 1200px;
 	margin: 0 auto;
 	padding: 0;
 
 	&:global(_secondary) {
-		max-width: 68.625rem;
+		max-width: 1098px;
 	}
 
 	&:global(_footer) {
@@ -53,9 +53,9 @@ body {
 
 :global(.visually-hidden) {
 	position: absolute;
-	width: 0.0625rem;
-	height: 0.0625rem;
-	margin: -0.0625rem;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
 	border: 0;
 	padding: 0;
 	white-space: nowrap;
@@ -67,10 +67,10 @@ body {
 
 @media (max-width: 1200px) {
 	:global(.container) {
-		max-width: 60.5rem;
+		max-width: 968px;
 
 		&:global(_secondary) {
-			max-width: 60.5rem;
+			max-width: 968px;
 		}
 	}
 
@@ -81,21 +81,21 @@ body {
 
 @media (max-width: 992px) {
 	:global(.container) {
-		max-width: 43.4375rem;
+		max-width: 695px;
 
 		&:global(_secondary) {
-			max-width: 43.4375rem;
+			max-width: 695px;
 		}
 	}
 }
 
 @media (max-width: 767px) {
 	:global(.container) {
-		max-width: 33.75rem;
+		max-width: 540px;
 
 		&:global(_secondary) {
 			// position: relative;
-			max-width: 33.75rem;
+			max-width: 540px;
 		}
 	}
 }
@@ -103,7 +103,7 @@ body {
 @media (max-width: 576px) {
 	:global(.container) {
 		max-width: 100%;
-		padding: 0 0.9375rem;
+		padding: 0 15px;
 
 		&:global(_secondary) {
 			max-width: 100%;
@@ -111,45 +111,45 @@ body {
 		}
 
 		&:global(_catalog-list) {
-			padding: 0 0.3125rem;
+			padding: 0 5px;
 		}
 	}
 }
 
 
-// @media (max-width: 90rem) 
+// @media (max-width: 1440px) 
 //     .container 
-//         max-width: 75rem
+//         max-width: 1200px
 
 
 // @media (max-width: 1200px) 
 //     .container 
-//         max-width: 60.5rem
+//         max-width: 968px
 
 
 // @media (max-width: 992px) 
 //     .container 
-//         max-width: 43.4375rem
+//         max-width: 695px
 
 
 // @media (max-width: 767px) 
 //     .container 
-//         max-width: 33.75rem
+//         max-width: 540px
 
 
 // @media (max-width: 576px) 
 //     .container 
 //         max-width: 100%
-//         padding: 0 0.9375rem
+//         padding: 0 15px
 
 
 // @media (max-width: 360px) 
 //     .container 
 //         max-width: 100%
-//         padding: 0 0.9375rem
+//         padding: 0 15px
 
 
-// @media (max-width: 90rem) {}
+// @media (max-width: 1440px) {}
 
 // @media (max-width: 1200px) {}
 
@@ -176,33 +176,33 @@ body {
 
 
 
-// @media (max-width: 90rem) 
+// @media (max-width: 1440px) 
 //     .container 
-//         max-width: 75rem
+//         max-width: 1200px
 
 
 // @media (max-width: 1200px) 
 //     .container 
-//         max-width: 60.5rem
+//         max-width: 968px
 
 
 // @media (max-width: 992px) 
 //     .container 
-//         max-width: 43.4375rem
+//         max-width: 695px
 
 
 // @media (max-width: 767px) 
 //     .container 
-//         max-width: 33.75rem
+//         max-width: 540px
 
 
 // @media (max-width: 576px) 
 //     .container 
 //         max-width: 100%
-//         padding: 0 0.9375rem
+//         padding: 0 15px
 
 
-// @media (max-width: 23.431200px) 
+// @media (max-width: 375px) 
 //     .container 
 //         max-width: 100%
-//         padding: 0 0.9375rem
+//         padding: 0 15px
