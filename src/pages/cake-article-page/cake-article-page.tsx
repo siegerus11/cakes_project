@@ -12,7 +12,7 @@ import OrderForm from './order-form/order-form';
 import Slider from './slider/slider';
 
 const CakeArticlePage = () => {
-	const pageTitle = 'Торт с ягодами и безе!!!';
+	const pageTitle = 'Торт с ягодами и безе';
 	const titleClassName = `title_fz30 title_fw800 ${styles.main__title}`;
 	const activeOffer = cakeOffers[0];
 	const initialprice = activeOffer.price;
