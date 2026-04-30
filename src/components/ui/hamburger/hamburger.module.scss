@@ -31,10 +31,8 @@
 
         .item {
             width: 100%;
-            height: 0;
-            border-top: 3px solid #000;
-            border-radius: 10px;
-            background-color: transparent;
+            height: 2.4px;
+            background-color: #000;
 
             &:nth-child(2) {
                 max-width: 14px;
