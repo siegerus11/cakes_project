@@ -1,7 +1,10 @@
 import { useState, ChangeEvent, useEffect } from 'react';
 
-import { useAppSelector } from '../../../hooks/useStore';
-import { selectTotalPrice } from '../../../store/main-process/main-process';
+import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
+import {
+	selectTotalPrice,
+	setTotalPrice
+} from '../../../store/main-process/main-process';
 import {
 	CakeOffer,
 	CheckBoxValue,
@@ -28,6 +31,7 @@ type OrderFormProps = {
 
 const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const totalPrice = useAppSelector(selectTotalPrice);
+	const dispatch = useAppDispatch();
 
 	const [descriptionVisible, setDescriptionVisible] =
 		useState<boolean>(false);
@@ -51,11 +55,24 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const [fillingCheckBoxValues, setFillingCheckBoxValues] =
 		useState<CheckBoxValue>(initialFillingCheckboxes);
 
+	// will be refactoring to store
+	const optionalCheckboxPrices = getPricesByCheckboxValue<Optional>(
+		cake.optionally,
+		optionalCheckboxValues
+	);
+	const fillingCheckboxPrices = getPricesByCheckboxValue<Filling>(
+		cake.filling,
+		fillingCheckBoxValues
+	);
+	const weightRadioPrices = getPricesByRadioValue(radios, cake.price);
+
 	const handleOptionalCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setOptionalCheckboxValues({
 			...optionalCheckboxValues,
 			[e.target.id]: e.target.checked
 		});
+
+		dispatch(setTotalPrice(optionalCheckboxPrices[0]));
 	};
 
 	const handleFillingCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -68,17 +85,6 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const handleMobileArrowClick = () => {
 		setDescriptionVisible(prevState => !prevState);
 	};
-
-	// will be refactoring to store
-	const optionalCheckboxPrices = getPricesByCheckboxValue<Optional>(
-		cake.optionally,
-		optionalCheckboxValues
-	);
-	const fillingCheckboxPrices = getPricesByCheckboxValue<Filling>(
-		cake.filling,
-		fillingCheckBoxValues
-	);
-	const weightRadioPrices = getPricesByRadioValue(radios, cake.price);
 
 	useEffect(() => {
 		const groupPrices = [

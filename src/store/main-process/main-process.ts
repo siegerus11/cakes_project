@@ -3,19 +3,22 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { NameSpace, startingPrice } from '../../constants';
 
 type InitialState = {
-	totalPrice: number[];
+	totalPrice: number;
 };
 
 const initialState: InitialState = {
-	totalPrice: [startingPrice]
+	totalPrice: startingPrice
 };
 
 export const mainProcess = createSlice({
 	name: NameSpace.Main,
 	initialState,
 	reducers: {
-		changeTotalPrice: (state, action: PayloadAction<number>) => {
-			state.totalPrice = [...state.totalPrice, action.payload];
+		setTotalPrice: (state, action: PayloadAction<number>) => {
+			return {
+				...state,
+				totalPrice: state.totalPrice + action.payload
+			};
 		}
 	},
 	selectors: {
@@ -23,4 +26,5 @@ export const mainProcess = createSlice({
 	}
 });
 
+export const { setTotalPrice } = mainProcess.actions;
 export const { selectTotalPrice } = mainProcess.selectors;
