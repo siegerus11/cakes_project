@@ -80,4 +80,4 @@ function useSlider(imagesSrc: string[]) {
 	};
 }
 
-export { useSlider };
+export default useSlider ;

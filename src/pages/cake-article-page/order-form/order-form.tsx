@@ -1,5 +1,7 @@
 import { useState, ChangeEvent, useEffect } from 'react';
 
+import { useAppSelector } from '../../../hooks/useStore';
+import { selectTotalPrice } from '../../../store/main-process/main-process';
 import {
 	CakeOffer,
 	CheckBoxValue,
@@ -25,6 +27,8 @@ type OrderFormProps = {
 };
 
 const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
+	const totalPrice = useAppSelector(selectTotalPrice);
+
 	const [descriptionVisible, setDescriptionVisible] =
 		useState<boolean>(false);
 
@@ -62,7 +66,6 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	};
 
 	const handleMobileArrowClick = () => {
-		console.log(descriptionVisible);
 		setDescriptionVisible(prevState => !prevState);
 	};
 
@@ -114,7 +117,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	return (
 		<div className={styles.component}>
 			<form className={styles.feed}>
-				<Adder priceCounter={priceCounter} isWrapped={false} />
+				<Adder priceCounter={totalPrice} isWrapped={false} />
 				<ol className={styles.list}>
 					<FillingPart
 						cake={cake}
@@ -153,7 +156,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 					></button>
 					{cake.describe}
 				</div>
-				<Adder priceCounter={priceCounter} isWrapped />
+				<Adder priceCounter={totalPrice} isWrapped />
 			</form>
 		</div>
 	);

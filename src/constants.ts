@@ -1,5 +1,7 @@
 import { Nav, WeightRelevant } from './types/types';
 
+export const startingPrice = 0;
+
 export const AppRoute = {
 	ROOT: '/',
 	ABOUT: '/about',
@@ -77,7 +79,8 @@ export const SORT_KINDS = [
 ] as const;
 
 export const NameSpace = {
-	Data: 'DATA'
+	Data: 'DATA',
+	Main: 'MAIN'
 } as const;
 
 export const weightScale: Record<string, WeightRelevant> = {

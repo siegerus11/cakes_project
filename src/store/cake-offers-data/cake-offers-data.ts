@@ -9,7 +9,7 @@ type InitialState = {
 };
 
 const initialState: InitialState = {
-	cakeOffers: cakeOffers
+	cakeOffers
 };
 
 export const cakeOffersData = createSlice({

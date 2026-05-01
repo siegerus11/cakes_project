@@ -2,7 +2,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
 import '../../global.module.scss';
-import { useAppSelector } from '../../hooks/store';
+import { useAppSelector } from '../../hooks/useStore';
 import AboutPage from '../../pages/about-page/about-page';
 import CakeArticlePage from '../../pages/cake-article-page/cake-article-page';
 import CatalogPage from '../../pages/catalog-page/catalog-page';
