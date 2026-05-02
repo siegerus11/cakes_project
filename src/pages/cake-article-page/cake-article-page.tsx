@@ -6,7 +6,9 @@ import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute } from '../../constants';
+import { useAppSelector } from '../../hooks/useStore';
 import { cakeOffers } from '../../mocks/cake-offers/cake-offers';
+import { selectTotalPrice } from '../../store/main-process/main-process';
 import styles from './cake-article-page.module.scss';
 import OrderForm from './order-form/order-form';
 import Slider from './slider/slider';
@@ -22,6 +24,7 @@ const CakeArticlePage = () => {
 	const buttonClass = `button button_primary ${styles.controller__button}`;
 
 	const { filling } = activeOffer;
+	const totalPrice = useAppSelector(selectTotalPrice);
 
 	const [visibilityIndex, setVisibilityIndex] = useState<number | null>(null);
 
@@ -125,7 +128,7 @@ const CakeArticlePage = () => {
 			<ButtonController outerClass={styles.controller}>
 				<div className={styles.controller__wrapper}>
 					<span className={styles.controller__price}>
-						{initialprice} ₽
+						{totalPrice} ₽
 					</span>
 					<Button className={buttonClass}>
 						<span>В корзину</span>

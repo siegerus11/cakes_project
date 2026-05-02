@@ -6,6 +6,8 @@ import Clauses from '../../components/clause/clauses';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute, NAVS } from '../../constants';
+import { useAppSelector } from '../../hooks/useStore';
+import { selectTotalPrice } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
 import styles from './main-page.module.scss';
 
@@ -15,6 +17,8 @@ type MainPageProps = {
 };
 
 const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
+	const totalPrice = useAppSelector(selectTotalPrice);
+
 	const splicedCakes = [...cakes].splice(0, 3);
 	const splicedBentoCakes = [...bentoCakes].splice(0, 3);
 
@@ -72,7 +76,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						<use xlinkHref="#cart"></use>
 					</svg>
 					<span className={styles.button__text}>Оформить заказ</span>
-					<span className={styles.button__price}>6 800 ₽</span>
+					<span className={styles.button__price}>{totalPrice} ₽</span>
 				</Button>
 			</ButtonController>
 		</>
