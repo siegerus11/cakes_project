@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
+import { useAppDispatch } from '../../hooks/useStore';
+import { setActiveOffer } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
 import Button from '../ui/button/button';
 import styles from './card.module.scss';
@@ -13,6 +15,11 @@ type CardProps = {
 const Card = ({ cake, isMainPage }: CardProps) => {
 	const { title, images, price } = cake;
 
+	const dispatch = useAppDispatch();
+
+	const handleOfferLinkClick = (offer: CakeOffer) => {
+		dispatch(setActiveOffer(offer));
+	};
 	const cardLinkClass = isMainPage
 		? styles.card
 		: `${styles.card} ${styles.card_catalog}`;
@@ -20,17 +27,20 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 	const cardTitleClass = isMainPage
 		? styles.title
 		: `${styles.title} ${styles.title_catalog}`;
+
 	return (
-		<Link to={AppRoute.CAKE_OFFER_ARTICLE} className={cardLinkClass}>
+		<Link
+			to={AppRoute.CAKE_OFFER_ARTICLE}
+			className={cardLinkClass}
+			onClick={() => handleOfferLinkClick(cake)}
+		>
 			<div className={styles.imgWrap}>
 				<img src={images[0]} alt={title} width="282" height="282" />
 			</div>
 			<span className={cardTitleClass}>{title}</span>
 			<div className={styles.bottom}>
 				<span className={styles.cost}>{price} ₽</span>
-				<Button
-					className={`button button_tertiary ${styles.button}`}
-				/>
+				<Button className={`button button_tertiary ${styles.button}`} />
 			</div>
 		</Link>
 	);

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 
 import { LAYOUT_NAVS } from '../../constants';
+import { useAppSelector } from '../../hooks/useStore';
+import { selectTotalPrice } from '../../store/main-process/main-process';
 import HamburgerPopup from '../hamburger-popup/hamburger-popup';
 import Logo from '../logo/logo';
 import NavMenu from '../nav-menu/nav-menu';
@@ -23,6 +25,8 @@ const Header = () => {
 		document.addEventListener('keydown', closePopup);
 		return () => document.removeEventListener('keydown', closePopup);
 	}, [hamburgerisVisible]);
+
+	const totalPrice = useAppSelector(selectTotalPrice);
 
 	return (
 		<div className="container">
@@ -58,7 +62,7 @@ const Header = () => {
 								Оформить заказ
 							</span>
 							<span className={styles.button__price}>
-								6 800 ₽
+								{totalPrice} ₽
 							</span>
 						</SubmitButton>
 						<Hamburger onHamburgerClick={handleHamburgerClick} />

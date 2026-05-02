@@ -1,7 +1,7 @@
 import { ChangeEvent, /* MouseEvent, */ useEffect, useState } from 'react';
 
 import { CakeOffer, Radio } from '../../../../types/types';
-import { createRadioInitial } from '../../../../utils/createRadioInitial';
+import createRadioInitial from '../../../../utils/createRadioInitial';
 import { getPersonQuantity } from '../../../../utils/getPersonQuantity';
 import styles from './weight-part.module.scss';
 
