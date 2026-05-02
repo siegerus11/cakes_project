@@ -25,6 +25,7 @@ export const mainProcess = createSlice({
 		},
 
 		setActiveOffer: (state, action: PayloadAction<CakeOffer>) => {
+			console.log(action.payload);
 			return {
 				...state,
 				activeOffer: action.payload
@@ -38,4 +39,4 @@ export const mainProcess = createSlice({
 });
 
 export const { setTotalPrice, setActiveOffer } = mainProcess.actions;
-export const { selectTotalPrice } = mainProcess.selectors;
+export const { selectTotalPrice, selectActiveOffer } = mainProcess.selectors;

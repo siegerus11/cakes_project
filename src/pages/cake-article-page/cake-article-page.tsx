@@ -7,23 +7,26 @@ import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
-import { cakeOffers } from '../../mocks/cake-offers/cake-offers';
-import { selectTotalPrice } from '../../store/main-process/main-process';
+import {
+	selectTotalPrice,
+	selectActiveOffer
+} from '../../store/main-process/main-process';
 import styles from './cake-article-page.module.scss';
 import OrderForm from './order-form/order-form';
 import Slider from './slider/slider';
 
 const CakeArticlePage = () => {
+	const activeOffer = useAppSelector(selectActiveOffer);
+
 	const pageTitle = 'Торт с ягодами и безе';
 	const titleClassName = `title_fz30 title_fw800 ${styles.main__title}`;
-	const activeOffer = cakeOffers[0];
-	const initialprice = activeOffer.price;
+	const initialprice = activeOffer?.price;
 	const popupClass = `popup ${styles.popup}`;
 	const popupClassActive = `popup ${styles.popup} ${styles.popup_active}`;
 	const popupTitleClass = 'title_fz22 title_fw800';
 	const buttonClass = `button button_primary ${styles.controller__button}`;
 
-	const { filling } = activeOffer;
+	const { filling } = activeOffer!;
 	const totalPrice = useAppSelector(selectTotalPrice);
 
 	const [visibilityIndex, setVisibilityIndex] = useState<number | null>(null);
@@ -41,7 +44,7 @@ const CakeArticlePage = () => {
 						<span className={styles.back__item}></span>
 					</Link>
 					<div className={styles.wrapper}>
-						<Slider cake={activeOffer} />
+						<Slider cake={activeOffer!} />
 						<section className={styles.main}>
 							<div className={styles.main__headline}>
 								<Title
@@ -50,8 +53,8 @@ const CakeArticlePage = () => {
 								/>
 							</div>
 							<OrderForm
-								cake={activeOffer}
-								initialprice={initialprice}
+								cake={activeOffer!}
+								initialprice={initialprice!}
 								onDescribeClick={handleDescribeClick}
 							/>
 						</section>

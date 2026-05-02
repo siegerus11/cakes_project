@@ -2,7 +2,7 @@ import { v4 as uuidv } from 'uuid';
 
 import { CakeOffer } from '../../types/types';
 
-export const cakeOffers: CakeOffer[] = [
+const cakeOffers: CakeOffer[] = [
 	{
 		id: uuidv(),
 		isBento: false,
@@ -638,3 +638,5 @@ export const cakeOffers: CakeOffer[] = [
 		]
 	}
 ];
+
+export default cakeOffers;
