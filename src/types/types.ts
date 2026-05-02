@@ -1,6 +1,5 @@
 import { AppRoute } from '../constants';
 import { createInitial } from '../utils/createInitial';
-import { ReactWithChildren } from '../types/types';
 
 export type RoutePath = (typeof AppRoute)[keyof typeof AppRoute];
 

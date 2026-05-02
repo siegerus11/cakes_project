@@ -1,7 +1,5 @@
 import { Nav, WeightRelevant } from './types/types';
 
-export const startingPrice = 0;
-
 export const AppRoute = {
 	ROOT: '/',
 	ABOUT: '/about',

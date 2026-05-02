@@ -30,4 +30,4 @@ function createInitial<T, K>(
 // 	return result as unknown as Omit<T, K> & Record<string, V>;
 // }
 
-export { createInitial };
+export default createInitial;

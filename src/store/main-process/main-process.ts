@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { NameSpace, startingPrice } from '../../constants';
+import { NameSpace } from '../../constants';
 
 type InitialState = {
 	totalPrice: number;
 };
 
 const initialState: InitialState = {
-	totalPrice: startingPrice
+	totalPrice: 0
 };
 
 export const mainProcess = createSlice({
@@ -17,7 +17,7 @@ export const mainProcess = createSlice({
 		setTotalPrice: (state, action: PayloadAction<number>) => {
 			return {
 				...state,
-				totalPrice: state.totalPrice + action.payload
+				totalPrice: action.payload
 			};
 		}
 	},
