@@ -1,6 +1,6 @@
 import { Optional, CheckBoxValue, Filling } from '../types/types';
 
-export function getPricesByCheckboxValue<T extends Optional | Filling>(
+function getPricesByCheckboxValue<T extends Optional | Filling>(
 	array: T[],
 	objectValue: CheckBoxValue
 ): number[] {
@@ -18,3 +18,5 @@ export function getPricesByCheckboxValue<T extends Optional | Filling>(
 
 	return relativePrices.flat(1);
 }
+
+export default getPricesByCheckboxValue;

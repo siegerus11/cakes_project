@@ -1,5 +1,7 @@
-import { useState, ChangeEvent, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
+import useCheckboxes from '../../../hooks/useCheckBox';
+import useRadio from '../../../hooks/useRadio';
 import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
 import {
 	selectTotalPrice,
@@ -9,14 +11,13 @@ import {
 	CakeOffer,
 	CheckBoxValue,
 	Filling,
-	Optional,
-	Radio
+	Optional
 } from '../../../types/types';
-import { createCheckBoxInitial } from '../../../utils/createCheckboxInitial';
-import { createRadioInitial } from '../../../utils/createRadioInitial';
-import { getPricesByCheckboxValue } from '../../../utils/getPriceByCheckboxValue';
+import createCheckBoxInitial from '../../../utils/createCheckboxInitial';
+import createRadioInitial from '../../../utils/createRadioInitial';
+import getPricesByCheckboxValue from '../../../utils/getPriceByCheckboxValue';
 import { getPricesByRadioValue } from '../../../utils/getPricesByRadioValue';
-import { getPricesSum } from '../../../utils/getPricesSum';
+import getPricesSum from '../../../utils/getPricesSum';
 import Adder from './adder/adder';
 import FillingPart from './filling-part/filling-part';
 import OptionalPart from './optional-part/optional-part';
@@ -36,55 +37,35 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const [descriptionVisible, setDescriptionVisible] =
 		useState<boolean>(false);
 
-	const [priceCounter, setPriceCounter] = useState<number>(initialprice);
-
-	const initialRadios: Radio[] = createRadioInitial(cake.weight);
-	const [radios, setRadios] = useState<Radio[]>(initialRadios);
-
 	const initialOptionCheckboxes = createCheckBoxInitial<Optional>(
 		cake.optionally,
 		'name'
 	);
-	const [optionalCheckboxValues, setOptionalCheckboxValues] =
-		useState<CheckBoxValue>(initialOptionCheckboxes);
 
 	const initialFillingCheckboxes = createCheckBoxInitial<Filling>(
 		cake.filling,
 		'name'
 	);
-	const [fillingCheckBoxValues, setFillingCheckBoxValues] =
-		useState<CheckBoxValue>(initialFillingCheckboxes);
 
-	// will be refactoring to store
+	const initialRadios = createRadioInitial(cake.weight);
+
+	const [optionCheckboxes, handleOptionalCheckboxChange] =
+		useCheckboxes<CheckBoxValue>(initialOptionCheckboxes);
+
+	const [fillingCheckboxes, handleFillingCheckboxChange] =
+		useCheckboxes<CheckBoxValue>(initialFillingCheckboxes);
+
+	const [radios, handleRadioChange] = useRadio(initialRadios);
+
 	const optionalCheckboxPrices = getPricesByCheckboxValue<Optional>(
 		cake.optionally,
-		optionalCheckboxValues
+		optionCheckboxes
 	);
 	const fillingCheckboxPrices = getPricesByCheckboxValue<Filling>(
 		cake.filling,
-		fillingCheckBoxValues
+		fillingCheckboxes
 	);
 	const weightRadioPrices = getPricesByRadioValue(radios, cake.price);
-
-	const handleOptionalCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
-		setOptionalCheckboxValues({
-			...optionalCheckboxValues,
-			[e.target.id]: e.target.checked
-		});
-
-		dispatch(setTotalPrice(optionalCheckboxPrices[0]));
-	};
-
-	const handleFillingCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
-		setFillingCheckBoxValues({
-			...fillingCheckBoxValues,
-			[e.target.id]: e.target.checked
-		});
-	};
-
-	const handleMobileArrowClick = () => {
-		setDescriptionVisible(prevState => !prevState);
-	};
 
 	useEffect(() => {
 		const groupPrices = [
@@ -92,32 +73,17 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 			...fillingCheckboxPrices,
 			...weightRadioPrices
 		];
-		setPriceCounter(getPricesSum(groupPrices, initialprice));
+		dispatch(setTotalPrice(getPricesSum(groupPrices, initialprice)));
 	}, [
-		optionalCheckboxValues,
-		fillingCheckBoxValues,
 		fillingCheckboxPrices,
 		weightRadioPrices,
 		optionalCheckboxPrices,
 		initialprice,
-		radios
+		dispatch
 	]);
 
-	const handleRadioChange = (
-		e: ChangeEvent<HTMLInputElement>,
-		idx: number
-	) => {
-		setRadios(
-			radios.map((radio, i) => {
-				return i === idx
-					? {
-							...radio,
-							isChecked: true,
-							value: parseFloat(e.target.value)
-					  }
-					: { ...radio, isChecked: false, value: radio.weightValue };
-			})
-		);
+	const handleMobileArrowClick = () => {
+		setDescriptionVisible(prevState => !prevState);
 	};
 
 	return (
@@ -127,8 +93,8 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 				<ol className={styles.list}>
 					<FillingPart
 						cake={cake}
-						onCheckBoxChange={handleFillingCheckboxChange}
-						checkBoxValues={fillingCheckBoxValues}
+						onCheckBoxChange={e => handleFillingCheckboxChange(e)}
+						checkBoxValues={fillingCheckboxes}
 						onDescribeClick={onDescribeClick}
 					/>
 					<WeightPart
@@ -137,8 +103,8 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 					/>
 					<OptionalPart
 						cake={cake}
-						onCheckBoxChange={handleOptionalCheckboxChange}
-						checkBoxValues={optionalCheckboxValues}
+						onCheckBoxChange={e => handleOptionalCheckboxChange(e)}
+						checkBoxValues={optionCheckboxes}
 					/>
 				</ol>
 				<div

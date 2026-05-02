@@ -1,5 +1,8 @@
-export const getPricesSum = (array: number[], initialValue: number) => {
+const getPricesSum = (array: number[], initialValue: number) => {
 	return array.reduce((sum: number, item: number) => {
-		return Math.floor((sum += item));
+		const result = Math.floor(sum + item);
+		return result;
 	}, initialValue);
 };
+
+export default getPricesSum;
