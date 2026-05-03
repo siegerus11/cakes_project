@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, MouseEvent } from 'react';
 
 import useCheckboxes from '../../../hooks/useCheckBox';
 import useRadio from '../../../hooks/useRadio';
@@ -86,10 +86,19 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 		setDescriptionVisible(prevState => !prevState);
 	};
 
+	const handleSubmit = (e: MouseEvent, order: unknown) => {
+		e.preventDefault();
+		console.log('submit');
+	};
+
 	return (
 		<div className={styles.component}>
 			<form className={styles.feed}>
-				<Adder priceCounter={totalPrice} isWrapped={false} />
+				<Adder
+					priceCounter={totalPrice}
+					onSubmit={handleSubmit}
+					isWrapped={false}
+				/>
 				<ol className={styles.list}>
 					<FillingPart
 						cake={cake}
@@ -128,7 +137,11 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 					></button>
 					{cake.describe}
 				</div>
-				<Adder priceCounter={totalPrice} isWrapped />
+				<Adder
+					priceCounter={totalPrice}
+					onSubmit={handleSubmit}
+					isWrapped
+				/>
 			</form>
 		</div>
 	);

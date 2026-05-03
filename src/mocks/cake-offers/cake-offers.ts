@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { v4 as uuidv } from 'uuid';
 
 import { CakeOffer } from '../../types/types';

@@ -1,5 +1,4 @@
 import { AppRoute } from '../constants';
-import createInitial from '../utils/createInitial';
 
 export type RoutePath = (typeof AppRoute)[keyof typeof AppRoute];
 
