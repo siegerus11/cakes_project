@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { NameSpace } from '../../constants';
-import { CakeOffer } from '../../types/types';
+import { CakeOrder } from '../../types/types';
 
 type InitialState = {
 	totalPrice: number;
-	activeOffer: CakeOffer | null;
-	shoppingCart: CakeOffer[];
+	activeOffer: string;
+	shoppingCart: CakeOrder[];
 };
 
 const initialState: InitialState = {
 	totalPrice: 0,
-	activeOffer: null,
+	activeOffer: '',
 	shoppingCart: []
 };
 
@@ -26,13 +26,13 @@ export const mainProcess = createSlice({
 			};
 		},
 
-		setActiveOffer: (state, action: PayloadAction<CakeOffer>) => {
+		setActiveOffer: (state, action: PayloadAction<string>) => {
 			return {
 				...state,
 				activeOffer: action.payload
 			};
 		},
-		setShoppingCart: (state, action: PayloadAction<CakeOffer>) => {
+		setShoppingCart: (state, action: PayloadAction<CakeOrder>) => {
 			return {
 				...state,
 				shoppingCart: [...state.shoppingCart, action.payload]
@@ -41,9 +41,12 @@ export const mainProcess = createSlice({
 	},
 	selectors: {
 		selectTotalPrice: state => state.totalPrice,
-		selectActiveOffer: state => state.activeOffer
+		selectActiveOffer: state => state.activeOffer,
+		selectShoppingCart: state => state.shoppingCart
 	}
 });
 
-export const { setTotalPrice, setActiveOffer } = mainProcess.actions;
-export const { selectTotalPrice, selectActiveOffer } = mainProcess.selectors;
+export const { setTotalPrice, setActiveOffer, setShoppingCart } =
+	mainProcess.actions;
+export const { selectTotalPrice, selectActiveOffer, selectShoppingCart } =
+	mainProcess.selectors;

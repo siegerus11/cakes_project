@@ -6,7 +6,7 @@ import styles from './adder.module.scss';
 type AdderProps = {
 	priceCounter: number;
 	isWrapped: boolean;
-	onSubmit: (e: MouseEvent, order: unknown) => void;
+	onSubmit: (e: MouseEvent) => void;
 };
 
 const Adder = ({ priceCounter, isWrapped, onSubmit }: AdderProps) => {
@@ -25,7 +25,7 @@ const Adder = ({ priceCounter, isWrapped, onSubmit }: AdderProps) => {
 				</span>
 				<SubmitButton
 					className={`button button_primary ${styles.adder__button}`}
-					onClick={e => onSubmit(e, 'order')}
+					onClick={onSubmit}
 				>
 					<span>Добавить в корзину</span>
 				</SubmitButton>

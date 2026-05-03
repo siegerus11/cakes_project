@@ -74,6 +74,10 @@ export type WeightRelevant = {
 	persons: string;
 };
 
-export type ReactWithChildren = {
-	children?: React.ReactNode;
+export type CakeOrder = {
+	cake: string;
+	weight: Radio[];
+	filling: CheckBoxValue;
+	optional: CheckBoxValue;
+	price: number;
 };

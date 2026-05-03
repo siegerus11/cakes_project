@@ -5,13 +5,15 @@ import useRadio from '../../../hooks/useRadio';
 import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
 import {
 	selectTotalPrice,
+	setShoppingCart,
 	setTotalPrice
 } from '../../../store/main-process/main-process';
 import {
 	CakeOffer,
 	CheckBoxValue,
 	Filling,
-	Optional
+	Optional,
+	CakeOrder
 } from '../../../types/types';
 import createCheckBoxInitial from '../../../utils/createCheckboxInitial';
 import createRadioInitial from '../../../utils/createRadioInitial';
@@ -86,9 +88,17 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 		setDescriptionVisible(prevState => !prevState);
 	};
 
-	const handleSubmit = (e: MouseEvent, order: unknown) => {
+	const cakeOrder: CakeOrder = {
+		cake: cake.id,
+		weight: radios,
+		filling: fillingCheckboxes,
+		optional: optionCheckboxes,
+		price: totalPrice
+	};
+
+	const handleSubmit = (e: MouseEvent) => {
 		e.preventDefault();
-		console.log('submit');
+		dispatch(setShoppingCart(cakeOrder));
 	};
 
 	return (
