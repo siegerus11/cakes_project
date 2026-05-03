@@ -1,5 +1,7 @@
 import { useState, useEffect, MouseEvent } from 'react';
 
+import ButtonController from '../../../components/button-controller/button-controller';
+import { SubmitButton } from '../../../components/ui/button/button';
 import useCheckboxes from '../../../hooks/useCheckBox';
 import useRadio from '../../../hooks/useRadio';
 import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
@@ -102,58 +104,77 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	};
 
 	return (
-		<div className={styles.component}>
-			<form className={styles.feed}>
-				<Adder
-					priceCounter={totalPrice}
-					onSubmit={handleSubmit}
-					isWrapped={false}
-				/>
-				<ol className={styles.list}>
-					<FillingPart
-						cake={cake}
-						onCheckBoxChange={e => handleFillingCheckboxChange(e)}
-						checkBoxValues={fillingCheckboxes}
-						onDescribeClick={onDescribeClick}
+		<>
+			<div className={styles.component}>
+				<form className={styles.feed}>
+					<Adder
+						priceCounter={totalPrice}
+						onSubmit={handleSubmit}
+						isWrapped={false}
 					/>
-					<WeightPart
-						onRadioChange={handleRadioChange}
-						radios={radios}
-					/>
-					<OptionalPart
-						cake={cake}
-						onCheckBoxChange={e => handleOptionalCheckboxChange(e)}
-						checkBoxValues={optionCheckboxes}
-					/>
-				</ol>
-				<div
-					className={
-						descriptionVisible
-							? `${styles.describe} ${styles.describe_visible}`
-							: styles.describe
-					}
-				>
-					{descriptionVisible || (
-						<div className={styles.describe__blur}></div>
-					)}
-					<button
+					<ol className={styles.list}>
+						<FillingPart
+							cake={cake}
+							onCheckBoxChange={e =>
+								handleFillingCheckboxChange(e)
+							}
+							checkBoxValues={fillingCheckboxes}
+							onDescribeClick={onDescribeClick}
+						/>
+						<WeightPart
+							onRadioChange={handleRadioChange}
+							radios={radios}
+						/>
+						<OptionalPart
+							cake={cake}
+							onCheckBoxChange={e =>
+								handleOptionalCheckboxChange(e)
+							}
+							checkBoxValues={optionCheckboxes}
+						/>
+					</ol>
+					<div
 						className={
 							descriptionVisible
-								? `${styles.describe__arrow} ${styles.describe__arrow_active}`
-								: styles.describe__arrow
+								? `${styles.describe} ${styles.describe_visible}`
+								: styles.describe
 						}
-						type="button"
-						onClick={handleMobileArrowClick}
-					></button>
-					{cake.describe}
+					>
+						{descriptionVisible || (
+							<div className={styles.describe__blur}></div>
+						)}
+						<button
+							className={
+								descriptionVisible
+									? `${styles.describe__arrow} ${styles.describe__arrow_active}`
+									: styles.describe__arrow
+							}
+							type="button"
+							onClick={handleMobileArrowClick}
+						></button>
+						{cake.describe}
+					</div>
+					<Adder
+						priceCounter={totalPrice}
+						onSubmit={handleSubmit}
+						isWrapped
+					/>
+				</form>
+			</div>
+			<ButtonController outerClass={styles.controller}>
+				<div className={styles.controller__wrapper}>
+					<span className={styles.controller__price}>
+						{totalPrice} ₽
+					</span>
+					<SubmitButton
+						className={`button button_primary ${styles.controller__button}`}
+						onClick={handleSubmit}
+					>
+						<span>В корзину</span>
+					</SubmitButton>
 				</div>
-				<Adder
-					priceCounter={totalPrice}
-					onSubmit={handleSubmit}
-					isWrapped
-				/>
-			</form>
-		</div>
+			</ButtonController>
+		</>
 	);
 };
 

@@ -6,21 +6,21 @@
 .back {
 	position: relative;
 	margin-left: 29px;
+	color: #000;
 	font-size: 16px;
 	line-height: 169%;
 	text-decoration: none;
-	color: #000;
 
 	&:before {
-		content: '';
 		position: absolute;
 		top: 50%;
-		transform: translateY(-50%) rotate(180deg);
 		right: auto;
 		left: -28px;
 		width: 18px;
 		height: 18px;
 		background-image: url('/images/nav-arrow-big.svg');
+		transform: translateY(-50%) rotate(180deg);
+		content: '';
 	}
 }
 
@@ -71,8 +71,8 @@
 		background-color: #ffe4ec;
 
 		span {
-			font-weight: 600;
 			color: #ff4c80;
+			font-weight: 600;
 		}
 	}
 
@@ -84,10 +84,10 @@
 		position: absolute;
 		top: 15px;
 		right: 15px;
-		border: none;
-		background: none;
 		min-width: 18px;
 		min-height: 18px;
+		background: none;
+		border: none;
 	}
 
 	&__image {
@@ -95,8 +95,8 @@
 		width: 100%;
 		height: 360px;
 		margin: 0 auto;
-		border-radius: 30px;
 		background-color: var(--secondary-color);
+		border-radius: 30px;
 
 		img {
 			max-width: 100%;
@@ -149,32 +149,6 @@
 		padding-bottom: 120px;
 	}
 
-	.controller {
-	display: flex;
-	
-	&__wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding-left: 10px;
-	}
-
-	&__price {
-		font-weight: 700;
-		font-size: 20px;
-	}
-
-	&__button {
-		padding: 15px 69px 15px 68px;
-
-		span {
-			font-weight: 700;
-			font-size: 14px;
-			line-height: 129%;
-		}
-	}
-}
-
 	.wrapper {
 		position: relative;
 		top: -26px;
@@ -186,8 +160,8 @@
 		padding: 0 15px;
 
 		&__title {
-			font-size: 24px;
 			font-weight: 900;
+			font-size: 24px;
 		}
 	}
 
@@ -206,12 +180,12 @@
 			position: absolute;
 			top: 28px;
 			left: 50%;
-			transform: translateX(-50%);
 			display: block;
-			border-radius: 8px;
 			width: 39px;
 			height: 4px;
 			background-color: rgba(255, 255, 255, 0.5);
+			border-radius: 8px;
+			transform: translateX(-50%);
 		}
 	}
 
@@ -219,10 +193,10 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		transform: unset;
 		width: 100%;
 		height: 100%;
 		border-radius: unset;
+		transform: unset;
 
 		&__wrapper {
 			position: relative;
@@ -230,14 +204,13 @@
 		}
 
 		&__main {
-			padding-left: 10px;
 			padding-right: 10px;
+			padding-left: 10px;
 		}
 
-
 		&__back {
-			display: block;
 			position: relative;
+			display: block;
 			width: 100%;
 			min-height: 117px;
 			margin: 0;
@@ -247,12 +220,12 @@
 				position: absolute;
 				top: 85px;
 				left: 50%;
-				transform: translateX(-50%);
 				display: block;
-				border-radius: 8px;
 				width: 39px;
 				height: 4px;
 				background-color: rgba(255, 255, 255, 0.5);
+				border-radius: 8px;
+				transform: translateX(-50%);
 			}
 		}
 
