@@ -7,8 +7,9 @@ import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute, NAVS } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
-import { selectTotalPrice } from '../../store/main-process/main-process';
+import { selectShoppingCart } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
+import getCartTotalPrice from '../../utils/getCartTotalPrice';
 import styles from './main-page.module.scss';
 
 type MainPageProps = {
@@ -17,7 +18,9 @@ type MainPageProps = {
 };
 
 const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
-	const totalPrice = useAppSelector(selectTotalPrice);
+	const orders = useAppSelector(selectShoppingCart);
+	const totalPrice = getCartTotalPrice(orders);
+	console.log(totalPrice);
 
 	const splicedCakes = [...cakes].splice(0, 3);
 	const splicedBentoCakes = [...bentoCakes].splice(0, 3);
