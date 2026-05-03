@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
 import ButtonController from '../../components/button-controller/button-controller';
 import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
@@ -18,7 +17,8 @@ import OrderForm from './order-form/order-form';
 import Slider from './slider/slider';
 
 const CakeArticlePage = () => {
-	const activeOffer = useAppSelector(selectActiveOffer);
+	const activeId = useAppSelector(selectActiveOffer);
+	const activeOffer = cakeOffers.find(offer => offer.id === activeId);
 
 	const pageTitle = 'Торт с ягодами и безе';
 	const titleClassName = `title_fz30 title_fw800 ${styles.main__title}`;

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, generatePath } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
 import { useAppDispatch } from '../../hooks/useStore';
@@ -17,8 +17,8 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 
 	const dispatch = useAppDispatch();
 
-	const handleOfferLinkClick = (offer: CakeOffer) => {
-		dispatch(setActiveOffer(offer));
+	const handleOfferLinkClick = (id: string) => {
+		dispatch(setActiveOffer(id));
 	};
 	const cardLinkClass = isMainPage
 		? styles.card
@@ -30,9 +30,9 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 
 	return (
 		<Link
-			to={AppRoute.CAKE_OFFER_ARTICLE}
+			to={generatePath(AppRoute.CAKE_OFFER_ARTICLE, { id: cake.id })}
 			className={cardLinkClass}
-			onClick={() => handleOfferLinkClick(cake)}
+			onClick={() => handleOfferLinkClick(cake.id)}
 		>
 			<div className={styles.imgWrap}>
 				<img src={images[0]} alt={title} width="282" height="282" />

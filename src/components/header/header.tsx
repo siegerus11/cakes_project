@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { LAYOUT_NAVS } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
-import { selectTotalPrice } from '../../store/main-process/main-process';
+import { selectShoppingCart } from '../../store/main-process/main-process';
 import HamburgerPopup from '../hamburger-popup/hamburger-popup';
 import Logo from '../logo/logo';
 import NavMenu from '../nav-menu/nav-menu';
@@ -26,8 +26,8 @@ const Header = () => {
 		return () => document.removeEventListener('keydown', closePopup);
 	}, [hamburgerisVisible]);
 
-	const totalPrice = useAppSelector(selectTotalPrice);
-
+	const order = useAppSelector(selectShoppingCart);
+	const totalPrice = order[0].price ?? 0;
 	return (
 		<div className="container">
 			<header className={styles.outer}>
