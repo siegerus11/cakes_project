@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { NameSpace } from '../../constants';
-import { cakeOffers } from '../../mocks/cake-offers/cake-offers';
+import cakeOffers from '../../mocks/cake-offers/cake-offers';
 import { CakeOffer } from '../../types/types';
 
 type InitialState = {

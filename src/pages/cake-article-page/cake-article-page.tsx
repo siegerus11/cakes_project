@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 import ButtonController from '../../components/button-controller/button-controller';
 import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
+import cakeOffers from '../../mocks/cake-offers/cake-offers';
 import {
 	selectTotalPrice,
 	selectActiveOffer

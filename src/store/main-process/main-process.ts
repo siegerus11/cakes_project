@@ -6,11 +6,13 @@ import { CakeOffer } from '../../types/types';
 type InitialState = {
 	totalPrice: number;
 	activeOffer: CakeOffer | null;
+	shoppingCart: CakeOffer[];
 };
 
 const initialState: InitialState = {
 	totalPrice: 0,
-	activeOffer: null
+	activeOffer: null,
+	shoppingCart: []
 };
 
 export const mainProcess = createSlice({
@@ -25,10 +27,15 @@ export const mainProcess = createSlice({
 		},
 
 		setActiveOffer: (state, action: PayloadAction<CakeOffer>) => {
-			console.log(action.payload);
 			return {
 				...state,
 				activeOffer: action.payload
+			};
+		},
+		setShoppingCart: (state, action: PayloadAction<CakeOffer>) => {
+			return {
+				...state,
+				shoppingCart: [...state.shoppingCart, action.payload]
 			};
 		}
 	},
