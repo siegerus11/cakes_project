@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { LAYOUT_NAVS } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
 import { selectShoppingCart } from '../../store/main-process/main-process';
+import getCartTotalPrice from '../../utils/getCartTotalPrice';
 import HamburgerPopup from '../hamburger-popup/hamburger-popup';
 import Logo from '../logo/logo';
 import NavMenu from '../nav-menu/nav-menu';
@@ -26,8 +27,9 @@ const Header = () => {
 		return () => document.removeEventListener('keydown', closePopup);
 	}, [hamburgerisVisible]);
 
-	const order = useAppSelector(selectShoppingCart);
-	const totalPrice = order[0].price ?? 0;
+	const orders = useAppSelector(selectShoppingCart);
+	const totalPrice = getCartTotalPrice(orders);
+
 	return (
 		<div className="container">
 			<header className={styles.outer}>
@@ -61,9 +63,11 @@ const Header = () => {
 							<span className={styles.button__text}>
 								Оформить заказ
 							</span>
-							<span className={styles.button__price}>
-								{totalPrice} ₽
-							</span>
+							{totalPrice ? (
+								<span className={styles.button__price}>
+									{totalPrice} ₽
+								</span>
+							) : null}
 						</SubmitButton>
 						<Hamburger onHamburgerClick={handleHamburgerClick} />
 					</div>
