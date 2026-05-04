@@ -40,7 +40,6 @@
 }
 
 .popup {
-	display: none;
 	min-width: 30%;
 
 	&__main {
@@ -104,10 +103,6 @@
 			object-fit: cover;
 			border-radius: 30px;
 		}
-	}
-
-	&_active {
-		display: block;
 	}
 }
 
