@@ -59,14 +59,14 @@ export const NAVS: Nav[] = [
 
 export const LAYOUT_NAVS: Nav[] = [...NAVS].splice(0, 6);
 
-export const SortType = {
-	forFriends: 'Друзьям',
-	forParrents: 'Родителям',
-	forKids: 'Детям',
-	forColleagues: 'Коллегам',
-	forLoved: 'Любимым',
-	forYourTea: 'Себе к чаю'
-};
+// export const SortType = {
+// 	forFriends: 'Друзьям',
+// 	forParrents: 'Родителям',
+// 	forKids: 'Детям',
+// 	forColleagues: 'Коллегам',
+// 	forLoved: 'Любимым',
+// 	forYourTea: 'Себе к чаю'
+// };
 
 export const SORT_KINDS = [
 	'Друзьям',
