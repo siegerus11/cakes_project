@@ -63,6 +63,7 @@
 }
 
 .outer {
+    position: relative;
     nav ul {
         display: grid;
         grid-template-columns: repeat(6, 180px);

@@ -10,7 +10,8 @@ export const AppRoute = {
 	DELIVERY: '/delivery',
 	FAQ: '/faq',
 	REVIEWS: '/reviews',
-	CONTACTS: '/contacts'
+	CONTACTS: '/contacts',
+	CART: '/'
 } as const;
 
 export const NAVS: Nav[] = [

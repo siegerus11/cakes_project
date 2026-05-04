@@ -4,6 +4,7 @@ import { LAYOUT_NAVS } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
 import { selectShoppingCart } from '../../store/main-process/main-process';
 import getCartTotalPrice from '../../utils/getCartTotalPrice';
+import ShoppingCartItem from '../cart-indicator/cart-indicator';
 import HamburgerPopup from '../hamburger-popup/hamburger-popup';
 import Logo from '../logo/logo';
 import NavMenu from '../nav-menu/nav-menu';
@@ -31,53 +32,58 @@ const Header = () => {
 	const totalPrice = getCartTotalPrice(orders);
 
 	return (
-		<div className="container">
-			<header className={styles.outer}>
-				<div className={styles.wrapper}>
-					<div className={styles.primary}>
-						<Logo />
-						<div className={styles.search}>
-							<svg
-								className={styles.search__icon}
-								viewBox="0 0 40 40"
+		<>
+			<ShoppingCartItem />
+			<div className="container">
+				<header className={styles.outer}>
+					<div className={styles.wrapper}>
+						<div className={styles.primary}>
+							<Logo />
+							<div className={styles.search}>
+								<svg
+									className={styles.search__icon}
+									viewBox="0 0 40 40"
+								>
+									<use xlinkHref="#search"></use>
+								</svg>
+								<input
+									className={styles.search__input}
+									type="search"
+									placeholder="Поиск"
+								/>
+							</div>
+						</div>
+						<div className={styles.secondary}>
+							<SubmitButton
+								className={`button button_primary ${styles.button}`}
 							>
-								<use xlinkHref="#search"></use>
-							</svg>
-							<input
-								className={styles.search__input}
-								type="search"
-								placeholder="Поиск"
+								<svg
+									className={styles.button__icon}
+									viewBox="0 0 40 40"
+								>
+									<use xlinkHref="#cart"></use>
+								</svg>
+								<span className={styles.button__text}>
+									Оформить заказ
+								</span>
+								{totalPrice ? (
+									<span className={styles.button__price}>
+										{totalPrice} ₽
+									</span>
+								) : null}
+							</SubmitButton>
+							<Hamburger
+								onHamburgerClick={handleHamburgerClick}
 							/>
 						</div>
 					</div>
-					<div className={styles.secondary}>
-						<SubmitButton
-							className={`button button_primary ${styles.button}`}
-						>
-							<svg
-								className={styles.button__icon}
-								viewBox="0 0 40 40"
-							>
-								<use xlinkHref="#cart"></use>
-							</svg>
-							<span className={styles.button__text}>
-								Оформить заказ
-							</span>
-							{totalPrice ? (
-								<span className={styles.button__price}>
-									{totalPrice} ₽
-								</span>
-							) : null}
-						</SubmitButton>
-						<Hamburger onHamburgerClick={handleHamburgerClick} />
-					</div>
-				</div>
-				<NavMenu navs={LAYOUT_NAVS} linkClassName={styles.link} />
-			</header>
-			{hamburgerisVisible && (
-				<HamburgerPopup onHamburgerClick={handleHamburgerClick} />
-			)}
-		</div>
+					<NavMenu navs={LAYOUT_NAVS} linkClassName={styles.link} />
+				</header>
+				{hamburgerisVisible && (
+					<HamburgerPopup onHamburgerClick={handleHamburgerClick} />
+				)}
+			</div>
+		</>
 	);
 };
 
