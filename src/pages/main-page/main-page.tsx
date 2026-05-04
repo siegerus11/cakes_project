@@ -20,7 +20,6 @@ type MainPageProps = {
 const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 	const orders = useAppSelector(selectShoppingCart);
 	const totalPrice = getCartTotalPrice(orders);
-	console.log(totalPrice);
 
 	const splicedCakes = [...cakes].splice(0, 3);
 	const splicedBentoCakes = [...bentoCakes].splice(0, 3);
@@ -34,7 +33,10 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						<div className={styles.headline}>
 							<Title
 								titleClass="title_wth-arrow"
-								titleText={NAVS[6].title}
+								titleText={
+									NAVS.find(nav => nav.title === 'Торты')
+										?.title
+								}
 								path={AppRoute.CAKES_CATALOG}
 							/>
 							<Link
@@ -54,7 +56,11 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						<div className={styles.headline}>
 							<Title
 								titleClass="title_wth-arrow"
-								titleText={NAVS[7].title}
+								titleText={
+									NAVS.find(
+										nav => nav.title === 'Бенто-торты'
+									)?.title
+								}
 								path={AppRoute.BENTO_CAKES_CATALOG}
 							/>
 							<Link
