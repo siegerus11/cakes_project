@@ -5,25 +5,17 @@ type SubmitButtonProps = PropsWithChildren<{
 	onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }>;
 
-const SubmitButton = ({
-	children,
-	className,
-	onClick
-}: SubmitButtonProps) => {
+const SubmitButton = ({ children, className, onClick }: SubmitButtonProps) => {
 	return (
 		<div>
-				<button
-					className={`${className}`}
-					type="submit"
-					onClick={onClick}
-				>
-					{children}
-				</button>
+			<button className={`${className}`} type="submit" onClick={onClick}>
+				{children}
+			</button>
 		</div>
 	);
 };
 
-export {SubmitButton};
+export { SubmitButton };
 
 type ButtonProps = PropsWithChildren<{
 	className: string;
@@ -32,13 +24,7 @@ type ButtonProps = PropsWithChildren<{
 	onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }>;
 
-const Button = ({
-	children,
-	className,
-	isLink,
-	url,
-	onClick
-}: ButtonProps) => {
+const Button = ({ children, className, isLink, url, onClick }: ButtonProps) => {
 	return (
 		<div>
 			{isLink ? (
@@ -46,7 +32,6 @@ const Button = ({
 					{children}
 				</a>
 			) : (
-				
 				<button
 					className={`${className}`}
 					type="button"
@@ -60,6 +45,3 @@ const Button = ({
 };
 
 export default Button;
-
-
-
