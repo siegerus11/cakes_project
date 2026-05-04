@@ -54,7 +54,7 @@ const Footer = () => {
 						</SocialLinks>
 						<Button
 							className={`button button_secondary ${styles.button}`}
-							isLink
+							isOuterLink
 							url="/"
 						>
 							<span>Написать в Telegram</span>
