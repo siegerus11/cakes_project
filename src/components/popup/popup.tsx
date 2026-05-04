@@ -1,6 +1,5 @@
 import { MouseEventHandler, PropsWithChildren } from 'react';
 
-import Title from '../title/title';
 import styles from './popup.module.scss';
 
 type PopupProps = PropsWithChildren<{

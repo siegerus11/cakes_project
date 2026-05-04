@@ -20,7 +20,7 @@ const Slider = ({ cake }: SliderProps) => {
 	} = useSlider(cake.images);
 
 	return (
-		<div>
+		<div className={styles.outer}>
 			{isSliderVisible && (
 				<div className={styles.component}>
 					<div
