@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import ButtonController from '../../components/button-controller/button-controller';
+import Overlay from '../../components/overlay/overlay';
 import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
@@ -59,66 +59,77 @@ const CakeArticlePage = () => {
 			{filling.map((fillingItem, i) => {
 				const keyValue = `${Math.random() * i}-${fillingItem.name}`;
 				return (
-					<Popup
-						key={keyValue}
-						closeClass={styles.popup__close}
-						outerClass={
-							i === visibilityIndex
-								? `${popupClass} ${popupClassActive}`
-								: popupClass
-						}
-						onCloseClick={() => handleDescribeClick(null)}
-					>
-						<Link
-							className={styles.popup__back}
-							to={AppRoute.CAKES_CATALOG}
-						>
-							<span></span>
-						</Link>
-						<div className={styles.popup__wrapper}>
-							<div className={styles.popup__image}>
-								<img
-									src={fillingItem.image}
-									alt="filling"
-									width="360"
-									height="360"
-								/>
-							</div>
-							<main className={styles.popup__main}>
-								<Title
-									titleText={fillingItem.title}
-									titleClass={popupTitleClass}
-								/>
-								<p className={styles.popup__description}>
-									{fillingItem.description}
-								</p>
-								<Button
-									className={`button button_primary ${styles.popup__button}`}
-									onClick={() => handleDescribeClick(null)}
+					i === visibilityIndex && (
+						<Overlay key={keyValue}>
+							<Popup
+								closeClass={styles.popup__close}
+								outerClass={
+									i === visibilityIndex
+										? `${popupClass} ${popupClassActive}`
+										: popupClass
+								}
+								onCloseClick={() => handleDescribeClick(null)}
+							>
+								<Link
+									className={styles.popup__back}
+									to={AppRoute.CAKES_CATALOG}
 								>
-									<span>Понятно, спасибо</span>
-								</Button>
-								<ul className={styles.popup__toplist}>
-									<li>Вишня</li>
-									<li>
-										Йогуртовый крем на основе натурального
-										йогурта
-									</li>
-									<li>Сливки</li>
-									<li>Бисквит ванильный</li>
-									<li>Вишневый сироп</li>
-									<li>Сливочное масло</li>
-									<li>Натуральный ванилин</li>
-								</ul>
-								<ul className={styles.popup__bottomlist}>
-									<li>Калорийность: 200 ккал</li>
-									<li>Белки: 5 г</li>
-									<li>Жиры: 12 г</li>
-									<li>Углеводы: 20 г</li>
-								</ul>
-							</main>
-						</div>
-					</Popup>
+									<span></span>
+								</Link>
+								<div className={styles.popup__wrapper}>
+									<div className={styles.popup__image}>
+										<img
+											src={fillingItem.image}
+											alt="filling"
+											width="360"
+											height="360"
+										/>
+									</div>
+									<main className={styles.popup__main}>
+										<Title
+											titleText={fillingItem.title}
+											titleClass={popupTitleClass}
+										/>
+										<p
+											className={
+												styles.popup__description
+											}
+										>
+											{fillingItem.description}
+										</p>
+										<Button
+											className={`button button_primary ${styles.popup__button}`}
+											onClick={() =>
+												handleDescribeClick(null)
+											}
+										>
+											<span>Понятно, спасибо</span>
+										</Button>
+										<ul className={styles.popup__toplist}>
+											<li>Вишня</li>
+											<li>
+												Йогуртовый крем на основе
+												натурального йогурта
+											</li>
+											<li>Сливки</li>
+											<li>Бисквит ванильный</li>
+											<li>Вишневый сироп</li>
+											<li>Сливочное масло</li>
+											<li>Натуральный ванилин</li>
+										</ul>
+										<ul
+											className={styles.popup__bottomlist}
+										>
+											<li>Калорийность: 200 ккал</li>
+											<li>Белки: 5 г</li>
+											<li>Жиры: 12 г</li>
+											<li>Углеводы: 20 г</li>
+										</ul>
+									</main>
+								</div>
+							</Popup>
+						</Overlay>
+					)
 				);
 			})}
 		</div>

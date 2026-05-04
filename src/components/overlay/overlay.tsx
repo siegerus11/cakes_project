@@ -1,7 +1,10 @@
-import { ReactWithChildren } from '../../types/types';
+import { PropsWithChildren } from 'react';
+
 import styles from './overlay.module.scss';
 
-const Overlay = ({ children }: ReactWithChildren) => {
+type OverlayProps = PropsWithChildren;
+
+const Overlay = ({ children }: OverlayProps) => {
 	return <div className={styles.overlay}>{children}</div>;
 };
 
