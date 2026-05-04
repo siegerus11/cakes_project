@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { LAYOUT_NAVS } from '../../constants';
+import { AppRoute, LAYOUT_NAVS } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
 import { selectShoppingCart } from '../../store/main-process/main-process';
 import getCartTotalPrice from '../../utils/getCartTotalPrice';
@@ -8,7 +8,7 @@ import ShoppingCartItem from '../cart-indicator/cart-indicator';
 import HamburgerPopup from '../hamburger-popup/hamburger-popup';
 import Logo from '../logo/logo';
 import NavMenu from '../nav-menu/nav-menu';
-import SubmitButton from '../ui/button/button';
+import Button from '../ui/button/button';
 import Hamburger from '../ui/hamburger/hamburger';
 import styles from './header.module.scss';
 
@@ -54,8 +54,9 @@ const Header = () => {
 							</div>
 						</div>
 						<div className={styles.secondary}>
-							<SubmitButton
+							<Button
 								className={`button button_primary ${styles.button}`}
+								path={AppRoute.SHOPPING_CART}
 							>
 								<svg
 									className={styles.button__icon}
@@ -71,7 +72,7 @@ const Header = () => {
 										{totalPrice} ₽
 									</span>
 								) : null}
-							</SubmitButton>
+							</Button>
 							<Hamburger
 								onHamburgerClick={handleHamburgerClick}
 							/>

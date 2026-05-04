@@ -30,7 +30,7 @@ const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
 					/>
 					<Button
 						className={`button button_secondary ${styles.button}`}
-						isLink
+						isOuterLink
 						url={AppRoute.ROOT}
 					>
 						<span>Написать в Telegram</span>

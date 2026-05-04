@@ -12,7 +12,7 @@ const ShoppingCartItem = () => {
 	if (count === 0) return null;
 
 	return (
-		<Link className={styles.component} to={AppRoute.CART}>
+		<Link className={styles.component} to={AppRoute.SHOPPING_CART}>
 			<svg className={styles.component__icon} viewBox="0 0 20 20">
 				<use xlinkHref="#cart"></use>
 			</svg>

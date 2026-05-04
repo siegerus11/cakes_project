@@ -11,6 +11,7 @@ import DeliveryPage from '../../pages/delivery-page/delivery-page';
 import FaqPage from '../../pages/faq-page/faq-page';
 import MainPage from '../../pages/main-page/main-page';
 import RewievsPage from '../../pages/rewievs-page/rewievs-page';
+import ShoppingCartPage from '../../pages/shopping-cart-page/shopping-cart-page';
 import { cakeOffersSelector } from '../../store/cake-offers-data/cake-offers-data';
 import MainLayout from '../layout/main-layout';
 import './app.module.scss';
@@ -66,6 +67,10 @@ function App() {
 				<Route
 					path={AppRoute.CAKE_OFFER_ARTICLE}
 					element={<CakeArticlePage />}
+				/>
+				<Route
+					path={AppRoute.SHOPPING_CART}
+					element={<ShoppingCartPage />}
 				/>
 			</Routes>
 		</BrowserRouter>

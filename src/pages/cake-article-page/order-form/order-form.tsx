@@ -1,7 +1,9 @@
 import { useState, useEffect, MouseEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import ButtonController from '../../../components/button-controller/button-controller';
 import { SubmitButton } from '../../../components/ui/button/button';
+import { AppRoute } from '../../../constants';
 import useCheckboxes from '../../../hooks/useCheckBox';
 import useRadio from '../../../hooks/useRadio';
 import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
@@ -37,6 +39,7 @@ type OrderFormProps = {
 const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const totalPrice = useAppSelector(selectTotalPrice);
 	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
 
 	const [descriptionVisible, setDescriptionVisible] =
 		useState<boolean>(false);
@@ -101,6 +104,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const handleSubmit = (e: MouseEvent) => {
 		e.preventDefault();
 		dispatch(setShoppingCart(cakeOrder));
+		navigate(AppRoute.SHOPPING_CART);
 	};
 
 	return (

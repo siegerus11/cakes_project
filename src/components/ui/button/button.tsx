@@ -1,4 +1,7 @@
 import { PropsWithChildren, MouseEventHandler } from 'react';
+import { Link } from 'react-router-dom';
+
+import { AppRoute } from '../../../constants';
 
 type SubmitButtonProps = PropsWithChildren<{
 	className: string;
@@ -19,15 +22,27 @@ export { SubmitButton };
 
 type ButtonProps = PropsWithChildren<{
 	className: string;
-	isLink?: boolean;
+	isOuterLink?: boolean;
 	url?: string;
+	path?: string;
 	onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }>;
 
-const Button = ({ children, className, isLink, url, onClick }: ButtonProps) => {
-	return (
+const Button = ({
+	children,
+	className,
+	isOuterLink,
+	url,
+	onClick,
+	path
+}: ButtonProps) => {
+	return path ? (
+		<Link className={`${className}`} to={path}>
+			{children}
+		</Link>
+	) : (
 		<div>
-			{isLink ? (
+			{isOuterLink ? (
 				<a className={`${className}`} href={url}>
 					{children}
 				</a>
