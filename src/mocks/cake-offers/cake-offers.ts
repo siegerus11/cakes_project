@@ -7,6 +7,7 @@ const cakeOffers: CakeOffer[] = [
 	{
 		id: uuidv(),
 		isBento: false,
+		category: 'Друзьям',
 		title: 'Короткое',
 		images: [
 			'../../../images/pictures/cake1.png',
@@ -87,6 +88,7 @@ const cakeOffers: CakeOffer[] = [
 	{
 		id: uuidv(),
 		isBento: false,
+		category: 'Родителям',
 		title: 'Длинное название на несколько строк таких',
 		images: [
 			'../../../images/pictures/cake3.png',
@@ -166,6 +168,7 @@ const cakeOffers: CakeOffer[] = [
 	{
 		id: uuidv(),
 		isBento: false,
+		category: 'Детям',
 		title: 'Торт с ягодами и безе',
 		images: [
 			'../../../images/pictures/cake4.png',
@@ -245,6 +248,7 @@ const cakeOffers: CakeOffer[] = [
 	{
 		id: uuidv(),
 		isBento: false,
+		category: 'Коллегам',
 		title: 'Торт с ягодами и безе',
 		images: [
 			'../../../images/pictures/cake1.png',
@@ -325,6 +329,7 @@ const cakeOffers: CakeOffer[] = [
 	{
 		id: uuidv(),
 		isBento: true,
+		category: 'Любимым',
 		title: 'Короткое',
 		images: [
 			'../../../images/pictures/cake2.png',
@@ -404,6 +409,7 @@ const cakeOffers: CakeOffer[] = [
 	{
 		id: uuidv(),
 		isBento: true,
+		category: 'Себе к чаю',
 		title: 'Длинное название на несколько строк таких',
 		images: [
 			'../../../images/pictures/cake5.png',
@@ -483,6 +489,7 @@ const cakeOffers: CakeOffer[] = [
 	{
 		id: uuidv(),
 		isBento: true,
+		category: 'Друзьям',
 		title: 'Торт с ягодами и безе',
 		images: [
 			'../../../images/pictures/cake2.png',
@@ -562,6 +569,7 @@ const cakeOffers: CakeOffer[] = [
 	{
 		id: uuidv(),
 		isBento: true,
+		category: 'Друзьям',
 		title: 'Торт с ягодами и безе',
 		images: [
 			'../../../images/pictures/cake2.png',

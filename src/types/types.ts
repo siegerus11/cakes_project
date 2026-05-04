@@ -45,6 +45,7 @@ export type Optional = {
 export type CakeOffer = {
 	id: string;
 	isBento: boolean;
+	category: string;
 	title: string;
 	images: string[];
 	price: number;
