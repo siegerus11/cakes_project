@@ -1,6 +1,30 @@
+import { useAppSelector } from '../../../hooks/useStore';
+import { selectShoppingCart } from '../../../store/main-process/main-process';
+import { CakeOrder, CheckBoxValue } from '../../../types/types';
 import styles from './cart-item.module.scss';
 
-const CartItem = () => {
+type CartItemProps = {
+	order: CakeOrder;
+};
+
+const CartItem = ({ order }: CartItemProps) => {
+	const { price, filling, optional, weight } = order;
+
+	const getChosen = (obj: CheckBoxValue) => {
+		return Object.entries(obj)
+			.filter(([_, value]) => value)
+			.map(item => item[0]);
+	};
+
+	const fillingsSelected = getChosen(filling);
+	const optionalSelected = getChosen(optional);
+
+	const weightSelected = weight
+		.filter(item => {
+			return item.isChecked;
+		})
+		.map(item => item.weightValue);
+
 	return (
 		<div className={styles.item}>
 			<div className={styles.item__main}>
@@ -24,7 +48,7 @@ const CartItem = () => {
 			</div>
 			<div className={`${styles.side} ${styles.item__side}`}>
 				<div className={styles.side__wrapper}>
-					<div className={styles.item__price}>4 600 ₽</div>
+					<div className={styles.item__price}>{price} ₽</div>
 					<div className={styles.quantity}>
 						<button
 							className={styles.quantity__button}
@@ -43,9 +67,13 @@ const CartItem = () => {
 };
 
 const CartList = () => {
+	const cartSelector = useAppSelector(selectShoppingCart);
+	// console.log(cartSelector);
 	return (
 		<ul className={styles.list}>
-			<CartItem />
+			{cartSelector.map(order => (
+				<CartItem key={order.cakeId} order={order} />
+			))}
 		</ul>
 	);
 };
