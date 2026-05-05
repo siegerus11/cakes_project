@@ -1,7 +1,8 @@
 import { useAppSelector } from '../../../hooks/useStore';
 import { selectShoppingCart } from '../../../store/main-process/main-process';
-import { CakeOrder, Radio } from '../../../types/types';
+import { CakeOrder } from '../../../types/types';
 import getChosen from '../../../utils/getChosen';
+import getPersonQuantity from '../../../utils/getPersonQuantity';
 import styles from './cart-item.module.scss';
 
 type CartItemProps = {
@@ -12,8 +13,10 @@ const CartItem = ({ order }: CartItemProps) => {
 	const { price, filling, optional, weight } = order;
 
 	const fillingsSelected = getChosen(filling);
-	const optionalSelected = getChosen(optional).length || 'Не выбрано';
+	const optionalSelected = getChosen(optional);
 	const weightSelected = getChosen(weight);
+
+	console.log(weightSelected);
 
 	return (
 		<div className={styles.item}>
@@ -30,10 +33,18 @@ const CartItem = ({ order }: CartItemProps) => {
 						<span>
 							Начинка:{' '}
 							{fillingsSelected.length
-								? fillingsSelected.map(fill => fill)
+								? fillingsSelected.map((fill, i, arr) =>
+										arr.length < 1 || i === arr.length - 1
+											? `${fill} `
+											: `${fill}, `
+								  )
 								: 'Заварной крем'}
 						</span>
-						<span>Вес: 1,5 кг (10 порций)</span>
+						<span>
+							Вес: {weightSelected} кг (
+							{getPersonQuantity(weightSelected[0], true)}
+							порций)
+						</span>
 						<span>
 							Дополнительно: Топпер «С Днем рождения», свечи
 							классические
@@ -63,7 +74,6 @@ const CartItem = ({ order }: CartItemProps) => {
 
 const CartList = () => {
 	const cartSelector = useAppSelector(selectShoppingCart);
-	// console.log(cartSelector);
 	return (
 		<ul className={styles.list}>
 			{cartSelector.map(order => (

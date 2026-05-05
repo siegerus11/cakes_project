@@ -24,7 +24,8 @@ const WeightPartRadio = ({
 		<div>
 			<label className={styles.label} htmlFor={id}>
 				{`${weightValue}кг (на ${getPersonQuantity(
-					weightValue
+					weightValue,
+					false
 				)} гостей)`}
 			</label>
 			<input
@@ -72,7 +73,7 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 	const activeRadio = radios.find(radio => radio.isChecked === true);
 	const interactorHtml = `${
 		activeRadio?.weightValue
-	} кг (на ${getPersonQuantity(activeRadio?.weightValue!)} гостей)`;
+	} кг (на ${getPersonQuantity(activeRadio?.weightValue!, false)} гостей)`;
 
 	return (
 		<li className={styles.component}>

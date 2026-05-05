@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { useState, useEffect, MouseEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { v4 as uuidv } from 'uuid';
