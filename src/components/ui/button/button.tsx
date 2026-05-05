@@ -1,7 +1,5 @@
 import { PropsWithChildren, MouseEventHandler } from 'react';
-import { Link } from 'react-router-dom';
-
-import { AppRoute } from '../../../constants';
+import { Link, useLocation } from 'react-router-dom';
 
 type SubmitButtonProps = PropsWithChildren<{
 	className: string;
@@ -37,7 +35,11 @@ const Button = ({
 	path
 }: ButtonProps) => {
 	return path ? (
-		<Link className={`${className}`} to={path}>
+		<Link
+			className={`${className}`}
+			to={path}
+			state={{ from: location.pathname }}
+		>
 			{children}
 		</Link>
 	) : (
