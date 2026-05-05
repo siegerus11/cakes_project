@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Overlay from '../../components/overlay/overlay';
 import Popup from '../../components/popup/popup';
+import ShoppingCartItem from '../../components/shopping-cart-item/shopping-cart-item';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute } from '../../constants';
@@ -34,6 +35,7 @@ const CakeArticlePage = () => {
 
 	return (
 		<div className={`page ${styles.component}`}>
+			<ShoppingCartItem />
 			<div className="container_secondary container">
 				<Link
 					className={`back-link ${styles.back}`}

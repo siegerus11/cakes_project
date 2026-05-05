@@ -1,5 +1,6 @@
 import { useState, useEffect, MouseEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { v4 as uuidv } from 'uuid';
 
 import ButtonController from '../../../components/button-controller/button-controller';
 import { SubmitButton } from '../../../components/ui/button/button';
@@ -95,7 +96,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	};
 
 	const cakeOrder: CakeOrder = {
-		cake: cake.id,
+		cakeId: uuidv(),
 		weight: radios,
 		filling: fillingCheckboxes,
 		optional: optionCheckboxes,

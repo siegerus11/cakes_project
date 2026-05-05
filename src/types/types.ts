@@ -76,7 +76,7 @@ export type WeightRelevant = {
 };
 
 export type CakeOrder = {
-	cake: string;
+	cakeId: string;
 	weight: Radio[];
 	filling: CheckBoxValue;
 	optional: CheckBoxValue;
