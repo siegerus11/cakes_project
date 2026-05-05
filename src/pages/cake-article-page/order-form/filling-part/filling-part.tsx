@@ -51,7 +51,7 @@ const FillingItem = ({
 				<div className={styles.card__bottom}>
 					<span className={styles.card__title}>{fill.title}</span>
 					<button
-						className={styles.card__button}
+						className={`dot-lined ${styles.card__button}`}
 						type="button"
 						onClick={() => handleDescribeClick(index)}
 					>

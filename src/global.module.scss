@@ -65,6 +65,38 @@ body {
 	overflow: hidden;
 }
 
+:global(.back-link) {
+	position: relative;
+	margin-left: 29px;
+	color: #000;
+	font-size: 16px;
+	line-height: 169%;
+	text-decoration: none;
+
+	&:before {
+		position: absolute;
+		top: 50%;
+		right: auto;
+		left: -28px;
+		width: 18px;
+		height: 18px;
+		background-image: url('/images/nav-arrow-big.svg');
+		transform: translateY(-50%) rotate(180deg);
+		content: '';
+	}
+}
+
+:global(.dot-lined) {
+	display: block;
+	border: none;
+	background: none;
+	font-size: 13px;
+	line-height: 130%;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	color: #b1b1b1;
+}
+
 @media (max-width: 1200px) {
 	:global(.container) {
 		max-width: 968px;
@@ -94,7 +126,6 @@ body {
 		max-width: 540px;
 
 		&:global(_secondary) {
-			// position: relative;
 			max-width: 540px;
 		}
 	}
