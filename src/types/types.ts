@@ -18,12 +18,8 @@ export type Nav = {
 };
 
 export type Filling = {
-	name: 'cherryWithYogurt' | 'souffleWithPeaches' | 'wildBerry' | 'homelike';
-	title:
-		| 'Вишня с йогуртом'
-		| 'Суфле с персиками'
-		| 'Лесная ягода'
-		| 'Домашний';
+	name: string;
+	title: string;
 	price: number;
 	description: string;
 	isInclude: boolean;
@@ -31,12 +27,8 @@ export type Filling = {
 };
 
 export type Optional = {
-	name: 'classicCandles' | 'numberCandles' | 'birthdayTopper' | 'other';
-	title:
-		| 'Свечи классические'
-		| 'Свечи цифрами'
-		| 'Топпер «С Днем рождения»'
-		| 'Тут длиный текст, который не помещается в одну строку';
+	name: string;
+	title: string;
 	price: number;
 	isInclude: boolean;
 	image: string;

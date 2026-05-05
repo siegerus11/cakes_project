@@ -21,7 +21,7 @@ const cakeOffers: CakeOffer[] = [
 		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
-				name: 'cherryWithYogurt',
+				name: 'Вишня с йогуртом',
 				title: 'Вишня с йогуртом',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -29,7 +29,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'souffleWithPeaches',
+				name: 'Суфле с персиками',
 				title: 'Суфле с персиками',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -37,7 +37,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'wildBerry',
+				name: 'Лесная ягода',
 				title: 'Лесная ягода',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -45,7 +45,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'homelike',
+				name: 'Домашний',
 				title: 'Домашний',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -56,28 +56,28 @@ const cakeOffers: CakeOffer[] = [
 		weight: [1.5, 3, 5],
 		optionally: [
 			{
-				name: 'classicCandles',
+				name: 'Свечи классические',
 				title: 'Свечи классические',
 				price: 0,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'numberCandles',
+				name: 'Свечи цифрами',
 				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'birthdayTopper',
+				name: 'Топпер «С Днем рождения»',
 				title: 'Топпер «С Днем рождения»',
 				price: 120,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'other',
+				name: 'Тут длиный текст, который не помещается в одну строку',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
 				isInclude: false,
@@ -98,10 +98,11 @@ const cakeOffers: CakeOffer[] = [
 		],
 		price: 3600,
 		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+
 		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
-				name: 'cherryWithYogurt',
+				name: 'Вишня с йогуртом',
 				title: 'Вишня с йогуртом',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -109,7 +110,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'souffleWithPeaches',
+				name: 'Суфле с персиками',
 				title: 'Суфле с персиками',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -117,7 +118,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'wildBerry',
+				name: 'Лесная ягода',
 				title: 'Лесная ягода',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -125,7 +126,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'homelike',
+				name: 'Домашний',
 				title: 'Домашний',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -136,28 +137,28 @@ const cakeOffers: CakeOffer[] = [
 		weight: [1.5, 3, 5],
 		optionally: [
 			{
-				name: 'classicCandles',
+				name: 'Свечи классические',
 				title: 'Свечи классические',
 				price: 0,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'numberCandles',
+				name: 'Свечи цифрами',
 				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'birthdayTopper',
+				name: 'Топпер «С Днем рождения»',
 				title: 'Топпер «С Днем рождения»',
 				price: 120,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'other',
+				name: 'Тут длиный текст, который не помещается в одну строку',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
 				isInclude: false,
@@ -178,10 +179,11 @@ const cakeOffers: CakeOffer[] = [
 		],
 		price: 3600,
 		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+
 		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
-				name: 'cherryWithYogurt',
+				name: 'Вишня с йогуртом',
 				title: 'Вишня с йогуртом',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -189,7 +191,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'souffleWithPeaches',
+				name: 'Суфле с персиками',
 				title: 'Суфле с персиками',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -197,7 +199,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'wildBerry',
+				name: 'Лесная ягода',
 				title: 'Лесная ягода',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -205,7 +207,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'homelike',
+				name: 'Домашний',
 				title: 'Домашний',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -216,28 +218,28 @@ const cakeOffers: CakeOffer[] = [
 		weight: [1.5, 3, 5],
 		optionally: [
 			{
-				name: 'classicCandles',
+				name: 'Свечи классические',
 				title: 'Свечи классические',
 				price: 0,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'numberCandles',
+				name: 'Свечи цифрами',
 				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'birthdayTopper',
-				title: 'Свечи цифрами',
+				name: 'Топпер «С Днем рождения»',
+				title: 'Топпер «С Днем рождения»',
 				price: 120,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'other',
+				name: 'Тут длиный текст, который не помещается в одну строку',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
 				isInclude: false,
@@ -258,10 +260,11 @@ const cakeOffers: CakeOffer[] = [
 		],
 		price: 3600,
 		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+
 		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
-				name: 'cherryWithYogurt',
+				name: 'Вишня с йогуртом',
 				title: 'Вишня с йогуртом',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -269,7 +272,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'souffleWithPeaches',
+				name: 'Суфле с персиками',
 				title: 'Суфле с персиками',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -277,7 +280,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'wildBerry',
+				name: 'Лесная ягода',
 				title: 'Лесная ягода',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -285,7 +288,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'homelike',
+				name: 'Домашний',
 				title: 'Домашний',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -296,28 +299,28 @@ const cakeOffers: CakeOffer[] = [
 		weight: [1.5, 3, 5],
 		optionally: [
 			{
-				name: 'classicCandles',
+				name: 'Свечи классические',
 				title: 'Свечи классические',
 				price: 0,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'numberCandles',
+				name: 'Свечи цифрами',
 				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'birthdayTopper',
-				title: 'Свечи цифрами',
+				name: 'Топпер «С Днем рождения»',
+				title: 'Топпер «С Днем рождения»',
 				price: 120,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'other',
+				name: 'Тут длиный текст, который не помещается в одну строку',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
 				isInclude: false,
@@ -339,10 +342,11 @@ const cakeOffers: CakeOffer[] = [
 		],
 		price: 3600,
 		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+
 		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
-				name: 'cherryWithYogurt',
+				name: 'Вишня с йогуртом',
 				title: 'Вишня с йогуртом',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -350,7 +354,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'souffleWithPeaches',
+				name: 'Суфле с персиками',
 				title: 'Суфле с персиками',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -358,7 +362,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'wildBerry',
+				name: 'Лесная ягода',
 				title: 'Лесная ягода',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -366,7 +370,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'homelike',
+				name: 'Домашний',
 				title: 'Домашний',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -377,28 +381,28 @@ const cakeOffers: CakeOffer[] = [
 		weight: [1.5, 3, 5],
 		optionally: [
 			{
-				name: 'classicCandles',
+				name: 'Свечи классические',
 				title: 'Свечи классические',
 				price: 0,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'numberCandles',
+				name: 'Свечи цифрами',
 				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'birthdayTopper',
-				title: 'Свечи цифрами',
+				name: 'Топпер «С Днем рождения»',
+				title: 'Топпер «С Днем рождения»',
 				price: 120,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'other',
+				name: 'Тут длиный текст, который не помещается в одну строку',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
 				isInclude: false,
@@ -419,10 +423,11 @@ const cakeOffers: CakeOffer[] = [
 		],
 		price: 3600,
 		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+
 		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
-				name: 'cherryWithYogurt',
+				name: 'Вишня с йогуртом',
 				title: 'Вишня с йогуртом',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -430,7 +435,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'souffleWithPeaches',
+				name: 'Суфле с персиками',
 				title: 'Суфле с персиками',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -438,7 +443,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'wildBerry',
+				name: 'Лесная ягода',
 				title: 'Лесная ягода',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -446,7 +451,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'homelike',
+				name: 'Домашний',
 				title: 'Домашний',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -457,28 +462,28 @@ const cakeOffers: CakeOffer[] = [
 		weight: [1.5, 3, 5],
 		optionally: [
 			{
-				name: 'classicCandles',
+				name: 'Свечи классические',
 				title: 'Свечи классические',
 				price: 0,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'numberCandles',
+				name: 'Свечи цифрами',
 				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'birthdayTopper',
-				title: 'Свечи цифрами',
+				name: 'Топпер «С Днем рождения»',
+				title: 'Топпер «С Днем рождения»',
 				price: 120,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'other',
+				name: 'Тут длиный текст, который не помещается в одну строку',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
 				isInclude: false,
@@ -499,10 +504,11 @@ const cakeOffers: CakeOffer[] = [
 		],
 		price: 3600,
 		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+
 		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
-				name: 'cherryWithYogurt',
+				name: 'Вишня с йогуртом',
 				title: 'Вишня с йогуртом',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -510,7 +516,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'souffleWithPeaches',
+				name: 'Суфле с персиками',
 				title: 'Суфле с персиками',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -518,7 +524,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'wildBerry',
+				name: 'Лесная ягода',
 				title: 'Лесная ягода',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -526,7 +532,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'homelike',
+				name: 'Домашний',
 				title: 'Домашний',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -537,28 +543,28 @@ const cakeOffers: CakeOffer[] = [
 		weight: [1.5, 3, 5],
 		optionally: [
 			{
-				name: 'classicCandles',
+				name: 'Свечи классические',
 				title: 'Свечи классические',
 				price: 0,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'numberCandles',
+				name: 'Свечи цифрами',
 				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'birthdayTopper',
-				title: 'Свечи цифрами',
+				name: 'Топпер «С Днем рождения»',
+				title: 'Топпер «С Днем рождения»',
 				price: 120,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'other',
+				name: 'Тут длиный текст, который не помещается в одну строку',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
 				isInclude: false,
@@ -579,10 +585,11 @@ const cakeOffers: CakeOffer[] = [
 		],
 		price: 3600,
 		describe: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
+
 		Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.`,
 		filling: [
 			{
-				name: 'cherryWithYogurt',
+				name: 'Вишня с йогуртом',
 				title: 'Вишня с йогуртом',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -590,7 +597,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'souffleWithPeaches',
+				name: 'Суфле с персиками',
 				title: 'Суфле с персиками',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -598,7 +605,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'wildBerry',
+				name: 'Лесная ягода',
 				title: 'Лесная ягода',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -606,7 +613,7 @@ const cakeOffers: CakeOffer[] = [
 				image: '/'
 			},
 			{
-				name: 'homelike',
+				name: 'Домашний',
 				title: 'Домашний',
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
@@ -617,28 +624,28 @@ const cakeOffers: CakeOffer[] = [
 		weight: [1.5, 3, 5],
 		optionally: [
 			{
-				name: 'classicCandles',
+				name: 'Свечи классические',
 				title: 'Свечи классические',
 				price: 0,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'numberCandles',
+				name: 'Свечи цифрами',
 				title: 'Свечи цифрами',
 				price: 180,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'birthdayTopper',
-				title: 'Свечи цифрами',
+				name: 'Топпер «С Днем рождения»',
+				title: 'Топпер «С Днем рождения»',
 				price: 120,
 				isInclude: false,
 				image: '/'
 			},
 			{
-				name: 'other',
+				name: 'Тут длиный текст, который не помещается в одну строку',
 				title: 'Тут длиный текст, который не помещается в одну строку',
 				price: 450,
 				isInclude: false,
