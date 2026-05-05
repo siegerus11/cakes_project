@@ -1,5 +1,5 @@
 import { useState, useEffect, MouseEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import ButtonController from '../../../components/button-controller/button-controller';
 import { SubmitButton } from '../../../components/ui/button/button';
@@ -40,6 +40,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const totalPrice = useAppSelector(selectTotalPrice);
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
+	const location = useLocation();
 
 	const [descriptionVisible, setDescriptionVisible] =
 		useState<boolean>(false);
@@ -104,7 +105,9 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const handleSubmit = (e: MouseEvent) => {
 		e.preventDefault();
 		dispatch(setShoppingCart(cakeOrder));
-		navigate(AppRoute.SHOPPING_CART);
+		navigate(AppRoute.SHOPPING_CART, {
+			state: { from: location.pathname }
+		});
 	};
 
 	return (

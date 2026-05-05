@@ -34,6 +34,8 @@ const Button = ({
 	onClick,
 	path
 }: ButtonProps) => {
+	const location = useLocation();
+
 	return path ? (
 		<Link
 			className={`${className}`}

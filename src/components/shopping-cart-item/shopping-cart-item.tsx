@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
@@ -8,11 +8,16 @@ import styles from './cart-indicator.module.scss';
 const ShoppingCartItem = () => {
 	const cart = useAppSelector(selectShoppingCart);
 	const count = cart.length;
+	const location = useLocation();
 
 	if (count === 0) return null;
 
 	return (
-		<Link className={styles.component} to={AppRoute.SHOPPING_CART}>
+		<Link
+			className={styles.component}
+			to={AppRoute.SHOPPING_CART}
+			state={{ from: location.pathname }}
+		>
 			<svg className={styles.component__icon} viewBox="0 0 20 20">
 				<use xlinkHref="#cart"></use>
 			</svg>

@@ -9,18 +9,16 @@ type ShoppingCartPageProps = {};
 
 const ShoppingCartPage = (props: ShoppingCartPageProps) => {
 	const activeOfferId = useAppSelector(selectActiveOffer);
-
 	const location = useLocation();
-	if (location.state?.from === `${AppRoute.CAKE_OFFER_ARTICLE}`)
-		console.log('!!!');
 
 	console.log(location.state);
 
-	const backLink = location.state?.from
-		? location.state?.from
-		: generatePath(AppRoute.CAKE_OFFER_ARTICLE, {
-				id: activeOfferId
-		  });
+	const backLink =
+		location.state?.from === AppRoute.CAKE_OFFER_ARTICLE
+			? generatePath(AppRoute.CAKE_OFFER_ARTICLE, {
+					id: activeOfferId
+			  })
+			: location.state?.from;
 	return (
 		<div className={`page ${styles.page}`}>
 			<div className="container">
