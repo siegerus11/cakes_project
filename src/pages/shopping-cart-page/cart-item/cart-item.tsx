@@ -1,6 +1,7 @@
 import { useAppSelector } from '../../../hooks/useStore';
 import { selectShoppingCart } from '../../../store/main-process/main-process';
-import { CakeOrder, CheckBoxValue } from '../../../types/types';
+import { CakeOrder, Radio } from '../../../types/types';
+import getChosen from '../../../utils/getChosen';
 import styles from './cart-item.module.scss';
 
 type CartItemProps = {
@@ -10,20 +11,9 @@ type CartItemProps = {
 const CartItem = ({ order }: CartItemProps) => {
 	const { price, filling, optional, weight } = order;
 
-	const getChosen = (obj: CheckBoxValue) => {
-		return Object.entries(obj)
-			.filter(([_, value]) => value)
-			.map(item => item[0]);
-	};
-
 	const fillingsSelected = getChosen(filling);
-	const optionalSelected = getChosen(optional);
-
-	const weightSelected = weight
-		.filter(item => {
-			return item.isChecked;
-		})
-		.map(item => item.weightValue);
+	const optionalSelected = getChosen(optional).length || 'Не выбрано';
+	const weightSelected = getChosen(weight);
 
 	return (
 		<div className={styles.item}>
@@ -37,7 +27,12 @@ const CartItem = ({ order }: CartItemProps) => {
 					</h3>
 
 					<div className={styles.item__description}>
-						<span>Начинка: Вишня с йогуртом</span>
+						<span>
+							Начинка:{' '}
+							{fillingsSelected.length
+								? fillingsSelected.map(fill => fill)
+								: 'Заварной крем'}
+						</span>
 						<span>Вес: 1,5 кг (10 порций)</span>
 						<span>
 							Дополнительно: Топпер «С Днем рождения», свечи
