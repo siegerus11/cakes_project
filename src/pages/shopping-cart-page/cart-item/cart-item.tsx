@@ -1,4 +1,5 @@
-import { useAppSelector } from '../../../hooks/useStore';
+import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
+import { setShoppingCart } from '../../../store/main-process/main-process';
 import { selectShoppingCart } from '../../../store/main-process/main-process';
 import { CakeOrder } from '../../../types/types';
 import getChosen from '../../../utils/getChosen';
@@ -9,14 +10,27 @@ type CartItemProps = {
 	order: CakeOrder;
 };
 
+const testObj = {
+	num: 10,
+	get res() {
+		return this.num * 2;
+	}
+};
+
+console.log(testObj.res);
+
 const CartItem = ({ order }: CartItemProps) => {
-	const { price, filling, optional, weight } = order;
+	const { price, filling, optional, weight, cakeId } = order;
+	const dispatch = useAppDispatch();
 
 	const fillingsSelected = getChosen(filling);
 	const optionalSelected = getChosen(optional);
 	const weightSelected = getChosen(weight);
 
-	console.log(weightSelected);
+	const hanleIncrClick = () => {
+		console.log('incrClick');
+		dispatch(setShoppingCart(order));
+	};
 
 	return (
 		<div className={styles.item}>
@@ -42,12 +56,18 @@ const CartItem = ({ order }: CartItemProps) => {
 						</span>
 						<span>
 							Вес: {weightSelected} кг (
-							{getPersonQuantity(weightSelected[0], true)}
+							{getPersonQuantity(Number(weightSelected[0]), true)}
 							порций)
 						</span>
 						<span>
-							Дополнительно: Топпер «С Днем рождения», свечи
-							классические
+							Дополнительно:{' '}
+							{optionalSelected.length
+								? optionalSelected.map((option, i, arr) =>
+										arr.length < 1 || i === arr.length - 1
+											? `${option} `
+											: `${option}, `
+								  )
+								: 'Не выбрано'}
 						</span>
 					</div>
 				</div>
@@ -64,6 +84,7 @@ const CartItem = ({ order }: CartItemProps) => {
 						<button
 							className={styles.quantity__button}
 							type="button"
+							onClick={() => hanleIncrClick()}
 						></button>
 					</div>
 				</div>

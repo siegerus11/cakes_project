@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, current } from '@reduxjs/toolkit';
 
 import { NameSpace } from '../../constants';
 import { CakeOrder } from '../../types/types';
@@ -35,6 +35,7 @@ export const mainProcess = createSlice({
 			};
 		},
 		setShoppingCart: (state, action: PayloadAction<CakeOrder>) => {
+			console.log(current(state));
 			return {
 				...state,
 				shoppingCart: [...state.shoppingCart, action.payload]

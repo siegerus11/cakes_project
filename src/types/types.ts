@@ -73,4 +73,5 @@ export type CakeOrder = {
 	filling: CheckBoxValue;
 	optional: CheckBoxValue;
 	price: number;
+	quantity: number;
 };

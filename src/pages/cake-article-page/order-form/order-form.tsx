@@ -101,7 +101,10 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 		weight: radios,
 		filling: fillingCheckboxes,
 		optional: optionCheckboxes,
-		price: totalPrice
+		quantity: 1,
+		get price() {
+			return totalPrice * this.quantity;
+		}
 	};
 
 	const handleSubmit = (e: MouseEvent) => {
