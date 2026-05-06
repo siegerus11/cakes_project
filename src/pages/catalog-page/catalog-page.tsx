@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
@@ -5,6 +6,8 @@ import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clauses';
 import Title from '../../components/title/title';
 import { NAVS } from '../../constants';
+import { useAppDispatch } from '../../hooks/useStore';
+import { resetSortingStatus } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
 import { getNavData } from '../../utils/getNavData';
 import styles from './catalog-page.module.scss';
@@ -17,7 +20,13 @@ type CatalogPageProps = {
 
 const CatalogPage = ({ cakes }: CatalogPageProps) => {
 	const { pathname } = useLocation();
+	const dispatch = useAppDispatch();
 	const pageTitle = getNavData(pathname, NAVS)!.title;
+
+	useEffect(() => {
+		dispatch(resetSortingStatus());
+	}, [dispatch]);
+
 	return (
 		<>
 			<div className="container">
