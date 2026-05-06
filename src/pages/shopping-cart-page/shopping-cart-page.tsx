@@ -25,7 +25,8 @@ const ShoppingCartPage = () => {
 			: location.state?.from;
 
 	const handleTrashButtonClick = () => {
-		dispatch(clearCart());
+		const answer = window.confirm('Очистить корзину заказов?');
+		if (answer) dispatch(clearCart());
 	};
 
 	return (
