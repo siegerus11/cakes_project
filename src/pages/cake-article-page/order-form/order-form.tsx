@@ -108,7 +108,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const handleSubmit = (e: MouseEvent) => {
 		e.preventDefault();
 		dispatch(setShoppingCart(cakeOrder));
-		navigate(AppRoute.SHOPPING_CART, {
+		navigate(AppRoute.ShoppingCart, {
 			state: { from: location.pathname }
 		});
 	};

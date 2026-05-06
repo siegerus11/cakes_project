@@ -39,7 +39,7 @@ const CakeArticlePage = () => {
 			<div className="container_secondary container">
 				<Link
 					className={`back-link ${styles.back}`}
-					to={AppRoute.CAKES_CATALOG}
+					to={AppRoute.CakesCatalog}
 				>
 					<span>Назад</span>
 					<span className={styles.back__item}></span>
@@ -77,7 +77,7 @@ const CakeArticlePage = () => {
 							>
 								<Link
 									className={styles.popup__back}
-									to={AppRoute.CAKES_CATALOG}
+									to={AppRoute.CakesCatalog}
 								>
 									<span></span>
 								</Link>

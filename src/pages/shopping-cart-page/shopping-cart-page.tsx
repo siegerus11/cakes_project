@@ -20,8 +20,8 @@ const ShoppingCartPage = () => {
 	const confirm = useConfirm();
 
 	const backLink =
-		location.state?.from === AppRoute.CAKE_OFFER_ARTICLE
-			? generatePath(AppRoute.CAKE_OFFER_ARTICLE, {
+		location.state?.from === AppRoute.CakeOfferArticle
+			? generatePath(AppRoute.CakeOfferArticle, {
 					id: activeOfferId
 			  })
 			: location.state?.from;
