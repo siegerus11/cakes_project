@@ -1,7 +1,7 @@
 import { Link, generatePath, useLocation } from 'react-router-dom';
 
 import Title from '../../components/title/title';
-import { AppRoute } from '../../constants';
+import { AppRoute, ConfirmMessage } from '../../constants';
 import useConfirm from '../../hooks/useConfirm';
 import { useAppSelector, useAppDispatch } from '../../hooks/useStore';
 import {
@@ -27,7 +27,7 @@ const ShoppingCartPage = () => {
 			: location.state?.from;
 
 	const handleTrashButtonClick = () => {
-		const answer = confirm('Очистить корзину заказов?');
+		const answer = confirm(ConfirmMessage.ClearCart);
 		if (answer) dispatch(clearCart());
 	};
 
