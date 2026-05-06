@@ -1,3 +1,4 @@
+import { ConfirmMessage } from '../../../constants';
 import useConfirm from '../../../hooks/useConfirm';
 import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
 import {
@@ -27,7 +28,7 @@ const CartItem = ({ order }: CartItemProps) => {
 
 	const hanleIncrClick = (id: string, num: number, increase: boolean) => {
 		if (order.quantity <= 1 && !increase) {
-			const answer = confirm('Удалить заказ?');
+			const answer = confirm(ConfirmMessage.ClearOrder);
 			if (answer) dispatch(removeCartItem(id));
 		}
 		dispatch(setCartQuantity({ id, num }));

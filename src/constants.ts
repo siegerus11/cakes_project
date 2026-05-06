@@ -87,3 +87,8 @@ export const weightScale: Record<string, WeightRelevant> = {
 		persons: '20-25'
 	}
 };
+
+export const ConfirmMessage = {
+	ClearCart: 'Очистить корзину заказов?',
+	ClearOrder: 'Удалить заказ?'
+} as const;
