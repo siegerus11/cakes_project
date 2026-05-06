@@ -8,13 +8,15 @@ type InitialState = {
 	activeOffer: string;
 	shoppingCart: CakeOrder[];
 	sortingStatus: string;
+	finalSum: number;
 };
 
 const initialState: InitialState = {
 	totalPrice: 0,
 	activeOffer: '',
 	shoppingCart: [],
-	sortingStatus: ''
+	sortingStatus: '',
+	finalSum: 0
 };
 
 export const mainProcess = createSlice({
@@ -35,9 +37,14 @@ export const mainProcess = createSlice({
 			};
 		},
 		setShoppingCart: (state, action: PayloadAction<CakeOrder>) => {
+			const updatedCart = [...state.shoppingCart, action.payload];
 			return {
 				...state,
-				shoppingCart: [...state.shoppingCart, action.payload]
+				shoppingCart: updatedCart,
+				finalSum: updatedCart.reduce(
+					(sum, order) => sum + order.price * order.quantity,
+					0
+				)
 			};
 		},
 		getSortingStatus: (state, action: PayloadAction<string>) => {
@@ -46,53 +53,58 @@ export const mainProcess = createSlice({
 				sortingStatus: action.payload
 			};
 		},
-		clearCart: state => {
-			return {
-				...state,
-				shoppingCart: []
-			};
-		},
 		setCartQuantity: (
 			state,
 			action: PayloadAction<{ id: string; num: number }>
 		) => {
-			console.log(current(state));
+			const updatedCart = state.shoppingCart.map(order => {
+				if (order.cakeId === action.payload.id) {
+					return {
+						...order,
+						quantity:
+							order.quantity + action.payload.num ||
+							order.quantity
+					};
+				}
+				return order;
+			});
 			return {
 				...state,
-				shoppingCart: state.shoppingCart.map(order => {
-					if (order.cakeId === action.payload.id) {
-						return {
-							...order,
-							quantity:
-								order.quantity + action.payload.num ||
-								order.quantity
-						};
-					}
-					return order;
-				})
+				shoppingCart: updatedCart,
+				finalSum: updatedCart.reduce(
+					(sum, order) => sum + order.price * order.quantity,
+					0
+				)
+			};
+		},
+		clearCart: state => {
+			return {
+				...state,
+				shoppingCart: [],
+				finalSum: 0
+			};
+		},
+		removeCartItem: (state, action: PayloadAction<string>) => {
+			const updatedCart = state.shoppingCart.filter(
+				order => order.cakeId !== action.payload
+			);
+			return {
+				...state,
+				shoppingCart: updatedCart,
+				finalSum: updatedCart.reduce(
+					(sum, order) => sum + order.price * order.quantity,
+					0
+				)
 			};
 		}
-		// decreaseQuantity: (state, action: PayloadAction<string>) => {
-		// 	return {
-		// 		...state,
-		// 		shoppingCart: state.shoppingCart.map(order => {
-		// 			if (order.cakeId === action.payload) {
-		// 				return {
-		// 					...order,
-		// 					quantity: order.quantity - 1
-		// 				};
-		// 			}
-		// 			return order;
-		// 		})
-		// 	};
-		// }
 	},
 
 	selectors: {
 		selectTotalPrice: state => state.totalPrice,
 		selectActiveOffer: state => state.activeOffer,
 		selectShoppingCart: state => state.shoppingCart,
-		selelectSortingStatus: state => state.sortingStatus
+		selelectSortingStatus: state => state.sortingStatus,
+		selectFinalSum: state => state.finalSum
 	}
 });
 
@@ -101,11 +113,14 @@ export const {
 	setActiveOffer,
 	setShoppingCart,
 	getSortingStatus,
-	setCartQuantity
+	setCartQuantity,
+	clearCart,
+	removeCartItem
 } = mainProcess.actions;
 export const {
 	selectTotalPrice,
 	selectActiveOffer,
 	selectShoppingCart,
-	selelectSortingStatus
+	selelectSortingStatus,
+	selectFinalSum
 } = mainProcess.selectors;

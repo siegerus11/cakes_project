@@ -2,15 +2,19 @@ import { Link, generatePath, useLocation } from 'react-router-dom';
 
 import Title from '../../components/title/title';
 import { AppRoute } from '../../constants';
-import { useAppSelector } from '../../hooks/useStore';
-import { selectActiveOffer } from '../../store/main-process/main-process';
+import { useAppSelector, useAppDispatch } from '../../hooks/useStore';
+import {
+	selectActiveOffer,
+	selectFinalSum,
+	clearCart
+} from '../../store/main-process/main-process';
 import CartList from './cart-item/cart-item';
 import styles from './shopping-cart-page.module.scss';
 
-type ShoppingCartPageProps = {};
-
-const ShoppingCartPage = (props: ShoppingCartPageProps) => {
+const ShoppingCartPage = () => {
 	const activeOfferId = useAppSelector(selectActiveOffer);
+	const dispatch = useAppDispatch();
+	const finalSum = useAppSelector(selectFinalSum);
 	const location = useLocation();
 
 	const backLink =
@@ -19,6 +23,11 @@ const ShoppingCartPage = (props: ShoppingCartPageProps) => {
 					id: activeOfferId
 			  })
 			: location.state?.from;
+
+	const handleTrashButtonClick = () => {
+		dispatch(clearCart());
+	};
+
 	return (
 		<div className={`page ${styles.page}`}>
 			<div className="container_secondary container">
@@ -35,6 +44,7 @@ const ShoppingCartPage = (props: ShoppingCartPageProps) => {
 							className={styles.trashButton}
 							aria-label="Удалить заказ"
 							type="button"
+							onClick={handleTrashButtonClick}
 						>
 							<svg className={styles.icon} viewBox="0 0 16 16">
 								<use xlinkHref="#basket"></use>
@@ -44,7 +54,7 @@ const ShoppingCartPage = (props: ShoppingCartPageProps) => {
 					<CartList />
 					<div className={styles.total}>
 						<span className={styles.total__amount}>
-							Итого: 14 800 ₽
+							Итого: {finalSum} ₽
 						</span>
 						<button
 							className={`dot-lined ${styles.total__button}`}

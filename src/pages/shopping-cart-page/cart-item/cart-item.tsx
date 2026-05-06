@@ -1,7 +1,8 @@
 import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
 import {
 	setCartQuantity,
-	selectShoppingCart
+	selectShoppingCart,
+	removeCartItem
 } from '../../../store/main-process/main-process';
 import { CakeOrder } from '../../../types/types';
 import getChosen from '../../../utils/getChosen';
@@ -22,7 +23,8 @@ const CartItem = ({ order }: CartItemProps) => {
 
 	const priceValue = price * quantity;
 
-	const hanleIncrClick = (id: string, num: number) => {
+	const hanleIncrClick = (id: string, num: number, increase: boolean) => {
+		if (order.quantity <= 1 && !increase) dispatch(removeCartItem(id));
 		dispatch(setCartQuantity({ id, num }));
 	};
 
@@ -73,7 +75,7 @@ const CartItem = ({ order }: CartItemProps) => {
 						<button
 							className={styles.quantity__button}
 							type="button"
-							onClick={() => hanleIncrClick(cakeId, -1)}
+							onClick={() => hanleIncrClick(cakeId, -1, false)}
 						></button>
 						<span className={styles.quantity__value}>
 							{quantity}
@@ -81,7 +83,7 @@ const CartItem = ({ order }: CartItemProps) => {
 						<button
 							className={styles.quantity__button}
 							type="button"
-							onClick={() => hanleIncrClick(cakeId, 1)}
+							onClick={() => hanleIncrClick(cakeId, 1, true)}
 						></button>
 					</div>
 				</div>
@@ -92,9 +94,7 @@ const CartItem = ({ order }: CartItemProps) => {
 
 const CartList = () => {
 	const cartSelector = useAppSelector(selectShoppingCart);
-	const finalSum = cartSelector
-		.map(order => order.price * order.quantity)
-		.reduce((sum, num) => sum + num);
+
 	return (
 		<ul className={styles.list}>
 			{cartSelector.map(order => (
