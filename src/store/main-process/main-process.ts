@@ -35,7 +35,6 @@ export const mainProcess = createSlice({
 			};
 		},
 		setShoppingCart: (state, action: PayloadAction<CakeOrder>) => {
-			console.log(current(state));
 			return {
 				...state,
 				shoppingCart: [...state.shoppingCart, action.payload]
@@ -46,7 +45,47 @@ export const mainProcess = createSlice({
 				...state,
 				sortingStatus: action.payload
 			};
+		},
+		clearCart: state => {
+			return {
+				...state,
+				shoppingCart: []
+			};
+		},
+		setCartQuantity: (
+			state,
+			action: PayloadAction<{ id: string; num: number }>
+		) => {
+			console.log(current(state));
+			return {
+				...state,
+				shoppingCart: state.shoppingCart.map(order => {
+					if (order.cakeId === action.payload.id) {
+						return {
+							...order,
+							quantity:
+								order.quantity + action.payload.num ||
+								order.quantity
+						};
+					}
+					return order;
+				})
+			};
 		}
+		// decreaseQuantity: (state, action: PayloadAction<string>) => {
+		// 	return {
+		// 		...state,
+		// 		shoppingCart: state.shoppingCart.map(order => {
+		// 			if (order.cakeId === action.payload) {
+		// 				return {
+		// 					...order,
+		// 					quantity: order.quantity - 1
+		// 				};
+		// 			}
+		// 			return order;
+		// 		})
+		// 	};
+		// }
 	},
 
 	selectors: {
@@ -61,7 +100,8 @@ export const {
 	setTotalPrice,
 	setActiveOffer,
 	setShoppingCart,
-	getSortingStatus
+	getSortingStatus,
+	setCartQuantity
 } = mainProcess.actions;
 export const {
 	selectTotalPrice,

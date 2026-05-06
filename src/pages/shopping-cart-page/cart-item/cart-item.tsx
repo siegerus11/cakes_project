@@ -1,6 +1,8 @@
 import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
-import { setShoppingCart } from '../../../store/main-process/main-process';
-import { selectShoppingCart } from '../../../store/main-process/main-process';
+import {
+	setCartQuantity,
+	selectShoppingCart
+} from '../../../store/main-process/main-process';
 import { CakeOrder } from '../../../types/types';
 import getChosen from '../../../utils/getChosen';
 import getPersonQuantity from '../../../utils/getPersonQuantity';
@@ -10,26 +12,18 @@ type CartItemProps = {
 	order: CakeOrder;
 };
 
-const testObj = {
-	num: 10,
-	get res() {
-		return this.num * 2;
-	}
-};
-
-console.log(testObj.res);
-
 const CartItem = ({ order }: CartItemProps) => {
-	const { price, filling, optional, weight, cakeId } = order;
+	const { price, filling, optional, weight, cakeId, quantity } = order;
 	const dispatch = useAppDispatch();
 
 	const fillingsSelected = getChosen(filling);
 	const optionalSelected = getChosen(optional);
 	const weightSelected = getChosen(weight);
 
-	const hanleIncrClick = () => {
-		console.log('incrClick');
-		dispatch(setShoppingCart(order));
+	const priceValue = price * quantity;
+
+	const hanleIncrClick = (id: string, num: number) => {
+		dispatch(setCartQuantity({ id, num }));
 	};
 
 	return (
@@ -74,17 +68,20 @@ const CartItem = ({ order }: CartItemProps) => {
 			</div>
 			<div className={`${styles.side} ${styles.item__side}`}>
 				<div className={styles.side__wrapper}>
-					<div className={styles.item__price}>{price} ₽</div>
+					<div className={styles.item__price}>{priceValue} ₽</div>
 					<div className={styles.quantity}>
 						<button
 							className={styles.quantity__button}
 							type="button"
+							onClick={() => hanleIncrClick(cakeId, -1)}
 						></button>
-						<span className={styles.quantity__value}>1</span>
+						<span className={styles.quantity__value}>
+							{quantity}
+						</span>
 						<button
 							className={styles.quantity__button}
 							type="button"
-							onClick={() => hanleIncrClick()}
+							onClick={() => hanleIncrClick(cakeId, 1)}
 						></button>
 					</div>
 				</div>
@@ -95,6 +92,9 @@ const CartItem = ({ order }: CartItemProps) => {
 
 const CartList = () => {
 	const cartSelector = useAppSelector(selectShoppingCart);
+	const finalSum = cartSelector
+		.map(order => order.price * order.quantity)
+		.reduce((sum, num) => sum + num);
 	return (
 		<ul className={styles.list}>
 			{cartSelector.map(order => (
