@@ -25,7 +25,7 @@ function App() {
 			future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
 		>
 			<Routes>
-				<Route path={AppRoute.ROOT} element={<MainLayout />}>
+				<Route path={AppRoute.Root} element={<MainLayout />}>
 					<Route
 						index
 						element={
@@ -35,9 +35,9 @@ function App() {
 							/>
 						}
 					/>
-					<Route path={AppRoute.ABOUT} element={<AboutPage />} />
+					<Route path={AppRoute.About} element={<AboutPage />} />
 					<Route
-						path={AppRoute.CATALOG}
+						path={AppRoute.Catalog}
 						element={
 							<MainPage
 								cakes={cakeOffers}
@@ -46,30 +46,30 @@ function App() {
 						}
 					/>
 					<Route
-						path={AppRoute.CAKES_CATALOG}
+						path={AppRoute.CakesCatalog}
 						element={<CatalogPage cakes={cakeOffers} />}
 					/>
 					<Route
-						path={AppRoute.BENTO_CAKES_CATALOG}
+						path={AppRoute.BentoCakesCatalog}
 						element={<CatalogPage cakes={bentoCakesffers} />}
 					/>
 					<Route
-						path={AppRoute.DELIVERY}
+						path={AppRoute.Delivery}
 						element={<DeliveryPage />}
 					/>
-					<Route path={AppRoute.FAQ} element={<FaqPage />} />
-					<Route path={AppRoute.REVIEWS} element={<RewievsPage />} />
+					<Route path={AppRoute.Faq} element={<FaqPage />} />
+					<Route path={AppRoute.Reviews} element={<RewievsPage />} />
 					<Route
-						path={AppRoute.CONTACTS}
+						path={AppRoute.Contacts}
 						element={<ContactsPage />}
 					/>
 				</Route>
 				<Route
-					path={AppRoute.CAKE_OFFER_ARTICLE}
+					path={AppRoute.CakeOfferArticle}
 					element={<CakeArticlePage />}
 				/>
 				<Route
-					path={AppRoute.SHOPPING_CART}
+					path={AppRoute.ShoppingCart}
 					element={<ShoppingCartPage />}
 				/>
 			</Routes>

@@ -30,7 +30,7 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 
 	return (
 		<Link
-			to={generatePath(AppRoute.CAKE_OFFER_ARTICLE, { id: cake.id })}
+			to={generatePath(AppRoute.CakeOfferArticle, { id: cake.id })}
 			className={cardLinkClass}
 			onClick={() => handleOfferLinkClick(cake.id)}
 		>

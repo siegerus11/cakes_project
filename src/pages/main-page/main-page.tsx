@@ -37,10 +37,10 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 									NAVS.find(nav => nav.title === 'Торты')
 										?.title
 								}
-								path={AppRoute.CAKES_CATALOG}
+								path={AppRoute.CakesCatalog}
 							/>
 							<Link
-								to={AppRoute.CAKES_CATALOG}
+								to={AppRoute.CakesCatalog}
 								className={styles.headline__link}
 							>
 								Открыть все
@@ -49,7 +49,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						<CardsList
 							isMainPage
 							cakes={splicedCakes}
-							path={AppRoute.CAKES_CATALOG}
+							path={AppRoute.CakesCatalog}
 						/>
 					</section>
 					<section className={styles.secondary}>
@@ -61,10 +61,10 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 										nav => nav.title === 'Бенто-торты'
 									)?.title
 								}
-								path={AppRoute.BENTO_CAKES_CATALOG}
+								path={AppRoute.BentoCakesCatalog}
 							/>
 							<Link
-								to={AppRoute.BENTO_CAKES_CATALOG}
+								to={AppRoute.BentoCakesCatalog}
 								className={styles.headline__link}
 							>
 								Открыть все
@@ -73,7 +73,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						<CardsList
 							isMainPage
 							cakes={splicedBentoCakes}
-							path={AppRoute.BENTO_CAKES_CATALOG}
+							path={AppRoute.BentoCakesCatalog}
 						/>
 					</section>
 					<Clauses />

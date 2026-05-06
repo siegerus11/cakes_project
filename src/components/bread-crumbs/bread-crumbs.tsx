@@ -12,7 +12,7 @@ const BreadCrumbs = () => {
 
 	return (
 		<nav className={styles.component}>
-			<Link className={styles.link} to={AppRoute.ROOT}>
+			<Link className={styles.link} to={AppRoute.Root}>
 				Главная
 			</Link>
 			<Link className={styles.link} to={linkPath}>

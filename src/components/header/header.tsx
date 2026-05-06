@@ -56,7 +56,7 @@ const Header = () => {
 						<div className={styles.secondary}>
 							<Button
 								className={`button button_primary ${styles.button}`}
-								path={AppRoute.SHOPPING_CART}
+								path={AppRoute.ShoppingCart}
 							>
 								<svg
 									className={styles.button__icon}

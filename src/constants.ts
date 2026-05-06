@@ -1,59 +1,59 @@
 import { Nav, WeightRelevant } from './types/types';
 
 export const AppRoute = {
-	ROOT: '/',
-	ABOUT: '/about',
-	CATALOG: '/catalog',
-	CAKES_CATALOG: '/catalog/cakes',
-	CAKE_OFFER_ARTICLE: '/cake-offer/:id',
-	BENTO_CAKES_CATALOG: '/catalog/bento-cakes',
-	DELIVERY: '/delivery',
-	FAQ: '/faq',
-	REVIEWS: '/reviews',
-	CONTACTS: '/contacts',
-	SHOPPING_CART: '/shopping-cart'
+	Root: '/',
+	About: '/about',
+	Catalog: '/catalog',
+	CakesCatalog: '/catalog/cakes',
+	CakeOfferArticle: '/cake-offer/:id',
+	BentoCakesCatalog: '/catalog/bento-cakes',
+	Delivery: '/delivery',
+	Faq: '/faq',
+	Reviews: '/reviews',
+	Contacts: '/contacts',
+	ShoppingCart: '/shopping-cart'
 } as const;
 
 export const NAVS: Nav[] = [
 	{
 		title: 'О нас',
 		image: '',
-		path: AppRoute.ABOUT
+		path: AppRoute.About
 	},
 	{
 		title: 'Каталог',
 		image: '',
-		path: AppRoute.CATALOG
+		path: AppRoute.Catalog
 	},
 	{
 		title: 'Доставка и оплата',
 		image: '',
-		path: AppRoute.DELIVERY
+		path: AppRoute.Delivery
 	},
 	{
 		title: 'Частые вопросы',
 		image: '',
-		path: AppRoute.FAQ
+		path: AppRoute.Faq
 	},
 	{
 		title: 'Отзывы',
 		image: '',
-		path: AppRoute.REVIEWS
+		path: AppRoute.Reviews
 	},
 	{
 		title: 'Контакты',
 		image: '',
-		path: AppRoute.CONTACTS
+		path: AppRoute.Contacts
 	},
 	{
 		title: 'Торты',
 		image: '',
-		path: AppRoute.CAKES_CATALOG
+		path: AppRoute.CakesCatalog
 	},
 	{
 		title: 'Бенто-торты',
 		image: '',
-		path: AppRoute.BENTO_CAKES_CATALOG
+		path: AppRoute.BentoCakesCatalog
 	}
 ];
 

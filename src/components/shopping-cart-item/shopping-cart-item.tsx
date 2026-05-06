@@ -15,7 +15,7 @@ const ShoppingCartItem = () => {
 	return (
 		<Link
 			className={styles.component}
-			to={AppRoute.SHOPPING_CART}
+			to={AppRoute.ShoppingCart}
 			state={{ from: location.pathname }}
 		>
 			<svg className={styles.component__icon} viewBox="0 0 20 20">
