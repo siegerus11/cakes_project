@@ -55,15 +55,15 @@ type AllCardProps = {
 
 const AllCard = ({ cake, path }: AllCardProps) => {
 	return (
-		<div className={styles.grid}>
+		<Link className={styles.grid} to={path!}>
 			{cake.images.map((image, i) => {
 				const keyValue = `${i}-${cake.title}`;
 				return <img src={image} alt="cake" key={keyValue} />;
 			})}
-			<Link className={styles.allButton} to={path!}>
+			<div className={styles.allButton}>
 				<span>Открыть все</span>
-			</Link>
-		</div>
+			</div>
+		</Link>
 	);
 };
 
