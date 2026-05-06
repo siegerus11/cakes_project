@@ -1,3 +1,4 @@
+import useConfirm from '../../../hooks/useConfirm';
 import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
 import {
 	setCartQuantity,
@@ -16,6 +17,7 @@ type CartItemProps = {
 const CartItem = ({ order }: CartItemProps) => {
 	const { price, filling, optional, weight, cakeId, quantity } = order;
 	const dispatch = useAppDispatch();
+	const confirm = useConfirm();
 
 	const fillingsSelected = getChosen(filling);
 	const optionalSelected = getChosen(optional);
@@ -24,7 +26,10 @@ const CartItem = ({ order }: CartItemProps) => {
 	const priceValue = price * quantity;
 
 	const hanleIncrClick = (id: string, num: number, increase: boolean) => {
-		if (order.quantity <= 1 && !increase) dispatch(removeCartItem(id));
+		if (order.quantity <= 1 && !increase) {
+			const answer = confirm('Удалить заказ?');
+			if (answer) dispatch(removeCartItem(id));
+		}
 		dispatch(setCartQuantity({ id, num }));
 	};
 
@@ -32,7 +37,7 @@ const CartItem = ({ order }: CartItemProps) => {
 		<div className={styles.item}>
 			<div className={styles.item__main}>
 				<div className={styles.item__image}>
-					<img alt="vImage" />
+					<img alt="cake" />
 				</div>
 				<div>
 					<h3 className={styles.item__title}>

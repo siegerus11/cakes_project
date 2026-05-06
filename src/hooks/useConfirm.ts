@@ -1,14 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useCallback } from 'react';
 
-function useConfirm(text: string) {
-	const [assent, setAssent] = useState<boolean>(false);
-
-	useEffect(() => {
-		const answer = window.confirm(text);
-		setAssent(answer);
-	}, []);
-
-	return assent;
-}
+const useConfirm = () => {
+	const confirm = (message: string): boolean => {
+		return window.confirm(message);
+	};
+	return confirm;
+};
 
 export default useConfirm;

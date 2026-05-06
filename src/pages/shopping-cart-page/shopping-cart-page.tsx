@@ -2,6 +2,7 @@ import { Link, generatePath, useLocation } from 'react-router-dom';
 
 import Title from '../../components/title/title';
 import { AppRoute } from '../../constants';
+import useConfirm from '../../hooks/useConfirm';
 import { useAppSelector, useAppDispatch } from '../../hooks/useStore';
 import {
 	selectActiveOffer,
@@ -16,6 +17,7 @@ const ShoppingCartPage = () => {
 	const dispatch = useAppDispatch();
 	const finalSum = useAppSelector(selectFinalSum);
 	const location = useLocation();
+	const confirm = useConfirm();
 
 	const backLink =
 		location.state?.from === AppRoute.CAKE_OFFER_ARTICLE
@@ -25,7 +27,7 @@ const ShoppingCartPage = () => {
 			: location.state?.from;
 
 	const handleTrashButtonClick = () => {
-		const answer = window.confirm('Очистить корзину заказов?');
+		const answer = confirm('Очистить корзину заказов?');
 		if (answer) dispatch(clearCart());
 	};
 
