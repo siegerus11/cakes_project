@@ -126,6 +126,14 @@ const ShoppingCartPage = () => {
 								onChange={handleInputChange}
 								value={inputValue}
 							/>
+							{inputValue && (
+								<button
+									className={styles.popup__clear}
+									type="button"
+									onClick={handleInputClearClick}
+									aria-label="Очистить"
+								/>
+							)}
 						</div>
 						<Button
 							className={`button button_primary ${styles.popup__button}`}
