@@ -1,5 +1,6 @@
 .page {
 	padding-top: 20px;
+	padding-bottom: 324px;
 }
 
 .back {
@@ -45,30 +46,49 @@
 .total {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
-	justify-content: space-between;
 	max-width: 174px;
 	margin-top: 22px;
 	margin-left: auto;
-	font-weight: 700;
-	font-size: 22px;
+
+	span {
+		font-weight: 700;
+		font-size: 22px;
+	}
 
 	&__button {
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
 		width: 100%;
-		margin-top: 17px;
-		font-size: 16px;
-		line-height: 119%;
+		margin-top: 12px;
 		cursor: pointer;
 		text-underline-offset: 4px;
+
+		span {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 119%;
+		}
+	}
+}
+
+.button {
+	justify-content: center;
+	min-width: 298px;
+	margin-top: 55px;
+	margin-left: auto;
+	padding: 17px 23px 16px 23px;
+
+	span {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 120%;
 	}
 }
 
 @media (max-width: 1200px) {
 	.back {
-		margin-left: unset;
+		margin-left: 10px;
 		font-size: 15px;
 	}
 
@@ -78,7 +98,11 @@
 
 	.total {
 		max-width: unset;
-		font-size: 25px;
+
+		span {
+			font-size: 25px;
+			line-height: 112%;
+		}
 
 		&__button {
 			span {
@@ -94,29 +118,35 @@
 	}
 
 	.wrapper {
-		margin-top: 19px;
+		margin-top: 16px;
 	}
 
 	.back {
-		display: block;
-		width: 40px;
-		
+		margin-left: unset;
+	}
+
+	.title {
+		font-weight: 900;
+		font-size: 24px;
+	}
+
+	.total {
+		align-items: flex-end;
+		margin-top: 20px;
+
 		span {
-			display: block;
-			max-width: 0;
-			visibility: hidden;
+			font-weight: 700;
+			font-size: 17px;
 		}
 
-		&::before {
-			left: 0;
-			width: 40px;
-			height: 18px;
-			background-image: url('/images/nav-arrow-big.svg');
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: cover;
-			// background-size: 40px 18px;
-			transform: translateY(-50%) rotate(180deg);
+		&__button {
+			margin-top: 16px;
+
+			span {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 129%;
+			}
 		}
 	}
 }

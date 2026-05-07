@@ -1,6 +1,7 @@
 import { Link, generatePath, useLocation } from 'react-router-dom';
 
 import Title from '../../components/title/title';
+import Button from '../../components/ui/button/button';
 import { AppRoute, ConfirmMessage } from '../../constants';
 import useConfirm from '../../hooks/useConfirm';
 import { useAppSelector, useAppDispatch } from '../../hooks/useStore';
@@ -34,7 +35,10 @@ const ShoppingCartPage = () => {
 	return (
 		<div className={`page ${styles.page}`}>
 			<div className="container">
-				<Link className={`back-link ${styles.back}`} to={backLink}>
+				<Link
+					className={`back-link back-link_m-small ${styles.back}`}
+					to={backLink}
+				>
 					<span>Назад</span>
 				</Link>
 				<div className={styles.wrapper}>
@@ -66,6 +70,12 @@ const ShoppingCartPage = () => {
 							<span>Ввести промокод</span>
 						</button>
 					</div>
+
+					<Button
+						className={`button button_primary ${styles.button}`}
+					>
+						<span>Верно, далее</span>
+					</Button>
 				</div>
 			</div>
 		</div>
