@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { Link, generatePath, useLocation } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
@@ -19,6 +19,7 @@ import styles from './shopping-cart-page.module.scss';
 
 const ShoppingCartPage = () => {
 	const [popupIsVisible, setPopupIsVisible] = useState<boolean>(false);
+	const [inputValue, setInputValue] = useState<string>('');
 
 	const activeOfferId = useAppSelector(selectActiveOffer);
 	const dispatch = useAppDispatch();
@@ -44,6 +45,14 @@ const ShoppingCartPage = () => {
 
 	const handlePromoButtonClick = () => {
 		setPopupIsVisible(true);
+	};
+
+	const handleInputClearClick = () => {
+		setInputValue('');
+	};
+
+	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+		setInputValue(e.target.value);
 	};
 	return (
 		<div className={`page ${styles.page}`}>
@@ -110,10 +119,14 @@ const ShoppingCartPage = () => {
 							titleText="Промокод"
 							titleClass={styles.popup__title}
 						/>
-						<input
-							className={styles.popup__input}
-							placeholder="Введите промокод"
-						/>
+						<div className={styles.popup__wrapper}>
+							<input
+								className={styles.popup__input}
+								placeholder="Введите промокод"
+								onChange={handleInputChange}
+								value={inputValue}
+							/>
+						</div>
 						<Button
 							className={`button button_primary ${styles.popup__button}`}
 						>
