@@ -149,4 +149,22 @@
 			}
 		}
 	}
+
+	.button {
+		display: none;
+	}
+
+	.controller {
+		display: flex;
+
+		&__button {
+			justify-content: center;
+			padding: 15px 23px;
+
+			span {
+				font-weight: 600;
+				font-size: 14px;
+			}
+		}
+	}
 }

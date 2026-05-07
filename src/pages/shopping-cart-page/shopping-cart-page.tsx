@@ -1,5 +1,6 @@
 import { Link, generatePath, useLocation } from 'react-router-dom';
 
+import ButtonController from '../../components/button-controller/button-controller';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute, ConfirmMessage } from '../../constants';
@@ -78,6 +79,13 @@ const ShoppingCartPage = () => {
 					</Button>
 				</div>
 			</div>
+			<ButtonController outerClass={`${styles.controller}`}>
+				<Button
+					className={`button button_primary ${styles.controller__button}`}
+				>
+					<span>Верно, далее</span>
+				</Button>
+			</ButtonController>
 		</div>
 	);
 };
