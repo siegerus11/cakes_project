@@ -53,12 +53,6 @@ export const mainProcess = createSlice({
 				sortingStatus: action.payload
 			};
 		},
-		resetSortingStatus: state => {
-			return {
-				...state,
-				sortingStatus: ''
-			};
-		},
 		setCartQuantity: (
 			state,
 			action: PayloadAction<{ id: string; num: number }>
@@ -121,8 +115,7 @@ export const {
 	getSortingStatus,
 	setCartQuantity,
 	clearCart,
-	removeCartItem,
-	resetSortingStatus
+	removeCartItem
 } = mainProcess.actions;
 export const {
 	selectTotalPrice,

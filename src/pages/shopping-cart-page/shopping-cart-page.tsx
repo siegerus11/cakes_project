@@ -33,9 +33,9 @@ const ShoppingCartPage = () => {
 
 	return (
 		<div className={`page ${styles.page}`}>
-			<div className="container_secondary container">
+			<div className="container">
 				<Link className={`back-link ${styles.back}`} to={backLink}>
-					Назад
+					<span>Назад</span>
 				</Link>
 				<div className={styles.wrapper}>
 					<div className={styles.header}>

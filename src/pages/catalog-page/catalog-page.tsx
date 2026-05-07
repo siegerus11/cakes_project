@@ -7,7 +7,7 @@ import Clauses from '../../components/clause/clauses';
 import Title from '../../components/title/title';
 import { NAVS } from '../../constants';
 import { useAppDispatch } from '../../hooks/useStore';
-import { resetSortingStatus } from '../../store/main-process/main-process';
+import { getSortingStatus } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
 import { getNavData } from '../../utils/getNavData';
 import styles from './catalog-page.module.scss';
@@ -24,7 +24,7 @@ const CatalogPage = ({ cakes }: CatalogPageProps) => {
 	const pageTitle = getNavData(pathname, NAVS)!.title;
 
 	useEffect(() => {
-		dispatch(resetSortingStatus());
+		dispatch(getSortingStatus(''));
 	}, [dispatch]);
 
 	return (
