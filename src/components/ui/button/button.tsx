@@ -38,7 +38,7 @@ const Button = ({
 
 	return path ? (
 		<Link
-			className={`${className}`}
+			className={className}
 			to={path}
 			state={{ from: location.pathname }}
 		>

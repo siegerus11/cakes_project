@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { Link, generatePath, useLocation } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
+import Overlay from '../../components/overlay/overlay';
+import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute, ConfirmMessage } from '../../constants';
@@ -15,6 +18,8 @@ import CartList from './cart-item/cart-item';
 import styles from './shopping-cart-page.module.scss';
 
 const ShoppingCartPage = () => {
+	const [popupIsVisible, setPopupIsVisible] = useState<boolean>(false);
+
 	const activeOfferId = useAppSelector(selectActiveOffer);
 	const dispatch = useAppDispatch();
 	const finalSum = useAppSelector(selectFinalSum);
@@ -33,6 +38,13 @@ const ShoppingCartPage = () => {
 		if (answer) dispatch(clearCart());
 	};
 
+	const handlePopupClose = () => {
+		setPopupIsVisible(prevState => !prevState);
+	};
+
+	const handlePromoButtonClick = () => {
+		setPopupIsVisible(true);
+	};
 	return (
 		<div className={`page ${styles.page}`}>
 			<div className="container">
@@ -67,6 +79,7 @@ const ShoppingCartPage = () => {
 						<button
 							className={`dot-lined ${styles.total__button}`}
 							type="button"
+							onClick={handlePromoButtonClick}
 						>
 							<span>Ввести промокод</span>
 						</button>
@@ -86,6 +99,29 @@ const ShoppingCartPage = () => {
 					<span>Верно, далее</span>
 				</Button>
 			</ButtonController>
+			{popupIsVisible && (
+				<Overlay>
+					<Popup
+						outerClass={`popup ${styles.popup}`}
+						closeClass={styles.popup__close}
+						onCloseClick={handlePopupClose}
+					>
+						<Title
+							titleText="Промокод"
+							titleClass={styles.popup__title}
+						/>
+						<input
+							className={styles.popup__input}
+							placeholder="Введите промокод"
+						/>
+						<Button
+							className={`button button_primary ${styles.popup__button}`}
+						>
+							<span>Применить</span>
+						</Button>
+					</Popup>
+				</Overlay>
+			)}
 		</div>
 	);
 };

@@ -1,14 +1,14 @@
 :global(.popup) {
-  z-index: 20;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 358px;
-  max-height: 100%;
-  transform: translate(-50%, -50%);
-  overflow-y: auto;
-  border-radius: 20px;
-  background-color: #fff;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 20;
+	min-width: 358px;
+	max-height: 100%;
+	overflow-y: auto;
+	background-color: #fff;
+	border-radius: 20px;
+	transform: translate(-50%, -50%);
 }
 
 // @media (max-width: 1440px) {}
@@ -17,7 +17,7 @@
 
 // @media (max-width: 992px) {}
 
-@media (max-width: 767px) {}
+// @media (max-width: 767px) {}
 
 // @media (max-width: 576px) {}
 
