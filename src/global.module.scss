@@ -145,6 +145,30 @@ body {
 			padding: 0 5px;
 		}
 	}
+	:global(.back-link) {
+		&:global(_m-small) {
+			display: block;
+			max-width: 18px;
+			max-height: 18px;
+
+		span {
+			display: block;
+			max-width: 0;
+			visibility: hidden;
+		}
+
+		&::before {
+				left: 0;
+				width: 14px;
+				height: 18px;
+				background-image: url('/images/nav-arrow-big.svg');
+				background-repeat: no-repeat;
+				background-position: -6px center;
+				background-size: cover;
+				transform: translateY(-50%) rotate(180deg) scale(1.51);
+			}
+		}
+	}
 }
 
 
