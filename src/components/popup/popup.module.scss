@@ -11,6 +11,13 @@
 	transform: translate(-50%, -50%);
 }
 
+:global(.popup__close) {
+	svg {
+		width: 18px;
+		height: 18px;
+	}
+}
+
 // @media (max-width: 1440px) {}
 
 // @media (max-width: 1200px) {}
