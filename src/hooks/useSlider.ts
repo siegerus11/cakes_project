@@ -3,7 +3,17 @@ import { useEffect, useState, TouchEvent } from 'react';
 import { Slide } from '../types/types';
 import { createSlidesInitial } from '../utils/createSlidesInitial';
 
-function useSlider(imagesSrc: string[]) {
+function useSlider(imagesSrc: string[]): {
+	slides: Slide[];
+	isSliderVisible: boolean;
+	slideIndex: number;
+	handleTouchStart: (e: TouchEvent) => void;
+	handleTouchMove: (e: TouchEvent) => void;
+	handleTouchEnd: () => void;
+	handleSlideButtonClick: (num: number) => void;
+	handleDotsClick: (idx: number) => void;
+	handleCloseButtonClick: () => void;
+} {
 	const slidesInitial = createSlidesInitial(imagesSrc);
 	const [slides, setSlides] = useState<Slide[]>(slidesInitial);
 
@@ -80,4 +90,4 @@ function useSlider(imagesSrc: string[]) {
 	};
 }
 
-export default useSlider ;
+export default useSlider;

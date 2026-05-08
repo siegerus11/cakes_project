@@ -1,4 +1,4 @@
-﻿import { useState, ChangeEvent, AnimationEvent } from 'react';
+﻿import { useState, ChangeEvent, AnimationEvent, TouchEvent } from 'react';
 import { Link, generatePath, useLocation } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
@@ -18,6 +18,42 @@ import CartList from './cart-item/cart-item';
 import styles from './shopping-cart-page.module.scss';
 
 const ShoppingCartPage = () => {
+	function useTouch(callback: () => void) {
+		const [isTouchMove, setIsTouchMove] = useState<boolean>(false);
+
+		const [touchStartY, setTouchStartY] = useState<number>(0);
+		const [touchEndY, setTouchEndY] = useState<number>(0);
+
+		const handleTouchStart = (e: TouchEvent) => {
+			setTouchStartY(e.touches[0].clientY);
+		};
+
+		const handleTouchMove = (e: TouchEvent) => {
+			setIsTouchMove(true);
+			setTouchEndY(e.touches[0].clientY);
+		};
+
+		const handleTouchEnd = () => {
+			if (!isTouchMove) return;
+
+			const touchDifference = touchEndY - touchStartY;
+			const touchLength = Math.abs(touchEndY - touchStartY);
+			const touchMinLength = 20;
+
+			if (touchLength < touchMinLength) return;
+
+			if (touchDifference > 0) callback();
+
+			setIsTouchMove(false);
+		};
+
+		return {
+			handleTouchStart,
+			handleTouchMove,
+			handleTouchEnd
+		};
+	}
+
 	const [popupIsVisible, setPopupIsVisible] = useState<boolean>(false);
 	const [isAnimate, setIsAnimate] = useState<boolean>(false);
 	const [inputValue, setInputValue] = useState<string>('');
@@ -43,6 +79,9 @@ const ShoppingCartPage = () => {
 	const handlePopupClose = () => {
 		setIsAnimate(true);
 	};
+
+	const { handleTouchStart, handleTouchMove, handleTouchEnd } =
+		useTouch(handlePopupClose);
 
 	const handlePopupAnimationEnd = (e: AnimationEvent) => {
 		if (e.animationName === styles.popupClosing) {
@@ -125,6 +164,9 @@ const ShoppingCartPage = () => {
 						closeClass={styles.popup__close}
 						onCloseClick={handlePopupClose}
 						onAnimationEnd={handlePopupAnimationEnd}
+						onTouchStart={handleTouchStart}
+						onTouchMove={handleTouchMove}
+						onTouchEnd={handleTouchEnd}
 					>
 						<Title
 							titleText="Промокод"
