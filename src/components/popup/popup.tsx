@@ -10,11 +10,11 @@ import styles from './popup.module.scss';
 type PopupProps = PropsWithChildren<{
 	outerClass: string;
 	closeClass?: string;
-	onCloseClick: MouseEventHandler<HTMLButtonElement>;
-	onAnimationEnd?: (e: AnimationEvent) => void;
-	onTouchStart?: (e: TouchEvent) => void;
-	onTouchMove?: (e: TouchEvent) => void;
-	onTouchEnd?: (e: TouchEvent) => void;
+	onCloseClick?: MouseEventHandler<HTMLButtonElement>;
+	onAnimationEnd?: (e: AnimationEvent<HTMLDivElement>) => void;
+	onTouchStart?: (e: TouchEvent<HTMLButtonElement>) => void;
+	onTouchMove?: (e: TouchEvent<HTMLButtonElement>) => void;
+	onTouchEnd?: (e: TouchEvent<HTMLButtonElement>) => void;
 }>;
 const Popup = ({
 	children,
@@ -26,31 +26,33 @@ const Popup = ({
 	onTouchMove,
 	onTouchEnd
 }: PopupProps) => {
-	const handleTouchStart = (e: TouchEvent) => {
+	const handleTouchStart = (e: TouchEvent<HTMLButtonElement>) => {
 		if (onTouchStart) onTouchStart(e);
 	};
 
-	const handleTouchMove = (e: TouchEvent) => {
+	const handleTouchMove = (e: TouchEvent<HTMLButtonElement>) => {
 		if (onTouchMove) onTouchMove(e);
 	};
 
-	const handleTouchEnd = (e: TouchEvent) => {
+	const handleTouchEnd = (e: TouchEvent<HTMLButtonElement>) => {
 		if (onTouchEnd) onTouchEnd(e);
 	};
 	return (
 		<div className={outerClass} onAnimationEnd={onAnimationEnd}>
-			<button
-				className={closeClass}
-				type="button"
-				onClick={onCloseClick}
-				onTouchStart={handleTouchStart}
-				onTouchMove={handleTouchMove}
-				onTouchEnd={handleTouchEnd}
-			>
-				<svg className={styles.button__icon} viewBox="0 0 18 18">
-					<use xlinkHref="#close"></use>
-				</svg>
-			</button>
+			{onCloseClick && (
+				<button
+					className={closeClass}
+					type="button"
+					onClick={onCloseClick}
+					onTouchStart={handleTouchStart}
+					onTouchMove={handleTouchMove}
+					onTouchEnd={handleTouchEnd}
+				>
+					<svg className={styles.button__icon} viewBox="0 0 18 18">
+						<use xlinkHref="#close"></use>
+					</svg>
+				</button>
+			)}
 			{children}
 		</div>
 	);
