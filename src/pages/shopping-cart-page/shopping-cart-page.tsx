@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+﻿import { useState, ChangeEvent } from 'react';
 import { Link, generatePath, useLocation } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
@@ -19,6 +19,7 @@ import styles from './shopping-cart-page.module.scss';
 
 const ShoppingCartPage = () => {
 	const [popupIsVisible, setPopupIsVisible] = useState<boolean>(false);
+	const [isClosing, setIsClosing] = useState<boolean>(false);
 	const [inputValue, setInputValue] = useState<string>('');
 
 	const activeOfferId = useAppSelector(selectActiveOffer);
@@ -40,7 +41,13 @@ const ShoppingCartPage = () => {
 	};
 
 	const handlePopupClose = () => {
-		setPopupIsVisible(prevState => !prevState);
+		// Запускаем анимацию закрытия
+		setIsClosing(true);
+		// Через 300ms скрываем попап (длительность анимации)
+		setTimeout(() => {
+			setPopupIsVisible(false);
+			setIsClosing(false);
+		}, 300);
 	};
 
 	const handlePromoButtonClick = () => {
@@ -108,10 +115,12 @@ const ShoppingCartPage = () => {
 					<span>Верно, далее</span>
 				</Button>
 			</ButtonController>
-			{popupIsVisible && (
+			{(popupIsVisible || isClosing) && (
 				<Overlay>
 					<Popup
-						outerClass={`popup ${styles.popup}`}
+						outerClass={`popup ${styles.popup} ${
+							isClosing ? styles.popup_closing : ''
+						}`}
 						closeClass={styles.popup__close}
 						onCloseClick={handlePopupClose}
 					>

@@ -110,8 +110,8 @@ const CartList = () => {
 
 	return (
 		<ul className={styles.list}>
-			<CartItem key={mock.cakeId} order={mock} />
-			<CartItem key={mock.cakeId} order={mock} />
+			{/* <CartItem key={mock.cakeId} order={mock} />
+			<CartItem key={mock.cakeId} order={mock} /> */}
 			{cartSelector.map(order => (
 				<CartItem key={order.cakeId} order={order} />
 			))}
