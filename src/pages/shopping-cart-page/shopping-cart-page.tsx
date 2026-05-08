@@ -8,6 +8,7 @@ import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute, ConfirmMessage } from '../../constants';
 import useConfirm from '../../hooks/useConfirm';
+import useMediaQuery from '../../hooks/useMediaQuery';
 import { useAppSelector, useAppDispatch } from '../../hooks/useStore';
 import useTouch from '../../hooks/useToush';
 import {
@@ -29,6 +30,8 @@ const ShoppingCartPage = () => {
 	const location = useLocation();
 	const confirm = useConfirm();
 
+	const isMobile = useMediaQuery('(max-width: 576px)');
+
 	const backLink =
 		location.state?.from === AppRoute.CakeOfferArticle
 			? generatePath(AppRoute.CakeOfferArticle, {
@@ -41,12 +44,16 @@ const ShoppingCartPage = () => {
 		if (answer) dispatch(clearCart());
 	};
 
-	const handlePopupClose = () => {
+	const handlePopupTouchClose = () => {
 		setIsAnimate(true);
 	};
+	const handlePopupClickClose = () => {
+		if (!isMobile) setPopupIsVisible(false);
+	};
 
-	const { handleTouchStart, handleTouchMove, handleTouchEnd } =
-		useTouch(handlePopupClose);
+	const { handleTouchStart, handleTouchMove, handleTouchEnd } = useTouch(
+		handlePopupTouchClose
+	);
 
 	const handlePopupAnimationEnd = (e: AnimationEvent) => {
 		if (e.animationName === styles.popupClosing) {
@@ -127,7 +134,7 @@ const ShoppingCartPage = () => {
 							isAnimate ? styles.popup_closing : ''
 						}`}
 						closeClass={styles.popup__close}
-						onCloseClick={handlePopupClose}
+						onCloseClick={handlePopupClickClose}
 						onAnimationEnd={handlePopupAnimationEnd}
 						onTouchStart={handleTouchStart}
 						onTouchMove={handleTouchMove}
