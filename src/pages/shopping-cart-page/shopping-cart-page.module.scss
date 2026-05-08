@@ -164,6 +164,24 @@
 	}
 }
 
+@keyframes popupClosing {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(100%);
+	}
+}
+
+@keyframes popupOpening {
+	from {
+		transform: translateY(100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
 @media (max-width: 1200px) {
 	.back {
 		margin-left: 10px;
@@ -257,7 +275,7 @@
 		overflow: visible;
 		border-radius: 22px 22px 0 0;
 		transform: unset;
-		transition: transform 0.3s ease;
+		animation: popupOpening 0.3s ease;
 
 		&__wrapper {
 			margin-top: 0;
@@ -304,7 +322,7 @@
 		}
 
 		&_closing {
-			transform: translateY(100%);
+			animation: popupClosing 0.3s ease;
 		}
 	}
 }
