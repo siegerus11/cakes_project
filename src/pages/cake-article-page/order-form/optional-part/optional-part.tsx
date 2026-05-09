@@ -23,7 +23,7 @@ const OptionalPartItem = ({
 			: styles.side__headline;
 
 	return (
-		<label className={styles.wrapper}>
+		<label className={styles.wrapper} htmlFor={name}>
 			<div className={styles.item}>
 				<div className={styles.image}>
 					<img src={image} alt={title} width="60" height="60" />
