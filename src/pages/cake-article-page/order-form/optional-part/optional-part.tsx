@@ -23,7 +23,7 @@ const OptionalPartItem = ({
 			: styles.side__headline;
 
 	return (
-		<div className={styles.wrapper}>
+		<label className={styles.wrapper}>
 			<div className={styles.item}>
 				<div className={styles.image}>
 					<img src={image} alt={title} width="60" height="60" />
@@ -33,17 +33,15 @@ const OptionalPartItem = ({
 					<span className={styles.side__price}>{`+${price} ₽`}</span>
 				</div>
 			</div>
-			<div>
-				<input
-					type="checkbox"
-					id={name}
-					value={name}
-					checked={checkBoxValues[name]}
-					onChange={e => onCheckBoxChange(e)}
-				/>
-				<label className={styles.label} htmlFor={name}></label>
-			</div>
-		</div>
+			<input
+				type="checkbox"
+				id={name}
+				value={name}
+				checked={checkBoxValues[name]}
+				onChange={e => onCheckBoxChange(e)}
+			/>
+			<div className={styles.label}></div>
+		</label>
 	);
 };
 
