@@ -8,20 +8,14 @@ import {
 } from '../../../store/main-process/main-process';
 import { CakeOrder } from '../../../types/types';
 import getChosen from '../../../utils/getChosen';
+import getFormattedPrice from '../../../utils/getFormattedPrice';
 import getPersonQuantity from '../../../utils/getPersonQuantity';
 import styles from './cart-item.module.scss';
 
 type CartItemProps = {
 	order: CakeOrder;
 };
-const mock: CakeOrder = {
-	cakeId: 'mock-cake-id',
-	weight: [{ weightValue: 1.5, isChecked: true }],
-	filling: { 'Вишня с йогуртом': true },
-	optional: { 'Топпер «С Днем рождения»': true, 'свечи классические': true },
-	price: 4600,
-	quantity: 1
-};
+
 const CartItem = ({ order }: CartItemProps) => {
 	const { price, filling, optional, weight, cakeId, quantity } = order;
 	const dispatch = useAppDispatch();
@@ -31,7 +25,7 @@ const CartItem = ({ order }: CartItemProps) => {
 	const optionalSelected = getChosen(optional);
 	const weightSelected = getChosen(weight);
 
-	const priceValue = price * quantity;
+	const priceValue = getFormattedPrice(price * quantity);
 
 	const hanleIncrClick = (id: string, num: number, increase: boolean) => {
 		if (order.quantity <= 1 && !increase) {
@@ -110,8 +104,6 @@ const CartList = () => {
 
 	return (
 		<ul className={styles.list}>
-			{/* <CartItem key={mock.cakeId} order={mock} />
-			<CartItem key={mock.cakeId} order={mock} /> */}
 			{cartSelector.map(order => (
 				<CartItem key={order.cakeId} order={order} />
 			))}

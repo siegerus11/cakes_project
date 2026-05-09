@@ -24,7 +24,7 @@ function useTouch(callback: () => void): {
 
 		const touchDifference = touchEndY - touchStartY;
 		const touchLength = Math.abs(touchEndY - touchStartY);
-		const touchMinLength = 20;
+		const touchMinLength = 10;
 
 		if (touchLength < touchMinLength) return;
 
