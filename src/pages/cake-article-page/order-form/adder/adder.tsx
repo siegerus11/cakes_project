@@ -1,6 +1,7 @@
 import { MouseEvent } from 'react';
 
 import { SubmitButton } from '../../../../components/ui/button/button';
+import getFormattedPrice from '../../../../utils/getFormattedPrice';
 import styles from './adder.module.scss';
 
 type AdderProps = {
@@ -10,9 +11,7 @@ type AdderProps = {
 };
 
 const Adder = ({ priceCounter, isWrapped, onSubmit }: AdderProps) => {
-	const formattedpriceCounter = `${priceCounter.toString()[0]} ${priceCounter
-		.toString()
-		.slice(1)}`;
+	const formattedpriceCounter = getFormattedPrice(priceCounter);
 
 	const className = isWrapped
 		? `${styles.component} ${styles.component_wrapped}`

@@ -10,12 +10,13 @@ import { AppRoute, ConfirmMessage } from '../../constants';
 import useConfirm from '../../hooks/useConfirm';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { useAppSelector, useAppDispatch } from '../../hooks/useStore';
-import useTouch from '../../hooks/useToush';
+import useTouch from '../../hooks/useTouch';
 import {
 	selectActiveOffer,
 	selectFinalSum,
 	clearCart
 } from '../../store/main-process/main-process';
+import getFormattedPrice from '../../utils/getFormattedPrice';
 import CartList from './cart-item/cart-item';
 import styles from './shopping-cart-page.module.scss';
 
@@ -26,7 +27,7 @@ const ShoppingCartPage = () => {
 
 	const activeOfferId = useAppSelector(selectActiveOffer);
 	const dispatch = useAppDispatch();
-	const finalSum = useAppSelector(selectFinalSum);
+	const finalSum = getFormattedPrice(useAppSelector(selectFinalSum));
 	const location = useLocation();
 	const confirm = useConfirm();
 

@@ -46,9 +46,11 @@
 .total {
 	display: flex;
 	flex-direction: column;
+	align-items: flex-end;
 	max-width: 174px;
 	margin-top: 22px;
 	margin-left: auto;
+	white-space: nowrap;
 
 	span {
 		font-weight: 700;
