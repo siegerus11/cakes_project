@@ -7,9 +7,9 @@ import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute, NAVS } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
-import { selectShoppingCart } from '../../store/main-process/main-process';
+import { selectFinalSum } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
-import getCartTotalPrice from '../../utils/getCartTotalPrice';
+import getFormattedPrice from '../../utils/getFormattedPrice';
 import styles from './main-page.module.scss';
 
 type MainPageProps = {
@@ -18,9 +18,8 @@ type MainPageProps = {
 };
 
 const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
-	const orders = useAppSelector(selectShoppingCart);
-	const totalPrice = getCartTotalPrice(orders);
-
+	const totalPrice = useAppSelector(selectFinalSum);
+	const formattedPrice = getFormattedPrice(totalPrice);
 	const splicedCakes = [...cakes].splice(0, 3);
 	const splicedBentoCakes = [...bentoCakes].splice(0, 3);
 
@@ -80,12 +79,27 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 				</div>
 			</div>
 			<ButtonController outerClass={styles.controller}>
-				<Button className={`button button_primary ${styles.button}`}>
+				<Button
+					className={`button button_primary ${styles.button}`}
+					path={AppRoute.ShoppingCart}
+				>
 					<svg className={styles.button__icon} viewBox="0 0 40 40">
 						<use xlinkHref="#cart"></use>
 					</svg>
-					<span className={styles.button__text}>Оформить заказ</span>
-					<span className={styles.button__price}>{totalPrice} ₽</span>
+					<span
+						className={`${styles.button__text} ${
+							!totalPrice ? styles.button__text_ml0 : ''
+						}`}
+					>
+						Оформить заказ
+					</span>
+					{totalPrice ? (
+						<span
+							className={`${styles.button__price} ${styles.button__text_ml0}`}
+						>
+							{formattedPrice} ₽
+						</span>
+					) : null}
 				</Button>
 			</ButtonController>
 		</>

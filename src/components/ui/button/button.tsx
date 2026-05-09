@@ -51,11 +51,7 @@ const Button = ({
 					{children}
 				</a>
 			) : (
-				<button
-					className={`${className}`}
-					type="button"
-					onClick={onClick}
-				>
+				<button className={className} type="button" onClick={onClick}>
 					{children}
 				</button>
 			)}
