@@ -14,6 +14,7 @@ import useTouch from '../../hooks/useTouch';
 import {
 	selectActiveOffer,
 	selectFinalSum,
+	selectShoppingCart,
 	clearCart
 } from '../../store/main-process/main-process';
 import getFormattedPrice from '../../utils/getFormattedPrice';
@@ -26,6 +27,7 @@ const ShoppingCartPage = () => {
 	const [inputValue, setInputValue] = useState<string>('');
 
 	const activeOfferId = useAppSelector(selectActiveOffer);
+	const shoppingCart = useAppSelector(selectShoppingCart);
 	const dispatch = useAppDispatch();
 	const finalSum = getFormattedPrice(useAppSelector(selectFinalSum));
 	const location = useLocation();
@@ -116,8 +118,13 @@ const ShoppingCartPage = () => {
 
 					<Button
 						className={`button button_primary ${styles.button}`}
+						path={shoppingCart ? AppRoute.Root : AppRoute.Catalog}
 					>
-						<span>Верно, далее</span>
+						{shoppingCart.length ? (
+							<span>Верно, далее</span>
+						) : (
+							<span>К каталогу</span>
+						)}
 					</Button>
 				</div>
 			</div>

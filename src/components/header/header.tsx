@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 import { AppRoute, LAYOUT_NAVS } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
-import { selectShoppingCart } from '../../store/main-process/main-process';
-import getCartTotalPrice from '../../utils/getCartTotalPrice';
+import { selectFinalSum } from '../../store/main-process/main-process';
+import getFormattedPrice from '../../utils/getFormattedPrice';
 import HamburgerPopup from '../hamburger-popup/hamburger-popup';
 import Logo from '../logo/logo';
 import NavMenu from '../nav-menu/nav-menu';
@@ -28,8 +28,8 @@ const Header = () => {
 		return () => document.removeEventListener('keydown', closePopup);
 	}, [hamburgerisVisible]);
 
-	const orders = useAppSelector(selectShoppingCart);
-	const totalPrice = getCartTotalPrice(orders);
+	const totalPrice = useAppSelector(selectFinalSum);
+	const formattedPrice = getFormattedPrice(totalPrice);
 
 	return (
 		<>
@@ -69,7 +69,7 @@ const Header = () => {
 								</span>
 								{totalPrice ? (
 									<span className={styles.button__price}>
-										{totalPrice} ₽
+										{formattedPrice} ₽
 									</span>
 								) : null}
 							</Button>
