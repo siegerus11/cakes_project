@@ -35,7 +35,7 @@ const ShoppingCartPage = () => {
 
 	const isMobile = useMediaQuery('(max-width: 576px)');
 
-	const backLink =
+	const backLink: string =
 		location.state?.from === AppRoute.CakeOfferArticle
 			? generatePath(AppRoute.CakeOfferArticle, {
 					id: activeOfferId
@@ -118,7 +118,11 @@ const ShoppingCartPage = () => {
 
 					<Button
 						className={`button button_primary ${styles.button}`}
-						path={shoppingCart ? AppRoute.Root : AppRoute.Catalog}
+						path={
+							shoppingCart.length
+								? AppRoute.orderRegistration
+								: AppRoute.Catalog
+						}
 					>
 						{shoppingCart.length ? (
 							<span>Верно, далее</span>
@@ -131,6 +135,7 @@ const ShoppingCartPage = () => {
 			<ButtonController outerClass={`${styles.controller}`}>
 				<Button
 					className={`button button_primary ${styles.controller__button}`}
+					path={AppRoute.orderRegistration}
 				>
 					<span>Верно, далее</span>
 				</Button>

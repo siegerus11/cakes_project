@@ -10,6 +10,7 @@ import ContactsPage from '../../pages/contacts-page/contacts-page';
 import DeliveryPage from '../../pages/delivery-page/delivery-page';
 import FaqPage from '../../pages/faq-page/faq-page';
 import MainPage from '../../pages/main-page/main-page';
+import OrderRegistrationPage from '../../pages/order-registration-page/order-registration-page';
 import RewievsPage from '../../pages/rewievs-page/rewievs-page';
 import ShoppingCartPage from '../../pages/shopping-cart-page/shopping-cart-page';
 import { cakeOffersSelector } from '../../store/cake-offers-data/cake-offers-data';
@@ -71,6 +72,10 @@ function App() {
 				<Route
 					path={AppRoute.ShoppingCart}
 					element={<ShoppingCartPage />}
+				/>
+				<Route
+					path={AppRoute.orderRegistration}
+					element={<OrderRegistrationPage />}
 				/>
 			</Routes>
 		</BrowserRouter>
