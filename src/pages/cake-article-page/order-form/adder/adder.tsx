@@ -18,7 +18,11 @@ const Adder = ({ priceCounter, isWrapped, onSubmit }: AdderProps) => {
 		: styles.component;
 	return (
 		<div className={className}>
-			<div className={styles.adder}>
+			<div
+				className={`${styles.adder} ${
+					isWrapped ? styles.adder_w100 : ''
+				}`}
+			>
 				<span className={styles.adder__price}>
 					{`${formattedpriceCounter} ₽`}
 				</span>
