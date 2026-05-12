@@ -20,6 +20,10 @@
 	justify-content: space-between;
 	width: 350px;
 
+	&_w100 {
+		width: 100%;
+	}
+
 	&__price {
 		min-width: 90px;
 		font-weight: 700;
