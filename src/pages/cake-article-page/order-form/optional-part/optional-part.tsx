@@ -23,7 +23,7 @@ const OptionalPartItem = ({
 			: styles.side__headline;
 
 	return (
-		<label className={styles.wrapper} htmlFor={name}>
+		<label className={styles.label} htmlFor={name}>
 			<div className={styles.item}>
 				<div className={styles.image}>
 					<img src={image} alt={title} width="60" height="60" />
@@ -40,7 +40,7 @@ const OptionalPartItem = ({
 				checked={checkBoxValues[name]}
 				onChange={e => onCheckBoxChange(e)}
 			/>
-			<div className={styles.label}></div>
+			<div className={styles.check}></div>
 		</label>
 	);
 };
