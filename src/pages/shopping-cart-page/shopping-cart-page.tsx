@@ -5,7 +5,7 @@ import ButtonController from '../../components/button-controller/button-controll
 import Overlay from '../../components/overlay/overlay';
 import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
-import Button from '../../components/ui/button/button';
+import Button, { SubmitButton } from '../../components/ui/button/button';
 import { AppRoute, ConfirmMessage } from '../../constants';
 import useConfirm from '../../hooks/useConfirm';
 import useMediaQuery from '../../hooks/useMediaQuery';
@@ -115,7 +115,6 @@ const ShoppingCartPage = () => {
 							<span>Ввести промокод</span>
 						</button>
 					</div>
-
 					<Button
 						className={`button button_primary ${styles.button}`}
 						path={
@@ -158,12 +157,16 @@ const ShoppingCartPage = () => {
 							titleClass={styles.popup__title}
 						/>
 						<div className={styles.popup__wrapper}>
-							<input
-								className={styles.popup__input}
-								placeholder="Введите промокод"
-								onChange={handleInputChange}
-								value={inputValue}
-							/>
+							<form id="promo-form">
+								<input
+									className={styles.popup__input}
+									placeholder="Введите промокод"
+									onChange={handleInputChange}
+									value={inputValue}
+									name="promo"
+									id="promo"
+								/>
+							</form>
 							{inputValue && (
 								<button
 									className={styles.popup__clear}
@@ -173,11 +176,12 @@ const ShoppingCartPage = () => {
 								/>
 							)}
 						</div>
-						<Button
+						<SubmitButton
 							className={`button button_primary ${styles.popup__button}`}
+							formId="promo-form"
 						>
 							<span>Применить</span>
-						</Button>
+						</SubmitButton>
 					</Popup>
 				</Overlay>
 			)}

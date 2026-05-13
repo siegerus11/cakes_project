@@ -3,13 +3,24 @@ import { Link, useLocation } from 'react-router-dom';
 
 type SubmitButtonProps = PropsWithChildren<{
 	className: string;
+	formId?: string;
 	onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }>;
 
-const SubmitButton = ({ children, className, onClick }: SubmitButtonProps) => {
+const SubmitButton = ({
+	children,
+	className,
+	onClick,
+	formId
+}: SubmitButtonProps) => {
 	return (
 		<div>
-			<button className={`${className}`} type="submit" onClick={onClick}>
+			<button
+				className={`${className}`}
+				type="submit"
+				onClick={onClick}
+				id={formId}
+			>
 				{children}
 			</button>
 		</div>

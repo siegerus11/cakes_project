@@ -141,10 +141,15 @@ body {
 			padding: 0;
 		}
 
+		&:global(_m-pdg15) {
+			padding: 0 15px;
+		}
+
 		&:global(_catalog-list) {
 			padding: 0 5px;
 		}
 	}
+	
 	:global(.back-link) {
 		&:global(_m-small) {
 			display: block;

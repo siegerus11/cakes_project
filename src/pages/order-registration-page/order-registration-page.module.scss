@@ -117,8 +117,11 @@
 }
 
 .textarea {
-	display: none;
+	display: block;
+	width: 100%;
 	margin-top: 12px;
+	padding: 17px 15px;
+	outline: none;
 }
 
 .button {
@@ -132,5 +135,104 @@
 		display: block;
 		font-size: 16px;
 		line-height: 120%;
+	}
+}
+
+@media (max-width: 576px) {
+	.page {
+		padding-top: 17px;
+		padding-bottom: 243px;
+	}
+
+	.wrapper {
+		margin-top: 19px;
+	}
+
+	.title {
+		font-size: 24px;
+	}
+
+	.back {
+		margin-left: 0;
+	}
+
+	.button {
+		display: none;
+	}
+
+	.controller {
+		display: flex;
+
+		&__button {
+			display: flex;
+			justify-content: center;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			border-radius: 14px;
+
+			span {
+				font-size: 14px;
+				line-height: 129%;
+				letter-spacing: 0.4px;
+			}
+		}
+	}
+
+	.delivery {
+		margin-top: 24px;
+
+		&__header {
+			padding: 15.5px 20px 15.5px 15px;
+		}
+
+		&__title {
+			font-size: 14px;
+		}
+
+		&__arrow {
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	.payment {
+		&__header {
+			align-items: flex-start;
+			padding: 15.5px 20px 15.5px 15px;
+		}
+
+		&__title {
+			font-size: 14px;
+		}
+
+		&__arrow {
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	.description {
+		margin-top: 9px;
+		padding-left: 15px;
+		font-size: 12px;
+		line-height: 123%;
+		letter-spacing: 0.1px;
+	}
+
+	.fields {
+		margin-top: 21px;
+	}
+
+	.input {
+		padding: 15px;
+
+		&::placeholder {
+			font-size: 14px;
+		}
+	}
+
+	.areaButton {
+		margin-top: 11px;
+		font-size: 14px;
 	}
 }
