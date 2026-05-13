@@ -13,6 +13,7 @@ import MainPage from '../../pages/main-page/main-page';
 import OrderRegistrationPage from '../../pages/order-registration-page/order-registration-page';
 import RewievsPage from '../../pages/rewievs-page/rewievs-page';
 import ShoppingCartPage from '../../pages/shopping-cart-page/shopping-cart-page';
+import ThanksPage from '../../pages/thanks-page/thanks-page';
 import { cakeOffersSelector } from '../../store/cake-offers-data/cake-offers-data';
 import MainLayout from '../layout/main-layout';
 import './app.module.scss';
@@ -74,9 +75,10 @@ function App() {
 					element={<ShoppingCartPage />}
 				/>
 				<Route
-					path={AppRoute.orderRegistration}
+					path={AppRoute.OrderRegistration}
 					element={<OrderRegistrationPage />}
 				/>
+				<Route path={AppRoute.Thanks} element={<ThanksPage />} />
 			</Routes>
 		</BrowserRouter>
 	);
