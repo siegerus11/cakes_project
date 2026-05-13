@@ -1,4 +1,4 @@
-﻿import { useState, ChangeEvent, AnimationEvent } from 'react';
+﻿import { useState, ChangeEvent, AnimationEvent, FormEvent } from 'react';
 import { Link, generatePath, useLocation } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
@@ -76,6 +76,11 @@ const ShoppingCartPage = () => {
 	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setInputValue(e.target.value);
 	};
+
+	const handlePromoSubmit = (e: FormEvent) => {
+		e.preventDefault();
+	};
+
 	return (
 		<div className={`page ${styles.page}`}>
 			<div className="container">
@@ -157,14 +162,14 @@ const ShoppingCartPage = () => {
 							titleClass={styles.popup__title}
 						/>
 						<div className={styles.popup__wrapper}>
-							<form id="promo-form">
+							<form id="promo-form" onSubmit={handlePromoSubmit}>
 								<input
 									className={styles.popup__input}
 									placeholder="Введите промокод"
 									onChange={handleInputChange}
 									value={inputValue}
 									name="promo"
-									id="promo"
+									id="promo-form"
 								/>
 							</form>
 							{inputValue && (

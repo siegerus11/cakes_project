@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import { useState, useEffect, MouseEvent } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { v4 as uuidv } from 'uuid';
 
@@ -105,7 +105,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 		price: totalPrice
 	};
 
-	const handleSubmit = (e: MouseEvent) => {
+	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault();
 		dispatch(setShoppingCart(cakeOrder));
 		navigate(AppRoute.ShoppingCart, {
@@ -116,10 +116,14 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	return (
 		<>
 			<div className={styles.component}>
-				<form className={styles.feed}>
+				<form
+					className={styles.feed}
+					onSubmit={handleSubmit}
+					id="order-form"
+				>
 					<Adder
 						priceCounter={totalPrice}
-						onSubmit={handleSubmit}
+						formId="order-form"
 						isWrapped={false}
 					/>
 					<ol className={styles.list}>
@@ -166,7 +170,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 					</div>
 					<Adder
 						priceCounter={totalPrice}
-						onSubmit={handleSubmit}
+						formId="order-form"
 						isWrapped
 					/>
 				</form>

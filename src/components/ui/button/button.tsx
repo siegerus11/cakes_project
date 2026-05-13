@@ -19,7 +19,7 @@ const SubmitButton = ({
 				className={`${className}`}
 				type="submit"
 				onClick={onClick}
-				id={formId}
+				form={formId}
 			>
 				{children}
 			</button>
