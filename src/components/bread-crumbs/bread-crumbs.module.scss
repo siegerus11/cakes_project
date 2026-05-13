@@ -13,7 +13,7 @@
 
 	&:after {
 		position: absolute;
-		top: 55%;
+		top: 50%;
 		right: -26px;
 		left: auto;
 		width: 17px;
@@ -28,6 +28,15 @@
 			display: none;
 		}
 	}
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
 }
 
 @media (max-width: 767px) {
@@ -63,4 +72,7 @@
 			height: 5px;
 		}
 	}
+}
+
+@media (max-width: 360px) {
 }
