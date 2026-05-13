@@ -31,11 +31,11 @@ const FillingItem = ({
 			<input
 				type="checkbox"
 				className={styles.checkbox}
-				hidden
 				name={fill.name}
 				id={fill.name}
 				checked={checkBoxValues[fill.name]}
 				onChange={handleCheckboxChange}
+				aria-label={`Выбрать начинку: ${fill.title}`}
 			/>
 			<label className={styles.card} htmlFor={fill.name}>
 				<div className={styles.card__top}>

@@ -1,7 +1,6 @@
-import { ChangeEvent, /* MouseEvent, */ useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState, useId } from 'react';
 
-import { CakeOffer, Radio } from '../../../../types/types';
-import createRadioInitial from '../../../../utils/createRadioInitial';
+import { Radio } from '../../../../types/types';
 import { getPersonQuantity } from '../../../../utils/getPersonQuantity';
 import styles from './weight-part.module.scss';
 
@@ -47,6 +46,7 @@ type WeightPartProps = {
 
 const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 	const [isVisibleSelect, setIsVisibleSelect] = useState(false);
+	const dropdownId = useId();
 
 	const handleRadioChange = (
 		e: ChangeEvent<HTMLInputElement>,
@@ -65,15 +65,28 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 			if (target.closest(`.${styles.select}`)) return;
 			setIsVisibleSelect(false);
 		};
-		if (isVisibleSelect)
+		const handleKeyDown = (e: KeyboardEvent) => {
+			if (e.key === 'Escape') {
+				setIsVisibleSelect(false);
+			}
+		};
+
+		if (isVisibleSelect) {
 			document.addEventListener('click', handleDocumentClick);
-		return () => document.removeEventListener('click', handleDocumentClick);
+			document.addEventListener('keydown', handleKeyDown);
+		}
+		return () => {
+			document.removeEventListener('click', handleDocumentClick);
+			document.removeEventListener('keydown', handleKeyDown);
+		};
 	}, [isVisibleSelect]);
 
 	const activeRadio = radios.find(radio => radio.isChecked === true);
-	const interactorHtml = `${
-		activeRadio?.weightValue
-	} кг (на ${getPersonQuantity(activeRadio?.weightValue!, false)} гостей)`;
+	const activeWeight = activeRadio?.weightValue ?? 0;
+	const interactorHtml = `${activeWeight} кг (на ${getPersonQuantity(
+		activeWeight,
+		false
+	)} гостей)`;
 
 	return (
 		<li className={styles.component}>
@@ -83,6 +96,9 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 					type="button"
 					className={styles.select__interactor}
 					onClick={handleInteractorClick}
+					aria-expanded={isVisibleSelect}
+					aria-controls={dropdownId}
+					aria-label="Выберите вес торта"
 				>
 					<span>{interactorHtml}</span>
 					<svg
@@ -90,12 +106,18 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 						viewBox="0 0 20 20"
 						width="20"
 						height="20"
+						aria-hidden="true"
 					>
 						<use xlinkHref="#arrow-sm"></use>
 					</svg>
 				</button>
 				{isVisibleSelect && (
-					<div className={styles.select__dropdown}>
+					<div
+						className={styles.select__dropdown}
+						id={dropdownId}
+						role="radiogroup"
+						aria-label="Варианты веса торта"
+					>
 						{radios.map((radio, i) => {
 							const keyValue = `${i}-${radio.weightValue}`;
 							return (

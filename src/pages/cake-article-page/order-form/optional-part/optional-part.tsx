@@ -39,8 +39,9 @@ const OptionalPartItem = ({
 				value={name}
 				checked={checkBoxValues[name]}
 				onChange={e => onCheckBoxChange(e)}
+				aria-label={`Дополнительно: ${title}, цена +${price} ₽`}
 			/>
-			<div className={styles.check}></div>
+			<div className={styles.check} aria-hidden="true"></div>
 		</label>
 	);
 };
