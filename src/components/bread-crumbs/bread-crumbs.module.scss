@@ -1,28 +1,26 @@
 .component {
-	margin-top: 34px;
 	display: flex;
+	margin-top: 34px;
 }
 
 .link {
-	margin-right: 32px;
 	position: relative;
-	text-decoration: none;
+	margin-right: 32px;
+	color: #bababa;
 	font-size: 15px;
 	line-height: 133%;
-	color: #bababa;
-
-
+	text-decoration: none;
 
 	&:after {
-		content: '';
 		position: absolute;
 		top: 55%;
-		transform: translateY(-50%) rotate(270deg);
-		left: auto;
 		right: -26px;
+		left: auto;
 		width: 17px;
 		height: 10px;
 		background: url('/images/arrow-sm-gray.svg') center/cover no-repeat;
+		transform: translateY(-50%) rotate(270deg);
+		content: '';
 	}
 
 	&:nth-last-child(1) {
@@ -31,13 +29,6 @@
 		}
 	}
 }
-
-
-@media (max-width: 1440px) {}
-
-@media (max-width: 1200px) {}
-
-@media (max-width: 992px) {}
 
 @media (max-width: 767px) {
 	.component {
@@ -49,9 +40,9 @@
 		font-size: 13px;
 
 		&:after {
+			right: -21px;
 			width: 13px;
 			height: 5px;
-			right: -21px;
 		}
 	}
 }
@@ -67,11 +58,9 @@
 		line-height: 182%;
 
 		&:after {
+			right: -21px;
 			width: 13px;
 			height: 5px;
-			right: -21px;
 		}
 	}
 }
-
-@media (max-width: 360px) {}

@@ -9,7 +9,7 @@ import { NAVS } from '../../constants';
 import { useAppDispatch } from '../../hooks/useStore';
 import { getSortingStatus } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
-import { getNavData } from '../../utils/getNavData';
+import getNavData from '../../utils/getNavData';
 import styles from './catalog-page.module.scss';
 import NotFoundCake from './no-found-cake/no-found-cake';
 import SortList from './sort-list/sort-list';
