@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import { useState, useEffect, FormEvent } from 'react';
+import { useState, useEffect, FormEvent, useMemo, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { v4 as uuidv } from 'uuid';
 
@@ -47,17 +47,18 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const [descriptionVisible, setDescriptionVisible] =
 		useState<boolean>(false);
 
-	const initialOptionCheckboxes = createCheckBoxInitial<Optional>(
-		cake.optionally,
-		'name'
+	const initialOptionCheckboxes = useMemo(
+		() => createCheckBoxInitial<Optional>(cake.optionally, 'name'),
+		[cake.optionally]
 	);
-
-	const initialFillingCheckboxes = createCheckBoxInitial<Filling>(
-		cake.filling,
-		'name'
+	const initialFillingCheckboxes = useMemo(
+		() => createCheckBoxInitial<Filling>(cake.filling, 'name'),
+		[cake.filling]
 	);
-
-	const initialRadios = createRadioInitial(cake.weight);
+	const initialRadios = useMemo(
+		() => createRadioInitial(cake.weight),
+		[cake.weight]
+	);
 
 	const [optionCheckboxes, handleOptionalCheckboxChange] =
 		useCheckboxes<CheckBoxValue>(initialOptionCheckboxes);
@@ -67,15 +68,23 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 
 	const [radios, handleRadioChange] = useRadio(initialRadios);
 
-	const optionalCheckboxPrices = getPricesByCheckboxValue<Optional>(
-		cake.optionally,
-		optionCheckboxes
+	const optionalCheckboxPrices = useMemo(
+		() =>
+			getPricesByCheckboxValue<Optional>(
+				cake.optionally,
+				optionCheckboxes
+			),
+		[cake.optionally, optionCheckboxes]
 	);
-	const fillingCheckboxPrices = getPricesByCheckboxValue<Filling>(
-		cake.filling,
-		fillingCheckboxes
+	const fillingCheckboxPrices = useMemo(
+		() =>
+			getPricesByCheckboxValue<Filling>(cake.filling, fillingCheckboxes),
+		[cake.filling, fillingCheckboxes]
 	);
-	const weightRadioPrices = getPricesByRadioValue(radios, cake.price);
+	const weightRadioPrices = useMemo(
+		() => getPricesByRadioValue(radios, cake.price),
+		[radios, cake.price]
+	);
 
 	useEffect(() => {
 		const groupPrices = [
@@ -92,26 +101,48 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 		dispatch
 	]);
 
-	const handleMobileArrowClick = () => {
+	const handleMobileArrowClick = useCallback(() => {
 		setDescriptionVisible(prevState => !prevState);
-	};
+	}, []);
 
-	const cakeOrder: CakeOrder = {
-		cakeId: uuidv(),
-		weight: radios,
-		filling: fillingCheckboxes,
-		optional: optionCheckboxes,
-		quantity: 1,
-		price: totalPrice
-	};
+	const cakeOrder = useMemo(
+		(): CakeOrder => ({
+			cakeId: uuidv(),
+			weight: radios,
+			filling: fillingCheckboxes,
+			optional: optionCheckboxes,
+			quantity: 1,
+			price: totalPrice
+		}),
+		[radios, fillingCheckboxes, optionCheckboxes, totalPrice]
+	);
 
-	const handleSubmit = (e: FormEvent) => {
-		e.preventDefault();
-		dispatch(setShoppingCart(cakeOrder));
-		navigate(AppRoute.ShoppingCart, {
-			state: { from: location.pathname }
-		});
-	};
+	const handleSubmit = useCallback(
+		(e: FormEvent) => {
+			e.preventDefault();
+			dispatch(setShoppingCart(cakeOrder));
+			navigate(AppRoute.ShoppingCart, {
+				state: { from: location.pathname }
+			});
+		},
+		[cakeOrder, dispatch, navigate, location.pathname]
+	);
+
+	const describeClassName = useMemo(
+		() =>
+			descriptionVisible
+				? `${styles.describe} ${styles.describe_visible}`
+				: styles.describe,
+		[descriptionVisible]
+	);
+
+	const arrowClassName = useMemo(
+		() =>
+			descriptionVisible
+				? `${styles.describe__arrow} ${styles.describe__arrow_active}`
+				: styles.describe__arrow,
+		[descriptionVisible]
+	);
 
 	return (
 		<>
@@ -129,9 +160,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 					<ol className={styles.list}>
 						<FillingPart
 							cake={cake}
-							onCheckBoxChange={e =>
-								handleFillingCheckboxChange(e)
-							}
+							onCheckBoxChange={handleFillingCheckboxChange}
 							checkBoxValues={fillingCheckboxes}
 							onDescribeClick={onDescribeClick}
 						/>
@@ -141,28 +170,16 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 						/>
 						<OptionalPart
 							cake={cake}
-							onCheckBoxChange={e =>
-								handleOptionalCheckboxChange(e)
-							}
+							onCheckBoxChange={handleOptionalCheckboxChange}
 							checkBoxValues={optionCheckboxes}
 						/>
 					</ol>
-					<div
-						className={
-							descriptionVisible
-								? `${styles.describe} ${styles.describe_visible}`
-								: styles.describe
-						}
-					>
+					<div className={describeClassName}>
 						{descriptionVisible || (
 							<div className={styles.describe__blur}></div>
 						)}
 						<button
-							className={
-								descriptionVisible
-									? `${styles.describe__arrow} ${styles.describe__arrow_active}`
-									: styles.describe__arrow
-							}
+							className={arrowClassName}
 							type="button"
 							onClick={handleMobileArrowClick}
 						></button>

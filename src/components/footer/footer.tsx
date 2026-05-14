@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { LAYOUT_NAVS } from '../../constants';
 import { Nav } from '../../types/types';
 import { getSecondaryNavs } from '../../utils/getSecondaryNavs';
@@ -7,6 +9,11 @@ import Button from '../ui/button/button';
 import styles from './footer.module.scss';
 
 const Footer = () => {
+	const secondaryNavs = useMemo(
+		() => getSecondaryNavs(LAYOUT_NAVS) as Nav[],
+		[]
+	);
+
 	return (
 		<div className={styles.wrapper}>
 			<div className="container_footer container">
@@ -27,10 +34,7 @@ const Footer = () => {
 						</li>
 						<li></li>
 					</ul>
-					<NavMenu
-						navs={getSecondaryNavs(LAYOUT_NAVS) as Nav[]}
-						linkClassName={styles.link}
-					/>
+					<NavMenu navs={secondaryNavs} linkClassName={styles.link} />
 					<div className={styles.social}>
 						<SocialLinks>
 							<svg

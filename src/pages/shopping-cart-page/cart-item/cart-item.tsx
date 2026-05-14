@@ -1,3 +1,5 @@
+import { useMemo, useCallback, memo } from 'react';
+
 import { ConfirmMessage } from '../../../constants';
 import useConfirm from '../../../hooks/useConfirm';
 import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
@@ -16,24 +18,72 @@ type CartItemProps = {
 	order: CakeOrder;
 };
 
-const CartItem = ({ order }: CartItemProps) => {
+const CartItem = memo(({ order }: CartItemProps) => {
 	const { price, filling, optional, weight, cakeId, quantity } = order;
 	const dispatch = useAppDispatch();
 	const confirm = useConfirm();
 
-	const fillingsSelected = getChosen(filling);
-	const optionalSelected = getChosen(optional);
-	const weightSelected = getChosen(weight);
+	const fillingsSelected = useMemo(() => getChosen(filling), [filling]);
+	const optionalSelected = useMemo(() => getChosen(optional), [optional]);
+	const weightSelected = useMemo(() => getChosen(weight), [weight]);
 
-	const priceValue = getFormattedPrice(price * quantity);
+	const priceValue = useMemo(
+		() => getFormattedPrice(price * quantity),
+		[price, quantity]
+	);
 
-	const hanleIncrClick = (id: string, num: number, increase: boolean) => {
-		if (order.quantity <= 1 && !increase) {
-			const answer = confirm(ConfirmMessage.ClearOrder);
-			if (answer) dispatch(removeCartItem(id));
-		}
-		dispatch(setCartQuantity({ id, num }));
-	};
+	const handleIncrClick = useCallback(
+		(id: string, num: number, increase: boolean) => {
+			if (order.quantity <= 1 && !increase) {
+				const answer = confirm(ConfirmMessage.ClearOrder);
+				if (answer) dispatch(removeCartItem(id));
+			}
+			dispatch(setCartQuantity({ id, num }));
+		},
+		[confirm, dispatch, order.quantity]
+	);
+
+	const handleDecrease = useCallback(
+		() => handleIncrClick(cakeId, -1, false),
+		[handleIncrClick, cakeId]
+	);
+	const handleIncrease = useCallback(
+		() => handleIncrClick(cakeId, 1, true),
+		[handleIncrClick, cakeId]
+	);
+
+	const fillingsText = useMemo(
+		() =>
+			fillingsSelected.length
+				? fillingsSelected.map((fill, i, arr) =>
+						arr.length < 1 || i === arr.length - 1
+							? `${fill} `
+							: `${fill}, `
+				  )
+				: 'Заварной крем',
+		[fillingsSelected]
+	);
+
+	const optionalText = useMemo(
+		() =>
+			optionalSelected.length
+				? optionalSelected.map((option, i, arr) =>
+						arr.length < 1 || i === arr.length - 1
+							? `${option} `
+							: `${option}, `
+				  )
+				: 'Не выбрано',
+		[optionalSelected]
+	);
+
+	const weightText = useMemo(
+		() =>
+			`${weightSelected} кг (${getPersonQuantity(
+				Number(weightSelected[0]),
+				true
+			)} порций)`,
+		[weightSelected]
+	);
 
 	return (
 		<div className={styles.item}>
@@ -47,31 +97,9 @@ const CartItem = ({ order }: CartItemProps) => {
 					</h3>
 
 					<div className={styles.item__description}>
-						<span>
-							Начинка:{' '}
-							{fillingsSelected.length
-								? fillingsSelected.map((fill, i, arr) =>
-										arr.length < 1 || i === arr.length - 1
-											? `${fill} `
-											: `${fill}, `
-								  )
-								: 'Заварной крем'}
-						</span>
-						<span>
-							Вес: {weightSelected} кг (
-							{getPersonQuantity(Number(weightSelected[0]), true)}
-							порций)
-						</span>
-						<span>
-							Дополнительно:{' '}
-							{optionalSelected.length
-								? optionalSelected.map((option, i, arr) =>
-										arr.length < 1 || i === arr.length - 1
-											? `${option} `
-											: `${option}, `
-								  )
-								: 'Не выбрано'}
-						</span>
+						<span>Начинка: {fillingsText}</span>
+						<span>Вес: {weightText}</span>
+						<span>Дополнительно: {optionalText}</span>
 					</div>
 				</div>
 			</div>
@@ -82,7 +110,7 @@ const CartItem = ({ order }: CartItemProps) => {
 						<button
 							className={styles.quantity__button}
 							type="button"
-							onClick={() => hanleIncrClick(cakeId, -1, false)}
+							onClick={handleDecrease}
 						></button>
 						<span className={styles.quantity__value}>
 							{quantity}
@@ -90,14 +118,16 @@ const CartItem = ({ order }: CartItemProps) => {
 						<button
 							className={styles.quantity__button}
 							type="button"
-							onClick={() => hanleIncrClick(cakeId, 1, true)}
+							onClick={handleIncrease}
 						></button>
 					</div>
 				</div>
 			</div>
 		</div>
 	);
-};
+});
+
+CartItem.displayName = 'CartItem';
 
 const CartList = () => {
 	const cartSelector = useAppSelector(selectShoppingCart);

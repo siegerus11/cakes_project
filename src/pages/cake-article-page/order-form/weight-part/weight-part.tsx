@@ -1,4 +1,11 @@
-import { ChangeEvent, useEffect, useState, useId } from 'react';
+import {
+	ChangeEvent,
+	useEffect,
+	useState,
+	useId,
+	useCallback,
+	useMemo
+} from 'react';
 
 import { Radio } from '../../../../types/types';
 import { getPersonQuantity } from '../../../../utils/getPersonQuantity';
@@ -19,13 +26,26 @@ const WeightPartRadio = ({
 }: WeightPartRadioProps) => {
 	const id = index.toString();
 
+	const handleChange = useCallback(
+		(e: ChangeEvent<HTMLInputElement>) => {
+			handleRadioChange(e, index);
+		},
+		[handleRadioChange, index]
+	);
+
+	const labelText = useMemo(
+		() =>
+			`${weightValue}кг (на ${getPersonQuantity(
+				weightValue,
+				false
+			)} гостей)`,
+		[weightValue]
+	);
+
 	return (
 		<div>
 			<label className={styles.label} htmlFor={id}>
-				{`${weightValue}кг (на ${getPersonQuantity(
-					weightValue,
-					false
-				)} гостей)`}
+				{labelText}
 			</label>
 			<input
 				type="radio"
@@ -33,7 +53,7 @@ const WeightPartRadio = ({
 				id={id}
 				value={weightValue}
 				checked={isChecked}
-				onChange={e => handleRadioChange(e, index)}
+				onChange={handleChange}
 			/>
 		</div>
 	);
@@ -48,16 +68,16 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 	const [isVisibleSelect, setIsVisibleSelect] = useState(false);
 	const dropdownId = useId();
 
-	const handleRadioChange = (
-		e: ChangeEvent<HTMLInputElement>,
-		idx: number
-	) => {
-		onRadioChange(e, idx);
-	};
+	const handleRadioChange = useCallback(
+		(e: ChangeEvent<HTMLInputElement>, idx: number) => {
+			onRadioChange(e, idx);
+		},
+		[onRadioChange]
+	);
 
-	const handleInteractorClick = () => {
+	const handleInteractorClick = useCallback(() => {
 		setIsVisibleSelect(prevState => !prevState);
-	};
+	}, []);
 
 	useEffect(() => {
 		const handleDocumentClick = (e: MouseEvent) => {
@@ -81,12 +101,19 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 		};
 	}, [isVisibleSelect]);
 
-	const activeRadio = radios.find(radio => radio.isChecked === true);
+	const activeRadio = useMemo(
+		() => radios.find(radio => radio.isChecked === true),
+		[radios]
+	);
 	const activeWeight = activeRadio?.weightValue ?? 0;
-	const interactorHtml = `${activeWeight} кг (на ${getPersonQuantity(
-		activeWeight,
-		false
-	)} гостей)`;
+	const interactorHtml = useMemo(
+		() =>
+			`${activeWeight} кг (на ${getPersonQuantity(
+				activeWeight,
+				false
+			)} гостей)`,
+		[activeWeight]
+	);
 
 	return (
 		<li className={styles.component}>

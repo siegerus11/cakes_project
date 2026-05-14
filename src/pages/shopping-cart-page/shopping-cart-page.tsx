@@ -1,4 +1,11 @@
-﻿import { useState, ChangeEvent, AnimationEvent, FormEvent } from 'react';
+﻿import {
+	useState,
+	ChangeEvent,
+	AnimationEvent,
+	FormEvent,
+	useMemo,
+	useCallback
+} from 'react';
 import { Link, generatePath, useLocation } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
@@ -29,57 +36,76 @@ const ShoppingCartPage = () => {
 	const activeOfferId = useAppSelector(selectActiveOffer);
 	const shoppingCart = useAppSelector(selectShoppingCart);
 	const dispatch = useAppDispatch();
-	const finalSum = getFormattedPrice(useAppSelector(selectFinalSum));
+	const finalSumValue = useAppSelector(selectFinalSum);
+	const finalSum = useMemo(
+		() => getFormattedPrice(finalSumValue),
+		[finalSumValue]
+	);
 	const location = useLocation();
 	const confirm = useConfirm();
 
 	const isMobile = useMediaQuery('(max-width: 576px)');
 
-	const backLink: string =
-		location.state?.from === AppRoute.CakeOfferArticle
-			? generatePath(AppRoute.CakeOfferArticle, {
-					id: activeOfferId
-			  })
-			: location.state?.from;
+	const backLink = useMemo(
+		() =>
+			location.state?.from === AppRoute.CakeOfferArticle
+				? generatePath(AppRoute.CakeOfferArticle, {
+						id: activeOfferId
+				  })
+				: location.state?.from,
+		[location.state?.from, activeOfferId]
+	);
 
-	const handleTrashButtonClick = () => {
+	const handleTrashButtonClick = useCallback(() => {
 		const answer = confirm(ConfirmMessage.ClearCart);
 		if (answer) dispatch(clearCart());
-	};
+	}, [confirm, dispatch]);
 
-	const handlePopupTouchClose = () => {
+	const handlePopupTouchClose = useCallback(() => {
 		setIsAnimate(true);
-	};
-	const handlePopupClickClose = () => {
+	}, []);
+
+	const handlePopupClickClose = useCallback(() => {
 		if (!isMobile) setPopupIsVisible(false);
-	};
+	}, [isMobile]);
 
 	const { handleTouchStart, handleTouchMove, handleTouchEnd } = useTouch(
 		handlePopupTouchClose
 	);
 
-	const handlePopupAnimationEnd = (e: AnimationEvent) => {
+	const handlePopupAnimationEnd = useCallback((e: AnimationEvent) => {
 		if (e.animationName === styles.popupClosing) {
 			setPopupIsVisible(false);
 			setIsAnimate(false);
 		}
-	};
+	}, []);
 
-	const handlePromoButtonClick = () => {
+	const handlePromoButtonClick = useCallback(() => {
 		setPopupIsVisible(true);
-	};
+	}, []);
 
-	const handleInputClearClick = () => {
+	const handleInputClearClick = useCallback(() => {
 		setInputValue('');
-	};
+	}, []);
 
-	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-		setInputValue(e.target.value);
-	};
+	const handleInputChange = useCallback(
+		(e: ChangeEvent<HTMLInputElement>) => {
+			setInputValue(e.target.value);
+		},
+		[]
+	);
 
-	const handlePromoSubmit = (e: FormEvent) => {
+	const handlePromoSubmit = useCallback((e: FormEvent) => {
 		e.preventDefault();
-	};
+	}, []);
+
+	const buttonPath = useMemo(
+		() =>
+			shoppingCart.length ? AppRoute.orderRegistration : AppRoute.Catalog,
+		[shoppingCart.length]
+	);
+
+	const buttonText = shoppingCart.length ? 'Верно, далее' : 'К каталогу';
 
 	return (
 		<div className={`page ${styles.page}`}>
@@ -122,17 +148,9 @@ const ShoppingCartPage = () => {
 					</div>
 					<Button
 						className={`button button_primary ${styles.button}`}
-						path={
-							shoppingCart.length
-								? AppRoute.orderRegistration
-								: AppRoute.Catalog
-						}
+						path={buttonPath}
 					>
-						{shoppingCart.length ? (
-							<span>Верно, далее</span>
-						) : (
-							<span>К каталогу</span>
-						)}
+						<span>{buttonText}</span>
 					</Button>
 				</div>
 			</div>
