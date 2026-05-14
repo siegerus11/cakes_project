@@ -1,12 +1,10 @@
-@use './libs/bootstrap-reboot.min.scss';
-@use './main.scss';
-@use './components/ui/button/button.module.scss';
-@use './components/title/title.module.scss';
-@use '_variables' as variables;
+@use './libs/bootstrap-reboot.min';
+@use './_fonts';
+@use './_variables' as variables;
+@use './components/ui/button/button.module';
+@use './components/title/title.module';
 
 :root {
-	--primary-color: #ff4c80;
-	--secondary-color: #f0e2fb;
 	--primary-font: "Inter", sans-serif;
 }
 
