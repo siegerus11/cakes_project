@@ -14,7 +14,6 @@ import styles from './cake-article-page.module.scss';
 import OrderForm from './order-form/order-form';
 import Slider from './slider/slider';
 
-const PAGE_TITLE = 'Торт с ягодами и безе';
 const POPUP_TITLE_CLASS = 'title_fz22 title_fw800';
 
 const CakeArticlePage = () => {
@@ -58,7 +57,7 @@ const CakeArticlePage = () => {
 					<section className={styles.main}>
 						<div className={styles.main__headline}>
 							<Title
-								titleText={PAGE_TITLE}
+								titleText={activeOffer.title}
 								titleClass={titleClassName}
 							/>
 						</div>
