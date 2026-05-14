@@ -1,4 +1,4 @@
-import { useState, TouchEvent } from 'react';
+import { useState, TouchEvent, useCallback } from 'react';
 
 function useTouch(callback: () => void): {
 	handleTouchStart: (e: TouchEvent) => void;
@@ -10,16 +10,16 @@ function useTouch(callback: () => void): {
 	const [touchStartY, setTouchStartY] = useState<number>(0);
 	const [touchEndY, setTouchEndY] = useState<number>(0);
 
-	const handleTouchStart = (e: TouchEvent) => {
+	const handleTouchStart = useCallback((e: TouchEvent) => {
 		setTouchStartY(e.touches[0].clientY);
-	};
+	}, []);
 
-	const handleTouchMove = (e: TouchEvent) => {
+	const handleTouchMove = useCallback((e: TouchEvent) => {
 		setIsTouchMove(true);
 		setTouchEndY(e.touches[0].clientY);
-	};
+	}, []);
 
-	const handleTouchEnd = () => {
+	const handleTouchEnd = useCallback(() => {
 		if (!isTouchMove) return;
 
 		const touchDifference = touchEndY - touchStartY;
@@ -31,7 +31,7 @@ function useTouch(callback: () => void): {
 		if (touchDifference > 0) callback();
 
 		setIsTouchMove(false);
-	};
+	}, [isTouchMove, touchEndY, touchStartY, callback]);
 
 	return {
 		handleTouchStart,

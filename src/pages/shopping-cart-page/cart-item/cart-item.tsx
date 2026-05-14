@@ -34,13 +34,13 @@ const CartItem = memo(({ order }: CartItemProps) => {
 
 	const handleIncrClick = useCallback(
 		(id: string, num: number, increase: boolean) => {
-			if (order.quantity <= 1 && !increase) {
+			if (quantity <= 1 && !increase) {
 				const answer = confirm(ConfirmMessage.ClearOrder);
 				if (answer) dispatch(removeCartItem(id));
 			}
 			dispatch(setCartQuantity({ id, num }));
 		},
-		[confirm, dispatch, order.quantity]
+		[confirm, dispatch, quantity]
 	);
 
 	const handleDecrease = useCallback(

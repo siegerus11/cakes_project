@@ -1,4 +1,4 @@
-import { useEffect, useState, TouchEvent } from 'react';
+import { useEffect, useState, TouchEvent, useCallback } from 'react';
 
 import { Slide } from '../types/types';
 import { createSlidesInitial } from '../utils/createSlidesInitial';
@@ -24,22 +24,25 @@ function useSlider(imagesSrc: string[]): {
 	const [touchEndX, setTouchEndX] = useState<number>(0);
 	const [isSwiping, setIsSwiping] = useState(false);
 
-	const handleSlideButtonClick = (num: number) => {
-		setSlideIndex(prevState => {
-			const newIndex = prevState + num;
-			if (newIndex < 0) return 0;
-			if (newIndex >= slides.length) return slides.length - 1;
-			return newIndex;
-		});
-	};
+	const handleSlideButtonClick = useCallback(
+		(num: number) => {
+			setSlideIndex(prevState => {
+				const newIndex = prevState + num;
+				if (newIndex < 0) return 0;
+				if (newIndex >= slides.length) return slides.length - 1;
+				return newIndex;
+			});
+		},
+		[slides.length]
+	);
 
-	const handleDotsClick = (idx: number) => {
+	const handleDotsClick = useCallback((idx: number) => {
 		setSlideIndex(idx);
-	};
+	}, []);
 
-	const handleCloseButtonClick = () => {
+	const handleCloseButtonClick = useCallback(() => {
 		setIsSliderVisible(prevState => !prevState);
-	};
+	}, []);
 
 	useEffect(() => {
 		setSlides(prevState =>
@@ -51,16 +54,16 @@ function useSlider(imagesSrc: string[]): {
 		);
 	}, [slideIndex]);
 
-	const handleTouchStart = (e: TouchEvent) => {
+	const handleTouchStart = useCallback((e: TouchEvent) => {
 		setTouchStartX(e.touches[0].clientX);
-	};
+	}, []);
 
-	const handleTouchMove = (e: TouchEvent) => {
+	const handleTouchMove = useCallback((e: TouchEvent) => {
 		setIsSwiping(true);
 		setTouchEndX(e.touches[0].clientX);
-	};
+	}, []);
 
-	const handleTouchEnd = () => {
+	const handleTouchEnd = useCallback(() => {
 		if (!isSwiping) return;
 
 		const touchDifference = touchEndX - touchStartX;
@@ -75,7 +78,7 @@ function useSlider(imagesSrc: string[]): {
 		toggleSlide();
 
 		setIsSwiping(false);
-	};
+	}, [isSwiping, touchEndX, touchStartX, handleSlideButtonClick]);
 
 	return {
 		slides,
