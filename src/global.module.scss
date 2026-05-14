@@ -1,6 +1,7 @@
 @use './libs/bootstrap-reboot.min';
 @use './_fonts';
 @use './_variables' as variables;
+@use './_mixins' as mixins;
 @use './components/ui/button/button.module';
 @use './components/title/title.module';
 

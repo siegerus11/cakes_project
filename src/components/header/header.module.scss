@@ -1,8 +1,7 @@
 @use '../../_variables' as variables;
+@use '../../_mixins' as mixins;
 .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include mixins.flex-between;
     padding: 21px 0;
 }
 

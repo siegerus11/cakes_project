@@ -1,12 +1,11 @@
 @use '../../_variables' as variables;
+@use '../../_mixins' as mixins;
 .component {
 	padding: 94px 0 90px 0;
 }
 
 .headline {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	@include mixins.flex-between;
 
 	&__link {
 		position: relative;

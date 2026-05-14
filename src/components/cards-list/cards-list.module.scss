@@ -1,4 +1,5 @@
 @use '../../_variables' as variables;
+@use '../../_mixins' as mixins;
 .component {
 	display: flex;
 	align-items: stretch;

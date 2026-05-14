@@ -1,7 +1,7 @@
 @use '../../../_variables' as variables;
+@use '../../../_mixins' as mixins;
 .list {
-	display: flex;
-	flex-direction: column;
+	@include mixins.flex-column;
 	align-items: flex-start;
 	margin-top: 75px;
 	list-style-type: none;
@@ -85,8 +85,7 @@
 	}
 
 	.feed {
-		display: flex;
-		flex-direction: column;
+		@include mixins.flex-column;
 	}
 
 	.describe {
