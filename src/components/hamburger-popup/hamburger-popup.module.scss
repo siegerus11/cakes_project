@@ -1,102 +1,103 @@
+@use '../../_variables' as variables;
 .wrapper {
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    overflow-y: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	background-color: variables.$color-text-inverted;
 
-    >div>div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-        padding: 37px 0 29px 0;
-        width: 100%;
-        height: 100%;
-    }
+	> div > div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		padding: 37px 0 29px 0;
+	}
 
-    .link {
-        font-weight: 600;
-        font-size: 17px;
-        text-decoration: none;
-        color: #000;
-    }
+	.link {
+		color: variables.$color-text-primary;
+		font-weight: 600;
+		font-size: 17px;
+		text-decoration: none;
+	}
 
-    nav {
-        margin-top: 10px;
+	nav {
+		margin-top: 10px;
 
-        li {
-            padding: 16px 15px 16px 10px;
-        }
-    }
+		li {
+			padding: 16px 15px 16px 10px;
+		}
+	}
 }
 
 .button {
-    min-height: 49px;
-    margin-top: 18px;
+	min-height: 49px;
+	margin-top: 18px;
 
-    &__icon {
-        width: 14px;
-    }
+	&__icon {
+		width: 14px;
+	}
 
-    span {
-        font-size: 14px;
-        margin-right: 7px;
-        color: #fff;
-    }
+	span {
+		margin-right: 7px;
+		color: variables.$color-text-inverted;
+		font-size: 14px;
+	}
 }
 
 .icon {
-    display: block;
-    width: 40px;
-    height: 40px;
-    margin-top: 29px;
-    margin-right: 15px;
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin-top: 29px;
+	margin-right: 15px;
 }
 
 @media (max-width: 992px) {
-    .button {
-        padding: 15px 50px;
-    }
+	.button {
+		padding: 15px 50px;
+	}
 }
 
 @media (max-width: 576px) {
-    .wrapper {
-        >div>div {
-            padding: 29px 0 29px 0;
-        }
+	.wrapper {
+		> div > div {
+			padding: 29px 0 29px 0;
+		}
 
-        nav {
-            align-self: flex-start;
-        }
+		nav {
+			align-self: flex-start;
+		}
 
-        li {
-            &:nth-last-child(1)>a {
-                margin-right: 0;
-            }
-        }
-    }
+		li {
+			&:nth-last-child(1) > a {
+				margin-right: 0;
+			}
+		}
+	}
 
-    .button {
-        min-height: 47px;
-        padding: 13px 82px;
-    }
+	.button {
+		min-height: 47px;
+		padding: 13px 82px;
+	}
 
-    .link {
-        span {
-            display: block;
-            line-height: 125%;
-        }
-    }
+	.link {
+		span {
+			display: block;
+			line-height: 125%;
+		}
+	}
 
-    .wrapper {
-        nav {
-            li {
-                padding: 16px 15px 16px 10px;
-            }
-        }
-    }
+	.wrapper {
+		nav {
+			li {
+				padding: 16px 15px 16px 10px;
+			}
+		}
+	}
 }

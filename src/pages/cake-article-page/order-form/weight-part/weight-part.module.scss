@@ -1,3 +1,5 @@
+@use '../../../../_variables.scss';
+
 .component {
 	width: 100%;
 	margin-top: 40px;
@@ -11,8 +13,8 @@
 .select {
 	position: relative;
 	display: flex;
-	align-items: center;
 	flex-direction: column;
+	align-items: center;
 	width: 100%;
 	margin-top: 17px;
 
@@ -22,9 +24,9 @@
 		justify-content: space-between;
 		width: 100%;
 		padding: 16px 20px;
+		background-color: variables.$color-bg-secondary;
 		border: none;
 		border-radius: 11px;
-		background-color: #f7f7f7;
 		cursor: pointer;
 
 		span {
@@ -36,21 +38,21 @@
 	}
 
 	&__dropdown {
-		z-index: 5;
 		position: absolute;
 		top: 52px;
 		left: 0;
+		z-index: 5;
 		width: 100%;
 		padding: 16px 20px;
+		background-color: variables.$color-bg-secondary;
 		border-radius: 11px;
-		background-color: #f7f7f7;
 
-		>div {
+		> div {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			padding: 4px 0;
 			margin-bottom: 7px;
+			padding: 4px 0;
 		}
 	}
 
@@ -65,33 +67,24 @@
 		display: block;
 		width: 16px;
 		height: 16px;
-		accent-color: var(--primary-color);
 		padding: 5px;
 		cursor: pointer;
+		accent-color: variables.$color-primary;
 	}
 }
 
 .icon {
-	fill: #939393;
+	fill: variables.$color-text-light;
 }
 
-@media (max-width: 1440px) {}
-
-@media (max-width: 1200px) {}
-
-@media (max-width: 992px) {}
-
-@media (max-width: 767px) {}
-
 @media (max-width: 576px) {
-
 	.component {
 		margin-top: 37px;
 	}
 
 	.title {
-		font-size: 15px;
 		font-weight: 800;
+		font-size: 15px;
 	}
 
 	.select {
@@ -111,12 +104,12 @@
 			top: 48px;
 			padding: 15px 20px;
 
-			>div {
+			> div {
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
-				padding: 4px 0;
 				margin-bottom: 7px;
+				padding: 4px 0;
 			}
 		}
 	}
@@ -130,5 +123,3 @@
 		height: 15px;
 	}
 }
-
-@media (max-width: 360px) {}

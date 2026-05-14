@@ -1,24 +1,25 @@
+@use '../../_variables' as titleVars;
 :global(.title-link) {
 	text-decoration: none;
 }
 
 :global(.title) {
 	position: relative;
+	color: titleVars.$color-text-primary;
 	font-weight: 700;
 	font-size: 26px;
 	text-decoration: none;
-	color: #000;
 
 	&:global(_wth-arrow) {
 		&:after {
-			content: '';
 			position: absolute;
 			top: 58%;
-			transform: translateY(-50%);
 			right: -30px;
 			width: 18px;
 			height: 18px;
 			background-image: url('/images/nav-arrow-big.svg');
+			transform: translateY(-50%);
+			content: '';
 		}
 	}
 

@@ -1,3 +1,4 @@
+@use '../../_variables' as variables;
 .page {
 	padding-top: 20px;
 	padding-bottom: 324px;
@@ -16,7 +17,7 @@
 	max-width: 585px;
 	margin: 0 auto;
 	margin-top: 25px;
-	background: #fff;
+	background: variables.$color-text-inverted;
 	border-radius: 16px;
 }
 
@@ -37,7 +38,7 @@
 	justify-content: center;
 	width: 36px;
 	height: 36px;
-	background: #f7f7f7;
+	background: variables.$color-bg-secondary;
 	border: none;
 	border-radius: 8px;
 	cursor: pointer;
@@ -111,11 +112,11 @@
 		right: 14px;
 		width: 24px;
 		height: 24px;
-		color: #939393;
+		color: variables.$color-text-light;
 		font-size: 12px;
 		line-height: 24px;
 		text-align: center;
-		background-color: #fff;
+		background-color: variables.$color-text-inverted;
 		border: none;
 		border-radius: 50%;
 		transform: translateY(-50%);
@@ -154,13 +155,13 @@
 		display: block;
 		width: 100%;
 		padding: 14px 15px;
-		background-color: #f7f7f7;
+		background-color: variables.$color-bg-secondary;
 		border: none;
 		border-radius: 12px;
 		outline: none;
 
 		&::placeholder {
-			color: #b1b1b1;
+			color: variables.$color-text-light;
 			font-size: 16px;
 			line-height: 113%;
 		}
@@ -309,7 +310,7 @@
 			padding: 15px;
 
 			&::placeholder {
-				color: #b1b1b1;
+				color: variables.$color-text-light;
 				font-size: 14px;
 				line-height: 129%;
 			}

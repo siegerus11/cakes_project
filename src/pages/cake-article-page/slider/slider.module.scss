@@ -1,8 +1,9 @@
+@use '../../../_variables' as variables;
 .component {
 	width: 535px;
 	height: 535px;
 	margin-right: 50px;
-	background-color: var(--secondary-color);
+	background-color: variables.$color-secondary;
 	border-radius: 30px;
 }
 
@@ -36,12 +37,12 @@
 	&__dot {
 		width: 6px;
 		height: 6px;
-		background-color: #fff;
+		background-color: variables.$color-text-inverted;
 		border: none;
 		border-radius: 100px;
 
 		&_active {
-			background-color: #2e2e2e;
+			background-color: variables.$color-text-primary;
 		}
 	}
 }
@@ -53,7 +54,7 @@
 	left: 14px;
 	width: 34px;
 	height: 34px;
-	background-color: #fff;
+	background-color: variables.$color-text-inverted;
 	border: none;
 	border-radius: 500px;
 	transform: translateY(-50%);
@@ -87,7 +88,7 @@
 	display: none;
 	width: 32px;
 	height: 32px;
-	background-color: #fff;
+	background-color: variables.$color-text-inverted;
 	border: none;
 	border-radius: 50%;
 }

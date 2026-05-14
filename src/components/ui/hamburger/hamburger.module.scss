@@ -1,42 +1,44 @@
+@use '../../../_variables' as variables;
+
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    min-width: 26px;
-    border: none;
-    background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	min-width: 26px;
+	background-color: variables.$color-text-inverted;
+	border: none;
 
-    &_asEnd {
-        align-self: flex-end;
-    }
+	&_asEnd {
+		align-self: flex-end;
+	}
 
-    .item {
-        width: 100%;
-        min-height: 4px;
-        border-radius: 10px;
-        background-color: #000;
+	.item {
+		width: 100%;
+		min-height: 4px;
+		background-color: variables.$color-text-primary;
+		border-radius: 10px;
 
-        &:nth-child(2) {
-            max-width: 20px;
-            margin: 6px 0 6px 0;
-        }
-    }
+		&:nth-child(2) {
+			max-width: 20px;
+			margin: 6px 0 6px 0;
+		}
+	}
 }
 
 @media (max-width: 576px) {
-    .wrapper {
-        min-width: 18px;
+	.wrapper {
+		min-width: 18px;
 
-        .item {
-            width: 100%;
-            min-height: 2.4px;
-            background-color: #000;
+		.item {
+			width: 100%;
+			min-height: 2.4px;
+			background-color: variables.$color-text-primary;
 
-            &:nth-child(2) {
-                max-width: 14px;
-                margin: 4px 0 4px 0;
-            }
-        }
-    }
+			&:nth-child(2) {
+				max-width: 14px;
+				margin: 4px 0 4px 0;
+			}
+		}
+	}
 }

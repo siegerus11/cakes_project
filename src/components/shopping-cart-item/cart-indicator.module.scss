@@ -1,3 +1,5 @@
+@use '../../_variables' as variables;
+
 .component {
 	position: fixed;
 	top: 20px;
@@ -8,7 +10,7 @@
 	justify-content: center;
 	width: 51px;
 	height: 49px;
-	background-color: var(--primary-color);
+	background-color: variables.$color-primary;
 	border-radius: 17px;
 
 	&__indicator {
@@ -21,12 +23,12 @@
 		justify-content: center;
 		width: 22px;
 		height: 24px;
-		background-color: #ff6b6b;
+		background-color: variables.$color-error;
 		border-radius: 50%;
 	}
 
 	&__count {
-		color: #fff;
+		color: variables.$color-text-inverted;
 		font-weight: 600;
 		font-size: 12px;
 	}

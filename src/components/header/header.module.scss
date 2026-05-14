@@ -1,3 +1,4 @@
+@use '../../_variables' as variables;
 .wrapper {
     display: flex;
     align-items: center;
@@ -20,17 +21,17 @@
     max-height: 52px;
     padding: 17px 25px;
     border-radius: 18px;
-    background: #f7f7f7;
+    background: variables.$color-bg-secondary;
 
     &__input {
         width: 100%;
         border: none;
         outline: none;
-        background: #f7f7f7;
+        background: variables.$color-bg-secondary;
         font-size: 16px;
 
         &::placeholder {
-            color: #b1b1b1;
+            color: variables.$color-text-light;
         }
     }
 
@@ -80,12 +81,12 @@
     height: 100%;
     padding: 0 0 19px 24px;
     border-radius: 25px;
-    background-color: #f0e2fb;
+    background-color: variables.$color-secondary;
     text-decoration: none;
 
     span {
         max-width: 100px;
-        color: #fff;
+        color: variables.$color-text-inverted;
         font-weight: 600;
         font-size: 20px;
         line-height: 115%;

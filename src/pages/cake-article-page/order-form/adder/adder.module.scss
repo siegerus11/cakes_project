@@ -1,10 +1,11 @@
+@use '../../../../_variables' as variables;
 .component {
 	margin-top: 37px;
 
 	&_wrapped {
 		margin-top: 33px;
 		padding: 15px 15px 15px 20px;
-		background-color: #f7f7f7;
+		background-color: variables.$color-bg-secondary;
 		border-radius: 35px;
 
 		.adder {

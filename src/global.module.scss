@@ -2,6 +2,7 @@
 @use './main.scss';
 @use './components/ui/button/button.module.scss';
 @use './components/title/title.module.scss';
+@use '_variables' as variables;
 
 :root {
 	--primary-color: #ff4c80;
@@ -68,7 +69,7 @@ body {
 :global(.back-link) {
 	position: relative;
 	margin-left: 29px;
-	color: #000;
+	color: variables.$color-text-primary;
 	font-size: 16px;
 	line-height: 169%;
 	text-decoration: none;
@@ -94,7 +95,7 @@ body {
 	line-height: 130%;
 	text-decoration: underline;
 	text-decoration-style: dotted;
-	color: #b1b1b1;
+	color: variables.$color-text-light;
 }
 
 @media (max-width: 1200px) {
