@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useMemo, useCallback } from 'react';
 
 import { CakeOffer, Optional, CheckBoxValue } from '../../../../types/types';
 import styles from './optional-part.module.scss';
@@ -17,10 +17,20 @@ const OptionalPartItem = ({
 	const { title, name, price, image } = option;
 
 	const maxTitleLength = 30;
-	const headlineClassName =
-		title.length > maxTitleLength
-			? `${styles.side__headline} ${styles.side__headline_fz14}`
-			: styles.side__headline;
+	const headlineClassName = useMemo(
+		() =>
+			title.length > maxTitleLength
+				? `${styles.side__headline} ${styles.side__headline_fz14}`
+				: styles.side__headline,
+		[title]
+	);
+
+	const handleChange = useCallback(
+		(e: ChangeEvent<HTMLInputElement>) => {
+			onCheckBoxChange(e);
+		},
+		[onCheckBoxChange]
+	);
 
 	return (
 		<label className={styles.label} htmlFor={name}>
@@ -38,7 +48,7 @@ const OptionalPartItem = ({
 				id={name}
 				value={name}
 				checked={checkBoxValues[name]}
-				onChange={e => onCheckBoxChange(e)}
+				onChange={handleChange}
 				aria-label={`Дополнительно: ${title}, цена +${price} ₽`}
 			/>
 			<div className={styles.check} aria-hidden="true"></div>
@@ -57,9 +67,12 @@ const OptionalPart = ({
 	checkBoxValues,
 	onCheckBoxChange
 }: OptionalPartProps) => {
-	const handleCheckBoxChange = (e: ChangeEvent<HTMLInputElement>) => {
-		onCheckBoxChange(e);
-	};
+	const handleCheckBoxChange = useCallback(
+		(e: ChangeEvent<HTMLInputElement>) => {
+			onCheckBoxChange(e);
+		},
+		[onCheckBoxChange]
+	);
 
 	return (
 		<li className={styles.component}>

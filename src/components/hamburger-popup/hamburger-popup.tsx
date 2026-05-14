@@ -1,3 +1,5 @@
+import { useCallback, useMemo } from 'react';
+
 import { AppRoute, LAYOUT_NAVS } from '../../constants';
 import { Nav } from '../../types/types';
 import { getSecondaryNavs } from '../../utils/getSecondaryNavs';
@@ -12,8 +14,19 @@ type HamburgerPopupProps = {
 };
 
 const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
-	const handleHamburgerClick = () => onHamburgerClick();
-	const handleNavLinkClick = () => onHamburgerClick();
+	const handleHamburgerClick = useCallback(
+		() => onHamburgerClick(),
+		[onHamburgerClick]
+	);
+	const handleNavLinkClick = useCallback(
+		() => onHamburgerClick(),
+		[onHamburgerClick]
+	);
+
+	const secondaryNavs = useMemo(
+		() => getSecondaryNavs(LAYOUT_NAVS, true) as Nav[],
+		[]
+	);
 
 	return (
 		<div className={styles.wrapper}>
@@ -24,7 +37,7 @@ const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
 						isPopup
 					/>
 					<NavMenu
-						navs={getSecondaryNavs(LAYOUT_NAVS, true) as Nav[]}
+						navs={secondaryNavs}
 						onNavLinkClick={handleNavLinkClick}
 						linkClassName={styles.link}
 					/>

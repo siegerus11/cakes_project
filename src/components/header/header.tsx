@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 
 import { AppRoute, LAYOUT_NAVS } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
@@ -16,20 +16,24 @@ const Header = () => {
 	const [hamburgerisVisible, setHamburgerisVisible] =
 		useState<boolean>(false);
 
-	const handleHamburgerClick = () => {
-		setHamburgerisVisible(!hamburgerisVisible);
-	};
+	const handleHamburgerClick = useCallback(() => {
+		setHamburgerisVisible(prev => !prev);
+	}, []);
+
+	const closePopup = useCallback((e: KeyboardEvent) => {
+		if (e.key === 'Escape') setHamburgerisVisible(false);
+	}, []);
 
 	useEffect(() => {
-		const closePopup = (e: KeyboardEvent) => {
-			if (e.key === 'Escape') setHamburgerisVisible(false);
-		};
 		document.addEventListener('keydown', closePopup);
 		return () => document.removeEventListener('keydown', closePopup);
-	}, [hamburgerisVisible]);
+	}, [closePopup]);
 
 	const totalPrice = useAppSelector(selectFinalSum);
-	const formattedPrice = getFormattedPrice(totalPrice);
+	const formattedPrice = useMemo(
+		() => getFormattedPrice(totalPrice),
+		[totalPrice]
+	);
 
 	return (
 		<>

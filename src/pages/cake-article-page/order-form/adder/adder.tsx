@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { useMemo } from 'react';
 
 import { SubmitButton } from '../../../../components/ui/button/button';
 import getFormattedPrice from '../../../../utils/getFormattedPrice';
@@ -11,18 +11,27 @@ type AdderProps = {
 };
 
 const Adder = ({ priceCounter, isWrapped, formId }: AdderProps) => {
-	const formattedpriceCounter = getFormattedPrice(priceCounter);
+	const formattedpriceCounter = useMemo(
+		() => getFormattedPrice(priceCounter),
+		[priceCounter]
+	);
 
-	const className = isWrapped
-		? `${styles.component} ${styles.component_wrapped}`
-		: styles.component;
+	const className = useMemo(
+		() =>
+			isWrapped
+				? `${styles.component} ${styles.component_wrapped}`
+				: styles.component,
+		[isWrapped]
+	);
+
+	const adderClassName = useMemo(
+		() => `${styles.adder} ${isWrapped ? styles.adder_w100 : ''}`,
+		[isWrapped]
+	);
+
 	return (
 		<div className={className}>
-			<div
-				className={`${styles.adder} ${
-					isWrapped ? styles.adder_w100 : ''
-				}`}
-			>
+			<div className={adderClassName}>
 				<span className={styles.adder__price}>
 					{`${formattedpriceCounter} ₽`}
 				</span>

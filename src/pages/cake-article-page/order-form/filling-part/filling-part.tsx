@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useCallback } from 'react';
 
 import { CakeOffer, CheckBoxValue, Filling } from '../../../../types/types';
 import styles from './filling-part.module.scss';
@@ -18,13 +18,24 @@ const FillingItem = ({
 	onCheckBoxChange,
 	onDescribeClick
 }: FillingItemProps) => {
-	const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
-		onCheckBoxChange(e);
-	};
+	const handleCheckboxChange = useCallback(
+		(e: ChangeEvent<HTMLInputElement>) => {
+			onCheckBoxChange(e);
+		},
+		[onCheckBoxChange]
+	);
 
-	const handleDescribeClick = (idx: number) => {
-		onDescribeClick(idx);
-	};
+	const handleDescribeClick = useCallback(
+		(idx: number) => {
+			onDescribeClick(idx);
+		},
+		[onDescribeClick]
+	);
+
+	const handleButtonClick = useCallback(
+		() => handleDescribeClick(index),
+		[handleDescribeClick, index]
+	);
 
 	return (
 		<>
@@ -53,7 +64,7 @@ const FillingItem = ({
 					<button
 						className={`dot-lined ${styles.card__button}`}
 						type="button"
-						onClick={() => handleDescribeClick(index)}
+						onClick={handleButtonClick}
 					>
 						описание
 					</button>
@@ -76,25 +87,27 @@ const FillingPart = ({
 	onCheckBoxChange,
 	onDescribeClick
 }: FillingPartProps) => {
-	const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
-		onCheckBoxChange(e);
-	};
+	const handleCheckboxChange = useCallback(
+		(e: ChangeEvent<HTMLInputElement>) => {
+			onCheckBoxChange(e);
+		},
+		[onCheckBoxChange]
+	);
+
 	return (
 		<li className={styles.component}>
 			<h3 className={styles.title}>Начинка</h3>
 			<div className={styles.wrapper}>
-				{cake.filling.map((fill, i) => {
-					return (
-						<FillingItem
-							index={i}
-							fill={fill}
-							key={fill.name}
-							checkBoxValues={checkBoxValues}
-							onCheckBoxChange={handleCheckboxChange}
-							onDescribeClick={onDescribeClick}
-						/>
-					);
-				})}
+				{cake.filling.map((fill, i) => (
+					<FillingItem
+						index={i}
+						fill={fill}
+						key={fill.name}
+						checkBoxValues={checkBoxValues}
+						onCheckBoxChange={handleCheckboxChange}
+						onDescribeClick={onDescribeClick}
+					/>
+				))}
 			</div>
 		</li>
 	);

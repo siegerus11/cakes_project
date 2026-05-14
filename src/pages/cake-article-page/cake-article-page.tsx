@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 import Overlay from '../../components/overlay/overlay';
@@ -14,24 +14,33 @@ import styles from './cake-article-page.module.scss';
 import OrderForm from './order-form/order-form';
 import Slider from './slider/slider';
 
+const PAGE_TITLE = 'Торт с ягодами и безе';
+const POPUP_TITLE_CLASS = 'title_fz22 title_fw800';
+
 const CakeArticlePage = () => {
 	const activeId = useAppSelector(selectActiveOffer);
-	const activeOffer = cakeOffers.find(offer => offer.id === activeId);
+	const activeOffer = useMemo(
+		() => cakeOffers.find(offer => offer.id === activeId),
+		[activeId]
+	);
 
-	const pageTitle = 'Торт с ягодами и безе';
 	const titleClassName = `title_fz30 title_fw800 ${styles.main__title}`;
-	const initialprice = activeOffer?.price;
 	const popupClass = `popup ${styles.popup}`;
 	const popupClassActive = `popup ${styles.popup} ${styles.popup_active}`;
-	const popupTitleClass = 'title_fz22 title_fw800';
 
-	const { filling } = activeOffer!;
+	const initialprice = useMemo(() => activeOffer?.price, [activeOffer]);
+
+	const filling = useMemo(() => activeOffer?.filling ?? [], [activeOffer]);
 
 	const [visibilityIndex, setVisibilityIndex] = useState<number | null>(null);
 
-	const handleDescribeClick = (idx: number | null) => {
+	const handleDescribeClick = useCallback((idx: number | null) => {
 		setVisibilityIndex(idx);
-	};
+	}, []);
+
+	if (!activeOffer) {
+		return null; // или заглушка
+	}
 
 	return (
 		<div className={`page ${styles.component}`}>
@@ -45,16 +54,16 @@ const CakeArticlePage = () => {
 					<span className={styles.back__item}></span>
 				</Link>
 				<div className={styles.wrapper}>
-					<Slider cake={activeOffer!} />
+					<Slider cake={activeOffer} />
 					<section className={styles.main}>
 						<div className={styles.main__headline}>
 							<Title
-								titleText={pageTitle}
+								titleText={PAGE_TITLE}
 								titleClass={titleClassName}
 							/>
 						</div>
 						<OrderForm
-							cake={activeOffer!}
+							cake={activeOffer}
 							initialprice={initialprice!}
 							onDescribeClick={handleDescribeClick}
 						/>
@@ -62,7 +71,7 @@ const CakeArticlePage = () => {
 				</div>
 			</div>
 			{filling.map((fillingItem, i) => {
-				const keyValue = `${Math.random() * i}-${fillingItem.name}`;
+				const keyValue = `${i}-${fillingItem.name}`;
 				return (
 					i === visibilityIndex && (
 						<Overlay key={keyValue}>
@@ -93,7 +102,7 @@ const CakeArticlePage = () => {
 									<main className={styles.popup__main}>
 										<Title
 											titleText={fillingItem.title}
-											titleClass={popupTitleClass}
+											titleClass={POPUP_TITLE_CLASS}
 										/>
 										<p
 											className={

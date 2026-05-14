@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
@@ -21,7 +21,10 @@ type CatalogPageProps = {
 const CatalogPage = ({ cakes }: CatalogPageProps) => {
 	const { pathname } = useLocation();
 	const dispatch = useAppDispatch();
-	const pageTitle = getNavData(pathname, NAVS)!.title;
+	const pageTitle = useMemo(
+		() => getNavData(pathname, NAVS)!.title,
+		[pathname]
+	);
 
 	useEffect(() => {
 		dispatch(getSortingStatus(''));

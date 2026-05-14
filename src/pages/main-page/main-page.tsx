@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
@@ -19,9 +20,25 @@ type MainPageProps = {
 
 const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 	const totalPrice = useAppSelector(selectFinalSum);
-	const formattedPrice = getFormattedPrice(totalPrice);
-	const splicedCakes = [...cakes].splice(0, 3);
-	const splicedBentoCakes = [...bentoCakes].splice(0, 3);
+	const formattedPrice = useMemo(
+		() => getFormattedPrice(totalPrice),
+		[totalPrice]
+	);
+
+	const splicedCakes = useMemo(() => cakes.slice(0, 3), [cakes]);
+	const splicedBentoCakes = useMemo(
+		() => bentoCakes.slice(0, 3),
+		[bentoCakes]
+	);
+
+	const cakesTitle = useMemo(
+		() => NAVS.find(nav => nav.title === 'Торты')?.title,
+		[]
+	);
+	const bentoTitle = useMemo(
+		() => NAVS.find(nav => nav.title === 'Бенто-торты')?.title,
+		[]
+	);
 
 	return (
 		<>
@@ -32,10 +49,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						<div className={styles.headline}>
 							<Title
 								titleClass="title_wth-arrow"
-								titleText={
-									NAVS.find(nav => nav.title === 'Торты')
-										?.title
-								}
+								titleText={cakesTitle}
 								path={AppRoute.CakesCatalog}
 							/>
 							<Link
@@ -55,11 +69,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						<div className={styles.headline}>
 							<Title
 								titleClass="title_wth-arrow"
-								titleText={
-									NAVS.find(
-										nav => nav.title === 'Бенто-торты'
-									)?.title
-								}
+								titleText={bentoTitle}
 								path={AppRoute.BentoCakesCatalog}
 							/>
 							<Link

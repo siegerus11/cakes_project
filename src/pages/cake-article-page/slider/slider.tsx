@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import useSlider from '../../../hooks/useSlider';
 import { CakeOffer } from '../../../types/types';
 import styles from './slider.module.scss';
@@ -19,6 +21,24 @@ const Slider = ({ cake }: SliderProps) => {
 		handleCloseButtonClick
 	} = useSlider(cake.images);
 
+	const visibleSlides = useMemo(
+		() => slides.filter(slide => slide.isVisible),
+		[slides]
+	);
+
+	const dots = useMemo(
+		() =>
+			slides.map((slide, i) => ({
+				id: i,
+				className:
+					i === slideIndex
+						? `${styles.dots__dot} ${styles.dots__dot_active}`
+						: styles.dots__dot,
+				key: `${slide.slideSrc}-${i}`
+			})),
+		[slides, slideIndex]
+	);
+
 	return (
 		<div className={styles.outer}>
 			{isSliderVisible && (
@@ -29,20 +49,15 @@ const Slider = ({ cake }: SliderProps) => {
 						onTouchEnd={handleTouchEnd}
 						onTouchMove={handleTouchMove}
 					>
-						{slides.map((slide, i) => {
-							const keyValue = `${slide.slideAlt}-${i}`;
-							return (
-								slide.isVisible && (
-									<img
-										src={slide.slideSrc}
-										alt={slide.slideAlt}
-										width="535px"
-										height="535px"
-										key={keyValue}
-									/>
-								)
-							);
-						})}
+						{visibleSlides.map(slide => (
+							<img
+								src={slide.slideSrc}
+								alt={slide.slideAlt}
+								width="535"
+								height="535"
+								key={slide.slideSrc}
+							/>
+						))}
 
 						{slideIndex > 0 && (
 							<button
@@ -61,24 +76,17 @@ const Slider = ({ cake }: SliderProps) => {
 							></button>
 						)}
 						<div className={styles.dots}>
-							{slides.map((slide, i) => {
-								const keyValue = `${Math.random() * i}-${
-									slide.slideSrc
-								}`;
-								return (
-									<button
-										type="button"
-										className={
-											i === slideIndex
-												? `${styles.dots__dot} ${styles.dots__dot_active}`
-												: styles.dots__dot
-										}
-										key={keyValue}
-										onClick={() => handleDotsClick(i)}
-										aria-label={`Перейти к слайду ${i + 1}`}
-									></button>
-								);
-							})}
+							{dots.map(dot => (
+								<button
+									type="button"
+									className={dot.className}
+									key={dot.key}
+									onClick={() => handleDotsClick(dot.id)}
+									aria-label={`Перейти к слайду ${
+										dot.id + 1
+									}`}
+								></button>
+							))}
 						</div>
 						<button
 							className={styles.close}
