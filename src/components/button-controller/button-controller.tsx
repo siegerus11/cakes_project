@@ -8,62 +8,38 @@ type ButtonControllerProps = PropsWithChildren<{
 }>;
 
 const ButtonController = ({ children, outerClass }: ButtonControllerProps) => {
-	const componentClass = `${styles.component} ${outerClass}`;
-
 	const elementRef = useRef<HTMLDivElement | null>(null);
-	const [offsetValue, setOffsetValue] = useState<number>(0);
-	const [heightValue, setHeightValue] = useState<number>(0);
-	const [isContentVisible, setIsContentVisible] = useState(false);
-	const [isDraggin, setIsDraggin] = useState(false);
-	const bottomFringe =
-		document.documentElement.clientHeight - offsetValue - heightValue;
+	const [bounds, setBounds] = useState<{ top: number; bottom: number }>({
+		top: 0,
+		bottom: 0
+	});
 
 	useLayoutEffect(() => {
-		setOffsetValue(elementRef.current?.offsetTop!);
-		setHeightValue(elementRef.current?.offsetHeight!);
+		if (elementRef.current) {
+			const offset = elementRef.current.offsetTop;
+			const height = elementRef.current.offsetHeight;
+			const { clientHeight } = document.documentElement;
+			setBounds({
+				top: -offset,
+				bottom: clientHeight - offset - height
+			});
+		}
 	}, []);
-
-	const handleBottomSheetTouchEnd = () => {
-		if (isDraggin) return;
-		setIsContentVisible(prevState => !prevState);
-	};
-	const handleBottomSheetTouchStart = () => {
-		setIsDraggin(false);
-	};
 
 	return (
 		<Draggable
 			axis="y"
-			defaultPosition={{ x: 0, y: offsetValue }}
+			defaultPosition={{ x: 0, y: bounds.top }}
 			nodeRef={elementRef}
 			handle=".handle"
-			bounds={{
-				top: -offsetValue,
-				bottom: bottomFringe
-			}}
-			onDrag={() => setIsDraggin(true)}
+			bounds={bounds}
 		>
-			<div className={componentClass} ref={elementRef}>
+			<div
+				className={`${styles.component} ${outerClass}`}
+				ref={elementRef}
+			>
 				<div className={styles.inner}>{children}</div>
-				<div
-					className={styles.content}
-					style={{ height: `${isContentVisible ? 'unset' : 0}` }}
-				>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-					Aut voluptate itaque error dignissimos nostrum
-					exercitationem eligendi adipisci debitis pariatur qui
-					aperiam in rem quia, reiciendis atque autem nesciunt Lorem,
-					ipsum dolor sit amet consectetur adipisicing elit. Aut
-					voluptate itaque error dignissimos nostrum exercitationem
-					eligendi adipisci debitis pariatur qui aperiam in rem quia,
-					reiciendis atque autem nesciunt
-				</div>
-				<button
-					className={`${styles.item} handle`}
-					type="button"
-					onTouchStart={handleBottomSheetTouchStart}
-					onTouchEnd={handleBottomSheetTouchEnd}
-				></button>
+				<button className={`${styles.item} handle`} type="button" />
 			</div>
 		</Draggable>
 	);
