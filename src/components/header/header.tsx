@@ -54,6 +54,7 @@ const Header = () => {
 									className={styles.search__input}
 									type="search"
 									placeholder="Поиск"
+									aria-label="Поиск по товарам"
 								/>
 							</div>
 						</div>

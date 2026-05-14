@@ -58,7 +58,13 @@ const AllCard = ({ cake, path }: AllCardProps) => {
 		<Link className={styles.grid} to={path!}>
 			{cake.images.map((image, i) => {
 				const keyValue = `${i}-${cake.title}`;
-				return <img src={image} alt="cake" key={keyValue} />;
+				return (
+					<img
+						src={image}
+						alt={`Торт "${cake.title}" - изображение ${i + 1}`}
+						key={keyValue}
+					/>
+				);
 			})}
 			<div className={styles.allButton}>
 				<span>Открыть все</span>

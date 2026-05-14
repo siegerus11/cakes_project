@@ -182,6 +182,11 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 							className={arrowClassName}
 							type="button"
 							onClick={handleMobileArrowClick}
+							aria-label={
+								descriptionVisible
+									? 'Скрыть описание'
+									: 'Показать описание'
+							}
 						></button>
 						{cake.describe}
 					</div>
