@@ -1,10 +1,11 @@
+@use '../../_variables' as variables;
 .wrapper {
 	width: 100%;
 	padding: 50px 120px 46px 120px;
+	background-color: variables.$color-bg-additional;
 	border-radius: 35px 35px 0 0;
-	background-color: #303030;
 
-	>div>div {
+	> div > div {
 		display: flex;
 		align-items: flex-start;
 		justify-content: space-between;
@@ -26,8 +27,8 @@
 }
 
 .link {
+	color: variables.$color-text-light;
 	font-size: 16px;
-	color: #ccc;
 	text-decoration: none;
 }
 
@@ -45,7 +46,7 @@
 
 .agreementLink {
 	composes: link;
-	color: #595959;
+	color: variables.$color-text-secondary;
 }
 
 .social {
@@ -66,8 +67,8 @@
 
 	span {
 		margin-right: 7px;
+		color: variables.$color-text-inverted;
 		line-height: 100%;
-		color: #fff;
 	}
 
 	&__icon {
@@ -86,8 +87,8 @@
 		padding: 50px 40px 46px 40px;
 
 		nav {
-			margin-left: unset;
 			margin-right: unset;
+			margin-left: unset;
 
 			li {
 				margin-bottom: 8px;
@@ -115,8 +116,8 @@
 
 @media (max-width: 767px) {
 	.wrapper {
-		border-radius: 0;
 		padding: 23px 0 32px 0;
+		border-radius: 0;
 
 		nav {
 			order: 1;
@@ -135,13 +136,13 @@
 	}
 
 	.side {
-		margin-top: 29px;
 		order: 3;
+		margin-top: 29px;
 	}
 
 	.social {
-		margin-top: 25px;
 		order: 2;
+		margin-top: 25px;
 
 		&__icon {
 			margin-right: 15px;
@@ -153,9 +154,9 @@
 	}
 
 	.button {
+		width: 100%;
 		min-width: unset;
 		min-height: 47px;
 		margin-top: 29px;
-		width: 100%;
 	}
 }

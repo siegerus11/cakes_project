@@ -1,3 +1,4 @@
+@use '../../_variables' as variables;
 .page {
 	padding-top: 20px;
 	padding-bottom: 272px;
@@ -17,7 +18,7 @@
 		display: flex;
 		align-items: center;
 		padding: 16.5px 20px 16.5px 15px;
-		background: #f7f7f7;
+		background: variables.$color-bg-secondary;
 		border-radius: 11px;
 	}
 
@@ -31,7 +32,7 @@
 		width: 15px;
 		height: 15px;
 		margin-left: auto;
-		fill: #939393;
+		fill: variables.$color-text-light;
 	}
 
 	&__title {
@@ -48,7 +49,7 @@
 		display: flex;
 		align-items: center;
 		padding: 16.5px 20px 16.5px 15px;
-		background: #f7f7f7;
+		background: variables.$color-bg-secondary;
 		border-radius: 11px;
 	}
 
@@ -67,14 +68,14 @@
 		width: 15px;
 		height: 15px;
 		margin-left: auto;
-		fill: #939393;
+		fill: variables.$color-text-light;
 	}
 }
 
 .description {
 	max-width: 330px;
 	margin-top: 12px;
-	color: #b1b1b1;
+	color: variables.$color-text-light;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 136%;
@@ -92,13 +93,13 @@
 	margin-bottom: 10px;
 	padding: 17px 15px;
 	line-height: 112%;
-	background: #f7f7f7;
+	background: variables.$color-bg-secondary;
 	border: none;
 	border-radius: 12px;
 	outline: none;
 
 	&::placeholder {
-		color: #b1b1b1;
+		color: variables.$color-text-light;
 		font-weight: 400;
 		font-size: 16px;
 		line-height: 113%;
@@ -107,13 +108,13 @@
 
 .areaButton {
 	margin-top: 16px;
-	color: #b1b1b1;
+	color: variables.$color-text-light;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 113%;
 	background: none;
 	border: none;
-	border-bottom: 1px dotted #b1b1b1;
+	border-bottom: 1px dotted variables.$color-text-light;
 }
 
 .textarea {

@@ -1,28 +1,34 @@
+@use '../../_variables' as variables;
 .component {
-  padding: 56px 0 90px 0;
+	padding: 56px 0 90px 0;
 
-  hr {
-    color: #f6f6f6;
-    margin: 15px 0;
-  }
+	hr {
+		margin: 15px 0;
+		color: variables.$color-bg-secondary;
+	}
 }
 
-@media (max-width: 1440px) {}
+@media (max-width: 1440px) {
+}
 
-@media (max-width: 1200px) {}
+@media (max-width: 1200px) {
+}
 
-@media (max-width: 992px) {}
+@media (max-width: 992px) {
+}
 
 @media (max-width: 767px) {
-  .component {
-    padding: 25px 0 90px 0;
+	.component {
+		padding: 25px 0 90px 0;
 
-    hr {
-      margin-top: 11px;
-    }
-  }
+		hr {
+			margin-top: 11px;
+		}
+	}
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+}
 
-@media (max-width: 360px) {}
+@media (max-width: 360px) {
+}

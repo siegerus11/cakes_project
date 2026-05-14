@@ -14,8 +14,6 @@ import styles from './cake-article-page.module.scss';
 import OrderForm from './order-form/order-form';
 import Slider from './slider/slider';
 
-const POPUP_TITLE_CLASS = 'title_fz22 title_fw800';
-
 const CakeArticlePage = () => {
 	const activeId = useAppSelector(selectActiveOffer);
 	const activeOffer = useMemo(
@@ -101,7 +99,7 @@ const CakeArticlePage = () => {
 									<main className={styles.popup__main}>
 										<Title
 											titleText={fillingItem.title}
-											titleClass={POPUP_TITLE_CLASS}
+											titleClass="title_fz22 title_fw800"
 										/>
 										<p
 											className={

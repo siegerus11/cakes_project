@@ -1,5 +1,7 @@
+@use '../../_variables' as variables;
+
 .list {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 }

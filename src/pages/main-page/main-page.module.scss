@@ -1,3 +1,4 @@
+@use '../../_variables' as variables;
 .component {
 	padding: 94px 0 90px 0;
 }
@@ -10,7 +11,7 @@
 	&__link {
 		position: relative;
 		display: none;
-		color: #000;
+		color: variables.$color-text-primary;
 		font-weight: 600;
 		font-size: 12px;
 		line-height: 125%;
@@ -22,7 +23,7 @@
 			right: -25px;
 			width: 18px;
 			height: 18px;
-			background-color: #f6f6f6;
+			background-color: variables.$color-bg-secondary;
 			background-image: url('/images/nav-arrow-sm.svg');
 			background-repeat: no-repeat;
 			background-position: center;

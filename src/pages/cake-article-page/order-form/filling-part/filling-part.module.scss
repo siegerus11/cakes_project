@@ -1,3 +1,4 @@
+@use '../../../../_variables' as variables;
 .title {
 	font-weight: 600;
 	font-size: 16px;
@@ -29,7 +30,7 @@
 	min-height: 79px;
 	padding: 10px 20px 13px 12px;
 	overflow-wrap: break-word;
-	background-color: #f7f7f7;
+	background-color: variables.$color-bg-secondary;
 	border-radius: 0 0 15px 15px;
 }
 
@@ -37,7 +38,7 @@
 	display: block;
 	width: 108px;
 	height: 110px;
-	background-color: var(--secondary-color);
+	background-color: variables.$color-secondary;
 	border-radius: 15px 15px 0 0;
 
 	img {
@@ -69,7 +70,7 @@
 }
 
 .checkbox:checked + .card {
-	border-color: var(--primary-color);
+	border-color: variables.$color-primary;
 }
 
 @media (max-width: 1200px) {

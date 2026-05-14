@@ -1,3 +1,4 @@
+@use '../../../_variables' as variables;
 .list {
 	display: flex;
 	flex-direction: column;
@@ -114,7 +115,7 @@
 			display: block;
 			width: 23px;
 			height: 19px;
-			background-color: #f2f2f2;
+			background-color: variables.$color-bg-secondary;
 			border: none;
 			border-radius: 9px;
 
