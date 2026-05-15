@@ -6,7 +6,7 @@
 	useMemo,
 	useCallback
 } from 'react';
-import { Link, generatePath, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
 import Overlay from '../../components/overlay/overlay';
@@ -19,7 +19,6 @@ import useMediaQuery from '../../hooks/useMediaQuery';
 import { useAppSelector, useAppDispatch } from '../../hooks/useStore';
 import useTouch from '../../hooks/useTouch';
 import {
-	selectActiveOffer,
 	selectFinalSum,
 	selectShoppingCart,
 	clearCart
@@ -29,11 +28,11 @@ import CartList from './cart-item/cart-item';
 import styles from './shopping-cart-page.module.scss';
 
 const ShoppingCartPage = () => {
+	const navigate = useNavigate();
 	const [popupIsVisible, setPopupIsVisible] = useState<boolean>(false);
 	const [isAnimate, setIsAnimate] = useState<boolean>(false);
 	const [inputValue, setInputValue] = useState<string>('');
 
-	const activeOfferId = useAppSelector(selectActiveOffer);
 	const shoppingCart = useAppSelector(selectShoppingCart);
 	const dispatch = useAppDispatch();
 	const finalSumValue = useAppSelector(selectFinalSum);
@@ -41,20 +40,9 @@ const ShoppingCartPage = () => {
 		() => getFormattedPrice(finalSumValue),
 		[finalSumValue]
 	);
-	const location = useLocation();
 	const confirm = useConfirm();
 
 	const isMobile = useMediaQuery('(max-width: 576px)');
-
-	const backLink = useMemo(
-		() =>
-			location.state?.from === AppRoute.CakeOfferArticle
-				? generatePath(AppRoute.CakeOfferArticle, {
-						id: activeOfferId
-				  })
-				: location.state?.from,
-		[location.state?.from, activeOfferId]
-	);
 
 	const handleTrashButtonClick = useCallback(() => {
 		const answer = confirm(ConfirmMessage.ClearCart);
@@ -110,12 +98,13 @@ const ShoppingCartPage = () => {
 	return (
 		<div className={`page ${styles.page}`}>
 			<div className="container">
-				<Link
+				<button
 					className={`back-link back-link_m-small ${styles.back}`}
-					to={backLink}
+					type="button"
+					onClick={() => navigate(-1)}
 				>
 					<span>Назад</span>
-				</Link>
+				</button>
 				<div className={styles.wrapper}>
 					<div className={styles.header}>
 						<Title

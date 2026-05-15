@@ -1,8 +1,14 @@
 @use '../../_variables' as variables;
 @use '../../_mixins' as mixins;
+
 .page {
 	padding-top: 20px;
 	padding-bottom: 272px;
+}
+
+.back {
+	@include mixins.button-reset;
+	display: block;
 }
 
 .wrapper {

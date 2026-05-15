@@ -6,6 +6,8 @@
 }
 
 .back {
+	@include mixins.button-reset;
+	display: block;
 	margin-left: 81px;
 }
 

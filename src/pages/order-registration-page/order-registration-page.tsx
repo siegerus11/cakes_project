@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
 import Title from '../../components/title/title';
 import { SubmitButton } from '../../components/ui/button/button';
-import { AppRoute } from '../../constants';
 import styles from './order-registration-page.module.scss';
 
 const OrderRegistrationPage = () => {
+	const navigate = useNavigate();
 	const [isAreaVisible, setIsAreaVisible] = useState(false);
 
 	const handleAreaButtonClick = () => {
@@ -18,13 +18,13 @@ const OrderRegistrationPage = () => {
 		<>
 			<div className={`page ${styles.page}`}>
 				<div className="container_secondary container_m-pdg15 container">
-					<Link
+					<button
 						className={`back-link back-link_m-small ${styles.back}`}
-						to={AppRoute.ShoppingCart}
+						type="button"
+						onClick={() => navigate(-1)}
 					>
-						{' '}
 						<span>Назад</span>
-					</Link>
+					</button>
 
 					<div className={styles.wrapper}>
 						<Title
