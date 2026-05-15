@@ -103,7 +103,7 @@ export const mainProcess = createSlice({
 		selectTotalPrice: state => state.totalPrice,
 		selectActiveOffer: state => state.activeOffer,
 		selectShoppingCart: state => state.shoppingCart,
-		selelectSortingStatus: state => state.sortingStatus,
+		selectSortingStatus: state => state.sortingStatus,
 		selectFinalSum: state => state.finalSum
 	}
 });
@@ -121,6 +121,6 @@ export const {
 	selectTotalPrice,
 	selectActiveOffer,
 	selectShoppingCart,
-	selelectSortingStatus,
-	selectFinalSum
+selectSortingStatus,
+selectFinalSum
 } = mainProcess.selectors;

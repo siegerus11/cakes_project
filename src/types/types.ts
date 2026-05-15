@@ -50,6 +50,7 @@ export type CakeOffer = {
 export type Radio = {
 	weightValue: number;
 	isChecked: boolean;
+	value?: number;
 };
 
 export type Slide = {

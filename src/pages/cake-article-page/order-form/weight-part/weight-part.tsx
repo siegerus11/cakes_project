@@ -4,7 +4,8 @@ import {
 	useState,
 	useId,
 	useCallback,
-	useMemo
+	useMemo,
+	useRef
 } from 'react';
 
 import { Radio } from '../../../../types/types';
@@ -67,6 +68,7 @@ type WeightPartProps = {
 const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 	const [isVisibleSelect, setIsVisibleSelect] = useState(false);
 	const dropdownId = useId();
+	const selectRef = useRef<HTMLDivElement>(null);
 
 	const handleRadioChange = useCallback(
 		(e: ChangeEvent<HTMLInputElement>, idx: number) => {
@@ -81,9 +83,9 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 
 	useEffect(() => {
 		const handleDocumentClick = (e: MouseEvent) => {
-			const target = e.target as HTMLDivElement;
-			if (target.closest(`.${styles.select}`)) return;
-			setIsVisibleSelect(false);
+			if (selectRef.current && !selectRef.current.contains(e.target as Node)) {
+				setIsVisibleSelect(false);
+			}
 		};
 		const handleKeyDown = (e: KeyboardEvent) => {
 			if (e.key === 'Escape') {
@@ -118,7 +120,7 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 	return (
 		<li className={styles.component}>
 			<h3 className={styles.title}>Вес</h3>
-			<div className={styles.select}>
+			<div className={styles.select} ref={selectRef}>
 				<button
 					type="button"
 					className={styles.select__interactor}

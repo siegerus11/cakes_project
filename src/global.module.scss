@@ -1,7 +1,12 @@
+// reset styles
 @use './libs/bootstrap-reboot.min';
+
+// helpers
 @use './_fonts';
 @use './_variables' as variables;
 @use './_mixins' as mixins;
+
+// global component-styles
 @use './components/ui/button/button.module';
 @use './components/title/title.module';
 

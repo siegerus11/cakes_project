@@ -7,9 +7,10 @@ export const getPricesByRadioValue = (
 ): number[] => {
 	const checked = array.find((item: Radio) => item.isChecked);
 
-	const multiplier = weightScale[checked?.weightValue!].multiplier;
-
 	if (!checked?.weightValue) return [0];
 
-	return [multiplier * initialPrice];
+	const weightConfig = weightScale[checked.weightValue];
+	if (!weightConfig) return [0];
+
+	return [weightConfig.multiplier * initialPrice];
 };

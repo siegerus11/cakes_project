@@ -4,7 +4,7 @@ import { Radio } from '../types/types';
 
 function useRadio(
 	initialRadios: Radio[]
-): [Radio[], (e: ChangeEvent<HTMLInputElement>, idx: number) => void] {
+): (Radio[] | ((e: ChangeEvent<HTMLInputElement>, idx: number) => void))[] {
 	const [radios, setRadios] = useState(initialRadios);
 
 	const handleRadioChange = (

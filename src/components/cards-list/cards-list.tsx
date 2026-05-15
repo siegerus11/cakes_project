@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { useAppSelector } from '../../hooks/useStore';
-import { selelectSortingStatus } from '../../store/main-process/main-process';
+import { selectSortingStatus } from '../../store/main-process/main-process';
 import { CakeOffer, RoutePath } from '../../types/types';
 import getSortedByCategory from '../../utils/getSortedByCategory';
 import Card, { AllCard } from '../card/card';
@@ -14,7 +14,7 @@ type CardsListProps = {
 };
 
 const CardsList = ({ cakes, isMainPage, path }: CardsListProps) => {
-	const sortingStatus = useAppSelector(selelectSortingStatus);
+	const sortingStatus = useAppSelector(selectSortingStatus);
 	const sortedCakes = useMemo(
 		() => getSortedByCategory(cakes, sortingStatus),
 		[cakes, sortingStatus]
