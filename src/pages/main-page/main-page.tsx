@@ -43,8 +43,8 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 	return (
 		<>
 			<div className="container">
-				<h1 className="visually-hidden">Cackes</h1>
 				<div className={`page ${styles.component}`}>
+					<h1 className="visually-hidden">Cackes</h1>
 					<section className={styles.primary}>
 						<div className={styles.headline}>
 							<Title
@@ -93,7 +93,11 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 					className={`button button_primary ${styles.button}`}
 					path={AppRoute.ShoppingCart}
 				>
-					<svg className={styles.button__icon} viewBox="0 0 40 40" aria-hidden="true">
+					<svg
+						className={styles.button__icon}
+						viewBox="0 0 40 40"
+						aria-hidden="true"
+					>
 						<use xlinkHref="#cart"></use>
 					</svg>
 					<span
