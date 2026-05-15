@@ -16,18 +16,13 @@ const Adder = ({ priceCounter, isWrapped, formId }: AdderProps) => {
 		[priceCounter]
 	);
 
-	const className = useMemo(
-		() =>
-			isWrapped
-				? `${styles.component} ${styles.component_wrapped}`
-				: styles.component,
-		[isWrapped]
-	);
+	const className = isWrapped
+		? `${styles.component} ${styles.component_wrapped}`
+		: styles.component;
 
-	const adderClassName = useMemo(
-		() => `${styles.adder} ${isWrapped ? styles.adder_w100 : ''}`,
-		[isWrapped]
-	);
+	const adderClassName = `${styles.adder} ${
+		isWrapped ? styles.adder_w100 : ''
+	}`;
 
 	return (
 		<div className={className}>

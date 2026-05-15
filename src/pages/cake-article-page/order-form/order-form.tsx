@@ -136,13 +136,9 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 		[descriptionVisible]
 	);
 
-	const arrowClassName = useMemo(
-		() =>
-			descriptionVisible
-				? `${styles.describe__arrow} ${styles.describe__arrow_active}`
-				: styles.describe__arrow,
-		[descriptionVisible]
-	);
+	const arrowClassName = descriptionVisible
+		? `${styles.describe__arrow} ${styles.describe__arrow_active}`
+		: styles.describe__arrow;
 
 	return (
 		<>
