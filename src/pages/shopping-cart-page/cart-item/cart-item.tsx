@@ -111,6 +111,7 @@ const CartItem = memo(({ order }: CartItemProps) => {
 							className={styles.quantity__button}
 							type="button"
 							onClick={handleDecrease}
+							aria-label="Уменьшить количество"
 						></button>
 						<span className={styles.quantity__value}>
 							{quantity}
@@ -119,6 +120,7 @@ const CartItem = memo(({ order }: CartItemProps) => {
 							className={styles.quantity__button}
 							type="button"
 							onClick={handleIncrease}
+							aria-label="Увеличить количество"
 						></button>
 					</div>
 				</div>

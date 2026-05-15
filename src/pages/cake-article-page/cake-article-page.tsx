@@ -84,8 +84,9 @@ const CakeArticlePage = () => {
 								<Link
 									className={styles.popup__back}
 									to={AppRoute.CakesCatalog}
+									aria-label="Назад к каталогу"
 								>
-									<span></span>
+									<span aria-hidden="true"></span>
 								</Link>
 								<div className={styles.popup__wrapper}>
 									<div className={styles.popup__image}>

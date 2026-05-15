@@ -93,7 +93,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 					className={`button button_primary ${styles.button}`}
 					path={AppRoute.ShoppingCart}
 				>
-					<svg className={styles.button__icon} viewBox="0 0 40 40">
+					<svg className={styles.button__icon} viewBox="0 0 40 40" aria-hidden="true">
 						<use xlinkHref="#cart"></use>
 					</svg>
 					<span

@@ -50,6 +50,7 @@ const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
 						<svg
 							className={styles.button__icon}
 							viewBox="0 0 15 13"
+							aria-hidden="true"
 						>
 							<use xlinkHref="#tg-sm"></use>
 						</svg>

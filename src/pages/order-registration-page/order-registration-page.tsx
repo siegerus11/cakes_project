@@ -37,6 +37,7 @@ const OrderRegistrationPage = () => {
 									<svg
 										className={styles.delivery__icon}
 										viewBox="0 0 18 18"
+										aria-hidden="true"
 									>
 										<use xlinkHref="#deliveryman"></use>
 									</svg>
@@ -46,6 +47,7 @@ const OrderRegistrationPage = () => {
 									<svg
 										className={styles.delivery__arrow}
 										viewBox="0 0 18 18"
+										aria-hidden="true"
 									>
 										<use xlinkHref="#arrow-sm"></use>
 									</svg>
@@ -56,13 +58,14 @@ const OrderRegistrationPage = () => {
 									<svg
 										className={styles.payment__icon}
 										viewBox="0 0 18 18"
+										aria-hidden="true"
 									>
 										<use xlinkHref="#card"></use>
 									</svg>
 									<h3 className={styles.payment__title}>
 										Оплата переводом на карту
 									</h3>
-									<svg className={styles.payment__arrow}>
+									<svg className={styles.payment__arrow} aria-hidden="true">
 										<use xlinkHref="#arrow-sm"></use>
 									</svg>
 								</div>

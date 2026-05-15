@@ -37,24 +37,33 @@ const Footer = () => {
 					<NavMenu navs={secondaryNavs} linkClassName={styles.link} />
 					<div className={styles.social}>
 						<SocialLinks>
-							<svg
-								className={styles.social__icon}
-								viewBox="0 0 40 40"
-							>
-								<use xlinkHref="#tg-bw"></use>
-							</svg>
-							<svg
-								className={styles.social__icon}
-								viewBox="0 0 40 40"
-							>
-								<use xlinkHref="#vk-bw"></use>
-							</svg>
-							<svg
-								className={styles.social__icon}
-								viewBox="0 0 40 40"
-							>
-								<use xlinkHref="#inst-bw"></use>
-							</svg>
+							<a className={styles.social__link} href="/" aria-label="Telegram">
+								<svg
+									className={styles.social__icon}
+									viewBox="0 0 40 40"
+									aria-hidden="true"
+								>
+									<use xlinkHref="#tg-bw"></use>
+								</svg>
+							</a>
+							<a className={styles.social__link} href="/" aria-label="ВКонтакте">
+								<svg
+									className={styles.social__icon}
+									viewBox="0 0 40 40"
+									aria-hidden="true"
+								>
+									<use xlinkHref="#vk-bw"></use>
+								</svg>
+							</a>
+							<a className={styles.social__link} href="/" aria-label="Instagram">
+								<svg
+									className={styles.social__icon}
+									viewBox="0 0 40 40"
+									aria-hidden="true"
+								>
+									<use xlinkHref="#inst-bw"></use>
+								</svg>
+							</a>
 						</SocialLinks>
 						<Button
 							className={`button button_secondary ${styles.button}`}
@@ -65,6 +74,7 @@ const Footer = () => {
 							<svg
 								className={styles.button__icon}
 								viewBox="0 0 15 13"
+								aria-hidden="true"
 							>
 								<use xlinkHref="#tg-sm"></use>
 							</svg>

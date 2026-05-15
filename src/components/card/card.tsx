@@ -38,10 +38,10 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 				<img src={images[0]} alt={title} width="282" height="282" />
 			</div>
 			<span className={cardTitleClass}>{title}</span>
-			<div className={styles.bottom}>
-				<span className={styles.cost}>{price} ₽</span>
-				<Button className={`button button_tertiary ${styles.button}`} />
-			</div>
+<div className={styles.bottom}>
+						<span className={styles.cost}>{price} ₽</span>
+						<Button className={`button button_tertiary ${styles.button}`} aria-label="Добавить в корзину" />
+					</div>
 		</Link>
 	);
 };

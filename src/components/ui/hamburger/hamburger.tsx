@@ -17,7 +17,7 @@ const Hamburger = ({ onHamburgerClick, isPopup }: HamburgerProps) => {
 			}
 			onClick={() => handleHamburgerClick()}
 			type="button"
-			aria-label="Открыть меню"
+			aria-label={isPopup ? "Закрыть меню" : "Открыть меню"}
 		>
 			<div className={styles.item}></div>
 			<div className={styles.item}></div>

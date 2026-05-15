@@ -47,8 +47,9 @@ const Popup = ({
 					onTouchStart={handleTouchStart}
 					onTouchMove={handleTouchMove}
 					onTouchEnd={handleTouchEnd}
+					aria-label="Закрыть"
 				>
-					<svg className={styles.button__icon} viewBox="0 0 18 18">
+					<svg className={styles.button__icon} viewBox="0 0 18 18" aria-hidden="true">
 						<use xlinkHref="#close"></use>
 					</svg>
 				</button>

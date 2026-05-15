@@ -17,8 +17,9 @@ const ShoppingCartItem = () => {
 			className={styles.component}
 			to={AppRoute.ShoppingCart}
 			state={{ from: location.pathname }}
+			aria-label="Корзина"
 		>
-			<svg className={styles.component__icon} viewBox="0 0 20 20">
+			<svg className={styles.component__icon} viewBox="0 0 20 20" aria-hidden="true">
 				<use xlinkHref="#cart"></use>
 			</svg>
 			<div className={styles.component__indicator}>

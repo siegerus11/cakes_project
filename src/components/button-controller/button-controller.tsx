@@ -39,7 +39,7 @@ const ButtonController = ({ children, outerClass }: ButtonControllerProps) => {
 				ref={elementRef}
 			>
 				<div className={styles.inner}>{children}</div>
-				<button className={`${styles.item} handle`} type="button" />
+				<button className={`${styles.item} handle`} type="button" aria-label="Переместить заказ" />
 			</div>
 		</Draggable>
 	);

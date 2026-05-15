@@ -47,6 +47,7 @@ const Header = () => {
 								<svg
 									className={styles.search__icon}
 									viewBox="0 0 40 40"
+									aria-hidden="true"
 								>
 									<use xlinkHref="#search"></use>
 								</svg>
@@ -66,6 +67,7 @@ const Header = () => {
 								<svg
 									className={styles.button__icon}
 									viewBox="0 0 40 40"
+									aria-hidden="true"
 								>
 									<use xlinkHref="#cart"></use>
 								</svg>
