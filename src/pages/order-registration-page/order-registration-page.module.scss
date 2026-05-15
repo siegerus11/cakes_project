@@ -8,7 +8,9 @@
 
 .back {
 	@include mixins.button-reset;
-	display: block;
+	&::before {
+		height: 16px;
+	}
 }
 
 .wrapper {

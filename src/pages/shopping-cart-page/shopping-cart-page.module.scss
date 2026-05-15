@@ -7,8 +7,10 @@
 
 .back {
 	@include mixins.button-reset;
-	display: block;
 	margin-left: 81px;
+	&::before {
+		height: 16px;
+	}
 }
 
 .title {
