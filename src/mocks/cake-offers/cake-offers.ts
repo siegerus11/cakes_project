@@ -3,6 +3,40 @@ import { v4 as uuidv } from 'uuid';
 
 import { CakeOffer } from '../../types/types';
 
+type TestType = CakeOffer['id'];
+
+// console.log(obTestTypeject);
+
+// const createFilling = (
+// 	name: string,
+// 	title: string,
+// 	price: number,
+// 	description: string,
+// 	image: string
+// ): CakeOffer['filling'][0] => ({
+// 	name,
+// 	title,
+// 	price,
+// 	description,
+// 	isInclude: false,
+// 	image,
+// 	ingredients: [
+// 		'Вишня',
+// 		'Йогуртовый крем на основе натурального йогурта',
+// 		'Сливки',
+// 		'Бисквит ванильный',
+// 		'Вишневый сироп',
+// 		'Сливочное масло',
+// 		'Натуральный ванилин'
+// 	],
+// 	nutrition: {
+// 		calories: '200 ккал',
+// 		proteins: '5 г',
+// 		fats: '12 г',
+// 		carbs: '20 г'
+// 	}
+// });
+
 const cakeOffers: CakeOffer[] = [
 	{
 		id: uuidv(),
@@ -26,7 +60,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Суфле с персиками',
@@ -34,7 +83,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Лесная ягода',
@@ -42,7 +106,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Домашний',
@@ -50,7 +129,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -107,7 +201,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Суфле с персиками',
@@ -115,7 +224,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Лесная ягода',
@@ -123,7 +247,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Домашний',
@@ -131,7 +270,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -188,7 +342,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Суфле с персиками',
@@ -196,7 +365,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Лесная ягода',
@@ -204,7 +388,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Домашний',
@@ -212,7 +411,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -269,7 +483,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Суфле с персиками',
@@ -277,7 +506,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Лесная ягода',
@@ -285,7 +529,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Домашний',
@@ -293,7 +552,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -351,7 +625,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Суфле с персиками',
@@ -359,7 +648,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Лесная ягода',
@@ -367,7 +671,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Домашний',
@@ -375,7 +694,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -432,7 +766,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Суфле с персиками',
@@ -440,7 +789,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Лесная ягода',
@@ -448,7 +812,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Домашний',
@@ -456,7 +835,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -513,7 +907,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Суфле с персиками',
@@ -521,7 +930,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Лесная ягода',
@@ -529,7 +953,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Домашний',
@@ -537,7 +976,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			}
 		],
 		weight: [1.5, 3, 5],
@@ -594,7 +1048,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Суфле с персиками',
@@ -602,7 +1071,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Лесная ягода',
@@ -610,7 +1094,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			},
 			{
 				name: 'Домашний',
@@ -618,7 +1117,22 @@ const cakeOffers: CakeOffer[] = [
 				price: 950,
 				description: 'Lorem ipsum dolor sit amet consectetur',
 				isInclude: false,
-				image: '/'
+				image: '/',
+				ingredients: [
+					'Вишня',
+					'Йогуртовый крем на основе натурального йогурта',
+					'Сливки',
+					'Бисквит ванильный',
+					'Вишневый сироп',
+					'Сливочное масло',
+					'Натуральный ванилин'
+				],
+				nutrition: {
+					calories: '200 ккал',
+					proteins: '5 г',
+					fats: '12 г',
+					carbs: '20 г'
+				}
 			}
 		],
 		weight: [1.5, 3, 5],

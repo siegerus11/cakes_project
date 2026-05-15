@@ -116,26 +116,56 @@ const CakeArticlePage = () => {
 										>
 											<span>Понятно, спасибо</span>
 										</Button>
-										<ul className={styles.popup__toplist}>
-											<li>Вишня</li>
-											<li>
-												Йогуртовый крем на основе
-												натурального йогурта
-											</li>
-											<li>Сливки</li>
-											<li>Бисквит ванильный</li>
-											<li>Вишневый сироп</li>
-											<li>Сливочное масло</li>
-											<li>Натуральный ванилин</li>
-										</ul>
-										<ul
-											className={styles.popup__bottomlist}
-										>
-											<li>Калорийность: 200 ккал</li>
-											<li>Белки: 5 г</li>
-											<li>Жиры: 12 г</li>
-											<li>Углеводы: 20 г</li>
-										</ul>
+										{fillingItem.ingredients && (
+											<ul
+												className={
+													styles.popup__toplist
+												}
+											>
+												{fillingItem.ingredients.map(
+													ingridient => (
+														<li
+															key={`${ingridient}`}
+														>
+															{ingridient}
+														</li>
+													)
+												)}
+											</ul>
+										)}
+										{fillingItem.nutrition && (
+											<ul
+												className={
+													styles.popup__bottomlist
+												}
+											>
+												<li>
+													Калорийность:{' '}
+													{
+														fillingItem.nutrition
+															.calories
+													}
+												</li>
+												<li>
+													Белки:{' '}
+													{
+														fillingItem.nutrition
+															.proteins
+													}
+												</li>
+												<li>
+													Жиры:{' '}
+													{fillingItem.nutrition.fats}
+												</li>
+												<li>
+													Углеводы:{' '}
+													{
+														fillingItem.nutrition
+															.carbs
+													}
+												</li>
+											</ul>
+										)}
 									</main>
 								</div>
 							</Popup>
