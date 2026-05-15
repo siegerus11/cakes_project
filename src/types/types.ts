@@ -24,6 +24,13 @@ export type Filling = {
 	description: string;
 	isInclude: boolean;
 	image: string;
+	ingredients?: string[];
+	nutrition?: {
+		calories: string;
+		proteins: string;
+		fats: string;
+		carbs: string;
+	};
 };
 
 export type Optional = {
