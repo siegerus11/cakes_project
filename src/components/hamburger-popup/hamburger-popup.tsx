@@ -58,7 +58,7 @@ const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
 						<a className={styles.icon} href="/">
 							<img
 								src="../../../images/tg-colored.svg"
-								alt="tg-icon"
+								alt="telegram-icon"
 							/>
 						</a>
 						<a className={styles.icon} href="/">
@@ -70,7 +70,7 @@ const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
 						<a className={styles.icon} href="/">
 							<img
 								src="../../../images/inst-colored.svg"
-								alt="inst-icon"
+								alt="instagram-icon"
 							/>
 						</a>
 					</SocialLinks>

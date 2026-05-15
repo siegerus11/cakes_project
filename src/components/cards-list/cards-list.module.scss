@@ -45,7 +45,7 @@
 		justify-content: flex-start;
 		margin-top: 15px;
 
-		&_jcSpanceBtw {
+		&_jcSpaceBtw {
 			justify-content: space-around;
 		}
 
@@ -58,7 +58,7 @@
 
 @media (max-width: 400px) {
 	.component {
-		&_jcSpanceBtw {
+		&_jcSpaceBtw {
 			justify-content: space-between;
 		}
 	}

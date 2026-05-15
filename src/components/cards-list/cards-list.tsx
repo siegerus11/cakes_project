@@ -19,14 +19,11 @@ const CardsList = ({ cakes, isMainPage, path }: CardsListProps) => {
 		() => getSortedByCategory(cakes, sortingStatus),
 		[cakes, sortingStatus]
 	);
-	const relevantCakes = useMemo(
-		() => (isMainPage ? cakes : sortedCakes),
-		[isMainPage, cakes, sortedCakes]
-	);
+	const relevantCakes = isMainPage ? cakes : sortedCakes;
 
 	const listClass = isMainPage
 		? styles.component
-		: `${styles.component} ${styles.component_mt30} ${styles.component_fw} ${styles.component_rg} ${styles.component_jcSpanceBtw}`;
+		: `${styles.component} ${styles.component_mt30} ${styles.component_fw} ${styles.component_rg} ${styles.component_jcSpaceBtw}`;
 
 	return (
 		<ul className={listClass}>

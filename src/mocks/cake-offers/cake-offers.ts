@@ -3,40 +3,6 @@ import { v4 as uuidv } from 'uuid';
 
 import { CakeOffer } from '../../types/types';
 
-type TestType = CakeOffer['id'];
-
-// console.log(obTestTypeject);
-
-// const createFilling = (
-// 	name: string,
-// 	title: string,
-// 	price: number,
-// 	description: string,
-// 	image: string
-// ): CakeOffer['filling'][0] => ({
-// 	name,
-// 	title,
-// 	price,
-// 	description,
-// 	isInclude: false,
-// 	image,
-// 	ingredients: [
-// 		'Вишня',
-// 		'Йогуртовый крем на основе натурального йогурта',
-// 		'Сливки',
-// 		'Бисквит ванильный',
-// 		'Вишневый сироп',
-// 		'Сливочное масло',
-// 		'Натуральный ванилин'
-// 	],
-// 	nutrition: {
-// 		calories: '200 ккал',
-// 		proteins: '5 г',
-// 		fats: '12 г',
-// 		carbs: '20 г'
-// 	}
-// });
-
 const cakeOffers: CakeOffer[] = [
 	{
 		id: uuidv(),
