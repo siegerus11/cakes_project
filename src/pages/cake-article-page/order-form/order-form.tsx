@@ -180,7 +180,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 									: 'Показать описание'
 							}
 						></button>
-						{cake.describe}
+						<p>{cake.describe}</p>
 					</div>
 					<Adder
 						priceCounter={totalPrice}

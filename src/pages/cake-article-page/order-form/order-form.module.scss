@@ -1,5 +1,6 @@
 @use '../../../_variables' as variables;
 @use '../../../_mixins' as mixins;
+
 .list {
 	@include mixins.flex-column;
 	align-items: flex-start;
