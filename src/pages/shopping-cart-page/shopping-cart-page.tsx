@@ -97,6 +97,7 @@ const ShoppingCartPage = () => {
 
 	return (
 		<main className={`page ${styles.page}`}>
+			<h1 className="visually-hidden">Корзина</h1>
 			<div className="container">
 				<button
 					className={`back-link back-link_m-small ${styles.back}`}
@@ -169,15 +170,15 @@ const ShoppingCartPage = () => {
 							titleClass={styles.popup__title}
 						/>
 						<div className={styles.popup__wrapper}>
-							<form id="promo-form" onSubmit={handlePromoSubmit}>
-								<input
-									className={styles.popup__input}
-									placeholder="Введите промокод"
-									onChange={handleInputChange}
-									value={inputValue}
-									name="promo"
-									id="promo-form"
-								/>
+<form id="promo-form" onSubmit={handlePromoSubmit}>
+						<input
+							className={styles.popup__input}
+							placeholder="Введите промокод"
+							onChange={handleInputChange}
+							value={inputValue}
+							name="promo"
+							id="promo"
+						/>
 							</form>
 							{inputValue && (
 								<button

@@ -38,7 +38,12 @@ const Popup = ({
 		if (onTouchEnd) onTouchEnd(e);
 	};
 	return (
-		<div className={outerClass} onAnimationEnd={onAnimationEnd}>
+		<div
+			className={outerClass}
+			onAnimationEnd={onAnimationEnd}
+			role="dialog"
+			aria-modal="true"
+		>
 			{onCloseClick && (
 				<button
 					className={closeClass}

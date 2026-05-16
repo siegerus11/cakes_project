@@ -86,16 +86,13 @@ const CartItem = memo(({ order }: CartItemProps) => {
 	);
 
 	return (
-		<div className={styles.item}>
+		<li className={styles.item}>
 			<div className={styles.item__main}>
 				<div className={styles.item__image}>
-					<img alt="cake" width="60" height="60" />
+					<img alt="Торт" width="60" height="60" />
 				</div>
 				<div>
-					<h3 className={styles.item__title}>
-						Торт с ягодами и безе
-					</h3>
-
+					<h3 className={styles.item__title}>Торт с ягодами и безе</h3>
 					<div className={styles.item__description}>
 						<span>Начинка: {fillingsText}</span>
 						<span>Вес: {weightText}</span>
@@ -113,9 +110,7 @@ const CartItem = memo(({ order }: CartItemProps) => {
 							onClick={handleDecrease}
 							aria-label="Уменьшить количество"
 						></button>
-						<span className={styles.quantity__value}>
-							{quantity}
-						</span>
+						<span className={styles.quantity__value}>{quantity}</span>
 						<button
 							className={styles.quantity__button}
 							type="button"
@@ -125,7 +120,7 @@ const CartItem = memo(({ order }: CartItemProps) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</li>
 	);
 });
 

@@ -5,7 +5,8 @@ type Props = {};
 
 const AboutPage = (props: Props) => {
 	return (
-		<main className="page about-page">
+		<main className={`page ${styles.page}`}>
+			<h1 className="visually-hidden">О нас</h1>
 			<p>AboutPage</p>
 			<BreadCrumbs />
 		</main>

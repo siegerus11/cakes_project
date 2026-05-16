@@ -29,7 +29,12 @@ const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
 	);
 
 	return (
-		<div className={styles.wrapper}>
+		<div
+			className={styles.wrapper}
+			role="dialog"
+			aria-modal="true"
+			aria-label="Меню"
+		>
 			<div className="container">
 				<div>
 					<Hamburger
@@ -56,22 +61,22 @@ const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
 						</svg>
 					</Button>
 					<SocialLinks>
-						<a className={styles.icon} href="/">
+						<a className={styles.icon} href="/" aria-label="Telegram">
 							<img
 								src="../../../images/tg-colored.svg"
-								alt="telegram-icon"
+								alt=""
 							/>
 						</a>
-						<a className={styles.icon} href="/">
+						<a className={styles.icon} href="/" aria-label="ВКонтакте">
 							<img
 								src="../../../images/vk-colored.svg"
-								alt="vk-icon"
+								alt=""
 							/>
 						</a>
-						<a className={styles.icon} href="/">
+						<a className={styles.icon} href="/" aria-label="Instagram">
 							<img
 								src="../../../images/inst-colored.svg"
-								alt="instagram-icon"
+								alt=""
 							/>
 						</a>
 					</SocialLinks>

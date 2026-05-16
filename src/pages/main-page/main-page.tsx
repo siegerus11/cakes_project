@@ -44,7 +44,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 		<>
 			<div className="container">
 				<main className={`page ${styles.component}`}>
-					<h1 className="visually-hidden">Cackes</h1>
+					<h1 className="visually-hidden">Cakes</h1>
 					<section className={styles.primary}>
 						<div className={styles.headline}>
 							<Title
