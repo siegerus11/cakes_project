@@ -97,7 +97,6 @@ const ShoppingCartPage = () => {
 
 	return (
 		<main className={`page ${styles.page}`}>
-			<h1 className="visually-hidden">Корзина</h1>
 			<div className="container">
 				<button
 					className={`back-link back-link_m-small ${styles.back}`}
@@ -111,6 +110,7 @@ const ShoppingCartPage = () => {
 						<Title
 							titleText="Ваш заказ"
 							titleClass={styles.title}
+							level="h1"
 						/>
 						<button
 							className={styles.trashButton}
@@ -168,6 +168,7 @@ const ShoppingCartPage = () => {
 						<Title
 							titleText="Промокод"
 							titleClass={styles.popup__title}
+							level="h2"
 						/>
 						<div className={styles.popup__wrapper}>
 <form id="promo-form" onSubmit={handlePromoSubmit}>

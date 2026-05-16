@@ -17,7 +17,6 @@ const OrderRegistrationPage = () => {
 	return (
 		<>
 			<main className={`page ${styles.page}`}>
-				<h1 className="visually-hidden">Оформление заказа</h1>
 				<div className="container_secondary container_m-pdg15 container">
 					<button
 						className={`back-link back-link_m-small ${styles.back}`}
@@ -31,6 +30,7 @@ const OrderRegistrationPage = () => {
 						<Title
 							titleText="Оформление заказа"
 							titleClass={`title_fw800 title_fz30 ${styles.title}`}
+							level="h1"
 						/>
 						<form>
 							<section className={styles.delivery}>

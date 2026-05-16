@@ -51,6 +51,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 								titleClass="title_wth-arrow"
 								titleText={cakesTitle}
 								path={AppRoute.CakesCatalog}
+								level="h2"
 							/>
 							<Link
 								to={AppRoute.CakesCatalog}
@@ -71,6 +72,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 								titleClass="title_wth-arrow"
 								titleText={bentoTitle}
 								path={AppRoute.BentoCakesCatalog}
+								level="h2"
 							/>
 							<Link
 								to={AppRoute.BentoCakesCatalog}

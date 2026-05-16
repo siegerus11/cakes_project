@@ -36,12 +36,11 @@ const CakeArticlePage = () => {
 	}, []);
 
 	if (!activeOffer) {
-		return null; // или заглушка
+		return null;
 	}
 
 	return (
 		<main className={`page ${styles.component}`}>
-			<h1 className="visually-hidden">Карточка торта</h1>
 			<ShoppingCartItem />
 			<div className="container_secondary container">
 				<Link
@@ -58,6 +57,7 @@ const CakeArticlePage = () => {
 							<Title
 								titleText={activeOffer.title}
 								titleClass={titleClassName}
+								level="h1"
 							/>
 						</div>
 						<OrderForm
@@ -102,6 +102,7 @@ const CakeArticlePage = () => {
 										<Title
 											titleText={fillingItem.title}
 											titleClass="title_fz22 title_fw800"
+											level="h2"
 										/>
 										<p
 											className={

@@ -37,8 +37,7 @@ const CatalogPage = ({ cakes }: CatalogPageProps) => {
 			</div>
 			<main className={`page page_catalog ${styles.component}`}>
 				<div className="container">
-					<h1 className="visually-hidden">Каталог тортов</h1>
-					<Title titleText={pageTitle} />
+					<Title titleText={pageTitle} level="h1" />
 					<hr />
 					<SortList />
 				</div>
