@@ -83,7 +83,10 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 
 	useEffect(() => {
 		const handleDocumentClick = (e: MouseEvent) => {
-			if (selectRef.current && !selectRef.current.contains(e.target as Node)) {
+			if (
+				selectRef.current &&
+				!selectRef.current.contains(e.target as Node)
+			) {
 				setIsVisibleSelect(false);
 			}
 		};

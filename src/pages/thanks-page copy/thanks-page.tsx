@@ -4,7 +4,7 @@ const ThanksPage = () => {
 	return (
 		<main className={`page ${styles.page}`}>
 			<div className="container">
-				<h2 className="visually-hidden">Thanks page</h2>
+				<h1 className="visually-hidden">Спасибо за заказ</h1>
 				<div className={styles.wrapper}>
 					<svg className={styles.icon} viewBox="0 0 64 64" aria-hidden="true">
 						<use xlinkHref="#smile"></use>

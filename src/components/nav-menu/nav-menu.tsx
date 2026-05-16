@@ -13,7 +13,7 @@ const NavMenu = ({ navs, onNavLinkClick, linkClassName }: NavMenuProps) => {
 		if (onNavLinkClick) onNavLinkClick();
 	};
 	return (
-		<nav>
+		<nav aria-label="Основное меню">
 			<ul>
 				{navs.map(nav => (
 					<li key={nav.title}>

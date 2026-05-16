@@ -37,11 +37,11 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 			<div className={styles.imgWrap}>
 				<img src={images[0]} alt={title} width="282" height="282" />
 			</div>
-			<span className={cardTitleClass}>{title}</span>
-<div className={styles.bottom}>
-						<span className={styles.cost}>{price} ₽</span>
-						<Button className={`button button_tertiary ${styles.button}`} aria-label="Добавить в корзину" />
-					</div>
+			<h3 className={cardTitleClass}>{title}</h3>
+			<div className={styles.bottom}>
+				<span className={styles.cost}>{price} ₽</span>
+				<Button className={`button button_tertiary ${styles.button}`} aria-label="Добавить в корзину" />
+			</div>
 		</Link>
 	);
 };

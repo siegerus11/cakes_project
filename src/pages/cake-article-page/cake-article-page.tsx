@@ -41,6 +41,7 @@ const CakeArticlePage = () => {
 
 	return (
 		<main className={`page ${styles.component}`}>
+			<h1 className="visually-hidden">Карточка торта</h1>
 			<ShoppingCartItem />
 			<div className="container_secondary container">
 				<Link

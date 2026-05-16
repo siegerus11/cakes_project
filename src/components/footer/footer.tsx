@@ -15,7 +15,7 @@ const Footer = () => {
 	);
 
 	return (
-		<div className={styles.wrapper}>
+		<footer className={styles.wrapper}>
 			<div className="container_footer container">
 				<div>
 					<ul className={styles.side}>
@@ -82,7 +82,7 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</footer>
 	);
 };
 
