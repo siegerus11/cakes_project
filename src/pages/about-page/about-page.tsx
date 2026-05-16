@@ -5,10 +5,10 @@ type Props = {};
 
 const AboutPage = (props: Props) => {
 	return (
-		<div className="page about-page">
+		<main className="page about-page">
 			<p>AboutPage</p>
 			<BreadCrumbs />
-		</div>
+		</main>
 	);
 };
 

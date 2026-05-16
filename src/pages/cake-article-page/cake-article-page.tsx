@@ -40,7 +40,7 @@ const CakeArticlePage = () => {
 	}
 
 	return (
-		<div className={`page ${styles.component}`}>
+		<main className={`page ${styles.component}`}>
 			<ShoppingCartItem />
 			<div className="container_secondary container">
 				<Link
@@ -174,7 +174,7 @@ const CakeArticlePage = () => {
 					)
 				);
 			})}
-		</div>
+		</main>
 	);
 };
 

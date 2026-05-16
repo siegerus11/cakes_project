@@ -43,7 +43,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 	return (
 		<>
 			<div className="container">
-				<div className={`page ${styles.component}`}>
+				<main className={`page ${styles.component}`}>
 					<h1 className="visually-hidden">Cackes</h1>
 					<section className={styles.primary}>
 						<div className={styles.headline}>
@@ -86,7 +86,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						/>
 					</section>
 					<Clauses />
-				</div>
+				</main>
 			</div>
 			<ButtonController outerClass={styles.controller}>
 				<Button

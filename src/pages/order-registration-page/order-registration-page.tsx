@@ -16,7 +16,7 @@ const OrderRegistrationPage = () => {
 
 	return (
 		<>
-			<div className={`page ${styles.page}`}>
+			<main className={`page ${styles.page}`}>
 				<div className="container_secondary container_m-pdg15 container">
 					<button
 						className={`back-link back-link_m-small ${styles.back}`}
@@ -119,7 +119,7 @@ const OrderRegistrationPage = () => {
 						</SubmitButton>
 					</div>
 				</div>
-			</div>
+			</main>
 			<ButtonController outerClass={styles.controller}>
 				<SubmitButton
 					className={`button button_primary ${styles.controller__button}`}
