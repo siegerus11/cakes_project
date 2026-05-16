@@ -41,9 +41,9 @@ const OrderRegistrationPage = () => {
 									>
 										<use xlinkHref="#deliveryman"></use>
 									</svg>
-									<h3 className={styles.delivery__title}>
+									<h2 className={styles.delivery__title}>
 										Доставка курьером по Москве
-									</h3>
+									</h2>
 									<svg
 										className={styles.delivery__arrow}
 										viewBox="0 0 18 18"
@@ -62,10 +62,13 @@ const OrderRegistrationPage = () => {
 									>
 										<use xlinkHref="#card"></use>
 									</svg>
-									<h3 className={styles.payment__title}>
+									<h2 className={styles.payment__title}>
 										Оплата переводом на карту
-									</h3>
-									<svg className={styles.payment__arrow} aria-hidden="true">
+									</h2>
+									<svg
+										className={styles.payment__arrow}
+										aria-hidden="true"
+									>
 										<use xlinkHref="#arrow-sm"></use>
 									</svg>
 								</div>
