@@ -2,7 +2,7 @@ import styles from './thanks-page.module.scss';
 
 const ThanksPage = () => {
 	return (
-		<div className={`page ${styles.page}`}>
+		<main className={`page ${styles.page}`}>
 			<div className="container">
 				<h2 className="visually-hidden">Thanks page</h2>
 				<div className={styles.wrapper}>
@@ -11,7 +11,7 @@ const ThanksPage = () => {
 					</svg>
 				</div>
 			</div>
-		</div>
+		</main>
 	);
 };
 

@@ -35,7 +35,7 @@ const CatalogPage = ({ cakes }: CatalogPageProps) => {
 			<div className="container">
 				<BreadCrumbs />
 			</div>
-			<section className={`page page_catalog ${styles.component}`}>
+			<main className={`page page_catalog ${styles.component}`}>
 				<div className="container">
 					<h1 className="visually-hidden">Каталог тортов</h1>
 					<Title titleText={pageTitle} />
@@ -49,7 +49,7 @@ const CatalogPage = ({ cakes }: CatalogPageProps) => {
 					<NotFoundCake />
 					<Clauses />
 				</div>
-			</section>
+			</main>
 		</>
 	);
 };

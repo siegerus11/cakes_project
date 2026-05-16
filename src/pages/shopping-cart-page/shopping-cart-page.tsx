@@ -96,7 +96,7 @@ const ShoppingCartPage = () => {
 	const buttonText = shoppingCart.length ? 'Верно, далее' : 'К каталогу';
 
 	return (
-		<div className={`page ${styles.page}`}>
+		<main className={`page ${styles.page}`}>
 			<div className="container">
 				<button
 					className={`back-link back-link_m-small ${styles.back}`}
@@ -197,7 +197,7 @@ const ShoppingCartPage = () => {
 					</Popup>
 				</Overlay>
 			)}
-		</div>
+		</main>
 	);
 };
 
