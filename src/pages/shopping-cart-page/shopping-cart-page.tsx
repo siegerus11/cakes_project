@@ -171,15 +171,15 @@ const ShoppingCartPage = () => {
 							level="h2"
 						/>
 						<div className={styles.popup__wrapper}>
-<form id="promo-form" onSubmit={handlePromoSubmit}>
-						<input
-							className={styles.popup__input}
-							placeholder="Введите промокод"
-							onChange={handleInputChange}
-							value={inputValue}
-							name="promo"
-							id="promo"
-						/>
+							<form id="promo-form" onSubmit={handlePromoSubmit}>
+								<input
+									className={styles.popup__input}
+									placeholder="Введите промокод"
+									onChange={handleInputChange}
+									value={inputValue}
+									name="promo"
+									id="promo"
+								/>
 							</form>
 							{inputValue && (
 								<button
