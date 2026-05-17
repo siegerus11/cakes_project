@@ -1,6 +1,6 @@
+import Title from '../../components/title/title';
 import styles from './thanks-page.module.scss';
 
-import Title from '../../components/title/title';
 
 const ThanksPage = () => {
 	return (
