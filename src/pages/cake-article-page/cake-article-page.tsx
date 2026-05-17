@@ -50,7 +50,7 @@ const CakeArticlePage = () => {
 	}, []);
 
 	const handlePopupAnimationEnd = useCallback((e: AnimationEvent) => {
-		if (e.animationName === styles.popupClosing) {
+		if (e.animationName === styles.heightOut) {
 			setVisibilityIndex(null);
 			setIsAnimate(false);
 		}
