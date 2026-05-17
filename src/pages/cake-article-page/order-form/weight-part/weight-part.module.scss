@@ -1,4 +1,5 @@
 @use '../../../../_variables.scss';
+@use '../../../../_keyframes.scss';
 
 .component {
 	width: 100%;
@@ -46,6 +47,7 @@
 		padding: 16px 20px;
 		background-color: variables.$color-bg-secondary;
 		border-radius: 11px;
+		animation: fadeIn 0.3s ease-in-out;
 
 		> div {
 			display: flex;

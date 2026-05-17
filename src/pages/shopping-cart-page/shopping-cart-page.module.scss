@@ -1,5 +1,7 @@
 @use '../../_variables' as variables;
 @use '../../_mixins' as mixins;
+@use '../../keyframes';
+
 .page {
 	padding-top: 20px;
 	padding-bottom: 324px;
@@ -93,6 +95,7 @@
 
 .popup {
 	padding: 27px 30px 30px 30px;
+	animation: fadeIn 0.2s ease-in-out;
 
 	&__button {
 		justify-content: center;

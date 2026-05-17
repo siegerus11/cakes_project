@@ -1,4 +1,6 @@
 @use '../../_variables' as variables;
+@use '../../_keyframes';
+
 .outer {
 	margin-top: 120px;
 }
@@ -15,7 +17,7 @@
 	letter-spacing: 0.1px;
 
 	&_opened {
-		max-height: unset;
+		animation: heightInMax 1.3s ease;
 	}
 }
 

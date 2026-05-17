@@ -16,6 +16,16 @@
 	}
 }
 
+@keyframes heightInMax {
+	from {
+		max-height: 120px;
+	}
+
+	to {
+		max-height: unset;
+	}
+}
+
 @keyframes fadeIn {
 	from {
 		opacity: 0;
