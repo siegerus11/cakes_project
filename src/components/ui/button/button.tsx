@@ -1,4 +1,4 @@
-import { PropsWithChildren, MouseEventHandler, FormEventHandler } from 'react';
+import { PropsWithChildren, MouseEventHandler } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 type SubmitButtonProps = PropsWithChildren<{

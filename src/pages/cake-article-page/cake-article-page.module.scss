@@ -43,6 +43,7 @@
 
 .popup {
 	min-width: 30%;
+	animation: fadeIn 0.2s ease-in-out;
 
 	&__main {
 		padding: 27px 30px 30px 30px;
@@ -102,7 +103,7 @@
 	}
 }
 
-@keyframes popupClosing {
+@keyframes heightIn {
 	from {
 		transform: translateY(0);
 	}
@@ -111,12 +112,22 @@
 	}
 }
 
-@keyframes popupOpening {
+@keyframes heightOut {
 	from {
 		transform: translateY(100%);
 	}
 	to {
 		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
 	}
 }
 
@@ -210,7 +221,7 @@
 		height: 100%;
 		border-radius: unset;
 		transform: unset;
-		animation: popupOpening 0.3s ease;
+		animation: heightIn 0.3s ease;
 
 		&__wrapper {
 			position: relative;
@@ -259,7 +270,7 @@
 		}
 
 		&_closing {
-			animation: popupClosing 0.3s ease;
+			animation: heightOut 0.3s ease;
 		}
 	}
 }
