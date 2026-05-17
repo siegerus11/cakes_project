@@ -15,11 +15,17 @@
 	}
 }
 
+@media (max-width: 1200px) {
+	.link {
+		margin-right: 32px;
+	}
+}
+
 @media (max-width: 576px) {
 	.link {
 		width: 64px;
 		height: 38px;
-		margin-right: 32px;
+		margin-right: 13px;
 		font-size: 22px;
 		line-height: 87%;
 		vertical-align: 1px;
