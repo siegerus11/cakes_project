@@ -169,24 +169,6 @@
 	}
 }
 
-@keyframes popupClosing {
-	from {
-		transform: translateY(0);
-	}
-	to {
-		transform: translateY(100%);
-	}
-}
-
-@keyframes popupOpening {
-	from {
-		transform: translateY(100%);
-	}
-	to {
-		transform: translateY(0);
-	}
-}
-
 @media (max-width: 1200px) {
 	.back {
 		margin-left: 10px;

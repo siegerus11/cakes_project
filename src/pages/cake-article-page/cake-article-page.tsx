@@ -41,8 +41,10 @@ const CakeArticlePage = () => {
 		setVisibilityIndex(idx);
 	}, []);
 
-	const handlePopupCloseButtonClickClose = useCallback(() => {
-		if (!isMobile) setVisibilityIndex(null);
+	const handlePopupClickClose = useCallback(() => {
+		if (!isMobile) {
+			setIsAnimate(true);
+		}
 	}, [isMobile]);
 
 	const handlePopupTouchClose = useCallback(() => {
@@ -50,6 +52,10 @@ const CakeArticlePage = () => {
 	}, []);
 
 	const handlePopupAnimationEnd = useCallback((e: AnimationEvent) => {
+		if (e.animationName === styles.fadeOut) {
+			setVisibilityIndex(null);
+			setIsAnimate(false);
+		}
 		if (e.animationName === styles.heightOut) {
 			setVisibilityIndex(null);
 			setIsAnimate(false);
@@ -105,7 +111,7 @@ const CakeArticlePage = () => {
 										? `${popupClass} ${popupClassActive}`
 										: popupClass
 								}
-								onCloseClick={handlePopupCloseButtonClickClose}
+								onCloseClick={handlePopupClickClose}
 								onTouchStart={handleTouchStart}
 								onTouchMove={handleTouchMove}
 								onTouchEnd={handleTouchEnd}
@@ -135,9 +141,7 @@ const CakeArticlePage = () => {
 										</p>
 										<Button
 											className={`button button_primary ${styles.popup__button}`}
-											onClick={
-												handlePopupCloseButtonClickClose
-											}
+											onClick={handlePopupClickClose}
 										>
 											<span>Понятно, спасибо</span>
 										</Button>
