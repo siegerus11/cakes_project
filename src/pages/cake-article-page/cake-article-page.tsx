@@ -30,6 +30,9 @@ const CakeArticlePage = () => {
 	const popupClass = `popup ${styles.popup} ${
 		isAnimate ? styles.popup_closing : ''
 	}`;
+	const overlayClass = `${styles.overlay} ${
+		isAnimate ? styles.overlay_closing : ''
+	}`;
 	const popupClassActive = `popup ${styles.popup} ${styles.popup_active}`;
 	const titleClassName = `title_fz30 title_fw800 ${styles.main__title}`;
 
@@ -103,7 +106,7 @@ const CakeArticlePage = () => {
 				const keyValue = `${i}-${fillingItem.name}`;
 				return (
 					i === visibilityIndex && (
-						<Overlay key={keyValue} className={styles.overlay}>
+						<Overlay key={keyValue} className={overlayClass}>
 							<Popup
 								closeClass={styles.popup__close}
 								outerClass={
