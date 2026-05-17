@@ -102,6 +102,24 @@
 	}
 }
 
+@keyframes popupClosing {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(100%);
+	}
+}
+
+@keyframes popupOpening {
+	from {
+		transform: translateY(100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
 @media (max-width: 1200px) {
 	.main {
 		max-width: unset;
@@ -188,6 +206,7 @@
 		height: 100%;
 		border-radius: unset;
 		transform: unset;
+		animation: popupOpening 0.3s ease;
 
 		&__wrapper {
 			position: relative;
@@ -233,6 +252,10 @@
 			img {
 				border-radius: 25px 25px 0 0;
 			}
+		}
+
+		&_closing {
+			animation: popupClosing 0.3s ease;
 		}
 	}
 }
