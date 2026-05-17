@@ -5,6 +5,7 @@
 @use './_fonts';
 @use './_variables' as variables;
 @use './_mixins' as mixins;
+@use './_keyframes';
 
 // global component-styles
 @use './components/ui/button/button.module';
