@@ -13,6 +13,13 @@
 	background-color: variables.$color-primary;
 	border-radius: 17px;
 
+	&_fixed {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		left: auto;
+	}
+
 	&__indicator {
 		position: absolute;
 		top: -5px;

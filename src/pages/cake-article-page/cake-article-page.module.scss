@@ -117,6 +117,16 @@
 	}
 }
 
+.cart {
+	width: 50px;
+	height: 49px;
+
+	svg {
+		width: 22px;
+		height: 22px;
+	}
+}
+
 @media (max-width: 1200px) {
 	.main {
 		max-width: unset;
@@ -262,5 +272,9 @@
 		&_closing {
 			animation: heightOut 0.3s ease;
 		}
+	}
+
+	.cart {
+		display: none;
 	}
 }

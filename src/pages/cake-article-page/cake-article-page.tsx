@@ -75,7 +75,7 @@ const CakeArticlePage = () => {
 
 	return (
 		<main className={`page ${styles.component}`}>
-			<ShoppingCartItem />
+			<ShoppingCartItem fixed className={styles.cart} />
 			<div className="container_secondary container">
 				<Link
 					className={`back-link ${styles.back}`}

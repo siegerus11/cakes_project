@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { v4 as uuidv } from 'uuid';
 
 import ButtonController from '../../../components/button-controller/button-controller';
+import ShoppingCartItem from '../../../components/shopping-cart-item/shopping-cart-item';
 import { SubmitButton } from '../../../components/ui/button/button';
 import { AppRoute } from '../../../constants';
 import useCheckboxes from '../../../hooks/useCheckBox';
@@ -200,6 +201,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 					>
 						<span>В корзину</span>
 					</SubmitButton>
+					<ShoppingCartItem className={styles.controller__cart} />
 				</div>
 			</ButtonController>
 		</>

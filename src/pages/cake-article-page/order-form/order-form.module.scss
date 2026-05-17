@@ -160,7 +160,9 @@
 	}
 
 	.controller {
+		position: relative;
 		display: flex;
+		overflow: unset;
 
 		&__wrapper {
 			display: flex;
@@ -182,6 +184,12 @@
 				font-size: 14px;
 				line-height: 129%;
 			}
+		}
+
+		&__cart {
+			top: 0;
+			right: 0;
+			left: auto;
 		}
 	}
 }

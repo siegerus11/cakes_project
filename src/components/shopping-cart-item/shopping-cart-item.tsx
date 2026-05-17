@@ -5,16 +5,25 @@ import { useAppSelector } from '../../hooks/useStore';
 import { selectShoppingCart } from '../../store/main-process/main-process';
 import styles from './shopping-cart-item.module.scss';
 
-const ShoppingCartItem = () => {
+type ShoppingCartItemProps = {
+	className?: string;
+	fixed?: boolean;
+};
+
+const ShoppingCartItem = ({ className = '', fixed }: ShoppingCartItemProps) => {
 	const cart = useAppSelector(selectShoppingCart);
 	const count = cart.length;
 	const location = useLocation();
+
+	const componentClass = fixed
+		? `${styles.component} ${styles.component_fixed}`
+		: styles.component;
 
 	if (count === 0) return null;
 
 	return (
 		<Link
-			className={styles.component}
+			className={`${componentClass} ${className}`}
 			to={AppRoute.ShoppingCart}
 			state={{ from: location.pathname }}
 			aria-label="Корзина"
