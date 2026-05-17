@@ -1,5 +1,6 @@
 @use '../../_variables' as variables;
 @use '../../_mixins' as mixins;
+@use '../../_keyframes.scss';
 
 .component {
 	position: relative;
