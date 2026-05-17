@@ -1,5 +1,43 @@
 @use '../../_variables' as variables;
 @use '../../_mixins' as mixins;
+
+@keyframes heightOut {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(100%);
+	}
+}
+
+@keyframes heightIn {
+	from {
+		transform: translateY(100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
 .component {
 	position: relative;
 	padding: 20px 0 161px 0;
@@ -43,7 +81,7 @@
 
 .popup {
 	min-width: 30%;
-	animation: fadeIn 0.2s ease-in-out;
+	animation: fadeIn 0.3s ease;
 
 	&__main {
 		padding: 27px 30px 30px 30px;
@@ -101,33 +139,9 @@
 			border-radius: 30px;
 		}
 	}
-}
 
-@keyframes heightIn {
-	from {
-		transform: translateY(0);
-	}
-	to {
-		transform: translateY(100%);
-	}
-}
-
-@keyframes heightOut {
-	from {
-		transform: translateY(100%);
-	}
-	to {
-		transform: translateY(0);
-	}
-}
-
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
+	&_closing {
+		animation: fadeOut 0.3s ease;
 	}
 }
 
