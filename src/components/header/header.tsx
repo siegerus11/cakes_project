@@ -36,62 +36,58 @@ const Header = () => {
 	);
 
 	return (
-		<>
-			<ShoppingCartItem />
-			<div className="container">
-				<header className={styles.outer}>
-					<div className={styles.wrapper}>
-						<div className={styles.primary}>
-							<Logo />
-							<div className={styles.search}>
-								<svg
-									className={styles.search__icon}
-									viewBox="0 0 40 40"
-									aria-hidden="true"
-								>
-									<use xlinkHref="#search"></use>
-								</svg>
-								<input
-									className={styles.search__input}
-									type="search"
-									placeholder="Поиск"
-									aria-label="Поиск по товарам"
-								/>
-							</div>
-						</div>
-						<div className={styles.secondary}>
-							<Button
-								className={`button button_primary ${styles.button}`}
-								path={AppRoute.ShoppingCart}
+		<div className="container">
+			<header className={styles.outer}>
+				<div className={styles.wrapper}>
+					<div className={styles.primary}>
+						<Logo />
+						<div className={styles.search}>
+							<svg
+								className={styles.search__icon}
+								viewBox="0 0 40 40"
+								aria-hidden="true"
 							>
-								<svg
-									className={styles.button__icon}
-									viewBox="0 0 40 40"
-									aria-hidden="true"
-								>
-									<use xlinkHref="#cart"></use>
-								</svg>
-								<span className={styles.button__text}>
-									Оформить заказ
-								</span>
-								{totalPrice ? (
-									<span className={styles.button__price}>
-										{formattedPrice} ₽
-									</span>
-								) : null}
-							</Button>
-							<Hamburger
-								onHamburgerClick={handleHamburgerClick}
+								<use xlinkHref="#search"></use>
+							</svg>
+							<input
+								className={styles.search__input}
+								type="search"
+								placeholder="Поиск"
+								aria-label="Поиск по товарам"
 							/>
 						</div>
 					</div>
-					<NavMenu navs={LAYOUT_NAVS} linkClassName={styles.link} />
-				</header>
-				{hamburgerisVisible && (
-					<HamburgerPopup onHamburgerClick={handleHamburgerClick} />
-				)}
-			</div>
-		</>
+					<div className={styles.secondary}>
+						<ShoppingCartItem />
+						<Button
+							className={`button button_primary ${styles.button}`}
+							path={AppRoute.ShoppingCart}
+						>
+							<svg
+								className={styles.button__icon}
+								viewBox="0 0 40 40"
+								aria-hidden="true"
+							>
+								<use xlinkHref="#cart"></use>
+							</svg>
+							<span className={styles.button__text}>
+								Оформить заказ
+							</span>
+							{totalPrice ? (
+								<span className={styles.button__price}>
+									{formattedPrice} ₽
+								</span>
+							) : null}
+						</Button>
+						<Hamburger onHamburgerClick={handleHamburgerClick} />
+					</div>
+				</div>
+				<NavMenu navs={LAYOUT_NAVS} linkClassName={styles.link} />
+			</header>
+			{hamburgerisVisible && (
+				<HamburgerPopup onHamburgerClick={handleHamburgerClick} />
+			)}
+		</div>
 	);
 };
 

@@ -1,28 +1,28 @@
 @use '../../_variables' as variables;
 
 .component {
-	position: fixed;
-	top: 20px;
-	right: 30px;
+	position: absolute;
+	top: 1px;
+	left: -54px;
 	z-index: 10;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 51px;
-	height: 49px;
+	width: 40px;
+	height: 40px;
 	background-color: variables.$color-primary;
 	border-radius: 17px;
 
 	&__indicator {
 		position: absolute;
-		top: -8px;
-		right: -9px;
+		top: -5px;
+		right: -5px;
 		z-index: 10;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 22px;
-		height: 24px;
+		width: 17px;
+		height: 17px;
 		background-color: variables.$color-error;
 		border-radius: 50%;
 	}
@@ -30,11 +30,39 @@
 	&__count {
 		color: variables.$color-text-inverted;
 		font-weight: 600;
-		font-size: 12px;
+		font-size: 11px;
 	}
 
 	&__icon {
-		width: 20px;
-		height: 20px;
+		width: 19px;
+		height: 18px;
+	}
+}
+
+@media (max-width: 992px) {
+	.component {
+		top: auto;
+	}
+}
+
+@media (max-width: 576px) {
+	.component {
+		left: -37px;
+		width: 29px;
+		height: 26px;
+
+		&__icon {
+			width: 13px;
+			height: 13px;
+		}
+
+		&__indicator {
+			width: 14px;
+			height: 14px;
+		}
+
+		&__count {
+			font-size: 9px;
+		}
 	}
 }
