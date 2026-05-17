@@ -43,9 +43,21 @@
 	}
 }
 
+.overlay {
+	animation: fadeIn 0.2s ease;
+
+	&_closing {
+		animation: fadeOut 0.2s forwards;
+	}
+}
+
 .popup {
 	min-width: 30%;
 	animation: fadeIn 0.2s ease;
+
+	&_closing {
+		animation: fadeOut 0.2s forwards;
+	}
 
 	&__main {
 		padding: 27px 30px 30px 30px;
@@ -102,10 +114,6 @@
 			object-fit: cover;
 			border-radius: 30px;
 		}
-	}
-
-	&_closing {
-		animation: fadeOut 0.2s forwards;
 	}
 }
 
@@ -189,6 +197,10 @@
 
 	.overlay {
 		background-color: transparent;
+
+		&_closing {
+			animation: fadeOut 1.2s forwards;
+		}
 	}
 
 	.popup {
