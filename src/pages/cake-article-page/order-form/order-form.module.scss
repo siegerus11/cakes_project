@@ -160,7 +160,6 @@
 	}
 
 	.controller {
-		position: relative;
 		display: flex;
 		overflow: unset;
 
@@ -187,9 +186,15 @@
 		}
 
 		&__cart {
-			top: 0;
-			right: 0;
+			top: -18px;
+			right: 7px;
 			left: auto;
+			width: 32px;
+			height: 28px;
+
+			span {
+				font-size: 10px;
+			}
 		}
 	}
 }
