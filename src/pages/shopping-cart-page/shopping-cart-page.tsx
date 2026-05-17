@@ -89,7 +89,7 @@ const ShoppingCartPage = () => {
 
 	const buttonPath = useMemo(
 		() =>
-			shoppingCart.length ? AppRoute.orderRegistration : AppRoute.Catalog,
+			shoppingCart.length ? AppRoute.OrderRegistration : AppRoute.Catalog,
 		[shoppingCart.length]
 	);
 
@@ -147,7 +147,7 @@ const ShoppingCartPage = () => {
 			<ButtonController outerClass={`${styles.controller}`}>
 				<Button
 					className={`button button_primary ${styles.controller__button}`}
-					path={AppRoute.orderRegistration}
+					path={AppRoute.OrderRegistration}
 				>
 					<span>Верно, далее</span>
 				</Button>
