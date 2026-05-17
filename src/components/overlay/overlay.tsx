@@ -2,11 +2,17 @@ import { PropsWithChildren } from 'react';
 
 import styles from './overlay.module.scss';
 
-type OverlayProps = PropsWithChildren;
+type OverlayProps = PropsWithChildren<{
+	className?: string;
+}>;
 
-const Overlay = ({ children }: OverlayProps) => {
+const Overlay = ({ children, className }: OverlayProps) => {
+	const overlayClass = className
+		? `${styles.overlay} ${className}`
+		: styles.overlay;
+
 	return (
-		<div className={styles.overlay} role="presentation">
+		<div className={overlayClass} role="presentation">
 			{children}
 		</div>
 	);

@@ -96,9 +96,8 @@ const CakeArticlePage = () => {
 			{filling.map((fillingItem, i) => {
 				const keyValue = `${i}-${fillingItem.name}`;
 				return (
-					i === visibilityIndex &&
-					(!isMobile ? (
-						<Overlay key={keyValue}>
+					i === visibilityIndex && (
+						<Overlay key={keyValue} className={styles.overlay}>
 							<Popup
 								closeClass={styles.popup__close}
 								outerClass={
@@ -136,8 +135,8 @@ const CakeArticlePage = () => {
 										</p>
 										<Button
 											className={`button button_primary ${styles.popup__button}`}
-											onClick={() =>
-												setVisibilityIndex(null)
+											onClick={
+												handlePopupCloseButtonClickClose
 											}
 										>
 											<span>Понятно, спасибо</span>
@@ -196,82 +195,7 @@ const CakeArticlePage = () => {
 								</div>
 							</Popup>
 						</Overlay>
-					) : (
-						<Popup
-							key={keyValue}
-							closeClass={styles.popup__close}
-							outerClass={
-								i === visibilityIndex
-									? `${popupClass} ${popupClassActive}`
-									: popupClass
-							}
-							onCloseClick={handlePopupCloseButtonClickClose}
-							onTouchStart={handleTouchStart}
-							onTouchMove={handleTouchMove}
-							onTouchEnd={handleTouchEnd}
-							onAnimationEnd={handlePopupAnimationEnd}
-						>
-							<div className={styles.popup__wrapper}>
-								<div className={styles.popup__image}>
-									<img
-										src={fillingItem.image}
-										alt="filling"
-										width="360"
-										height="360"
-									/>
-								</div>
-								<main className={styles.popup__main}>
-									<Title
-										titleText={fillingItem.title}
-										titleClass="title_fz22 title_fw800"
-										level="h2"
-									/>
-									<p className={styles.popup__description}>
-										{fillingItem.description}
-									</p>
-									<Button
-										className={`button button_primary ${styles.popup__button}`}
-										onClick={() => setVisibilityIndex(null)}
-									>
-										<span>Понятно, спасибо</span>
-									</Button>
-									{fillingItem.ingredients && (
-										<ul className={styles.popup__toplist}>
-											{fillingItem.ingredients.map(
-												ingridient => (
-													<li key={`${ingridient}`}>
-														{ingridient}
-													</li>
-												)
-											)}
-										</ul>
-									)}
-									{fillingItem.nutrition && (
-										<ul
-											className={styles.popup__bottomlist}
-										>
-											<li>
-												Калорийность:{' '}
-												{fillingItem.nutrition.calories}
-											</li>
-											<li>
-												Белки:{' '}
-												{fillingItem.nutrition.proteins}
-											</li>
-											<li>
-												Жиры:{' '}
-												{fillingItem.nutrition.fats}
-											</li>
-											<li>
-												Углеводы:{' '}
-												{fillingItem.nutrition.carbs}
-											</li>
-										</ul>
-									)}
-								</main>
-							</div>
-						</Popup>
-					))
+					)
 				);
 			})}
 		</main>
