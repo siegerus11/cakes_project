@@ -11,12 +11,16 @@ function useTouch(callback: () => void): {
 	const [touchEndY, setTouchEndY] = useState<number>(0);
 
 	const handleTouchStart = useCallback((e: TouchEvent) => {
-		setTouchStartY(e.touches[0].clientY);
+		if (e.touches && e.touches.length > 0) {
+			setTouchStartY(e.touches[0].clientY);
+		}
 	}, []);
 
 	const handleTouchMove = useCallback((e: TouchEvent) => {
 		setIsTouchMove(true);
-		setTouchEndY(e.touches[0].clientY);
+		if (e.touches && e.touches.length > 0) {
+			setTouchEndY(e.touches[0].clientY);
+		}
 	}, []);
 
 	const handleTouchEnd = useCallback(() => {

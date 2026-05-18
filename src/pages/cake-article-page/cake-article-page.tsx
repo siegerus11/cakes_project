@@ -38,7 +38,7 @@ const CakeArticlePage = () => {
 	const popupClassActive = `popup ${styles.popup} ${styles.popup_active}`;
 	const titleClassName = `title_fz30 title_fw800 ${styles.main__title}`;
 
-	const initialprice = useMemo(() => activeOffer?.price, [activeOffer]);
+	const initialprice = useMemo(() => activeOffer?.price ?? 0, [activeOffer]);
 
 	const filling = useMemo(() => activeOffer?.filling ?? [], [activeOffer]);
 
@@ -98,7 +98,7 @@ const CakeArticlePage = () => {
 						</div>
 						<OrderForm
 							cake={activeOffer}
-							initialprice={initialprice!}
+							initialprice={initialprice}
 							onDescribeClick={handleDescribeClick}
 						/>
 					</section>
