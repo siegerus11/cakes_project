@@ -86,7 +86,7 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 			const target = e.target as HTMLElement;
 
 			if (selectRef.current && selectRef.current.contains(target)) return;
-			if (target.closest('input[type="radio"], label')) return;
+			if (target.closest('input[type="radio"], label.label')) return;
 
 			setIsVisibleSelect(false);
 		};
