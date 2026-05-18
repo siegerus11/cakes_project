@@ -40,7 +40,10 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 			<h3 className={cardTitleClass}>{title}</h3>
 			<div className={styles.bottom}>
 				<span className={styles.cost}>{price} ₽</span>
-				<Button className={`button button_tertiary ${styles.button}`} aria-label="Добавить в корзину" />
+				<Button
+					className={`button button_tertiary ${styles.button}`}
+					aria-label="Добавить в корзину"
+				/>
 			</div>
 		</Link>
 	);
@@ -54,8 +57,9 @@ type AllCardProps = {
 };
 
 const AllCard = ({ cake, path }: AllCardProps) => {
+	const linkTo = path ?? AppRoute.Catalog;
 	return (
-		<Link className={styles.grid} to={path!}>
+		<Link className={styles.grid} to={linkTo}>
 			{cake.images.map((image, i) => {
 				const keyValue = `${i}-${cake.title}`;
 				return (

@@ -55,12 +55,16 @@ function useSlider(imagesSrc: string[]): {
 	}, [slideIndex]);
 
 	const handleTouchStart = useCallback((e: TouchEvent) => {
-		setTouchStartX(e.touches[0].clientX);
+		if (e.touches && e.touches.length > 0) {
+			setTouchStartX(e.touches[0].clientX);
+		}
 	}, []);
 
 	const handleTouchMove = useCallback((e: TouchEvent) => {
 		setIsSwiping(true);
-		setTouchEndX(e.touches[0].clientX);
+		if (e.touches && e.touches.length > 0) {
+			setTouchEndX(e.touches[0].clientX);
+		}
 	}, []);
 
 	const handleTouchEnd = useCallback(() => {

@@ -21,10 +21,10 @@ type CatalogPageProps = {
 const CatalogPage = ({ cakes }: CatalogPageProps) => {
 	const { pathname } = useLocation();
 	const dispatch = useAppDispatch();
-	const pageTitle = useMemo(
-		() => getNavData(pathname, NAVS)!.title,
-		[pathname]
-	);
+	const pageTitle = useMemo(() => {
+		const navData = getNavData(pathname, NAVS);
+		return navData?.title ?? 'Каталог';
+	}, [pathname]);
 
 	useEffect(() => {
 		dispatch(getSortingStatus(''));
