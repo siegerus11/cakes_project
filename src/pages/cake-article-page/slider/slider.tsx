@@ -55,7 +55,7 @@ const Slider = ({ cake }: SliderProps) => {
 								alt={slide.slideAlt}
 								width="535"
 								height="535"
-								key={slide.slideSrc}
+								key={`${slide.slideSrc}-${slideIndex}`}
 							/>
 						))}
 
