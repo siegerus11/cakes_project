@@ -1,5 +1,4 @@
 @use '../../_variables' as variables;
-@use '../../_keyframes';
 
 .outer {
 	margin-top: 120px;
@@ -15,14 +14,16 @@
 	font-size: 15px;
 	line-height: 160%;
 	letter-spacing: 0.1px;
+	transition: max-height 0.3s;
 
 	&_opened {
-		animation: heightInMax 1.3s ease;
+		max-height: 1000px;
 	}
 }
 
 .button {
 	position: relative;
+	min-width: 109px;
 	margin-top: 5px;
 	color: variables.$color-link;
 	font-weight: 400;
@@ -67,13 +68,15 @@
 		max-height: 105px;
 		margin-top: 20px;
 		font-size: 13px;
+		transition: max-height 0.3s;
 
 		&_opened {
-			max-height: unset;
+			max-height: 1000px;
 		}
 	}
 
 	.button {
+		min-width: 89px;
 		font-size: 13px;
 	}
 }
