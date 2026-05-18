@@ -4,10 +4,13 @@ import Draggable from 'react-draggable';
 import styles from './button-controller.module.scss';
 
 type ButtonControllerProps = PropsWithChildren<{
-	outerClass: string;
+	outerClass?: string;
 }>;
 
-const ButtonController = ({ children, outerClass }: ButtonControllerProps) => {
+const ButtonController = ({
+	children,
+	outerClass = ''
+}: ButtonControllerProps) => {
 	const elementRef = useRef<HTMLDivElement | null>(null);
 	const [bounds, setBounds] = useState<{ top: number; bottom: number }>({
 		top: 0,
@@ -39,7 +42,11 @@ const ButtonController = ({ children, outerClass }: ButtonControllerProps) => {
 				ref={elementRef}
 			>
 				<div className={styles.inner}>{children}</div>
-				<button className={`${styles.item} handle`} type="button" aria-label="Переместить заказ" />
+				<button
+					className={`${styles.item} handle`}
+					type="button"
+					aria-label="Переместить заказ"
+				/>
 			</div>
 		</Draggable>
 	);

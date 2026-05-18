@@ -1,17 +1,19 @@
+import Title from '../../components/title/title';
 import styles from './thanks-page.module.scss';
+
 
 const ThanksPage = () => {
 	return (
-		<div className={`page ${styles.page}`}>
+		<main className={`page ${styles.page}`}>
 			<div className="container">
-				<h2 className="visually-hidden">Thanks page</h2>
+				<Title titleText="Спасибо за заказ" titleClass={styles.title} level="h1" />
 				<div className={styles.wrapper}>
-					<svg className={styles.icon} viewBox="0 0 64 64">
+					<svg className={styles.icon} viewBox="0 0 64 64" aria-hidden="true">
 						<use xlinkHref="#smile"></use>
 					</svg>
 				</div>
 			</div>
-		</div>
+		</main>
 	);
 };
 

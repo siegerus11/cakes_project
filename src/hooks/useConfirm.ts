@@ -1,5 +1,3 @@
-import { useCallback } from 'react';
-
 const useConfirm = () => {
 	const confirm = (message: string): boolean => {
 		return window.confirm(message);
