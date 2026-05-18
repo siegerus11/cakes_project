@@ -35,7 +35,7 @@
 			font-size: 16px;
 			line-height: 120%;
 			letter-spacing: 0.4px;
-			// transition: variables.$all-transition;
+			transition: variables.$all-transition;
 		}
 	}
 
@@ -60,6 +60,7 @@
 	}
 
 	label {
+		order: 1;
 		width: 100%;
 		line-height: 120%;
 		letter-spacing: 0.4px;
@@ -68,12 +69,17 @@
 
 	input {
 		display: block;
+		order: 2;
 		width: 16px;
 		height: 16px;
 		padding: 5px;
 		cursor: pointer;
-		transition: variables.$all-transition;
 		accent-color: variables.$color-primary;
+	}
+
+	input:checked + label {
+		color: variables.$color-primary;
+		animation: fadeIn 2.3s ease;
 	}
 }
 
@@ -120,6 +126,11 @@
 
 	label {
 		font-size: 14px;
+	}
+
+	input:checked + label {
+		color: variables.$color-primary;
+		animation: fadeIn 0.3s ease;
 	}
 
 	.icon {

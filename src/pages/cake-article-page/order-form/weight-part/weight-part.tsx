@@ -45,9 +45,6 @@ const WeightPartRadio = ({
 
 	return (
 		<div>
-			<label className={styles.label} htmlFor={id}>
-				{labelText}
-			</label>
 			<input
 				type="radio"
 				name="weight-value"
@@ -56,6 +53,9 @@ const WeightPartRadio = ({
 				checked={isChecked}
 				onChange={handleChange}
 			/>
+			<label className={styles.label} htmlFor={id}>
+				{labelText}
+			</label>
 		</div>
 	);
 };
@@ -156,7 +156,7 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 								<WeightPartRadio
 									weightValue={radio.weightValue}
 									index={i}
-									key={keyValue}
+									key={`${keyValue}-${radio.isChecked}`}
 									handleRadioChange={handleRadioChange}
 									isChecked={radio.isChecked}
 								/>
