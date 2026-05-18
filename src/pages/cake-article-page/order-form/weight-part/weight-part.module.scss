@@ -77,7 +77,7 @@
 		accent-color: variables.$color-primary;
 	}
 
-	input:checked + label {
+	input:checked + label.label {
 		color: variables.$color-primary;
 		animation: fadeIn 0.3s ease;
 	}
@@ -126,11 +126,6 @@
 
 	label {
 		font-size: 14px;
-	}
-
-	input:checked + label {
-		color: variables.$color-primary;
-		animation: fadeIn 0.3s ease;
 	}
 
 	.icon {
