@@ -20,7 +20,7 @@ import './app.module.scss';
 
 function App() {
 	const cakeOffers = useAppSelector(cakeOffersSelector);
-	const bentoCakesffers = cakeOffers.filter(cake => cake.isBento === true);
+	const bentoCakesOffers = cakeOffers.filter(cake => cake.isBento === true);
 
 	return (
 		<BrowserRouter
@@ -33,7 +33,7 @@ function App() {
 						element={
 							<MainPage
 								cakes={cakeOffers}
-								bentoCakes={bentoCakesffers}
+								bentoCakes={bentoCakesOffers}
 							/>
 						}
 					/>
@@ -43,7 +43,7 @@ function App() {
 						element={
 							<MainPage
 								cakes={cakeOffers}
-								bentoCakes={bentoCakesffers}
+								bentoCakes={bentoCakesOffers}
 							/>
 						}
 					/>
@@ -53,7 +53,7 @@ function App() {
 					/>
 					<Route
 						path={AppRoute.BentoCakesCatalog}
-						element={<CatalogPage cakes={bentoCakesffers} />}
+						element={<CatalogPage cakes={bentoCakesOffers} />}
 					/>
 					<Route
 						path={AppRoute.Delivery}
