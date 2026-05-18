@@ -85,6 +85,11 @@
 
 .icon {
 	fill: variables.$color-text-light;
+
+	&_rotate {
+		transform: rotate(180deg);
+		transition: variables.$all-transition;
+	}
 }
 
 @media (max-width: 576px) {

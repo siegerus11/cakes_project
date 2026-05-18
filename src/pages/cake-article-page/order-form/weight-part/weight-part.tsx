@@ -134,7 +134,9 @@ const WeightPart = ({ onRadioChange, radios }: WeightPartProps) => {
 				>
 					<span>{interactorHtml}</span>
 					<svg
-						className={styles.icon}
+						className={`${styles.icon} ${
+							isVisibleSelect ? styles.icon_rotate : ''
+						}`}
 						viewBox="0 0 20 20"
 						width="20"
 						height="20"
