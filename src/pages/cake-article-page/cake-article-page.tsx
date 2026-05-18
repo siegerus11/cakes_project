@@ -27,12 +27,14 @@ const CakeArticlePage = () => {
 
 	const [visibilityIndex, setVisibilityIndex] = useState<number | null>(null);
 	const [isAnimate, setIsAnimate] = useState<boolean>(false);
+
 	const popupClass = `popup ${styles.popup} ${
 		isAnimate ? styles.popup_closing : ''
 	}`;
 	const overlayClass = `${styles.overlay} ${
 		isAnimate ? styles.overlay_closing : ''
 	}`;
+
 	const popupClassActive = `popup ${styles.popup} ${styles.popup_active}`;
 	const titleClassName = `title_fz30 title_fw800 ${styles.main__title}`;
 
