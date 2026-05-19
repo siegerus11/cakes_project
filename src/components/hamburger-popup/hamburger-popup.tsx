@@ -61,19 +61,25 @@ const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
 						</svg>
 					</Button>
 					<SocialLinks>
-						<a className={styles.icon} href="/" aria-label="Telegram">
-							<img
-								src="../../../images/tg-colored.svg"
-								alt=""
-							/>
+						<a
+							className={styles.icon}
+							href="/"
+							aria-label="Telegram"
+						>
+							<img src="../../../images/tg-colored.svg" alt="" />
 						</a>
-						<a className={styles.icon} href="/" aria-label="ВКонтакте">
-							<img
-								src="../../../images/vk-colored.svg"
-								alt=""
-							/>
+						<a
+							className={styles.icon}
+							href="/"
+							aria-label="ВКонтакте"
+						>
+							<img src="../../../images/vk-colored.svg" alt="" />
 						</a>
-						<a className={styles.icon} href="/" aria-label="Instagram">
+						<a
+							className={styles.icon}
+							href="/"
+							aria-label="Instagram"
+						>
 							<img
 								src="../../../images/inst-colored.svg"
 								alt=""

@@ -13,15 +13,15 @@ import Hamburger from '../ui/hamburger/hamburger';
 import styles from './header.module.scss';
 
 const Header = () => {
-	const [hamburgerisVisible, setHamburgerisVisible] =
+	const [hamburgerisVisible, setHamburgerIsVisible] =
 		useState<boolean>(false);
 
 	const handleHamburgerClick = useCallback(() => {
-		setHamburgerisVisible(prev => !prev);
+		setHamburgerIsVisible(prevState => !prevState);
 	}, []);
 
 	const closePopup = useCallback((e: KeyboardEvent) => {
-		if (e.key === 'Escape') setHamburgerisVisible(false);
+		if (e.key === 'Escape') setHamburgerIsVisible(false);
 	}, []);
 
 	useEffect(() => {
