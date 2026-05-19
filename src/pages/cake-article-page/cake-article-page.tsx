@@ -7,6 +7,7 @@ import ShoppingCartItem from '../../components/shopping-cart-item/shopping-cart-
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute } from '../../constants';
+import useAnimate from '../../hooks/useAnimate';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { useAppSelector } from '../../hooks/useStore';
 import useTouch from '../../hooks/useTouch';
@@ -25,18 +26,19 @@ const CakeArticlePage = () => {
 		[activeId]
 	);
 
+	const { handleAnimationEnd, handleAnimationStart, getAnimationClass } =
+		useAnimate();
 	const [visibilityIndex, setVisibilityIndex] = useState<number | null>(null);
-	const [isAnimate, setIsAnimate] = useState<boolean>(false);
 
-	const popupClass = `popup ${styles.popup} ${
-		isAnimate ? styles.popup_closing : ''
-	}`;
-	const overlayClass = `${styles.overlay} ${
-		isAnimate ? styles.overlay_closing : ''
-	}`;
+	const popupClass = getAnimationClass(
+		`popup ${styles.popup}`,
+		styles.popup_closing
+	);
 
-	const popupClassActive = `popup ${styles.popup} ${styles.popup_active}`;
-	const titleClassName = `title_fz30 title_fw800 ${styles.main__title}`;
+	const overlayClass = getAnimationClass(
+		styles.overlay,
+		styles.overlay_closing
+	);
 
 	const initialprice = useMemo(() => activeOffer?.price ?? 0, [activeOffer]);
 
@@ -48,24 +50,27 @@ const CakeArticlePage = () => {
 
 	const handlePopupClickClose = useCallback(() => {
 		if (!isMobile) {
-			setIsAnimate(true);
+			handleAnimationStart();
 		}
-	}, [isMobile]);
+	}, [handleAnimationStart, isMobile]);
 
 	const handlePopupTouchClose = useCallback(() => {
-		setIsAnimate(true);
-	}, []);
+		handleAnimationStart();
+	}, [handleAnimationStart]);
 
-	const handlePopupAnimationEnd = useCallback((e: AnimationEvent) => {
-		if (e.animationName === styles.fadeOut) {
-			setVisibilityIndex(null);
-			setIsAnimate(false);
-		}
-		if (e.animationName === styles.heightOut) {
-			setVisibilityIndex(null);
-			setIsAnimate(false);
-		}
-	}, []);
+	const handlePopupAnimationEnd = useCallback(
+		(e: AnimationEvent) => {
+			if (e.animationName === styles.fadeOut) {
+				setVisibilityIndex(null);
+				handleAnimationEnd();
+			}
+			if (e.animationName === styles.heightOut) {
+				setVisibilityIndex(null);
+				handleAnimationEnd();
+			}
+		},
+		[handleAnimationEnd]
+	);
 
 	const { handleTouchStart, handleTouchMove, handleTouchEnd } = useTouch(
 		handlePopupTouchClose
@@ -92,7 +97,7 @@ const CakeArticlePage = () => {
 						<div className={styles.main__headline}>
 							<Title
 								titleText={activeOffer.title}
-								titleClass={titleClassName}
+								titleClass={`title_fz30 title_fw800 ${styles.main__title}`}
 								level="h1"
 							/>
 						</div>
@@ -111,11 +116,7 @@ const CakeArticlePage = () => {
 						<Overlay key={keyValue} className={overlayClass}>
 							<Popup
 								closeClass={styles.popup__close}
-								outerClass={
-									i === visibilityIndex
-										? `${popupClass} ${popupClassActive}`
-										: popupClass
-								}
+								outerClass={popupClass}
 								onCloseClick={handlePopupClickClose}
 								onTouchStart={handleTouchStart}
 								onTouchMove={handleTouchMove}

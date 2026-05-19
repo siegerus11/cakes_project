@@ -40,7 +40,7 @@ const useAnimate = (options: UseAnimateOptions = {}): UseAnimateReturn => {
 	}, [onOpen]);
 
 	const animateOut = useCallback(() => {
-		setIsAnimating(true);
+		setIsAnimating(true); // isAnimating становиться true -> добаляются классы ан-ции -> ан-ции проигрываются -> срабатывает handleAnimationEnd -> isVisible становится false.
 		setAnimationDirection('out');
 		onClose?.();
 	}, [onClose]);
