@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useEffect, useCallback, useMemo } from 'react';
 
 import { AppRoute, LAYOUT_NAVS } from '../../constants';
 import useAnimate from '../../hooks/useAnimate';
@@ -14,11 +14,7 @@ import Hamburger from '../ui/hamburger/hamburger';
 import styles from './header.module.scss';
 
 const Header = () => {
-	const [hamburgerisVisible, setHamburgerIsVisible] =
-		useState<boolean>(false);
-
 	const {
-		isAnimating,
 		isVisible,
 		animateIn,
 		animateOut,
@@ -100,9 +96,9 @@ const Header = () => {
 			</header>
 			{isVisible && (
 				<HamburgerPopup
-					isAnimating={isAnimating}
 					onHamburgerClick={handleHamburgerClick}
 					onAnimationEnd={handleAnimationEnd}
+					getAnimationClass={getAnimationClass}
 				/>
 			)}
 		</div>

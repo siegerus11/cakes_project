@@ -12,14 +12,19 @@ import styles from './hamburger-popup.module.scss';
 type HamburgerPopupProps = {
 	onHamburgerClick: () => void;
 	onAnimationEnd: () => void;
-	isAnimating: boolean;
+	getAnimationClass: (baseClass: string, activeClass: string) => string;
 };
 
 const HamburgerPopup = ({
 	onHamburgerClick,
 	onAnimationEnd,
-	isAnimating
+	getAnimationClass
 }: HamburgerPopupProps) => {
+	const popUpClass = getAnimationClass(
+		styles.wrapper,
+		styles.wrapper_closing
+	);
+
 	const handleHamburgerClick = useCallback(
 		() => onHamburgerClick(),
 		[onHamburgerClick]
@@ -40,9 +45,7 @@ const HamburgerPopup = ({
 
 	return (
 		<div
-			className={`${styles.wrapper} ${
-				isAnimating ? styles.wrapper_closing : ''
-			}`}
+			className={popUpClass}
 			onAnimationEnd={handleAnimationEnd}
 			role="dialog"
 			aria-modal="true"
