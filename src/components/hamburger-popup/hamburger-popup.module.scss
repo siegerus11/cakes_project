@@ -36,6 +36,10 @@
 			padding: 16px 15px 16px 10px;
 		}
 	}
+
+	&_closing {
+		animation: fadeOut 0.3s forwards;
+	}
 }
 
 .button {

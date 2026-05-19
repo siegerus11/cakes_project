@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, AnimationEvent } from 'react';
 
 import { AppRoute, LAYOUT_NAVS } from '../../constants';
 import { Nav } from '../../types/types';
@@ -11,9 +11,15 @@ import styles from './hamburger-popup.module.scss';
 
 type HamburgerPopupProps = {
 	onHamburgerClick: () => void;
+	onAnimationEnd: () => void;
+	isAnimating: boolean;
 };
 
-const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
+const HamburgerPopup = ({
+	onHamburgerClick,
+	onAnimationEnd,
+	isAnimating
+}: HamburgerPopupProps) => {
 	const handleHamburgerClick = useCallback(
 		() => onHamburgerClick(),
 		[onHamburgerClick]
@@ -22,7 +28,11 @@ const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
 		() => onHamburgerClick(),
 		[onHamburgerClick]
 	);
-
+	const handleAnimationEnd = (e: AnimationEvent) => {
+		if (e.animationName === styles.fadeOut) {
+			onAnimationEnd();
+		}
+	};
 	const secondaryNavs = useMemo(
 		() => getSecondaryNavs(LAYOUT_NAVS, true) as Nav[],
 		[]
@@ -30,7 +40,10 @@ const HamburgerPopup = ({ onHamburgerClick }: HamburgerPopupProps) => {
 
 	return (
 		<div
-			className={styles.wrapper}
+			className={`${styles.wrapper} ${
+				isAnimating ? styles.wrapper_closing : ''
+			}`}
+			onAnimationEnd={handleAnimationEnd}
 			role="dialog"
 			aria-modal="true"
 			aria-label="Меню"
