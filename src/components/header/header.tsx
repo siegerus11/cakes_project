@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useEffect, useCallback, useMemo } from 'react';
 
 import { AppRoute, LAYOUT_NAVS } from '../../constants';
+import useAnimate from '../../hooks/useAnimate';
 import { useAppSelector } from '../../hooks/useStore';
 import { selectFinalSum } from '../../store/main-process/main-process';
 import getFormattedPrice from '../../utils/getFormattedPrice';
@@ -13,16 +14,25 @@ import Hamburger from '../ui/hamburger/hamburger';
 import styles from './header.module.scss';
 
 const Header = () => {
-	const [hamburgerisVisible, setHamburgerIsVisible] =
-		useState<boolean>(false);
+	const {
+		isVisible,
+		animateIn,
+		animateOut,
+		handleAnimationEnd,
+		getAnimationClass
+	} = useAnimate();
 
-	const handleHamburgerClick = useCallback(() => {
-		setHamburgerIsVisible(prevState => !prevState);
-	}, []);
+	const handleHamburgerClick = () => {
+		if (isVisible) animateOut();
+		else animateIn();
+	};
 
-	const closePopup = useCallback((e: KeyboardEvent) => {
-		if (e.key === 'Escape') setHamburgerIsVisible(false);
-	}, []);
+	const closePopup = useCallback(
+		(e: KeyboardEvent) => {
+			if (e.key === 'Escape') animateOut();
+		},
+		[animateOut]
+	);
 
 	useEffect(() => {
 		document.addEventListener('keydown', closePopup);
@@ -84,8 +94,12 @@ const Header = () => {
 				</div>
 				<NavMenu navs={LAYOUT_NAVS} linkClassName={styles.link} />
 			</header>
-			{hamburgerisVisible && (
-				<HamburgerPopup onHamburgerClick={handleHamburgerClick} />
+			{isVisible && (
+				<HamburgerPopup
+					onHamburgerClick={handleHamburgerClick}
+					onAnimationEnd={handleAnimationEnd}
+					getAnimationClass={getAnimationClass}
+				/>
 			)}
 		</div>
 	);
