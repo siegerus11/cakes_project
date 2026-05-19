@@ -15,9 +15,9 @@ const Hamburger = ({ onHamburgerClick, isPopup }: HamburgerProps) => {
 					? `${styles.wrapper} ${styles.wrapper_asEnd}`
 					: styles.wrapper
 			}
-			onClick={() => handleHamburgerClick()}
+			onClick={handleHamburgerClick}
 			type="button"
-			aria-label={isPopup ? "Закрыть меню" : "Открыть меню"}
+			aria-label={isPopup ? 'Закрыть меню' : 'Открыть меню'}
 		>
 			<div className={styles.item}></div>
 			<div className={styles.item}></div>
