@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { SubmitButton } from '../../../../components/ui/button/button';
+import SubmitButton from '../../../../components/ui/button/submit-button';
 import getFormattedPrice from '../../../../utils/getFormattedPrice';
 import styles from './adder.module.scss';
 

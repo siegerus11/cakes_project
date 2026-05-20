@@ -1,35 +1,6 @@
 import { PropsWithChildren, MouseEventHandler } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-type SubmitButtonProps = PropsWithChildren<{
-	label?: string;
-	className: string;
-	formId?: string;
-	onClick?: MouseEventHandler<HTMLButtonElement>;
-}>;
-
-const SubmitButton = ({
-	children,
-	label,
-	className,
-	onClick,
-	formId
-}: SubmitButtonProps) => {
-	return (
-		<button
-			className={`${className}`}
-			type="submit"
-			onClick={onClick}
-			form={formId}
-			aria-label={label}
-		>
-			{children}
-		</button>
-	);
-};
-
-export { SubmitButton };
-
 type ButtonProps = PropsWithChildren<{
 	label?: string;
 	className: string;

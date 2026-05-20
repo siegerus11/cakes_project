@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
 import Title from '../../components/title/title';
-import { SubmitButton } from '../../components/ui/button/button';
+import SubmitButton from '../../components/ui/button/submit-button';
 import { AppRoute } from '../../constants';
 import styles from './order-registration-page.module.scss';
 
