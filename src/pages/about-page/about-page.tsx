@@ -4,11 +4,12 @@ import Title from '../../components/title/title';
 import { ABOUT_QUESTIONS } from '../../constants';
 import styles from './about-page.module.scss';
 import Importance from './importance/importance';
+import Rewievs from './rewievs/rewievs';
 
 const AboutPage = () => {
 	return (
-		<div className="container">
-			<div className={`page ${styles.page}`}>
+		<div className={`page ${styles.page}`}>
+			<div className="container">
 				<BreadCrumbs />
 				<Title titleText="О нас" titleClass={`${styles.title}`} />
 				<hr />
@@ -34,6 +35,7 @@ const AboutPage = () => {
 					/>
 				</main>
 			</div>
+			<Rewievs />
 		</div>
 	);
 };
