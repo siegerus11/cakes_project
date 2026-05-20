@@ -1,0 +1,29 @@
+@use '../../variables' as vars;
+
+:global(.questions) {
+	&:global(__title) {
+		color: vars.$color-text-crimson;
+		font-size: 22px;
+		line-height: 141%;
+	}
+}
+
+.questions {
+	&__item {
+		padding: 23px 0 9px 0;
+		border-top: 1px solid vars.$color-text-light;
+		border-bottom: 1px solid vars.$color-text-light;
+	}
+
+	&__subtitle {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 150%;
+	}
+
+	&__text {
+		margin-top: 12px;
+		font-size: 16px;
+		line-height: 150%;
+	}
+}

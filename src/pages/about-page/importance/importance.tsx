@@ -26,7 +26,7 @@ const Importance = () => {
 			<Title
 				titleText="Наши ценности"
 				level="h3"
-				titleClass={`title title_fw800 ${styles.component__title}`}
+				titleClass={`title_fw800 ${styles.component__title}`}
 			/>
 			<ul className={styles.component__list}>
 				{IMPORTANCES.map((item, i) => {

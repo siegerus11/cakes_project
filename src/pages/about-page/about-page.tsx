@@ -1,4 +1,5 @@
 import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
+import Questions from '../../components/questions/questions';
 import Title from '../../components/title/title';
 import styles from './about-page.module.scss';
 import Importance from './importance/importance';
@@ -8,7 +9,7 @@ const AboutPage = () => {
 		<div className="container">
 			<div className={`page ${styles.page}`}>
 				<BreadCrumbs />
-				<Title titleText="О нас" titleClass={`title ${styles.title}`} />
+				<Title titleText="О нас" titleClass={`${styles.title}`} />
 				<hr />
 
 				<main className={styles.main}>
@@ -16,7 +17,7 @@ const AboutPage = () => {
 						titleText="Вкусно, красиво и 
 						с любовью"
 						level="h2"
-						titleClass={`title title_fw800 ${styles.main__title}`}
+						titleClass={`title_fw800 ${styles.main__title}`}
 					/>
 
 					<p className={styles.main__description}>
@@ -25,6 +26,7 @@ const AboutPage = () => {
 						сделать ваш праздник особенным.
 					</p>
 					<Importance />
+					<Questions titleClass={styles.questions__title} />
 				</main>
 			</div>
 		</div>
