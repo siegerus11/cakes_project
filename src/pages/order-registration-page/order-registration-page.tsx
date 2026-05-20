@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
 import Title from '../../components/title/title';
 import { SubmitButton } from '../../components/ui/button/button';
+import { AppRoute } from '../../constants';
 import styles from './order-registration-page.module.scss';
 
 const OrderRegistrationPage = () => {
@@ -14,6 +15,11 @@ const OrderRegistrationPage = () => {
 		setIsAreaVisible(prevState => !prevState);
 	};
 
+	const handleFormSubmit = (e: FormEvent) => {
+		e.preventDefault();
+		navigate(AppRoute.Thanks);
+	};
+
 	return (
 		<>
 			<main className={`page ${styles.page}`}>
@@ -22,6 +28,7 @@ const OrderRegistrationPage = () => {
 						className={`back-link back-link_m-small ${styles.back}`}
 						type="button"
 						onClick={() => navigate(-1)}
+						aria-label="Назад"
 					>
 						<span>Назад</span>
 					</button>
@@ -32,7 +39,10 @@ const OrderRegistrationPage = () => {
 							titleClass={`title_fw800 title_fz30 ${styles.title}`}
 							level="h1"
 						/>
-						<form>
+						<form
+							onSubmit={handleFormSubmit}
+							id="order-registration-form"
+						>
 							<section className={styles.delivery}>
 								<div className={styles.delivery__header}>
 									<svg
@@ -118,6 +128,8 @@ const OrderRegistrationPage = () => {
 						</form>
 						<SubmitButton
 							className={`button button_primary ${styles.button}`}
+							label="Оформить заказ"
+							formId="order-registration-form"
 						>
 							<span>Оформить заказ</span>
 						</SubmitButton>
@@ -127,6 +139,7 @@ const OrderRegistrationPage = () => {
 			<ButtonController outerClass={styles.controller}>
 				<SubmitButton
 					className={`button button_primary ${styles.controller__button}`}
+					label="Оформить заказ"
 				>
 					<span>Оформить заказ</span>
 				</SubmitButton>

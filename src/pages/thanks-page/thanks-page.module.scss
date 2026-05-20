@@ -1,1 +1,37 @@
 @use '../../_variables' as variables;
+@use '../../mixins' as mixins;
+
+.page {
+	padding-top: 147px;
+	padding-bottom: 437px;
+}
+
+.wrapper {
+	@include mixins.flex-column-center;
+}
+
+.icon {
+	width: 64px;
+	height: 64px;
+}
+
+.title {
+	margin-top: 43px;
+}
+
+.description {
+	max-width: 321px;
+	margin-top: 14px;
+	line-height: 150%;
+	text-align: center;
+}
+
+.button {
+	margin-top: 93px;
+	padding: 17px 60px 16px 60px;
+
+	span {
+		font-weight: 600;
+		line-height: 119%;
+	}
+}

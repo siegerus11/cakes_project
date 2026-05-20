@@ -1,16 +1,37 @@
 import Title from '../../components/title/title';
+import Button from '../../components/ui/button/button';
+import { AppRoute } from '../../constants';
 import styles from './thanks-page.module.scss';
-
 
 const ThanksPage = () => {
 	return (
 		<main className={`page ${styles.page}`}>
 			<div className="container">
-				<Title titleText="Спасибо за заказ" titleClass={styles.title} level="h1" />
 				<div className={styles.wrapper}>
-					<svg className={styles.icon} viewBox="0 0 64 64" aria-hidden="true">
+					<svg
+						className={styles.icon}
+						viewBox="0 0 64 64"
+						aria-hidden="true"
+					>
 						<use xlinkHref="#smile"></use>
 					</svg>
+					<Title
+						titleText="Заказ принят"
+						titleClass={`title title_fz30 title_fw800 ${styles.title}`}
+						level="h1"
+					/>
+					<p className={styles.description}>
+						{' '}
+						Свяжемся в ближайшее время, уточним детали и согласуем
+						доставку :)
+					</p>
+					<Button
+						className={`button button_primary ${styles.button}`}
+						path={AppRoute.Root}
+						aria-label="Вернуться на главную страницу"
+					>
+						<span>Вернуться на главную</span>{' '}
+					</Button>
 				</div>
 			</div>
 		</main>

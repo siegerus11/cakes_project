@@ -2,6 +2,7 @@ import { PropsWithChildren, MouseEventHandler } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 type SubmitButtonProps = PropsWithChildren<{
+	label?: string;
 	className: string;
 	formId?: string;
 	onClick?: MouseEventHandler<HTMLButtonElement>;
@@ -9,6 +10,7 @@ type SubmitButtonProps = PropsWithChildren<{
 
 const SubmitButton = ({
 	children,
+	label,
 	className,
 	onClick,
 	formId
@@ -20,6 +22,7 @@ const SubmitButton = ({
 				type="submit"
 				onClick={onClick}
 				form={formId}
+				aria-label={label}
 			>
 				{children}
 			</button>
@@ -30,6 +33,7 @@ const SubmitButton = ({
 export { SubmitButton };
 
 type ButtonProps = PropsWithChildren<{
+	label?: string;
 	className: string;
 	isOuterLink?: boolean;
 	url?: string;
@@ -40,6 +44,7 @@ type ButtonProps = PropsWithChildren<{
 const Button = ({
 	children,
 	className,
+	label,
 	isOuterLink,
 	url,
 	onClick,
@@ -58,11 +63,16 @@ const Button = ({
 	) : (
 		<div>
 			{isOuterLink ? (
-				<a className={`${className}`} href={url}>
+				<a className={`${className}`} href={url} aria-label={label}>
 					{children}
 				</a>
 			) : (
-				<button className={className} type="button" onClick={onClick}>
+				<button
+					className={className}
+					type="button"
+					onClick={onClick}
+					aria-label={label}
+				>
 					{children}
 				</button>
 			)}
