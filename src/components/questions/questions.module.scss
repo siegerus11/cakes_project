@@ -1,7 +1,8 @@
 @use '../../variables' as vars;
+@use '../../mixins' as mix;
 
 :global(.questions) {
-	&:global(__title) {
+	&:global(-title) {
 		color: vars.$color-text-crimson;
 		font-size: 22px;
 		line-height: 141%;
@@ -9,6 +10,10 @@
 }
 
 .questions {
+	&__list {
+		margin-top: 29px;
+	}
+
 	&__item {
 		padding: 23px 0 9px 0;
 		border-top: 1px solid vars.$color-text-light;
@@ -25,5 +30,9 @@
 		margin-top: 12px;
 		font-size: 16px;
 		line-height: 150%;
+	}
+
+	&__headline {
+		@include mix.flex-between;
 	}
 }
