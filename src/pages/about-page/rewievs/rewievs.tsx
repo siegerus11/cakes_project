@@ -9,6 +9,8 @@ type RewievsItemProps = {
 	rating: number;
 };
 
+const STAR_PATH = 'M8 1.2l2.1 4.3 4.7.7-3.4 3.3.8 4.7L8 12l-4.2 2.2.8-4.7L1.2 6.2l4.7-.7L8 1.2z';
+
 const RewievsItem = ({ avatar, name, text, rating }: RewievsItemProps) => {
 	return (
 		<li className={styles.component__item}>
@@ -22,17 +24,20 @@ const RewievsItem = ({ avatar, name, text, rating }: RewievsItemProps) => {
 				/>
 				<div>
 					<span className={styles.component__item__name}>{name}</span>
-					<div className={styles.component__item__stars}>
-						{Array.from({ length: 5 }, (_, i) => (
-							<svg
-								key={i}
-								className={`${styles.component__item__star} ${
-									i < rating ? styles.component__item__star_filled : ''
-								}`}
-								viewBox="0 0 16 16"
-								aria-hidden="true"
-							>
-								<use xlinkHref="#star"></use>
+				<div className={styles.component__stars}>
+					{Array.from({ length: 5 }, (_, i) => (
+						<svg
+							key={i}
+							className={styles.component__star}
+							viewBox="0 0 16 16"
+							aria-hidden="true"
+						>
+								<path
+									d={STAR_PATH}
+									fill={i < rating ? '#ff4c80' : 'none'}
+									stroke={i < rating ? '#ff4c80' : '#b1b1b1'}
+									strokeWidth="0.5"
+								/>
 							</svg>
 						))}
 					</div>
