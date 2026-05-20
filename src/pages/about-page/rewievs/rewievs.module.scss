@@ -1,0 +1,29 @@
+@use '../../../variables' as variables;
+
+.component {
+	margin-top: 38px;
+
+	&__title {
+		color: variables.$color-text-crimson;
+		font-size: 22px;
+		line-height: 141%;
+		text-align: center;
+	}
+
+	&__list {
+		display: flex;
+		gap: 35px;
+		align-items: center;
+		margin-top: 70px;
+		padding-bottom: 20px;
+		padding-left: 120px;
+		overflow-x: auto;
+	}
+
+	&__item {
+		min-width: 256px;
+		min-height: 527px;
+		background-color: variables.$color-accent-additional;
+		border-radius: 8px;
+	}
+}

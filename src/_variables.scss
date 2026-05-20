@@ -9,6 +9,10 @@ $color-bg-secondary: #f7f7f7;
 $color-bg-additional: #303030;
 $color-bg-crimson: rgba(255, 92, 139, 0.1);
 
+// Фон дополнительные
+$color-bg-tertiary: #fafafa;
+$color-bg-quaternary: #f6f6f6;
+
 // Текст
 $color-text-primary: #000;
 $color-text-secondary: #858585;
@@ -18,14 +22,13 @@ $color-text-gray: #bababa;
 $color-text-dark: #323232;
 $color-text-crimson: #ff5b8b;
 
-// Фон дополнительные
-$color-bg-tertiary: #fafafa;
-$color-bg-quaternary: #f6f6f6;
-
 // Акцентные цвета
 $color-accent-light: #e8d4ff;
+$color-accent-additional: #f0e2fb;
 $color-link: #2787f5;
 $color-error: #ff6b6b;
 $color-info: #54a9eb;
 
-$all-transition: all, 0.3s
+// Переходы
+$all-transition: all, 0.3s;
+$middle-transition: all, 0.6s
