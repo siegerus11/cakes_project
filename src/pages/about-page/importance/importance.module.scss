@@ -21,6 +21,10 @@
 
 	&__item {
 		margin-bottom: 62px;
+
+		&:nth-last-child(1) {
+			margin-bottom: 0;
+		}
 	}
 
 	&__subtitle {
@@ -31,8 +35,10 @@
 	}
 
 	&__text {
+		max-width: 720px;
 		margin-top: 22px;
 		margin-bottom: 0;
 		font-weight: 400;
+		letter-spacing: 0.2px;
 	}
 }

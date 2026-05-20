@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Question } from '../../types/types';
 import Title from '../title/title';
 import styles from './questions.module.scss';
@@ -5,9 +7,18 @@ import styles from './questions.module.scss';
 type QuestionsItemProps = {
 	title: string;
 	text: string;
+	isActive: boolean;
+	index: number;
+	onOpenButtonClick: (idx: number) => void;
 };
 
-const QuestionsItem = ({ title, text }: QuestionsItemProps) => {
+const QuestionsItem = ({
+	title,
+	text,
+	isActive,
+	index,
+	onOpenButtonClick
+}: QuestionsItemProps) => {
 	return (
 		<li className={styles.questions__item}>
 			<div className={styles.questions__headline}>
@@ -18,12 +29,14 @@ const QuestionsItem = ({ title, text }: QuestionsItemProps) => {
 				/>
 				<button
 					type="button"
-					className={styles.questions__close}
-					aria-label="Показать вопрос"
-				>
-					X
-				</button>
+					className={`${styles.questions__close} ${
+						isActive ? styles.questions__close_active : ''
+					}`}
+					aria-label={isActive ? 'Скрыть вопрос' : 'Показать вопрос'}
+					onClick={() => onOpenButtonClick(index)}
+				></button>
 			</div>
+			{isActive && <p className={styles.questions__text}>{text}</p>}
 		</li>
 	);
 };
@@ -35,6 +48,23 @@ type QuestionsProps = {
 };
 
 const Questions = ({ titleClass, wrapperClass, questions }: QuestionsProps) => {
+	const [relavantQuestions, setRelavantQuestions] =
+		useState<Question[]>(questions);
+
+	const handleOpenButtonClick = (idx: number) => {
+		setRelavantQuestions(
+			relavantQuestions.map((question, i) => {
+				if (i === idx) {
+					return {
+						...question,
+						isActive: !question.isActive
+					};
+				}
+				return question;
+			})
+		);
+	};
+
 	return (
 		<section className={`questions ${wrapperClass}`}>
 			<Title
@@ -44,7 +74,19 @@ const Questions = ({ titleClass, wrapperClass, questions }: QuestionsProps) => {
 			/>
 
 			<ul className={styles.questions__list}>
-				<QuestionsItem title="" text="" />
+				{relavantQuestions.map((question, i) => {
+					const keyValue = `${question.title}-${i}`;
+					return (
+						<QuestionsItem
+							key={keyValue}
+							title={question.title}
+							text={question.text}
+							isActive={question.isActive}
+							index={i}
+							onOpenButtonClick={handleOpenButtonClick}
+						/>
+					);
+				})}
 			</ul>
 		</section>
 	);

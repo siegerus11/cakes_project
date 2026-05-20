@@ -87,4 +87,5 @@ export type CakeOrder = {
 export type Question = {
 	title: string;
 	text: string;
+	isActive: boolean;
 };
