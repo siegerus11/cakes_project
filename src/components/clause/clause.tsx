@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import styles from './clauses.module.scss';
+import styles from './clause.module.scss';
 
 const Clauses = () => {
 	const [isVisibleArticle, setiIsVisibleArticle] = useState<boolean>(false);
