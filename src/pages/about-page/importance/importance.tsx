@@ -9,7 +9,7 @@ type importanceItemProps = {
 
 const ImportanceItem = ({ title, text }: importanceItemProps) => {
 	return (
-		<li>
+		<li className={styles.component__item}>
 			<Title
 				titleClass={styles.component__subtitle}
 				titleText={title}
@@ -30,10 +30,11 @@ const Importance = () => {
 			/>
 			<ul className={styles.component__list}>
 				{IMPORTANCES.map((item, i) => {
+					const keyValue = `${item.title}-${i}`;
 					return (
 						<ImportanceItem
-							key={`${item.title}-${i}`}
-							text={item.text}
+							key={keyValue}
+							text={item.description}
 							title={item.title}
 						/>
 					);

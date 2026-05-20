@@ -14,4 +14,25 @@
 		line-height: 141%;
 		text-align: center;
 	}
+
+	&__list {
+		margin-top: 54px;
+	}
+
+	&__item {
+		margin-bottom: 62px;
+	}
+
+	&__subtitle {
+		font-weight: 600;
+		font-size: 16px;
+		font-style: italic;
+		line-height: 150%;
+	}
+
+	&__text {
+		margin-top: 22px;
+		margin-bottom: 0;
+		font-weight: 400;
+	}
 }
