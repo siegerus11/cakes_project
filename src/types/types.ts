@@ -83,3 +83,8 @@ export type CakeOrder = {
 	price: number;
 	quantity: number;
 };
+
+export type Question = {
+	title: string;
+	text: string;
+};

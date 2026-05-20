@@ -1,6 +1,7 @@
 import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
 import Questions from '../../components/questions/questions';
 import Title from '../../components/title/title';
+import { ABOUT_QUESTIONS } from '../../constants';
 import styles from './about-page.module.scss';
 import Importance from './importance/importance';
 
@@ -26,7 +27,11 @@ const AboutPage = () => {
 						сделать ваш праздник особенным.
 					</p>
 					<Importance />
-					<Questions titleClass={styles.questions__title} />
+					<Questions
+						wrapperClass={styles.questions}
+						titleClass={styles.questions__title}
+						questions={ABOUT_QUESTIONS}
+					/>
 				</main>
 			</div>
 		</div>
