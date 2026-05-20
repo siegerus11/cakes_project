@@ -72,6 +72,7 @@ const Header = () => {
 						<Button
 							className={`button button_primary ${styles.button}`}
 							path={AppRoute.ShoppingCart}
+							label="Оформить заказ"
 						>
 							<svg
 								className={styles.button__icon}

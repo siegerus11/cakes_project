@@ -145,10 +145,11 @@ const CakeArticlePage = () => {
 										>
 											{fillingItem.description}
 										</p>
-										<Button
-											className={`button button_primary ${styles.popup__button}`}
-											onClick={handlePopupClickClose}
-										>
+									<Button
+										className={`button button_primary ${styles.popup__button}`}
+										onClick={handlePopupClickClose}
+										label="Понятно, спасибо"
+									>
 											<span>Понятно, спасибо</span>
 										</Button>
 										{fillingItem.ingredients && (

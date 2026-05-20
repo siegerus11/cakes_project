@@ -139,6 +139,7 @@ const ShoppingCartPage = () => {
 					<Button
 						className={`button button_primary ${styles.button}`}
 						path={buttonPath}
+						label={buttonText}
 					>
 						<span>{buttonText}</span>
 					</Button>
@@ -148,6 +149,7 @@ const ShoppingCartPage = () => {
 				<Button
 					className={`button button_primary ${styles.controller__button}`}
 					path={AppRoute.OrderRegistration}
+					label="Верно, далее"
 				>
 					<span>Верно, далее</span>
 				</Button>
@@ -190,10 +192,11 @@ const ShoppingCartPage = () => {
 								/>
 							)}
 						</div>
-						<SubmitButton
-							className={`button button_primary ${styles.popup__button}`}
-							formId="promo-form"
-						>
+					<SubmitButton
+						className={`button button_primary ${styles.popup__button}`}
+						formId="promo-form"
+						label="Применить"
+					>
 							<span>Применить</span>
 						</SubmitButton>
 					</Popup>

@@ -16,17 +16,15 @@ const SubmitButton = ({
 	formId
 }: SubmitButtonProps) => {
 	return (
-		<div>
-			<button
-				className={`${className}`}
-				type="submit"
-				onClick={onClick}
-				form={formId}
-				aria-label={label}
-			>
-				{children}
-			</button>
-		</div>
+		<button
+			className={`${className}`}
+			type="submit"
+			onClick={onClick}
+			form={formId}
+			aria-label={label}
+		>
+			{children}
+		</button>
 	);
 };
 

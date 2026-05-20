@@ -66,6 +66,7 @@ const HamburgerPopup = ({
 						className={`button button_secondary ${styles.button}`}
 						isOuterLink
 						url={AppRoute.Root}
+						label="Написать в Telegram"
 					>
 						<span>Написать в Telegram</span>
 						<svg

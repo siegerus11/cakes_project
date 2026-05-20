@@ -33,6 +33,7 @@ const Adder = ({ priceCounter, isWrapped, formId }: AdderProps) => {
 				<SubmitButton
 					className={`button button_primary ${styles.adder__button}`}
 					formId={formId}
+					label="Добавить в корзину"
 				>
 					<span>Добавить в корзину</span>
 				</SubmitButton>

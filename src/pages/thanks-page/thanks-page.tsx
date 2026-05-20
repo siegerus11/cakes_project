@@ -25,11 +25,11 @@ const ThanksPage = () => {
 						Свяжемся в ближайшее время, уточним детали и согласуем
 						доставку :)
 					</p>
-					<Button
-						className={`button button_primary ${styles.button}`}
-						path={AppRoute.Root}
-						aria-label="Вернуться на главную страницу"
-					>
+				<Button
+					className={`button button_primary ${styles.button}`}
+					path={AppRoute.Root}
+					label="Вернуться на главную страницу"
+				>
 						<span>Вернуться на главную</span>{' '}
 					</Button>
 				</div>

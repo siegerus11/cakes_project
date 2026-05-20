@@ -65,11 +65,12 @@ const Footer = () => {
 								</svg>
 							</a>
 						</SocialLinks>
-						<Button
-							className={`button button_secondary ${styles.button}`}
-							isOuterLink
-							url="/"
-						>
+					<Button
+						className={`button button_secondary ${styles.button}`}
+						isOuterLink
+						url="/"
+						label="Написать в Telegram"
+					>
 							<span>Написать в Telegram</span>
 							<svg
 								className={styles.button__icon}

@@ -42,7 +42,7 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 				<span className={styles.cost}>{price} ₽</span>
 				<Button
 					className={`button button_tertiary ${styles.button}`}
-					aria-label="Добавить в корзину"
+					label="Добавить в корзину"
 				/>
 			</div>
 		</Link>
