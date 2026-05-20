@@ -95,7 +95,7 @@ export const ConfirmMessage = {
 	ClearOrder: 'Удалить заказ?'
 } as const;
 
-export const IMPORTANCE = [
+export const IMPORTANCES = [
 	{
 		title: 'Вкус — это главное',
 		description:

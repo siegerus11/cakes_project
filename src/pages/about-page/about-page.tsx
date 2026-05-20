@@ -1,11 +1,9 @@
 import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
 import Title from '../../components/title/title';
-import { IMPORTANCE } from '../../constants';
 import styles from './about-page.module.scss';
+import Importance from './importance/importance';
 
-type Props = {};
-
-const AboutPage = (props: Props) => {
+const AboutPage = () => {
 	return (
 		<div className="container">
 			<div className={`page ${styles.page}`}>
@@ -26,6 +24,7 @@ const AboutPage = (props: Props) => {
 						не просто готовим десерты, а помогаем выразить чувства и
 						сделать ваш праздник особенным.
 					</p>
+					<Importance />
 				</main>
 			</div>
 		</div>
