@@ -63,7 +63,7 @@
 			height: 13px;
 			background: url('../../../images/close.svg') no-repeat center/cover;
 			transform: translate(-50%, -50%) rotate(135deg);
-			transition: vars.$middle-transition;
+			transition: vars.$all-transition;
 			content: '';
 		}
 
