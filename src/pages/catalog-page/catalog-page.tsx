@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
 import CardsList from '../../components/cards-list/cards-list';
-import Clauses from '../../components/clause/clauses';
+import Clauses from '../../components/clause/clause';
 import Title from '../../components/title/title';
 import { NAVS } from '../../constants';
 import { useAppDispatch } from '../../hooks/useStore';
