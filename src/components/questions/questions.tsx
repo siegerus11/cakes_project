@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { Question } from '../../types/types';
 import Title from '../title/title';
@@ -51,19 +51,22 @@ const Questions = ({ titleClass, wrapperClass, questions }: QuestionsProps) => {
 	const [relavantQuestions, setRelavantQuestions] =
 		useState<Question[]>(questions);
 
-	const handleOpenButtonClick = (idx: number) => {
-		setRelavantQuestions(
-			relavantQuestions.map((question, i) => {
-				if (i === idx) {
-					return {
-						...question,
-						isActive: !question.isActive
-					};
-				}
-				return question;
-			})
-		);
-	};
+	const handleOpenButtonClick = useCallback(
+		(idx: number) => {
+			setRelavantQuestions(
+				relavantQuestions.map((question, i) => {
+					if (i === idx) {
+						return {
+							...question,
+							isActive: !question.isActive
+						};
+					}
+					return question;
+				})
+			);
+		},
+		[relavantQuestions]
+	);
 
 	return (
 		<section className={`questions ${wrapperClass}`}>
