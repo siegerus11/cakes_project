@@ -1,4 +1,56 @@
 @use '../../_variables' as variables;
+
+.page {
+	padding-bottom: 91px;
+}
+
+hr {
+	color: variables.$color-text-light;
+}
+
+.title {
+	margin-top: 56px;
+	text-align: left;
+}
+
+.main {
+	margin-top: 70px;
+
+	&__title {
+		max-width: 256px;
+		margin: 0 auto;
+		margin-top: 40px;
+		color: variables.$color-text-crimson;
+		font-size: 28px;
+		line-height: 130%;
+		text-align: center;
+	}
+
+	&__description {
+		max-width: 736px;
+		margin: 0 auto;
+		margin-top: 33px;
+		line-height: 150%;
+		text-align: center;
+	}
+}
+
+.importance {
+	width: 947px;
+	margin: 0 auto;
+	margin-top: 102px;
+	padding: 60px 122px 93px 89px;
+	background-color: variables.$color-bg-crimson;
+	border-radius: 50px;
+
+	&__title {
+		color: variables.$color-text-crimson;
+		font-size: 22px;
+		line-height: 141%;
+		text-align: center;
+	}
+}
+
 .button {
 	position: absolute;
 	top: 400px;
