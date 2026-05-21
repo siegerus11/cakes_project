@@ -53,7 +53,7 @@ const RewievsItem = ({
 
 const Rewievs = () => {
 	return (
-		<section className={styles.component}>
+		<section id="rewievs" className={styles.component}>
 			<Title
 				level="h3"
 				titleClass={`title_fw800 ${styles.component__title}`}

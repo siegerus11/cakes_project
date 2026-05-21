@@ -1,6 +1,8 @@
 import { AppRoute } from '../constants';
 
-export type RoutePath = (typeof AppRoute)[keyof typeof AppRoute];
+export type RoutePath =
+	| (typeof AppRoute)[keyof typeof AppRoute]
+	| `${(typeof AppRoute)[keyof typeof AppRoute]}#rewievs`;
 
 export type Nav = {
 	title:

@@ -40,7 +40,7 @@ export const NAVS: Nav[] = [
 	{
 		title: 'Отзывы',
 		image: '',
-		path: AppRoute.Reviews
+		path: `${AppRoute.About}#rewievs`
 	},
 	{
 		title: 'Контакты',
@@ -119,7 +119,7 @@ export const ABOUT_QUESTIONS = [
 		text: `В своем декоре мы используем только натуральные, природные красители — 
 	куркумин, экстракт хлорофилла, экстракт кожицы винограда, уголь растительный
 	 и многие другие.`,
-		isActive: true
+		isActive: false
 	},
 	{
 		title: 'Вопрос номер 2',
