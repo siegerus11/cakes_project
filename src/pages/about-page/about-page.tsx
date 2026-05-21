@@ -24,9 +24,11 @@ const AboutPage = () => {
 					/>
 
 					<p className={styles.main__description}>
-						ВауКейк — современная кондитерская в онлайн-формате. Мы
-						не просто готовим десерты, а помогаем выразить чувства и
-						сделать ваш праздник особенным.
+						ВауКейк — современная кондитерская в онлайн-формате.
+						<br className={styles.main__pass} />
+						<br className={styles.main__pass} />
+						Мы не просто готовим десерты, а помогаем выразить
+						чувства и сделать ваш праздник особенным.
 					</p>
 				</div>
 				<div className="container_secondary container">

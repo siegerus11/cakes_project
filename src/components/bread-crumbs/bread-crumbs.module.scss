@@ -31,15 +31,6 @@
 	}
 }
 
-@media (max-width: 1440px) {
-}
-
-@media (max-width: 1200px) {
-}
-
-@media (max-width: 992px) {
-}
-
 @media (max-width: 767px) {
 	.component {
 		margin-top: 20px;
@@ -63,12 +54,12 @@
 	}
 
 	.link {
-		margin-right: 29px;
+		margin-right: 23px;
 		font-size: 11px;
 		line-height: 182%;
 
 		&:after {
-			right: -21px;
+			right: -19px;
 			width: 13px;
 			height: 5px;
 		}

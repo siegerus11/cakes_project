@@ -33,6 +33,10 @@ hr {
 		letter-spacing: 0.1px;
 		text-align: center;
 	}
+
+	&___pass {
+		display: none;
+	}
 }
 
 .questions {
@@ -55,6 +59,7 @@ hr {
 		margin-top: 40px;
 
 		&__title {
+			max-width: 215px;
 			font-size: 25px;
 		}
 
@@ -70,4 +75,36 @@ hr {
 }
 
 @media (max-width: 576px) {
+	.title {
+		margin-top: 25px;
+		font-size: 20px;
+	}
+
+	hr {
+		margin: 11px 0;
+	}
+
+	.main {
+		margin-top: 41px;
+
+		&__title {
+			font-size: 24px;
+			line-height: 129%;
+		}
+
+		&__description {
+			margin-top: 30px;
+			font-size: 14px;
+			line-height: 143%;
+			text-align: unset;
+		}
+
+		&___pass {
+			display: block;
+		}
+	}
+
+	.questions {
+		margin-top: 30px;
+	}
 }
