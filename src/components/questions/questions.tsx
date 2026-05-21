@@ -69,7 +69,7 @@ const Questions = ({ titleClass, wrapperClass, questions }: QuestionsProps) => {
 	);
 
 	return (
-		<section className={`questions ${wrapperClass}`}>
+		<section className={`questions ${wrapperClass}`} id="questions">
 			<Title
 				level="h3"
 				titleClass={`title_fw800 questions-title ${titleClass}`}
