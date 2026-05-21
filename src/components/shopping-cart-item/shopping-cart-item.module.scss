@@ -1,6 +1,8 @@
 @use '../../_variables' as variables;
+@use '../../_mixins' as mixins;
 
 .component {
+	@include mixins.scale;
 	position: absolute;
 	top: 1px;
 	left: -54px;

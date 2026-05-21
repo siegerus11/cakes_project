@@ -1,7 +1,5 @@
 @use './variables' as vars;
 
-// Миксины для повторяющихся стилей
-
 // Flexbox центрирование
 @mixin flex-center {
 	display: flex;
@@ -67,5 +65,23 @@
 
 	&:hover::after {
 		opacity: 1;
+	}
+}
+
+// Active overlay
+@mixin active-overlay-accent {
+	&:active {
+		&::after {
+			background-color: rgba(0, 0, 0, 0.07);
+		}
+	}
+}
+
+// Scale
+@mixin scale {
+	transition: vars.$fast-transition;
+
+	&:hover {
+		transform: scale(1.06);
 	}
 }
