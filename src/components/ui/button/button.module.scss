@@ -3,6 +3,7 @@
 
 :global(.button) {
 	@include mixins.hover-overlay;
+	@include mixins.active-overlay-accent;
 	text-decoration: none;
 	border: none;
 

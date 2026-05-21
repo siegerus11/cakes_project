@@ -1,5 +1,6 @@
 @use '../../_variables' as variables;
 @use '../../_mixins' as mixins;
+
 .wrapper {
 	@include mixins.flex-between;
 	padding: 21px 0;
@@ -77,6 +78,7 @@
 }
 
 .link {
+	@include mixins.hover-overlay;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
