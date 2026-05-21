@@ -10,42 +10,43 @@ type RewievsItemProps = {
 	date: string;
 };
 
-const STAR_PATH = 'M8 1.2l2.1 4.3 4.7.7-3.4 3.3.8 4.7L8 12l-4.2 2.2.8-4.7L1.2 6.2l4.7-.7L8 1.2z';
-
-const RewievsItem = ({ avatar, name, text, rating, date }: RewievsItemProps) => {
+const RewievsItem = ({
+	avatar,
+	name,
+	text,
+	rating,
+	date
+}: RewievsItemProps) => {
 	return (
-		<li className={styles.component__item}>
-			<div className={styles.component__item__head}>
+		<li className={styles.item}>
+			<div className={styles.item__head}>
 				<img
-					className={styles.component__item__avatar}
+					className={styles.item__avatar}
 					src={avatar}
 					alt={name}
 					width="48"
 					height="48"
 				/>
 				<div>
-					<span className={styles.component__item__name}>{name}</span>
-					<div className={styles.component__stars}>
+					<span className={styles.item__name}>{name}</span>
+					<div className={styles.item__stars}>
 						{Array.from({ length: 5 }, (_, i) => (
 							<svg
 								key={i}
-								className={styles.component__star}
+								className={`${styles.item__star} ${
+									i < rating ? styles.item__star_filled : ''
+								}`}
 								viewBox="0 0 16 16"
 								aria-hidden="true"
 							>
-								<path
-									d={STAR_PATH}
-									fill={i < rating ? '#ff4c80' : 'none'}
-									stroke={i < rating ? '#ff4c80' : '#b1b1b1'}
-									strokeWidth="0.5"
-								/>
+								<use xlinkHref="#star" />
 							</svg>
 						))}
 					</div>
 				</div>
 			</div>
-			<p className={styles.component__item__text}>{text}</p>
-			<span className={styles.component__item__date}>{date}</span>
+			<p className={styles.item__text}>{text}</p>
+			<span className={styles.item__date}>{date}</span>
 		</li>
 	);
 };
