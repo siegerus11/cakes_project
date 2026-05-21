@@ -35,7 +35,7 @@ export const NAVS: Nav[] = [
 	{
 		title: 'Частые вопросы',
 		image: '',
-		path: AppRoute.Faq
+		path: `${AppRoute.About}#questions`
 	},
 	{
 		title: 'Отзывы',

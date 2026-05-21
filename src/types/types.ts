@@ -1,9 +1,3 @@
-import { AppRoute } from '../constants';
-
-export type RoutePath =
-	| (typeof AppRoute)[keyof typeof AppRoute]
-	| `${(typeof AppRoute)[keyof typeof AppRoute]}#rewievs`;
-
 export type Nav = {
 	title:
 		| 'О нас'
@@ -16,7 +10,7 @@ export type Nav = {
 		| 'Торты'
 		| 'Бенто-торты';
 	image: string;
-	path: RoutePath;
+	path: string;
 };
 
 export type Filling = {
