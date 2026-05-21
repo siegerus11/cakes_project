@@ -2,6 +2,8 @@ import { MouseEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { Nav } from '../../types/types';
+import scrollToHash from '../../utils/scrollToHash';
+
 
 type NavMenuProps = {
 	navs: Nav[];
@@ -22,12 +24,7 @@ const NavMenu = ({ navs, onNavLinkClick, linkClassName }: NavMenuProps) => {
 			e.preventDefault();
 			const [route, hash] = path.split('#');
 			navigate(route);
-			setTimeout(() => {
-				const element = document.getElementById(hash);
-				if (element) {
-					element.scrollIntoView({ behavior: 'smooth' });
-				}
-			}, 100);
+			scrollToHash(hash);
 		}
 	};
 
