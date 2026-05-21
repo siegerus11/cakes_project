@@ -75,6 +75,10 @@ hr {
 }
 
 @media (max-width: 576px) {
+	.page {
+		padding-bottom: 45px;
+	}
+
 	.title {
 		margin-top: 25px;
 		font-size: 20px;
