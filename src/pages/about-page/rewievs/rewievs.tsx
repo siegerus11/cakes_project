@@ -7,11 +7,12 @@ type RewievsItemProps = {
 	name: string;
 	text: string;
 	rating: number;
+	date: string;
 };
 
 const STAR_PATH = 'M8 1.2l2.1 4.3 4.7.7-3.4 3.3.8 4.7L8 12l-4.2 2.2.8-4.7L1.2 6.2l4.7-.7L8 1.2z';
 
-const RewievsItem = ({ avatar, name, text, rating }: RewievsItemProps) => {
+const RewievsItem = ({ avatar, name, text, rating, date }: RewievsItemProps) => {
 	return (
 		<li className={styles.component__item}>
 			<div className={styles.component__item__head}>
@@ -24,14 +25,14 @@ const RewievsItem = ({ avatar, name, text, rating }: RewievsItemProps) => {
 				/>
 				<div>
 					<span className={styles.component__item__name}>{name}</span>
-				<div className={styles.component__stars}>
-					{Array.from({ length: 5 }, (_, i) => (
-						<svg
-							key={i}
-							className={styles.component__star}
-							viewBox="0 0 16 16"
-							aria-hidden="true"
-						>
+					<div className={styles.component__stars}>
+						{Array.from({ length: 5 }, (_, i) => (
+							<svg
+								key={i}
+								className={styles.component__star}
+								viewBox="0 0 16 16"
+								aria-hidden="true"
+							>
 								<path
 									d={STAR_PATH}
 									fill={i < rating ? '#ff4c80' : 'none'}
@@ -44,6 +45,7 @@ const RewievsItem = ({ avatar, name, text, rating }: RewievsItemProps) => {
 				</div>
 			</div>
 			<p className={styles.component__item__text}>{text}</p>
+			<span className={styles.component__item__date}>{date}</span>
 		</li>
 	);
 };
@@ -64,6 +66,7 @@ const Rewievs = () => {
 						name={rewiev.name}
 						text={rewiev.text}
 						rating={rewiev.rating}
+						date={rewiev.date}
 					/>
 				))}
 			</ul>
