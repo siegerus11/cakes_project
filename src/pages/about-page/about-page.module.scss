@@ -49,3 +49,25 @@ hr {
 	top: 400px;
 	left: 0;
 }
+
+@media (max-width: 767px) {
+	.main {
+		margin-top: 40px;
+
+		&__title {
+			font-size: 26px;
+		}
+
+		&__description {
+			margin-top: 26px;
+			font-size: 15px;
+		}
+	}
+
+	.questions {
+		margin-top: 38px;
+	}
+}
+
+@media (max-width: 576px) {
+}

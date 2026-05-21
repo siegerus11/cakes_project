@@ -42,3 +42,22 @@
 		letter-spacing: 0.2px;
 	}
 }
+
+@media (max-width: 767px) {
+	.component {
+		margin-top: 76px;
+		padding: 60px 85px 77px 80px;
+
+		&__list {
+			margin-top: 43px;
+		}
+
+		&__text {
+			margin-top: 17px;
+			font-size: 15px;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+}
