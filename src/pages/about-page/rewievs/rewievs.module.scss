@@ -13,18 +13,72 @@
 	&__list {
 		display: flex;
 		gap: 35px;
-		align-items: center;
+		align-items: flex-start;
 		margin-top: 70px;
 		padding-bottom: 20px;
 		padding-left: 120px;
 		overflow-x: auto;
 	}
+}
 
-	&__item {
-		min-width: 256px;
-		min-height: 527px;
-		background-color: variables.$color-accent-additional;
-		border-radius: 8px;
+.item {
+	min-width: 256px;
+	min-height: 527px;
+	padding: 24px;
+	background-color: variables.$color-accent-additional;
+	border-radius: 8px;
+
+	&__head {
+		display: flex;
+		gap: 12px;
+		align-items: center;
+	}
+
+	&__avatar {
+		width: 62px;
+		height: 62px;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+
+	&__name {
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 143%;
+	}
+
+	&__text {
+		margin-top: 16px;
+		color: variables.$color-text-dark;
+		font-size: 14px;
+		line-height: 157%;
+	}
+
+	&__stars {
+		display: flex;
+		flex-direction: row;
+		gap: 2px;
+		margin-top: 4px;
+	}
+
+	&__star {
+		display: block;
+		flex-shrink: 0;
+		width: 14px;
+		height: 14px;
+		fill: transparent;
+
+		&_filled {
+			fill: variables.$color-primary;
+		}
+	}
+
+	&__date {
+		display: block;
+		margin-top: 12px;
+		color: variables.$color-text-secondary;
+		font-size: 12px;
+		line-height: 133%;
 	}
 }
 
