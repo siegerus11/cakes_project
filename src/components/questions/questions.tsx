@@ -20,23 +20,23 @@ const QuestionsItem = ({
 	onOpenButtonClick
 }: QuestionsItemProps) => {
 	return (
-		<li className={styles.questions__item}>
-			<div className={styles.questions__headline}>
+		<li className={styles.item}>
+			<div className={styles.headline}>
 				<Title
 					level="h4"
 					titleText={title}
-					titleClass={styles.questions__subtitle}
+					titleClass={styles.subtitle}
 				/>
 				<button
 					type="button"
-					className={`${styles.questions__close} ${
-						isActive ? styles.questions__close_active : ''
+					className={`${styles.close} ${
+						isActive ? styles.close_active : ''
 					}`}
 					aria-label={isActive ? 'Скрыть вопрос' : 'Показать вопрос'}
 					onClick={() => onOpenButtonClick(index)}
 				></button>
 			</div>
-			{isActive && <p className={styles.questions__text}>{text}</p>}
+			{isActive && <p className={styles.text}>{text}</p>}
 		</li>
 	);
 };
@@ -76,7 +76,7 @@ const Questions = ({ titleClass, wrapperClass, questions }: QuestionsProps) => {
 				titleText="Популярные вопросы"
 			/>
 
-			<ul className={styles.questions__list}>
+			<ul className={styles.list}>
 				{relavantQuestions.map((question, i) => {
 					const keyValue = `${question.title}-${i}`;
 					return (
