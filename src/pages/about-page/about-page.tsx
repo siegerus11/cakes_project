@@ -11,8 +11,7 @@ const AboutPage = () => {
 		<div className={`page ${styles.page}`}>
 			<div className="container">
 				<BreadCrumbs />
-				<Title titleText="О нас" titleClass={`${styles.title}`} />
-				<hr />
+				<Title titleText="О нас" titleClass={`${styles.title}`} hr />
 			</div>
 			<main className={styles.main}>
 				<div className="container">

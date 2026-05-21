@@ -7,13 +7,25 @@ type TitleProps = {
 	path?: string;
 	titleClass?: string;
 	level?: TitleLevel;
+	hr?: boolean;
 };
 
-const Title = ({ titleText, path, titleClass, level = 'h1' }: TitleProps) => {
+const Title = ({
+	titleText,
+	path,
+	titleClass,
+	level = 'h1',
+	hr
+}: TitleProps) => {
 	const HeadingTag = level;
 
 	const content = (
-		<HeadingTag className={`title ${titleClass}`}>{titleText}</HeadingTag>
+		<>
+			<HeadingTag className={`title ${titleClass}`}>
+				{titleText}
+			</HeadingTag>
+			{hr && <hr className="title-hr" />}
+		</>
 	);
 
 	return path ? (

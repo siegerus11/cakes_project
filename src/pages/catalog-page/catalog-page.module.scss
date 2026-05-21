@@ -2,11 +2,6 @@
 
 .component {
 	padding: 56px 0 90px 0;
-
-	hr {
-		margin: 15px 0;
-		color: variables.$color-text-light;
-	}
 }
 
 @media (max-width: 767px) {
@@ -14,7 +9,7 @@
 		padding: 25px 0 90px 0;
 
 		hr {
-			margin-top: 11px;
+			margin-bottom: 15px;
 		}
 	}
 }

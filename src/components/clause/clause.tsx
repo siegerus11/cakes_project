@@ -11,7 +11,7 @@ const Clauses = () => {
 
 	return (
 		<div className={styles.outer}>
-			<hr />
+			<hr className="title-hr" />
 			<div
 				className={
 					isVisibleArticle
