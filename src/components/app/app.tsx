@@ -8,10 +8,8 @@ import CakeArticlePage from '../../pages/cake-article-page/cake-article-page';
 import CatalogPage from '../../pages/catalog-page/catalog-page';
 import ContactsPage from '../../pages/contacts-page/contacts-page';
 import DeliveryPage from '../../pages/delivery-page/delivery-page';
-import FaqPage from '../../pages/faq-page/faq-page';
 import MainPage from '../../pages/main-page/main-page';
 import OrderRegistrationPage from '../../pages/order-registration-page/order-registration-page';
-import RewievsPage from '../../pages/rewievs-page/rewievs-page';
 import ShoppingCartPage from '../../pages/shopping-cart-page/shopping-cart-page';
 import ThanksPage from '../../pages/thanks-page/thanks-page';
 import { cakeOffersSelector } from '../../store/cake-offers-data/cake-offers-data';
@@ -59,8 +57,6 @@ function App() {
 						path={AppRoute.Delivery}
 						element={<DeliveryPage />}
 					/>
-					<Route path={AppRoute.Faq} element={<FaqPage />} />
-					<Route path={AppRoute.Reviews} element={<RewievsPage />} />
 					<Route
 						path={AppRoute.Contacts}
 						element={<ContactsPage />}
