@@ -1,5 +1,8 @@
 @use '../../../_variables' as vars;
+@use '../../../_mixins' as mixins;
+
 :global(.button) {
+	@include mixins.hover-overlay;
 	text-decoration: none;
 	border: none;
 
