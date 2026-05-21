@@ -13,8 +13,9 @@ const AboutPage = () => {
 				<BreadCrumbs />
 				<Title titleText="О нас" titleClass={`${styles.title}`} />
 				<hr />
-
-				<main className={styles.main}>
+			</div>
+			<main className={styles.main}>
+				<div className="container">
 					<Title
 						titleText="Вкусно, красиво и 
 						с любовью"
@@ -27,14 +28,18 @@ const AboutPage = () => {
 						не просто готовим десерты, а помогаем выразить чувства и
 						сделать ваш праздник особенным.
 					</p>
+				</div>
+				<div className="container_secondary container">
 					<Importance />
+				</div>
+				<div className="container">
 					<Questions
 						wrapperClass={styles.questions}
 						titleClass={styles.questions__title}
 						questions={ABOUT_QUESTIONS}
 					/>
-				</main>
-			</div>
+				</div>
+			</main>
 			<Rewievs />
 		</div>
 	);
