@@ -1,3 +1,5 @@
+@use './variables' as vars;
+
 // Миксины для повторяющихся стилей
 
 // Flexbox центрирование
@@ -44,4 +46,26 @@
 	background: none;
 	border: none;
 	cursor: pointer;
+}
+
+// Hover overlay через псевдоэлемент ::before
+@mixin hover-overlay {
+	position: relative;
+	overflow: hidden;
+	transition: vars.$fast-transition;
+
+	&::after {
+		position: absolute;
+		z-index: 1;
+		background-color: rgba(255, 255, 255, 0.1);
+		opacity: 0;
+		transition: opacity vars.$fast-transition;
+		content: '';
+		pointer-events: none;
+		inset: 0;
+	}
+
+	&:hover::after {
+		opacity: 1;
+	}
 }
