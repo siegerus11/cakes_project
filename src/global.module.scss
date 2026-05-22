@@ -109,6 +109,12 @@ body {
 	
 }
 
+:global(.close) {
+	&:hover {
+		background-color: variables.$color-primary;
+	}
+}
+
 @media (max-width: 1200px) {
 	:global(.container) {
 		max-width: 968px;

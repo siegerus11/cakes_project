@@ -21,7 +21,7 @@
 		transition: variables.$all-transition;
 
 		&:hover {
-			background-color: #ddd;
+			background-color: variables.$color-bg-spec;
 		}
 	}
 

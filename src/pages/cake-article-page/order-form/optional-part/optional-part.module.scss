@@ -78,6 +78,12 @@
 			align-self: center;
 		}
 	}
+
+	&:hover {
+		.check {
+			background-color: variables.$color-bg-spec;
+		}
+	}
 }
 
 .item {
