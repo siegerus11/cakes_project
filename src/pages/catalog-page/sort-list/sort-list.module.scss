@@ -9,17 +9,27 @@
 }
 
 .item {
-	padding: 13px 17px;
-	line-height: 94%;
-	background-color: variables.$color-bg-secondary;
-	border-radius: 15px;
-
 	button {
+		padding: 13px 17px;
 		color: variables.$color-text-dark;
 		font-size: 16px;
+		line-height: 94%;
 		letter-spacing: 0.2px;
 		background-color: variables.$color-bg-secondary;
 		border: none;
+		border-radius: 15px;
+		transition: variables.$all-transition;
+
+		&:hover {
+			background-color: #ddd;
+		}
+	}
+
+	&_active {
+		button {
+			color: #fff;
+			background-color: variables.$color-text-dark;
+		}
 	}
 }
 
@@ -41,11 +51,10 @@
 	}
 
 	.item {
-		padding: 11px 15px;
-		border-radius: 12px;
-
 		button {
+			padding: 11px 15px;
 			font-size: 14px;
+			border-radius: 12px;
 		}
 	}
 }
