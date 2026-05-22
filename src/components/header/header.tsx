@@ -3,7 +3,7 @@ import { useEffect, useCallback, useMemo } from 'react';
 import { AppRoute, LAYOUT_NAVS } from '../../constants';
 import useAnimate from '../../hooks/useAnimate';
 import { useAppSelector } from '../../hooks/useStore';
-import { selectFinalSum } from '../../store/main-process/main-process';
+import { selectFinalSum } from '../../store/cart-process/cart-process';
 import getFormattedPrice from '../../utils/getFormattedPrice';
 import HamburgerPopup from '../hamburger-popup/hamburger-popup';
 import Logo from '../logo/logo';

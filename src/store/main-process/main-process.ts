@@ -1,22 +1,17 @@
-import { createSlice, PayloadAction, current } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { NameSpace } from '../../constants';
-import { CakeOrder } from '../../types/types';
 
 type InitialState = {
 	totalPrice: number;
 	activeOffer: string;
-	shoppingCart: CakeOrder[];
 	sortingStatus: string;
-	finalSum: number;
 };
 
 const initialState: InitialState = {
 	totalPrice: 0,
 	activeOffer: '',
-	shoppingCart: [],
-	sortingStatus: '',
-	finalSum: 0
+	sortingStatus: ''
 };
 
 export const mainProcess = createSlice({
@@ -36,65 +31,10 @@ export const mainProcess = createSlice({
 				activeOffer: action.payload
 			};
 		},
-		setShoppingCart: (state, action: PayloadAction<CakeOrder>) => {
-			const updatedCart = [...state.shoppingCart, action.payload];
-			return {
-				...state,
-				shoppingCart: updatedCart,
-				finalSum: updatedCart.reduce(
-					(sum, order) => sum + order.price * order.quantity,
-					0
-				)
-			};
-		},
 		getSortingStatus: (state, action: PayloadAction<string>) => {
 			return {
 				...state,
 				sortingStatus: action.payload
-			};
-		},
-		setCartQuantity: (
-			state,
-			action: PayloadAction<{ id: string; num: number }>
-		) => {
-			const updatedCart = state.shoppingCart.map(order => {
-				if (order.cakeId === action.payload.id) {
-					return {
-						...order,
-						quantity:
-							order.quantity + action.payload.num ||
-							order.quantity
-					};
-				}
-				return order;
-			});
-			return {
-				...state,
-				shoppingCart: updatedCart,
-				finalSum: updatedCart.reduce(
-					(sum, order) => sum + order.price * order.quantity,
-					0
-				)
-			};
-		},
-		clearCart: state => {
-			return {
-				...state,
-				shoppingCart: [],
-				finalSum: 0
-			};
-		},
-		removeCartItem: (state, action: PayloadAction<string>) => {
-			const updatedCart = state.shoppingCart.filter(
-				order => order.cakeId !== action.payload
-			);
-			return {
-				...state,
-				shoppingCart: updatedCart,
-				finalSum: updatedCart.reduce(
-					(sum, order) => sum + order.price * order.quantity,
-					0
-				)
 			};
 		}
 	},
@@ -102,25 +42,18 @@ export const mainProcess = createSlice({
 	selectors: {
 		selectTotalPrice: state => state.totalPrice,
 		selectActiveOffer: state => state.activeOffer,
-		selectShoppingCart: state => state.shoppingCart,
-		selectSortingStatus: state => state.sortingStatus,
-		selectFinalSum: state => state.finalSum
+		selectSortingStatus: state => state.sortingStatus
 	}
 });
 
 export const {
 	setTotalPrice,
 	setActiveOffer,
-	setShoppingCart,
-	getSortingStatus,
-	setCartQuantity,
-	clearCart,
-	removeCartItem
+	getSortingStatus
 } = mainProcess.actions;
+
 export const {
 	selectTotalPrice,
 	selectActiveOffer,
-	selectShoppingCart,
-selectSortingStatus,
-selectFinalSum
+	selectSortingStatus
 } = mainProcess.selectors;

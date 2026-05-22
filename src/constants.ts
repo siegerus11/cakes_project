@@ -72,7 +72,8 @@ export const SORT_KINDS = [
 
 export const NameSpace = {
 	Data: 'DATA',
-	Main: 'MAIN'
+	Main: 'MAIN',
+	Cart: 'CART'
 } as const;
 
 export const weightScale: Record<string, WeightRelevant> = {

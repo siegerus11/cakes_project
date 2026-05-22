@@ -7,7 +7,7 @@ import {
 	setCartQuantity,
 	selectShoppingCart,
 	removeCartItem
-} from '../../../store/main-process/main-process';
+} from '../../../store/cart-process/cart-process';
 import { CakeOrder } from '../../../types/types';
 import getChosen from '../../../utils/getChosen';
 import getFormattedPrice from '../../../utils/getFormattedPrice';
