@@ -19,6 +19,12 @@
 	padding: 0;
 }
 
+a {
+	&:hover {
+		@include mixins.hover-text;
+	}
+}
+
 h1,
 h2,
 h3,
@@ -89,6 +95,15 @@ body {
 		transform: translateY(-50%) rotate(180deg);
 		content: '';
 	}
+
+	&:hover {
+		@include mixins.hover-text;
+
+		&:before {
+			@include mixins.hover-text;
+
+		}
+	}
 }
 
 :global(.dot-lined) {
@@ -100,6 +115,10 @@ body {
 	background: none;
 	border: none;
 	text-decoration-style: dotted;
+
+	&:hover {
+		@include mixins.hover-text;
+	}
 }
 
 :global(.title-hr) {
@@ -127,6 +146,10 @@ body {
 	&:active {
 		background-color: variables.$color-bg-spec-darked;
 	}
+}
+
+:global(a.button) {
+	@include mixins.reset-hover-button-link;
 }
 
 @media (max-width: 1200px) {

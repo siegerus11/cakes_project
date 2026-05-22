@@ -24,7 +24,7 @@
 	align-items: center;
 }
 
-// Скрытие элемента визуально (остаётся для скринридеров)
+// Скрытие элемента визуально
 @mixin visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -46,7 +46,7 @@
 	cursor: pointer;
 }
 
-// Hover overlay через псевдоэлемент ::before
+// Hover overlay
 @mixin hover-overlay {
 	position: relative;
 	overflow: hidden;
@@ -80,8 +80,28 @@
 // Scale
 @mixin scale {
 	transition: vars.$fast-transition;
-
 	&:hover {
 		transform: scale(1.06);
+	}
+}
+
+// Hover text
+@mixin hover-text {
+	transition: vars.$fast-transition;
+	&:hover {
+		color: vars.$color-primary;
+	}
+}
+
+// reset hover text
+@mixin reset-hover-text {
+	&:hover {
+		color: vars.$color-text-primary;
+	}
+}
+
+@mixin reset-hover-button-link {
+	&:hover {
+		color: vars.$color-text-inverted;
 	}
 }
