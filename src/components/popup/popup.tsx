@@ -46,7 +46,7 @@ const Popup = ({
 		>
 			{onCloseClick && (
 				<button
-					className={closeClass}
+					className={`close ${closeClass}`}
 					type="button"
 					onClick={onCloseClick}
 					onTouchStart={handleTouchStart}
@@ -54,7 +54,11 @@ const Popup = ({
 					onTouchEnd={handleTouchEnd}
 					aria-label="Закрыть"
 				>
-					<svg className={styles.button__icon} viewBox="0 0 18 18" aria-hidden="true">
+					<svg
+						className={styles.button__icon}
+						viewBox="0 0 18 18"
+						aria-hidden="true"
+					>
 						<use xlinkHref="#close"></use>
 					</svg>
 				</button>

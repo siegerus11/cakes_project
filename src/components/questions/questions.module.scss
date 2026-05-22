@@ -56,22 +56,18 @@
 	background-color: transparent;
 	border: none;
 
-	&::before {
+	.cross {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		width: 13px;
 		height: 13px;
-		background: url('../../../images/close.svg') no-repeat center/cover;
 		transform: translate(-50%, -50%) rotate(135deg);
 		transition: vars.$middle-transition;
-		content: '';
 	}
 
-	&_active {
-		&::before {
-			transform: translate(-50%, -50%) rotate(180deg);
-		}
+	&_active .cross {
+		transform: translate(-50%, -50%) rotate(180deg);
 	}
 }
 

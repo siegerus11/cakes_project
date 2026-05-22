@@ -89,12 +89,16 @@ const Slider = ({ cake }: SliderProps) => {
 							))}
 						</div>
 						<button
-							className={styles.close}
+							className={`close ${styles.close}`}
 							type="button"
 							onClick={handleCloseButtonClick}
 							aria-label="Закрыть слайдер"
 						>
-							<svg className={styles.cross} viewBox="0 0 18 18" aria-hidden="true">
+							<svg
+								className={styles.cross}
+								viewBox="0 0 18 18"
+								aria-hidden="true"
+							>
 								<use xlinkHref="#close"></use>
 							</svg>
 						</button>

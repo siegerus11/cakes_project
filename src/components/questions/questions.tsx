@@ -29,12 +29,16 @@ const QuestionsItem = ({
 				/>
 				<button
 					type="button"
-					className={`${styles.close} ${
+					className={`close ${styles.close} ${
 						isActive ? styles.close_active : ''
 					}`}
 					aria-label={isActive ? 'Скрыть вопрос' : 'Показать вопрос'}
 					onClick={() => onOpenButtonClick(index)}
-				></button>
+				>
+					<svg className={styles.cross} viewBox="0 0 18 18" aria-hidden="true">
+						<use xlinkHref="#close"></use>
+					</svg>
+				</button>
 			</div>
 			{isActive && <p className={styles.text}>{text}</p>}
 		</li>
