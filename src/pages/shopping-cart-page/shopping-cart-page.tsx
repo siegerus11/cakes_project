@@ -23,7 +23,7 @@ import {
 	selectFinalSum,
 	selectShoppingCart,
 	clearCart
-} from '../../store/main-process/main-process';
+} from '../../store/cart-process/cart-process';
 import getFormattedPrice from '../../utils/getFormattedPrice';
 import CartList from './cart-item/cart-item';
 import styles from './shopping-cart-page.module.scss';

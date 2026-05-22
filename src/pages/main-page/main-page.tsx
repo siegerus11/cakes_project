@@ -8,7 +8,7 @@ import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute, NAVS } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
-import { selectFinalSum } from '../../store/main-process/main-process';
+import { selectFinalSum } from '../../store/cart-process/cart-process';
 import { CakeOffer } from '../../types/types';
 import getFormattedPrice from '../../utils/getFormattedPrice';
 import styles from './main-page.module.scss';

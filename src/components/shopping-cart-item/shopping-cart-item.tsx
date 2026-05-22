@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
-import { selectShoppingCart } from '../../store/main-process/main-process';
+import { selectShoppingCart } from '../../store/cart-process/cart-process';
 import styles from './shopping-cart-item.module.scss';
 
 type ShoppingCartItemProps = {

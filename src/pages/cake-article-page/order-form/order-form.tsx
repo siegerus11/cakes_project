@@ -10,9 +10,9 @@ import { AppRoute } from '../../../constants';
 import useCheckboxes from '../../../hooks/useCheckBox';
 import useRadio from '../../../hooks/useRadio';
 import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
+import { setShoppingCart } from '../../../store/cart-process/cart-process';
 import {
 	selectTotalPrice,
-	setShoppingCart,
 	setTotalPrice
 } from '../../../store/main-process/main-process';
 import {
