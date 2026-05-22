@@ -16,7 +16,14 @@
 	max-width: 112px;
 	border: 2px solid transparent;
 	border-radius: 15px;
+	cursor: pointer;
 	transition: variables.$all-transition;
+
+	&:hover {
+		button {
+			color: variables.$color-primary;
+		}
+	}
 }
 
 .card__button {
@@ -79,12 +86,6 @@
 	.wrapper {
 		column-gap: 9px;
 	}
-}
-
-@media (max-width: 992px) {
-}
-
-@media (max-width: 767px) {
 }
 
 @media (max-width: 576px) {
