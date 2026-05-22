@@ -176,6 +176,7 @@
 		}
 
 		&__button {
+			width: unset;
 			padding: 15px 69px 15px 68px;
 
 			span {
@@ -197,7 +198,4 @@
 			}
 		}
 	}
-}
-
-@media (max-width: 360px) {
 }
