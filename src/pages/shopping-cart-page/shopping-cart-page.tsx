@@ -114,7 +114,7 @@ const ShoppingCartPage = () => {
 							level="h1"
 						/>
 						<button
-							className={styles.trashButton}
+							className={`cart-press ${styles.trashButton}`}
 							aria-label="Удалить заказ"
 							type="button"
 							onClick={handleTrashButtonClick}
@@ -193,11 +193,11 @@ const ShoppingCartPage = () => {
 								/>
 							)}
 						</div>
-					<SubmitButton
-						className={`button button_primary ${styles.popup__button}`}
-						formId="promo-form"
-						label="Применить"
-					>
+						<SubmitButton
+							className={`button button_primary ${styles.popup__button}`}
+							formId="promo-form"
+							label="Применить"
+						>
 							<span>Применить</span>
 						</SubmitButton>
 					</Popup>

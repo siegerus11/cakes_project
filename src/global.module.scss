@@ -115,7 +115,17 @@ body {
 			transition: variables.$all-transition;
 			fill: variables.$color-primary;
 		}
-		
+	}
+}
+
+:global(.cart-press) {
+	transition: variables.$all-transition;
+	&:hover {
+		background-color: variables.$color-bg-spec;
+	}
+
+	&:active {
+		background-color: variables.$color-bg-spec-darked;
 	}
 }
 

@@ -92,7 +92,9 @@ const CartItem = memo(({ order }: CartItemProps) => {
 					<img alt="Торт" width="60" height="60" />
 				</div>
 				<div>
-					<h3 className={styles.item__title}>Торт с ягодами и безе</h3>
+					<h3 className={styles.item__title}>
+						Торт с ягодами и безе
+					</h3>
 					<div className={styles.item__description}>
 						<span>Начинка: {fillingsText}</span>
 						<span>Вес: {weightText}</span>
@@ -105,14 +107,16 @@ const CartItem = memo(({ order }: CartItemProps) => {
 					<div className={styles.item__price}>{priceValue} ₽</div>
 					<div className={styles.quantity}>
 						<button
-							className={styles.quantity__button}
+							className={`cart-press ${styles.quantity__button}`}
 							type="button"
 							onClick={handleDecrease}
 							aria-label="Уменьшить количество"
 						></button>
-						<span className={styles.quantity__value}>{quantity}</span>
+						<span className={styles.quantity__value}>
+							{quantity}
+						</span>
 						<button
-							className={styles.quantity__button}
+							className={`cart-press ${styles.quantity__button}`}
 							type="button"
 							onClick={handleIncrease}
 							aria-label="Увеличить количество"
