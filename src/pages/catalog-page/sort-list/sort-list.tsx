@@ -1,8 +1,11 @@
 import { useCallback, memo } from 'react';
 
 import { SORT_KINDS } from '../../../constants';
-import { useAppDispatch } from '../../../hooks/useStore';
-import { getSortingStatus } from '../../../store/main-process/main-process';
+import { useAppDispatch, useAppSelector } from '../../../hooks/useStore';
+import {
+	getSortingStatus,
+	selectSortingStatus,
+} from '../../../store/main-process/main-process';
 import styles from './sort-list.module.scss';
 
 type SortItemProps = {
@@ -10,13 +13,15 @@ type SortItemProps = {
 };
 export const SortItem = memo(({ sortKind }: SortItemProps) => {
 	const dispatch = useAppDispatch();
+	const sortingStatus = useAppSelector(selectSortingStatus);
+	const isActive = sortingStatus === sortKind;
 
 	const handleSortClick = useCallback(() => {
 		dispatch(getSortingStatus(sortKind));
 	}, [dispatch, sortKind]);
 
 	return (
-		<li className={styles.item}>
+		<li className={`${styles.item} ${isActive ? styles.item_active : ''}`}>
 			<button onClick={handleSortClick} type="button">
 				{sortKind}
 			</button>
