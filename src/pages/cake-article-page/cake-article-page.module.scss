@@ -15,16 +15,14 @@
 	line-height: 169%;
 	text-decoration: none;
 
-	&:before {
+	svg {
 		position: absolute;
 		top: 50%;
-		right: auto;
 		left: -28px;
 		width: 18px;
 		height: 18px;
-		background-image: url('/images/nav-arrow-big.svg');
 		transform: translateY(-50%) rotate(180deg);
-		content: '';
+		fill: currentColor;
 	}
 }
 
@@ -188,7 +186,11 @@
 		margin: 0;
 		background-color: variables.$color-text-secondary;
 
-		span:nth-child(1) {
+		svg {
+			display: none;
+		}
+
+		span:nth-child(2) {
 			display: none;
 		}
 

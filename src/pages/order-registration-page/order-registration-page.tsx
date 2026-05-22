@@ -30,6 +30,9 @@ const OrderRegistrationPage = () => {
 						onClick={() => navigate(-1)}
 						aria-label="Назад"
 					>
+						<svg viewBox="0 0 18 18" aria-hidden="true">
+							<use xlinkHref="#nav-arrow-big" />
+						</svg>
 						<span>Назад</span>
 					</button>
 

@@ -104,6 +104,9 @@ const ShoppingCartPage = () => {
 					type="button"
 					onClick={() => navigate(-1)}
 				>
+					<svg viewBox="0 0 18 18" aria-hidden="true">
+						<use xlinkHref="#nav-arrow-big" />
+					</svg>
 					<span>Назад</span>
 				</button>
 				<div className={styles.wrapper}>

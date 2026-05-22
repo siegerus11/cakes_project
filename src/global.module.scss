@@ -84,17 +84,19 @@ body {
 	line-height: 169%;
 	text-decoration: none;
 
-	&:before {
-		position: absolute;
-		top: 50%;
-		right: auto;
-		left: -28px;
-		width: 18px;
-		height: 18px;
-		background-image: url('/images/nav-arrow-big.svg');
-		transform: translateY(-50%) rotate(180deg);
-		content: '';
-	}
+  svg {
+    position: absolute;
+    top: 50%;
+    left: -28px;
+    width: 18px;
+    height: 18px;
+    transform: translateY(-50%) rotate(180deg);
+    fill: currentColor;
+  }
+
+  &:hover {
+    @include mixins.hover-text;
+  }
 
 	&:hover {
 		@include mixins.hover-text;
@@ -217,14 +219,10 @@ body {
 				visibility: hidden;
 			}
 
-			&::before {
+ 			svg {
 				left: 0;
 				width: 14px;
 				height: 18px;
-				background-image: url('/images/nav-arrow-big.svg');
-				background-repeat: no-repeat;
-				background-position: -6px center;
-				background-size: cover;
 				transform: translateY(-50%) rotate(180deg) scale(1.51);
 			}
 		}

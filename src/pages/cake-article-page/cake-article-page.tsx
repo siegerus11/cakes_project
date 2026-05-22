@@ -88,6 +88,9 @@ const CakeArticlePage = () => {
 					className={`back-link ${styles.back}`}
 					to={AppRoute.Catalog}
 				>
+					<svg viewBox="0 0 18 18" aria-hidden="true">
+						<use xlinkHref="#nav-arrow-big" />
+					</svg>
 					<span>Назад</span>
 					<span className={styles.back__item}></span>
 				</Link>
@@ -145,11 +148,11 @@ const CakeArticlePage = () => {
 										>
 											{fillingItem.description}
 										</p>
-									<Button
-										className={`button button_primary ${styles.popup__button}`}
-										onClick={handlePopupClickClose}
-										label="Понятно, спасибо"
-									>
+										<Button
+											className={`button button_primary ${styles.popup__button}`}
+											onClick={handlePopupClickClose}
+											label="Понятно, спасибо"
+										>
 											<span>Понятно, спасибо</span>
 										</Button>
 										{fillingItem.ingredients && (
