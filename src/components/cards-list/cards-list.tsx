@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { useAppSelector } from '../../hooks/useStore';
 import { selectSortingStatus } from '../../store/main-process/main-process';
-import { CakeOffer, RoutePath } from '../../types/types';
+import { CakeOffer } from '../../types/types';
 import getSortedByCategory from '../../utils/getSortedByCategory';
 import Card, { AllCard } from '../card/card';
 import styles from './cards-list.module.scss';
@@ -10,7 +10,7 @@ import styles from './cards-list.module.scss';
 type CardsListProps = {
 	cakes: CakeOffer[];
 	isMainPage: boolean;
-	path?: RoutePath;
+	path?: string;
 };
 
 const CardsList = ({ cakes, isMainPage, path }: CardsListProps) => {
