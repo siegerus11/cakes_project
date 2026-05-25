@@ -28,6 +28,7 @@
 		font-weight: 600;
 		font-size: 17px;
 		text-decoration: none;
+		@include mixins.hover-text;
 	}
 
 	nav {
@@ -76,6 +77,12 @@
 @media (max-width: 992px) {
 	.button {
 		padding: 15px 50px;
+	}
+
+	.wrapper {
+		.link:hover {
+			color: inherit;
+		}
 	}
 }
 

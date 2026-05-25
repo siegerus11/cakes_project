@@ -90,7 +90,7 @@
 
 @media (max-width: 992px) {
 	.card:hover button {
-		color: inherit;
+		color: variables.$color-text-light;
 	}
 }
 
