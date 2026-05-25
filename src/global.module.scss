@@ -20,9 +20,7 @@
 }
 
 a {
-	&:hover {
-		@include mixins.hover-text;
-	}
+	@include mixins.hover-text;
 }
 
 h1,
@@ -115,10 +113,7 @@ body {
 	background: none;
 	border: none;
 	text-decoration-style: dotted;
-
-	&:hover {
-		@include mixins.hover-text;
-	}
+	@include mixins.hover-text;
 }
 
 :global(.title-hr) {
@@ -176,7 +171,7 @@ body {
 	}
 
 	a:hover {
-		color: inherit;
+		color: variables.$color-text-light;
 	}
 
 	:global(.back-link):hover {
@@ -184,7 +179,7 @@ body {
 	}
 
 	:global(.dot-lined):hover {
-		color: inherit;
+		color: variables.$color-text-light;
 	}
 
 	:global(.close):hover svg {
