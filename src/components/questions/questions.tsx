@@ -21,7 +21,13 @@ const QuestionsItem = ({
 }: QuestionsItemProps) => {
 	return (
 		<li className={styles.item}>
-			<div className={styles.headline}>
+			<div
+				className={styles.headline}
+				role="button"
+				tabIndex={0}
+				onKeyDown={() => onOpenButtonClick(index)}
+				onClick={() => onOpenButtonClick(index)}
+			>
 				<Title
 					level="h4"
 					titleText={title}
@@ -33,9 +39,12 @@ const QuestionsItem = ({
 						isActive ? styles.close_active : ''
 					}`}
 					aria-label={isActive ? 'Скрыть вопрос' : 'Показать вопрос'}
-					onClick={() => onOpenButtonClick(index)}
 				>
-					<svg className={styles.cross} viewBox="0 0 18 18" aria-hidden="true">
+					<svg
+						className={styles.cross}
+						viewBox="0 0 18 18"
+						aria-hidden="true"
+					>
 						<use xlinkHref="#close"></use>
 					</svg>
 				</button>

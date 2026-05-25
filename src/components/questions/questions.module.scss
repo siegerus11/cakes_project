@@ -27,7 +27,6 @@
 }
 
 .subtitle {
-	@include mix.hover-text;
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 150%;
@@ -47,6 +46,15 @@
 .headline {
 	@include mix.flex-between;
 	align-items: flex-start;
+
+	&:hover {
+		.subtitle {
+			color: vars.$color-primary;
+		}
+		.close svg {
+			fill: vars.$color-primary;
+		}
+	}
 }
 
 .close {
@@ -65,7 +73,7 @@
 		width: 13px;
 		height: 13px;
 		transform: translate(-50%, -50%) rotate(135deg);
-		transition: vars.$middle-transition;
+		transition: vars.$middle-transition, fill 0.1s;
 	}
 
 	&_active .cross {
