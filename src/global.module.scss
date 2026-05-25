@@ -99,8 +99,6 @@ body {
   }
 
 	&:hover {
-		@include mixins.hover-text;
-
 		&:before {
 			@include mixins.hover-text;
 
