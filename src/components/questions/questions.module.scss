@@ -81,6 +81,17 @@
 	}
 }
 
+@media (max-width: 992px) {
+	.headline:hover {
+		.subtitle {
+			color: inherit;
+		}
+		.close svg {
+			fill: inherit;
+		}
+	}
+}
+
 @media (max-width: 767px) {
 	:global(.questions) {
 		max-width: 947px;

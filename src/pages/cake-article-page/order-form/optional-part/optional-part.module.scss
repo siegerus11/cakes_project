@@ -133,16 +133,10 @@
 	}
 }
 
-@media (max-width: 1440px) {
-}
-
-@media (max-width: 1200px) {
-}
-
 @media (max-width: 992px) {
-}
-
-@media (max-width: 767px) {
+	.label:hover .check {
+		background-color: inherit;
+	}
 }
 
 @media (max-width: 576px) {
@@ -246,7 +240,4 @@
 			line-height: 129%;
 		}
 	}
-}
-
-@media (max-width: 360px) {
 }
