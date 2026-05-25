@@ -174,6 +174,30 @@ body {
 			max-width: 695px;
 		}
 	}
+
+	a:hover {
+		color: inherit;
+	}
+
+	:global(.back-link):hover {
+		color: inherit;
+	}
+
+	:global(.dot-lined):hover {
+		color: inherit;
+	}
+
+	:global(.close):hover svg {
+		fill: inherit;
+	}
+
+	:global(.cart-press):hover {
+		background-color: inherit;
+	}
+
+	:global(a.button):hover {
+		color: inherit;
+	}
 }
 
 @media (max-width: 767px) {

@@ -177,6 +177,17 @@
 	.button {
 		display: block;
 	}
+
+	.card:hover {
+		color: inherit;
+	}
+
+	.grid:hover {
+		.allButton span::after {
+			transform: translateY(-50%);
+			transition: none;
+		}
+	}
 }
 
 @media (max-width: 767px) {

@@ -46,6 +46,14 @@
 			padding: 15px 25px;
 			font-size: 15px;
 		}
+
+		&:hover {
+			color: inherit;
+		}
+
+		&:hover::after {
+			opacity: 0;
+		}
 	}
 }
 

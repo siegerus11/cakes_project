@@ -21,6 +21,12 @@
 	}
 }
 
+@media (max-width: 992px) {
+	.link:hover {
+		color: inherit;
+	}
+}
+
 @media (max-width: 576px) {
 	.link {
 		width: 64px;

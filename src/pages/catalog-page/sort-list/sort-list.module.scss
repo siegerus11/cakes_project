@@ -33,6 +33,12 @@
 	}
 }
 
+@media (max-width: 992px) {
+	.item button:hover {
+		background-color: inherit;
+	}
+}
+
 @media (max-width: 767px) {
 	.component {
 		gap: 10px;
