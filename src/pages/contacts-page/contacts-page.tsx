@@ -24,7 +24,7 @@ const ContactsPage = () => {
 				</DescriptionSegment>
 				<PickUp
 					wrapperClass={styles.pickup}
-					headlineText="Самовывоз"
+					headlineText="Адрес самовывоза"
 					isDeliverPage={false}
 				/>
 			</div>
