@@ -1,0 +1,8 @@
+@use '../../_variables.scss' as vars;
+
+:global(.description-segment-title) {
+	color: vars.$color-text-crimson;
+	font-weight: 800;
+	font-size: 22px;
+	line-height: 141%;
+}

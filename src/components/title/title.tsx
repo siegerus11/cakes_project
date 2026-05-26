@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-type TitleLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+import { TitleLevel } from '../../types/types';
 
 type TitleProps = {
 	titleText?: string;

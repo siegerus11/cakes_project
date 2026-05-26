@@ -153,6 +153,7 @@ export const ABOUT_QUESTIONS = [
 ];
 
 export const phone: string = '+7 (925) 322-22-26';
+export const address: string = 'г. Москва, ул. Бутлерова, д. 15';
 
 export const OuterRoute = {
 	Telegram: 'https://web.telegram.org/',

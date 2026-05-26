@@ -85,3 +85,5 @@ export type Question = {
 	text: string;
 	isActive: boolean;
 };
+
+export type TitleLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

@@ -1,7 +1,30 @@
+@use '../../variables.scss' as variables;
+
 .page {
 	padding-bottom: 90px;
 }
 
 .title {
 	margin-top: 56px;
+}
+
+.headline {
+	color: variables.$color-text-crimson;
+	font-weight: 800;
+	font-size: 22px;
+	line-height: 141%;
+}
+
+.hours {
+	margin-top: 30px;
+
+	&__description {
+		margin: 0;
+		margin-top: 10px;
+		line-height: 150%;
+	}
+}
+
+.pickup {
+	margin-top: 30px;
 }
