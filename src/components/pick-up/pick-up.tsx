@@ -1,5 +1,6 @@
 import { address } from '../../constants';
 import DescriptionSegment from '../description-segment/description-segment';
+import Map from '../map/map';
 import styles from './pick-up.module.scss';
 
 type PickUpProps = {
@@ -29,7 +30,7 @@ const PickUp = ({ wrapperClass, headlineText, isDeliverPage }: PickUpProps) => {
 					согласуем удобное время получения.
 				</p>
 			</DescriptionSegment>
-			<div className="">map</div>
+			<Map />
 		</div>
 	);
 };
