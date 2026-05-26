@@ -151,3 +151,11 @@ export const ABOUT_QUESTIONS = [
 		isActive: false
 	}
 ];
+
+export const phone: string = '+7 (925) 322-22-26';
+
+export const OuterRoute = {
+	Telegram: 'https://web.telegram.org/',
+	Instagram: 'https://www.instagram.com/',
+	Vk: 'https://vk.com/'
+} as const;

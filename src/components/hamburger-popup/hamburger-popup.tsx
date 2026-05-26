@@ -1,6 +1,6 @@
 import { useCallback, useMemo, AnimationEvent } from 'react';
 
-import { AppRoute, LAYOUT_NAVS } from '../../constants';
+import { LAYOUT_NAVS, OuterRoute } from '../../constants';
 import { Nav } from '../../types/types';
 import { getSecondaryNavs } from '../../utils/getSecondaryNavs';
 import NavMenu from '../nav-menu/nav-menu';
@@ -65,7 +65,7 @@ const HamburgerPopup = ({
 					<Button
 						className={`button button_secondary ${styles.button}`}
 						isOuterLink
-						url={AppRoute.Root}
+						url={OuterRoute.Telegram}
 						label="Написать в Telegram"
 					>
 						<span>Написать в Telegram</span>
@@ -80,26 +80,32 @@ const HamburgerPopup = ({
 					<SocialLinks>
 						<a
 							className={styles.icon}
-							href="/"
+							href={OuterRoute.Telegram}
 							aria-label="Telegram"
 						>
-							<img src="../../../images/tg-colored.svg" alt="" />
+							<img
+								src="../../../images/tg-colored.svg"
+								alt="Telegram"
+							/>
 						</a>
 						<a
 							className={styles.icon}
-							href="/"
+							href={OuterRoute.Vk}
 							aria-label="ВКонтакте"
 						>
-							<img src="../../../images/vk-colored.svg" alt="" />
+							<img
+								src="../../../images/vk-colored.svg"
+								alt="ВКонтакте"
+							/>
 						</a>
 						<a
 							className={styles.icon}
-							href="/"
+							href={OuterRoute.Instagram}
 							aria-label="Instagram"
 						>
 							<img
 								src="../../../images/inst-colored.svg"
-								alt=""
+								alt="Instagram"
 							/>
 						</a>
 					</SocialLinks>
