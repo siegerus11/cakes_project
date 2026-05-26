@@ -151,5 +151,3 @@ export const ABOUT_QUESTIONS = [
 		isActive: false
 	}
 ];
-
-export const phone: string = '+7 (925) 322-22-26';
