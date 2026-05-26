@@ -1,0 +1,32 @@
+@use '../../../_mixins' as mixins;
+@use '../../../_variables' as variables;
+
+.wrapper {
+	@include mixins.flex-column-start;
+	margin-top: 30px;
+}
+
+.description {
+	margin: 0;
+}
+
+.phone {
+	color: inherit;
+	line-height: 150%;
+	text-decoration: none;
+}
+
+.outer {
+	line-height: 150%;
+	text-underline-offset: 3px;
+}
+
+@media (max-width: 992px) {
+	.phone:hover {
+		color: variables.$color-text-primary;
+	}
+
+	.outer:hover {
+		color: variables.$color-link;
+	}
+}

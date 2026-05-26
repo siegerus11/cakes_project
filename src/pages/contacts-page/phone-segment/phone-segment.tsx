@@ -1,18 +1,19 @@
-import styles from 'react';
-
 import { phone } from '../../../constants';
+import styles from './phone-segment.module.scss';
 
 const PhoneSegment = () => {
-	const formatedPhone = phone.replace(/\s+/g, '');
-
-	console.log(formatedPhone);
+	const formatedPhone = phone.replace(/[\s()-]/g, '');
 
 	return (
-		<>
-			<p>Вопросы по заказам и доставке:</p>
-			<a href={`tel:${formatedPhone}`}>{phone}</a>
-			<a href="/">Написать в Telegram</a>
-		</>
+		<div className={styles.wrapper}>
+			<p className={styles.description}>Вопросы по заказам и доставке:</p>
+			<a className={styles.phone} href={`tel:${formatedPhone}`}>
+				{phone}
+			</a>
+			<a className={styles.outer} href="/">
+				Написать в Telegram
+			</a>
+		</div>
 	);
 };
 
