@@ -1,4 +1,4 @@
-import { phone } from '../../../constants';
+import { phone, OuterRoute } from '../../../constants';
 import styles from './phone-segment.module.scss';
 
 const PhoneSegment = () => {
@@ -10,7 +10,7 @@ const PhoneSegment = () => {
 			<a className={styles.phone} href={`tel:${formatedPhone}`}>
 				{phone}
 			</a>
-			<a className={styles.outer} href="/">
+			<a className={styles.outer} href={OuterRoute.Telegram}>
 				Написать в Telegram
 			</a>
 		</div>

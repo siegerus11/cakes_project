@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { LAYOUT_NAVS } from '../../constants';
+import { LAYOUT_NAVS, OuterRoute } from '../../constants';
 import { Nav } from '../../types/types';
 import { getSecondaryNavs } from '../../utils/getSecondaryNavs';
 import NavMenu from '../nav-menu/nav-menu';
@@ -37,7 +37,11 @@ const Footer = () => {
 					<NavMenu navs={secondaryNavs} linkClassName={styles.link} />
 					<div className={styles.social}>
 						<SocialLinks>
-							<a className={styles.social__link} href="/" aria-label="Telegram">
+							<a
+								className={styles.social__link}
+								href={OuterRoute.Telegram}
+								aria-label="Telegram"
+							>
 								<svg
 									className={styles.social__icon}
 									viewBox="0 0 40 40"
@@ -46,7 +50,11 @@ const Footer = () => {
 									<use xlinkHref="#tg-bw"></use>
 								</svg>
 							</a>
-							<a className={styles.social__link} href="/" aria-label="ВКонтакте">
+							<a
+								className={styles.social__link}
+								href={OuterRoute.Vk}
+								aria-label="ВКонтакте"
+							>
 								<svg
 									className={styles.social__icon}
 									viewBox="0 0 40 40"
@@ -55,7 +63,11 @@ const Footer = () => {
 									<use xlinkHref="#vk-bw"></use>
 								</svg>
 							</a>
-							<a className={styles.social__link} href="/" aria-label="Instagram">
+							<a
+								className={styles.social__link}
+								href={OuterRoute.Instagram}
+								aria-label="Instagram"
+							>
 								<svg
 									className={styles.social__icon}
 									viewBox="0 0 40 40"
@@ -65,12 +77,12 @@ const Footer = () => {
 								</svg>
 							</a>
 						</SocialLinks>
-					<Button
-						className={`button button_secondary ${styles.button}`}
-						isOuterLink
-						url="/"
-						label="Написать в Telegram"
-					>
+						<Button
+							className={`button button_secondary ${styles.button}`}
+							isOuterLink
+							url={OuterRoute.Instagram}
+							label="Написать в Telegram"
+						>
 							<span>Написать в Telegram</span>
 							<svg
 								className={styles.button__icon}
