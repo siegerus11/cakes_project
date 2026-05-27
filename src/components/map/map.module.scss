@@ -1,12 +1,13 @@
 @use '../../variables' as variables;
 
 .component {
+	order: 2;
 	min-width: 736px;
 	min-height: 484px;
 	margin-top: 30px;
+	overflow: hidden;
 	background-color: variables.$color-bg-primary;
 	border-radius: 20px;
-	overflow: hidden;
 }
 
 .map {

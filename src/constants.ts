@@ -157,7 +157,6 @@ export const phone: string = '+7 (925) 322-22-26';
 export const address: string = 'г. Москва, ул. Бутлерова, д. 15';
 
 export const pickupCoordinates: [number, number] = [55.741469, 37.615561];
-// [55.5915, 37.4902]
 
 export const OuterRoute = {
 	Telegram: 'https://web.telegram.org/',

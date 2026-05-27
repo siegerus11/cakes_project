@@ -5,7 +5,8 @@
 	@include mixins.flex-column-start;
 }
 
-.adress {
+.address {
+	order: 1;
 	line-height: 150%;
 
 	&__text {
@@ -24,6 +25,10 @@
 		text-decoration: underline;
 	}
 
+	&__time {
+		margin-top: 10px;
+	}
+
 	&__error {
 		margin: 0;
 		margin-top: 8px;
@@ -38,10 +43,18 @@
 		line-height: 150%;
 		letter-spacing: 0.14px;
 	}
+
+	&_revert {
+		order: 3;
+	}
+
+	&_mt45 {
+		margin-top: 45px;
+	}
 }
 
 @media (max-width: 992px) {
-	.adress {
+	.address {
 		&__button:hover {
 			color: variables.$color-link;
 		}
