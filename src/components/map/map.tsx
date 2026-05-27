@@ -3,7 +3,10 @@ import { useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 
 import { address, pickupCoordinates } from '../../constants';
+import { RouteData } from '../../types/types';
 import styles from './map.module.scss';
+
+import type { Feature, LineString } from 'geojson';
 
 const customIcon = L.icon({
 	iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
@@ -15,14 +18,6 @@ const customIcon = L.icon({
 	popupAnchor: [1, -34],
 	shadowSize: [41, 41]
 });
-
-type RouteGeometry = {
-	coordinates: [number, number][];
-};
-
-type RouteData = {
-	geometry: RouteGeometry;
-};
 
 type MapProps = {
 	route: RouteData | null;
@@ -47,23 +42,22 @@ const RouteLayer = ({ route }: { route: RouteData | null }) => {
 			([lng, lat]) => [lat, lng]
 		);
 
-		layerRef.current = L.geoJSON(
-			{
-				type: 'Feature',
-				geometry: {
-					type: 'LineString',
-					coordinates: route.geometry.coordinates
-				},
-				properties: {}
-			} as GeoJSON.Feature,
-			{
-				style: {
-					color: '#4A90D9',
-					weight: 5,
-					opacity: 0.8
-				}
+		const geoJsonFeature: Feature<LineString> = {
+			type: 'Feature',
+			geometry: {
+				type: 'LineString',
+				coordinates: route.geometry.coordinates
+			},
+			properties: {}
+		};
+
+		layerRef.current = L.geoJSON(geoJsonFeature, {
+			style: {
+				color: '#4A90D9',
+				weight: 5,
+				opacity: 0.8
 			}
-		).addTo(map);
+		}).addTo(map);
 
 		map.fitBounds(L.latLngBounds(latLngs), { padding: [40, 40] });
 	}, [route, map]);
