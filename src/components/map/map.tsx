@@ -65,7 +65,7 @@ const RouteLayer = ({ route }: { route: RouteData | null }) => {
 	return null;
 };
 
-const MapComponent = ({ route }: MapProps) => {
+const Map = ({ route }: MapProps) => {
 	return (
 		<section className={styles.component}>
 			<MapContainer
@@ -87,4 +87,4 @@ const MapComponent = ({ route }: MapProps) => {
 	);
 };
 
-export default MapComponent;
+export default Map;

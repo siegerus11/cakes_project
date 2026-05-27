@@ -1,34 +1,16 @@
 import { useState } from 'react';
 
-import { address, pickupCoordinates } from '../../constants';
+import { address } from '../../constants';
+import { RouteData } from '../../types/types';
+import buildRoute from '../../utils/buildRoute';
 import DescriptionSegment from '../description-segment/description-segment';
 import Map from '../map/map';
 import styles from './pick-up.module.scss';
-
-type RouteData = {
-	geometry: {
-		coordinates: [number, number][];
-	};
-};
 
 type PickUpProps = {
 	wrapperClass: string;
 	headlineText: string;
 	isDeliverPage: boolean;
-};
-
-const buildRoute = async (
-	from: [number, number]
-): Promise<RouteData | null> => {
-	const url = `https://router.project-osrm.org/route/v1/driving/${from[1]},${from[0]};${pickupCoordinates[1]},${pickupCoordinates[0]}?overview=full&geometries=geojson`;
-
-	const res = await fetch(url);
-	const data = await res.json();
-
-	if (data.code === 'Ok' && data.routes?.[0]) {
-		return data.routes[0];
-	}
-	return null;
 };
 
 const PickUp = ({ wrapperClass, headlineText, isDeliverPage }: PickUpProps) => {
