@@ -1,10 +1,10 @@
-import { pickupCoordinates } from '../constants';
 import { RouteData } from '../types/types';
 
 const buildRoute = async (
-	from: [number, number]
+	from: [number, number],
+	to: [number, number]
 ): Promise<RouteData | null> => {
-	const url = `https://router.project-osrm.org/route/v1/driving/${from[1]},${from[0]};${pickupCoordinates[1]},${pickupCoordinates[0]}?overview=full&geometries=geojson`;
+	const url = `https://router.project-osrm.org/route/v1/driving/${from[1]},${from[0]};${to[1]},${to[0]}?overview=full&geometries=geojson`;
 
 	const res = await fetch(url);
 	const data = await res.json();
