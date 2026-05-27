@@ -1,4 +1,5 @@
 @use '../../mixins' as mixins;
+@use '../../variables' as variables;
 
 .wrapper {
 	@include mixins.flex-column-start;
@@ -15,8 +16,12 @@
 		letter-spacing: 0.1px;
 	}
 
-	&__link {
+	&__button {
+		@include mixins.button-reset;
+		@include mixins.hover-text;
+		color: variables.$color-link;
 		line-height: 150%;
+		text-decoration: underline;
 	}
 
 	&__error {
@@ -34,3 +39,17 @@
 		letter-spacing: 0.14px;
 	}
 }
+
+@media (max-width: 992px) {
+	.adress {
+		&__button:hover {
+			color: variables.$color-link;
+		}
+	}
+}
+
+// @media (max-width: 767px) {}
+
+// @media (max-width: 576px) {}
+
+// @media (max-width: 360px) {}

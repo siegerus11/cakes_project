@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { address, pickupCoordinates } from '../../constants';
 import DescriptionSegment from '../description-segment/description-segment';
 import Map from '../map/map';
@@ -16,7 +17,9 @@ type PickUpProps = {
 	isDeliverPage: boolean;
 };
 
-const buildRoute = async (from: [number, number]): Promise<RouteData | null> => {
+const buildRoute = async (
+	from: [number, number]
+): Promise<RouteData | null> => {
 	const url = `https://router.project-osrm.org/route/v1/driving/${from[1]},${from[0]};${pickupCoordinates[1]},${pickupCoordinates[0]}?overview=full&geometries=geojson`;
 
 	const res = await fetch(url);
@@ -43,10 +46,10 @@ const PickUp = ({ wrapperClass, headlineText, isDeliverPage }: PickUpProps) => {
 		setError(null);
 
 		navigator.geolocation.getCurrentPosition(
-			async (position) => {
+			async position => {
 				const userPos: [number, number] = [
 					position.coords.latitude,
-					position.coords.longitude,
+					position.coords.longitude
 				];
 				try {
 					const routeData = await buildRoute(userPos);
@@ -63,7 +66,9 @@ const PickUp = ({ wrapperClass, headlineText, isDeliverPage }: PickUpProps) => {
 			},
 			() => {
 				setLoading(false);
-				setError('Не удалось определить ваше местоположение. Разрешите доступ к геолокации.');
+				setError(
+					'Не удалось определить ваше местоположение. Разрешите доступ к геолокации.'
+				);
 			},
 			{ enableHighAccuracy: true, timeout: 10000 }
 		);
@@ -82,7 +87,7 @@ const PickUp = ({ wrapperClass, headlineText, isDeliverPage }: PickUpProps) => {
 				)}
 				<address>{address}</address>
 				<button
-					className={styles.adress__link}
+					className={styles.adress__button}
 					type="button"
 					onClick={handleBuildRoute}
 					disabled={loading}
