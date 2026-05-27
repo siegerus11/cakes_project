@@ -1,6 +1,7 @@
 @use '../../variables' as variables;
 
 .component {
+	z-index: 15;
 	order: 2;
 	min-width: 736px;
 	min-height: 484px;
