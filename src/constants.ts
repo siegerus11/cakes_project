@@ -163,3 +163,8 @@ export const OuterRoute = {
 	Instagram: 'https://www.instagram.com/',
 	Vk: 'https://vk.com/'
 } as const;
+
+export const appeals = [
+	'Возникли проблемы с заказом?',
+	'Хотите обсудить сотрудничество?'
+];

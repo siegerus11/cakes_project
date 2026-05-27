@@ -29,3 +29,57 @@
 .pickup {
 	margin-top: 30px;
 }
+
+.communication {
+	margin-top: 30px;
+
+	&__list {
+		margin-top: 10px;
+		padding-left: 25px;
+		list-style-position: outside;
+		list-style-type: disc;
+	}
+
+	&__item {
+		line-height: 150%;
+		letter-spacing: 0.14px;
+
+		&::marker {
+			margin-right: 10px;
+		}
+	}
+
+	&__description {
+		margin: 0;
+		margin-top: 23px;
+		line-height: 150%;
+		letter-spacing: 0.14px;
+	}
+}
+
+.social {
+	margin-top: 30px;
+
+	&__link {
+		margin-right: 15px;
+	}
+
+	&__icon {
+		width: 40px;
+		height: 40px;
+	}
+
+	ul {
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 992px) {
+	.communication {
+		&__description a {
+			&:hover {
+				color: variables.$color-link;
+			}
+		}
+	}
+}
