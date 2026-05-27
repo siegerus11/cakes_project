@@ -22,9 +22,9 @@ const PickUp = ({ wrapperClass, headlineText, isDeliverPage }: PickUpProps) => {
 					</p>
 				)}
 				<address>{address}</address>
-				<a className={styles.adress__link} href="/">
+				<button className={styles.adress__link} type="button">
 					Построить маршрут
-				</a>
+				</button>
 				<p className={styles.adress__text}>
 					Пожалуйста, оформите всё заранее — мы испечем ваш заказ и
 					согласуем удобное время получения.
