@@ -38,8 +38,13 @@
 
 @media (max-width: 576px) {
 	.wrapper {
-		margin-top: 20px;
+		margin-top: 19px;
 		font-size: 14px;
 		line-height: 143%;
+		letter-spacing: 0.1px;
+	}
+
+	.phone {
+		padding-left: 4px;
 	}
 }

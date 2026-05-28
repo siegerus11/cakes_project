@@ -63,12 +63,19 @@
 @media (max-width: 576px) {
 	.address {
 		line-height: 143%;
+
 		address {
 			margin-top: 5px;
+			line-height: 143%;
 		}
 
 		&__text {
 			margin-top: 20px;
+		}
+
+		&__button {
+			line-height: 143%;
+			text-underline-offset: 2px;
 		}
 	}
 }
