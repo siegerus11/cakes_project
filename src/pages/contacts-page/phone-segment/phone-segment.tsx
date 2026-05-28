@@ -10,7 +10,7 @@ const PhoneSegment = () => {
 			<a className={styles.phone} href={`tel:${formatedPhone}`}>
 				{phone}
 			</a>
-			<a className={styles.outer} href={OuterRoute.Telegram}>
+			<a className={styles.link} href={OuterRoute.Telegram}>
 				Написать в Telegram
 			</a>
 		</div>

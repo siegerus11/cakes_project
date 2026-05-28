@@ -19,9 +19,9 @@ const DescriptionSegment = ({
 	titleText
 }: DescriptionSegmentProps) => {
 	return (
-		<div className={wrapperClass}>
+		<div className={`description-segment ${wrapperClass}`}>
 			<Title
-				titleClass={`description-segment-title ${titleClass}`}
+				titleClass={`description-segment__title ${titleClass}`}
 				level={titleLevel}
 				titleText={titleText}
 			/>

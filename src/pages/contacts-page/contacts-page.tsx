@@ -9,7 +9,7 @@ import PhoneSegment from './phone-segment/phone-segment';
 
 const ContactsPage = () => {
 	return (
-		<main className={`page ${styles.page}`}>
+		<div className={`page ${styles.page}`}>
 			<div className="container">
 				<BreadCrumbs />
 				<Title titleClass={styles.title} titleText="Контакты" hr />
@@ -85,7 +85,7 @@ const ContactsPage = () => {
 					</SocialLinks>
 				</DescriptionSegment>
 			</div>
-		</main>
+		</div>
 	);
 };
 
