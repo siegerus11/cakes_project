@@ -80,7 +80,7 @@ const Footer = () => {
 						<Button
 							className={`button button_secondary ${styles.button}`}
 							isOuterLink
-							url={OuterRoute.Instagram}
+							url={OuterRoute.Telegram}
 							label="Написать в Telegram"
 						>
 							<span>Написать в Telegram</span>
