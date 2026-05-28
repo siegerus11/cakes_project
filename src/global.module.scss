@@ -9,6 +9,8 @@
 // global component-styles
 @use './components/ui/button/button.module';
 @use './components/title/title.module';
+@use './components/description-segment/description-segment.module';
+
 
 :root {
 	--primary-font: 'Inter', sans-serif;

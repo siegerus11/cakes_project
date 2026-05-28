@@ -85,3 +85,13 @@ export type Question = {
 	text: string;
 	isActive: boolean;
 };
+
+export type TitleLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+export type RouteGeometry = {
+	coordinates: [number, number][];
+};
+
+export type RouteData = {
+	geometry: RouteGeometry;
+};

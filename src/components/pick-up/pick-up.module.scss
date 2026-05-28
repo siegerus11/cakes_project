@@ -1,0 +1,81 @@
+@use '../../mixins' as mixins;
+@use '../../variables' as variables;
+
+.wrapper {
+	@include mixins.flex-column-start;
+}
+
+.address {
+	order: 1;
+	line-height: 150%;
+
+	&__text {
+		max-width: 723px;
+		margin: 0;
+		margin-top: 24px;
+		letter-spacing: 0.1px;
+	}
+
+	&__button {
+		@include mixins.button-reset;
+		@include mixins.hover-text;
+		color: variables.$color-link;
+		line-height: 150%;
+		text-decoration: underline;
+	}
+
+	&__time {
+		margin-top: 10px;
+	}
+
+	&__error {
+		margin: 0;
+		margin-top: 8px;
+		color: #e74c3c;
+		font-size: 14px;
+		line-height: 140%;
+	}
+
+	address {
+		margin: 0;
+		margin-top: 10px;
+		line-height: 150%;
+		letter-spacing: 0.14px;
+	}
+
+	&_revert {
+		order: 3;
+	}
+
+	&_mt45 {
+		margin-top: 45px;
+	}
+}
+
+@media (max-width: 992px) {
+	.address {
+		&__button:hover {
+			color: variables.$color-link;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.address {
+		line-height: 143%;
+
+		address {
+			margin-top: 5px;
+			line-height: 143%;
+		}
+
+		&__text {
+			margin-top: 20px;
+		}
+
+		&__button {
+			line-height: 143%;
+			text-underline-offset: 2px;
+		}
+	}
+}

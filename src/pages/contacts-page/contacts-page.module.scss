@@ -1,3 +1,5 @@
+@use '../../variables.scss' as variables;
+
 .page {
 	padding-bottom: 90px;
 }
@@ -5,3 +7,124 @@
 .title {
 	margin-top: 56px;
 }
+
+.hours {
+	margin-top: 30px;
+
+	&__description {
+		margin: 0;
+		margin-top: 10px;
+		line-height: 150%;
+		letter-spacing: 0.14px;
+	}
+}
+
+.pickup {
+	margin-top: 30px;
+}
+
+.communication {
+	margin-top: 30px;
+
+	&__list {
+		margin-top: 10px;
+		padding-left: 25px;
+		list-style-position: outside;
+		list-style-type: disc;
+	}
+
+	&__item {
+		letter-spacing: 0.14px;
+
+		&::marker {
+			margin-right: 10px;
+		}
+	}
+
+	&__description {
+		margin: 0;
+		margin-top: 25px;
+		letter-spacing: 0.14px;
+	}
+}
+
+.social {
+	margin-top: 30px;
+
+	&__link {
+		display: block;
+		margin-right: 15px;
+	}
+
+	&__icon {
+		width: 40px;
+		height: 40px;
+	}
+
+	ul {
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 992px) {
+	.communication {
+		&__description a {
+			&:hover {
+				color: variables.$color-link;
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.page {
+		padding-bottom: 65px;
+	}
+
+	.title {
+		margin-top: 25px;
+		font-weight: 800;
+	}
+
+	.hours,
+	.pickup {
+		margin-top: 25px;
+	}
+
+	.hours {
+		&__description {
+			margin-top: 5px;
+		}
+	}
+
+	.communication {
+		margin-top: 30px;
+
+		&__list {
+			margin-top: 5px;
+			padding-left: 21px;
+		}
+
+		&__description {
+			margin-top: 20px;
+
+			a {
+				text-underline-offset: 3px;
+			}
+		}
+	}
+
+	.social {
+		margin-top: 51px;
+
+		ul {
+			margin-top: 5px;
+		}
+
+		&__link {
+			margin-right: 15px;
+		}
+	}
+}
+
+// @media (max-width: 360px) {}

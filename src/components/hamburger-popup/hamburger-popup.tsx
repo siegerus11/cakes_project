@@ -83,30 +83,39 @@ const HamburgerPopup = ({
 							href={OuterRoute.Telegram}
 							aria-label="Telegram"
 						>
-							<img
-								src="../../../images/tg-colored.svg"
-								alt="Telegram"
-							/>
+							<svg
+								className={styles.icon__svg}
+								viewBox="0 0 40 40"
+								aria-hidden="true"
+							>
+								<use xlinkHref="#tg-colored"></use>
+							</svg>
 						</a>
 						<a
 							className={styles.icon}
 							href={OuterRoute.Vk}
 							aria-label="ВКонтакте"
 						>
-							<img
-								src="../../../images/vk-colored.svg"
-								alt="ВКонтакте"
-							/>
+							<svg
+								className={styles.icon__svg}
+								viewBox="0 0 40 40"
+								aria-hidden="true"
+							>
+								<use xlinkHref="#vk-colored"></use>
+							</svg>
 						</a>
 						<a
 							className={styles.icon}
 							href={OuterRoute.Instagram}
 							aria-label="Instagram"
 						>
-							<img
-								src="../../../images/inst-colored.svg"
-								alt="Instagram"
-							/>
+							<svg
+								className={styles.icon__svg}
+								viewBox="0 0 40 40"
+								aria-hidden="true"
+							>
+								<use xlinkHref="#inst-colored"></use>
+							</svg>
 						</a>
 					</SocialLinks>
 				</div>

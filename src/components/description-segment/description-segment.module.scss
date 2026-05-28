@@ -1,0 +1,34 @@
+@use '../../_variables.scss' as vars;
+
+:global(.description-segment) {
+	line-height: 150%;
+
+	&:global(__title) {
+		color: vars.$color-text-crimson;
+		font-weight: 800;
+		font-size: 22px;
+		line-height: 141%;
+	}
+}
+
+@media (max-width: 767px) {
+	:global(.description-segment) {
+		font-size: 15px;
+
+		&:global(__title) {
+			font-size: 21px;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	:global(.description-segment) {
+		font-size: 14px;
+		line-height: 143%;
+
+		&:global(__title) {
+			font-size: 18px;
+			line-height: 172%;
+		}
+	}
+}
