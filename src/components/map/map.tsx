@@ -21,6 +21,7 @@ const customIcon = L.icon({
 
 type MapProps = {
 	route: RouteData | null;
+	isDeliverPage?: boolean;
 };
 
 const RouteLayer = ({ route }: { route: RouteData | null }) => {
@@ -65,14 +66,16 @@ const RouteLayer = ({ route }: { route: RouteData | null }) => {
 	return null;
 };
 
-const Map = ({ route }: MapProps) => {
+const Map = ({ route, isDeliverPage }: MapProps) => {
 	return (
 		<section className={styles.component}>
 			<MapContainer
 				center={pickupCoordinates}
 				zoom={16}
 				scrollWheelZoom
-				className={styles.map}
+				className={`${styles.map} ${
+					isDeliverPage ? styles.map_mh461 : ''
+				}`}
 			>
 				<TileLayer
 					attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
