@@ -7,10 +7,14 @@ import styles from './pick-up.module.scss';
 type PickUpProps = {
 	wrapperClass: string;
 	headlineText: string;
-	isDeliverPage: boolean;
+	isDeliverPage?: boolean;
 };
 
-const PickUp = ({ wrapperClass, headlineText, isDeliverPage }: PickUpProps) => {
+const PickUp = ({
+	wrapperClass,
+	headlineText,
+	isDeliverPage = false
+}: PickUpProps) => {
 	const { handleBuildRoute, loading, error, route } =
 		useRoute(pickupCoordinates);
 
@@ -44,7 +48,7 @@ const PickUp = ({ wrapperClass, headlineText, isDeliverPage }: PickUpProps) => {
 					согласуем удобное время получения.
 				</p>
 			</DescriptionSegment>
-			<Map route={route} />
+			<Map route={route} isDeliverPage={isDeliverPage} />
 		</div>
 	);
 };

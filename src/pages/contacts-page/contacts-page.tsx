@@ -27,7 +27,6 @@ const ContactsPage = () => {
 				<PickUp
 					wrapperClass={styles.pickup}
 					headlineText="Адрес самовывоза"
-					isDeliverPage={false}
 				/>
 				<DescriptionSegment
 					titleText="Связь с директором"
