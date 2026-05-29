@@ -46,6 +46,15 @@ const DeliveryPage = () => {
 					isDeliverPage
 					headlineText="Самовывоз"
 				/>
+				<DescriptionSegment
+					wrapperClass={styles.payment}
+					titleText="Оплата"
+				>
+					<p className={styles.payment__description}>
+						Готовить заказ мы начинаем после 100% предоплаты
+						переводом на карту.
+					</p>
+				</DescriptionSegment>
 			</div>
 		</div>
 	);
