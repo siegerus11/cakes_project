@@ -1,0 +1,22 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "default_agent": "code",
+  "permission": {
+    "bash": "ask",
+    "edit": {
+      "src/**": "allow",
+      "*.lock": "deny",
+      "*": "ask"
+    },
+    "read": "allow",
+    "task": "allow",
+    "external_directory": "deny"
+  },
+  "instructions": [
+    "AGENTS.md"
+  ],
+  "compaction": {
+    "auto": true,
+    "prune": true
+  }
+}
