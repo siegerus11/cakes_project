@@ -38,6 +38,7 @@ const PickUp = ({
 					className={styles.address__button}
 					type="button"
 					onClick={handleBuildRoute}
+					aria-label="Построить маршрут"
 					disabled={loading}
 				>
 					{loading ? 'Строим маршрут…' : 'Построить маршрут'}
