@@ -1,6 +1,6 @@
-import axios, { AxiosError } from 'axios';
+import axios, { AxiosError, AxiosInstance } from 'axios';
 
-const BASE_URL = 'https://grading.design.pages.academy/v1/balda/';
+const { BASE_URL } = import.meta.env;
 const requestTimeout = 5000;
 
 type ErrorMessage = {
@@ -8,7 +8,7 @@ type ErrorMessage = {
 	message: string;
 };
 
-const createAPI = () => {
+const createAPI = (): AxiosInstance => {
 	const api = axios.create({
 		baseURL: BASE_URL,
 		timeout: requestTimeout
