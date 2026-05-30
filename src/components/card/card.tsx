@@ -1,8 +1,8 @@
 import { Link, generatePath } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
-import { useAppDispatch } from '../../hooks/useStore';
-import { setActiveOffer } from '../../store/main-process/main-process';
+import { useActionCreators } from '../../hooks/useStore';
+import { mainProcessActions } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
 import Button from '../ui/button/button';
 import styles from './card.module.scss';
@@ -15,10 +15,10 @@ type CardProps = {
 const Card = ({ cake, isMainPage }: CardProps) => {
 	const { title, images, price } = cake;
 
-	const dispatch = useAppDispatch();
+	const { setActiveOffer } = useActionCreators(mainProcessActions);
 
 	const handleOfferLinkClick = (id: string) => {
-		dispatch(setActiveOffer(id));
+		setActiveOffer(id);
 	};
 	const cardLinkClass = isMainPage
 		? styles.card

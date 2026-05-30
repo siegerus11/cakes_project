@@ -55,8 +55,7 @@ export const mainProcess = createSlice({
 	}
 });
 
-export const { setTotalPrice, setActiveOffer, getSortingStatus, setError } =
-	mainProcess.actions;
+export const mainProcessActions = { ...mainProcess.actions };
 
 export const {
 	selectTotalPrice,

@@ -80,11 +80,6 @@ export const cartProcess = createSlice({
 	}
 });
 
-export const {
-	setShoppingCart,
-	setCartQuantity,
-	clearCart,
-	removeCartItem
-} = cartProcess.actions;
+export const cartProcessActions = { ...cartProcess.actions };
 
 export const { selectShoppingCart, selectFinalSum } = cartProcess.selectors;
