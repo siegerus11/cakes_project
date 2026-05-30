@@ -59,6 +59,7 @@ const DeliveryPage = () => {
 				<Questions
 					questions={ABOUT_QUESTIONS}
 					wrapperClass={styles.questions}
+					titleClass={styles.questions__title}
 				/>
 
 				<DescriptionSegment

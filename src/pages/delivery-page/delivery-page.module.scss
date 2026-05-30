@@ -65,3 +65,65 @@
 		text-underline-offset: 2px;
 	}
 }
+
+@media (max-width: 576px) {
+	.title {
+		margin-top: 25px;
+	}
+
+	.courier {
+		margin-top: 20px;
+
+		&__interval {
+			margin-top: 5px;
+		}
+
+		&__list {
+			padding-left: 22px;
+		}
+
+		&__description {
+			margin-top: 20px;
+		}
+	}
+
+	.payment {
+		margin-top: 25px;
+
+		&__description {
+			margin-top: 5px;
+			letter-spacing: 0.1px;
+		}
+	}
+
+	.questions {
+		margin-top: 25px;
+
+		&__title {
+			font-size: 18px;
+			line-height: 172%;
+		}
+
+		ul {
+			margin-top: 25px;
+
+			li button {
+				margin-top: 4px;
+			}
+		}
+	}
+
+	.left {
+		margin-top: 24px;
+
+		&__link {
+			margin-top: 5px;
+			font-size: 14px;
+			line-height: 143%;
+		}
+	}
+
+	.page {
+		padding-bottom: 65px;
+	}
+}
