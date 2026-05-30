@@ -52,3 +52,16 @@
 		}
 	}
 }
+
+.left {
+	margin-top: 55px;
+
+	&__link {
+		display: inline-block;
+		margin-top: 10px;
+		font-size: 16px;
+		line-height: 150%;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+}
