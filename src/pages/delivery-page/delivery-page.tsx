@@ -1,8 +1,9 @@
 import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
 import DescriptionSegment from '../../components/description-segment/description-segment';
 import PickUp from '../../components/pick-up/pick-up';
+import Questions from '../../components/questions/questions';
 import Title from '../../components/title/title';
-import { deliveryTimes } from '../../constants';
+import { deliveryTimes, ABOUT_QUESTIONS } from '../../constants';
 import styles from './delivery-page.module.scss';
 
 const DeliveryPage = () => {
@@ -55,6 +56,10 @@ const DeliveryPage = () => {
 						переводом на карту.
 					</p>
 				</DescriptionSegment>
+				<Questions
+					questions={ABOUT_QUESTIONS}
+					wrapperClass={styles.questions}
+				/>
 			</div>
 		</div>
 	);

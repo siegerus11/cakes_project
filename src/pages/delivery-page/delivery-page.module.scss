@@ -36,3 +36,19 @@
 		letter-spacing: 0.1px;
 	}
 }
+
+.questions {
+	max-width: 738px;
+	margin-top: 30px;
+	padding: 0;
+
+	ul li {
+		&:nth-child(1) {
+			padding-top: 0;
+		}
+
+		button {
+			margin-top: -2px;
+		}
+	}
+}

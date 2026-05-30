@@ -56,11 +56,15 @@ const QuestionsItem = ({
 
 type QuestionsProps = {
 	wrapperClass?: string;
-	titleClass: string;
+	titleClass?: string;
 	questions: Question[];
 };
 
-const Questions = ({ titleClass, wrapperClass, questions }: QuestionsProps) => {
+const Questions = ({
+	titleClass = '',
+	wrapperClass = '',
+	questions
+}: QuestionsProps) => {
 	const [relavantQuestions, setRelavantQuestions] =
 		useState<Question[]>(questions);
 
