@@ -2,11 +2,10 @@ import { useMemo, useCallback, memo } from 'react';
 
 import { ConfirmMessage } from '../../../constants';
 import useConfirm from '../../../hooks/useConfirm';
-import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
+import { useActionCreators, useAppSelector } from '../../../hooks/useStore';
 import {
-	setCartQuantity,
-	selectShoppingCart,
-	removeCartItem
+	cartProcessActions,
+	selectShoppingCart
 } from '../../../store/cart-process/cart-process';
 import { CakeOrder } from '../../../types/types';
 import getChosen from '../../../utils/getChosen';
@@ -20,7 +19,8 @@ type CartItemProps = {
 
 const CartItem = memo(({ order }: CartItemProps) => {
 	const { price, filling, optional, weight, cakeId, quantity } = order;
-	const dispatch = useAppDispatch();
+	const { setCartQuantity, removeCartItem } =
+		useActionCreators(cartProcessActions);
 	const confirm = useConfirm();
 
 	const fillingsSelected = useMemo(() => getChosen(filling), [filling]);
@@ -36,11 +36,11 @@ const CartItem = memo(({ order }: CartItemProps) => {
 		(id: string, num: number, increase: boolean) => {
 			if (quantity <= 1 && !increase) {
 				const answer = confirm(ConfirmMessage.ClearOrder);
-				if (answer) dispatch(removeCartItem(id));
+				if (answer) removeCartItem(id);
 			}
-			dispatch(setCartQuantity({ id, num }));
+			setCartQuantity({ id, num });
 		},
-		[confirm, dispatch, quantity]
+		[confirm, setCartQuantity, removeCartItem, quantity]
 	);
 
 	const handleDecrease = useCallback(

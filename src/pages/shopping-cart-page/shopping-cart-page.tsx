@@ -17,12 +17,12 @@ import SubmitButton from '../../components/ui/button/submit-button';
 import { AppRoute, ConfirmMessage } from '../../constants';
 import useConfirm from '../../hooks/useConfirm';
 import useMediaQuery from '../../hooks/useMediaQuery';
-import { useAppSelector, useAppDispatch } from '../../hooks/useStore';
+import { useAppSelector, useActionCreators } from '../../hooks/useStore';
 import useTouch from '../../hooks/useTouch';
 import {
 	selectFinalSum,
 	selectShoppingCart,
-	clearCart
+	cartProcessActions
 } from '../../store/cart-process/cart-process';
 import getFormattedPrice from '../../utils/getFormattedPrice';
 import CartList from './cart-item/cart-item';
@@ -35,7 +35,7 @@ const ShoppingCartPage = () => {
 	const [inputValue, setInputValue] = useState<string>('');
 
 	const shoppingCart = useAppSelector(selectShoppingCart);
-	const dispatch = useAppDispatch();
+	const { clearCart } = useActionCreators(cartProcessActions);
 	const finalSumValue = useAppSelector(selectFinalSum);
 	const finalSum = useMemo(
 		() => getFormattedPrice(finalSumValue),
@@ -47,8 +47,8 @@ const ShoppingCartPage = () => {
 
 	const handleTrashButtonClick = useCallback(() => {
 		const answer = confirm(ConfirmMessage.ClearCart);
-		if (answer) dispatch(clearCart());
-	}, [confirm, dispatch]);
+		if (answer) clearCart();
+	}, [confirm, clearCart]);
 
 	const handlePopupTouchClose = useCallback(() => {
 		setIsAnimate(true);
