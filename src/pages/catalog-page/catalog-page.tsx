@@ -6,8 +6,8 @@ import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clause';
 import Title from '../../components/title/title';
 import { NAVS } from '../../constants';
-import { useAppDispatch } from '../../hooks/useStore';
-import { getSortingStatus } from '../../store/main-process/main-process';
+import { useActionCreators } from '../../hooks/useStore';
+import { mainProcessActions } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
 import getNavData from '../../utils/getNavData';
 import styles from './catalog-page.module.scss';
@@ -20,15 +20,15 @@ type CatalogPageProps = {
 
 const CatalogPage = ({ cakes }: CatalogPageProps) => {
 	const { pathname } = useLocation();
-	const dispatch = useAppDispatch();
+	const { getSortingStatus } = useActionCreators(mainProcessActions);
 	const pageTitle = useMemo(() => {
 		const navData = getNavData(pathname, NAVS);
 		return navData?.title ?? 'Каталог';
 	}, [pathname]);
 
 	useEffect(() => {
-		dispatch(getSortingStatus(''));
-	}, [dispatch]);
+		getSortingStatus('');
+	}, [getSortingStatus]);
 
 	return (
 		<>

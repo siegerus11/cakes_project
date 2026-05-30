@@ -9,11 +9,11 @@ import SubmitButton from '../../../components/ui/button/submit-button';
 import { AppRoute } from '../../../constants';
 import useCheckboxes from '../../../hooks/useCheckBox';
 import useRadio from '../../../hooks/useRadio';
-import { useAppSelector, useAppDispatch } from '../../../hooks/useStore';
-import { setShoppingCart } from '../../../store/cart-process/cart-process';
+import { useAppSelector, useActionCreators } from '../../../hooks/useStore';
+import { cartProcessActions } from '../../../store/cart-process/cart-process';
 import {
 	selectTotalPrice,
-	setTotalPrice
+	mainProcessActions
 } from '../../../store/main-process/main-process';
 import {
 	CakeOffer,
@@ -41,7 +41,8 @@ type OrderFormProps = {
 
 const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const totalPrice = useAppSelector(selectTotalPrice);
-	const dispatch = useAppDispatch();
+	const { setTotalPrice } = useActionCreators(mainProcessActions);
+	const { setShoppingCart } = useActionCreators(cartProcessActions);
 	const navigate = useNavigate();
 	const location = useLocation();
 
@@ -93,13 +94,13 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 			...fillingCheckboxPrices,
 			...weightRadioPrices
 		];
-		dispatch(setTotalPrice(getPricesSum(groupPrices, initialprice)));
+		setTotalPrice(getPricesSum(groupPrices, initialprice));
 	}, [
 		fillingCheckboxPrices,
 		weightRadioPrices,
 		optionalCheckboxPrices,
 		initialprice,
-		dispatch
+		setTotalPrice
 	]);
 
 	const handleMobileArrowClick = useCallback(() => {
@@ -121,12 +122,12 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const handleSubmit = useCallback(
 		(e: FormEvent) => {
 			e.preventDefault();
-			dispatch(setShoppingCart(cakeOrder));
+			setShoppingCart(cakeOrder);
 			navigate(AppRoute.ShoppingCart, {
 				state: { from: location.pathname }
 			});
 		},
-		[cakeOrder, dispatch, navigate, location.pathname]
+		[cakeOrder, navigate, location.pathname, setShoppingCart]
 	);
 
 	const describeClassName = descriptionVisible
