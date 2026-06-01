@@ -5,6 +5,9 @@ import { Provider } from 'react-redux';
 
 import App from './components/app/app';
 import store from './store';
+import { fetchOffersAction } from './store/api-actions';
+
+store.dispatch(fetchOffersAction()).then(response => console.log(response));
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
