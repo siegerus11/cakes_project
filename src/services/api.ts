@@ -1,25 +1,25 @@
 import axios, { AxiosError, AxiosInstance } from 'axios';
 
-const { BASE_URL } = import.meta.env;
-const requestTimeout = 5000;
+import { processErrorHandle } from './process-error-handle';
 
-type ErrorMessage = {
-	type: string;
-	message: string;
-};
+const { BASE_URL } = import.meta.env;
+const MOCK_BASE_URL = '../../mock-api';
+
+const requestTimeout = 5000;
 
 const createAPI = (): AxiosInstance => {
 	const api = axios.create({
-		baseURL: BASE_URL,
+		baseURL: MOCK_BASE_URL,
 		timeout: requestTimeout
 	});
 
 	api.interceptors.response.use(
 		response => response,
-		(error: AxiosError<ErrorMessage>) => {
+		(error: AxiosError) => {
 			if (error.response) {
-				const errorMessage = error.response.data.message;
-				throw new Error(errorMessage);
+				processErrorHandle(error.message);
+				console.log(error.response);
+				console.log(error);
 			}
 			throw error;
 		}
