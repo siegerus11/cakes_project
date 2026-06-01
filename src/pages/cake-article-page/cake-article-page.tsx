@@ -11,7 +11,7 @@ import useAnimate from '../../hooks/useAnimate';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { useAppSelector } from '../../hooks/useStore';
 import useTouch from '../../hooks/useTouch';
-import cakeOffers from '../../mocks/cake-offers/cake-offers';
+import { selectCakeOffers } from '../../store/cake-offers-data/cake-offers-data';
 import { selectActiveOffer } from '../../store/main-process/main-process';
 import styles from './cake-article-page.module.scss';
 import OrderForm from './order-form/order-form';
@@ -20,6 +20,7 @@ import Slider from './slider/slider';
 const CakeArticlePage = () => {
 	const isMobile = useMediaQuery('(max-width: 576px)');
 
+	const cakeOffers = useAppSelector(selectCakeOffers);
 	const activeId = useAppSelector(selectActiveOffer);
 	const activeOffer = useMemo(
 		() => cakeOffers.find(offer => offer.id === activeId),

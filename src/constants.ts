@@ -16,6 +16,10 @@ export const AppRoute = {
 	Thanks: '/thanks-page'
 } as const;
 
+export const APIRoute = {
+	offers: '../mock-api/offers.json'
+} as const;
+
 export const NAVS: Nav[] = [
 	{
 		title: 'О нас',

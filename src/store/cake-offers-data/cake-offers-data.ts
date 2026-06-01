@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { NameSpace } from '../../constants';
 import cakeOffers from '../../mocks/cake-offers/cake-offers';
 import { CakeOffer } from '../../types/types';
+import { fetchOffersAction } from '../api-actions';
 
 type InitialState = {
 	cakeOffers: CakeOffer[];
@@ -17,8 +18,8 @@ export const cakeOffersData = createSlice({
 	initialState,
 	reducers: {},
 	selectors: {
-		cakeOffersSelector: state => state.cakeOffers
+		selectCakeOffers: state => state.cakeOffers
 	}
 });
 
-export const { cakeOffersSelector } = cakeOffersData.selectors;
+export const { selectCakeOffers } = cakeOffersData.selectors;
