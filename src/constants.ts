@@ -17,7 +17,14 @@ export const AppRoute = {
 } as const;
 
 export const APIRoute = {
-	offers: '../mock-api/offers.json'
+	offers: 'offers.json'
+} as const;
+
+export const LoadingStatus = {
+	Idle: 'idle',
+	Loading: 'Loading',
+	Success: 'Success',
+	Failed: 'Failed'
 } as const;
 
 export const NAVS: Nav[] = [
