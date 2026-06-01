@@ -149,6 +149,15 @@ body {
 	@include mixins.reset-hover-button-link;
 }
 
+:global(.loader) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 0;
+	color: variables.$color-text-primary;
+	font-size: 18px;
+}
+
 @media (max-width: 1200px) {
 	:global(.container) {
 		max-width: 968px;
