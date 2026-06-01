@@ -51,7 +51,7 @@ export const mainProcess = createSlice({
 		selectTotalPrice: state => state.totalPrice,
 		selectActiveOffer: state => state.activeOffer,
 		selectSortingStatus: state => state.sortingStatus,
-		selectErrorText: state => state.errorText
+		selectErrorMessage: state => state.errorText
 	}
 });
 
@@ -61,5 +61,5 @@ export const {
 	selectTotalPrice,
 	selectActiveOffer,
 	selectSortingStatus,
-	selectErrorText
+	selectErrorMessage
 } = mainProcess.selectors;
