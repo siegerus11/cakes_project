@@ -8,7 +8,9 @@ import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute, NAVS } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
+import { selectOffersLoadingStatus } from '../../store/cake-offers-data/cake-offers-data';
 import { selectFinalSum } from '../../store/cart-process/cart-process';
+import { selectErrorMessage } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
 import getFormattedPrice from '../../utils/getFormattedPrice';
 import styles from './main-page.module.scss';
@@ -20,6 +22,7 @@ type MainPageProps = {
 
 const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 	const totalPrice = useAppSelector(selectFinalSum);
+	const loadingStatus = useAppSelector(selectOffersLoadingStatus);
 	const formattedPrice = useMemo(
 		() => getFormattedPrice(totalPrice),
 		[totalPrice]
@@ -40,6 +43,23 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 		[]
 	);
 
+	const errorMessage = useAppSelector(selectErrorMessage);
+
+	if (loadingStatus === 'Loading') {
+		return (
+			<div className="container">
+				<div className="loader">Loading...</div>
+			</div>
+		);
+	}
+	
+	if (loadingStatus === 'Failed') {
+		return (
+			<div className="container">
+				<div className="loader">{errorMessage}</div>
+			</div>
+		);
+	}
 	return (
 		<>
 			<div className="container">

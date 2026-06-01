@@ -7,7 +7,10 @@ import App from './components/app/app';
 import store from './store';
 import { fetchOffersAction } from './store/api-actions';
 
-store.dispatch(fetchOffersAction()).then(response => console.log(response));
+store.dispatch(fetchOffersAction());
+// .unwrap()
+// .then(response => console.log(response))
+// .catch((err: Error) => console.log(`${err.message}`));
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>

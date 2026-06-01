@@ -20,8 +20,6 @@ function App() {
 	const cakeOffers = useAppSelector(selectCakeOffers);
 	const bentoCakesOffers = cakeOffers.filter(cake => cake.isBento === true);
 
-	console.log(cakeOffers);
-
 	return (
 		<BrowserRouter
 			future={{ v7_startTransition: true, v7_relativeSplatPath: true }}

@@ -24,7 +24,7 @@ const CakeArticlePage = () => {
 	const activeId = useAppSelector(selectActiveOffer);
 	const activeOffer = useMemo(
 		() => cakeOffers.find(offer => offer.id === activeId),
-		[activeId]
+		[activeId, cakeOffers]
 	);
 
 	const { handleAnimationEnd, handleAnimationStart, getAnimationClass } =

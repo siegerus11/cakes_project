@@ -6,7 +6,8 @@ import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clause';
 import Title from '../../components/title/title';
 import { NAVS } from '../../constants';
-import { useActionCreators } from '../../hooks/useStore';
+import { useActionCreators, useAppSelector } from '../../hooks/useStore';
+import { selectOffersLoadingStatus } from '../../store/cake-offers-data/cake-offers-data';
 import { mainProcessActions } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
 import getNavData from '../../utils/getNavData';
@@ -21,6 +22,7 @@ type CatalogPageProps = {
 const CatalogPage = ({ cakes }: CatalogPageProps) => {
 	const { pathname } = useLocation();
 	const { getSortingStatus } = useActionCreators(mainProcessActions);
+	const loadingStatus = useAppSelector(selectOffersLoadingStatus);
 	const pageTitle = useMemo(() => {
 		const navData = getNavData(pathname, NAVS);
 		return navData?.title ?? 'Каталог';
@@ -30,6 +32,9 @@ const CatalogPage = ({ cakes }: CatalogPageProps) => {
 		getSortingStatus('');
 	}, [getSortingStatus]);
 
+	if (loadingStatus !== 'Success') {
+		return null;
+	}
 	return (
 		<>
 			<div className="container">
