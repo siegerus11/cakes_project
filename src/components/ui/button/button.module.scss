@@ -35,6 +35,12 @@
 	&:hover {
 		color: vars.$color-text-inverted;
 	}
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
 }
 
 @media (max-width: 1200px) {

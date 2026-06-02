@@ -185,3 +185,7 @@ export const deliveryTimes: string[] = [
 	'с 15:00 до 18:00',
 	'с 17:00 до 20:00'
 ];
+
+export const ValidationErrorText = {
+	PromoCode: 'Введите минимум 3 символа'
+};

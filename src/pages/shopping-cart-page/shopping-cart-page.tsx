@@ -14,7 +14,7 @@ import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import SubmitButton from '../../components/ui/button/submit-button';
-import { AppRoute, ConfirmMessage } from '../../constants';
+import { AppRoute, ConfirmMessage, ValidationErrorText } from '../../constants';
 import useConfirm from '../../hooks/useConfirm';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { useAppSelector, useActionCreators } from '../../hooks/useStore';
@@ -33,6 +33,7 @@ const ShoppingCartPage = () => {
 	const [popupIsVisible, setPopupIsVisible] = useState<boolean>(false);
 	const [isAnimate, setIsAnimate] = useState<boolean>(false);
 	const [inputValue, setInputValue] = useState<string>('');
+	const [errorMessage, setErrorMessage] = useState<string>('');
 
 	const shoppingCart = useAppSelector(selectShoppingCart);
 	const { clearCart } = useActionCreators(cartProcessActions);
@@ -73,20 +74,31 @@ const ShoppingCartPage = () => {
 		setPopupIsVisible(true);
 	}, []);
 
-	const handleInputClearClick = useCallback(() => {
+	const promoInputValidate = (value: string) => {
+		if (value && value.length >= 3) {
+			setErrorMessage('');
+		} else if (value.length) setErrorMessage(ValidationErrorText.PromoCode);
+		else setErrorMessage('');
+	};
+
+	const handleInputClearClick = () => {
 		setInputValue('');
-	}, []);
+		setErrorMessage('');
+	};
 
-	const handleInputChange = useCallback(
-		(e: ChangeEvent<HTMLInputElement>) => {
-			setInputValue(e.target.value);
-		},
-		[]
-	);
+	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+		const { value } = e.target;
+		setInputValue(value);
+		promoInputValidate(value);
+	};
 
-	const handlePromoSubmit = useCallback((e: FormEvent) => {
+	const isValidPromo = !!inputValue && inputValue.length >= 3;
+
+	const handlePromoSubmit = (e: FormEvent) => {
 		e.preventDefault();
-	}, []);
+		if (!isValidPromo) return;
+		console.log('submit');
+	};
 
 	const buttonPath = useMemo(
 		() =>
@@ -196,10 +208,12 @@ const ShoppingCartPage = () => {
 								/>
 							)}
 						</div>
+						<span className="error-message">{errorMessage}</span>
 						<SubmitButton
 							className={`button button_primary ${styles.popup__button}`}
 							formId="promo-form"
 							label="Применить"
+							isDisabled={!isValidPromo}
 						>
 							<span>Применить</span>
 						</SubmitButton>

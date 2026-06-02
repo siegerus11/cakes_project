@@ -158,6 +158,11 @@ body {
 	font-size: 18px;
 }
 
+:global(.error-message) {
+	font-size: 14px;
+	color: variables.$color-error;
+}
+
 @media (max-width: 1200px) {
 	:global(.container) {
 		max-width: 968px;
@@ -258,6 +263,10 @@ body {
 
 	:global(.title-hr) {
 		margin: 11px 0;
+	}
+
+	:global(.error-message) {
+		font-size: 12px;
 	}
 }
 
