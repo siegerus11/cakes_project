@@ -47,8 +47,11 @@ const OrderRegistrationPage = () => {
 
 	const handleFormSubmit = (e: FormEvent) => {
 		e.preventDefault();
-		sendOrderAction(order);
-		navigate(AppRoute.Thanks);
+		sendOrderAction(order).then(response => {
+			if (response.meta.requestStatus === 'fulfilled') {
+				navigate(AppRoute.Thanks);
+			}
+		});
 	};
 
 	return (
