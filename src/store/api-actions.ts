@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 
 import { APIRoute } from '../constants';
+import { processErrorHandle } from '../services/process-error-handle';
 import { AppDispatch, State } from '../types/store';
 import { CakeOffer } from '../types/types';
 
@@ -18,4 +19,21 @@ export const fetchOffersAction = createAsyncThunk<
 	return data;
 });
 
-export const a = '';
+export const getDiscountAction = createAsyncThunk<
+	void,
+	string,
+	{
+		dispatch: AppDispatch;
+		state: State;
+		extra: AxiosInstance;
+	}
+>('cart/getDiscount', async (code: string, { extra: api }) => {
+	try {
+		await api.post(APIRoute.promoCode, code);
+	} catch (error) {
+		const message =
+			error instanceof Error ? error.message : 'Unknown error';
+		processErrorHandle(message);
+		throw error;
+	}
+});

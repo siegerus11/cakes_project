@@ -17,7 +17,8 @@ export const AppRoute = {
 } as const;
 
 export const APIRoute = {
-	offers: 'offers.json'
+	offers: 'offers.json',
+	promoCode: 'promo'
 } as const;
 
 export const LoadingStatus = {
@@ -189,3 +190,5 @@ export const deliveryTimes: string[] = [
 export const ValidationErrorText = {
 	PromoCode: 'Введите минимум 3 символа'
 };
+
+export const discoundValue = 15;
