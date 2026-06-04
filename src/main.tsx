@@ -5,12 +5,9 @@ import { Provider } from 'react-redux';
 
 import App from './components/app/app';
 import store from './store';
-import { fetchOffersAction } from './store/api-actions';
+import { cakeOffersDataActions } from './store/cake-offers-data/cake-offers-data';
 
-store.dispatch(fetchOffersAction());
-// .unwrap()
-// .then(response => console.log(response))
-// .catch((err: Error) => console.log(`${err.message}`));
+store.dispatch(cakeOffersDataActions.fetchOffersAction());
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>

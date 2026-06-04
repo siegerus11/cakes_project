@@ -36,7 +36,8 @@ const ShoppingCartPage = () => {
 	const [errorMessage, setErrorMessage] = useState<string>('');
 
 	const shoppingCart = useAppSelector(selectShoppingCart);
-	const { clearCart } = useActionCreators(cartProcessActions);
+	const { clearCart, getDiscountAction } =
+		useActionCreators(cartProcessActions);
 	const finalSumValue = useAppSelector(selectFinalSum);
 	const finalSum = useMemo(
 		() => getFormattedPrice(finalSumValue),
@@ -97,7 +98,7 @@ const ShoppingCartPage = () => {
 	const handlePromoSubmit = (e: FormEvent) => {
 		e.preventDefault();
 		if (!isValidPromo) return;
-		console.log('submit');
+		getDiscountAction(inputValue);
 	};
 
 	const buttonPath = useMemo(
