@@ -1,22 +1,46 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
 import Title from '../../components/title/title';
 import SubmitButton from '../../components/ui/button/submit-button';
 import { AppRoute } from '../../constants';
+import { useActionCreators, useAppSelector } from '../../hooks/useStore';
+import {
+	cartProcessActions,
+	selectShoppingCart,
+	selectFinalSum
+} from '../../store/cart-process/cart-process';
 import styles from './order-registration-page.module.scss';
 
 const OrderRegistrationPage = () => {
 	const navigate = useNavigate();
-	const [isAreaVisible, setIsAreaVisible] = useState(false);
+	const [isAreaVisible, setIsAreaVisible] = useState<boolean>(false);
+	const [formValues, setFormValues] = useState({
+		user: '',
+		number: '',
+		address: ''
+	});
+	const cart = useAppSelector(selectShoppingCart);
+	const sum = useAppSelector(selectFinalSum);
+
+	// const { setUserMessage } = useActionCreators(cartProcessActions);
 
 	const handleAreaButtonClick = () => {
 		setIsAreaVisible(prevState => !prevState);
 	};
 
+	const handleIputChange = (e: ChangeEvent) => {
+		const target = e.target as HTMLInputElement;
+		setFormValues(prevState => ({
+			...prevState,
+			[target.name]: target.value
+		}));
+	};
+
 	const handleFormSubmit = (e: FormEvent) => {
 		e.preventDefault();
+
 		navigate(AppRoute.Thanks);
 	};
 
@@ -98,6 +122,8 @@ const OrderRegistrationPage = () => {
 									type="text"
 									name="user"
 									id="user"
+									value={formValues.user}
+									onChange={handleIputChange}
 								/>
 								<input
 									className={styles.input}
@@ -105,6 +131,8 @@ const OrderRegistrationPage = () => {
 									type="text"
 									name="number"
 									id="number"
+									value={formValues.number}
+									onChange={handleIputChange}
 								/>
 								<input
 									className={styles.input}
@@ -112,6 +140,8 @@ const OrderRegistrationPage = () => {
 									type="text"
 									name="address"
 									id="address"
+									value={formValues.address}
+									onChange={handleIputChange}
 								/>
 							</div>
 							<button
