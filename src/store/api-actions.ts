@@ -28,12 +28,5 @@ export const getDiscountAction = createAsyncThunk<
 		extra: AxiosInstance;
 	}
 >('cart/getDiscount', async (code: string, { extra: api }) => {
-	try {
-		await api.post(APIRoute.promoCode, code);
-	} catch (error) {
-		const message =
-			error instanceof Error ? error.message : 'Unknown error';
-		processErrorHandle(message);
-		throw error;
-	}
+	await api.post(APIRoute.promoCode, code);
 });

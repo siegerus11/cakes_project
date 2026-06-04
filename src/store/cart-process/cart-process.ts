@@ -88,7 +88,8 @@ export const cartProcess = createSlice({
 			return {
 				...state,
 				discountLoadingStatus: LoadingStatus.Success,
-				finalSum: (state.finalSum * discoundValue) / 100
+				finalSum:
+					state.finalSum - (state.finalSum * discoundValue) / 100
 			};
 		});
 		builder.addCase(getDiscountAction.rejected, state => {
@@ -105,6 +106,6 @@ export const cartProcess = createSlice({
 	}
 });
 
-export const cartProcessActions = { ...cartProcess.actions };
+export const cartProcessActions = { ...cartProcess.actions, getDiscountAction };
 
 export const { selectShoppingCart, selectFinalSum } = cartProcess.selectors;
