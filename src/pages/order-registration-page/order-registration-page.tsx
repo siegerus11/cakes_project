@@ -6,8 +6,8 @@ import Title from '../../components/title/title';
 import SubmitButton from '../../components/ui/button/submit-button';
 import { AppRoute } from '../../constants';
 import { useActionCreators, useAppSelector } from '../../hooks/useStore';
+import { cakeOffersDataActions } from '../../store/cake-offers-data/cake-offers-data';
 import {
-	cartProcessActions,
 	selectShoppingCart,
 	selectFinalSum
 } from '../../store/cart-process/cart-process';
@@ -31,7 +31,7 @@ const OrderRegistrationPage = () => {
 		finalSum: sum
 	};
 
-	// const { setUserMessage } = useActionCreators(cartProcessActions);
+	const { sendOrderAction } = useActionCreators(cakeOffersDataActions);
 
 	const handleAreaButtonClick = () => {
 		setIsAreaVisible(prevState => !prevState);
@@ -47,7 +47,7 @@ const OrderRegistrationPage = () => {
 
 	const handleFormSubmit = (e: FormEvent) => {
 		e.preventDefault();
-
+		sendOrderAction(order);
 		navigate(AppRoute.Thanks);
 	};
 

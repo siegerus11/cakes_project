@@ -18,7 +18,8 @@ export const AppRoute = {
 
 export const APIRoute = {
 	offers: 'offers.json',
-	promoCode: 'promo'
+	promoCode: 'promo',
+	order: 'order'
 } as const;
 
 export const LoadingStatus = {

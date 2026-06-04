@@ -2,9 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 
 import { APIRoute } from '../constants';
-import { processErrorHandle } from '../services/process-error-handle';
 import { AppDispatch, State } from '../types/store';
-import { CakeOffer } from '../types/types';
+import { CakeOffer, Order } from '../types/types';
 
 export const fetchOffersAction = createAsyncThunk<
 	CakeOffer[],
@@ -17,6 +16,18 @@ export const fetchOffersAction = createAsyncThunk<
 >('data/fetchOffers', async (_arg, { extra: api }) => {
 	const { data } = await api.get<CakeOffer[]>(APIRoute.offers);
 	return data;
+});
+
+export const sendOrderAction = createAsyncThunk<
+	void,
+	Order,
+	{
+		dispatch: AppDispatch;
+		state: State;
+		extra: AxiosInstance;
+	}
+>('cart/sendOrder', async (order: Order, { extra: api }) => {
+	await api.post(APIRoute.order, order);
 });
 
 export const getDiscountAction = createAsyncThunk<

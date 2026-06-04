@@ -2,16 +2,18 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { NameSpace, LoadingStatus } from '../../constants';
 import { CakeOffer } from '../../types/types';
-import { fetchOffersAction } from '../api-actions';
+import { fetchOffersAction, sendOrderAction } from '../api-actions';
 
 type InitialState = {
 	cakeOffers: CakeOffer[];
 	offersLoadingStatus: (typeof LoadingStatus)[keyof typeof LoadingStatus];
+	orderSendingStatus: (typeof LoadingStatus)[keyof typeof LoadingStatus];
 };
 
 const initialState: InitialState = {
 	cakeOffers: [],
-	offersLoadingStatus: LoadingStatus.Idle
+	offersLoadingStatus: LoadingStatus.Idle,
+	orderSendingStatus: LoadingStatus.Idle
 };
 
 export const cakeOffersData = createSlice({
@@ -38,6 +40,24 @@ export const cakeOffersData = createSlice({
 					...state,
 					offersLoadingStatus: LoadingStatus.Failed
 				};
+			})
+			.addCase(sendOrderAction.pending, state => {
+				return {
+					...state,
+					orderSendingStatus: LoadingStatus.Loading
+				};
+			})
+			.addCase(sendOrderAction.fulfilled, state => {
+				return {
+					...state,
+					orderSendingStatus: LoadingStatus.Success
+				};
+			})
+			.addCase(sendOrderAction.rejected, state => {
+				return {
+					...state,
+					orderSendingStatus: LoadingStatus.Failed
+				};
 			});
 	},
 	selectors: {
@@ -48,7 +68,8 @@ export const cakeOffersData = createSlice({
 
 export const cakeOffersDataActions = {
 	...cakeOffersData.actions,
-	fetchOffersAction
+	fetchOffersAction,
+	sendOrderAction
 };
 
 export const { selectCakeOffers, selectOffersLoadingStatus } =
