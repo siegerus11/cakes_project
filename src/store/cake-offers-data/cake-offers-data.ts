@@ -46,5 +46,10 @@ export const cakeOffersData = createSlice({
 	}
 });
 
+export const cakeOffersDataActions = {
+	...cakeOffersData.actions,
+	fetchOffersAction
+};
+
 export const { selectCakeOffers, selectOffersLoadingStatus } =
 	cakeOffersData.selectors;
