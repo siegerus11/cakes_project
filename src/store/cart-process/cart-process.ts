@@ -1,15 +1,18 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { NameSpace } from '../../constants';
+import { NameSpace, LoadingStatus, discoundValue } from '../../constants';
 import { CakeOrder } from '../../types/types';
+import { getDiscountAction } from '../api-actions';
 
 type CartProcess = {
 	shoppingCart: CakeOrder[];
+	discountLoadingStatus: (typeof LoadingStatus)[keyof typeof LoadingStatus];
 	finalSum: number;
 };
 
 const initialState: CartProcess = {
 	shoppingCart: [],
+	discountLoadingStatus: LoadingStatus.Idle,
 	finalSum: 0
 };
 
@@ -72,6 +75,28 @@ export const cartProcess = createSlice({
 				)
 			};
 		}
+	},
+
+	extraReducers(builder) {
+		builder.addCase(getDiscountAction.pending, state => {
+			return {
+				...state,
+				discountLoadingStatus: LoadingStatus.Loading
+			};
+		});
+		builder.addCase(getDiscountAction.fulfilled, state => {
+			return {
+				...state,
+				discountLoadingStatus: LoadingStatus.Success,
+				finalSum: (state.finalSum * discoundValue) / 100
+			};
+		});
+		builder.addCase(getDiscountAction.rejected, state => {
+			return {
+				...state,
+				discountLoadingStatus: LoadingStatus.Failed
+			};
+		});
 	},
 
 	selectors: {
