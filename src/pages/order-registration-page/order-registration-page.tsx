@@ -11,6 +11,7 @@ import {
 	selectShoppingCart,
 	selectFinalSum
 } from '../../store/cart-process/cart-process';
+import { Order } from '../../types/types';
 import styles from './order-registration-page.module.scss';
 
 const OrderRegistrationPage = () => {
@@ -19,10 +20,16 @@ const OrderRegistrationPage = () => {
 	const [formValues, setFormValues] = useState({
 		user: '',
 		number: '',
-		address: ''
+		address: '',
+		comment: ''
 	});
 	const cart = useAppSelector(selectShoppingCart);
 	const sum = useAppSelector(selectFinalSum);
+	const order: Order = {
+		shoppingCart: cart,
+		userData: formValues,
+		finalSum: sum
+	};
 
 	// const { setUserMessage } = useActionCreators(cartProcessActions);
 
@@ -156,6 +163,8 @@ const OrderRegistrationPage = () => {
 									className={styles.textarea}
 									name="comment"
 									id="comment"
+									value={formValues.comment}
+									onChange={handleIputChange}
 								></textarea>
 							)}
 						</form>

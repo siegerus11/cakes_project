@@ -80,6 +80,19 @@ export type CakeOrder = {
 	quantity: number;
 };
 
+export type UserData = {
+	user: string;
+	number: string;
+	address: string;
+	comment: string;
+};
+
+export type Order = {
+	shoppingCart: CakeOrder[];
+	userData: UserData;
+	finalSum: number;
+};
+
 export type Question = {
 	title: string;
 	text: string;
