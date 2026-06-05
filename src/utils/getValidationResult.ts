@@ -16,5 +16,6 @@ const addressValidate = (value: string): boolean | string => {
 	if (!value || value.length < 5) return 'Введите адрес';
 	return true;
 };
+const promoValidate = (value: string) => {};
 
-export { nameValidate, phoneValidate, addressValidate };
+export { nameValidate, phoneValidate, addressValidate, promoValidate };

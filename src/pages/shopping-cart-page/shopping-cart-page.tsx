@@ -14,7 +14,7 @@ import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import SubmitButton from '../../components/ui/button/submit-button';
-import { AppRoute, ConfirmMessage, ValidationErrorText } from '../../constants';
+import { AppRoute, ConfirmMessage } from '../../constants';
 import useConfirm from '../../hooks/useConfirm';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { useAppSelector, useActionCreators } from '../../hooks/useStore';
@@ -78,7 +78,7 @@ const ShoppingCartPage = () => {
 	const promoInputValidate = (value: string) => {
 		if (value && value.length >= 3) {
 			setErrorMessage('');
-		} else if (value.length) setErrorMessage(ValidationErrorText.PromoCode);
+		} else if (value.length) setErrorMessage('Введите минимум 3 символа');
 		else setErrorMessage('');
 	};
 

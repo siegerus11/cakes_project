@@ -193,14 +193,11 @@ export const deliveryTimes: string[] = [
 	'с 17:00 до 20:00'
 ];
 
-export const ValidationErrorText = {
-	PromoCode: 'Введите минимум 3 символа'
-};
-
 export const discoundValue = 15;
 
 export const validation = {
 	name: (value: string) => nameValidate(value),
 	phone: (value: string) => phoneValidate(value),
-	address: (value: string) => addressValidate(value)
+	address: (value: string) => addressValidate(value),
+	comment: (value: string) => addressValidate(value)
 };
