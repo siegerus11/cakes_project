@@ -36,7 +36,10 @@ const CartItem = memo(({ order }: CartItemProps) => {
 		(id: string, num: number, increase: boolean) => {
 			if (quantity <= 1 && !increase) {
 				const answer = confirm(ConfirmMessage.ClearOrder);
-				if (answer) removeCartItem(id);
+				if (answer) {
+					removeCartItem(id);
+					localStorage.removeItem(`cake-${id}`);
+				}
 			}
 			setCartQuantity({ id, num });
 		},
