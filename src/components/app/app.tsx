@@ -19,6 +19,7 @@ import {
 	cartProcessActions
 } from '../../store/cart-process/cart-process';
 import { CakeOrder } from '../../types/types';
+import getStorageCartValues from '../../utils/getStorageCartValues';
 import MainLayout from '../layout/main-layout';
 import './app.module.scss';
 
@@ -29,13 +30,13 @@ function App() {
 	const shoppingCart = useAppSelector(selectShoppingCart);
 
 	useEffect(() => {
-		const storageValues = Object.entries(localStorage)
-			.filter(([key]) => key.startsWith('cake-cart'))
-			.map(([, value]) => JSON.parse(value as string))
-			.filter(
-				(item: CakeOrder) =>
-					!shoppingCart.some(order => order.cakeId === item.cakeId)
-			);
+		if (typeof window === 'undefined') return;
+
+		const storageValues = getStorageCartValues().filter(
+			(item: CakeOrder) =>
+				!shoppingCart.some(order => order.cakeId === item.cakeId)
+		);
+
 		storageValues.forEach(item => {
 			setShoppingCart(item);
 		});
