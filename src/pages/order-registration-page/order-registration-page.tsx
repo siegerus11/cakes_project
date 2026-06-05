@@ -23,7 +23,7 @@ const OrderRegistrationPage = () => {
 		address: '',
 		comment: ''
 	});
-	const [errorMessage, setErrorMessage] = useState<string | null>(null);
+	const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
 	const cart = useAppSelector(selectShoppingCart);
 	const sum = useAppSelector(selectFinalSum);
@@ -39,15 +39,19 @@ const OrderRegistrationPage = () => {
 		setIsAreaVisible(prevState => !prevState);
 	};
 
+	const validateField = (name: string, value: string): string => {
+		const result = validation[name as keyof typeof validation]?.(value);
+		return typeof result === 'string' ? result : '';
+	};
+
 	const handleIputChange = (e: ChangeEvent) => {
 		const target = e.target as HTMLInputElement;
-		const validationResult = validation[
-			target.name as keyof typeof validation
-		](target.value);
+		const error = validateField(target.name, target.value);
 
-		if (typeof validationResult === 'string')
-			setErrorMessage(validationResult);
-		else setErrorMessage(null);
+		setFormErrors(prevState => ({
+			...prevState,
+			[target.name]: error
+		}));
 
 		setFormValues(prevState => ({
 			...prevState,
@@ -57,13 +61,23 @@ const OrderRegistrationPage = () => {
 
 	const handleFormSubmit = (e: FormEvent) => {
 		e.preventDefault();
-		if (!formValues.name || !formValues.phone || !formValues.address) {
-			setErrorMessage('Заполните все обязательные поля');
+
+		const errors: Record<string, string> = {};
+		const requiredFields = ['name', 'phone', 'address'] as const;
+
+		requiredFields.forEach(field => {
+			const error = validateField(field, formValues[field]);
+			if (error) {
+				errors[field] = error;
+			}
+		});
+
+		setFormErrors(errors);
+
+		if (Object.keys(errors).length > 0) {
 			return;
 		}
-		if (errorMessage) {
-			setErrorMessage('Введите корректные данные');
-		}
+
 		sendOrderAction(order).then(response => {
 			if (response.meta.requestStatus === 'fulfilled') {
 				navigate(AppRoute.Thanks);
@@ -152,6 +166,11 @@ const OrderRegistrationPage = () => {
 									value={formValues.name}
 									onChange={handleIputChange}
 								/>
+								{formErrors.name && (
+									<span className="error-message">
+										{formErrors.name}
+									</span>
+								)}
 								<input
 									className={styles.input}
 									placeholder="Телефон"
@@ -161,6 +180,11 @@ const OrderRegistrationPage = () => {
 									value={formValues.phone}
 									onChange={handleIputChange}
 								/>
+								{formErrors.phone && (
+									<span className="error-message">
+										{formErrors.phone}
+									</span>
+								)}
 								<input
 									className={styles.input}
 									placeholder="Адрес"
@@ -170,9 +194,11 @@ const OrderRegistrationPage = () => {
 									value={formValues.address}
 									onChange={handleIputChange}
 								/>
-								<span className="error-message">
-									{errorMessage}
-								</span>
+								{formErrors.address && (
+									<span className="error-message">
+										{formErrors.address}
+									</span>
+								)}
 							</div>
 							<button
 								className={styles.areaButton}
@@ -205,6 +231,7 @@ const OrderRegistrationPage = () => {
 				<SubmitButton
 					className={`button button_primary ${styles.controller__button}`}
 					label="Оформить заказ"
+					formId="order-registration-form"
 				>
 					<span>Оформить заказ</span>
 				</SubmitButton>

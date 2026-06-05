@@ -198,7 +198,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 					</span>
 					<SubmitButton
 						className={`button button_primary ${styles.controller__button}`}
-						onClick={handleSubmit}
+						formId="order-form"
 						label="В корзину"
 					>
 						<span>В корзину</span>
