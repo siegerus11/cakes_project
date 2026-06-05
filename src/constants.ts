@@ -2,7 +2,8 @@ import { Nav, WeightRelevant } from './types/types';
 import {
 	nameValidate,
 	phoneValidate,
-	addressValidate
+	addressValidate,
+	promoValidate
 } from './utils/getValidationResult';
 
 export const AppRoute = {
@@ -199,5 +200,6 @@ export const validation = {
 	name: (value: string) => nameValidate(value),
 	phone: (value: string) => phoneValidate(value),
 	address: (value: string) => addressValidate(value),
-	comment: (value: string) => addressValidate(value)
+	comment: () => true,
+	promo: (value: string) => promoValidate(value)
 };
