@@ -23,7 +23,7 @@ const OrderRegistrationPage = () => {
 		address: '',
 		comment: ''
 	});
-	const [errorMessage, setErrorMessage] = useState<string | boolean>('');
+	const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
 	const cart = useAppSelector(selectShoppingCart);
 	const sum = useAppSelector(selectFinalSum);
@@ -47,7 +47,7 @@ const OrderRegistrationPage = () => {
 
 		if (typeof validationResult === 'string')
 			setErrorMessage(validationResult);
-		else setErrorMessage(false);
+		else setErrorMessage(null);
 
 		setFormValues(prevState => ({
 			...prevState,
