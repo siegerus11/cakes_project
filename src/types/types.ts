@@ -81,8 +81,8 @@ export type CakeOrder = {
 };
 
 export type UserData = {
-	user: string;
-	number: string;
+	name: string;
+	phone: string;
 	address: string;
 	comment: string;
 };

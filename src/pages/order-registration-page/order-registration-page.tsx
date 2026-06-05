@@ -18,11 +18,13 @@ const OrderRegistrationPage = () => {
 	const navigate = useNavigate();
 	const [isAreaVisible, setIsAreaVisible] = useState<boolean>(false);
 	const [formValues, setFormValues] = useState({
-		user: '',
-		number: '',
+		name: '',
+		phone: '',
 		address: '',
 		comment: ''
 	});
+	const [errorMessage, setErrorMessage] = useState<string>('');
+
 	const cart = useAppSelector(selectShoppingCart);
 	const sum = useAppSelector(selectFinalSum);
 	const order: Order = {
@@ -37,8 +39,41 @@ const OrderRegistrationPage = () => {
 		setIsAreaVisible(prevState => !prevState);
 	};
 
+	const nameValidate = (value: string): boolean | string => {
+		if (!value || !value.length) return 'Введите имя';
+		if (!/^[a-zA-Zа-яА-Я\s]+$/.test(value))
+			return 'Имя должно содержать только буквы';
+		return true;
+	};
+
+	const phoneValidate = (value: string): boolean | string => {
+		if (!value || !value.length) return 'Введите номер телефона';
+		if (!/^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/.test(value))
+			return 'Номер телефона должен быть в формате +7(999)999-99-99';
+		return true;
+	};
+
+	const addressValidate = (value: string): boolean | string => {
+		if (!value || value.length < 5) return 'Введите адрес';
+		return true;
+	};
+
+	const validation = {
+		name: (value: string) => nameValidate(value),
+		phone: (value: string) => phoneValidate(value),
+		address: (value: string) => addressValidate(value)
+	};
+
 	const handleIputChange = (e: ChangeEvent) => {
 		const target = e.target as HTMLInputElement;
+		const validationResult = validation[
+			target.name as keyof typeof validation
+		](target.value);
+
+		if (typeof validationResult === 'string')
+			setErrorMessage(validationResult);
+		else setErrorMessage('');
+
 		setFormValues(prevState => ({
 			...prevState,
 			[target.name]: target.value
@@ -47,6 +82,9 @@ const OrderRegistrationPage = () => {
 
 	const handleFormSubmit = (e: FormEvent) => {
 		e.preventDefault();
+		if (errorMessage) {
+			setErrorMessage('Введите корректные данные');
+		}
 		sendOrderAction(order).then(response => {
 			if (response.meta.requestStatus === 'fulfilled') {
 				navigate(AppRoute.Thanks);
@@ -130,18 +168,18 @@ const OrderRegistrationPage = () => {
 									className={styles.input}
 									placeholder="Имя"
 									type="text"
-									name="user"
-									id="user"
-									value={formValues.user}
+									name="name"
+									id="name"
+									value={formValues.name}
 									onChange={handleIputChange}
 								/>
 								<input
 									className={styles.input}
 									placeholder="Телефон"
 									type="text"
-									name="number"
-									id="number"
-									value={formValues.number}
+									name="phone"
+									id="phone"
+									value={formValues.phone}
 									onChange={handleIputChange}
 								/>
 								<input
@@ -153,6 +191,9 @@ const OrderRegistrationPage = () => {
 									value={formValues.address}
 									onChange={handleIputChange}
 								/>
+								<span className="error-message">
+									{errorMessage}
+								</span>
 							</div>
 							<button
 								className={styles.areaButton}
