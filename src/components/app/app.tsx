@@ -1,8 +1,9 @@
+import { useEffect } from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
 import '../../global.module.scss';
-import { useAppSelector } from '../../hooks/useStore';
+import { useAppSelector, useActionCreators } from '../../hooks/useStore';
 import AboutPage from '../../pages/about-page/about-page';
 import CakeArticlePage from '../../pages/cake-article-page/cake-article-page';
 import CatalogPage from '../../pages/catalog-page/catalog-page';
@@ -13,12 +14,32 @@ import OrderRegistrationPage from '../../pages/order-registration-page/order-reg
 import ShoppingCartPage from '../../pages/shopping-cart-page/shopping-cart-page';
 import ThanksPage from '../../pages/thanks-page/thanks-page';
 import { selectCakeOffers } from '../../store/cake-offers-data/cake-offers-data';
+import {
+	selectShoppingCart,
+	cartProcessActions
+} from '../../store/cart-process/cart-process';
+import { CakeOrder } from '../../types/types';
 import MainLayout from '../layout/main-layout';
 import './app.module.scss';
 
 function App() {
 	const cakeOffers = useAppSelector(selectCakeOffers);
 	const bentoCakesOffers = cakeOffers.filter(cake => cake.isBento === true);
+	const { setShoppingCart } = useActionCreators(cartProcessActions);
+	const shoppingCart = useAppSelector(selectShoppingCart);
+
+	useEffect(() => {
+		const storageValues = Object.entries(localStorage)
+			.filter(([key]) => key.startsWith('cake-cart'))
+			.map(([, value]) => JSON.parse(value as string))
+			.filter(
+				(item: CakeOrder) =>
+					!shoppingCart.some(order => order.cakeId === item.cakeId)
+			);
+		storageValues.forEach(item => {
+			setShoppingCart(item);
+		});
+	}, []);
 
 	return (
 		<BrowserRouter

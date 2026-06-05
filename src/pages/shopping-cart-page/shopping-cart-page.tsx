@@ -49,7 +49,10 @@ const ShoppingCartPage = () => {
 
 	const handleTrashButtonClick = useCallback(() => {
 		const answer = confirm(ConfirmMessage.ClearCart);
-		if (answer) clearCart();
+		if (answer) {
+			clearCart();
+			localStorage.clear();
+		}
 	}, [confirm, clearCart]);
 
 	const handlePopupTouchClose = useCallback(() => {

@@ -123,6 +123,12 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 		(e: FormEvent) => {
 			e.preventDefault();
 			setShoppingCart(cakeOrder);
+
+			localStorage.setItem(
+				`cake-cart-${cakeOrder.cakeId}`,
+				JSON.stringify(cakeOrder)
+			);
+
 			navigate(AppRoute.ShoppingCart, {
 				state: { from: location.pathname }
 			});
