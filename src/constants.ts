@@ -1,4 +1,9 @@
 import { Nav, WeightRelevant } from './types/types';
+import {
+	nameValidate,
+	phoneValidate,
+	addressValidate
+} from './utils/getValidationResult';
 
 export const AppRoute = {
 	Root: '/',
@@ -193,3 +198,9 @@ export const ValidationErrorText = {
 };
 
 export const discoundValue = 15;
+
+export const validation = {
+	name: (value: string) => nameValidate(value),
+	phone: (value: string) => phoneValidate(value),
+	address: (value: string) => addressValidate(value)
+};

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import ButtonController from '../../components/button-controller/button-controller';
 import Title from '../../components/title/title';
 import SubmitButton from '../../components/ui/button/submit-button';
-import { AppRoute } from '../../constants';
+import { AppRoute, validation } from '../../constants';
 import { useActionCreators, useAppSelector } from '../../hooks/useStore';
 import { cakeOffersDataActions } from '../../store/cake-offers-data/cake-offers-data';
 import {
@@ -23,7 +23,7 @@ const OrderRegistrationPage = () => {
 		address: '',
 		comment: ''
 	});
-	const [errorMessage, setErrorMessage] = useState<string>('');
+	const [errorMessage, setErrorMessage] = useState<string | boolean>('');
 
 	const cart = useAppSelector(selectShoppingCart);
 	const sum = useAppSelector(selectFinalSum);
@@ -39,31 +39,6 @@ const OrderRegistrationPage = () => {
 		setIsAreaVisible(prevState => !prevState);
 	};
 
-	const nameValidate = (value: string): boolean | string => {
-		if (!value || !value.length) return 'Введите имя';
-		if (!/^[a-zA-Zа-яА-Я\s]+$/.test(value))
-			return 'Имя должно содержать только буквы';
-		return true;
-	};
-
-	const phoneValidate = (value: string): boolean | string => {
-		if (!value || !value.length) return 'Введите номер телефона';
-		if (!/^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/.test(value))
-			return 'Номер телефона должен быть в формате +7(999)999-99-99';
-		return true;
-	};
-
-	const addressValidate = (value: string): boolean | string => {
-		if (!value || value.length < 5) return 'Введите адрес';
-		return true;
-	};
-
-	const validation = {
-		name: (value: string) => nameValidate(value),
-		phone: (value: string) => phoneValidate(value),
-		address: (value: string) => addressValidate(value)
-	};
-
 	const handleIputChange = (e: ChangeEvent) => {
 		const target = e.target as HTMLInputElement;
 		const validationResult = validation[
@@ -72,7 +47,7 @@ const OrderRegistrationPage = () => {
 
 		if (typeof validationResult === 'string')
 			setErrorMessage(validationResult);
-		else setErrorMessage('');
+		else setErrorMessage(false);
 
 		setFormValues(prevState => ({
 			...prevState,
@@ -82,6 +57,10 @@ const OrderRegistrationPage = () => {
 
 	const handleFormSubmit = (e: FormEvent) => {
 		e.preventDefault();
+		if (!formValues.name || !formValues.phone || !formValues.address) {
+			setErrorMessage('Заполните все обязательные поля');
+			return;
+		}
 		if (errorMessage) {
 			setErrorMessage('Введите корректные данные');
 		}
