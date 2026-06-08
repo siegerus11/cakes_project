@@ -85,6 +85,10 @@ const OrderRegistrationPage = () => {
 		});
 	};
 
+	const handleBackClick = () => {
+		navigate(-1);
+	};
+
 	return (
 		<>
 			<main className={`page ${styles.page}`}>
@@ -92,7 +96,7 @@ const OrderRegistrationPage = () => {
 					<button
 						className={`back-link back-link_m-small ${styles.back}`}
 						type="button"
-						onClick={() => navigate(-1)}
+						onClick={handleBackClick}
 						aria-label="Назад"
 					>
 						<svg viewBox="0 0 18 18" aria-hidden="true">
