@@ -223,7 +223,8 @@ const OrderRegistrationPage = () => {
 							>
 								Добавить комментарий
 							</button>
-							{isAreaVisible && (
+						{isAreaVisible && (
+							<>
 								<textarea
 									className={styles.textarea}
 									name="comment"
@@ -231,7 +232,13 @@ const OrderRegistrationPage = () => {
 									value={formValues.comment}
 									onChange={handleIputChange}
 								></textarea>
-							)}
+								{formErrors.comment && (
+									<span className="error-message">
+										{formErrors.comment}
+									</span>
+								)}
+							</>
+						)}
 						</form>
 						<SubmitButton
 							className={`button button_primary ${styles.button}`}

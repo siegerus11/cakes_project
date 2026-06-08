@@ -3,6 +3,7 @@ import {
 	nameValidate,
 	phoneValidate,
 	addressValidate,
+	commentValidate,
 	promoValidate
 } from './utils/getValidationResult';
 
@@ -200,6 +201,6 @@ export const validation = {
 	name: (value: string) => nameValidate(value),
 	phone: (value: string) => phoneValidate(value),
 	address: (value: string) => addressValidate(value),
-	comment: () => true,
+	comment: (value: string) => commentValidate(value),
 	promo: (value: string) => promoValidate(value)
 };
