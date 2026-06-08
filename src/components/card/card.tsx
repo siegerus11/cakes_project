@@ -66,6 +66,8 @@ const AllCard = ({ cake, path }: AllCardProps) => {
 					<img
 						src={image}
 						alt={`Торт "${cake.title}" - изображение ${i + 1}`}
+						width="141"
+						height="141"
 						key={keyValue}
 					/>
 				);
