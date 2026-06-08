@@ -518,15 +518,869 @@
     ]
   },
   {
-    "id": "offer-005",
+    "id": "offer-014",
+    "isBento": false,
+    "category": "Коллегам",
+    "title": "Шоколадный трюфель",
+    "images": [
+      "/images/pictures/cake16.jpg",
+      "/images/pictures/cake17.jpg",
+      "/images/pictures/cake16.jpg",
+      "/images/pictures/cake17.jpg"
+    ],
+    "price": 4200,
+    "describe": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
+    "filling": [
+      {
+        "name": "Бельгийский шоколад",
+        "title": "Бельгийский шоколад",
+        "price": 1200,
+        "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
+        "isInclude": false,
+        "image": "/images/fillings/belgian-chocolate.png",
+        "ingredients": [
+          "Шоколад бельгийский 72%",
+          "Сливки 33%",
+          "Какао-порошок",
+          "Сливочное масло"
+        ],
+        "nutrition": {
+          "calories": "350 ккал",
+          "proteins": "4 г",
+          "fats": "24 г",
+          "carbs": "30 г"
+        }
+      },
+      {
+        "name": "С фундуком",
+        "title": "С фундуком",
+        "price": 1100,
+        "description": "Шоколадная начинка с поджаренным фундуком и нугой",
+        "isInclude": false,
+        "image": "/images/fillings/shokolad-orex.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Фундук",
+          "Нуга",
+          "Сливочное масло",
+          "Бисквит шоколадный"
+        ],
+        "nutrition": {
+          "calories": "380 ккал",
+          "proteins": "6 г",
+          "fats": "26 г",
+          "carbs": "28 г"
+        }
+      },
+      {
+        "name": "С малиной",
+        "title": "С малиной",
+        "price": 1000,
+        "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-malina.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Малина",
+          "Малиновое конфи",
+          "Сливки",
+          "Бисквит"
+        ],
+        "nutrition": {
+          "calories": "300 ккал",
+          "proteins": "4 г",
+          "fats": "18 г",
+          "carbs": "32 г"
+        }
+      },
+      {
+        "name": "Со взбитыми сливками",
+        "title": "Со взбитыми сливками",
+        "price": 850,
+        "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-slivki.png",
+        "ingredients": [
+          "Молочный шоколад",
+          "Сливки взбитые",
+          "Бисквит",
+          "Крем-чиз"
+        ],
+        "nutrition": {
+          "calories": "270 ккал",
+          "proteins": "5 г",
+          "fats": "16 г",
+          "carbs": "28 г"
+        }
+      }
+    ],
+    "weight": [1.5, 3, 5],
+    "optionally": [
+      {
+        "name": "Топпер «Спасибо»",
+        "title": "Топпер «Спасибо»",
+        "price": 150,
+        "isInclude": false,
+        "image": "/images/options/topper-spasibo.png"
+      },
+      {
+        "name": "Коробка для торта",
+        "title": "Коробка для торта",
+        "price": 0,
+        "isInclude": false,
+        "image": "/images/options/cake-box.png"
+      },
+      {
+        "name": "Шоколадные украшения",
+        "title": "Шоколадные украшения",
+        "price": 500,
+        "isInclude": false,
+        "image": "/images/options/chocolate-decoration.png"
+      }
+    ]
+  },
+  {
+    "id": "offer-015",
+    "isBento": false,
+    "category": "Коллегам",
+    "title": "Шоколадный трюфель",
+    "images": [
+      "/images/pictures/cake18.jpg",
+      "/images/pictures/cake19.jpg",
+      "/images/pictures/cake18.jpg",
+      "/images/pictures/cake19.jpg"
+    ],
+    "price": 4200,
+    "describe": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
+    "filling": [
+      {
+        "name": "Бельгийский шоколад",
+        "title": "Бельгийский шоколад",
+        "price": 1200,
+        "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
+        "isInclude": false,
+        "image": "/images/fillings/belgian-chocolate.png",
+        "ingredients": [
+          "Шоколад бельгийский 72%",
+          "Сливки 33%",
+          "Какао-порошок",
+          "Сливочное масло"
+        ],
+        "nutrition": {
+          "calories": "350 ккал",
+          "proteins": "4 г",
+          "fats": "24 г",
+          "carbs": "30 г"
+        }
+      },
+      {
+        "name": "С фундуком",
+        "title": "С фундуком",
+        "price": 1100,
+        "description": "Шоколадная начинка с поджаренным фундуком и нугой",
+        "isInclude": false,
+        "image": "/images/fillings/shokolad-orex.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Фундук",
+          "Нуга",
+          "Сливочное масло",
+          "Бисквит шоколадный"
+        ],
+        "nutrition": {
+          "calories": "380 ккал",
+          "proteins": "6 г",
+          "fats": "26 г",
+          "carbs": "28 г"
+        }
+      },
+      {
+        "name": "С малиной",
+        "title": "С малиной",
+        "price": 1000,
+        "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-malina.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Малина",
+          "Малиновое конфи",
+          "Сливки",
+          "Бисквит"
+        ],
+        "nutrition": {
+          "calories": "300 ккал",
+          "proteins": "4 г",
+          "fats": "18 г",
+          "carbs": "32 г"
+        }
+      },
+      {
+        "name": "Со взбитыми сливками",
+        "title": "Со взбитыми сливками",
+        "price": 850,
+        "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-slivki.png",
+        "ingredients": [
+          "Молочный шоколад",
+          "Сливки взбитые",
+          "Бисквит",
+          "Крем-чиз"
+        ],
+        "nutrition": {
+          "calories": "270 ккал",
+          "proteins": "5 г",
+          "fats": "16 г",
+          "carbs": "28 г"
+        }
+      }
+    ],
+    "weight": [1.5, 3, 5],
+    "optionally": [
+      {
+        "name": "Топпер «Спасибо»",
+        "title": "Топпер «Спасибо»",
+        "price": 150,
+        "isInclude": false,
+        "image": "/images/options/topper-spasibo.png"
+      },
+      {
+        "name": "Коробка для торта",
+        "title": "Коробка для торта",
+        "price": 0,
+        "isInclude": false,
+        "image": "/images/options/cake-box.png"
+      },
+      {
+        "name": "Шоколадные украшения",
+        "title": "Шоколадные украшения",
+        "price": 500,
+        "isInclude": false,
+        "image": "/images/options/chocolate-decoration.png"
+      }
+    ]
+  },
+  {
+    "id": "offer-016",
+    "isBento": false,
+    "category": "Коллегам",
+    "title": "Шоколадный трюфель",
+    "images": [
+      "/images/pictures/cake20.jpg",
+      "/images/pictures/cake21.jpg",
+      "/images/pictures/cake20.jpg",
+      "/images/pictures/cake21.jpg"
+    ],
+    "price": 4200,
+    "describe": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
+    "filling": [
+      {
+        "name": "Бельгийский шоколад",
+        "title": "Бельгийский шоколад",
+        "price": 1200,
+        "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
+        "isInclude": false,
+        "image": "/images/fillings/belgian-chocolate.png",
+        "ingredients": [
+          "Шоколад бельгийский 72%",
+          "Сливки 33%",
+          "Какао-порошок",
+          "Сливочное масло"
+        ],
+        "nutrition": {
+          "calories": "350 ккал",
+          "proteins": "4 г",
+          "fats": "24 г",
+          "carbs": "30 г"
+        }
+      },
+      {
+        "name": "С фундуком",
+        "title": "С фундуком",
+        "price": 1100,
+        "description": "Шоколадная начинка с поджаренным фундуком и нугой",
+        "isInclude": false,
+        "image": "/images/fillings/shokolad-orex.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Фундук",
+          "Нуга",
+          "Сливочное масло",
+          "Бисквит шоколадный"
+        ],
+        "nutrition": {
+          "calories": "380 ккал",
+          "proteins": "6 г",
+          "fats": "26 г",
+          "carbs": "28 г"
+        }
+      },
+      {
+        "name": "С малиной",
+        "title": "С малиной",
+        "price": 1000,
+        "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-malina.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Малина",
+          "Малиновое конфи",
+          "Сливки",
+          "Бисквит"
+        ],
+        "nutrition": {
+          "calories": "300 ккал",
+          "proteins": "4 г",
+          "fats": "18 г",
+          "carbs": "32 г"
+        }
+      },
+      {
+        "name": "Со взбитыми сливками",
+        "title": "Со взбитыми сливками",
+        "price": 850,
+        "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-slivki.png",
+        "ingredients": [
+          "Молочный шоколад",
+          "Сливки взбитые",
+          "Бисквит",
+          "Крем-чиз"
+        ],
+        "nutrition": {
+          "calories": "270 ккал",
+          "proteins": "5 г",
+          "fats": "16 г",
+          "carbs": "28 г"
+        }
+      }
+    ],
+    "weight": [1.5, 3, 5],
+    "optionally": [
+      {
+        "name": "Топпер «Спасибо»",
+        "title": "Топпер «Спасибо»",
+        "price": 150,
+        "isInclude": false,
+        "image": "/images/options/topper-spasibo.png"
+      },
+      {
+        "name": "Коробка для торта",
+        "title": "Коробка для торта",
+        "price": 0,
+        "isInclude": false,
+        "image": "/images/options/cake-box.png"
+      },
+      {
+        "name": "Шоколадные украшения",
+        "title": "Шоколадные украшения",
+        "price": 500,
+        "isInclude": false,
+        "image": "/images/options/chocolate-decoration.png"
+      }
+    ]
+  },
+  {
+    "id": "offer-017",
+    "isBento": false,
+    "category": "Коллегам",
+    "title": "Шоколадный трюфель",
+    "images": [
+      "/images/pictures/cake20.jpg",
+      "/images/pictures/cake21.jpg",
+      "/images/pictures/cake20.jpg",
+      "/images/pictures/cake21.jpg"
+    ],
+    "price": 4200,
+    "describe": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
+    "filling": [
+      {
+        "name": "Бельгийский шоколад",
+        "title": "Бельгийский шоколад",
+        "price": 1200,
+        "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
+        "isInclude": false,
+        "image": "/images/fillings/belgian-chocolate.png",
+        "ingredients": [
+          "Шоколад бельгийский 72%",
+          "Сливки 33%",
+          "Какао-порошок",
+          "Сливочное масло"
+        ],
+        "nutrition": {
+          "calories": "350 ккал",
+          "proteins": "4 г",
+          "fats": "24 г",
+          "carbs": "30 г"
+        }
+      },
+      {
+        "name": "С фундуком",
+        "title": "С фундуком",
+        "price": 1100,
+        "description": "Шоколадная начинка с поджаренным фундуком и нугой",
+        "isInclude": false,
+        "image": "/images/fillings/shokolad-orex.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Фундук",
+          "Нуга",
+          "Сливочное масло",
+          "Бисквит шоколадный"
+        ],
+        "nutrition": {
+          "calories": "380 ккал",
+          "proteins": "6 г",
+          "fats": "26 г",
+          "carbs": "28 г"
+        }
+      },
+      {
+        "name": "С малиной",
+        "title": "С малиной",
+        "price": 1000,
+        "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-malina.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Малина",
+          "Малиновое конфи",
+          "Сливки",
+          "Бисквит"
+        ],
+        "nutrition": {
+          "calories": "300 ккал",
+          "proteins": "4 г",
+          "fats": "18 г",
+          "carbs": "32 г"
+        }
+      },
+      {
+        "name": "Со взбитыми сливками",
+        "title": "Со взбитыми сливками",
+        "price": 850,
+        "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-slivki.png",
+        "ingredients": [
+          "Молочный шоколад",
+          "Сливки взбитые",
+          "Бисквит",
+          "Крем-чиз"
+        ],
+        "nutrition": {
+          "calories": "270 ккал",
+          "proteins": "5 г",
+          "fats": "16 г",
+          "carbs": "28 г"
+        }
+      }
+    ],
+    "weight": [1.5, 3, 5],
+    "optionally": [
+      {
+        "name": "Топпер «Спасибо»",
+        "title": "Топпер «Спасибо»",
+        "price": 150,
+        "isInclude": false,
+        "image": "/images/options/topper-spasibo.png"
+      },
+      {
+        "name": "Коробка для торта",
+        "title": "Коробка для торта",
+        "price": 0,
+        "isInclude": false,
+        "image": "/images/options/cake-box.png"
+      },
+      {
+        "name": "Шоколадные украшения",
+        "title": "Шоколадные украшения",
+        "price": 500,
+        "isInclude": false,
+        "image": "/images/options/chocolate-decoration.png"
+      }
+    ]
+  },
+  {
+    "id": "offer-018",
+    "isBento": false,
+    "category": "Коллегам",
+    "title": "Шоколадный трюфель",
+    "images": [
+      "/images/pictures/cake22.jpg",
+      "/images/pictures/cake23.jpg",
+      "/images/pictures/cake22.jpg",
+      "/images/pictures/cake23.jpg"
+    ],
+    "price": 4200,
+    "describe": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
+    "filling": [
+      {
+        "name": "Бельгийский шоколад",
+        "title": "Бельгийский шоколад",
+        "price": 1200,
+        "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
+        "isInclude": false,
+        "image": "/images/fillings/belgian-chocolate.png",
+        "ingredients": [
+          "Шоколад бельгийский 72%",
+          "Сливки 33%",
+          "Какао-порошок",
+          "Сливочное масло"
+        ],
+        "nutrition": {
+          "calories": "350 ккал",
+          "proteins": "4 г",
+          "fats": "24 г",
+          "carbs": "30 г"
+        }
+      },
+      {
+        "name": "С фундуком",
+        "title": "С фундуком",
+        "price": 1100,
+        "description": "Шоколадная начинка с поджаренным фундуком и нугой",
+        "isInclude": false,
+        "image": "/images/fillings/shokolad-orex.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Фундук",
+          "Нуга",
+          "Сливочное масло",
+          "Бисквит шоколадный"
+        ],
+        "nutrition": {
+          "calories": "380 ккал",
+          "proteins": "6 г",
+          "fats": "26 г",
+          "carbs": "28 г"
+        }
+      },
+      {
+        "name": "С малиной",
+        "title": "С малиной",
+        "price": 1000,
+        "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-malina.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Малина",
+          "Малиновое конфи",
+          "Сливки",
+          "Бисквит"
+        ],
+        "nutrition": {
+          "calories": "300 ккал",
+          "proteins": "4 г",
+          "fats": "18 г",
+          "carbs": "32 г"
+        }
+      },
+      {
+        "name": "Со взбитыми сливками",
+        "title": "Со взбитыми сливками",
+        "price": 850,
+        "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-slivki.png",
+        "ingredients": [
+          "Молочный шоколад",
+          "Сливки взбитые",
+          "Бисквит",
+          "Крем-чиз"
+        ],
+        "nutrition": {
+          "calories": "270 ккал",
+          "proteins": "5 г",
+          "fats": "16 г",
+          "carbs": "28 г"
+        }
+      }
+    ],
+    "weight": [1.5, 3, 5],
+    "optionally": [
+      {
+        "name": "Топпер «Спасибо»",
+        "title": "Топпер «Спасибо»",
+        "price": 150,
+        "isInclude": false,
+        "image": "/images/options/topper-spasibo.png"
+      },
+      {
+        "name": "Коробка для торта",
+        "title": "Коробка для торта",
+        "price": 0,
+        "isInclude": false,
+        "image": "/images/options/cake-box.png"
+      },
+      {
+        "name": "Шоколадные украшения",
+        "title": "Шоколадные украшения",
+        "price": 500,
+        "isInclude": false,
+        "image": "/images/options/chocolate-decoration.png"
+      }
+    ]
+  },
+  {
+    "id": "offer-019",
+    "isBento": false,
+    "category": "Коллегам",
+    "title": "Шоколадный трюфель",
+    "images": [
+      "/images/pictures/cake22.jpg",
+      "/images/pictures/cake23.jpg",
+      "/images/pictures/cake22.jpg",
+      "/images/pictures/cake23.jpg"
+    ],
+    "price": 4200,
+    "describe": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
+    "filling": [
+      {
+        "name": "Бельгийский шоколад",
+        "title": "Бельгийский шоколад",
+        "price": 1200,
+        "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
+        "isInclude": false,
+        "image": "/images/fillings/belgian-chocolate.png",
+        "ingredients": [
+          "Шоколад бельгийский 72%",
+          "Сливки 33%",
+          "Какао-порошок",
+          "Сливочное масло"
+        ],
+        "nutrition": {
+          "calories": "350 ккал",
+          "proteins": "4 г",
+          "fats": "24 г",
+          "carbs": "30 г"
+        }
+      },
+      {
+        "name": "С фундуком",
+        "title": "С фундуком",
+        "price": 1100,
+        "description": "Шоколадная начинка с поджаренным фундуком и нугой",
+        "isInclude": false,
+        "image": "/images/fillings/shokolad-orex.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Фундук",
+          "Нуга",
+          "Сливочное масло",
+          "Бисквит шоколадный"
+        ],
+        "nutrition": {
+          "calories": "380 ккал",
+          "proteins": "6 г",
+          "fats": "26 г",
+          "carbs": "28 г"
+        }
+      },
+      {
+        "name": "С малиной",
+        "title": "С малиной",
+        "price": 1000,
+        "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-malina.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Малина",
+          "Малиновое конфи",
+          "Сливки",
+          "Бисквит"
+        ],
+        "nutrition": {
+          "calories": "300 ккал",
+          "proteins": "4 г",
+          "fats": "18 г",
+          "carbs": "32 г"
+        }
+      },
+      {
+        "name": "Со взбитыми сливками",
+        "title": "Со взбитыми сливками",
+        "price": 850,
+        "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-slivki.png",
+        "ingredients": [
+          "Молочный шоколад",
+          "Сливки взбитые",
+          "Бисквит",
+          "Крем-чиз"
+        ],
+        "nutrition": {
+          "calories": "270 ккал",
+          "proteins": "5 г",
+          "fats": "16 г",
+          "carbs": "28 г"
+        }
+      }
+    ],
+    "weight": [1.5, 3, 5],
+    "optionally": [
+      {
+        "name": "Топпер «Спасибо»",
+        "title": "Топпер «Спасибо»",
+        "price": 150,
+        "isInclude": false,
+        "image": "/images/options/topper-spasibo.png"
+      },
+      {
+        "name": "Коробка для торта",
+        "title": "Коробка для торта",
+        "price": 0,
+        "isInclude": false,
+        "image": "/images/options/cake-box.png"
+      },
+      {
+        "name": "Шоколадные украшения",
+        "title": "Шоколадные украшения",
+        "price": 500,
+        "isInclude": false,
+        "image": "/images/options/chocolate-decoration.png"
+      }
+    ]
+  },
+  {
+    "id": "offer-020",
+    "isBento": false,
+    "category": "Коллегам",
+    "title": "Шоколадный трюфель",
+    "images": [
+      "/images/pictures/cake24.jpg",
+      "/images/pictures/cake25.jpg",
+      "/images/pictures/cake24.jpg",
+      "/images/pictures/cake25.jpg"
+    ],
+    "price": 4200,
+    "describe": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
+    "filling": [
+      {
+        "name": "Бельгийский шоколад",
+        "title": "Бельгийский шоколад",
+        "price": 1200,
+        "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
+        "isInclude": false,
+        "image": "/images/fillings/belgian-chocolate.png",
+        "ingredients": [
+          "Шоколад бельгийский 72%",
+          "Сливки 33%",
+          "Какао-порошок",
+          "Сливочное масло"
+        ],
+        "nutrition": {
+          "calories": "350 ккал",
+          "proteins": "4 г",
+          "fats": "24 г",
+          "carbs": "30 г"
+        }
+      },
+      {
+        "name": "С фундуком",
+        "title": "С фундуком",
+        "price": 1100,
+        "description": "Шоколадная начинка с поджаренным фундуком и нугой",
+        "isInclude": false,
+        "image": "/images/fillings/shokolad-orex.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Фундук",
+          "Нуга",
+          "Сливочное масло",
+          "Бисквит шоколадный"
+        ],
+        "nutrition": {
+          "calories": "380 ккал",
+          "proteins": "6 г",
+          "fats": "26 г",
+          "carbs": "28 г"
+        }
+      },
+      {
+        "name": "С малиной",
+        "title": "С малиной",
+        "price": 1000,
+        "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-malina.png",
+        "ingredients": [
+          "Тёмный шоколад",
+          "Малина",
+          "Малиновое конфи",
+          "Сливки",
+          "Бисквит"
+        ],
+        "nutrition": {
+          "calories": "300 ккал",
+          "proteins": "4 г",
+          "fats": "18 г",
+          "carbs": "32 г"
+        }
+      },
+      {
+        "name": "Со взбитыми сливками",
+        "title": "Со взбитыми сливками",
+        "price": 850,
+        "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
+        "isInclude": false,
+        "image": "/images/fillings/shokod-slivki.png",
+        "ingredients": [
+          "Молочный шоколад",
+          "Сливки взбитые",
+          "Бисквит",
+          "Крем-чиз"
+        ],
+        "nutrition": {
+          "calories": "270 ккал",
+          "proteins": "5 г",
+          "fats": "16 г",
+          "carbs": "28 г"
+        }
+      }
+    ],
+    "weight": [1.5, 3, 5],
+    "optionally": [
+      {
+        "name": "Топпер «Спасибо»",
+        "title": "Топпер «Спасибо»",
+        "price": 150,
+        "isInclude": false,
+        "image": "/images/options/topper-spasibo.png"
+      },
+      {
+        "name": "Коробка для торта",
+        "title": "Коробка для торта",
+        "price": 0,
+        "isInclude": false,
+        "image": "/images/options/cake-box.png"
+      },
+      {
+        "name": "Шоколадные украшения",
+        "title": "Шоколадные украшения",
+        "price": 500,
+        "isInclude": false,
+        "image": "/images/options/chocolate-decoration.png"
+      }
+    ]
+  },
+  {
+    "id": "offer-021",
     "isBento": true,
     "category": "Любимым",
     "title": "Клубничный бенто",
     "images": [
-      "/images/pictures/cake2.png",
-      "/images/pictures/cake5.png",
-      "/images/pictures/cake2.png",
-      "/images/pictures/cake5.png"
+      "/images/pictures/cake26.jpg",
+      "/images/pictures/cake27.jpg",
+      "/images/pictures/cake26.jpg",
+      "/images/pictures/cake27.jpg"
     ],
     "price": 3800,
     "describe": "Компактный бенто-торт с клубникой и нежным кремом — идеальный порционный десерт для двоих. Украшён свежей клубникой и шоколадной глазурью.",
@@ -1131,15 +1985,15 @@
     ]
   },
   {
-    "id": "offer-008",
+    "id": "offer-010",
     "isBento": true,
     "category": "Друзьям",
     "title": "Тирамису бенто",
     "images": [
-      "/images/pictures/cake3.png",
-      "/images/pictures/cake1.png",
-      "/images/pictures/cake3.png",
-      "/images/pictures/cake1.png"
+      "/images/pictures/cake8.jpg",
+      "/images/pictures/cake9.jpg",
+      "/images/pictures/cake8.jpg",
+      "/images/pictures/cake9.jpg"
     ],
     "price": 3900,
     "describe": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
@@ -1257,15 +2111,15 @@
     ]
   },
   {
-    "id": "offer-008",
+    "id": "offer-011",
     "isBento": true,
     "category": "Друзьям",
     "title": "Тирамису бенто",
     "images": [
-      "/images/pictures/cake3.png",
-      "/images/pictures/cake1.png",
-      "/images/pictures/cake3.png",
-      "/images/pictures/cake1.png"
+      "/images/pictures/cake10.jpg",
+      "/images/pictures/cake11.jpg",
+      "/images/pictures/cake10.jpg",
+      "/images/pictures/cake11.jpg"
     ],
     "price": 3900,
     "describe": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
@@ -1383,15 +2237,15 @@
     ]
   },
   {
-    "id": "offer-008",
+    "id": "offer-012",
     "isBento": true,
     "category": "Друзьям",
     "title": "Тирамису бенто",
     "images": [
-      "/images/pictures/cake3.png",
-      "/images/pictures/cake1.png",
-      "/images/pictures/cake3.png",
-      "/images/pictures/cake1.png"
+      "/images/pictures/cake12.jpg",
+      "/images/pictures/cake13.jpg",
+      "/images/pictures/cake12.jpg",
+      "/images/pictures/cake13.jpg"
     ],
     "price": 3900,
     "describe": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
@@ -1509,15 +2363,15 @@
     ]
   },
   {
-    "id": "offer-008",
+    "id": "offer-013",
     "isBento": true,
     "category": "Друзьям",
     "title": "Тирамису бенто",
     "images": [
-      "/images/pictures/cake3.png",
-      "/images/pictures/cake1.png",
-      "/images/pictures/cake3.png",
-      "/images/pictures/cake1.png"
+      "/images/pictures/cake14.jpg",
+      "/images/pictures/cake15.jpg",
+      "/images/pictures/cake14.jpg",
+      "/images/pictures/cake15.jpg"
     ],
     "price": 3900,
     "describe": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
