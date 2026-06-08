@@ -27,10 +27,23 @@ const addressValidate = (value: string): boolean | string => {
 	return true;
 };
 
+const commentValidate = (value: string): boolean | string => {
+	if (value && value.length > 300) {
+		return 'Комментарий не должен превышать 300 символов';
+	}
+	return true;
+};
+
 const promoValidate = (value: string) => {
 	if (!value || value.length < 6) return 'Введите минимум 6 символов';
 
 	return true;
 };
 
-export { nameValidate, phoneValidate, addressValidate, promoValidate };
+export {
+	nameValidate,
+	phoneValidate,
+	addressValidate,
+	commentValidate,
+	promoValidate
+};
