@@ -110,6 +110,10 @@ const ShoppingCartPage = () => {
 		[shoppingCart.length]
 	);
 
+	const handleBackClick = () => {
+		navigate(-1);
+	};
+
 	const buttonText = shoppingCart.length ? 'Верно, далее' : 'К каталогу';
 
 	return (
@@ -118,7 +122,7 @@ const ShoppingCartPage = () => {
 				<button
 					className={`back-link back-link_m-small ${styles.back}`}
 					type="button"
-					onClick={() => navigate(-1)}
+					onClick={handleBackClick}
 				>
 					<svg viewBox="0 0 18 18" aria-hidden="true">
 						<use xlinkHref="#nav-arrow-big" />
