@@ -195,13 +195,20 @@
 		min-width: 165px;
 		background-color: variables.$color-bg-tertiary;
 
+		img {
+			max-width: 155px;
+			max-height: 155px;
+			border-radius: 14px 14px 0 0;
+		}
+
 		&_catalog {
 			min-width: 173px;
 			max-width: 173px;
-		}
 
-		img {
-			border-radius: 14px 14px 0 0;
+			img {
+				max-width: 173px;
+				max-height: 173px;
+			}
 		}
 	}
 
