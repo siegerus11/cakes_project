@@ -11,6 +11,7 @@ import { CakeOrder } from '../../../types/types';
 import getChosen from '../../../utils/getChosen';
 import getFormattedPrice from '../../../utils/getFormattedPrice';
 import getPersonQuantity from '../../../utils/getPersonQuantity';
+import updateQuantity from '../../../utils/updateQuantity';
 import styles from './cart-item.module.scss';
 
 type CartItemProps = {
@@ -43,14 +44,7 @@ const CartItem = memo(({ order }: CartItemProps) => {
 				return;
 			}
 			setCartQuantity({ id, num });
-			const newQuantity = quantity + num;
-			const storageKey = `cake-cart-${id}`;
-			const stored = localStorage.getItem(storageKey);
-			if (stored) {
-				const parsed = JSON.parse(stored) as CakeOrder;
-				parsed.quantity = newQuantity;
-				localStorage.setItem(storageKey, JSON.stringify(parsed));
-			}
+			updateQuantity(quantity, num, id);
 		},
 		[confirm, setCartQuantity, removeCartItem, quantity]
 	);
