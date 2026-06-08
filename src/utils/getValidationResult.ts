@@ -2,7 +2,6 @@ const nameValidate = (value: string): boolean | string => {
 	if (!value || !value.length) return 'Введите имя';
 	if (!/^[a-zA-Zа-яА-Я\s-]+$/.test(value))
 		return 'Имя должно содержать только буквы';
-
 	return true;
 };
 
