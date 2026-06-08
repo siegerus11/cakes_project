@@ -40,8 +40,17 @@ const CartItem = memo(({ order }: CartItemProps) => {
 					removeCartItem(id);
 					localStorage.removeItem(`cake-cart-${id}`);
 				}
+				return;
 			}
 			setCartQuantity({ id, num });
+			const newQuantity = quantity + num;
+			const storageKey = `cake-cart-${id}`;
+			const stored = localStorage.getItem(storageKey);
+			if (stored) {
+				const parsed = JSON.parse(stored) as CakeOrder;
+				parsed.quantity = newQuantity;
+				localStorage.setItem(storageKey, JSON.stringify(parsed));
+			}
 		},
 		[confirm, setCartQuantity, removeCartItem, quantity]
 	);
