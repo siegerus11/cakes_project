@@ -1003,5 +1003,635 @@
         "image": "/images/options/berry-decoration.png"
       }
     ]
+  },
+  {
+    "id": "offer-009",
+    "isBento": true,
+    "category": "Друзьям",
+    "title": "Тирамису бенто",
+    "images": [
+      "/images/pictures/cake6.jpg",
+      "/images/pictures/cake7.jpg",
+      "/images/pictures/cake6.jpg",
+      "/images/pictures/cake7.jpg"
+    ],
+    "price": 3900,
+    "describe": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
+    "filling": [
+      {
+        "name": "Классический тирамису",
+        "title": "Классический тирамису",
+        "price": 400,
+        "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-classic.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Эспрессо",
+          "Яйца",
+          "Сахар",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "240 ккал",
+          "proteins": "5 г",
+          "fats": "15 г",
+          "carbs": "20 г"
+        }
+      },
+      {
+        "name": "С ликёром",
+        "title": "С ликёром",
+        "price": 450,
+        "description": "Классический тирамису с добавлением ликёра Амаретто",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-liqueur.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Эспрессо",
+          "Ликёр Амаретто",
+          "Яйца",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "250 ккал",
+          "proteins": "5 г",
+          "fats": "16 г",
+          "carbs": "21 г"
+        }
+      },
+      {
+        "name": "С малиной",
+        "title": "С малиной",
+        "price": 420,
+        "description": "Тирамису с малиновым конфи и кремом маскарпоне",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-malina.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Малина",
+          "Эспрессо",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "230 ккал",
+          "proteins": "5 г",
+          "fats": "14 г",
+          "carbs": "22 г"
+        }
+      },
+      {
+        "name": "С кокосом",
+        "title": "С кокосом",
+        "price": 380,
+        "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-kokos.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Кокосовое молоко",
+          "Кокосовая стружка",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "250 ккал",
+          "proteins": "4 г",
+          "fats": "17 г",
+          "carbs": "20 г"
+        }
+      }
+    ],
+    "weight": [1.5, 3, 5],
+    "optionally": [
+      {
+        "name": "Коробка с ленточкой",
+        "title": "Коробка с ленточкой",
+        "price": 150,
+        "isInclude": false,
+        "image": "/images/options/bento-box.png"
+      },
+      {
+        "name": "Какао-посыпка",
+        "title": "Какао-посыпка",
+        "price": 0,
+        "isInclude": false,
+        "image": "/images/options/cocoa-powder.png"
+      },
+      {
+        "name": "Свежие ягоды",
+        "title": "Свежие ягоды",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/options/berry-decoration.png"
+      }
+    ]
+  },
+  {
+    "id": "offer-008",
+    "isBento": true,
+    "category": "Друзьям",
+    "title": "Тирамису бенто",
+    "images": [
+      "/images/pictures/cake3.png",
+      "/images/pictures/cake1.png",
+      "/images/pictures/cake3.png",
+      "/images/pictures/cake1.png"
+    ],
+    "price": 3900,
+    "describe": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
+    "filling": [
+      {
+        "name": "Классический тирамису",
+        "title": "Классический тирамису",
+        "price": 400,
+        "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-classic.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Эспрессо",
+          "Яйца",
+          "Сахар",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "240 ккал",
+          "proteins": "5 г",
+          "fats": "15 г",
+          "carbs": "20 г"
+        }
+      },
+      {
+        "name": "С ликёром",
+        "title": "С ликёром",
+        "price": 450,
+        "description": "Классический тирамису с добавлением ликёра Амаретто",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-liqueur.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Эспрессо",
+          "Ликёр Амаретто",
+          "Яйца",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "250 ккал",
+          "proteins": "5 г",
+          "fats": "16 г",
+          "carbs": "21 г"
+        }
+      },
+      {
+        "name": "С малиной",
+        "title": "С малиной",
+        "price": 420,
+        "description": "Тирамису с малиновым конфи и кремом маскарпоне",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-malina.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Малина",
+          "Эспрессо",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "230 ккал",
+          "proteins": "5 г",
+          "fats": "14 г",
+          "carbs": "22 г"
+        }
+      },
+      {
+        "name": "С кокосом",
+        "title": "С кокосом",
+        "price": 380,
+        "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-kokos.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Кокосовое молоко",
+          "Кокосовая стружка",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "250 ккал",
+          "proteins": "4 г",
+          "fats": "17 г",
+          "carbs": "20 г"
+        }
+      }
+    ],
+    "weight": [1.5, 3, 5],
+    "optionally": [
+      {
+        "name": "Коробка с ленточкой",
+        "title": "Коробка с ленточкой",
+        "price": 150,
+        "isInclude": false,
+        "image": "/images/options/bento-box.png"
+      },
+      {
+        "name": "Какао-посыпка",
+        "title": "Какао-посыпка",
+        "price": 0,
+        "isInclude": false,
+        "image": "/images/options/cocoa-powder.png"
+      },
+      {
+        "name": "Свежие ягоды",
+        "title": "Свежие ягоды",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/options/berry-decoration.png"
+      }
+    ]
+  },
+  {
+    "id": "offer-008",
+    "isBento": true,
+    "category": "Друзьям",
+    "title": "Тирамису бенто",
+    "images": [
+      "/images/pictures/cake3.png",
+      "/images/pictures/cake1.png",
+      "/images/pictures/cake3.png",
+      "/images/pictures/cake1.png"
+    ],
+    "price": 3900,
+    "describe": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
+    "filling": [
+      {
+        "name": "Классический тирамису",
+        "title": "Классический тирамису",
+        "price": 400,
+        "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-classic.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Эспрессо",
+          "Яйца",
+          "Сахар",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "240 ккал",
+          "proteins": "5 г",
+          "fats": "15 г",
+          "carbs": "20 г"
+        }
+      },
+      {
+        "name": "С ликёром",
+        "title": "С ликёром",
+        "price": 450,
+        "description": "Классический тирамису с добавлением ликёра Амаретто",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-liqueur.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Эспрессо",
+          "Ликёр Амаретто",
+          "Яйца",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "250 ккал",
+          "proteins": "5 г",
+          "fats": "16 г",
+          "carbs": "21 г"
+        }
+      },
+      {
+        "name": "С малиной",
+        "title": "С малиной",
+        "price": 420,
+        "description": "Тирамису с малиновым конфи и кремом маскарпоне",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-malina.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Малина",
+          "Эспрессо",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "230 ккал",
+          "proteins": "5 г",
+          "fats": "14 г",
+          "carbs": "22 г"
+        }
+      },
+      {
+        "name": "С кокосом",
+        "title": "С кокосом",
+        "price": 380,
+        "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-kokos.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Кокосовое молоко",
+          "Кокосовая стружка",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "250 ккал",
+          "proteins": "4 г",
+          "fats": "17 г",
+          "carbs": "20 г"
+        }
+      }
+    ],
+    "weight": [1.5, 3, 5],
+    "optionally": [
+      {
+        "name": "Коробка с ленточкой",
+        "title": "Коробка с ленточкой",
+        "price": 150,
+        "isInclude": false,
+        "image": "/images/options/bento-box.png"
+      },
+      {
+        "name": "Какао-посыпка",
+        "title": "Какао-посыпка",
+        "price": 0,
+        "isInclude": false,
+        "image": "/images/options/cocoa-powder.png"
+      },
+      {
+        "name": "Свежие ягоды",
+        "title": "Свежие ягоды",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/options/berry-decoration.png"
+      }
+    ]
+  },
+  {
+    "id": "offer-008",
+    "isBento": true,
+    "category": "Друзьям",
+    "title": "Тирамису бенто",
+    "images": [
+      "/images/pictures/cake3.png",
+      "/images/pictures/cake1.png",
+      "/images/pictures/cake3.png",
+      "/images/pictures/cake1.png"
+    ],
+    "price": 3900,
+    "describe": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
+    "filling": [
+      {
+        "name": "Классический тирамису",
+        "title": "Классический тирамису",
+        "price": 400,
+        "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-classic.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Эспрессо",
+          "Яйца",
+          "Сахар",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "240 ккал",
+          "proteins": "5 г",
+          "fats": "15 г",
+          "carbs": "20 г"
+        }
+      },
+      {
+        "name": "С ликёром",
+        "title": "С ликёром",
+        "price": 450,
+        "description": "Классический тирамису с добавлением ликёра Амаретто",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-liqueur.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Эспрессо",
+          "Ликёр Амаретто",
+          "Яйца",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "250 ккал",
+          "proteins": "5 г",
+          "fats": "16 г",
+          "carbs": "21 г"
+        }
+      },
+      {
+        "name": "С малиной",
+        "title": "С малиной",
+        "price": 420,
+        "description": "Тирамису с малиновым конфи и кремом маскарпоне",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-malina.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Малина",
+          "Эспрессо",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "230 ккал",
+          "proteins": "5 г",
+          "fats": "14 г",
+          "carbs": "22 г"
+        }
+      },
+      {
+        "name": "С кокосом",
+        "title": "С кокосом",
+        "price": 380,
+        "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-kokos.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Кокосовое молоко",
+          "Кокосовая стружка",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "250 ккал",
+          "proteins": "4 г",
+          "fats": "17 г",
+          "carbs": "20 г"
+        }
+      }
+    ],
+    "weight": [1.5, 3, 5],
+    "optionally": [
+      {
+        "name": "Коробка с ленточкой",
+        "title": "Коробка с ленточкой",
+        "price": 150,
+        "isInclude": false,
+        "image": "/images/options/bento-box.png"
+      },
+      {
+        "name": "Какао-посыпка",
+        "title": "Какао-посыпка",
+        "price": 0,
+        "isInclude": false,
+        "image": "/images/options/cocoa-powder.png"
+      },
+      {
+        "name": "Свежие ягоды",
+        "title": "Свежие ягоды",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/options/berry-decoration.png"
+      }
+    ]
+  },
+  {
+    "id": "offer-008",
+    "isBento": true,
+    "category": "Друзьям",
+    "title": "Тирамису бенто",
+    "images": [
+      "/images/pictures/cake3.png",
+      "/images/pictures/cake1.png",
+      "/images/pictures/cake3.png",
+      "/images/pictures/cake1.png"
+    ],
+    "price": 3900,
+    "describe": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
+    "filling": [
+      {
+        "name": "Классический тирамису",
+        "title": "Классический тирамису",
+        "price": 400,
+        "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-classic.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Эспрессо",
+          "Яйца",
+          "Сахар",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "240 ккал",
+          "proteins": "5 г",
+          "fats": "15 г",
+          "carbs": "20 г"
+        }
+      },
+      {
+        "name": "С ликёром",
+        "title": "С ликёром",
+        "price": 450,
+        "description": "Классический тирамису с добавлением ликёра Амаретто",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-liqueur.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Эспрессо",
+          "Ликёр Амаретто",
+          "Яйца",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "250 ккал",
+          "proteins": "5 г",
+          "fats": "16 г",
+          "carbs": "21 г"
+        }
+      },
+      {
+        "name": "С малиной",
+        "title": "С малиной",
+        "price": 420,
+        "description": "Тирамису с малиновым конфи и кремом маскарпоне",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-malina.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Малина",
+          "Эспрессо",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "230 ккал",
+          "proteins": "5 г",
+          "fats": "14 г",
+          "carbs": "22 г"
+        }
+      },
+      {
+        "name": "С кокосом",
+        "title": "С кокосом",
+        "price": 380,
+        "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
+        "isInclude": false,
+        "image": "/images/fillings/tiramisu-kokos.png",
+        "ingredients": [
+          "Савойardi",
+          "Маскарпоне",
+          "Кокосовое молоко",
+          "Кокосовая стружка",
+          "Какао"
+        ],
+        "nutrition": {
+          "calories": "250 ккал",
+          "proteins": "4 г",
+          "fats": "17 г",
+          "carbs": "20 г"
+        }
+      }
+    ],
+    "weight": [1.5, 3, 5],
+    "optionally": [
+      {
+        "name": "Коробка с ленточкой",
+        "title": "Коробка с ленточкой",
+        "price": 150,
+        "isInclude": false,
+        "image": "/images/options/bento-box.png"
+      },
+      {
+        "name": "Какао-посыпка",
+        "title": "Какао-посыпка",
+        "price": 0,
+        "isInclude": false,
+        "image": "/images/options/cocoa-powder.png"
+      },
+      {
+        "name": "Свежие ягоды",
+        "title": "Свежие ягоды",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/options/berry-decoration.png"
+      }
+    ]
   }
 ]
