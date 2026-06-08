@@ -15,14 +15,16 @@ import { Order } from '../../types/types';
 import styles from './order-registration-page.module.scss';
 
 const OrderRegistrationPage = () => {
-	const navigate = useNavigate();
-	const [isAreaVisible, setIsAreaVisible] = useState<boolean>(false);
-	const [formValues, setFormValues] = useState({
+	const formValuesInitial = {
 		name: '',
 		phone: '',
 		address: '',
 		comment: ''
-	});
+	};
+
+	const navigate = useNavigate();
+	const [isAreaVisible, setIsAreaVisible] = useState<boolean>(false);
+	const [formValues, setFormValues] = useState(formValuesInitial);
 	const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
 	const cart = useAppSelector(selectShoppingCart);
@@ -59,6 +61,15 @@ const OrderRegistrationPage = () => {
 		}));
 	};
 
+	const clearForm = () => {
+		setFormValues(formValuesInitial);
+		setFormErrors({
+			name: '',
+			phone: '',
+			address: ''
+		});
+	};
+
 	const handleFormSubmit = (e: FormEvent) => {
 		e.preventDefault();
 
@@ -83,6 +94,7 @@ const OrderRegistrationPage = () => {
 				navigate(AppRoute.Thanks);
 			}
 		});
+		clearForm();
 	};
 
 	const handleBackClick = () => {
