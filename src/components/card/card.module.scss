@@ -263,4 +263,10 @@
 	.bottom {
 		margin-top: 9px;
 	}
+
+	.button {
+		&::after {
+			opacity: unset;
+		}
+	}
 }
