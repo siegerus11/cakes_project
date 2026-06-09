@@ -642,7 +642,7 @@
   {
     "id": "offer-015",
     "isBento": false,
-    "category": "Коллегам",
+    "category": "Детям",
     "title": "Шоколадный трюфель",
     "images": [
       "/images/pictures/cake18.jpg",
@@ -764,7 +764,7 @@
   {
     "id": "offer-016",
     "isBento": false,
-    "category": "Коллегам",
+    "category": "Родителям",
     "title": "Шоколадный трюфель",
     "images": [
       "/images/pictures/cake20.jpg",
@@ -886,7 +886,7 @@
   {
     "id": "offer-017",
     "isBento": false,
-    "category": "Коллегам",
+    "category": "Себе к чаю",
     "title": "Шоколадный трюфель",
     "images": [
       "/images/pictures/cake20.jpg",
@@ -1611,7 +1611,7 @@
   {
     "id": "offer-007",
     "isBento": true,
-    "category": "Друзьям",
+    "category": "Любимым",
     "title": "Малиновый бенто",
     "images": [
       "/images/pictures/cake2.png",
@@ -1735,7 +1735,7 @@
   {
     "id": "offer-008",
     "isBento": true,
-    "category": "Друзьям",
+    "category": "Детям",
     "title": "Тирамису бенто",
     "images": [
       "/images/pictures/cake3.png",
@@ -1861,7 +1861,7 @@
   {
     "id": "offer-009",
     "isBento": true,
-    "category": "Друзьям",
+    "category": "Любимым",
     "title": "Тирамису бенто",
     "images": [
       "/images/pictures/cake6.jpg",
@@ -1987,7 +1987,7 @@
   {
     "id": "offer-010",
     "isBento": true,
-    "category": "Друзьям",
+    "category": "Родителям",
     "title": "Тирамису бенто",
     "images": [
       "/images/pictures/cake8.jpg",
