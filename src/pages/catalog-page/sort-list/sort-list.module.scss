@@ -27,15 +27,20 @@
 
 	&_active {
 		button {
-			color: #fff;
+			color: variables.$color-text-inverted;
 			background-color: variables.$color-text-dark;
+
+			&:hover {
+				background-color: variables.$color-text-dark;
+			}
 		}
 	}
 }
 
 @media (max-width: 992px) {
 	.item button:hover {
-		background-color: inherit;
+		color: variables.$color-text-inverted;
+		background-color: variables.$color-text-dark;
 	}
 }
 
