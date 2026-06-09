@@ -1,4 +1,5 @@
 import { useEffect, useState, TouchEvent, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Slide } from '../types/types';
 import { createSlidesInitial } from '../utils/createSlidesInitial';
@@ -16,6 +17,7 @@ function useSlider(imagesSrc: string[]): {
 } {
 	const slidesInitial = createSlidesInitial(imagesSrc);
 	const [slides, setSlides] = useState<Slide[]>(slidesInitial);
+	const navigate = useNavigate();
 
 	const [isSliderVisible, setIsSliderVisible] = useState<boolean>(true);
 	const [slideIndex, setSlideIndex] = useState(0);
@@ -41,8 +43,8 @@ function useSlider(imagesSrc: string[]): {
 	}, []);
 
 	const handleCloseButtonClick = useCallback(() => {
-		setIsSliderVisible(prevState => !prevState);
-	}, []);
+		navigate(-1);
+	}, [navigate]);
 
 	useEffect(() => {
 		setSlides(prevState =>
