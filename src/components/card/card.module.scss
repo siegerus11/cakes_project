@@ -268,5 +268,12 @@
 		&::after {
 			opacity: unset;
 		}
+
+		&:hover {
+			&::after {
+				background-color: variables.$color-text-inverted;
+				opacity: 1;
+			}
+		}
 	}
 }
