@@ -21,31 +21,35 @@ const Button = ({
 }: ButtonProps) => {
 	const location = useLocation();
 
-	return path ? (
-		<Link
+	if (path) {
+		return (
+			<Link
+				className={className}
+				to={path}
+				state={{ from: location.pathname }}
+			>
+				{children}
+			</Link>
+		);
+	}
+
+	if (isOuterLink) {
+		return (
+			<a className={className} href={url} aria-label={label}>
+				{children}
+			</a>
+		);
+	}
+
+	return (
+		<button
 			className={className}
-			to={path}
-			state={{ from: location.pathname }}
+			type="button"
+			onClick={onClick}
+			aria-label={label}
 		>
 			{children}
-		</Link>
-	) : (
-		<div>
-			{isOuterLink ? (
-				<a className={`${className}`} href={url} aria-label={label}>
-					{children}
-				</a>
-			) : (
-				<button
-					className={className}
-					type="button"
-					onClick={onClick}
-					aria-label={label}
-				>
-					{children}
-				</button>
-			)}
-		</div>
+		</button>
 	);
 };
 
