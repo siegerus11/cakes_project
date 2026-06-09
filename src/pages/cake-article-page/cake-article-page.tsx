@@ -152,6 +152,7 @@ const CakeArticlePage = () => {
 										<Button
 											className={`button button_primary ${styles.popup__button}`}
 											onClick={handlePopupClickClose}
+											onTouchStart={handlePopupTouchClose}
 											label="Понятно, спасибо"
 										>
 											<span>Понятно, спасибо</span>
