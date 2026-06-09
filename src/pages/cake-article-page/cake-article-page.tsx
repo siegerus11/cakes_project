@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback, AnimationEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Overlay from '../../components/overlay/overlay';
 import Popup from '../../components/popup/popup';
@@ -19,6 +19,7 @@ import Slider from './slider/slider';
 
 const CakeArticlePage = () => {
 	const isMobile = useMediaQuery('(max-width: 576px)');
+	const navigate = useNavigate();
 
 	const cakeOffers = useAppSelector(selectCakeOffers);
 	const activeId = useAppSelector(selectActiveOffer);
@@ -55,9 +56,9 @@ const CakeArticlePage = () => {
 		}
 	}, [handleAnimationStart, isMobile]);
 
-	const handlePopupTouchClose = useCallback(() => {
+	const handlePopupTouchClose = () => {
 		handleAnimationStart();
-	}, [handleAnimationStart]);
+	};
 
 	const handlePopupAnimationEnd = useCallback(
 		(e: AnimationEvent) => {
@@ -77,6 +78,12 @@ const CakeArticlePage = () => {
 		handlePopupTouchClose
 	);
 
+	const handleTouchBack = () => {
+		navigate(-1);
+	};
+
+	const touchBack = useTouch(handleTouchBack);
+
 	if (!activeOffer) {
 		return null;
 	}
@@ -87,7 +94,10 @@ const CakeArticlePage = () => {
 			<div className="container_secondary container">
 				<Link
 					className={`back-link ${styles.back}`}
-					to={AppRoute.Catalog}
+					to={isMobile ? AppRoute.CakeOfferArticle : AppRoute.Catalog}
+					onTouchStart={touchBack.handleTouchStart}
+					onTouchMove={touchBack.handleTouchMove}
+					onTouchEnd={touchBack.handleTouchEnd}
 				>
 					<svg viewBox="0 0 18 18" aria-hidden="true">
 						<use xlinkHref="#nav-arrow-big" />
