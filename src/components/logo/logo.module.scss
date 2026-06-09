@@ -23,7 +23,7 @@
 
 @media (max-width: 992px) {
 	.link:hover {
-		color: inherit;
+		color: variables.$color-primary;
 	}
 }
 
