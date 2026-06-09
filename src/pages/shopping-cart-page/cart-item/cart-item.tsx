@@ -19,7 +19,8 @@ type CartItemProps = {
 };
 
 const CartItem = memo(({ order }: CartItemProps) => {
-	const { price, filling, optional, weight, cakeId, quantity } = order;
+	const { price, filling, optional, weight, cakeId, quantity, image, title } =
+		order;
 	const { setCartQuantity, removeCartItem } =
 		useActionCreators(cartProcessActions);
 	const confirm = useConfirm();
@@ -95,12 +96,10 @@ const CartItem = memo(({ order }: CartItemProps) => {
 		<li className={styles.item}>
 			<div className={styles.item__main}>
 				<div className={styles.item__image}>
-					<img alt="Торт" width="60" height="60" />
+					<img src={image} alt="Торт" width="60" height="60" />
 				</div>
 				<div>
-					<h3 className={styles.item__title}>
-						Торт с ягодами и безе
-					</h3>
+					<h3 className={styles.item__title}>{title}</h3>
 					<div className={styles.item__description}>
 						<span>Начинка: {fillingsText}</span>
 						<span>Вес: {weightText}</span>
