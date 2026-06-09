@@ -39,7 +39,7 @@ export const LoadingStatus = {
 export const NAVS: Nav[] = [
 	{
 		title: 'О нас',
-		image: '',
+		image: '../public/images/pictures/navs/nav-about.png',
 		path: AppRoute.About
 	},
 	{
@@ -49,7 +49,7 @@ export const NAVS: Nav[] = [
 	},
 	{
 		title: 'Доставка и оплата',
-		image: '',
+		image: '../public/images/pictures/navs/nav-deliver.png',
 		path: AppRoute.Delivery
 	},
 	{
@@ -59,7 +59,7 @@ export const NAVS: Nav[] = [
 	},
 	{
 		title: 'Отзывы',
-		image: '',
+		image: '../public/images/pictures/navs/nav-rewievs.png',
 		path: `${AppRoute.About}#rewievs`
 	},
 	{

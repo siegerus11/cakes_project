@@ -61,6 +61,7 @@ const HamburgerPopup = ({
 						navs={secondaryNavs}
 						onNavLinkClick={handleNavLinkClick}
 						linkClassName={styles.link}
+						isHeaderNav={false}
 					/>
 					<Button
 						className={`button button_secondary ${styles.button}`}
