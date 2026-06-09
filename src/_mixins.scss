@@ -65,7 +65,6 @@
 		opacity: 0;
 		transition: opacity vars.$fast-transition;
 		content: '';
-		pointer-events: none;
 		inset: 0;
 	}
 
