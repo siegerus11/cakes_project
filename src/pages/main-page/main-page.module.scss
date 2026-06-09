@@ -97,6 +97,10 @@
 	.headline {
 		&__link {
 			font-size: 12px;
+
+			&:hover {
+				color: variables.$color-text-primary;
+			}
 		}
 	}
 

@@ -207,7 +207,7 @@ body {
 	}
 
 	:global(a.button):hover {
-		color: inherit;
+		color: variables.$color-text-inverted;
 	}
 }
 
