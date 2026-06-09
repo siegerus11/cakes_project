@@ -205,6 +205,7 @@
 
 		&__image {
 			display: block;
+			max-width: 90%;
 		}
 	}
 }
@@ -317,6 +318,7 @@
 		}
 
 		&__image {
+			max-width: unset;
 			border-radius: 25px 25px 0 0;
 
 			img {
