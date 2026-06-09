@@ -142,14 +142,14 @@ const CakeArticlePage = () => {
 										<img
 											src={fillingItem.image}
 											alt="filling"
-											width="360"
-											height="360"
+											width="464"
+											height="464"
 										/>
 									</div>
 									<main className={styles.popup__main}>
 										<Title
 											titleText={fillingItem.title}
-											titleClass="title_fz22 title_fw800"
+											titleClass={`title_fz22 title_fw800 ${styles.popup__title}`}
 											level="h2"
 										/>
 										<p
