@@ -1,4 +1,4 @@
-import { PropsWithChildren, MouseEventHandler } from 'react';
+import { PropsWithChildren, MouseEventHandler, TouchEventHandler } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 type ButtonProps = PropsWithChildren<{
@@ -8,6 +8,7 @@ type ButtonProps = PropsWithChildren<{
 	url?: string;
 	path?: string;
 	onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
+	onTouchStart?: TouchEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }>;
 
 const Button = ({
@@ -17,6 +18,7 @@ const Button = ({
 	isOuterLink,
 	url,
 	onClick,
+	onTouchStart,
 	path
 }: ButtonProps) => {
 	const location = useLocation();
@@ -46,6 +48,7 @@ const Button = ({
 			className={className}
 			type="button"
 			onClick={onClick}
+			onTouchStart={onTouchStart}
 			aria-label={label}
 		>
 			{children}
