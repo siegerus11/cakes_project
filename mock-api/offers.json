@@ -103,7 +103,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -155,7 +159,7 @@
         "price": 750,
         "description": "Традиционный рецепт с натуральным мёдом и сливочным кремом",
         "isInclude": false,
-        "image": "/images/fillings/medoviy-klassika.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Мёд натуральный",
           "Сливочное масло",
@@ -177,7 +181,7 @@
         "price": 850,
         "description": "Медовые коржи с добавлением домашней карамели",
         "isInclude": false,
-        "image": "/images/fillings/medoviy-karamel.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Мёд натуральный",
           "Карамель домашняя",
@@ -199,7 +203,7 @@
         "price": 900,
         "description": "Медовые коржи с грецкими орехами и сгущённым молоком",
         "isInclude": false,
-        "image": "/images/fillings/medoviy-orehi.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Мёд натуральный",
           "Грецкие орехи",
@@ -221,7 +225,7 @@
         "price": 800,
         "description": "Медовый торт с черносливом и нежным сметанным кремом",
         "isInclude": false,
-        "image": "/images/fillings/medoviy-chernosliv.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Мёд натуральный",
           "Чернослив",
@@ -238,7 +242,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -290,7 +298,7 @@
         "price": 900,
         "description": "Клубника, малина и черника в нежном творожном креме",
         "isInclude": false,
-        "image": "/images/fillings/yagodniy-miks.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Клубника",
           "Малина",
@@ -312,7 +320,7 @@
         "price": 1000,
         "description": "Хрустящее безе с начинкой из тропического манго и йогуртовым муссом",
         "isInclude": false,
-        "image": "/images/fillings/beze-mango.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Безе",
           "Манго",
@@ -333,7 +341,7 @@
         "price": 1100,
         "description": "Шоколадный бисквит с кремом на основе сливок и какао",
         "isInclude": false,
-        "image": "/images/fillings/shokoladniy.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Какао",
           "Сливки",
@@ -354,7 +362,7 @@
         "price": 750,
         "description": "Классический ванильный торт с безе и лёгким сливочным кремом",
         "isInclude": false,
-        "image": "/images/fillings/vanilniy.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Ваниль",
           "Сливочный крем",
@@ -370,7 +378,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -422,7 +434,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/fillings/belgian-chocolate.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -442,7 +454,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/fillings/shokolad-orex.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -463,7 +475,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/fillings/shokod-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -484,7 +496,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/fillings/shokod-slivki.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -499,7 +511,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -551,7 +567,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/fillings/belgian-chocolate.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -571,7 +587,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/fillings/shokolad-orex.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -592,7 +608,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/fillings/shokod-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -613,7 +629,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/fillings/shokod-slivki.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -628,8 +644,12 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
-"optionally": [
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
+    "optionally": [
       {
         "name": "Свечи классические",
         "title": "Свечи классические",
@@ -680,7 +700,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/fillings/belgian-chocolate.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -700,7 +720,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/fillings/shokolad-orex.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -721,7 +741,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/fillings/shokod-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -742,7 +762,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/fillings/shokod-slivki.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -757,7 +777,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -809,7 +833,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/fillings/belgian-chocolate.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -829,7 +853,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/fillings/shokolad-orex.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -850,7 +874,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/fillings/shokod-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -871,7 +895,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/fillings/shokod-slivki.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -886,7 +910,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -938,7 +966,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/fillings/belgian-chocolate.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -958,7 +986,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/fillings/shokolad-orex.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -979,7 +1007,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/fillings/shokod-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -1000,7 +1028,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/fillings/shokod-slivki.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -1015,7 +1043,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -1067,7 +1099,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/fillings/belgian-chocolate.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -1087,7 +1119,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/fillings/shokolad-orex.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -1108,7 +1140,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/fillings/shokod-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -1129,7 +1161,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/fillings/shokod-slivki.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -1144,7 +1176,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -1196,7 +1232,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/fillings/belgian-chocolate.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -1216,7 +1252,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/fillings/shokolad-orex.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -1237,7 +1273,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/fillings/shokod-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -1258,7 +1294,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/fillings/shokod-slivki.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -1273,7 +1309,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -1325,7 +1365,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/fillings/belgian-chocolate.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -1345,7 +1385,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/fillings/shokolad-orex.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -1366,7 +1406,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/fillings/shokod-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -1387,7 +1427,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/fillings/shokod-slivki.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -1402,7 +1442,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -1454,7 +1498,7 @@
         "price": 350,
         "description": "Свежая клубника со сливочным кремом на бисквитной основе",
         "isInclude": false,
-        "image": "/images/fillings/klubnika-slivki.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Клубника",
           "Сливки 33%",
@@ -1474,7 +1518,7 @@
         "price": 380,
         "description": "Свежая малина с нежным крем-чизом на шоколадном бисквите",
         "isInclude": false,
-        "image": "/images/fillings/malina-creamcheese.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Малина",
           "Крем-чиз",
@@ -1494,7 +1538,7 @@
         "price": 400,
         "description": "Тропическая начинка из манго и маракуйи с йогуртовым муссом",
         "isInclude": false,
-        "image": "/images/fillings/mango-marakuya.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Манго",
           "Маракуйя",
@@ -1515,7 +1559,7 @@
         "price": 350,
         "description": "Домашняя солёная карамель с крем-чизом на ванильном бисквите",
         "isInclude": false,
-        "image": "/images/fillings/solnaya-karamel.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Карамель",
           "Соль морская",
@@ -1531,7 +1575,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -1583,7 +1631,7 @@
         "price": 250,
         "description": "Шоколадный брауни с грецкими орехами внутри",
         "isInclude": false,
-        "image": "/images/fillings/brauni.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Тёмный шоколад",
           "Масло сливочное",
@@ -1605,7 +1653,7 @@
         "price": 300,
         "description": "Шоколадно-ореховый крем с нежной текстурой",
         "isInclude": false,
-        "image": "/images/fillings/nutella.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Шоколадно-ореховый крем",
           "Бисквит",
@@ -1624,7 +1672,7 @@
         "price": 280,
         "description": "Коковое суфле с шоколадом на кокосовой стружке",
         "isInclude": false,
-        "image": "/images/fillings/kokosoviy.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Кокосовая стружка",
           "Кокосовое молоко",
@@ -1645,7 +1693,7 @@
         "price": 270,
         "description": "Домашняя карамель с крем-чизом и морской солью",
         "isInclude": false,
-        "image": "/images/fillings/karamelniy.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Карамель",
           "Крем-чиз",
@@ -1660,7 +1708,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -1712,7 +1764,7 @@
         "price": 320,
         "description": "Воздушный малиновый мусс на ванильном бисквите",
         "isInclude": false,
-        "image": "/images/fillings/malinoviy-muss.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Малина",
           "Сливки",
@@ -1733,7 +1785,7 @@
         "price": 380,
         "description": "Свежая малина с кремом маскарпоне на бисквитной основе",
         "isInclude": false,
-        "image": "/images/fillings/malina-maskarpone.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Малина",
           "Маскарпоне",
@@ -1754,7 +1806,7 @@
         "price": 280,
         "description": "Лёгкий ванильный бисквит со сливками и малиновым конфи",
         "isInclude": false,
-        "image": "/images/fillings/vanilniy-biskvit.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Ваниль",
           "Сливки",
@@ -1775,7 +1827,7 @@
         "price": 300,
         "description": "Йогуртовый крем с ягодным миксом на лёгкой бисквитной подложке",
         "isInclude": false,
-        "image": "/images/fillings/yagodniy-yogurt.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Натуральный йогурт",
           "Малина",
@@ -1791,7 +1843,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -1843,7 +1899,7 @@
         "price": 400,
         "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-classic.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -1865,7 +1921,7 @@
         "price": 450,
         "description": "Классический тирамису с добавлением ликёра Амаретто",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-liqueur.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -1887,7 +1943,7 @@
         "price": 420,
         "description": "Тирамису с малиновым конфи и кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -1908,7 +1964,7 @@
         "price": 380,
         "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-kokos.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -1924,7 +1980,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -1976,7 +2036,7 @@
         "price": 400,
         "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-classic.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -1998,7 +2058,7 @@
         "price": 450,
         "description": "Классический тирамису с добавлением ликёра Амаретто",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-liqueur.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2020,7 +2080,7 @@
         "price": 420,
         "description": "Тирамису с малиновым конфи и кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2041,7 +2101,7 @@
         "price": 380,
         "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-kokos.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2057,7 +2117,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -2109,7 +2173,7 @@
         "price": 400,
         "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-classic.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2131,7 +2195,7 @@
         "price": 450,
         "description": "Классический тирамису с добавлением ликёра Амаретто",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-liqueur.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2153,7 +2217,7 @@
         "price": 420,
         "description": "Тирамису с малиновым конфи и кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2174,7 +2238,7 @@
         "price": 380,
         "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-kokos.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2190,7 +2254,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -2242,7 +2310,7 @@
         "price": 400,
         "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-classic.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2264,7 +2332,7 @@
         "price": 450,
         "description": "Классический тирамису с добавлением ликёра Амаретто",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-liqueur.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2286,7 +2354,7 @@
         "price": 420,
         "description": "Тирамису с малиновым конфи и кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2307,7 +2375,7 @@
         "price": 380,
         "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-kokos.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2323,7 +2391,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -2375,7 +2447,7 @@
         "price": 400,
         "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-classic.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2397,7 +2469,7 @@
         "price": 450,
         "description": "Классический тирамису с добавлением ликёра Амаретто",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-liqueur.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2419,7 +2491,7 @@
         "price": 420,
         "description": "Тирамису с малиновым конфи и кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2440,7 +2512,7 @@
         "price": 380,
         "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-kokos.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2456,7 +2528,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
@@ -2508,7 +2584,7 @@
         "price": 400,
         "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-classic.png",
+        "image": "/images/pictures/fillings/cherry.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2530,7 +2606,7 @@
         "price": 450,
         "description": "Классический тирамису с добавлением ликёра Амаретто",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-liqueur.png",
+        "image": "/images/pictures/fillings/peaches2.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2552,7 +2628,7 @@
         "price": 420,
         "description": "Тирамису с малиновым конфи и кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-malina.png",
+        "image": "/images/pictures/fillings/berry.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2573,7 +2649,7 @@
         "price": 380,
         "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
         "isInclude": false,
-        "image": "/images/fillings/tiramisu-kokos.png",
+        "image": "/images/pictures/fillings/homemade.jpg",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2589,7 +2665,11 @@
         }
       }
     ],
-    "weight": [1.5, 3, 5],
+    "weight": [
+      1.5,
+      3,
+      5
+    ],
     "optionally": [
       {
         "name": "Свечи классические",
