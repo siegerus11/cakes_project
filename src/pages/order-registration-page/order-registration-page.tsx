@@ -101,6 +101,9 @@ const OrderRegistrationPage = () => {
 		navigate(-1);
 	};
 
+	const maxLength = 300;
+	const commentLength = formValues.comment.length;
+
 	return (
 		<>
 			<main className={`page ${styles.page}`}>
@@ -223,22 +226,26 @@ const OrderRegistrationPage = () => {
 							>
 								Добавить комментарий
 							</button>
-						{isAreaVisible && (
-							<>
-								<textarea
-									className={styles.textarea}
-									name="comment"
-									id="comment"
-									value={formValues.comment}
-									onChange={handleIputChange}
-								></textarea>
-								{formErrors.comment && (
-									<span className="error-message">
-										{formErrors.comment}
+							{isAreaVisible && (
+								<>
+									<textarea
+										className={styles.textarea}
+										name="comment"
+										id="comment"
+										value={formValues.comment}
+										onChange={handleIputChange}
+									></textarea>
+									<span className={styles.counter}>
+										{maxLength - commentLength} символов
+										осталось
 									</span>
-								)}
-							</>
-						)}
+									{formErrors.comment && (
+										<span className="error-message">
+											{formErrors.comment}
+										</span>
+									)}
+								</>
+							)}
 						</form>
 						<SubmitButton
 							className={`button button_primary ${styles.button}`}

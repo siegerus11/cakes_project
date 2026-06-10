@@ -134,6 +134,16 @@
 	outline: none;
 }
 
+.counter {
+	display: block;
+	margin-top: 4px;
+	color: variables.$color-text-light;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 123%;
+	text-align: right;
+}
+
 .button {
 	justify-content: center;
 	min-width: 298px;
