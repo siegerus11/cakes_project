@@ -245,21 +245,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/candles-classic.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Надпись «Спасибо»",
-        "title": "Надпись «Спасибо»",
-        "price": 150,
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
         "isInclude": false,
-        "image": "/images/options/topper-spasibo.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
       },
       {
-        "name": "Фруктовая прослойка",
-        "title": "Фруктовая прослойка",
-        "price": 350,
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
         "isInclude": false,
-        "image": "/images/options/fruit-layer.png"
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -366,32 +373,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Топпер с персонажем",
-        "title": "Топпер с персонажем",
-        "price": 200,
+        "name": "Свечи классические",
+        "title": "Свечи классические",
+        "price": 0,
         "isInclude": false,
-        "image": "/images/options/topper-character.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Свечи-бенгальские огни",
-        "title": "Свечи-бенгальские огни",
-        "price": 250,
-        "isInclude": false,
-        "image": "/images/options/candles-sparklers.png"
-      },
-      {
-        "name": "Цифровая свеча",
-        "title": "Цифровая свеча",
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/options/candles-numbers.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
       },
       {
-        "name": "Конфетти",
-        "title": "Конфетти",
-        "price": 100,
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
         "isInclude": false,
-        "image": "/images/options/confetti.png"
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -495,25 +502,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Топпер «Спасибо»",
-        "title": "Топпер «Спасибо»",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/topper-spasibo.png"
-      },
-      {
-        "name": "Коробка для торта",
-        "title": "Коробка для торта",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cake-box.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Шоколадные украшения",
-        "title": "Шоколадные украшения",
-        "price": 500,
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
         "isInclude": false,
-        "image": "/images/options/chocolate-decoration.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -615,27 +629,34 @@
       }
     ],
     "weight": [1.5, 3, 5],
-    "optionally": [
+"optionally": [
       {
-        "name": "Топпер «Спасибо»",
-        "title": "Топпер «Спасибо»",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/topper-spasibo.png"
-      },
-      {
-        "name": "Коробка для торта",
-        "title": "Коробка для торта",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cake-box.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Шоколадные украшения",
-        "title": "Шоколадные украшения",
-        "price": 500,
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
         "isInclude": false,
-        "image": "/images/options/chocolate-decoration.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -739,25 +760,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Топпер «Спасибо»",
-        "title": "Топпер «Спасибо»",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/topper-spasibo.png"
-      },
-      {
-        "name": "Коробка для торта",
-        "title": "Коробка для торта",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cake-box.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Шоколадные украшения",
-        "title": "Шоколадные украшения",
-        "price": 500,
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
         "isInclude": false,
-        "image": "/images/options/chocolate-decoration.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -861,25 +889,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Топпер «Спасибо»",
-        "title": "Топпер «Спасибо»",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/topper-spasibo.png"
-      },
-      {
-        "name": "Коробка для торта",
-        "title": "Коробка для торта",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cake-box.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Шоколадные украшения",
-        "title": "Шоколадные украшения",
-        "price": 500,
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
         "isInclude": false,
-        "image": "/images/options/chocolate-decoration.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -983,25 +1018,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Топпер «Спасибо»",
-        "title": "Топпер «Спасибо»",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/topper-spasibo.png"
-      },
-      {
-        "name": "Коробка для торта",
-        "title": "Коробка для торта",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cake-box.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Шоколадные украшения",
-        "title": "Шоколадные украшения",
-        "price": 500,
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
         "isInclude": false,
-        "image": "/images/options/chocolate-decoration.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -1105,25 +1147,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Топпер «Спасибо»",
-        "title": "Топпер «Спасибо»",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/topper-spasibo.png"
-      },
-      {
-        "name": "Коробка для торта",
-        "title": "Коробка для торта",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cake-box.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Шоколадные украшения",
-        "title": "Шоколадные украшения",
-        "price": 500,
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
         "isInclude": false,
-        "image": "/images/options/chocolate-decoration.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -1227,25 +1276,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Топпер «Спасибо»",
-        "title": "Топпер «Спасибо»",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/topper-spasibo.png"
-      },
-      {
-        "name": "Коробка для торта",
-        "title": "Коробка для торта",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cake-box.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Шоколадные украшения",
-        "title": "Шоколадные украшения",
-        "price": 500,
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
         "isInclude": false,
-        "image": "/images/options/chocolate-decoration.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -1349,25 +1405,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Топпер «Спасибо»",
-        "title": "Топпер «Спасибо»",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/topper-spasibo.png"
-      },
-      {
-        "name": "Коробка для торта",
-        "title": "Коробка для торта",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cake-box.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Шоколадные украшения",
-        "title": "Шоколадные украшения",
-        "price": 500,
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
         "isInclude": false,
-        "image": "/images/options/chocolate-decoration.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -1471,25 +1534,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Коробка с ленточкой",
-        "title": "Коробка с ленточкой",
-        "price": 150,
+        "name": "Свечи классические",
+        "title": "Свечи классические",
+        "price": 0,
         "isInclude": false,
-        "image": "/images/options/bento-box.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Свеча-цифра",
-        "title": "Свеча-цифра",
-        "price": 80,
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
         "isInclude": false,
-        "image": "/images/options/candles-numbers.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/pictures/optional/topper.jpg"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
-        "price": 100,
+        "price": 450,
         "isInclude": false,
-        "image": "/images/options/berry-decoration.png"
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -1593,18 +1663,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Коробка с ленточкой",
-        "title": "Коробка с ленточкой",
-        "price": 150,
+        "name": "Свечи классические",
+        "title": "Свечи классические",
+        "price": 0,
         "isInclude": false,
-        "image": "/images/options/bento-box.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Стикер-наклейка",
-        "title": "Стикер-наклейка",
-        "price": 50,
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
         "isInclude": false,
-        "image": "/images/options/sticker.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -1710,25 +1794,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Коробка с ленточкой",
-        "title": "Коробка с ленточкой",
-        "price": 150,
+        "name": "Свечи классические",
+        "title": "Свечи классические",
+        "price": 0,
         "isInclude": false,
-        "image": "/images/options/bento-box.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Свеча",
-        "title": "Свеча",
-        "price": 50,
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
         "isInclude": false,
-        "image": "/images/options/candles-classic.png"
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
+        "price": 120,
+        "isInclude": false,
+        "image": "/images/pictures/optional/topper.jpg"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
-        "price": 100,
+        "price": 450,
         "isInclude": false,
-        "image": "/images/options/berry-decoration.png"
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -1836,25 +1927,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Коробка с ленточкой",
-        "title": "Коробка с ленточкой",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/bento-box.png"
-      },
-      {
-        "name": "Какао-посыпка",
-        "title": "Какао-посыпка",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cocoa-powder.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Свежие ягоды",
-        "title": "Свежие ягоды",
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
+        "isInclude": false,
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/options/berry-decoration.png"
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -1962,25 +2060,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Коробка с ленточкой",
-        "title": "Коробка с ленточкой",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/bento-box.png"
-      },
-      {
-        "name": "Какао-посыпка",
-        "title": "Какао-посыпка",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cocoa-powder.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Свежие ягоды",
-        "title": "Свежие ягоды",
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
+        "isInclude": false,
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/options/berry-decoration.png"
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -2088,25 +2193,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Коробка с ленточкой",
-        "title": "Коробка с ленточкой",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/bento-box.png"
-      },
-      {
-        "name": "Какао-посыпка",
-        "title": "Какао-посыпка",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cocoa-powder.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Свежие ягоды",
-        "title": "Свежие ягоды",
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
+        "isInclude": false,
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/options/berry-decoration.png"
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -2214,25 +2326,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Коробка с ленточкой",
-        "title": "Коробка с ленточкой",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/bento-box.png"
-      },
-      {
-        "name": "Какао-посыпка",
-        "title": "Какао-посыпка",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cocoa-powder.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Свежие ягоды",
-        "title": "Свежие ягоды",
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
+        "isInclude": false,
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/options/berry-decoration.png"
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -2340,25 +2459,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Коробка с ленточкой",
-        "title": "Коробка с ленточкой",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/bento-box.png"
-      },
-      {
-        "name": "Какао-посыпка",
-        "title": "Какао-посыпка",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cocoa-powder.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Свежие ягоды",
-        "title": "Свежие ягоды",
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
+        "isInclude": false,
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/options/berry-decoration.png"
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   },
@@ -2466,25 +2592,32 @@
     "weight": [1.5, 3, 5],
     "optionally": [
       {
-        "name": "Коробка с ленточкой",
-        "title": "Коробка с ленточкой",
-        "price": 150,
-        "isInclude": false,
-        "image": "/images/options/bento-box.png"
-      },
-      {
-        "name": "Какао-посыпка",
-        "title": "Какао-посыпка",
+        "name": "Свечи классические",
+        "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/options/cocoa-powder.png"
+        "image": "/images/pictures/optional/candles.jpg"
       },
       {
-        "name": "Свежие ягоды",
-        "title": "Свежие ягоды",
+        "name": "Свечи цифрами",
+        "title": "Свечи цифрами",
+        "price": 180,
+        "isInclude": false,
+        "image": "/images/pictures/optional/num-candles.jpg"
+      },
+      {
+        "name": "Топпер «С Днём рождения»",
+        "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/options/berry-decoration.png"
+        "image": "/images/pictures/optional/topper.jpg"
+      },
+      {
+        "name": "Ягодное украшение",
+        "title": "Ягодное украшение",
+        "price": 450,
+        "isInclude": false,
+        "image": "/images/pictures/optional/berry-decoration.jpg"
       }
     ]
   }
