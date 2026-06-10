@@ -34,7 +34,11 @@ const Footer = () => {
 						</li>
 						<li></li>
 					</ul>
-					<NavMenu navs={secondaryNavs} linkClassName={styles.link} />
+					<NavMenu
+						navs={secondaryNavs}
+						linkClassName={styles.link}
+						isHeaderNav={false}
+					/>
 					<div className={styles.social}>
 						<SocialLinks>
 							<a

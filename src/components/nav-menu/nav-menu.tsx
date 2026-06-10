@@ -4,14 +4,19 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Nav } from '../../types/types';
 import scrollToHash from '../../utils/scrollToHash';
 
-
 type NavMenuProps = {
 	navs: Nav[];
 	onNavLinkClick?: () => void;
 	linkClassName: string;
+	isHeaderNav?: boolean;
 };
 
-const NavMenu = ({ navs, onNavLinkClick, linkClassName }: NavMenuProps) => {
+const NavMenu = ({
+	navs,
+	onNavLinkClick,
+	linkClassName,
+	isHeaderNav = true
+}: NavMenuProps) => {
 	const navigate = useNavigate();
 
 	const handleNavLinkClick = (
@@ -38,6 +43,9 @@ const NavMenu = ({ navs, onNavLinkClick, linkClassName }: NavMenuProps) => {
 							to={nav.path}
 							onClick={e => handleNavLinkClick(e, nav.path)}
 						>
+							{isHeaderNav && (
+								<img src={nav.image} alt={nav.title} />
+							)}
 							<span>{nav.title}</span>
 						</Link>
 					</li>
