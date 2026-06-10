@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { Nav } from '../../types/types';
 import scrollToHash from '../../utils/scrollToHash';
+import styles from './nav-menu.module.scss';
 
 type NavMenuProps = {
 	navs: Nav[];
@@ -34,7 +35,7 @@ const NavMenu = ({
 	};
 
 	return (
-		<nav aria-label="Основное меню">
+		<nav aria-label="Основное меню" className={styles.component}>
 			<ul>
 				{navs.map(nav => (
 					<li key={nav.title}>
@@ -44,7 +45,10 @@ const NavMenu = ({
 							onClick={e => handleNavLinkClick(e, nav.path)}
 						>
 							{isHeaderNav && (
-								<img src={nav.image} alt={nav.title} />
+								<>
+									<div className={styles.background}></div>
+									<div className={styles.overlay}></div>
+								</>
 							)}
 							<span>{nav.title}</span>
 						</Link>

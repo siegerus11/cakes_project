@@ -102,12 +102,16 @@
 	}
 
 	span {
-		// z-index: 10;
+		z-index: 1;
 		max-width: 100px;
 		color: variables.$color-text-inverted;
 		font-weight: 600;
 		font-size: 20px;
 		line-height: 115%;
+	}
+
+	&:hover {
+		transform: scale(1.04);
 	}
 }
 
@@ -133,6 +137,10 @@
 
 		span {
 			font-size: 19px;
+		}
+
+		&:hover {
+			transform: unset;
 		}
 	}
 
