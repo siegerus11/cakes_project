@@ -62,7 +62,8 @@ export const cakeOffersData = createSlice({
 	},
 	selectors: {
 		selectCakeOffers: state => state.cakeOffers,
-		selectOffersLoadingStatus: state => state.offersLoadingStatus
+		selectOffersLoadingStatus: state => state.offersLoadingStatus,
+		selectOrderSendingStatus: state => state.orderSendingStatus
 	}
 });
 
@@ -72,5 +73,8 @@ export const cakeOffersDataActions = {
 	sendOrderAction
 };
 
-export const { selectCakeOffers, selectOffersLoadingStatus } =
-	cakeOffersData.selectors;
+export const {
+	selectCakeOffers,
+	selectOffersLoadingStatus,
+	selectOrderSendingStatus
+} = cakeOffersData.selectors;
