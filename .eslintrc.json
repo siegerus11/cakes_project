@@ -36,6 +36,12 @@
 			}
 		},
 		{
+			"files": ["**/*.test.{js,ts,jsx,tsx}", "**/*.spec.{js,ts,jsx,tsx}"],
+			"rules": {
+				"import/no-extraneous-dependencies": "off"
+			}
+		},
+		{
 			"files": ["src/**/*.{js,ts,jsx,tsx}"],
 			"rules": {
 				"react/prop-types": "off",
