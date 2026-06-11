@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import { useState, useEffect, FormEvent, useMemo, useCallback } from 'react';
+import { useState, useEffect, SubmitEvent, useMemo, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { v4 as uuidv } from 'uuid';
 
@@ -122,7 +122,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	);
 
 	const handleSubmit = useCallback(
-		(e: FormEvent) => {
+		(e: SubmitEvent) => {
 			e.preventDefault();
 			setShoppingCart(cakeOrder);
 
