@@ -4,13 +4,13 @@ import { NameSpace, LoadingStatus } from '../../constants';
 import { CakeOffer } from '../../types/types';
 import { fetchOffersAction, sendOrderAction } from '../api-actions';
 
-type InitialState = {
+export type cakeOffersDataState = {
 	cakeOffers: CakeOffer[];
 	offersLoadingStatus: (typeof LoadingStatus)[keyof typeof LoadingStatus];
 	orderSendingStatus: (typeof LoadingStatus)[keyof typeof LoadingStatus];
 };
 
-const initialState: InitialState = {
+const initialState: cakeOffersDataState = {
 	cakeOffers: [],
 	offersLoadingStatus: LoadingStatus.Idle,
 	orderSendingStatus: LoadingStatus.Idle

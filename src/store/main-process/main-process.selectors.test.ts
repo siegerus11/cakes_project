@@ -3,11 +3,12 @@ import {
 	selectTotalPrice,
 	selectActiveOffer,
 	selectSortingStatus,
-	selectErrorMessage
+	selectErrorMessage,
+	mainProcessState
 } from './main-process';
 
 describe('Main-process selectors', () => {
-	const state = {
+	const state: { [NameSpace.Main]: mainProcessState } = {
 		[NameSpace.Main]: {
 			totalPrice: 1000,
 			activeOffer: 'offer-001',

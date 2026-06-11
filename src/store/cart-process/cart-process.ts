@@ -4,13 +4,13 @@ import { NameSpace, LoadingStatus, discoundValue } from '../../constants';
 import { CakeOrder } from '../../types/types';
 import { getDiscountAction } from '../api-actions';
 
-type CartProcess = {
+export type CartProcessState = {
 	shoppingCart: CakeOrder[];
 	discountLoadingStatus: (typeof LoadingStatus)[keyof typeof LoadingStatus];
 	finalSum: number;
 };
 
-const initialState: CartProcess = {
+const initialState: CartProcessState = {
 	shoppingCart: [],
 	discountLoadingStatus: LoadingStatus.Idle,
 	finalSum: 0

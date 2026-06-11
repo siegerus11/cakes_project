@@ -3,11 +3,12 @@ import makeFakeOrder from '../../mocks/makeFakeOrder';
 import {
 	selectShoppingCart,
 	selectFinalSum,
-	selectdiscountLoadingStatus
+	selectdiscountLoadingStatus,
+	CartProcessState
 } from './cart-process';
 
 describe('Cart-process selectors', () => {
-	const state = {
+	const state: { [NameSpace.Cart]: CartProcessState } = {
 		[NameSpace.Cart]: {
 			shoppingCart: [makeFakeOrder()],
 			discountLoadingStatus: LoadingStatus.Idle,
@@ -18,16 +19,16 @@ describe('Cart-process selectors', () => {
 	it('Should return shopping cart from state', () => {
 		const result = selectShoppingCart(state);
 
-		expect(result).toEqual([makeFakeOrder()]);
+		expect(result).toEqual(state[NameSpace.Cart].shoppingCart);
 	});
 	it('Should return discountLoadingStatus cart from state', () => {
 		const result = selectdiscountLoadingStatus(state);
 
-		expect(result).toEqual('idle');
+		expect(result).toBe(state[NameSpace.Cart].discountLoadingStatus);
 	});
 	it('Should return finalSum cart from state', () => {
 		const result = selectFinalSum(state);
 
-		expect(result).toEqual(1000);
+		expect(result).toBe(state[NameSpace.Cart].finalSum);
 	});
 });

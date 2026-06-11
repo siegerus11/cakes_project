@@ -2,14 +2,14 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { NameSpace } from '../../constants';
 
-type InitialState = {
+export type mainProcessState = {
 	totalPrice: number;
 	activeOffer: string;
 	sortingStatus: string;
 	errorText: string;
 };
 
-const initialState: InitialState = {
+const initialState: mainProcessState = {
 	totalPrice: 0,
 	activeOffer: '',
 	sortingStatus: '',
