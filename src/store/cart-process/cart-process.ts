@@ -102,10 +102,15 @@ export const cartProcess = createSlice({
 
 	selectors: {
 		selectShoppingCart: state => state.shoppingCart,
-		selectFinalSum: state => state.finalSum
+		selectFinalSum: state => state.finalSum,
+		selectdiscountLoadingStatus: state => state.discountLoadingStatus
 	}
 });
 
 export const cartProcessActions = { ...cartProcess.actions, getDiscountAction };
 
-export const { selectShoppingCart, selectFinalSum } = cartProcess.selectors;
+export const {
+	selectShoppingCart,
+	selectFinalSum,
+	selectdiscountLoadingStatus
+} = cartProcess.selectors;
