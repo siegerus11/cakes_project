@@ -16,7 +16,7 @@
 		"isolatedModules": true,
 		"noEmit": true,
 		"jsx": "react-jsx",
-		"types": ["@testing-library/jest-dom"]
+		"types": ["@testing-library/jest-dom", "jest", "node", "react", "react-dom"]
 		/* "typeRoots": ["./node_modules", "./types"] */
 	},
 	"include": ["src", "vite-env.d.ts", "scss.d.ts", "css.d.ts", "vite.config.js", "tailwind.config.js", "postcss.config.js"]
