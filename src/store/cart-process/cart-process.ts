@@ -18,14 +18,14 @@ export const cartProcess = createSlice({
 	name: NameSpace.Cart,
 	initialState,
 	reducers: {
-		setShoppingCart: (state, action: PayloadAction<CakeOrder>) => {
+		addCartItem: (state, action: PayloadAction<CakeOrder>) => {
 			const updatedCart = [...state.shoppingCart, action.payload];
 			return {
 				...state,
 				shoppingCart: updatedCart
 			};
 		},
-		setCartQuantity: (
+		setCartItemQuantity: (
 			state,
 			action: PayloadAction<{ id: string; num: number }>
 		) => {
