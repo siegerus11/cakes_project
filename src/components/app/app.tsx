@@ -26,7 +26,7 @@ import './app.module.scss';
 function App() {
 	const cakeOffers = useAppSelector(selectCakeOffers);
 	const bentoCakesOffers = cakeOffers.filter(cake => cake.isBento === true);
-	const { setShoppingCart } = useActionCreators(cartProcessActions);
+	const { addCartItem } = useActionCreators(cartProcessActions);
 	const shoppingCart = useAppSelector(selectShoppingCart);
 
 	useEffect(() => {
@@ -38,7 +38,7 @@ function App() {
 		);
 
 		storageValues.forEach(item => {
-			setShoppingCart(item);
+			addCartItem(item);
 		});
 	}, []);
 
