@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosInstance } from 'axios';
 
 import { processErrorHandle } from './process-error-handle';
 
-const { BASE_URL } = import.meta.env;
+// const { BASE_URL } = import.meta.env;
 const MOCK_BASE_URL = '../../mock-api';
 
 const requestTimeout = 5000;
