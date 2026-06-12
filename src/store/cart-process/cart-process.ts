@@ -48,8 +48,7 @@ export const cartProcess = createSlice({
 		clearCart: state => {
 			return {
 				...state,
-				shoppingCart: [],
-				finalSum: 0
+				shoppingCart: []
 			};
 		},
 		removeCartItem: (state, action: PayloadAction<string>) => {
