@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { LoadingStatus } from '../../constants';
+import { LoadingStatus, discoundValue } from '../../constants';
 import makeFakeOrder from '../../mocks/makeFakeOrder';
 import { cartProcess, cartProcessActions } from './cart-process';
 
@@ -46,6 +46,49 @@ describe('Cart-proecss slice', () => {
 		expect(result).toEqual(expectedState);
 	});
 
+	it('Should return state with discountLoadingStatus: Success and discounted orders', () => {
+		const discountedOrder = {
+			...makeFakeOrder(),
+			price: Math.round(makeFakeOrder().price * (1 - discoundValue / 100))
+		};
+		const initialState = {
+			shoppingCart: Array.from({ length: 3 }, makeFakeOrder),
+			discountLoadingStatus: LoadingStatus.Idle
+		};
+		const expectedState = {
+			shoppingCart: [discountedOrder, discountedOrder, discountedOrder],
+			discountLoadingStatus: LoadingStatus.Success
+		};
+
+		const result = cartProcess.reducer(
+			initialState,
+			cartProcessActions.getDiscountAction.fulfilled(
+				undefined,
+				'',
+				'code'
+			)
+		);
+
+		expect(result).toEqual(expectedState);
+	});
+
+	it('Should return state with discountLoadingStatus: Failed', () => {
+		const expectedState = {
+			shoppingCart: [],
+			discountLoadingStatus: LoadingStatus.Failed
+		};
+
+		const getDiscountActionRejected = createAction(
+			'cart/getDiscount/rejected'
+		);
+		const result = cartProcess.reducer(
+			expectedState,
+			getDiscountActionRejected()
+		);
+
+		expect(result).toEqual(expectedState);
+	});
+
 	it('Should return state with order', () => {
 		const fakeOrder = makeFakeOrder();
 		const initialState = {
@@ -59,7 +102,72 @@ describe('Cart-proecss slice', () => {
 
 		const result = cartProcess.reducer(
 			initialState,
-			cartProcessActions.setShoppingCart(fakeOrder)
+			cartProcessActions.addCartItem(fakeOrder)
+		);
+
+		expect(result).toEqual(expectedState);
+	});
+	it('Should return state with incremented order', () => {
+		const fakeOrder = makeFakeOrder();
+		const incremenedFakeOrder = {
+			...fakeOrder,
+			quantity: 2
+		};
+		const initialState = {
+			shoppingCart: [fakeOrder],
+			discountLoadingStatus: LoadingStatus.Idle
+		};
+		const expectedState = {
+			shoppingCart: [incremenedFakeOrder],
+			discountLoadingStatus: LoadingStatus.Idle
+		};
+
+		const result = cartProcess.reducer(
+			initialState,
+			cartProcessActions.setCartItemQuantity({
+				id: fakeOrder.cakeId,
+				num: 1
+			})
+		);
+
+		expect(result).toEqual(expectedState);
+	});
+
+	it('Should return state with empty cart', () => {
+		const initialState = {
+			shoppingCart: Array.from({ length: 3 }, makeFakeOrder),
+			discountLoadingStatus: LoadingStatus.Idle
+		};
+		const expectedState = {
+			shoppingCart: [],
+			discountLoadingStatus: LoadingStatus.Idle
+		};
+
+		const result = cartProcess.reducer(
+			initialState,
+			cartProcessActions.clearCart()
+		);
+
+		expect(result).toEqual(expectedState);
+	});
+
+	it('Should return state with with one deleted order', () => {
+		const expectDetetedOrder = {
+			...makeFakeOrder(),
+			cakeId: 'targetId'
+		};
+		const initialState = {
+			shoppingCart: [makeFakeOrder(), expectDetetedOrder],
+			discountLoadingStatus: LoadingStatus.Idle
+		};
+		const expectedState = {
+			shoppingCart: [makeFakeOrder()],
+			discountLoadingStatus: LoadingStatus.Idle
+		};
+
+		const result = cartProcess.reducer(
+			initialState,
+			cartProcessActions.removeCartItem('targetId')
 		);
 
 		expect(result).toEqual(expectedState);
