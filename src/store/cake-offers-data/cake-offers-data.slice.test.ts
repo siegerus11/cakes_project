@@ -2,6 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 
 import { LoadingStatus } from '../../constants';
 import makeFakeCakeOffer from '../../mocks/makeFakeOffer';
+import makeFakeOrder from '../../mocks/makeFakeOrder';
 import { cakeOffersData, cakeOffersDataActions } from './cake-offers-data';
 
 describe('Cake-offers-data slice', () => {
@@ -74,6 +75,61 @@ describe('Cake-offers-data slice', () => {
 
 		const fetchOffersRejected = createAction('data/fetchOffers/rejected');
 		const result = cakeOffersData.reducer(undefined, fetchOffersRejected());
+
+		expect(result).toEqual(expectedState);
+	});
+
+	it('Should return state with orderSendingStatus: Loading', () => {
+		const expectedState = {
+			cakeOffers: [],
+			offersLoadingStatus: LoadingStatus.Idle,
+			orderSendingStatus: LoadingStatus.Loading
+		};
+
+		const sendOrderPending = createAction('cart/sendOrder/pending');
+		const result = cakeOffersData.reducer(undefined, sendOrderPending());
+
+		expect(result).toEqual(expectedState);
+	});
+
+	it('Should return state with orderSendingStatus: Success', () => {
+		const fakeOrder = {
+			shoppingCart: [makeFakeOrder()],
+			userData: {
+				name: 'name',
+				phone: 'phone',
+				address: 'address',
+				comment: 'comment'
+			},
+			finalSum: 1000
+		};
+		const expectedState = {
+			cakeOffers: [],
+			offersLoadingStatus: LoadingStatus.Idle,
+			orderSendingStatus: LoadingStatus.Success
+		};
+
+		const result = cakeOffersData.reducer(
+			undefined,
+			cakeOffersDataActions.sendOrderAction.fulfilled(
+				undefined,
+				'',
+				fakeOrder
+			)
+		);
+
+		expect(result).toEqual(expectedState);
+	});
+
+	it('Should return state with orderSendingStatus: Failed', () => {
+		const expectedState = {
+			cakeOffers: [],
+			offersLoadingStatus: LoadingStatus.Idle,
+			orderSendingStatus: LoadingStatus.Failed
+		};
+
+		const sendOrderRejected = createAction('cart/sendOrder/rejected');
+		const result = cakeOffersData.reducer(undefined, sendOrderRejected());
 
 		expect(result).toEqual(expectedState);
 	});

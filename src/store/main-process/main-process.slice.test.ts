@@ -112,4 +112,24 @@ describe('Main-process slice', () => {
 
 		expect(result).toEqual(expectedState);
 	});
+
+	it('Should clear error message', () => {
+		const initialState: mainProcessState = {
+			totalPrice: 0,
+			activeOffer: '',
+			sortingStatus: '',
+			errorText: 'Что-то пошло не так'
+		};
+		const expectedState: mainProcessState = {
+			...initialState,
+			errorText: ''
+		};
+
+		const result = mainProcess.reducer(
+			initialState,
+			mainProcessActions.setError('')
+		);
+
+		expect(result).toEqual(expectedState);
+	});
 });
