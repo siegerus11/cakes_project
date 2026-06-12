@@ -21,7 +21,7 @@ type CartItemProps = {
 const CartItem = memo(({ order }: CartItemProps) => {
 	const { price, filling, optional, weight, cakeId, quantity, image, title } =
 		order;
-	const { setCartQuantity, removeCartItem } =
+	const { setCartItemQuantity, removeCartItem } =
 		useActionCreators(cartProcessActions);
 	const confirm = useConfirm();
 
@@ -44,10 +44,10 @@ const CartItem = memo(({ order }: CartItemProps) => {
 				}
 				return;
 			}
-			setCartQuantity({ id, num });
+			setCartItemQuantity({ id, num });
 			updateQuantity(quantity, num, id);
 		},
-		[confirm, setCartQuantity, removeCartItem, quantity]
+		[confirm, setCartItemQuantity, removeCartItem, quantity]
 	);
 
 	const handleDecrease = useCallback(

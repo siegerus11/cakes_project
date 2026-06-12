@@ -42,7 +42,7 @@ type OrderFormProps = {
 const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const totalPrice = useAppSelector(selectTotalPrice);
 	const { setTotalPrice } = useActionCreators(mainProcessActions);
-	const { setShoppingCart } = useActionCreators(cartProcessActions);
+	const { addCartItem } = useActionCreators(cartProcessActions);
 	const navigate = useNavigate();
 	const location = useLocation();
 
@@ -124,7 +124,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const handleSubmit = useCallback(
 		(e: SubmitEvent) => {
 			e.preventDefault();
-			setShoppingCart(cakeOrder);
+			addCartItem(cakeOrder);
 
 			localStorage.setItem(
 				`cake-cart-${cakeOrder.cakeId}`,
@@ -135,7 +135,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 				state: { from: location.pathname }
 			});
 		},
-		[cakeOrder, navigate, location.pathname, setShoppingCart]
+		[cakeOrder, navigate, location.pathname, addCartItem]
 	);
 
 	const describeClassName = descriptionVisible
