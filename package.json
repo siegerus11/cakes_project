@@ -43,23 +43,6 @@
         "sass": "^1.54.5",
         "uuid": "^13.0.0"
     },
-    "jest": {
-        "testEnvironment": "jsdom",
-        "transform": {
-            "^.+\\.(ts|tsx)$": [
-                "ts-jest",
-                {
-                    "tsconfig": "tsconfig.json"
-                }
-            ]
-        },
-        "moduleNameMapper": {
-            "\\.(css|scss|module\\.scss)$": "identity-obj-proxy"
-        },
-        "setupFilesAfterEnv": [
-            "@testing-library/jest-dom"
-        ]
-    },
     "devDependencies": {
         "@babel/core": "^7.18.13",
         "@babel/preset-react": "^7.29.7",
@@ -111,5 +94,22 @@
         "typescript": "^4.8.2",
         "vite": "^3.0.9",
         "webpack": "^5.74.0"
+    },
+    "jest": {
+        "testEnvironment": "jsdom",
+        "transform": {
+            "^.+\\.(ts|tsx)$": [
+                "ts-jest",
+                {
+                    "tsconfig": "tsconfig.json"
+                }
+            ]
+        },
+        "moduleNameMapper": {
+            "\\.(css|scss|module\\.scss)$": "identity-obj-proxy"
+        },
+        "setupFilesAfterEnv": [
+            "@testing-library/jest-dom"
+        ]
     }
 }
