@@ -7,13 +7,11 @@ import { getDiscountAction } from '../api-actions';
 export type CartProcessState = {
 	shoppingCart: CakeOrder[];
 	discountLoadingStatus: (typeof LoadingStatus)[keyof typeof LoadingStatus];
-	finalSum: number;
 };
 
 const initialState: CartProcessState = {
 	shoppingCart: [],
-	discountLoadingStatus: LoadingStatus.Idle,
-	finalSum: 0
+	discountLoadingStatus: LoadingStatus.Idle
 };
 
 export const cartProcess = createSlice({
@@ -24,11 +22,7 @@ export const cartProcess = createSlice({
 			const updatedCart = [...state.shoppingCart, action.payload];
 			return {
 				...state,
-				shoppingCart: updatedCart,
-				finalSum: updatedCart.reduce(
-					(sum, order) => sum + order.price * order.quantity,
-					0
-				)
+				shoppingCart: updatedCart
 			};
 		},
 		setCartQuantity: (
@@ -48,11 +42,7 @@ export const cartProcess = createSlice({
 			});
 			return {
 				...state,
-				shoppingCart: updatedCart,
-				finalSum: updatedCart.reduce(
-					(sum, order) => sum + order.price * order.quantity,
-					0
-				)
+				shoppingCart: updatedCart
 			};
 		},
 		clearCart: state => {
@@ -68,11 +58,7 @@ export const cartProcess = createSlice({
 			);
 			return {
 				...state,
-				shoppingCart: updatedCart,
-				finalSum: updatedCart.reduce(
-					(sum, order) => sum + order.price * order.quantity,
-					0
-				)
+				shoppingCart: updatedCart
 			};
 		}
 	},
@@ -88,8 +74,12 @@ export const cartProcess = createSlice({
 			return {
 				...state,
 				discountLoadingStatus: LoadingStatus.Success,
-				finalSum:
-					state.finalSum - (state.finalSum * discoundValue) / 100
+				shoppingCart: state.shoppingCart.map(order => {
+					return {
+						...order,
+						price: order.price - (order.price * discoundValue) / 100
+					};
+				})
 			};
 		});
 		builder.addCase(getDiscountAction.rejected, state => {
@@ -102,7 +92,11 @@ export const cartProcess = createSlice({
 
 	selectors: {
 		selectShoppingCart: state => state.shoppingCart,
-		selectFinalSum: state => state.finalSum,
+		selectFinalSum: state =>
+			state.shoppingCart.reduce(
+				(sum, order) => sum + order.price * order.quantity,
+				0
+			),
 		selectdiscountLoadingStatus: state => state.discountLoadingStatus
 	}
 });

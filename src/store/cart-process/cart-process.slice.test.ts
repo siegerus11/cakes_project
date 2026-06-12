@@ -9,8 +9,7 @@ describe('Cart-proecss slice', () => {
 		const emptyAction = { type: '' };
 		const expectedState = {
 			shoppingCart: [makeFakeOrder()],
-			discountLoadingStatus: LoadingStatus.Idle,
-			finalSum: 0
+			discountLoadingStatus: LoadingStatus.Idle
 		};
 
 		const result = cartProcess.reducer(expectedState, emptyAction);
@@ -22,8 +21,7 @@ describe('Cart-proecss slice', () => {
 		const emptyAction = { type: '' };
 		const expectedState = {
 			shoppingCart: [],
-			discountLoadingStatus: LoadingStatus.Idle,
-			finalSum: 0
+			discountLoadingStatus: LoadingStatus.Idle
 		};
 
 		const result = cartProcess.reducer(undefined, emptyAction);
@@ -34,8 +32,7 @@ describe('Cart-proecss slice', () => {
 	it('Should return state with discountLoadingStatus: Loading', () => {
 		const expectedState = {
 			shoppingCart: [],
-			discountLoadingStatus: LoadingStatus.Loading,
-			finalSum: 0
+			discountLoadingStatus: LoadingStatus.Loading
 		};
 
 		const getDiscountActionPending = createAction(
@@ -53,13 +50,11 @@ describe('Cart-proecss slice', () => {
 		const fakeOrder = makeFakeOrder();
 		const initialState = {
 			shoppingCart: [],
-			discountLoadingStatus: LoadingStatus.Idle,
-			finalSum: 0
+			discountLoadingStatus: LoadingStatus.Idle
 		};
 		const expectedState = {
 			shoppingCart: [fakeOrder],
-			discountLoadingStatus: LoadingStatus.Idle,
-			finalSum: 0
+			discountLoadingStatus: LoadingStatus.Idle
 		};
 
 		const result = cartProcess.reducer(
