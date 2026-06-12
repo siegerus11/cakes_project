@@ -77,7 +77,9 @@ export const cartProcess = createSlice({
 				shoppingCart: state.shoppingCart.map(order => {
 					return {
 						...order,
-						price: order.price - (order.price * discoundValue) / 100
+						price: Math.round(
+							order.price * (1 - discoundValue / 100)
+						)
 					};
 				})
 			};
