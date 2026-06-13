@@ -5,7 +5,12 @@ import { validation } from '../../../constants';
 import styles from './form.module.scss';
 
 type FormProps = {
-	onSubmit: (formValues: { name: string; phone: string; address: string; comment: string }) => void;
+	onSubmit: (formValues: {
+		name: string;
+		phone: string;
+		address: string;
+		comment: string;
+	}) => void;
 };
 
 const Form = ({ onSubmit }: FormProps) => {
@@ -70,7 +75,11 @@ const Form = ({ onSubmit }: FormProps) => {
 	const commentLength = formValues.comment.length;
 
 	return (
-		<form onSubmit={handleFormSubmit} id="order-registration-form">
+		<form
+			onSubmit={handleFormSubmit}
+			id="order-registration-form"
+			data-testid="order-registration-form"
+		>
 			<section className={styles.delivery}>
 				<div className={styles.delivery__header}>
 					<svg
@@ -104,17 +113,13 @@ const Form = ({ onSubmit }: FormProps) => {
 					<h2 className={styles.payment__title}>
 						Оплата переводом на карту
 					</h2>
-					<svg
-						className={styles.payment__arrow}
-						aria-hidden="true"
-					>
+					<svg className={styles.payment__arrow} aria-hidden="true">
 						<use xlinkHref="#arrow-sm"></use>
 					</svg>
 				</div>
 			</section>
 			<div className={styles.description}>
-				Стоимость и время доставки согласуем при
-				подтверждении заказа
+				Стоимость и время доставки согласуем при подтверждении заказа
 			</div>
 			<div className={styles.fields}>
 				<input
@@ -127,9 +132,7 @@ const Form = ({ onSubmit }: FormProps) => {
 					onChange={handleIputChange}
 				/>
 				{formErrors.name && (
-					<span className="error-message">
-						{formErrors.name}
-					</span>
+					<span className="error-message">{formErrors.name}</span>
 				)}
 				<input
 					className={styles.input}
@@ -141,9 +144,7 @@ const Form = ({ onSubmit }: FormProps) => {
 					onChange={handleIputChange}
 				/>
 				{formErrors.phone && (
-					<span className="error-message">
-						{formErrors.phone}
-					</span>
+					<span className="error-message">{formErrors.phone}</span>
 				)}
 				<input
 					className={styles.input}
@@ -155,9 +156,7 @@ const Form = ({ onSubmit }: FormProps) => {
 					onChange={handleIputChange}
 				/>
 				{formErrors.address && (
-					<span className="error-message">
-						{formErrors.address}
-					</span>
+					<span className="error-message">{formErrors.address}</span>
 				)}
 			</div>
 			<button
@@ -175,10 +174,10 @@ const Form = ({ onSubmit }: FormProps) => {
 						id="comment"
 						value={formValues.comment}
 						onChange={handleIputChange}
+						aria-label="comment"
 					></textarea>
 					<span className={styles.counter}>
-						{maxLength - commentLength} символов
-						осталось
+						{maxLength - commentLength} символов осталось
 					</span>
 					{formErrors.comment && (
 						<span className="error-message">
