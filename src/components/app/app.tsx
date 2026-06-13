@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
 import '../../global.module.scss';
@@ -43,62 +43,52 @@ function App() {
 	}, []);
 
 	return (
-		<BrowserRouter
-			future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-		>
-			<Routes>
-				<Route path={AppRoute.Root} element={<MainLayout />}>
-					<Route
-						index
-						element={
-							<MainPage
-								cakes={cakeOffers}
-								bentoCakes={bentoCakesOffers}
-							/>
-						}
-					/>
-					<Route path={AppRoute.About} element={<AboutPage />} />
-					<Route
-						path={AppRoute.Catalog}
-						element={
-							<MainPage
-								cakes={cakeOffers}
-								bentoCakes={bentoCakesOffers}
-							/>
-						}
-					/>
-					<Route
-						path={AppRoute.CakesCatalog}
-						element={<CatalogPage cakes={cakeOffers} />}
-					/>
-					<Route
-						path={AppRoute.BentoCakesCatalog}
-						element={<CatalogPage cakes={bentoCakesOffers} />}
-					/>
-					<Route
-						path={AppRoute.Delivery}
-						element={<DeliveryPage />}
-					/>
-					<Route
-						path={AppRoute.Contacts}
-						element={<ContactsPage />}
-					/>
-				</Route>
+		<Routes>
+			<Route path={AppRoute.Root} element={<MainLayout />}>
 				<Route
-					path={AppRoute.CakeOfferArticle}
-					element={<CakeArticlePage />}
+					index
+					element={
+						<MainPage
+							cakes={cakeOffers}
+							bentoCakes={bentoCakesOffers}
+						/>
+					}
+				/>
+				<Route path={AppRoute.About} element={<AboutPage />} />
+				<Route
+					path={AppRoute.Catalog}
+					element={
+						<MainPage
+							cakes={cakeOffers}
+							bentoCakes={bentoCakesOffers}
+						/>
+					}
 				/>
 				<Route
-					path={AppRoute.ShoppingCart}
-					element={<ShoppingCartPage />}
+					path={AppRoute.CakesCatalog}
+					element={<CatalogPage cakes={cakeOffers} />}
 				/>
 				<Route
-					path={AppRoute.OrderRegistration}
-					element={<OrderRegistrationPage />}
+					path={AppRoute.BentoCakesCatalog}
+					element={<CatalogPage cakes={bentoCakesOffers} />}
 				/>
-				<Route path={AppRoute.Thanks} element={<ThanksPage />} />
-			</Routes>
-		</BrowserRouter>
+				<Route path={AppRoute.Delivery} element={<DeliveryPage />} />
+				<Route path={AppRoute.Contacts} element={<ContactsPage />} />
+			</Route>
+			<Route
+				path={AppRoute.CakeOfferArticle}
+				element={<CakeArticlePage />}
+			/>
+			<Route
+				path={AppRoute.ShoppingCart}
+				element={<ShoppingCartPage />}
+			/>
+			<Route
+				path={AppRoute.OrderRegistration}
+				element={<OrderRegistrationPage />}
+			/>
+			<Route path={AppRoute.Thanks} element={<ThanksPage />} />
+		</Routes>
 	);
 }
 
