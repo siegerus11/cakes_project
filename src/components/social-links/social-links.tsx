@@ -1,6 +1,4 @@
 import { ReactNode } from 'react';
-/* eslint-disable-next-line import/no-unresolved */
-import { v4 as uuidv } from 'uuid';
 
 import styles from './social-links.module.scss';
 
@@ -11,9 +9,9 @@ type SocialLinksProps = {
 const SocialLinks = ({ children }: SocialLinksProps) => {
 	return (
 		<ul className={styles.list}>
-			{children.map(child => {
-				const id = uuidv();
-				return <li key={id}>{child}</li>;
+			{children.map((child, i) => {
+				const keyValue = `${i}-elem`;
+				return <li key={keyValue}>{child}</li>;
 			})}
 		</ul>
 	);
