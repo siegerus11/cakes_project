@@ -5,7 +5,11 @@ import MockAdapter from 'axios-mock-adapter';
 import { NameSpace, APIRoute, LoadingStatus } from '../constants';
 import makeFakeOffer from '../mocks/makeFakeOffer';
 import makeFakeOrder from '../mocks/makeFakeOrder';
-import { fetchOffersAction, sendOrderAction, getDiscountAction } from './api-actions';
+import {
+	fetchOffersAction,
+	sendOrderAction,
+	getDiscountAction
+} from './api-actions';
 import { cakeOffersData } from './cake-offers-data/cake-offers-data';
 import { cartProcess } from './cart-process/cart-process';
 import { mainProcess } from './main-process/main-process';
@@ -104,7 +108,9 @@ describe('Thunk api actions', () => {
 			const promoCode = 'PROMO15';
 			mockAxiosAdapter.onPost(APIRoute.promoCode).reply(201);
 
-			const dispatchPromise = mockStore.dispatch(getDiscountAction(promoCode));
+			const dispatchPromise = mockStore.dispatch(
+				getDiscountAction(promoCode)
+			);
 
 			expect(
 				mockStore.getState()[NameSpace.Cart].discountLoadingStatus
@@ -123,7 +129,9 @@ describe('Thunk api actions', () => {
 			const promoCode = 'INVALID';
 			mockAxiosAdapter.onPost(APIRoute.promoCode).reply(400);
 
-			const result = await mockStore.dispatch(getDiscountAction(promoCode));
+			const result = await mockStore.dispatch(
+				getDiscountAction(promoCode)
+			);
 
 			expect(result.type).toBe(getDiscountAction.rejected.type);
 			expect(
