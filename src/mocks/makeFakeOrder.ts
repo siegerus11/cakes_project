@@ -9,7 +9,7 @@ const makeFakeOrder = (): CakeOrder => ({
 	optional: {
 		isChecked: true
 	},
-	price: 100,
+	price: 3600,
 	quantity: 1
 });
 
