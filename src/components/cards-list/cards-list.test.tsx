@@ -37,25 +37,13 @@ describe('Component: CardsList', () => {
 		{ ...fakeCake, id: '3', title: 'Торт 3' }
 	];
 
-	it('should render cards list with correct number of cards', () => {
-		const carTestId = 'card';
+	it('should render correct number of cards', () => {
+		const expectedCardsCount = 3;
 
 		renderCardsList(mockCakes, false);
 
-		const cards = screen.getAllByTestId(carTestId);
-		expect(cards.length).toBe(3);
-	});
-
-	it('should render cake titles in the list', () => {
-		const firstCardTitleText = 'Торт 1';
-		const secondCardTitleText = 'Торт 2';
-		const thirdCardTitleText = 'Торт 3';
-
-		renderCardsList(mockCakes, false);
-
-		expect(screen.getByText(firstCardTitleText)).toBeInTheDocument();
-		expect(screen.getByText(secondCardTitleText)).toBeInTheDocument();
-		expect(screen.getByText(thirdCardTitleText)).toBeInTheDocument();
+		const cards = screen.getAllByTestId('card');
+		expect(cards.length).toBe(expectedCardsCount);
 	});
 
 	it('should apply sorting by category when sortingStatus is set', () => {
@@ -81,5 +69,26 @@ describe('Component: CardsList', () => {
 		expect(screen.getByText('Торт 1')).toBeInTheDocument();
 		expect(screen.getByText('Торт 3')).toBeInTheDocument();
 		expect(screen.queryByText('Торт 2')).not.toBeInTheDocument();
+	});
+
+	it('should not apply sorting on main page', () => {
+		const cakesWithCategories: CakeOffer[] = [
+			{ ...fakeCake, id: '1', title: 'Торт 1', category: 'Друзьям' },
+			{ ...fakeCake, id: '2', title: 'Торт 2', category: 'Родителям' }
+		];
+
+		const initialState = {
+			[NameSpace.Main]: {
+				totalPrice: 0,
+				activeOffer: '',
+				sortingStatus: 'Друзьям',
+				errorText: ''
+			}
+		};
+
+		renderCardsList(cakesWithCategories, true, undefined, initialState);
+
+		const cards = screen.getAllByTestId('card');
+		expect(cards.length).toBe(2);
 	});
 });
