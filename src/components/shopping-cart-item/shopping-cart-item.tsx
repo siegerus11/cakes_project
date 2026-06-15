@@ -27,6 +27,7 @@ const ShoppingCartItem = ({ className = '', fixed }: ShoppingCartItemProps) => {
 			to={AppRoute.ShoppingCart}
 			state={{ from: location.pathname }}
 			aria-label="Корзина"
+			data-testid="Корзина"
 		>
 			<svg
 				className={styles.component__icon}

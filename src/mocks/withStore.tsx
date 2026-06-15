@@ -8,7 +8,6 @@ import { NameSpace } from '../constants';
 import { cakeOffersData } from '../store/cake-offers-data/cake-offers-data';
 import { cartProcess } from '../store/cart-process/cart-process';
 import { mainProcess } from '../store/main-process/main-process';
-import { State } from '../types/store';
 
 type ComponentWithMockStore = {
 	withStoreComponent: ReactElement;
@@ -17,7 +16,8 @@ type ComponentWithMockStore = {
 };
 
 export default function withStore(
-	component: ReactElement
+	component: ReactElement,
+	initialState?: Partial<Record<string, unknown>>
 ): ComponentWithMockStore {
 	const api = axios.create({
 		baseURL: '../../mock-api',
@@ -31,12 +31,14 @@ export default function withStore(
 	});
 	const mockStore = configureStore({
 		reducer: mockRootReducer,
+
 		middleware: getDefaultMiddleware =>
 			getDefaultMiddleware({
 				thunk: {
 					extraArgument: api
 				}
-			})
+			}),
+		preloadedState: initialState
 	});
 	return {
 		withStoreComponent: <Provider store={mockStore}>{component}</Provider>,

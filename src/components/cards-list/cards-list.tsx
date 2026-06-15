@@ -29,7 +29,7 @@ const CardsList = ({ cakes, isMainPage, path }: CardsListProps) => {
 		<ul className={listClass}>
 			{relevantCakes.map(cake => {
 				return (
-					<li key={cake.id}>
+					<li key={cake.id} data-testid="card">
 						<Card cake={cake} isMainPage={isMainPage} />
 					</li>
 				);

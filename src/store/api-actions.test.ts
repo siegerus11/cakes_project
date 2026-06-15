@@ -38,8 +38,22 @@ describe('Thunk api actions', () => {
 			})
 	});
 
+	let store: typeof mockStore;
+
 	afterEach(() => {
 		mockAxiosAdapter.reset();
+	});
+
+	beforeEach(() => {
+		store = configureStore({
+			reducer: mockRootReducer,
+			middleware: getDefaultMiddleware =>
+				getDefaultMiddleware({
+					thunk: {
+						extraArgument: api
+					}
+				})
+		});
 	});
 
 	describe('data/fetchOffers action', () => {
@@ -47,30 +61,30 @@ describe('Thunk api actions', () => {
 			const mockOffers = Array.from({ length: 3 }, makeFakeOffer);
 			mockAxiosAdapter.onGet(APIRoute.offers).reply(200, mockOffers);
 
-			const dispatchPromise = mockStore.dispatch(fetchOffersAction());
+			const dispatchPromise = store.dispatch(fetchOffersAction());
 
-			expect(
-				mockStore.getState()[NameSpace.Data].offersLoadingStatus
-			).toBe(LoadingStatus.Loading);
+			expect(store.getState()[NameSpace.Data].offersLoadingStatus).toBe(
+				LoadingStatus.Loading
+			);
 
 			const result = await dispatchPromise;
 
 			expect(result.type).toBe(fetchOffersAction.fulfilled.type);
 			expect(result.payload).toEqual(mockOffers);
-			expect(
-				mockStore.getState()[NameSpace.Data].offersLoadingStatus
-			).toBe(LoadingStatus.Success);
+			expect(store.getState()[NameSpace.Data].offersLoadingStatus).toBe(
+				LoadingStatus.Success
+			);
 		});
 
 		it('Should dispatch data/fetchOffers.rejected on network error', async () => {
 			mockAxiosAdapter.onGet(APIRoute.offers).reply(400);
 
-			const result = await mockStore.dispatch(fetchOffersAction());
+			const result = await store.dispatch(fetchOffersAction());
 
 			expect(result.type).toBe(fetchOffersAction.rejected.type);
-			expect(
-				mockStore.getState()[NameSpace.Data].offersLoadingStatus
-			).toBe(LoadingStatus.Failed);
+			expect(store.getState()[NameSpace.Data].offersLoadingStatus).toBe(
+				LoadingStatus.Failed
+			);
 		});
 	});
 
@@ -88,13 +102,13 @@ describe('Thunk api actions', () => {
 			};
 			mockAxiosAdapter.onPost(APIRoute.order).reply(200, fakeOrder);
 
-			const dispatchedPromise = mockStore.dispatch(
+			const dispatchedPromise = store.dispatch(
 				sendOrderAction(fakeOrder)
 			);
 
-			expect(
-				mockStore.getState()[NameSpace.Data].orderSendingStatus
-			).toBe(LoadingStatus.Loading);
+			expect(store.getState()[NameSpace.Data].orderSendingStatus).toBe(
+				LoadingStatus.Loading
+			);
 
 			const result = await dispatchedPromise;
 
@@ -108,35 +122,33 @@ describe('Thunk api actions', () => {
 			const promoCode = 'PROMO15';
 			mockAxiosAdapter.onPost(APIRoute.promoCode).reply(201);
 
-			const dispatchPromise = mockStore.dispatch(
+			const dispatchPromise = store.dispatch(
 				getDiscountAction(promoCode)
 			);
 
-			expect(
-				mockStore.getState()[NameSpace.Cart].discountLoadingStatus
-			).toBe(LoadingStatus.Loading);
+			expect(store.getState()[NameSpace.Cart].discountLoadingStatus).toBe(
+				LoadingStatus.Loading
+			);
 
 			const result = await dispatchPromise;
 
 			expect(result.type).toBe(getDiscountAction.fulfilled.type);
 			expect(result.meta.arg).toBe(promoCode);
-			expect(
-				mockStore.getState()[NameSpace.Cart].discountLoadingStatus
-			).toBe(LoadingStatus.Success);
+			expect(store.getState()[NameSpace.Cart].discountLoadingStatus).toBe(
+				LoadingStatus.Success
+			);
 		});
 
 		it('Should dispatch cart/getDiscount.rejected on network error', async () => {
 			const promoCode = 'INVALID';
 			mockAxiosAdapter.onPost(APIRoute.promoCode).reply(400);
 
-			const result = await mockStore.dispatch(
-				getDiscountAction(promoCode)
-			);
+			const result = await store.dispatch(getDiscountAction(promoCode));
 
 			expect(result.type).toBe(getDiscountAction.rejected.type);
-			expect(
-				mockStore.getState()[NameSpace.Cart].discountLoadingStatus
-			).toBe(LoadingStatus.Failed);
+			expect(store.getState()[NameSpace.Cart].discountLoadingStatus).toBe(
+				LoadingStatus.Failed
+			);
 		});
 	});
 });
