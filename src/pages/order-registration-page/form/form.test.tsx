@@ -19,18 +19,28 @@ describe('Component: Form', () => {
 	};
 
 	it('Should render correctly', () => {
+		const formTestId = 'order-registration-form';
+		const submitButtonText = 'Оформить заказ';
+		const namePlaceholderText = 'Имя';
+		const phonePlaceholderText = 'Телефон';
+		const adressPlaceholderText = 'Адрес';
+
 		renderForm();
 
-		expect(
-			screen.getByTestId('order-registration-form')
-		).toBeInTheDocument();
+		expect(screen.getByTestId(formTestId)).toBeInTheDocument();
 		expect(
 			screen.getByText(/Доставка курьером по Москве/i)
 		).toBeInTheDocument();
-		expect(screen.getByPlaceholderText('Имя')).toBeInTheDocument();
-		expect(screen.getByPlaceholderText('Телефон')).toBeInTheDocument();
-		expect(screen.getByPlaceholderText('Адрес')).toBeInTheDocument();
-		expect(screen.getByText('Оформить заказ')).toBeInTheDocument();
+		expect(
+			screen.getByPlaceholderText(namePlaceholderText)
+		).toBeInTheDocument();
+		expect(
+			screen.getByPlaceholderText(phonePlaceholderText)
+		).toBeInTheDocument();
+		expect(
+			screen.getByPlaceholderText(adressPlaceholderText)
+		).toBeInTheDocument();
+		expect(screen.getByText(submitButtonText)).toBeInTheDocument();
 	});
 
 	it('Should render correctly when user enters name', async () => {
@@ -48,6 +58,7 @@ describe('Component: Form', () => {
 
 	it('Should toggle comment textarea when clicking area button', async () => {
 		const textAreaRole = 'textbox';
+		const addButtonText = 'Добавить комментарий';
 
 		renderForm();
 
@@ -55,7 +66,7 @@ describe('Component: Form', () => {
 			screen.queryByRole(textAreaRole, { name: /comment/i })
 		).not.toBeInTheDocument();
 
-		await userEvent.click(screen.getByText('Добавить комментарий'));
+		await userEvent.click(screen.getByText(addButtonText));
 
 		expect(
 			screen.getByRole(textAreaRole, { name: /comment/i })
@@ -63,6 +74,11 @@ describe('Component: Form', () => {
 	});
 
 	it('Should call onSubmit with form values when all required fields are filled', async () => {
+		const submitButtonText = 'Оформить заказ';
+		const namePlaceholderText = 'Имя';
+		const phonePlaceholderText = 'Телефон';
+		const adressPlaceholderText = 'Адрес';
+
 		const expectedFormValues = {
 			name: 'Alex',
 			phone: '+79991234567',
@@ -73,19 +89,19 @@ describe('Component: Form', () => {
 		renderForm();
 
 		await userEvent.type(
-			screen.getByPlaceholderText('Имя'),
+			screen.getByPlaceholderText(namePlaceholderText),
 			expectedFormValues.name
 		);
 		await userEvent.type(
-			screen.getByPlaceholderText('Телефон'),
+			screen.getByPlaceholderText(phonePlaceholderText),
 			expectedFormValues.phone
 		);
 		await userEvent.type(
-			screen.getByPlaceholderText('Адрес'),
+			screen.getByPlaceholderText(adressPlaceholderText),
 			expectedFormValues.address
 		);
 
-		await userEvent.click(screen.getByText('Оформить заказ'));
+		await userEvent.click(screen.getByText(submitButtonText));
 
 		expect(handleSubmit).toHaveBeenCalledTimes(1);
 		expect(handleSubmit).toHaveBeenCalledWith(expectedFormValues);
