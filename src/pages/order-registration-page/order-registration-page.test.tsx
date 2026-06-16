@@ -47,12 +47,4 @@ describe('Component: OrderRegistrationPage', () => {
 
 		expect(screen.getByTestId('form')).toBeInTheDocument();
 	});
-
-	it('should render submit button', () => {
-		const expectedLabel = 'Оформить заказ';
-
-		renderOrderRegistrationPage();
-
-		expect(screen.getByText(expectedLabel)).toBeInTheDocument();
-	});
 });

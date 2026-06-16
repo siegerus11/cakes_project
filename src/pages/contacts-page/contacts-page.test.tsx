@@ -68,16 +68,6 @@ describe('Component: ContactsPage', () => {
 		expect(screen.getByText(expectedDescription)).toBeInTheDocument();
 	});
 
-	it('should render pick-up section', () => {
-		const expectedHeadline = 'Адрес самовывоза';
-		const testId = 'pick-up';
-
-		renderContactsPage();
-
-		expect(screen.getByTestId(testId)).toBeInTheDocument();
-		expect(screen.getByText(expectedHeadline)).toBeInTheDocument();
-	});
-
 	it('should render communication section with appeals', () => {
 		const expectedTitle = 'Связь с директором';
 

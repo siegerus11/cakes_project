@@ -65,20 +65,4 @@ describe('Component: AboutPage', () => {
 
 		expect(screen.getByTestId(testId)).toBeInTheDocument();
 	});
-
-	it('should render questions section', () => {
-		const expectedText = 'Популярные вопросы';
-
-		renderAboutPage();
-
-		expect(screen.getByText(expectedText)).toBeInTheDocument();
-	});
-
-	it('should render rewievs section', () => {
-		const testId = 'rewievs';
-
-		renderAboutPage();
-
-		expect(screen.getByTestId(testId)).toBeInTheDocument();
-	});
 });

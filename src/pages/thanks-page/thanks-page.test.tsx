@@ -1,22 +1,20 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
+import withHistory from '../../mocks/withHistory';
 import ThanksPage from './thanks-page';
 
 describe('Component: ThanksPage', () => {
+	const renderThanksPage = () => {
+		const withHistoryComponent = withHistory(<ThanksPage />);
+
+		return render(withHistoryComponent);
+	};
+
 	it('Should render correctly', () => {
 		const expectedText = /Заказ принят/i;
 
-		render(
-			<BrowserRouter
-				future={{
-					v7_startTransition: true,
-					v7_relativeSplatPath: true
-				}}
-			>
-				<ThanksPage />
-			</BrowserRouter>
-		);
+		renderThanksPage();
 
 		expect(screen.getByText(expectedText)).toBeInTheDocument();
 	});

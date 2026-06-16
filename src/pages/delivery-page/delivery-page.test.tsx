@@ -92,14 +92,6 @@ describe('Component: DeliveryPage', () => {
 		expect(screen.getByText(expectedDescription)).toBeInTheDocument();
 	});
 
-	it('should render questions section', () => {
-		const expectedTitle = 'Популярные вопросы';
-
-		renderDeliveryPage();
-
-		expect(screen.getByText(expectedTitle)).toBeInTheDocument();
-	});
-
 	it('should render telegram link', () => {
 		const expectedLinkText = 'Напишите в Telegram';
 

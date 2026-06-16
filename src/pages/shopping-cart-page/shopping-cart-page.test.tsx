@@ -7,40 +7,14 @@ import withStore from '../../mocks/withStore';
 import { CakeOrder } from '../../types/types';
 import ShoppingCartPage from './shopping-cart-page';
 
-jest.mock('../../hooks/useConfirm', () => ({
-	__esModule: true,
-	default: () => jest.fn(() => true)
-}));
-
 jest.mock('../../hooks/useMediaQuery', () => ({
 	__esModule: true,
 	default: () => false
 }));
 
-jest.mock('../../hooks/useTouch', () => ({
-	__esModule: true,
-	default: () => ({
-		handleTouchStart: jest.fn(),
-		handleTouchMove: jest.fn(),
-		handleTouchEnd: jest.fn()
-	})
-}));
-
 jest.mock('./cart-item/cart-item', () => {
 	const MockCartList = () => <div data-testid="cart-list">Cart List</div>;
 	return { __esModule: true, default: MockCartList };
-});
-
-jest.mock('../../store/cart-process/cart-process', () => {
-	const actual = jest.requireActual('../../store/cart-process/cart-process');
-	return {
-		...actual,
-		cartProcessActions: {
-			...actual.cartProcessActions,
-			clearCart: jest.fn(),
-			getDiscountAction: jest.fn()
-		}
-	};
 });
 
 describe('Component: ShoppingCartPage', () => {
