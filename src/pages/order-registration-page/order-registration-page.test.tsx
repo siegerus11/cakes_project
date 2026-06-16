@@ -18,20 +18,9 @@ describe('Component: OrderRegistrationPage', () => {
 	const renderOrderRegistrationPage = () => {
 		const component = withHistory(<OrderRegistrationPage />);
 		const { withStoreComponent } = withStore(component, {
-			[NameSpace.Data]: {
-				cakeOffers: [],
-				offersLoadingStatus: LoadingStatus.Success,
-				orderSendingStatus: LoadingStatus.Idle
-			},
 			[NameSpace.Cart]: {
 				shoppingCart: [],
 				discountLoadingStatus: LoadingStatus.Idle
-			},
-			[NameSpace.Main]: {
-				totalPrice: 0,
-				activeOffer: '',
-				sortingStatus: '',
-				errorText: ''
 			}
 		});
 		return render(withStoreComponent);
