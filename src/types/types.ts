@@ -44,7 +44,7 @@ export type CakeOffer = {
 	title: string;
 	images: string[];
 	price: number;
-	describe: string;
+	description: string;
 	filling: Filling[];
 	weight: number[];
 	optionally: Optional[];

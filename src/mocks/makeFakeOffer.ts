@@ -138,7 +138,7 @@ const makeFakeCakeOffer = (): CakeOffer => ({
 		'../../../images/pictures/cake2.png'
 	],
 	price: 3600,
-	describe: 'describe',
+	description: 'description',
 	filling: defaultFilling,
 	weight: [1.5, 3, 5],
 	optionally: defaultOptionally
