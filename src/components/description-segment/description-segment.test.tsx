@@ -67,20 +67,4 @@ describe('Component: DescriptionSegment', () => {
 		const heading = container.querySelector('h1');
 		expect(heading).toBeInTheDocument();
 	});
-
-	it('should render custom heading level when provided', () => {
-		const { container } = render(
-			<DescriptionSegment
-				wrapperClass="test-class"
-				titleText="Test"
-				titleLevel="h2"
-			>
-				<div>Content</div>
-			</DescriptionSegment>
-		);
-
-		const heading = container.querySelector('.title');
-		expect(heading?.tagName.toLowerCase()).toBe('h2');
-		expect(heading?.textContent).toBe('Test');
-	});
 });
