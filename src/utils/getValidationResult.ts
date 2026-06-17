@@ -29,7 +29,7 @@ const commentValidate = (value: string): boolean | string => {
 	return true;
 };
 
-const promoValidate = (value: string) => {
+const promoValidate = (value: string): boolean | string => {
 	if (!value || value.length < 6) return 'Введите минимум 6 символов';
 	return true;
 };
