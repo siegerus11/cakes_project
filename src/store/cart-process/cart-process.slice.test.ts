@@ -125,7 +125,7 @@ describe('Cart-proecss slice', () => {
 		const result = cartProcess.reducer(
 			initialState,
 			cartProcessActions.setCartItemQuantity({
-				id: fakeOrder.cakeId,
+				id: fakeOrder.id,
 				num: 1
 			})
 		);
@@ -154,7 +154,7 @@ describe('Cart-proecss slice', () => {
 	it('Should return state with with one deleted order', () => {
 		const expectDetetedOrder = {
 			...makeFakeOrder(),
-			cakeId: 'targetId'
+			id: 'targetId'
 		};
 		const initialState = {
 			shoppingCart: [makeFakeOrder(), expectDetetedOrder],
