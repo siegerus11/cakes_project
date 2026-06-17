@@ -1,17 +1,15 @@
 {
-    "name": "starter-vite-react",
+    "name": "cakes_project",
     "private": true,
     "version": "1.0.0",
-    "description": "Opinionated Vite starter template with ESLint, Prettier, Stylelint and more.",
+    "description": "The Cake Store App",
     "repository": {
         "type": "git",
-        "url": "https://github.com/fabgrel10/vite-react-starter"
+        "url": "https://github.com/Siegerus/cakes_project"
     },
     "keywords": [
         "vite",
-        "react",
-        "starter",
-        "template"
+        "react"
     ],
     "scripts": {
         "dev": "vite",
@@ -25,14 +23,11 @@
         "format": "npx prettier . --write"
     },
     "dependencies": {
-        "@emotion/react": "^11.10.4",
-        "@emotion/styled": "^11.10.4",
         "@reduxjs/toolkit": "^2.11.2",
         "@types/geojson": "^7946.0.16",
         "@types/leaflet": "^1.9.21",
         "axios": "^1.16.1",
         "leaflet": "^1.9.4",
-        "prop-types": "^15.8.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-draggable": "^4.5.0",
@@ -47,8 +42,6 @@
         "@babel/core": "^7.18.13",
         "@babel/preset-react": "^7.29.7",
         "@babel/preset-typescript": "^7.29.7",
-        "@emotion/babel-plugin": "^11.10.2",
-        "@emotion/babel-preset-css-prop": "^11.10.0",
         "@namics/stylelint-bem": "^7.0.0",
         "@stylelint/postcss-css-in-js": "^0.38.0",
         "@testing-library/dom": "^10.4.1",
@@ -80,16 +73,14 @@
         "postcss": "^8.4.16",
         "postcss-scss": "^4.0.4",
         "postcss-syntax": "^0.36.2",
-        "prettier": "^2.7.1",
-        "prettier-plugin-style-order": "^0.2.2",
-        "prettier-plugin-tailwindcss": "^0.1.13",
+        "prettier": "^2.7.1",        "prettier-plugin-style-order": "^0.2.2",
+
         "react-test-renderer": "^18.2.0",
         "stylelint": "^14.11.0",
         "stylelint-config-idiomatic-order": "^8.1.0",
         "stylelint-config-prettier-scss": "^0.0.1",
         "stylelint-config-standard-scss": "^5.0.0",
         "stylelint-scss": "^4.3.0",
-        "tailwindcss": "^3.1.8",
         "ts-jest": "^29.4.11",
         "typescript": "^4.8.2",
         "vite": "^3.0.9",

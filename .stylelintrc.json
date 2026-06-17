@@ -11,12 +11,7 @@
 			"patternPrefixes": [],
 			"helperPrefixes": []
 		},
-		"scss/at-rule-no-unknown": [
-			true,
-			{
-				"ignoreAtRules": ["tailwind", "layer"]
-			}
-		],
+		"scss/at-rule-no-unknown": true,
 		"selector-class-pattern": null
 	},
 	"overrides": [
