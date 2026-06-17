@@ -33,9 +33,10 @@ export const cartProcess = createSlice({
 				if (order.cakeId === action.payload.id) {
 					return {
 						...order,
-						quantity:
-							order.quantity + action.payload.num ||
-							order.quantity
+						quantity: Math.max(
+							0,
+							order.quantity + action.payload.num
+						)
 					};
 				}
 				return order;
