@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import crypto from 'crypto';
 
-// https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
 		react(),
@@ -20,6 +19,23 @@ export default defineConfig({
 			}
 		}
 	],
+	build: {
+		rollupOptions: {
+			output: {
+				manualChunks(id) {
+					if (id.includes('node_modules/leaflet') || id.includes('node_modules/@react-leaflet')) {
+						return 'leaflet';
+					}
+					if (id.includes('node_modules/react-router') || id.includes('node_modules/@remix-run')) {
+						return 'router';
+					}
+					if (id.includes('node_modules/@reduxjs') || id.includes('node_modules/react-redux')) {
+						return 'redux';
+					}
+				}
+			}
+		}
+	},
 	css: {
 		devSourcemap: true,
 		preprocessorOptions: {
