@@ -109,7 +109,8 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 
 	const cakeOrder = useMemo(
 		(): CakeOrder => ({
-			cakeId: uuidv(),
+			orderId: `${cake.id}-${uuidv()}`,
+			cakeId: cake.id,
 			title: cake.title,
 			image: cake.images[0],
 			weight: radios,
@@ -127,7 +128,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 			addCartItem(cakeOrder);
 
 			localStorage.setItem(
-				`cake-cart-${cakeOrder.cakeId}`,
+				`cake-cart-${cakeOrder.orderId}`,
 				JSON.stringify(cakeOrder)
 			);
 
