@@ -118,7 +118,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 			: undefined;
 
 		return {
-			id: existingOrder?.id ?? `${cake.id}-${uuidv()}`,
+			orderId: existingOrder?.orderId ?? `${cake.id}-${uuidv()}`,
 			cakeId: cake.id,
 			title: cake.title,
 			image: cake.images[0],
@@ -146,7 +146,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 			addCartItem(cakeOrder);
 
 			localStorage.setItem(
-				`cake-cart-${cakeOrder.id}`,
+				`cake-cart-${cakeOrder.orderId}`,
 				JSON.stringify(cakeOrder)
 			);
 

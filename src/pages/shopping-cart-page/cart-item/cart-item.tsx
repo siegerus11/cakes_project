@@ -19,8 +19,16 @@ type CartItemProps = {
 };
 
 const CartItem = memo(({ order }: CartItemProps) => {
-	const { price, filling, optional, weight, id, quantity, image, title } =
-		order;
+	const {
+		price,
+		filling,
+		optional,
+		weight,
+		orderId,
+		quantity,
+		image,
+		title
+	} = order;
 	const { setCartItemQuantity, removeCartItem } =
 		useActionCreators(cartProcessActions);
 	const confirm = useConfirm();
@@ -35,28 +43,28 @@ const CartItem = memo(({ order }: CartItemProps) => {
 	);
 
 	const handleIncrClick = useCallback(
-		(idx: string, num: number, increase: boolean) => {
+		(id: string, num: number, increase: boolean) => {
 			if (quantity <= 1 && !increase) {
 				const answer = confirm(ConfirmMessage.ClearOrder);
 				if (answer) {
-					removeCartItem(idx);
-					localStorage.removeItem(`cake-cart-${idx}`);
+					removeCartItem(id);
+					localStorage.removeItem(`cake-cart-${id}`);
 				}
 				return;
 			}
 			setCartItemQuantity({ id, num });
-			updateQuantity(quantity, num, id);
+			updateQuantity(quantity, num, orderId);
 		},
-		[confirm, setCartItemQuantity, removeCartItem, quantity, id]
+		[confirm, setCartItemQuantity, removeCartItem, quantity, orderId]
 	);
 
 	const handleDecrease = useCallback(
-		() => handleIncrClick(id, -1, false),
-		[handleIncrClick, id]
+		() => handleIncrClick(orderId, -1, false),
+		[handleIncrClick, orderId]
 	);
 	const handleIncrease = useCallback(
-		() => handleIncrClick(id, 1, true),
-		[handleIncrClick, id]
+		() => handleIncrClick(orderId, 1, true),
+		[handleIncrClick, orderId]
 	);
 
 	const fillingsText = useMemo(
@@ -141,7 +149,7 @@ const CartList = () => {
 	return (
 		<ul className={styles.list}>
 			{cartSelector.map(order => (
-				<CartItem key={order.id} order={order} />
+				<CartItem key={order.orderId} order={order} />
 			))}
 		</ul>
 	);
