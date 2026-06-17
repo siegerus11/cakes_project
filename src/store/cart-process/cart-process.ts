@@ -20,7 +20,7 @@ export const cartProcess = createSlice({
 	reducers: {
 		addCartItem: (state, action: PayloadAction<CakeOrder>) => {
 			const sameIndex = state.shoppingCart.findIndex(
-				order => order.cakeId === action.payload.cakeId
+				order => order.id === action.payload.id
 			);
 			if (sameIndex !== -1) {
 				const updatedCart = state.shoppingCart.map((order, i) => {
@@ -43,7 +43,7 @@ export const cartProcess = createSlice({
 			action: PayloadAction<{ id: string; num: number }>
 		) => {
 			const updatedCart = state.shoppingCart.map(order => {
-				if (order.cakeId === action.payload.id) {
+				if (order.id === action.payload.id) {
 					return {
 						...order,
 						quantity: Math.max(
@@ -67,7 +67,7 @@ export const cartProcess = createSlice({
 		},
 		removeCartItem: (state, action: PayloadAction<string>) => {
 			const updatedCart = state.shoppingCart.filter(
-				order => order.cakeId !== action.payload
+				order => order.id !== action.payload
 			);
 			return {
 				...state,

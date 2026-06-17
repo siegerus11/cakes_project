@@ -6,7 +6,7 @@
 	useMemo,
 	useCallback
 } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
 import Overlay from '../../components/overlay/overlay';
@@ -30,6 +30,7 @@ import styles from './shopping-cart-page.module.scss';
 
 const ShoppingCartPage = () => {
 	const navigate = useNavigate();
+	const location = useLocation();
 	const [popupIsVisible, setPopupIsVisible] = useState<boolean>(false);
 	const [isAnimate, setIsAnimate] = useState<boolean>(false);
 	const [inputValue, setInputValue] = useState<string>('');
@@ -114,7 +115,8 @@ const ShoppingCartPage = () => {
 	);
 
 	const handleBackClick = () => {
-		navigate(-1);
+		const backPath = location.state?.from || AppRoute.Catalog;
+		navigate(backPath, { state: { fromCart: true } });
 	};
 
 	const buttonText = shoppingCart.length ? 'Верно, далее' : 'К каталогу';

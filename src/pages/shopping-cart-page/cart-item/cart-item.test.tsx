@@ -35,7 +35,7 @@ describe('Component: CartList', () => {
 
 	it('should render multiple cart items', () => {
 		const fakeOrder1 = makeFakeOrder();
-		const fakeOrder2 = { ...makeFakeOrder(), cakeId: '2', title: 'Торт 2' };
+		const fakeOrder2 = { ...makeFakeOrder(), id: '2', title: 'Торт 2' };
 		renderCartList([fakeOrder1, fakeOrder2]);
 
 		expect(screen.getByText(fakeOrder1.title)).toBeInTheDocument();
