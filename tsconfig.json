@@ -19,5 +19,5 @@
 		"types": ["@testing-library/jest-dom", "jest", "node", "react", "react-dom"]
 		/* "typeRoots": ["./node_modules", "./types"] */
 	},
-	"include": ["src", "vite-env.d.ts", "scss.d.ts", "css.d.ts", "vite.config.js", "tailwind.config.js", "postcss.config.js", "babel.config.js"]
+	"include": ["src", "vite-env.d.ts", "scss.d.ts", "css.d.ts", "vite.config.js", "postcss.config.js", "babel.config.js"]
 }
