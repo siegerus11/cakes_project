@@ -19,6 +19,19 @@ export const cartProcess = createSlice({
 	initialState,
 	reducers: {
 		addCartItem: (state, action: PayloadAction<CakeOrder>) => {
+			const sameIndex = state.shoppingCart.findIndex(
+				order => order.orderId === action.payload.orderId
+			);
+			if (sameIndex !== -1) {
+				const updatedCart = state.shoppingCart.map((order, i) => {
+					return i === sameIndex ? action.payload : order;
+				});
+				return {
+					...state,
+					shoppingCart: updatedCart
+				};
+			}
+
 			const updatedCart = [...state.shoppingCart, action.payload];
 			return {
 				...state,
