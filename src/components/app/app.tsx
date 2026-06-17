@@ -34,7 +34,7 @@ function App() {
 
 		const storageValues = getStorageCartValues().filter(
 			(item: CakeOrder) =>
-				!shoppingCart.some(order => order.cakeId === item.cakeId)
+				!shoppingCart.some(order => order.orderId === item.orderId)
 		);
 
 		storageValues.forEach(item => {

@@ -72,6 +72,7 @@ export type WeightRelevant = {
 };
 
 export type CakeOrder = {
+	orderId: string;
 	cakeId: string;
 	title: string;
 	image: string;

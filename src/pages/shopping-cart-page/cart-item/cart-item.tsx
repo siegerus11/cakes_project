@@ -19,8 +19,16 @@ type CartItemProps = {
 };
 
 const CartItem = memo(({ order }: CartItemProps) => {
-	const { price, filling, optional, weight, cakeId, quantity, image, title } =
-		order;
+	const {
+		price,
+		filling,
+		optional,
+		weight,
+		orderId,
+		quantity,
+		image,
+		title
+	} = order;
 	const { setCartItemQuantity, removeCartItem } =
 		useActionCreators(cartProcessActions);
 	const confirm = useConfirm();
@@ -51,12 +59,12 @@ const CartItem = memo(({ order }: CartItemProps) => {
 	);
 
 	const handleDecrease = useCallback(
-		() => handleIncrClick(cakeId, -1, false),
-		[handleIncrClick, cakeId]
+		() => handleIncrClick(orderId, -1, false),
+		[handleIncrClick, orderId]
 	);
 	const handleIncrease = useCallback(
-		() => handleIncrClick(cakeId, 1, true),
-		[handleIncrClick, cakeId]
+		() => handleIncrClick(orderId, 1, true),
+		[handleIncrClick, orderId]
 	);
 
 	const fillingsText = useMemo(
@@ -141,7 +149,7 @@ const CartList = () => {
 	return (
 		<ul className={styles.list}>
 			{cartSelector.map(order => (
-				<CartItem key={order.cakeId} order={order} />
+				<CartItem key={order.orderId} order={order} />
 			))}
 		</ul>
 	);
