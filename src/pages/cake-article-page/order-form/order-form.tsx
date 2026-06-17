@@ -109,7 +109,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 
 	const cakeOrder = useMemo(
 		(): CakeOrder => ({
-			cakeId: uuidv(),
+			cakeId: cake.id,
 			title: cake.title,
 			image: cake.images[0],
 			weight: radios,
