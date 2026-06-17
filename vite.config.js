@@ -6,11 +6,20 @@ import crypto from 'crypto';
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
-		react()
+		react(),
+		{
+			name: 'inject-process',
+			transform(code, id) {
+				if (id.includes('react-draggable') && !code.includes('var process')) {
+					return {
+						code: `var process = { env: { NODE_ENV: 'development' } };\n${code}`,
+						map: null
+					};
+				}
+				return null;
+			}
+		}
 	],
-	define: {
-		'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
-	},
 	css: {
 		devSourcemap: true,
 		preprocessorOptions: {
