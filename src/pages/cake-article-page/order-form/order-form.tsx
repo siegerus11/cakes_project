@@ -118,7 +118,7 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 			: undefined;
 
 		return {
-			id: existingOrder?.id ?? uuidv(),
+			id: existingOrder?.id ?? `${cake.id}-${uuidv()}`,
 			cakeId: cake.id,
 			title: cake.title,
 			image: cake.images[0],

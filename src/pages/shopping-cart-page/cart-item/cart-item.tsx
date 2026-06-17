@@ -47,7 +47,7 @@ const CartItem = memo(({ order }: CartItemProps) => {
 			setCartItemQuantity({ id, num });
 			updateQuantity(quantity, num, id);
 		},
-		[confirm, setCartItemQuantity, removeCartItem, quantity]
+		[confirm, setCartItemQuantity, removeCartItem, quantity, id]
 	);
 
 	const handleDecrease = useCallback(
