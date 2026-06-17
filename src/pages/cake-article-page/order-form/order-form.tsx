@@ -10,7 +10,10 @@ import { AppRoute } from '../../../constants';
 import useCheckboxes from '../../../hooks/useCheckBox';
 import useRadio from '../../../hooks/useRadio';
 import { useAppSelector, useActionCreators } from '../../../hooks/useStore';
-import { cartProcessActions } from '../../../store/cart-process/cart-process';
+import {
+	cartProcessActions,
+	selectShoppingCart
+} from '../../../store/cart-process/cart-process';
 import {
 	selectTotalPrice,
 	mainProcessActions
@@ -41,10 +44,12 @@ type OrderFormProps = {
 
 const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 	const totalPrice = useAppSelector(selectTotalPrice);
+	const shoppingCart = useAppSelector(selectShoppingCart);
 	const { setTotalPrice } = useActionCreators(mainProcessActions);
 	const { addCartItem } = useActionCreators(cartProcessActions);
 	const navigate = useNavigate();
 	const location = useLocation();
+	const fromCart = location.state?.fromCart === true;
 
 	const [descriptionVisible, setDescriptionVisible] =
 		useState<boolean>(false);
@@ -107,9 +112,13 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 		setDescriptionVisible(prevState => !prevState);
 	}, []);
 
-	const cakeOrder = useMemo(
-		(): CakeOrder => ({
-			orderId: `${cake.id}-${uuidv()}`,
+	const cakeOrder = useMemo((): CakeOrder => {
+		const existingOrder = fromCart
+			? shoppingCart.find(order => order.cakeId === cake.id)
+			: undefined;
+
+		return {
+			orderId: existingOrder?.orderId ?? `${cake.id}-${uuidv()}`,
 			cakeId: cake.id,
 			title: cake.title,
 			image: cake.images[0],
@@ -118,9 +127,18 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 			optional: optionCheckboxes,
 			quantity: 1,
 			price: totalPrice
-		}),
-		[radios, fillingCheckboxes, optionCheckboxes, totalPrice]
-	);
+		};
+	}, [
+		radios,
+		fillingCheckboxes,
+		optionCheckboxes,
+		totalPrice,
+		fromCart,
+		shoppingCart,
+		cake.id,
+		cake.title,
+		cake.images
+	]);
 
 	const handleSubmit = useCallback(
 		(e: SubmitEvent) => {

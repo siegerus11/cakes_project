@@ -1,6 +1,7 @@
 import { CakeOrder } from '../types/types';
 
 const makeFakeOrder = (): CakeOrder => ({
+	id: 'mock-id',
 	cakeId: 'id',
 	title: 'cake',
 	image: '/public/images/pictures/cake1.png',
