@@ -49,6 +49,13 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 			</div>
 		);
 	}
+	if (loadingStatus === LoadingStatus.Failed) {
+		return (
+			<div className="container">
+				<div className="loader">Error...</div>
+			</div>
+		);
+	}
 	return (
 		<>
 			<div className="container">
