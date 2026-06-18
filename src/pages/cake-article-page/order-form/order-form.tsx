@@ -38,11 +38,11 @@ import WeightPart from './weight-part/weight-part';
 
 type OrderFormProps = {
 	cake: CakeOffer;
-	initialprice: number;
+	initialPrice: number;
 	onDescribeClick: (idx: number) => void;
 };
 
-const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
+const OrderForm = ({ cake, initialPrice, onDescribeClick }: OrderFormProps) => {
 	const totalPrice = useAppSelector(selectTotalPrice);
 	const shoppingCart = useAppSelector(selectShoppingCart);
 	const { setTotalPrice } = useActionCreators(mainProcessActions);
@@ -99,12 +99,12 @@ const OrderForm = ({ cake, initialprice, onDescribeClick }: OrderFormProps) => {
 			...fillingCheckboxPrices,
 			...weightRadioPrices
 		];
-		setTotalPrice(getPricesSum(groupPrices, initialprice));
+		setTotalPrice(getPricesSum(groupPrices, initialPrice));
 	}, [
 		fillingCheckboxPrices,
 		weightRadioPrices,
 		optionalCheckboxPrices,
-		initialprice,
+		initialPrice,
 		setTotalPrice
 	]);
 

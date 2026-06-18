@@ -42,7 +42,7 @@ const CakeArticlePage = () => {
 		styles.overlay_closing
 	);
 
-	const initialprice = useMemo(() => activeOffer?.price ?? 0, [activeOffer]);
+	const initialPrice = useMemo(() => activeOffer?.price ?? 0, [activeOffer]);
 
 	const filling = useMemo(() => activeOffer?.filling ?? [], [activeOffer]);
 
@@ -117,7 +117,7 @@ const CakeArticlePage = () => {
 						</div>
 						<OrderForm
 							cake={activeOffer}
-							initialprice={initialprice}
+							initialPrice={initialPrice}
 							onDescribeClick={handleDescribeClick}
 						/>
 					</section>
@@ -174,11 +174,11 @@ const CakeArticlePage = () => {
 												}
 											>
 												{fillingItem.ingredients.map(
-													ingridient => (
+													ingredient => (
 														<li
-															key={`${ingridient}`}
+															key={`${ingredient}`}
 														>
-															{ingridient}
+															{ingredient}
 														</li>
 													)
 												)}

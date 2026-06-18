@@ -3,10 +3,10 @@ import { useState } from 'react';
 import styles from './clause.module.scss';
 
 const Clauses = () => {
-	const [isVisibleArticle, setiIsVisibleArticle] = useState<boolean>(false);
+	const [isVisibleArticle, setIsVisibleArticle] = useState<boolean>(false);
 
 	const handleButtonClick = () => {
-		setiIsVisibleArticle(prevState => !prevState);
+		setIsVisibleArticle(prevState => !prevState);
 	};
 
 	return (

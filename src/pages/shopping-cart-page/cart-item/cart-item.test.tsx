@@ -60,13 +60,13 @@ describe('Component: CartList', () => {
 
 	it('should render quantity controls', () => {
 		const incrementLabelText = 'Увеличить количество';
-		const deccrementLabelText = 'Уменьшить количество';
+		const decrementLabelText = 'Уменьшить количество';
 
 		const fakeOrder = makeFakeOrder();
 		renderCartList([fakeOrder]);
 
 		expect(screen.getByLabelText(incrementLabelText)).toBeInTheDocument();
-		expect(screen.getByLabelText(deccrementLabelText)).toBeInTheDocument();
+		expect(screen.getByLabelText(decrementLabelText)).toBeInTheDocument();
 	});
 
 	it('should render filling info', () => {
@@ -79,10 +79,10 @@ describe('Component: CartList', () => {
 
 	it('should render weight info', () => {
 		const fakeOrder = makeFakeOrder();
-		const weghtText = /Вес:/i;
+		const weightText = /Вес:/i;
 		renderCartList([fakeOrder]);
 
-		expect(screen.getByText(weghtText)).toBeInTheDocument();
+		expect(screen.getByText(weightText)).toBeInTheDocument();
 	});
 
 	it('should render optional info', () => {
