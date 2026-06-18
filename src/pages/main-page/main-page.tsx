@@ -6,7 +6,7 @@ import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clause';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
-import { AppRoute, NAVS } from '../../constants';
+import { AppRoute, NAVS, LoadingStatus } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
 import { selectOffersLoadingStatus } from '../../store/cake-offers-data/cake-offers-data';
 import { selectFinalSum } from '../../store/cart-process/cart-process';
@@ -45,15 +45,15 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 
 	const errorMessage = useAppSelector(selectErrorMessage);
 
-	if (loadingStatus === 'Loading') {
+	if (loadingStatus === LoadingStatus.Loading) {
 		return (
 			<div className="container">
 				<div className="loader">Loading...</div>
 			</div>
 		);
 	}
-	
-	if (loadingStatus === 'Failed') {
+
+	if (loadingStatus === LoadingStatus.Failed) {
 		return (
 			<div className="container">
 				<div className="loader">{errorMessage}</div>
