@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Route, Routes } from 'react-router-dom';
+import { toast, Flip } from 'react-toastify';
 
 import { AppRoute } from '../../constants';
 import '../../global.module.scss';
@@ -22,6 +23,7 @@ import {
 	selectShoppingCart,
 	cartProcessActions
 } from '../../store/cart-process/cart-process';
+import { selectErrorMessage } from '../../store/main-process/main-process';
 import { CakeOrder } from '../../types/types';
 import getStorageCartValues from '../../utils/getStorageCartValues';
 import MainLayout from '../layout/main-layout';
@@ -32,6 +34,22 @@ function App() {
 	const bentoCakesOffers = cakeOffers.filter(cake => cake.isBento === true);
 	const { addCartItem } = useActionCreators(cartProcessActions);
 	const shoppingCart = useAppSelector(selectShoppingCart);
+	const errorMessage = useAppSelector(selectErrorMessage);
+	const prevErrorRef = useRef<string>('');
+
+	useEffect(() => {
+		if (errorMessage && errorMessage !== prevErrorRef.current) {
+			prevErrorRef.current = errorMessage;
+			toast.error(errorMessage, {
+				position: 'bottom-left',
+				transition: Flip,
+				draggable: true
+			});
+		}
+		if (!errorMessage) {
+			prevErrorRef.current = '';
+		}
+	}, [errorMessage]);
 
 	useEffect(() => {
 		if (typeof window === 'undefined') return;

@@ -1,5 +1,4 @@
 import axios, { AxiosError, AxiosInstance } from 'axios';
-import { toast, Flip } from 'react-toastify';
 
 import { requestTimeout } from '../constants';
 import { processErrorHandle } from './process-error-handle';
@@ -16,19 +15,10 @@ const createAPI = (): AxiosInstance => {
 	api.interceptors.response.use(
 		response => response,
 		(error: AxiosError) => {
-			if (error.response) {
+			if (error.response || error.request) {
 				processErrorHandle(error.message);
-				toast.error(error.message, {
-					position: 'bottom-left',
-					transition: Flip,
-					draggable: true
-				});
-			} else if (error.request) {
-				processErrorHandle(error.message);
-				toast.error(`Сервер не отвечает - ${error.message}`, {
-					position: 'bottom-left'
-				});
 			}
+
 			throw error;
 		}
 	);
