@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+import { ERROR_TIMEOUT } from '../constants';
 import store from '../store';
 import { mainProcessActions } from '../store/main-process/main-process';
 
-const ERROR_TIMEOUT = 5000;
 const { setError } = mainProcessActions;
 
 export const clearErrorAction = createAsyncThunk('data/clear-error', () => {

@@ -178,6 +178,10 @@ export const address: string = 'г. Москва, ул. Бутлерова, д. 
 
 export const pickupCoordinates: [number, number] = [55.741469, 37.615561];
 
+export const requestTimeout = 5000;
+
+export const ERROR_TIMEOUT = 5000;
+
 export const OuterRoute = {
 	Telegram: 'https://web.telegram.org/',
 	Instagram: 'https://www.instagram.com/',
