@@ -4,7 +4,7 @@ import Title from '../../components/title/title';
 import { ABOUT_QUESTIONS } from '../../constants';
 import styles from './about-page.module.scss';
 import Importance from './importance/importance';
-import Rewievs from './rewievs/rewievs';
+import Reviews from './reviews/reviews';
 
 const AboutPage = () => {
 	return (
@@ -41,7 +41,7 @@ const AboutPage = () => {
 					/>
 				</div>
 			</main>
-			<Rewievs />
+			<Reviews />
 		</div>
 	);
 };

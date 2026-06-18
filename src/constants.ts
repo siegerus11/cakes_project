@@ -59,8 +59,8 @@ export const NAVS: Nav[] = [
 	},
 	{
 		title: 'Отзывы',
-		image: '../public/images/pictures/navs/nav-rewievs.png',
-		path: `${AppRoute.About}#rewievs`
+		image: '../public/images/pictures/navs/nav-reviews.png',
+		path: `${AppRoute.About}#reviews`
 	},
 	{
 		title: 'Контакты',
@@ -199,7 +199,7 @@ export const deliveryTimes: string[] = [
 	'с 17:00 до 20:00'
 ];
 
-export const discoundValue = 15;
+export const discountValue = 15;
 
 export const validation = {
 	name: (value: string) => nameValidate(value),

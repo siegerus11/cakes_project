@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { LoadingStatus, discoundValue } from '../../constants';
+import { LoadingStatus, discountValue } from '../../constants';
 import makeFakeOrder from '../../mocks/makeFakeOrder';
 import { cartProcess, cartProcessActions } from './cart-process';
 
@@ -49,7 +49,7 @@ describe('Cart-proecss slice', () => {
 	it('Should return state with discountLoadingStatus: Success and discounted orders', () => {
 		const discountedOrder = {
 			...makeFakeOrder(),
-			price: Math.round(makeFakeOrder().price * (1 - discoundValue / 100))
+			price: Math.round(makeFakeOrder().price * (1 - discountValue / 100))
 		};
 		const initialState = {
 			shoppingCart: Array.from({ length: 3 }, makeFakeOrder),

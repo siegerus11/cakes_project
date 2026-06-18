@@ -1,8 +1,8 @@
 import Title from '../../../components/title/title';
-import REWIEVS from '../../../mocks/rewievs/rewievs';
-import styles from './rewievs.module.scss';
+import REVIEWS from '../../../mocks/reviews/reviews';
+import styles from './reviews.module.scss';
 
-type RewievsItemProps = {
+type ReviewsItemProps = {
 	avatar: string;
 	name: string;
 	text: string;
@@ -10,13 +10,13 @@ type RewievsItemProps = {
 	date: string;
 };
 
-const RewievsItem = ({
+const ReviewsItem = ({
 	avatar,
 	name,
 	text,
 	rating,
 	date
-}: RewievsItemProps) => {
+}: ReviewsItemProps) => {
 	return (
 		<li className={styles.item}>
 			<div className={styles.item__head}>
@@ -51,23 +51,23 @@ const RewievsItem = ({
 	);
 };
 
-const Rewievs = () => {
+const Reviews = () => {
 	return (
-		<section id="rewievs" className={styles.component}>
+		<section id="reviews" className={styles.component}>
 			<Title
 				level="h3"
 				titleClass={`title_fw800 ${styles.component__title}`}
 				titleText="Отзывы"
 			/>
 			<ul className={styles.component__list}>
-				{REWIEVS.map(rewiev => (
-					<RewievsItem
-						key={rewiev.id}
-						avatar={rewiev.avatar}
-						name={rewiev.name}
-						text={rewiev.text}
-						rating={rewiev.rating}
-						date={rewiev.date}
+				{REVIEWS.map(review => (
+					<ReviewsItem
+						key={review.id}
+						avatar={review.avatar}
+						name={review.name}
+						text={review.text}
+						rating={review.rating}
+						date={review.date}
 					/>
 				))}
 			</ul>
@@ -75,4 +75,4 @@ const Rewievs = () => {
 	);
 };
 
-export default Rewievs;
+export default Reviews;
