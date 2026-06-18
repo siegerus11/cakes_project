@@ -24,6 +24,11 @@ const createAPI = (): AxiosInstance => {
 					transition: Flip,
 					draggable: true
 				});
+			} else if (error.request) {
+				processErrorHandle(error.message);
+				toast.error(`Сервер не отвечает - ${error.message}`, {
+					position: 'bottom-left'
+				});
 			}
 			throw error;
 		}
