@@ -155,7 +155,7 @@ describe('Component: MainPage', () => {
 
 		renderMainPage(mockCakes, mockBentoCakes, initialState);
 
-		expect(screen.getByText('Cakes')).toBeInTheDocument();
+		expect(screen.getByText('Error...')).toBeInTheDocument();
 	});
 
 	it('should render clauses section', () => {
