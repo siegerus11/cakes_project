@@ -1,7 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { Route, Routes } from 'react-router-dom';
-import { toast, Flip } from 'react-toastify';
 
 import { AppRoute } from '../../constants';
 import '../../global.module.scss';
