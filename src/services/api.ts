@@ -1,4 +1,5 @@
 import axios, { AxiosError, AxiosInstance } from 'axios';
+import { toast, Flip } from 'react-toastify';
 
 import { processErrorHandle } from './process-error-handle';
 
@@ -18,8 +19,11 @@ const createAPI = (): AxiosInstance => {
 		(error: AxiosError) => {
 			if (error.response) {
 				processErrorHandle(error.message);
-				console.log(error.response);
-				console.log(error);
+				toast.error(error.message, {
+					position: 'bottom-left',
+					transition: Flip,
+					draggable: true
+				});
 			}
 			throw error;
 		}
