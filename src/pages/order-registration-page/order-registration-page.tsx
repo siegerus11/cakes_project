@@ -3,9 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import ButtonController from '../../components/button-controller/button-controller';
 import Title from '../../components/title/title';
 import SubmitButton from '../../components/ui/button/submit-button';
-import { AppRoute } from '../../constants';
+import { AppRoute, LoadingStatus } from '../../constants';
 import { useActionCreators, useAppSelector } from '../../hooks/useStore';
-import { cakeOffersDataActions } from '../../store/cake-offers-data/cake-offers-data';
+import {
+	cakeOffersDataActions,
+	selectOrderSendingStatus
+} from '../../store/cake-offers-data/cake-offers-data';
 import {
 	selectShoppingCart,
 	selectFinalSum
@@ -18,6 +21,7 @@ const OrderRegistrationPage = () => {
 	const navigate = useNavigate();
 
 	const cart = useAppSelector(selectShoppingCart);
+	const orderSendingStatus = useAppSelector(selectOrderSendingStatus);
 	const sum = useAppSelector(selectFinalSum);
 
 	const { sendOrderAction } = useActionCreators(cakeOffersDataActions);
@@ -71,6 +75,7 @@ const OrderRegistrationPage = () => {
 					className={`button button_primary ${styles.controller__button}`}
 					label="Оформить заказ"
 					formId="order-registration-form"
+					isDisabled={orderSendingStatus === LoadingStatus.Loading}
 				>
 					<span>Оформить заказ</span>
 				</SubmitButton>

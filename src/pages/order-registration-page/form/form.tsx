@@ -1,7 +1,9 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
 
 import SubmitButton from '../../../components/ui/button/submit-button';
-import { validation } from '../../../constants';
+import { validation, LoadingStatus } from '../../../constants';
+import { useAppSelector } from '../../../hooks/useStore';
+import { selectOrderSendingStatus } from '../../../store/cake-offers-data/cake-offers-data';
 import styles from './form.module.scss';
 
 type FormProps = {
@@ -14,6 +16,8 @@ type FormProps = {
 };
 
 const Form = ({ onSubmit }: FormProps) => {
+	const orderSendingStatus = useAppSelector(selectOrderSendingStatus);
+
 	const formValuesInitial = {
 		name: '',
 		phone: '',
@@ -190,6 +194,7 @@ const Form = ({ onSubmit }: FormProps) => {
 				className={`button button_primary ${styles.button}`}
 				label="Оформить заказ"
 				formId="order-registration-form"
+				isDisabled={orderSendingStatus === LoadingStatus.Loading}
 			>
 				<span>Оформить заказ</span>
 			</SubmitButton>
