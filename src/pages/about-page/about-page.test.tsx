@@ -8,9 +8,9 @@ jest.mock('./importance/importance', () => {
 	return { __esModule: true, default: MockImportance };
 });
 
-jest.mock('./rewievs/rewievs', () => {
-	const MockRewievs = () => <div data-testid="rewievs">Rewievs</div>;
-	return { __esModule: true, default: MockRewievs };
+jest.mock('./reviews/reviews', () => {
+	const MockReviews = () => <div data-testid="reviews">Reviews</div>;
+	return { __esModule: true, default: MockReviews };
 });
 
 jest.mock('../../components/bread-crumbs/bread-crumbs', () => {

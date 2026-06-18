@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { NameSpace, LoadingStatus, discoundValue } from '../../constants';
+import { NameSpace, LoadingStatus, discountValue } from '../../constants';
 import { CakeOrder } from '../../types/types';
 import { getDiscountAction } from '../api-actions';
 
@@ -91,7 +91,7 @@ export const cartProcess = createSlice({
 					return {
 						...order,
 						price: Math.round(
-							order.price * (1 - discoundValue / 100)
+							order.price * (1 - discountValue / 100)
 						)
 					};
 				})

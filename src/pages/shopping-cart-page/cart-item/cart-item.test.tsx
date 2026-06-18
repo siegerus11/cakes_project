@@ -58,7 +58,7 @@ describe('Component: CartList', () => {
 		expect(screen.getByText(/3\s?600\s?₽/)).toBeInTheDocument();
 	});
 
-	it('should render quantity controls', () => {
+		it('should render quantity controls', () => {
 		const incrementLabelText = 'Увеличить количество';
 		const decrementLabelText = 'Уменьшить количество';
 
