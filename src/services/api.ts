@@ -1,12 +1,11 @@
 import axios, { AxiosError, AxiosInstance } from 'axios';
 import { toast, Flip } from 'react-toastify';
 
+import { requestTimeout } from '../constants';
 import { processErrorHandle } from './process-error-handle';
 
-// const { BASE_URL } = import.meta.env;
+const { BASE_URL } = import.meta.env;
 const MOCK_BASE_URL = '../../mock-api';
-
-const requestTimeout = 5000;
 
 const createAPI = (): AxiosInstance => {
 	const api = axios.create({

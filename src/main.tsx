@@ -12,15 +12,14 @@ import { cakeOffersDataActions } from './store/cake-offers-data/cake-offers-data
 store.dispatch(cakeOffersDataActions.fetchOffersAction());
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-	// <React.StrictMode>
-	<BrowserRouter
-		future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-	>
-		<Provider store={store}>
-			<App />
-			<ToastContainer />
-		</Provider>
-	</BrowserRouter>
-
-	// </React.StrictMode>
+	<React.StrictMode>
+		<BrowserRouter
+			future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+		>
+			<Provider store={store}>
+				<App />
+				<ToastContainer />
+			</Provider>
+		</BrowserRouter>
+	</React.StrictMode>
 );
