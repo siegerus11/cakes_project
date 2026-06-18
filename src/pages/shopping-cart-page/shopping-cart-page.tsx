@@ -88,7 +88,7 @@ const ShoppingCartPage = () => {
 		const result = validation.promo(value);
 		if (result === true) {
 			setErrorMessage('');
-		} else {
+		} else if (typeof result === 'string') {
 			setErrorMessage(result);
 		}
 	};
