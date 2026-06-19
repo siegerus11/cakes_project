@@ -9,11 +9,17 @@ import styles from './cards-list.module.scss';
 
 type CardsListProps = {
 	cakes: CakeOffer[];
+	randomImages?: string[] | undefined;
 	isMainPage: boolean;
 	path?: string;
 };
 
-const CardsList = ({ cakes, isMainPage, path }: CardsListProps) => {
+const CardsList = ({
+	cakes,
+	randomImages,
+	isMainPage,
+	path
+}: CardsListProps) => {
 	const sortingStatus = useAppSelector(selectSortingStatus);
 	const sortedCakes = useMemo(
 		() => getSortedByCategory(cakes, sortingStatus),
@@ -36,7 +42,7 @@ const CardsList = ({ cakes, isMainPage, path }: CardsListProps) => {
 			})}
 			{isMainPage && (
 				<li>
-					<AllCard cake={cakes[0]} path={path} />
+					<AllCard images={randomImages} path={path} />
 				</li>
 			)}
 		</ul>
