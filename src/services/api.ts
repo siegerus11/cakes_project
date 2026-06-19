@@ -1,11 +1,11 @@
 import axios, { AxiosError, AxiosInstance } from 'axios';
+import { toast, Flip } from 'react-toastify';
 
+import { requestTimeout } from '../constants';
 import { processErrorHandle } from './process-error-handle';
 
-// const { BASE_URL } = import.meta.env;
+const { BASE_URL } = import.meta.env;
 const MOCK_BASE_URL = '../../mock-api';
-
-const requestTimeout = 5000;
 
 const createAPI = (): AxiosInstance => {
 	const api = axios.create({
@@ -16,10 +16,15 @@ const createAPI = (): AxiosInstance => {
 	api.interceptors.response.use(
 		response => response,
 		(error: AxiosError) => {
-			if (error.response) {
+			if (error.response || error.request) {
 				processErrorHandle(error.message);
-				console.log(error.response);
-				console.log(error);
+				setTimeout(() => {
+					toast.error(error.message, {
+						position: 'bottom-left',
+						transition: Flip,
+						draggable: true
+					});
+				}, 0);
 			}
 			throw error;
 		}

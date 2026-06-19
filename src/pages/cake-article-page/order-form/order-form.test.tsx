@@ -100,7 +100,7 @@ describe('Component: OrderForm', () => {
 		const component = withHistory(
 			<OrderForm
 				cake={fakeCake}
-				initialprice={3600}
+				initialPrice={3600}
 				onDescribeClick={mockOnDescribeClick}
 			/>
 		);

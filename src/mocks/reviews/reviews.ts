@@ -10,7 +10,7 @@ type Review = {
 	date: string;
 };
 
-const REWIEVS: Review[] = [
+const REVIEWS: Review[] = [
 	{
 		id: uuidv(),
 		avatar: 'https://i.pravatar.cc/96?img=5',
@@ -109,4 +109,4 @@ const REWIEVS: Review[] = [
 	},
 ];
 
-export default REWIEVS;
+export default REVIEWS;

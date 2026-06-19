@@ -59,8 +59,8 @@ export const NAVS: Nav[] = [
 	},
 	{
 		title: 'Отзывы',
-		image: '../public/images/pictures/navs/nav-rewievs.png',
-		path: `${AppRoute.About}#rewievs`
+		image: '../public/images/pictures/navs/nav-reviews.png',
+		path: `${AppRoute.About}#reviews`
 	},
 	{
 		title: 'Контакты',
@@ -119,7 +119,7 @@ export const ConfirmMessage = {
 export const IMPORTANCES = [
 	{
 		title: 'Вкус — это главное',
-		description: `Нам самим надоели слишком при торты, от которых устаёшь ещё на половине кусочка.
+		description: `Нам самим надоели слишком приторные торты, от которых устаёшь ещё на половине кусочка.
 			Мы создаем сбалансированные вкусы, которые хочется кушать снова и снова.`
 	},
 	{
@@ -178,6 +178,10 @@ export const address: string = 'г. Москва, ул. Бутлерова, д. 
 
 export const pickupCoordinates: [number, number] = [55.741469, 37.615561];
 
+export const requestTimeout = 5000;
+
+export const ERROR_TIMEOUT = 5000;
+
 export const OuterRoute = {
 	Telegram: 'https://web.telegram.org/',
 	Instagram: 'https://www.instagram.com/',
@@ -195,7 +199,7 @@ export const deliveryTimes: string[] = [
 	'с 17:00 до 20:00'
 ];
 
-export const discoundValue = 15;
+export const discountValue = 15;
 
 export const validation = {
 	name: (value: string) => nameValidate(value),

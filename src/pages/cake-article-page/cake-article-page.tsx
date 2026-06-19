@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback, AnimationEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, Navigate } from 'react-router-dom';
 
 import Overlay from '../../components/overlay/overlay';
 import Popup from '../../components/popup/popup';
@@ -42,7 +42,7 @@ const CakeArticlePage = () => {
 		styles.overlay_closing
 	);
 
-	const initialprice = useMemo(() => activeOffer?.price ?? 0, [activeOffer]);
+	const initialPrice = useMemo(() => activeOffer?.price ?? 0, [activeOffer]);
 
 	const filling = useMemo(() => activeOffer?.filling ?? [], [activeOffer]);
 
@@ -85,7 +85,7 @@ const CakeArticlePage = () => {
 	const touchBack = useTouch(handleTouchBack);
 
 	if (!activeOffer) {
-		return null;
+		return <Navigate to={AppRoute.Catalog} replace />;
 	}
 
 	return (
@@ -117,7 +117,7 @@ const CakeArticlePage = () => {
 						</div>
 						<OrderForm
 							cake={activeOffer}
-							initialprice={initialprice}
+							initialPrice={initialPrice}
 							onDescribeClick={handleDescribeClick}
 						/>
 					</section>
@@ -174,11 +174,11 @@ const CakeArticlePage = () => {
 												}
 											>
 												{fillingItem.ingredients.map(
-													ingridient => (
+													ingredient => (
 														<li
-															key={`${ingridient}`}
+															key={`${ingredient}`}
 														>
-															{ingridient}
+															{ingredient}
 														</li>
 													)
 												)}

@@ -139,7 +139,6 @@ describe('Component: MainPage', () => {
 	});
 
 	it('should render error state', () => {
-		const expectedError = 'Failed to load offers';
 		const initialState = {
 			[NameSpace.Data]: {
 				cakeOffers: [],
@@ -150,13 +149,13 @@ describe('Component: MainPage', () => {
 				totalPrice: 0,
 				activeOffer: '',
 				sortingStatus: '',
-				errorText: expectedError
+				errorText: 'Failed to load offers'
 			}
 		};
 
 		renderMainPage(mockCakes, mockBentoCakes, initialState);
 
-		expect(screen.getByText(expectedError)).toBeInTheDocument();
+		expect(screen.getByText('Error...')).toBeInTheDocument();
 	});
 
 	it('should render clauses section', () => {

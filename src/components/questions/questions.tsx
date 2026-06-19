@@ -65,13 +65,13 @@ const Questions = ({
 	wrapperClass = '',
 	questions
 }: QuestionsProps) => {
-	const [relavantQuestions, setRelavantQuestions] =
+	const [relevantQuestions, setRelevantQuestions] =
 		useState<Question[]>(questions);
 
 	const handleOpenButtonClick = useCallback(
 		(idx: number) => {
-			setRelavantQuestions(
-				relavantQuestions.map((question, i) => {
+			setRelevantQuestions(
+				relevantQuestions.map((question, i) => {
 					if (i === idx) {
 						return {
 							...question,
@@ -82,7 +82,7 @@ const Questions = ({
 				})
 			);
 		},
-		[relavantQuestions]
+		[relevantQuestions]
 	);
 
 	return (
@@ -94,7 +94,7 @@ const Questions = ({
 			/>
 
 			<ul className={styles.list}>
-				{relavantQuestions.map((question, i) => {
+				{relevantQuestions.map((question, i) => {
 					const keyValue = `${question.title}-${i}`;
 					return (
 						<QuestionsItem

@@ -1,0 +1,67 @@
+@use '../../_variables' as variables;
+@use '../../_mixins' as mixins;
+
+.page {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+.wrapper {
+	@include mixins.flex-column-center;
+}
+
+.code {
+	font-size: 96px;
+	font-weight: 800;
+	line-height: 1;
+	color: variables.$color-bg-accent;
+}
+
+.title {
+	margin-top: 16px;
+	font-size: 24px;
+	font-weight: 800;
+	line-height: 133%;
+}
+
+.description {
+	max-width: 360px;
+	margin-top: 12px;
+	line-height: 150%;
+	text-align: center;
+}
+
+.button {
+	margin-top: 40px;
+	padding: 17px 60px 16px 60px;
+
+	span {
+		font-weight: 600;
+		line-height: 119%;
+	}
+}
+
+@media (max-width: 576px) {
+	.page {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
+	.code {
+		font-size: 72px;
+	}
+
+	.title {
+		font-size: 20px;
+	}
+
+	.description {
+		max-width: 280px;
+		font-size: 14px;
+	}
+
+	.button {
+		margin-top: 32px;
+		padding: 14px 40px 13px 40px;
+	}
+}
