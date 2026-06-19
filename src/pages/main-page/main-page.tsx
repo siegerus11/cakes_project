@@ -12,6 +12,7 @@ import { selectOffersLoadingStatus } from '../../store/cake-offers-data/cake-off
 import { selectFinalSum } from '../../store/cart-process/cart-process';
 import { CakeOffer } from '../../types/types';
 import getFormattedPrice from '../../utils/getFormattedPrice';
+import getRandomImages from '../../utils/getRandomImages';
 import styles from './main-page.module.scss';
 
 type MainPageProps = {
@@ -32,6 +33,11 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 		() => bentoCakes.slice(0, 3),
 		[bentoCakes]
 	);
+
+	const randomImages = {
+		cakes: getRandomImages(cakes),
+		bentoCakes: getRandomImages(bentoCakes)
+	};
 
 	const cakesTitle = useMemo(
 		() => NAVS.find(nav => nav.title === 'Торты')?.title,
@@ -78,6 +84,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						</div>
 						<CardsList
 							isMainPage
+							randomImages={randomImages.cakes}
 							cakes={splicedCakes}
 							path={AppRoute.CakesCatalog}
 						/>
@@ -99,6 +106,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 						</div>
 						<CardsList
 							isMainPage
+							randomImages={randomImages.bentoCakes}
 							cakes={splicedBentoCakes}
 							path={AppRoute.BentoCakesCatalog}
 						/>

@@ -52,20 +52,21 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 export default Card;
 
 type AllCardProps = {
-	cake: CakeOffer;
+	images: string[] | undefined;
 	path?: string;
 };
 
-const AllCard = ({ cake, path }: AllCardProps) => {
+const AllCard = ({ images, path }: AllCardProps) => {
 	const linkTo = path ?? AppRoute.Catalog;
+
 	return (
 		<Link className={styles.grid} to={linkTo}>
-			{cake.images.map((image, i) => {
-				const keyValue = `${i}-${cake.title}`;
+			{images?.map((image, i) => {
+				const keyValue = `${i}-${image}`;
 				return (
 					<img
 						src={image}
-						alt={`Торт "${cake.title}" - изображение ${i + 1}`}
+						alt={`Торт "${image}" - изображение ${i + 1}`}
 						width="141"
 						height="141"
 						key={keyValue}
