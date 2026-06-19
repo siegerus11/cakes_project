@@ -61,28 +61,28 @@ describe('Component: Card', () => {
 });
 
 describe('Component: AllCard', () => {
-	const renderAllCard = (cake: CakeOffer, path?: string) => {
+	const renderAllCard = (images: string[] | undefined, path?: string) => {
 		const componentWithHistory = withHistory(
-			<AllCard cake={cake} path={path} />
+			<AllCard images={images} path={path} />
 		);
 		const { withStoreComponent } = withStore(componentWithHistory);
 		return render(withStoreComponent);
 	};
 
-	it('should render all cake images', () => {
-		const expectedAlt1 = 'Торт "title" - изображение 1';
-		const expectedAlt2 = 'Торт "title" - изображение 2';
+	it('should render all images', () => {
+		renderAllCard(fakeCake.images);
 
-		renderAllCard(fakeCake);
-
-		expect(screen.getByAltText(expectedAlt1)).toBeInTheDocument();
-		expect(screen.getByAltText(expectedAlt2)).toBeInTheDocument();
+		fakeCake.images.forEach((image, i) => {
+			expect(
+				screen.getByAltText(`Торт "${image}" - изображение ${i + 1}`)
+			).toBeInTheDocument();
+		});
 	});
 
 	it('should render "Открыть все" text', () => {
 		const expectedText = 'Открыть все';
 
-		renderAllCard(fakeCake);
+		renderAllCard(fakeCake.images);
 
 		expect(screen.getByText(expectedText)).toBeInTheDocument();
 	});
@@ -90,7 +90,7 @@ describe('Component: AllCard', () => {
 	it('should link to catalog by default', () => {
 		const expectedPath = AppRoute.Catalog;
 
-		renderAllCard(fakeCake);
+		renderAllCard(fakeCake.images);
 
 		const link = screen.getByRole('link');
 		expect(link.getAttribute('href')).toBe(expectedPath);
@@ -99,7 +99,7 @@ describe('Component: AllCard', () => {
 	it('should link to custom path when provided', () => {
 		const expectedPath = AppRoute.CakesCatalog;
 
-		renderAllCard(fakeCake, expectedPath);
+		renderAllCard(fakeCake.images, expectedPath);
 
 		const link = screen.getByRole('link');
 		expect(link.getAttribute('href')).toBe(expectedPath);

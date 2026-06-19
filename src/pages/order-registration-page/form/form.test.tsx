@@ -1,7 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { NameSpace, LoadingStatus } from '../../../constants';
+import makeFakeCakeOffer from '../../../mocks/makeFakeOffer';
+import makeFakeOrder from '../../../mocks/makeFakeOrder';
 import withHistory from '../../../mocks/withHistory';
+import withStore from '../../../mocks/withStore';
 import Form from './form';
 
 describe('Component: Form', () => {
@@ -11,11 +15,16 @@ describe('Component: Form', () => {
 		handleSubmit.mockClear();
 	});
 
-	const renderForm = () => {
+	const renderForm = (initialState = {}) => {
 		const componentWithHistory = withHistory(
 			<Form onSubmit={handleSubmit} />
 		);
-		return render(componentWithHistory);
+		const { withStoreComponent } = withStore(
+			componentWithHistory,
+			initialState
+		);
+
+		return render(withStoreComponent);
 	};
 
 	it('Should render correctly', () => {
@@ -111,6 +120,28 @@ describe('Component: Form', () => {
 		const submitButtonText = 'Оформить заказ';
 
 		renderForm();
+
+		await userEvent.click(screen.getByText(submitButtonText));
+
+		expect(handleSubmit).not.toHaveBeenCalled();
+	});
+
+	it('Should submit button disabled, when loading status is Loading', async () => {
+		const submitButtonText = 'Оформить заказ';
+		const fakeOrder = makeFakeOrder();
+		const fakeCake = makeFakeCakeOffer();
+
+		renderForm({
+			[NameSpace.Data]: {
+				cakeOffers: [fakeCake],
+				offersLoadingStatus: LoadingStatus.Idle,
+				orderSendingStatus: LoadingStatus.Loading
+			},
+			[NameSpace.Cart]: {
+				shoppingCart: [fakeOrder],
+				discountLoadingStatus: LoadingStatus.Idle
+			}
+		});
 
 		await userEvent.click(screen.getByText(submitButtonText));
 
