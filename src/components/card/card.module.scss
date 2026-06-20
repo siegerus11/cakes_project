@@ -5,9 +5,9 @@
 .card {
 	display: block;
 	min-width: 282px;
+	animation: fadeIn 0.5s both;
 	color: variables.$color-text-primary;
 	text-decoration: none;
-	animation: fadeIn 0.5s both;
 
 	&:hover {
 		color: variables.$color-primary;
@@ -17,8 +17,8 @@
 		display: block;
 		max-width: 100%;
 		max-height: 100%;
-		object-fit: cover;
 		border-radius: 20px;
+		object-fit: cover;
 	}
 }
 
@@ -26,19 +26,20 @@
 	display: block;
 	max-width: 210px;
 	margin-top: 11px;
-	font-weight: 600;
 	font-size: 18px;
+	font-weight: 600;
 	line-height: 22px;
 }
 
 .bottom {
 	@include mixins.flex-between;
+
 	margin-top: 5px;
 }
 
 .cost {
-	font-weight: 400;
 	font-size: 16px;
+	font-weight: 400;
 	line-height: 19px;
 }
 
@@ -46,8 +47,8 @@
 	composes: card;
 	position: relative;
 	display: grid;
-	grid-template-rows: repeat(2, 141px);
 	grid-template-columns: repeat(2, 141px);
+	grid-template-rows: repeat(2, 141px);
 
 	img {
 		filter: brightness(60%);
@@ -55,7 +56,7 @@
 
 	img {
 		&:nth-child(1) {
-			border-radius: 20px 0 0 0;
+			border-radius: 20px 0 0;
 		}
 
 		&:nth-child(2) {
@@ -67,9 +68,10 @@
 		}
 
 		&:nth-child(4) {
-			border-radius: 0 0 20px 0;
+			border-radius: 0 0 20px;
 		}
 	}
+
 	&:hover {
 		.allButton {
 			span::after {
@@ -86,29 +88,29 @@
 	left: 50%;
 	min-width: 188px;
 	padding: 15px 53px 15px 25px;
-	color: variables.$color-text-primary;
-	text-decoration: none;
 	background-color: variables.$color-text-inverted;
 	border-radius: 50px;
+	color: variables.$color-text-primary;
+	text-decoration: none;
 	transform: translate(-50%, -50%);
 	@include mixins.flex-center;
 
 	span {
 		position: relative;
-		font-weight: 600;
 		font-size: 17px;
+		font-weight: 600;
 		line-height: 21px;
 		white-space: nowrap;
 
-		&:after {
+		&::after {
 			position: absolute;
 			top: 58%;
 			right: -30px;
 			width: 18px;
 			height: 18px;
 			background-image: url('/images/nav-arrow-big.svg');
-			transform: translateY(-50%);
 			content: '';
+			transform: translateY(-50%);
 		}
 	}
 }
@@ -126,8 +128,8 @@
 		width: 12px;
 		height: 2px;
 		background-color: variables.$color-text-inverted;
-		transform: translate(-50%, -50%);
 		content: '';
+		transform: translate(-50%, -50%);
 	}
 
 	&::after {
@@ -137,8 +139,8 @@
 		width: 2px;
 		height: 12px;
 		background-color: variables.$color-text-inverted;
-		transform: translate(-50%, -50%);
 		content: '';
+		transform: translate(-50%, -50%);
 	}
 }
 
@@ -148,8 +150,8 @@
 	}
 
 	.grid {
-		grid-template-rows: repeat(2, 112px);
 		grid-template-columns: repeat(2, 112px);
+		grid-template-rows: repeat(2, 112px);
 	}
 }
 
@@ -213,15 +215,15 @@
 	}
 
 	.title {
-		display: -webkit-box;
+		display: box;
+		overflow: hidden;
 		max-width: 165px;
 		padding: 0 12px;
-		overflow: hidden;
+		-webkit-box-orient: vertical;
 		font-weight: 400;
-		text-overflow: ellipsis;
 		-webkit-line-clamp: 2;
 		line-clamp: 2;
-		-webkit-box-orient: vertical;
+		text-overflow: ellipsis;
 	}
 
 	.cost {
@@ -229,7 +231,7 @@
 	}
 
 	.bottom {
-		padding: 0 12px 12px 12px;
+		padding: 0 12px 12px;
 	}
 
 	.button {

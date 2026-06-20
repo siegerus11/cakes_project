@@ -2,12 +2,12 @@
 
 .wrapper {
 	display: flex;
+	min-width: 26px;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	min-width: 26px;
-	background-color: variables.$color-text-inverted;
 	border: none;
+	background-color: variables.$color-text-inverted;
 
 	&_asEnd {
 		align-self: flex-end;
@@ -21,7 +21,7 @@
 
 		&:nth-child(2) {
 			max-width: 20px;
-			margin: 6px 0 6px 0;
+			margin: 6px 0;
 		}
 	}
 }
@@ -37,7 +37,7 @@
 
 			&:nth-child(2) {
 				max-width: 14px;
-				margin: 4px 0 4px 0;
+				margin: 4px 0;
 			}
 		}
 	}

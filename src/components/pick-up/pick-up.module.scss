@@ -19,6 +19,7 @@
 	&__button {
 		@include mixins.button-reset;
 		@include mixins.hover-text;
+
 		color: variables.$color-link;
 		line-height: 150%;
 		text-decoration: underline;
@@ -41,8 +42,8 @@
 	address {
 		margin: 0;
 		margin-top: 10px;
-		line-height: 150%;
 		letter-spacing: 0.14px;
+		line-height: 150%;
 	}
 
 	&_revert {

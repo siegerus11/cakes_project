@@ -1,12 +1,12 @@
 @use '../../_variables' as variables;
 
 .component {
-	padding: 56px 0 90px 0;
+	padding: 56px 0 90px;
 }
 
 @media (max-width: 767px) {
 	.component {
-		padding: 25px 0 90px 0;
+		padding: 25px 0 90px;
 
 		hr {
 			margin-bottom: 15px;

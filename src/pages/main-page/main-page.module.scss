@@ -2,7 +2,7 @@
 @use '../../_mixins' as mixins;
 
 .component {
-	padding: 94px 0 90px 0;
+	padding: 94px 0 90px;
 }
 
 .headline {
@@ -12,8 +12,8 @@
 		position: relative;
 		display: none;
 		color: variables.$color-text-primary;
-		font-weight: 600;
 		font-size: 12px;
+		font-weight: 600;
 		line-height: 125%;
 		text-decoration: none;
 
@@ -25,11 +25,11 @@
 			height: 18px;
 			background-color: variables.$color-bg-secondary;
 			background-image: url('/images/nav-arrow-sm.svg');
-			background-repeat: no-repeat;
 			background-position: center;
+			background-repeat: no-repeat;
 			border-radius: 100px;
-			transform: translateY(-50%);
 			content: '';
+			transform: translateY(-50%);
 		}
 	}
 }
@@ -44,7 +44,7 @@
 
 @media (max-width: 992px) {
 	.page {
-		padding: 10px 0 90px 0;
+		padding: 10px 0 90px;
 	}
 
 	.controller {
@@ -62,9 +62,9 @@
 
 	.button {
 		display: flex;
+		min-width: 340px;
 		align-items: center;
 		justify-content: center;
-		min-width: 340px;
 		margin: 0 auto;
 		column-gap: 60px;
 
@@ -87,14 +87,12 @@
 
 @media (max-width: 576px) {
 	.component {
-		padding: 43px 0 65px 0;
+		padding: 43px 0 65px;
 	}
 
 	.headline {
 		padding-right: 26px;
-	}
 
-	.headline {
 		&__link {
 			font-size: 12px;
 
@@ -109,12 +107,12 @@
 	}
 
 	.page {
-		padding: 10px 0 60px 0;
+		padding: 10px 0 60px;
 	}
 
 	.button {
 		justify-content: unset;
-		padding: 15px 15px;
+		padding: 15px;
 		column-gap: unset;
 
 		&__text {

@@ -9,15 +9,17 @@
 
 .back {
 	@include mixins.button-reset;
+
 	margin-left: 81px;
+
 	&::before {
 		height: 16px;
 	}
 }
 
 .title {
-	font-weight: 800;
 	font-size: 30px;
+	font-weight: 800;
 }
 
 .wrapper {
@@ -39,69 +41,70 @@
 
 .trashButton {
 	@include mixins.flex-center;
+
 	width: 36px;
 	height: 36px;
-	background: variables.$color-bg-secondary;
 	border: none;
+	background: variables.$color-bg-secondary;
 	border-radius: 8px;
 	cursor: pointer;
 }
 
 .total {
 	display: flex;
+	max-width: 174px;
 	flex-direction: column;
 	align-items: flex-end;
-	max-width: 174px;
 	margin-top: 22px;
 	margin-left: auto;
 	white-space: nowrap;
 
 	span {
-		font-weight: 700;
 		font-size: 22px;
+		font-weight: 700;
 	}
 
 	&__button {
 		display: flex;
+		width: 100%;
 		align-items: center;
 		justify-content: flex-end;
-		width: 100%;
 		margin-top: 12px;
 		cursor: pointer;
 		text-underline-offset: 4px;
 
 		span {
-			font-weight: 400;
 			font-size: 16px;
+			font-weight: 400;
 			line-height: 119%;
 		}
 	}
 }
 
 .button {
-	justify-content: center;
 	min-width: 298px;
 	max-width: 298px;
+	justify-content: center;
+	padding: 17px 23px 16px;
 	margin-top: 55px;
 	margin-left: auto;
-	padding: 17px 23px 16px 23px;
 
 	span {
-		font-weight: 600;
 		font-size: 16px;
+		font-weight: 600;
 		line-height: 120%;
 	}
 }
 
 .popup {
-	padding: 27px 30px 30px 30px;
+	padding: 27px 30px 30px;
 	animation: fadeIn 0.2s ease-in-out;
 
 	&__button {
-		justify-content: center;
 		width: 100%;
+		justify-content: center;
+		padding: 17px 23px 16px;
 		margin-top: 21px;
-		padding: 17px 23px 16px 23px;
 
 		span {
 			display: block;
@@ -116,17 +119,17 @@
 		right: 14px;
 		width: 24px;
 		height: 24px;
+		border: none;
+		background-color: variables.$color-text-inverted;
+		border-radius: 50%;
 		color: variables.$color-text-light;
+		cursor: pointer;
 		font-size: 12px;
 		line-height: 24px;
 		text-align: center;
-		background-color: variables.$color-text-inverted;
-		border: none;
-		border-radius: 50%;
 		transform: translateY(-50%);
-		cursor: pointer;
 
-		&:before {
+		&::before {
 			content: '✕';
 		}
 	}
@@ -137,14 +140,14 @@
 		right: 30px;
 		width: 18px;
 		height: 18px;
-		background: none;
 		border: none;
+		background: none;
 	}
 
 	&__title {
 		max-width: 80%;
-		font-weight: 700;
 		font-size: 22px;
+		font-weight: 700;
 		line-height: 82%;
 	}
 
@@ -159,8 +162,8 @@
 		display: block;
 		width: 100%;
 		padding: 14px 15px;
-		background-color: variables.$color-bg-secondary;
 		border: none;
+		background-color: variables.$color-bg-secondary;
 		border-radius: 12px;
 		outline: none;
 
@@ -212,8 +215,8 @@
 	}
 
 	.title {
-		font-weight: 900;
 		font-size: 24px;
+		font-weight: 900;
 	}
 
 	.total {
@@ -221,16 +224,16 @@
 		margin-top: 20px;
 
 		span {
-			font-weight: 700;
 			font-size: 17px;
+			font-weight: 700;
 		}
 
 		&__button {
 			margin-top: 16px;
 
 			span {
-				font-weight: 400;
 				font-size: 14px;
+				font-weight: 400;
 				line-height: 129%;
 			}
 		}
@@ -248,8 +251,8 @@
 			padding: 15px 23px;
 
 			span {
-				font-weight: 600;
 				font-size: 14px;
+				font-weight: 600;
 			}
 		}
 	}
@@ -258,14 +261,14 @@
 		top: auto;
 		bottom: 0;
 		left: 0;
+		overflow: visible;
 		width: 100%;
 		height: 264px;
 		max-height: unset;
 		padding: 10px;
-		overflow: visible;
+		animation: popupOpening 0.3s ease;
 		border-radius: 22px 22px 0 0;
 		transform: unset;
-		animation: popupOpening 0.3s ease;
 
 		&__wrapper {
 			margin-top: 0;
@@ -276,14 +279,14 @@
 		}
 
 		&__close {
+			z-index: 100;
 			top: -7px;
 			right: unset;
 			left: 50%;
-			z-index: 100;
 			display: block;
 			width: 39px;
 			height: 4px;
-			background: rgba(255, 255, 255, 0.5);
+			background: rgb(255 255 255 / 50%);
 			border-radius: 8px;
 			transform: translateX(-50%);
 

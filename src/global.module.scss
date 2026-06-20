@@ -17,8 +17,8 @@
 }
 
 * {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
 
 a {
@@ -31,27 +31,27 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
 
 ul,
 ol {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	list-style: none;
 }
 
 html,
 body {
-	font-weight: 400;
 	font-family: var(--primary-font);
+	font-weight: 400;
 }
 
 :global(.container) {
 	width: 1200px;
-	margin: 0 auto;
 	padding: 0;
+	margin: 0 auto;
 
 	&:global(_secondary) {
 		max-width: 1098px;
@@ -64,16 +64,15 @@ body {
 
 :global(.visually-hidden) {
 	position: absolute;
+	overflow: hidden;
 	width: 1px;
 	height: 1px;
-	margin: -1px;
 	padding: 0;
-	overflow: hidden;
-	white-space: nowrap;
 	border: 0;
+	margin: -1px;
 	clip: rect(0 0 0 0);
-	-webkit-clip-path: inset(100%);
 	clip-path: inset(100%);
+	white-space: nowrap;
 }
 
 :global(.back-link) {
@@ -90,8 +89,8 @@ body {
     left: -28px;
     width: 18px;
     height: 18px;
+    fill: currentcolor;
     transform: translateY(-50%) rotate(180deg);
-    fill: currentColor;
   }
 
   &:hover {
@@ -99,7 +98,7 @@ body {
   }
 
 	&:hover {
-		&:before {
+		&::before {
 			@include mixins.hover-text;
 
 		}
@@ -108,12 +107,12 @@ body {
 
 :global(.dot-lined) {
 	display: block;
+	border: none;
+	background: none;
 	color: variables.$color-text-light;
 	font-size: 13px;
 	line-height: 130%;
 	text-decoration: underline;
-	background: none;
-	border: none;
 	text-decoration-style: dotted;
 	@include mixins.hover-text;
 }
@@ -128,14 +127,15 @@ body {
 :global(.close) {
 	&:hover {
 		svg {
-			transition: variables.$all-transition;
 			fill: variables.$color-primary;
+			transition: variables.$all-transition;
 		}
 	}
 }
 
 :global(.cart-press) {
 	transition: variables.$all-transition;
+
 	&:hover {
 		background-color: variables.$color-bg-spec;
 	}
@@ -159,8 +159,8 @@ body {
 }
 
 :global(.error-message) {
-	font-size: 14px;
 	color: variables.$color-error;
+	font-size: 14px;
 }
 
 @media (max-width: 1200px) {

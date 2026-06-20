@@ -4,31 +4,32 @@
 :global(.button) {
 	@include mixins.hover-overlay;
 	@include mixins.active-overlay-accent;
-	text-decoration: none;
+
 	border: none;
+	text-decoration: none;
 
 	&:global(_primary) {
 		display: flex;
 		align-items: center;
 		padding: 16px 23px;
-		color: vars.$color-text-inverted;
 		background-color: vars.$color-primary;
 		border-radius: 22px;
+		color: vars.$color-text-inverted;
 	}
 
 	&:global(_secondary) {
 		display: flex;
 		align-items: center;
 		padding: 15px 50px;
-		font-size: 16px;
-		white-space: nowrap;
 		background-color: vars.$color-info;
 		border-radius: 20px;
+		font-size: 16px;
+		white-space: nowrap;
 	}
 
 	&:global(_tertiary) {
-		background-color: vars.$color-primary;
 		border: none;
+		background-color: vars.$color-primary;
 		border-radius: 9px;
 	}
 
@@ -37,8 +38,8 @@
 	}
 
 	&:disabled {
-		opacity: 0.5;
 		cursor: not-allowed;
+		opacity: 0.5;
 		pointer-events: none;
 	}
 }
