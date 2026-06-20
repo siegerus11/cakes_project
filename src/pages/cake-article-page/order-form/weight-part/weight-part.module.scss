@@ -55,7 +55,7 @@
 		left: 0;
 		width: 100%;
 		padding: 16px 20px;
-		animation: fade-in 0.3s ease-in-out;
+		animation: fadeIn 0.3s ease-in-out;
 		background-color: variables.$color-bg-secondary;
 		border-radius: 11px;
 
@@ -85,7 +85,7 @@
 	}
 
 	input:checked + label.label {
-		animation: fade-in 0.3s ease;
+		animation: fadeIn 0.3s ease;
 		color: variables.$color-primary-darked;
 	}
 }
