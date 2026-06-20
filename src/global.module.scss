@@ -95,14 +95,12 @@ body {
 
   &:hover {
     @include mixins.hover-text;
-  }
 
-	&:hover {
 		&::before {
 			@include mixins.hover-text;
 
 		}
-	}
+  }
 }
 
 :global(.dot-lined) {
