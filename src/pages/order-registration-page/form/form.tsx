@@ -38,18 +38,19 @@ const Form = ({ onSubmit }: FormProps) => {
 		return typeof result === 'string' ? result : '';
 	};
 
-	const handleIputChange = (e: ChangeEvent) => {
-		const target = e.target as HTMLInputElement | HTMLTextAreaElement;
-		const error = validateField(target.name, target.value);
+	const handleIputChange = (
+		e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) => {
+		const error = validateField(e.target.name, e.target.value);
 
 		setFormErrors(prevState => ({
 			...prevState,
-			[target.name]: error
+			[e.target.name]: error
 		}));
 
 		setFormValues(prevState => ({
 			...prevState,
-			[target.name]: target.value
+			[e.target.name]: e.target.value
 		}));
 	};
 
