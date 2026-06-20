@@ -98,7 +98,7 @@
 
 .popup {
 	padding: 27px 30px 30px;
-	animation: fade-in 0.2s ease-in-out;
+	animation: fadeIn 0.2s ease-in-out;
 
 	&__button {
 		width: 100%;
@@ -266,7 +266,7 @@
 		height: 264px;
 		max-height: unset;
 		padding: 10px;
-		animation: popup-opening 0.3s ease;
+		animation: popupOpening 0.3s ease;
 		border-radius: 22px 22px 0 0;
 		transform: unset;
 
@@ -315,7 +315,7 @@
 		}
 
 		&_closing {
-			animation: popup-closing 0.3s ease;
+			animation: popupClosing 0.3s ease;
 		}
 	}
 }
