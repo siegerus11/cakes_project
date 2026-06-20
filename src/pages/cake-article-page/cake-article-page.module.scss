@@ -42,21 +42,21 @@
 }
 
 .overlay {
-	animation: fadeIn 0.2s ease;
+	animation: fade-in 0.2s ease;
 
 	&_closing {
-		animation: fadeOut 0.2s forwards;
+		animation: fade-out 0.2s forwards;
 	}
 }
 
 .popup {
 	min-width: 1070px;
 	max-height: 666px;
-	animation: fadeIn 0.2s ease;
+	animation: fade-in 0.2s ease;
 	border-radius: 40px;
 
 	&_closing {
-		animation: fadeOut 0.2s forwards;
+		animation: fade-out 0.2s forwards;
 	}
 
 	&__wrapper {
@@ -266,7 +266,7 @@
 		background-color: transparent;
 
 		&_closing {
-			animation: fadeOut 1.2s forwards;
+			animation: fade-out 1.2s forwards;
 		}
 	}
 
@@ -277,7 +277,7 @@
 		width: 100%;
 		height: 100%;
 		max-height: unset;
-		animation: heightIn 0.3s ease;
+		animation: height-in 0.3s ease;
 		transform: unset;
 
 		&__wrapper {
@@ -329,7 +329,7 @@
 		}
 
 		&_closing {
-			animation: heightOut 0.3s ease;
+			animation: height-out 0.3s ease;
 		}
 	}
 

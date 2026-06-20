@@ -1,4 +1,4 @@
-@keyframes heightOut {
+@keyframes height-out {
 	from {
 		transform: translateY(0);
 	}
@@ -8,7 +8,7 @@
 	}
 }
 
-@keyframes heightIn {
+@keyframes height-in {
 	from {
 		transform: translateY(100%);
 	}
@@ -18,7 +18,7 @@
 	}
 }
 
-@keyframes heightInMax {
+@keyframes height-in-max {
 	from {
 		max-height: 120px;
 	}
@@ -28,7 +28,7 @@
 	}
 }
 
-@keyframes fadeIn {
+@keyframes fade-in {
 	from {
 		opacity: 0;
 	}
@@ -38,7 +38,7 @@
 	}
 }
 
-@keyframes fadeOut {
+@keyframes fade-out {
 	from {
 		opacity: 1;
 	}
@@ -48,7 +48,7 @@
 	}
 }
 
-@keyframes popupClosing {
+@keyframes popup-closing {
 	from {
 		transform: translateY(0);
 	}
@@ -58,7 +58,7 @@
 	}
 }
 
-@keyframes popupOpening {
+@keyframes popup-opening {
 	from {
 		transform: translateY(100%);
 	}
