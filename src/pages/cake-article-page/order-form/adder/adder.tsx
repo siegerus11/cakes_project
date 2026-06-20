@@ -1,21 +1,13 @@
-import { useMemo } from 'react';
-
 import SubmitButton from '../../../../components/ui/button/submit-button';
-import getFormattedPrice from '../../../../utils/getFormattedPrice';
 import styles from './adder.module.scss';
 
 type AdderProps = {
-	priceCounter: number;
+	priceCounter: string;
 	isWrapped: boolean;
 	formId: string;
 };
 
 const Adder = ({ priceCounter, isWrapped, formId }: AdderProps) => {
-	const formattedpriceCounter = useMemo(
-		() => getFormattedPrice(priceCounter),
-		[priceCounter]
-	);
-
 	const className = isWrapped
 		? `${styles.component} ${styles.component_wrapped}`
 		: styles.component;
@@ -28,7 +20,7 @@ const Adder = ({ priceCounter, isWrapped, formId }: AdderProps) => {
 		<div className={className}>
 			<div className={adderClassName}>
 				<span className={styles.adder__price}>
-					{`${formattedpriceCounter} ₽`}
+					{`${priceCounter} ₽`}
 				</span>
 				<SubmitButton
 					className={`button button_primary ${styles.adder__button}`}

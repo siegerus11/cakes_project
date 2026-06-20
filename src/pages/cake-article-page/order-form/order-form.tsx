@@ -27,6 +27,7 @@ import {
 } from '../../../types/types';
 import createCheckBoxInitial from '../../../utils/createCheckboxInitial';
 import createRadioInitial from '../../../utils/createRadioInitial';
+import getFormattedPrice from '../../../utils/getFormattedPrice';
 import getPricesByCheckboxValue from '../../../utils/getPriceByCheckboxValue';
 import { getPricesByRadioValue } from '../../../utils/getPricesByRadioValue';
 import getPricesSum from '../../../utils/getPricesSum';
@@ -44,6 +45,7 @@ type OrderFormProps = {
 
 const OrderForm = ({ cake, initialPrice, onDescribeClick }: OrderFormProps) => {
 	const totalPrice = useAppSelector(selectTotalPrice);
+	const formattedPrice = getFormattedPrice(totalPrice);
 	const shoppingCart = useAppSelector(selectShoppingCart);
 	const { setTotalPrice } = useActionCreators(mainProcessActions);
 	const { addCartItem } = useActionCreators(cartProcessActions);
@@ -174,7 +176,7 @@ const OrderForm = ({ cake, initialPrice, onDescribeClick }: OrderFormProps) => {
 					id="order-form"
 				>
 					<Adder
-						priceCounter={totalPrice}
+						priceCounter={formattedPrice}
 						formId="order-form"
 						isWrapped={false}
 					/>
@@ -212,7 +214,7 @@ const OrderForm = ({ cake, initialPrice, onDescribeClick }: OrderFormProps) => {
 						<p>{cake.description}</p>
 					</div>
 					<Adder
-						priceCounter={totalPrice}
+						priceCounter={formattedPrice}
 						formId="order-form"
 						isWrapped
 					/>
@@ -221,7 +223,7 @@ const OrderForm = ({ cake, initialPrice, onDescribeClick }: OrderFormProps) => {
 			<ButtonController outerClass={styles.controller}>
 				<div className={styles.controller__wrapper}>
 					<span className={styles.controller__price}>
-						{totalPrice} ₽
+						{formattedPrice} ₽
 					</span>
 					<SubmitButton
 						className={`button button_primary ${styles.controller__button}`}
