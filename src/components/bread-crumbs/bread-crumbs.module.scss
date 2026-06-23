@@ -1,5 +1,4 @@
 @use '../../_variables' as variables;
-
 .component {
 	display: flex;
 	margin-top: 34px;
@@ -13,7 +12,7 @@
 	line-height: 133%;
 	text-decoration: none;
 
-	&::after {
+	&:after {
 		position: absolute;
 		top: 50%;
 		right: -26px;
@@ -21,12 +20,12 @@
 		width: 17px;
 		height: 10px;
 		background: url('/images/arrow-sm-gray.svg') center/cover no-repeat;
-		content: '';
 		transform: translateY(-50%) rotate(270deg);
+		content: '';
 	}
 
 	&:nth-last-child(1) {
-		&::after {
+		&:after {
 			display: none;
 		}
 	}
@@ -41,7 +40,7 @@
 		margin-right: 29px;
 		font-size: 13px;
 
-		&::after {
+		&:after {
 			right: -21px;
 			width: 13px;
 			height: 5px;
@@ -59,10 +58,13 @@
 		font-size: 11px;
 		line-height: 182%;
 
-		&::after {
+		&:after {
 			right: -19px;
 			width: 13px;
 			height: 5px;
 		}
 	}
+}
+
+@media (max-width: 360px) {
 }

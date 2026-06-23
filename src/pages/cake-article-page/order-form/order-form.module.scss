@@ -3,25 +3,24 @@
 
 .list {
 	@include mixins.flex-column;
-
 	align-items: flex-start;
 	margin-top: 75px;
-	counter-reset: num;
 	list-style-type: none;
+	counter-reset: num;
 
 	li {
 		position: relative;
 
-		&::before {
+		&:before {
 			position: absolute;
 			top: -3px;
 			left: 6px;
 			display: inline-block;
+			font-weight: 600;
+			font-size: 16px;
+			white-space: pre;
 			content: counter(num) '. ';
 			counter-increment: num;
-			font-size: 16px;
-			font-weight: 600;
-			white-space: pre;
 		}
 	}
 
@@ -37,8 +36,8 @@
 		max-width: 484px;
 		margin-bottom: 0;
 		font-size: 16px;
-		letter-spacing: 0.2px;
 		line-height: 150%;
+		letter-spacing: 0.2px;
 		white-space: pre-line;
 	}
 
@@ -63,6 +62,9 @@
 	}
 }
 
+@media (max-width: 767px) {
+}
+
 @media (max-width: 576px) {
 	.list {
 		order: 3;
@@ -72,8 +74,8 @@
 			max-width: 100%;
 
 			&::before {
-				font-size: 15px;
 				font-weight: 800;
+				font-size: 15px;
 				line-height: 160%;
 			}
 
@@ -89,32 +91,32 @@
 
 	.describe {
 		position: relative;
-		display: flex;
-		overflow: hidden;
+		display: -webkit-box;
 		max-height: 54px;
-		padding-right: 14px;
 		margin-top: 14px;
-		background: linear-gradient(
-			180deg,
-			rgb(255 255 255 / 20%) 0%,
-			rgb(255 255 244 / 100%) 100%
-		);
-		-webkit-box-orient: vertical;
+		padding-right: 14px;
+		overflow: hidden;
 		font-size: 14px;
-		-webkit-line-clamp: 3;
 		line-height: 128%;
 		text-overflow: ellipsis;
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.2) 0%,
+			rgba(255, 255, 244, 1) 100%
+		);
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
 
 		&__arrow {
 			position: absolute;
-			z-index: 10;
 			right: 0;
 			bottom: 0;
+			z-index: 10;
 			display: block;
 			width: 23px;
 			height: 19px;
-			border: none;
 			background-color: variables.$color-bg-secondary;
+			border: none;
 			border-radius: 9px;
 
 			&::before {
@@ -125,8 +127,8 @@
 				height: 6px;
 				background: url('/images/nav-arrow-sm-grey.svg') no-repeat
 					center 1px / cover;
-				content: '';
 				transform: translate(-50%, -50%);
+				content: '';
 			}
 
 			&_active {
@@ -138,16 +140,16 @@
 
 		&__blur {
 			position: absolute;
-			z-index: 5;
 			bottom: 0;
 			left: 0;
+			z-index: 5;
 			display: block;
 			width: 100%;
 			height: 70%;
 			background: linear-gradient(
 				180deg,
-				rgb(255 255 255 / 20%) 0%,
-				rgb(255 255 255 / 90%) 100%
+				rgba(255, 255, 255, 0.2) 0%,
+				rgba(255, 255, 255, 0.9) 100%
 			);
 		}
 
@@ -169,8 +171,8 @@
 		}
 
 		&__price {
-			font-size: 20px;
 			font-weight: 700;
+			font-size: 20px;
 		}
 
 		&__button {
@@ -178,8 +180,8 @@
 			padding: 15px 69px 15px 68px;
 
 			span {
-				font-size: 14px;
 				font-weight: 700;
+				font-size: 14px;
 				line-height: 129%;
 			}
 		}

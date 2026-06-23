@@ -3,21 +3,21 @@
 .component {
 	display: flex;
 	flex-wrap: wrap;
+	gap: 15px;
 	align-items: center;
 	justify-content: flex-start;
-	gap: 15px;
 }
 
 .item {
 	button {
 		padding: 13px 17px;
-		border: none;
-		background-color: variables.$color-bg-secondary;
-		border-radius: 15px;
 		color: variables.$color-text-dark;
 		font-size: 16px;
-		letter-spacing: 0.2px;
 		line-height: 94%;
+		letter-spacing: 0.2px;
+		background-color: variables.$color-bg-secondary;
+		border: none;
+		border-radius: 15px;
 		transition: variables.$all-transition;
 
 		&:hover {
@@ -27,8 +27,8 @@
 
 	&_active {
 		button {
-			background-color: variables.$color-text-dark;
 			color: variables.$color-text-inverted;
+			background-color: variables.$color-text-dark;
 
 			&:hover {
 				background-color: variables.$color-text-dark;
@@ -39,8 +39,8 @@
 
 @media (max-width: 992px) {
 	.item button:hover {
-		background-color: variables.$color-text-dark;
 		color: variables.$color-text-inverted;
+		background-color: variables.$color-text-dark;
 	}
 }
 
@@ -64,8 +64,8 @@
 	.item {
 		button {
 			padding: 11px 15px;
-			border-radius: 12px;
 			font-size: 14px;
+			border-radius: 12px;
 		}
 	}
 }

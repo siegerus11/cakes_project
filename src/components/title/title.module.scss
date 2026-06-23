@@ -8,25 +8,25 @@
 :global(.title) {
 	position: relative;
 	color: titleVars.$color-text-primary;
-	font-size: 26px;
 	font-weight: 700;
+	font-size: 26px;
 	text-decoration: none;
 
 	&:global(_wth-arrow) {
-		&::after {
+		&:after {
 			position: absolute;
 			top: 58%;
 			right: -30px;
 			width: 18px;
 			height: 18px;
 			background-image: url('/images/nav-arrow-big.svg');
-			content: '';
 			transform: translateY(-50%);
 			transition: titleVars.$fast-transition;
+			content: '';
 		}
 
 		&:hover {
-			&::after {
+			&:after {
 				transform: translateY(-50%) translateX(3px);
 			}
 		}
@@ -54,7 +54,7 @@
 		font-size: 24px;
 	}
 
-	:global(.title):global(_wth-arrow):hover::after {
+	:global(.title):global(_wth-arrow):hover:after {
 		transform: translateY(-50%);
 	}
 }
@@ -70,7 +70,7 @@
 		font-size: 20px;
 
 		&:global(_wth-arrow) {
-			&::after {
+			&:after {
 				display: none;
 			}
 		}

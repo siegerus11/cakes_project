@@ -7,7 +7,6 @@
 
 .back {
 	@include mixins.button-reset;
-
 	&::before {
 		height: 16px;
 	}
@@ -53,8 +52,8 @@
 
 			span {
 				font-size: 14px;
-				letter-spacing: 0.4px;
 				line-height: 129%;
+				letter-spacing: 0.4px;
 			}
 		}
 	}

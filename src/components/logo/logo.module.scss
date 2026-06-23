@@ -1,17 +1,16 @@
 @use '../../_variables' as variables;
-
 .link {
 	display: flex;
-	overflow: hidden;
-	width: 98px;
-	height: 56px;
 	flex-shrink: 0;
 	align-items: center;
+	width: 98px;
+	height: 56px;
 	margin-right: 63px;
+	overflow: hidden;
 	color: variables.$color-primary;
-	font-family: 'Pribambas', sans-serif;
-	font-size: 33px;
 	font-weight: 400;
+	font-size: 33px;
+	font-family: 'Pribambas', sans-serif;
 	line-height: 75%;
 	text-decoration: none;
 
