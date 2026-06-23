@@ -35,8 +35,8 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 	);
 
 	const randomImages = {
-		cakes: getRandomImages(cakes),
-		bentoCakes: getRandomImages(bentoCakes)
+		cakes: useMemo(() => (getRandomImages(cakes)), [cakes]) ,
+		bentoCakes: useMemo(() => getRandomImages(bentoCakes), [bentoCakes]) 
 	};
 
 	const cakesTitle = useMemo(
