@@ -2,22 +2,22 @@
 
 .component {
 	display: flex;
-	flex-direction: column;
 	width: 100%;
+	flex-direction: column;
 	margin-top: 40px;
 	row-gap: 15px;
 }
 
 .title {
-	font-weight: 600;
 	font-size: 16px;
+	font-weight: 600;
 }
 
 .label {
 	display: flex;
+	max-width: 100%;
 	align-items: center;
 	justify-content: space-between;
-	max-width: 100%;
 	cursor: pointer;
 
 	.check {
@@ -33,24 +33,30 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			box-sizing: border-box;
 			width: 15px;
 			height: 0;
+			box-sizing: border-box;
 			border-top: 2px solid variables.$color-text-light;
-			transform: translate(-50%, -50%);
 			content: '';
+			transform: translate(-50%, -50%);
 		}
 
 		&::after {
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			box-sizing: border-box;
 			width: 0;
 			height: 15px;
+			box-sizing: border-box;
 			border-left: 2px solid variables.$color-text-light;
-			transform: translate(-50%, -50%);
 			content: '';
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&:hover {
+		.check {
+			background-color: variables.$color-bg-spec;
 		}
 	}
 
@@ -63,8 +69,8 @@
 			&::before {
 				width: 15px;
 				height: 15px;
-				background: url('/images/check.svg') no-repeat center/contain;
 				border: none;
+				background: url('/images/check.svg') no-repeat center/contain;
 			}
 
 			&::after {
@@ -76,12 +82,6 @@
 	&:nth-child(5) {
 		> div {
 			align-self: center;
-		}
-	}
-
-	&:hover {
-		.check {
-			background-color: variables.$color-bg-spec;
 		}
 	}
 }
@@ -103,8 +103,8 @@
 		display: block;
 		max-width: 100%;
 		max-height: 100%;
-		object-fit: cover;
 		border-radius: 9px;
+		object-fit: cover;
 	}
 }
 
@@ -158,36 +158,27 @@
 			&::before {
 				top: 50%;
 				left: 50%;
-				box-sizing: border-box;
 				width: 12px;
 				height: 0;
+				box-sizing: border-box;
 				border-top: 2px solid variables.$color-text-light;
+				backface-visibility: unset;
 				border-radius: 0;
 				transform: translate(-50%, -50%);
 				transform-origin: unset;
-				backface-visibility: unset;
 			}
 
 			&::after {
 				top: 50%;
 				left: 50%;
-				box-sizing: border-box;
 				width: 0;
 				height: 12px;
+				box-sizing: border-box;
 				border-left: 2px solid variables.$color-text-light;
+				backface-visibility: unset;
 				border-radius: 0;
 				transform: translate(-50%, -50%);
 				transform-origin: unset;
-				backface-visibility: unset;
-			}
-		}
-
-		input[type='checkbox'] {
-			&:checked + .check {
-				&::before {
-					width: 12px;
-					height: 12px;
-				}
 			}
 		}
 
@@ -206,12 +197,21 @@
 				margin-top: -5px;
 			}
 		}
+
+		input[type='checkbox'] {
+			&:checked + .check {
+				&::before {
+					width: 12px;
+					height: 12px;
+				}
+			}
+		}
 	}
 
 	.title {
 		margin-bottom: 1px;
-		font-weight: 800;
 		font-size: 15px;
+		font-weight: 800;
 	}
 
 	.image {

@@ -4,7 +4,7 @@
 
 .component {
 	position: relative;
-	padding: 20px 0 161px 0;
+	padding: 20px 0 161px;
 }
 
 .back {
@@ -21,8 +21,8 @@
 		left: -28px;
 		width: 18px;
 		height: 18px;
+		fill: currentcolor;
 		transform: translateY(-50%) rotate(180deg);
-		fill: currentColor;
 	}
 }
 
@@ -52,8 +52,8 @@
 .popup {
 	min-width: 1070px;
 	max-height: 666px;
-	border-radius: 40px;
 	animation: fadeIn 0.2s ease;
+	border-radius: 40px;
 
 	&_closing {
 		animation: fadeOut 0.2s forwards;
@@ -92,6 +92,7 @@
 
 	&__button {
 		@include mixins.flex-center;
+
 		width: 80%;
 		margin: 0 auto;
 		background-color: variables.$color-accent;
@@ -109,8 +110,8 @@
 		display: flex;
 		min-width: 18px;
 		min-height: 18px;
-		background: none;
 		border: none;
+		background: none;
 	}
 
 	&__image {
@@ -123,8 +124,8 @@
 		img {
 			max-width: 100%;
 			max-height: 100%;
-			object-fit: cover;
 			border-radius: 30px;
+			object-fit: cover;
 		}
 	}
 }
@@ -172,8 +173,8 @@
 
 		&__main {
 			max-width: unset;
-			margin-left: 0;
 			padding: 27px 20px 20px 30px;
+			margin-left: 0;
 		}
 
 		&__close {
@@ -224,12 +225,12 @@
 	}
 
 	.main {
-		margin-top: 21px;
 		padding: 0 15px;
+		margin-top: 21px;
 
 		&__title {
-			font-weight: 900;
 			font-size: 24px;
+			font-weight: 900;
 		}
 	}
 
@@ -255,7 +256,7 @@
 			display: block;
 			width: 39px;
 			height: 4px;
-			background-color: rgba(255, 255, 255, 0.5);
+			background-color: rgb(255 255 255 / 50%);
 			border-radius: 8px;
 			transform: translateX(-50%);
 		}
@@ -276,8 +277,8 @@
 		width: 100%;
 		height: 100%;
 		max-height: unset;
-		transform: unset;
 		animation: heightIn 0.3s ease;
+		transform: unset;
 
 		&__wrapper {
 			position: relative;
@@ -307,10 +308,10 @@
 				display: block;
 				width: 39px;
 				height: 4px;
-				background-color: rgba(255, 255, 255, 0.5);
+				background-color: rgb(255 255 255 / 50%);
 				border-radius: 8px;
-				transform: translateX(-50%);
 				content: '';
+				transform: translateX(-50%);
 			}
 
 			svg {

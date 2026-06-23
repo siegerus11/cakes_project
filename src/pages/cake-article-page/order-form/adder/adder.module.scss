@@ -1,10 +1,11 @@
 @use '../../../../_variables' as variables;
+
 .component {
 	margin-top: 37px;
 
 	&_wrapped {
-		margin-top: 33px;
 		padding: 15px 15px 15px 20px;
+		margin-top: 33px;
 		background-color: variables.$color-bg-secondary;
 		border-radius: 35px;
 
@@ -17,9 +18,9 @@
 
 .adder {
 	display: flex;
+	width: 350px;
 	align-items: center;
 	justify-content: space-between;
-	width: 350px;
 
 	&_w100 {
 		width: 100%;
@@ -27,24 +28,21 @@
 
 	&__price {
 		min-width: 90px;
-		font-weight: 700;
 		font-size: 24px;
+		font-weight: 700;
 		letter-spacing: 0.5px;
 	}
 
 	&__button {
 		padding: 20px 30px;
+		border-radius: 25px;
 		font-size: 16px;
 		line-height: 113%;
-		border-radius: 25px;
 
 		span {
 			letter-spacing: 0.3px;
 		}
 	}
-}
-
-@media (max-width: 1200px) {
 }
 
 @media (max-width: 992px) {
@@ -55,9 +53,6 @@
 	.adder {
 		justify-content: space-between;
 	}
-}
-
-@media (max-width: 767px) {
 }
 
 @media (max-width: 576px) {

@@ -6,8 +6,8 @@
 	align-items: stretch;
 	justify-content: flex-start;
 	margin-top: 25px;
-	overflow-x: auto;
 	column-gap: 24px;
+	overflow-x: auto;
 
 	&_mt30 {
 		margin-top: 30px;
@@ -30,8 +30,8 @@
 
 @media (max-width: 992px) {
 	.component {
-		gap: 10px;
 		justify-content: center;
+		gap: 10px;
 
 		li {
 			&:nth-last-child(1) {

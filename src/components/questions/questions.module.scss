@@ -18,7 +18,7 @@
 }
 
 .item {
-	padding: 23px 0 18px 0;
+	padding: 23px 0 18px;
 	border-bottom: 1px solid vars.$color-bg-quaternary;
 
 	&:nth-last-child(1) {
@@ -27,30 +27,32 @@
 }
 
 .subtitle {
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 150%;
 	cursor: pointer;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 150%;
 }
 
 .text {
 	max-width: 655px;
 	margin-top: 12px;
 	margin-bottom: 10px;
-	font-size: 16px;
-	line-height: 150%;
-	letter-spacing: 0.1px;
 	animation: fadeIn 0.5s forwards;
+	font-size: 16px;
+	letter-spacing: 0.1px;
+	line-height: 150%;
 }
 
 .headline {
 	@include mix.flex-between;
+
 	align-items: flex-start;
 
 	&:hover {
 		.subtitle {
 			color: vars.$color-primary;
 		}
+
 		.close svg {
 			fill: vars.$color-primary;
 		}
@@ -61,10 +63,10 @@
 	position: relative;
 	width: 24px;
 	height: 24px;
-	margin-top: 4px;
 	padding: 12px;
-	background-color: transparent;
 	border: none;
+	margin-top: 4px;
+	background-color: transparent;
 
 	.cross {
 		position: absolute;
@@ -86,6 +88,7 @@
 		.subtitle {
 			color: inherit;
 		}
+
 		.close svg {
 			fill: inherit;
 		}
@@ -95,7 +98,7 @@
 @media (max-width: 767px) {
 	:global(.questions) {
 		max-width: 947px;
-		padding: 60px 40px 47px 40px;
+		padding: 60px 40px 47px;
 	}
 
 	.subtitle {
@@ -118,7 +121,7 @@
 @media (max-width: 576px) {
 	:global(.questions) {
 		max-width: 947px;
-		padding: 30px 0 14px 0;
+		padding: 30px 0 14px;
 
 		&:global(-title) {
 			font-size: 20px;
