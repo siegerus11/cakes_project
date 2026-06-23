@@ -4,29 +4,29 @@
 
 .wrapper {
 	position: fixed;
-	z-index: 20;
 	top: 0;
 	left: 0;
+	z-index: 20;
 	width: 100%;
 	height: 100%;
-	animation: fadeIn 0.3s ease-in-out;
-	background-color: variables.$color-text-inverted;
 	overflow-y: auto;
+	background-color: variables.$color-text-inverted;
+	animation: fadeIn 0.3s ease-in-out;
 
 	> div > div {
 		display: flex;
-		width: 100%;
-		height: 100%;
 		flex-direction: column;
 		align-items: center;
-		padding: 37px 0 29px;
+		width: 100%;
+		height: 100%;
 		margin: 0 auto;
+		padding: 37px 0 29px 0;
 	}
 
 	.link {
 		color: variables.$color-text-primary;
-		font-size: 17px;
 		font-weight: 600;
+		font-size: 17px;
 		text-decoration: none;
 		@include mixins.hover-text;
 	}
@@ -62,7 +62,6 @@
 .icon {
 	@include mixins.hover-overlay;
 	@include mixins.active-overlay-accent;
-
 	display: block;
 	width: 40px;
 	height: 40px;
@@ -91,18 +90,16 @@
 @media (max-width: 576px) {
 	.wrapper {
 		> div > div {
-			padding: 29px 0;
+			padding: 29px 0 29px 0;
 		}
 
 		nav {
 			align-self: flex-start;
+		}
 
-			li {
-				padding: 16px 15px 16px 10px;
-
-				&:nth-last-child(1) > a {
-					margin-right: 0;
-				}
+		li {
+			&:nth-last-child(1) > a {
+				margin-right: 0;
 			}
 		}
 	}
@@ -116,6 +113,14 @@
 		span {
 			display: block;
 			line-height: 125%;
+		}
+	}
+
+	.wrapper {
+		nav {
+			li {
+				padding: 16px 15px 16px 10px;
+			}
 		}
 	}
 }

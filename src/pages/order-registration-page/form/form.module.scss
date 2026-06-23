@@ -27,8 +27,8 @@
 	}
 
 	&__title {
-		font-size: 16px;
 		font-weight: 400;
+		font-size: 16px;
 	}
 }
 
@@ -51,8 +51,8 @@
 	}
 
 	&__title {
-		font-size: 16px;
 		font-weight: 400;
+		font-size: 16px;
 	}
 
 	&__arrow {
@@ -67,8 +67,8 @@
 	max-width: 330px;
 	margin-top: 12px;
 	color: variables.$color-text-light;
-	font-size: 14px;
 	font-weight: 400;
+	font-size: 14px;
 	line-height: 136%;
 }
 
@@ -81,38 +81,37 @@
 
 .input {
 	width: 100%;
-	padding: 17px 15px;
-	border: none;
 	margin-bottom: 10px;
-	background: variables.$color-bg-secondary;
-	border-radius: 12px;
+	padding: 17px 15px;
 	line-height: 112%;
+	background: variables.$color-bg-secondary;
+	border: none;
+	border-radius: 12px;
 	outline: none;
 
 	&::placeholder {
 		color: variables.$color-text-light;
-		font-size: 16px;
 		font-weight: 400;
+		font-size: 16px;
 		line-height: 113%;
 	}
 }
 
 .areaButton {
 	@include mixins.button-reset;
-
-	border-bottom: 1px dotted variables.$color-text-light;
 	margin-top: 16px;
 	color: variables.$color-text-light;
-	font-size: 16px;
 	font-weight: 400;
+	font-size: 16px;
 	line-height: 113%;
+	border-bottom: 1px dotted variables.$color-text-light;
 }
 
 .textarea {
 	display: block;
 	width: 100%;
-	padding: 17px 15px;
 	margin-top: 12px;
+	padding: 17px 15px;
 	outline: none;
 }
 
@@ -120,18 +119,18 @@
 	display: block;
 	margin-top: 4px;
 	color: variables.$color-text-light;
-	font-size: 12px;
 	font-weight: 400;
+	font-size: 12px;
 	line-height: 123%;
 	text-align: right;
 }
 
 .button {
-	min-width: 298px;
 	justify-content: center;
-	padding: 17px 83px 16px;
+	min-width: 298px;
 	margin-top: 52px;
 	margin-left: auto;
+	padding: 17px 83px 16px 83px;
 
 	span {
 		display: block;
@@ -179,11 +178,11 @@
 	}
 
 	.description {
-		padding-left: 15px;
 		margin-top: 9px;
+		padding-left: 15px;
 		font-size: 12px;
-		letter-spacing: 0.1px;
 		line-height: 123%;
+		letter-spacing: 0.1px;
 	}
 
 	.fields {
@@ -219,8 +218,8 @@
 
 			span {
 				font-size: 14px;
-				letter-spacing: 0.4px;
 				line-height: 129%;
+				letter-spacing: 0.4px;
 			}
 		}
 	}

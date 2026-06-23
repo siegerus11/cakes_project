@@ -3,7 +3,6 @@
 
 .wrapper {
 	@include mixins.flex-column-start;
-
 	margin-top: 30px;
 	line-height: 150%;
 }
@@ -41,8 +40,8 @@
 	.wrapper {
 		margin-top: 19px;
 		font-size: 14px;
-		letter-spacing: 0.1px;
 		line-height: 143%;
+		letter-spacing: 0.1px;
 	}
 
 	.phone {

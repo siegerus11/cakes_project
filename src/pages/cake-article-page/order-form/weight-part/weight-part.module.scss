@@ -7,64 +7,55 @@
 }
 
 .title {
-	font-size: 16px;
 	font-weight: 600;
+	font-size: 16px;
 }
 
 .select {
 	position: relative;
 	display: flex;
-	width: 100%;
 	flex-direction: column;
 	align-items: center;
+	width: 100%;
 	margin-top: 17px;
 
 	&__interactor {
 		display: flex;
-		width: 100%;
 		align-items: center;
 		justify-content: space-between;
+		width: 100%;
 		padding: 16px 20px;
-		border: none;
 		background-color: variables.$color-bg-secondary;
+		border: none;
 		border-radius: 11px;
 		cursor: pointer;
 
 		span {
 			display: block;
 			font-size: 16px;
-			letter-spacing: 0.4px;
 			line-height: 120%;
+			letter-spacing: 0.4px;
 			transition: variables.$all-transition;
 		}
 	}
 
-	label {
-		width: 100%;
-		order: 1;
-		cursor: pointer;
-		letter-spacing: 0.4px;
-		line-height: 120%;
-		transition: variables.$all-transition;
-	}
-
 	&__dropdown {
 		position: absolute;
-		z-index: 5;
 		top: 52px;
 		left: 0;
+		z-index: 5;
 		width: 100%;
 		padding: 16px 20px;
-		animation: fadeIn 0.3s ease-in-out;
 		background-color: variables.$color-bg-secondary;
 		border-radius: 11px;
+		animation: fadeIn 0.3s ease-in-out;
 
 		> div {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			padding: 4px 0;
 			margin-bottom: 7px;
+			padding: 4px 0;
 
 			&:hover {
 				label {
@@ -74,19 +65,28 @@
 		}
 	}
 
+	label {
+		order: 1;
+		width: 100%;
+		line-height: 120%;
+		letter-spacing: 0.4px;
+		cursor: pointer;
+		transition: variables.$all-transition;
+	}
+
 	input {
 		display: block;
+		order: 2;
 		width: 16px;
 		height: 16px;
-		order: 2;
 		padding: 5px;
-		accent-color: variables.$color-primary;
 		cursor: pointer;
+		accent-color: variables.$color-primary;
 	}
 
 	input:checked + label.label {
-		animation: fadeIn 0.3s ease;
 		color: variables.$color-primary-darked;
+		animation: fadeIn 0.3s ease;
 	}
 }
 
@@ -111,8 +111,8 @@
 	}
 
 	.title {
-		font-size: 15px;
 		font-weight: 800;
+		font-size: 15px;
 	}
 
 	.select {
@@ -123,8 +123,8 @@
 
 			span {
 				font-size: 14px;
-				letter-spacing: 0.4px;
 				line-height: 120%;
+				letter-spacing: 0.4px;
 			}
 		}
 
@@ -136,8 +136,8 @@
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
-				padding: 4px 0;
 				margin-bottom: 7px;
+				padding: 4px 0;
 			}
 		}
 	}
