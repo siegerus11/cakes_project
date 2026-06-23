@@ -17,8 +17,8 @@
         "serve": "vite preview",
         "lint:eslint": "eslint . --ext .js,.tsx",
         "fix:eslint": "eslint --fix  . --ext .js,.tsx",
-        "lint:stylelint": "stylelint **/*.{css,scss,jsx}",
-        "fix:stylelint": "stylelint --fix  ./src/**/*.{css,scss,jsx}",
+        "lint:stylelint": "stylelint ./src/**/*.{css,scss,jsx,tsx}",
+        "fix:stylelint": "stylelint --fix  ./src/**/*.{css,scss,jsx,tsx}",
         "test": "jest",
         "format": "npx prettier . --write"
     },
