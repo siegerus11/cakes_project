@@ -1,8 +1,12 @@
 import { useMemo } from 'react';
 
 import { useAppSelector } from '../../hooks/useStore';
-import { selectSortingStatus } from '../../store/main-process/main-process';
+import {
+	selectSortingStatus,
+	selectSearchQuerry
+} from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
+import getByQuerry from '../../utils/getByQuerry';
 import getSortedByCategory from '../../utils/getSortedByCategory';
 import Card, { AllCard } from '../card/card';
 import styles from './cards-list.module.scss';
@@ -20,12 +24,18 @@ const CardsList = ({
 	isMainPage,
 	path
 }: CardsListProps) => {
+	const querry = useAppSelector(selectSearchQuerry);
 	const sortingStatus = useAppSelector(selectSortingStatus);
 	const sortedCakes = useMemo(
 		() => getSortedByCategory(cakes, sortingStatus),
 		[cakes, sortingStatus]
 	);
-	const relevantCakes = isMainPage ? cakes : sortedCakes;
+
+	const querryMatchCakes = useMemo(
+		() => getByQuerry(sortedCakes, querry),
+		[sortedCakes, querry]
+	);
+	const relevantCakes = isMainPage ? cakes : querryMatchCakes;
 
 	const listClass = isMainPage
 		? styles.component
