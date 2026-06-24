@@ -1,6 +1,9 @@
 import { ChangeEvent, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
+import { AppRoute } from '../../../constants';
 import { useActionCreators, useAppSelector } from '../../../hooks/useStore';
+import { selectCakeOffers } from '../../../store/cake-offers-data/cake-offers-data';
 import {
 	mainProcessActions,
 	selectSearchQuerry
@@ -12,12 +15,28 @@ type SearchComponentProps = {};
 const SearchComponent = (props: SearchComponentProps) => {
 	const { setSearchQuerry } = useActionCreators(mainProcessActions);
 	const searchQuerry = useAppSelector(selectSearchQuerry);
+	const cakeOffers = useAppSelector(selectCakeOffers);
+	const navigate = useNavigate();
 
 	const [searchValue, setSearchValue] = useState('');
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			setSearchQuerry(searchValue);
+
+			const matchedCakes = cakeOffers.filter(cake =>
+				cake.title.toLowerCase().includes(searchQuerry.toLowerCase())
+			);
+
+			if (matchedCakes.length === 0) {
+				return;
+			}
+
+			const path = matchedCakes.find(cake => cake.isBento)
+				? AppRoute.BentoCakesCatalog
+				: AppRoute.CakesCatalog;
+
+			navigate(path);
 		}, 500);
 
 		return () => clearTimeout(timeout);
