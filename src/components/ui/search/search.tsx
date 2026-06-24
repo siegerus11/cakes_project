@@ -1,7 +1,6 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 
-import { useActionCreators } from '../../../hooks/useStore';
-import { useAppSelector } from '../../../hooks/useStore';
+import { useActionCreators, useAppSelector } from '../../../hooks/useStore';
 import {
 	mainProcessActions,
 	selectSearchQuerry
@@ -19,7 +18,6 @@ const SearchComponent = (props: SearchComponentProps) => {
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			setSearchQuerry(searchValue);
-			console.log(searchQuerry);
 		}, 500);
 
 		return () => clearTimeout(timeout);
