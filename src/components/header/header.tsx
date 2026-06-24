@@ -11,6 +11,7 @@ import NavMenu from '../nav-menu/nav-menu';
 import ShoppingCartItem from '../shopping-cart-item/shopping-cart-item';
 import Button from '../ui/button/button';
 import Hamburger from '../ui/hamburger/hamburger';
+import SearchComponent from '../ui/search/search';
 import styles from './header.module.scss';
 
 const Header = () => {
