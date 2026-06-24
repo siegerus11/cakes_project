@@ -1,8 +1,34 @@
+import { ChangeEvent, useEffect, useState } from 'react';
+
+import { useActionCreators } from '../../../hooks/useStore';
+import { useAppSelector } from '../../../hooks/useStore';
+import {
+	mainProcessActions,
+	selectSearchQuerry
+} from '../../../store/main-process/main-process';
 import styles from './search.module.scss';
 
 type SearchComponentProps = {};
 
 const SearchComponent = (props: SearchComponentProps) => {
+	const { setSearchQuerry } = useActionCreators(mainProcessActions);
+	const searchQuerry = useAppSelector(selectSearchQuerry);
+
+	const [searchValue, setSearchValue] = useState('');
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setSearchQuerry(searchValue);
+			console.log(searchQuerry);
+		}, 500);
+
+		return () => clearTimeout(timeout);
+	}, [searchValue, searchQuerry, setSearchQuerry]);
+
+	const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+		setSearchValue(e.target.value);
+	};
+
 	return (
 		<div className={styles.search}>
 			<svg
@@ -14,9 +40,11 @@ const SearchComponent = (props: SearchComponentProps) => {
 			</svg>
 			<input
 				className={styles.search__input}
+				value={searchValue}
 				type="search"
 				placeholder="Поиск"
 				aria-label="Поиск по товарам"
+				onChange={handleSearchInputChange}
 			/>
 		</div>
 	);
