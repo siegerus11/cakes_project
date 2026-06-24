@@ -11,6 +11,7 @@ import NavMenu from '../nav-menu/nav-menu';
 import ShoppingCartItem from '../shopping-cart-item/shopping-cart-item';
 import Button from '../ui/button/button';
 import Hamburger from '../ui/hamburger/hamburger';
+import SearchComponent from '../ui/search/search';
 import styles from './header.module.scss';
 
 const Header = () => {
@@ -51,21 +52,7 @@ const Header = () => {
 				<div className={styles.wrapper}>
 					<div className={styles.primary}>
 						<Logo />
-						<div className={styles.search}>
-							<svg
-								className={styles.search__icon}
-								viewBox="0 0 40 40"
-								aria-hidden="true"
-							>
-								<use xlinkHref="#search"></use>
-							</svg>
-							<input
-								className={styles.search__input}
-								type="search"
-								placeholder="Поиск"
-								aria-label="Поиск по товарам"
-							/>
-						</div>
+						<SearchComponent />
 					</div>
 					<div className={styles.secondary}>
 						<ShoppingCartItem />
