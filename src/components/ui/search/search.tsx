@@ -29,14 +29,15 @@ const SearchComponent = (props: SearchComponentProps) => {
 			);
 
 			if (matchedCakes.length === 0) {
+				navigate(AppRoute.Catalog);
 				return;
 			}
 
-			const path = matchedCakes.find(cake => cake.isBento)
+			const matchedPath = matchedCakes.find(cake => cake.isBento)
 				? AppRoute.BentoCakesCatalog
 				: AppRoute.CakesCatalog;
 
-			navigate(path);
+			navigate(matchedPath);
 		}, 500);
 
 		return () => clearTimeout(timeout);
