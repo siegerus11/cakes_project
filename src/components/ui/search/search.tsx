@@ -28,10 +28,6 @@ const SearchComponent = (props: SearchComponentProps) => {
 				cake.title.toLowerCase().includes(searchValue.toLowerCase())
 			);
 
-			if (matchedCakes.length === 0) {
-				return;
-			}
-
 			const matchedPath = matchedCakes.find(cake => cake.isBento)
 				? AppRoute.BentoCakesCatalog
 				: AppRoute.CakesCatalog;
