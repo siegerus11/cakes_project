@@ -25,6 +25,7 @@ describe('Main-process slice', () => {
 			totalPrice: 0,
 			activeOffer: '',
 			sortingStatus: '',
+			searchQuerry: '',
 			errorText: ''
 		};
 
