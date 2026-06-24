@@ -4,17 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import { AppRoute } from '../../../constants';
 import { useActionCreators, useAppSelector } from '../../../hooks/useStore';
 import { selectCakeOffers } from '../../../store/cake-offers-data/cake-offers-data';
-import {
-	mainProcessActions,
-	selectSearchQuerry
-} from '../../../store/main-process/main-process';
+import { mainProcessActions } from '../../../store/main-process/main-process';
 import styles from './search.module.scss';
 
 type SearchComponentProps = {};
 
 const SearchComponent = (props: SearchComponentProps) => {
 	const { setSearchQuerry } = useActionCreators(mainProcessActions);
-	const searchQuerry = useAppSelector(selectSearchQuerry);
 	const cakeOffers = useAppSelector(selectCakeOffers);
 	const navigate = useNavigate();
 
@@ -24,8 +20,12 @@ const SearchComponent = (props: SearchComponentProps) => {
 		const timeout = setTimeout(() => {
 			setSearchQuerry(searchValue);
 
+			if (!searchValue.trim()) {
+				return;
+			}
+
 			const matchedCakes = cakeOffers.filter(cake =>
-				cake.title.toLowerCase().includes(searchQuerry.toLowerCase())
+				cake.title.toLowerCase().includes(searchValue.toLowerCase())
 			);
 
 			if (matchedCakes.length === 0) {
@@ -40,7 +40,7 @@ const SearchComponent = (props: SearchComponentProps) => {
 		}, 500);
 
 		return () => clearTimeout(timeout);
-	}, [searchValue, searchQuerry, setSearchQuerry]);
+	}, [searchValue, setSearchQuerry]);
 
 	const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setSearchValue(e.target.value);
