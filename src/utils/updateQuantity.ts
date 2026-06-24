@@ -6,8 +6,11 @@ const updateQuantity = (quantity: number, num: number, id: string) => {
 	const stored = localStorage.getItem(storageKey);
 	if (stored) {
 		const parsed = JSON.parse(stored) as CakeOrder;
-		parsed.quantity = newQuantity;
-		localStorage.setItem(storageKey, JSON.stringify(parsed));
+		const result = {
+			...parsed,
+			quantity: newQuantity
+		};
+		localStorage.setItem(storageKey, JSON.stringify(result));
 	}
 };
 

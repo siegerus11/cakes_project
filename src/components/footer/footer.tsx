@@ -1,18 +1,14 @@
 import { useMemo } from 'react';
 
 import { LAYOUT_NAVS, OuterRoute } from '../../constants';
-import { Nav } from '../../types/types';
-import { getSecondaryNavs } from '../../utils/getSecondaryNavs';
+import getSecondaryNavs from '../../utils/getSecondaryNavs';
 import NavMenu from '../nav-menu/nav-menu';
 import SocialLinks from '../social-links/social-links';
 import Button from '../ui/button/button';
 import styles from './footer.module.scss';
 
 const Footer = () => {
-	const secondaryNavs = useMemo(
-		() => getSecondaryNavs(LAYOUT_NAVS) as Nav[],
-		[]
-	);
+	const secondaryNavs = useMemo(() => getSecondaryNavs(LAYOUT_NAVS), []);
 
 	return (
 		<footer className={styles.wrapper}>

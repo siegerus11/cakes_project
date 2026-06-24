@@ -1,8 +1,7 @@
 import { useCallback, useMemo, AnimationEvent } from 'react';
 
 import { LAYOUT_NAVS, OuterRoute } from '../../constants';
-import { Nav } from '../../types/types';
-import { getSecondaryNavs } from '../../utils/getSecondaryNavs';
+import getSecondaryNavs from '../../utils/getSecondaryNavs';
 import NavMenu from '../nav-menu/nav-menu';
 import SocialLinks from '../social-links/social-links';
 import Button from '../ui/button/button';
@@ -39,7 +38,7 @@ const HamburgerPopup = ({
 		}
 	};
 	const secondaryNavs = useMemo(
-		() => getSecondaryNavs(LAYOUT_NAVS, true) as Nav[],
+		() => getSecondaryNavs(LAYOUT_NAVS, true),
 		[]
 	);
 

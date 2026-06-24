@@ -9,3 +9,5 @@ export const createSlidesInitial = (array: string[]): Slide[] => {
 		};
 	});
 };
+
+export default createSlidesInitial;

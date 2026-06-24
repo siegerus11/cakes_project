@@ -4,13 +4,13 @@ const getNavData = (
 	pathname: string,
 	navs: Nav[]
 ): Omit<Nav, 'image'> | undefined => {
-	// 1. Точное совпадение
+	// Точное совпадение
 	const exactMatch = navs.find(nav => nav.path === pathname);
 	if (exactMatch) {
 		return { title: exactMatch.title, path: exactMatch.path };
 	}
 
-	// 2. Поиск наиболее специфичного префикса (самый длинный путь, который является началом pathname)
+	// Поиск наиболее специфичного префикса (самый длинный путь, который является началом pathname)
 	const prefixMatches = navs.filter(
 		nav => pathname.startsWith(`${nav.path}/`) || pathname === nav.path
 	);
@@ -22,7 +22,7 @@ const getNavData = (
 		return { title: bestMatch.title, path: bestMatch.path };
 	}
 
-	// 3. Если ничего не найдено, возвращаем undefined
+	// Если ничего не найдено, возвращаем undefined
 	return undefined;
 };
 

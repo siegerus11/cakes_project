@@ -79,7 +79,7 @@ const CakeArticlePage = () => {
 	);
 
 	const handleTouchBack = () => {
-		navigate(-1);
+		navigate(AppRoute.Catalog);
 	};
 
 	const touchBack = useTouch(handleTouchBack);

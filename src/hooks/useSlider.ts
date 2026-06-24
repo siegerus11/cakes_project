@@ -2,7 +2,7 @@ import { useEffect, useState, TouchEvent, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Slide } from '../types/types';
-import { createSlidesInitial } from '../utils/createSlidesInitial';
+import createSlidesInitial from '../utils/createSlidesInitial';
 
 function useSlider(imagesSrc: string[]): {
 	slides: Slide[];
