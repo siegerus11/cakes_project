@@ -29,7 +29,6 @@ const SearchComponent = (props: SearchComponentProps) => {
 			);
 
 			if (matchedCakes.length === 0) {
-				navigate(AppRoute.Catalog);
 				return;
 			}
 
