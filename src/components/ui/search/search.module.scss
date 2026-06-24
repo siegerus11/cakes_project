@@ -1,20 +1,32 @@
+@use '../../../_variables' as variables;
+@use '../../../_mixins' as mixins;
+
 .search {
-	max-width: 194px;
-	max-height: 42px;
-	padding: 12px 15px;
-	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	min-width: 424px;
+	max-height: 52px;
+	padding: 17px 25px;
+	background: variables.$color-bg-secondary;
+	border-radius: 18px;
 
 	&__input {
-		font-size: 14px;
+		width: 100%;
+		font-size: 16px;
+		background: variables.$color-bg-secondary;
+		border: none;
+		outline: none;
 
 		&::placeholder {
-			font-size: 14px;
+			color: variables.$color-text-light;
 		}
 	}
 
 	&__icon {
-		width: 19px;
-		height: 20px;
+		width: 17px;
+		height: 16px;
+		margin-right: 8px;
 	}
 }
 
