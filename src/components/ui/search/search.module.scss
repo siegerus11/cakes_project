@@ -3,23 +3,34 @@
 
 .search {
 	display: flex;
-	align-items: center;
-	justify-content: flex-start;
 	min-width: 424px;
 	max-height: 52px;
+	align-items: center;
+	justify-content: flex-start;
 	padding: 17px 25px;
 	background: variables.$color-bg-secondary;
 	border-radius: 18px;
 
 	&__input {
 		width: 100%;
-		font-size: 16px;
-		background: variables.$color-bg-secondary;
 		border: none;
+		background: variables.$color-bg-secondary;
+		font-size: 16px;
 		outline: none;
 
 		&::placeholder {
 			color: variables.$color-text-light;
+		}
+
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration,
+		&::-ms-clear,
+		&::-ms-reveal {
+			display: none;
+			width: 0;
+			height: 0;
 		}
 	}
 
