@@ -57,18 +57,16 @@ const CatalogPage = ({
 						<div className="container_catalog-list container">
 							<Title
 								titleClass={styles.subtitle}
-								titleText="Торты"
+								titleText="Торты:"
 								level="h2"
-								hr
 							/>
 							<CardsList cakes={cakeOffers} isMainPage={false} />
 						</div>
 						<div className="container_catalog-list container">
 							<Title
 								titleClass={styles.subtitle}
-								titleText="Бенто-торты"
+								titleText="Бенто-торты:"
 								level="h2"
-								hr
 							/>
 							<CardsList
 								cakes={cakes.bentoCakesOffers}
