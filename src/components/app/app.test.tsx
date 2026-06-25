@@ -120,6 +120,14 @@ describe('Application routing', () => {
 		expect(screen.getByText('Footer')).toBeInTheDocument();
 	});
 
+	it('Should render CatalogPage when user navigate to "/catalog/search"', () => {
+		renderWithRoute(AppRoute.Search);
+
+		expect(screen.getByText('CatalogPage component')).toBeInTheDocument();
+		expect(screen.getByText('Header')).toBeInTheDocument();
+		expect(screen.getByText('Footer')).toBeInTheDocument();
+	});
+
 	it('Should render DeliveryPage when user navigate to "/delivery"', () => {
 		renderWithRoute(AppRoute.Delivery);
 

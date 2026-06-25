@@ -46,7 +46,7 @@ export const NAVS: Nav[] = [
 	{
 		title: 'Каталог',
 		image: '',
-		path: AppRoute.Catalog
+		path: AppRoute.Search
 	},
 	{
 		title: 'Доставка и оплата',
