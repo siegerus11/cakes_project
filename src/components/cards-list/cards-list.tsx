@@ -51,7 +51,7 @@ const CardsList = ({
 				);
 			})}
 			{isMainPage && (
-				<li>
+				<li className={styles.allItem}>
 					<AllCard images={randomImages} path={path} />
 				</li>
 			)}
