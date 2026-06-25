@@ -4,15 +4,11 @@ import SubmitButton from '../../../components/ui/button/submit-button';
 import { validation, LoadingStatus } from '../../../constants';
 import { useAppSelector } from '../../../hooks/useStore';
 import { selectOrderSendingStatus } from '../../../store/cake-offers-data/cake-offers-data';
+import { UserData } from '../../../types/types';
 import styles from './form.module.scss';
 
 type FormProps = {
-	onSubmit: (formValues: {
-		name: string;
-		phone: string;
-		address: string;
-		comment: string;
-	}) => void;
+	onSubmit: (formValues: UserData) => void;
 };
 
 const Form = ({ onSubmit }: FormProps) => {

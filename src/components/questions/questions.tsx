@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { KeyboardEvent, MouseEvent, useCallback, useState } from 'react';
 
 import { Question } from '../../types/types';
 import Title from '../title/title';
@@ -9,7 +9,7 @@ type QuestionsItemProps = {
 	text: string;
 	isActive: boolean;
 	index: number;
-	onOpenButtonClick: (idx: number) => void;
+	onOpenButtonClick: (e: KeyboardEvent | MouseEvent, idx: number) => void;
 };
 
 const QuestionsItem = ({
@@ -25,16 +25,15 @@ const QuestionsItem = ({
 				className={styles.headline}
 				role="button"
 				tabIndex={0}
-				onKeyDown={() => onOpenButtonClick(index)}
-				onClick={() => onOpenButtonClick(index)}
+				onKeyDown={e => onOpenButtonClick(e, index)}
+				onClick={e => onOpenButtonClick(e, index)}
 			>
 				<Title
 					level="h4"
 					titleText={title}
 					titleClass={styles.subtitle}
 				/>
-				<button
-					type="button"
+				<div
 					className={`close ${styles.close} ${
 						isActive ? styles.close_active : ''
 					}`}
@@ -47,7 +46,7 @@ const QuestionsItem = ({
 					>
 						<use xlinkHref="#close"></use>
 					</svg>
-				</button>
+				</div>
 			</div>
 			{isActive && <p className={styles.text}>{text}</p>}
 		</li>
@@ -69,7 +68,7 @@ const Questions = ({
 		useState<Question[]>(questions);
 
 	const handleOpenButtonClick = useCallback(
-		(idx: number) => {
+		(e: KeyboardEvent | MouseEvent, idx: number) => {
 			setRelevantQuestions(
 				relevantQuestions.map((question, i) => {
 					if (i === idx) {
