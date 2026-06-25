@@ -17,13 +17,10 @@ const OptionalPartItem = ({
 	const { title, name, price, image } = option;
 
 	const maxTitleLength = 30;
-	const headlineClassName = useMemo(
-		() =>
-			title.length > maxTitleLength
-				? `${styles.side__headline} ${styles.side__headline_fz14}`
-				: styles.side__headline,
-		[title]
-	);
+	const headlineClassName =
+		title.length > maxTitleLength
+			? `${styles.side__headline} ${styles.side__headline_fz14}`
+			: styles.side__headline;
 
 	const handleChange = useCallback(
 		(e: ChangeEvent<HTMLInputElement>) => {

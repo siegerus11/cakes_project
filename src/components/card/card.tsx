@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Link, generatePath } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
@@ -12,7 +13,7 @@ type CardProps = {
 	isMainPage: boolean;
 };
 
-const Card = ({ cake, isMainPage }: CardProps) => {
+const Card = memo(({ cake, isMainPage }: CardProps) => {
 	const { title, images, price } = cake;
 
 	const { setActiveOffer } = useActionCreators(mainProcessActions);
@@ -47,7 +48,7 @@ const Card = ({ cake, isMainPage }: CardProps) => {
 			</div>
 		</Link>
 	);
-};
+});
 
 export default Card;
 
