@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
 
 import withHistory from '../../mocks/withHistory';
 import ThanksPage from './thanks-page';

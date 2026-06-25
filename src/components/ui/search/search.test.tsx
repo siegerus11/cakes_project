@@ -151,9 +151,6 @@ describe('Component: SearchComponent', () => {
 	it('should not navigate when search query is empty', async () => {
 		const expectedValue = '';
 		jest.useFakeTimers();
-		const user = userEvent.setup({
-			advanceTimers: jest.advanceTimersByTime
-		});
 
 		renderSearch();
 

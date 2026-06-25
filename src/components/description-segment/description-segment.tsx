@@ -2,7 +2,6 @@ import { PropsWithChildren } from 'react';
 
 import { TitleLevel } from '../../types/types';
 import Title from '../title/title';
-import styles from './description-segment.module.scss';
 
 type DescriptionSegmentProps = PropsWithChildren<{
 	wrapperClass: string;
