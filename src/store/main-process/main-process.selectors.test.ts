@@ -13,6 +13,7 @@ describe('Main-process selectors', () => {
 			totalPrice: 1000,
 			activeOffer: 'offer-001',
 			sortingStatus: 'Друзьям',
+			searchQuery: '',
 			errorText: 'Error message'
 		}
 	};

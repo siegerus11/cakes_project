@@ -53,7 +53,7 @@ describe('Component: SearchComponent', () => {
 		expect(input).toHaveValue(expectedValue);
 	});
 
-	it('should dispatch setSearchQuerry after debounce', async () => {
+	it('should dispatch setSearchQuery after debounce', async () => {
 		const expectedValue = 'торт';
 		jest.useFakeTimers();
 		const user = userEvent.setup({
@@ -76,7 +76,7 @@ describe('Component: SearchComponent', () => {
 	});
 
 	it('should navigate to CakesCatalog when matching non-bento cake', async () => {
-		const expectedQuerry = 'Шоколад';
+		const expectedQuery = 'Шоколад';
 		jest.useFakeTimers();
 		const user = userEvent.setup({
 			advanceTimers: jest.advanceTimersByTime
@@ -97,20 +97,20 @@ describe('Component: SearchComponent', () => {
 		render(withStoreComponent);
 
 		const input = screen.getByPlaceholderText('Поиск');
-		await user.type(input, expectedQuerry);
+		await user.type(input, expectedQuery);
 
 		jest.advanceTimersByTime(500);
 
 		await waitFor(() => {
-			const { searchQuerry } = mockStore.getState()[NameSpace.Main];
-			expect(searchQuerry).toBe(expectedQuerry);
+			const { searchQuery } = mockStore.getState()[NameSpace.Main];
+			expect(searchQuery).toBe(expectedQuery);
 		});
 
 		jest.useRealTimers();
 	});
 
 	it('should navigate to BentoCakesCatalog when matching bento cake', async () => {
-		const expectedQuerry = 'Бенто';
+		const expectedQuery = 'Бенто';
 		jest.useFakeTimers();
 		const user = userEvent.setup({
 			advanceTimers: jest.advanceTimersByTime
@@ -136,13 +136,13 @@ describe('Component: SearchComponent', () => {
 		render(withStoreComponent);
 
 		const input = screen.getByPlaceholderText('Поиск');
-		await user.type(input, expectedQuerry);
+		await user.type(input, expectedQuery);
 
 		jest.advanceTimersByTime(500);
 
 		await waitFor(() => {
-			const { searchQuerry } = mockStore.getState()[NameSpace.Main];
-			expect(searchQuerry).toBe(expectedQuerry);
+			const { searchQuery } = mockStore.getState()[NameSpace.Main];
+			expect(searchQuery).toBe(expectedQuery);
 		});
 
 		jest.useRealTimers();
