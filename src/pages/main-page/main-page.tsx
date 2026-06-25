@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ButtonController from '../../components/button-controller/button-controller';
 import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clause';
+import Loader from '../../components/loading/loading';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute, NAVS, LoadingStatus } from '../../constants';
@@ -35,8 +36,8 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 	);
 
 	const randomImages = {
-		cakes: useMemo(() => (getRandomImages(cakes)), [cakes]) ,
-		bentoCakes: useMemo(() => getRandomImages(bentoCakes), [bentoCakes]) 
+		cakes: useMemo(() => getRandomImages(cakes), [cakes]),
+		bentoCakes: useMemo(() => getRandomImages(bentoCakes), [bentoCakes])
 	};
 
 	const cakesTitle = useMemo(
@@ -49,18 +50,10 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 	);
 
 	if (loadingStatus === LoadingStatus.Loading) {
-		return (
-			<div className="container">
-				<div className="loader">Loading...</div>
-			</div>
-		);
+		return <Loader message="Loading..." />;
 	}
 	if (loadingStatus === LoadingStatus.Failed) {
-		return (
-			<div className="container">
-				<div className="loader">Error...</div>
-			</div>
-		);
+		return <Loader message="Data loading Error" />;
 	}
 	return (
 		<>

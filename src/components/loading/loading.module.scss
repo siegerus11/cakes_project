@@ -1,0 +1,8 @@
+@use '../../_variables' as variables;
+
+.loader {
+	padding: 37px 0;
+	color: variables.$color-primary;
+	font-size: 24px;
+	text-align: center;
+}
