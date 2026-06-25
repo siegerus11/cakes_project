@@ -14,6 +14,7 @@ export const AppRoute = {
 	CakesCatalog: '/catalog/cakes',
 	CakeOfferArticle: '/cake-offer/:id',
 	BentoCakesCatalog: '/catalog/bento-cakes',
+	Search: '/catalog/search',
 	Delivery: '/delivery',
 	Faq: '/faq',
 	Reviews: '/reviews',

@@ -16,10 +16,17 @@ import NotFoundCake from './no-found-cake/no-found-cake';
 import SortList from './sort-list/sort-list';
 
 type CatalogPageProps = {
-	cakes: CakeOffer[];
+	cakes: { cakeOffers: CakeOffer[]; bentoCakesOffers: CakeOffer[] };
+	bentoCatalog?: boolean;
+	searchPage?: boolean;
 };
 
-const CatalogPage = ({ cakes }: CatalogPageProps) => {
+const CatalogPage = ({
+	cakes,
+	searchPage = false,
+	bentoCatalog
+}: CatalogPageProps) => {
+	const cakeOffers = bentoCatalog ? cakes.bentoCakesOffers : cakes.cakeOffers;
 	const { pathname } = useLocation();
 	const { getSortingStatus } = useActionCreators(mainProcessActions);
 	const loadingStatus = useAppSelector(selectOffersLoadingStatus);
@@ -45,9 +52,23 @@ const CatalogPage = ({ cakes }: CatalogPageProps) => {
 					<Title titleText={pageTitle} level="h1" hr />
 					<SortList />
 				</div>
-				<div className="container_catalog-list container ">
-					<CardsList cakes={cakes} isMainPage={false} />
-				</div>
+				{searchPage ? (
+					<>
+						<div className="container_catalog-list container ">
+							<CardsList cakes={cakeOffers} isMainPage={false} />
+						</div>
+						<div className="container_catalog-list container ">
+							<CardsList
+								cakes={cakes.bentoCakesOffers}
+								isMainPage={false}
+							/>
+						</div>
+					</>
+				) : (
+					<div className="container_catalog-list container ">
+						<CardsList cakes={cakeOffers} isMainPage={false} />
+					</div>
+				)}
 				<div className="container">
 					<NotFoundCake />
 					<Clauses />

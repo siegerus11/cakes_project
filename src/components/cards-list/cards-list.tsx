@@ -43,7 +43,7 @@ const CardsList = ({
 
 	return (
 		<ul className={listClass}>
-			{relevantCakes.map(cake => {
+			{relevantCakes?.map(cake => {
 				return (
 					<li key={cake.id} data-testid="card">
 						<Card cake={cake} isMainPage={isMainPage} />
