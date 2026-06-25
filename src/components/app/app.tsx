@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
 import '../../global.module.scss';
@@ -28,6 +28,12 @@ import MainLayout from '../layout/main-layout';
 import './app.module.scss';
 
 function App() {
+	const location = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location.pathname]);
+
 	const cakeOffers = useAppSelector(selectCakeOffers);
 	const bentoCakesOffers = cakeOffers.filter(cake => cake.isBento === true);
 	const { addCartItem } = useActionCreators(cartProcessActions);

@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import Button from '../../components/ui/button/button';
 import { AppRoute } from '../../constants';
 import styles from './not-found-page.module.scss';
