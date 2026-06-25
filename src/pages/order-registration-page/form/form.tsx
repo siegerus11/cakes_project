@@ -1,4 +1,4 @@
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, SubmitEvent, ChangeEvent } from 'react';
 
 import SubmitButton from '../../../components/ui/button/submit-button';
 import { validation, LoadingStatus } from '../../../constants';
@@ -54,7 +54,7 @@ const Form = ({ onSubmit }: FormProps) => {
 		}));
 	};
 
-	const handleFormSubmit = (e: FormEvent) => {
+	const handleFormSubmit = (e: SubmitEvent) => {
 		e.preventDefault();
 
 		const errors: Record<string, string> = {};
