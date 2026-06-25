@@ -15,6 +15,7 @@ import NotFoundPage, {
 	ErrorFallbackComponent
 } from '../../pages/not-found-page/not-found-page';
 import OrderRegistrationPage from '../../pages/order-registration-page/order-registration-page';
+import SearchPage from '../../pages/search-page/search-page';
 import ShoppingCartPage from '../../pages/shopping-cart-page/shopping-cart-page';
 import ThanksPage from '../../pages/thanks-page/thanks-page';
 import { selectCakeOffers } from '../../store/cake-offers-data/cake-offers-data';
@@ -71,11 +72,29 @@ function App() {
 					/>
 					<Route
 						path={AppRoute.CakesCatalog}
-						element={<CatalogPage cakes={cakeOffers} />}
+						element={
+							<CatalogPage
+								cakes={{ cakeOffers, bentoCakesOffers }}
+							/>
+						}
 					/>
 					<Route
 						path={AppRoute.BentoCakesCatalog}
-						element={<CatalogPage cakes={bentoCakesOffers} />}
+						element={
+							<CatalogPage
+								bentoCatalog
+								cakes={{ cakeOffers, bentoCakesOffers }}
+							/>
+						}
+					/>
+					<Route
+						path={AppRoute.Search}
+						element={
+							<CatalogPage
+								cakes={{ cakeOffers, bentoCakesOffers }}
+								searchPage
+							/>
+						}
 					/>
 					<Route
 						path={AppRoute.Delivery}
