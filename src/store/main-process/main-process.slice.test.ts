@@ -11,6 +11,7 @@ describe('Main-process slice', () => {
 			totalPrice: 5000,
 			activeOffer: 'offer-001',
 			sortingStatus: 'Друзьям',
+			searchQuery: '',
 			errorText: ''
 		};
 
@@ -25,7 +26,7 @@ describe('Main-process slice', () => {
 			totalPrice: 0,
 			activeOffer: '',
 			sortingStatus: '',
-			searchQuerry: '',
+			searchQuery: '',
 			errorText: ''
 		};
 
@@ -39,6 +40,7 @@ describe('Main-process slice', () => {
 			totalPrice: 0,
 			activeOffer: '',
 			sortingStatus: '',
+			searchQuery: '',
 			errorText: ''
 		};
 		const expectedState: mainProcessState = {
@@ -59,6 +61,7 @@ describe('Main-process slice', () => {
 			totalPrice: 0,
 			activeOffer: '',
 			sortingStatus: '',
+			searchQuery: '',
 			errorText: ''
 		};
 		const expectedState: mainProcessState = {
@@ -79,6 +82,7 @@ describe('Main-process slice', () => {
 			totalPrice: 0,
 			activeOffer: '',
 			sortingStatus: '',
+			searchQuery: '',
 			errorText: ''
 		};
 		const expectedState: mainProcessState = {
@@ -99,6 +103,7 @@ describe('Main-process slice', () => {
 			totalPrice: 0,
 			activeOffer: '',
 			sortingStatus: '',
+			searchQuery: '',
 			errorText: ''
 		};
 		const expectedState: mainProcessState = {
@@ -119,6 +124,7 @@ describe('Main-process slice', () => {
 			totalPrice: 0,
 			activeOffer: '',
 			sortingStatus: '',
+			searchQuery: '',
 			errorText: 'Что-то пошло не так'
 		};
 		const expectedState: mainProcessState = {

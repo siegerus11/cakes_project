@@ -14,6 +14,7 @@ export const makeFakeStore = (initialState: Partial<State>): Partial<State> => {
 			totalPrice: 10000,
 			activeOffer: 'id',
 			sortingStatus: 'Друзьям',
+			searchQuery: '',
 			errorText: 'Error message'
 		},
 		[NameSpace.Cart]: {

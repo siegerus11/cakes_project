@@ -1,14 +1,15 @@
 import { render, screen } from '@testing-library/react';
 
+import getFormattedPrice from '../../../../utils/getFormattedPrice';
 import Adder from './adder';
 
 describe('Component: Adder', () => {
 	const renderAdder = ({
-		priceCounter = 3600,
+		priceCounter = getFormattedPrice(3600),
 		isWrapped = false,
 		formId = 'test-form'
 	}: {
-		priceCounter?: number;
+		priceCounter?: string;
 		isWrapped?: boolean;
 		formId?: string;
 	} = {}) => {
@@ -49,7 +50,7 @@ describe('Component: Adder', () => {
 	it('should render with different prices', () => {
 		const expectedPrice = /5\s?200\s?₽/;
 
-		renderAdder({ priceCounter: 5200 });
+		renderAdder({ priceCounter: getFormattedPrice(5200) });
 
 		expect(screen.getByText(expectedPrice)).toBeInTheDocument();
 	});

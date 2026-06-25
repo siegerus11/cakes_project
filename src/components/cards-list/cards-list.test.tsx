@@ -24,7 +24,7 @@ describe('Component: CardsList', () => {
 				totalPrice: 0,
 				activeOffer: '',
 				sortingStatus: '',
-				searchQuerry: '',
+				searchQuery: '',
 				errorText: ''
 			},
 			...initialState
@@ -59,7 +59,7 @@ describe('Component: CardsList', () => {
 				totalPrice: 0,
 				activeOffer: '',
 				sortingStatus: 'Друзьям',
-				searchQuerry: '',
+				searchQuery: '',
 				errorText: ''
 			}
 		};
@@ -84,7 +84,7 @@ describe('Component: CardsList', () => {
 				totalPrice: 0,
 				activeOffer: '',
 				sortingStatus: 'Друзьям',
-				searchQuerry: '',
+				searchQuery: '',
 				errorText: ''
 			}
 		};

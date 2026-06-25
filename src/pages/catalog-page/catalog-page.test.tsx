@@ -44,7 +44,11 @@ describe('Component: CatalogPage', () => {
 	const fakeCake = makeFakeCakeOffer();
 
 	const renderCatalogPage = () => {
-		const component = withHistory(<CatalogPage cakes={[fakeCake]} />);
+		const component = withHistory(
+			<CatalogPage
+				cakes={{ cakeOffers: [fakeCake], bentoCakesOffers: [fakeCake] }}
+			/>
+		);
 		const { withStoreComponent } = withStore(component, {
 			[NameSpace.Data]: {
 				cakeOffers: [fakeCake],
@@ -104,7 +108,11 @@ describe('Component: CatalogPage', () => {
 	});
 
 	it('should render nothing when loading status is not success', () => {
-		const component = withHistory(<CatalogPage cakes={[fakeCake]} />);
+		const component = withHistory(
+			<CatalogPage
+				cakes={{ cakeOffers: [fakeCake], bentoCakesOffers: [fakeCake] }}
+			/>
+		);
 		const { withStoreComponent } = withStore(component, {
 			[NameSpace.Data]: {
 				cakeOffers: [],

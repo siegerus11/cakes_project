@@ -9,14 +9,14 @@ import styles from './search.module.scss';
 type SearchComponentProps = {};
 
 const SearchComponent = (props: SearchComponentProps) => {
-	const { setSearchQuerry } = useActionCreators(mainProcessActions);
+	const { setSearchQuery } = useActionCreators(mainProcessActions);
 	const navigate = useNavigate();
 
 	const [searchValue, setSearchValue] = useState('');
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
-			setSearchQuerry(searchValue);
+			setSearchQuery(searchValue);
 
 			if (!searchValue.trim()) {
 				return;
@@ -26,7 +26,7 @@ const SearchComponent = (props: SearchComponentProps) => {
 		}, 500);
 
 		return () => clearTimeout(timeout);
-	}, [searchValue, setSearchQuerry]);
+	}, [searchValue, setSearchQuery]);
 
 	const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setSearchValue(e.target.value);

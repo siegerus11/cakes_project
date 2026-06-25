@@ -6,7 +6,7 @@ export type mainProcessState = {
 	totalPrice: number;
 	activeOffer: string;
 	sortingStatus: string;
-	searchQuerry: string;
+	searchQuery: string;
 	errorText: string;
 };
 
@@ -14,7 +14,7 @@ const initialState: mainProcessState = {
 	totalPrice: 0,
 	activeOffer: '',
 	sortingStatus: '',
-	searchQuerry: '',
+	searchQuery: '',
 	errorText: ''
 };
 
@@ -42,10 +42,10 @@ export const mainProcess = createSlice({
 			};
 		},
 
-		setSearchQuerry: (state, action: PayloadAction<string>) => {
+		setSearchQuery: (state, action: PayloadAction<string>) => {
 			return {
 				...state,
-				searchQuerry: action.payload
+				searchQuery: action.payload
 			};
 		},
 
@@ -61,7 +61,7 @@ export const mainProcess = createSlice({
 		selectTotalPrice: state => state.totalPrice,
 		selectActiveOffer: state => state.activeOffer,
 		selectSortingStatus: state => state.sortingStatus,
-		selectSearchQuerry: state => state.searchQuerry,
+		selectSearchQuery: state => state.searchQuery,
 		selectErrorMessage: state => state.errorText
 	}
 });
@@ -72,6 +72,6 @@ export const {
 	selectTotalPrice,
 	selectActiveOffer,
 	selectSortingStatus,
-	selectSearchQuerry,
+	selectSearchQuery,
 	selectErrorMessage
 } = mainProcess.selectors;
