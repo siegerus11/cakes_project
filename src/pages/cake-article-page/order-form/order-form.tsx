@@ -15,7 +15,7 @@ import {
 	selectShoppingCart
 } from '../../../store/cart-process/cart-process';
 import {
-	selectTotalPrice,
+	mainProcessSelectors,
 	mainProcessActions
 } from '../../../store/main-process/main-process';
 import {
@@ -44,7 +44,7 @@ type OrderFormProps = {
 };
 
 const OrderForm = ({ cake, initialPrice, onDescribeClick }: OrderFormProps) => {
-	const totalPrice = useAppSelector(selectTotalPrice);
+	const totalPrice = useAppSelector(mainProcessSelectors.selectTotalPrice);
 	const formattedPrice = getFormattedPrice(totalPrice);
 	const shoppingCart = useAppSelector(selectShoppingCart);
 	const { setTotalPrice } = useActionCreators(mainProcessActions);

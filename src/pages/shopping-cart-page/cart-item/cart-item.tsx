@@ -5,7 +5,7 @@ import useConfirm from '../../../hooks/useConfirm';
 import { useActionCreators, useAppSelector } from '../../../hooks/useStore';
 import {
 	cartProcessActions,
-	selectShoppingCart
+	cartProcessSelectors
 } from '../../../store/cart-process/cart-process';
 import { CakeOrder } from '../../../types/types';
 import getChosen from '../../../utils/getChosen';
@@ -144,7 +144,9 @@ const CartItem = memo(({ order }: CartItemProps) => {
 CartItem.displayName = 'CartItem';
 
 const CartList = () => {
-	const cartSelector = useAppSelector(selectShoppingCart);
+	const cartSelector = useAppSelector(
+		cartProcessSelectors.selectShoppingCart
+	);
 
 	return (
 		<ul className={styles.list}>
