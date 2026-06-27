@@ -56,6 +56,8 @@ src/
 │   ├── card/           # Карточка товара
 │   ├── cards-list/     # Список карточек
 │   ├── nav-menu/       # Навигационное меню
+│   ├── loader/         # Индикатор загрузки
+│   ├── page-skeleton/  # Скелетон страницы (fallback для lazy)
 │   └── ...
 ├── pages/              # Страницы приложения
 │   ├── main-page/
@@ -95,6 +97,26 @@ src/
 ```
 
 **Примечание:** Вложенные папки внутри `pages/` содержат компоненты, которые используются только на соответствующей странице.
+
+## Ленивая загрузка страниц
+
+Большинство страниц загружаются лениво через `React.lazy` + `Suspense` — код каждой страницы попадает в отдельный чанк и загружается только при переходе на маршрут. Это уменьшает размер начального бандла.
+
+Лениво загружаются:
+- `AboutPage`
+- `CakeArticlePage`
+- `CatalogPage` (через `CatalogPageWrapper` для проброса пропсов)
+- `ContactsPage`
+- `DeliveryPage`
+- `OrderRegistrationPage`
+- `ShoppingCartPage`
+- `ThanksPage`
+- `NotFoundPage`
+
+Страницы, которые загружаются сразу:
+- `MainPage` — главная страница, нужна при старте
+
+Fallback при загрузке — компонент `PageSkeleton` (`src/components/page-skeleton/page-skeleton.tsx`).
 
 ## Маршруты
 
