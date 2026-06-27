@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ButtonController from '../../components/button-controller/button-controller';
 import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clause';
-import Loader from '../../components/loading/loading';
+import Loader from '../../components/loader/loader';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute, NAVS, LoadingStatus } from '../../constants';
