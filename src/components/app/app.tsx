@@ -16,22 +16,43 @@ import { CakeOrder } from '../../types/types';
 import getStorageCartValues from '../../utils/getStorageCartValues';
 import MainLayout from '../layout/main-layout';
 import Loader from '../loader/loader';
+import PageSkeleton from '../page-skeleton/page-skeleton';
 import './app.module.scss';
 
 const AboutPage = lazy(() => import('../../pages/about-page/about-page'));
-const CakeArticlePage = lazy(() => import('../../pages/cake-article-page/cake-article-page'));
+const CakeArticlePage = lazy(
+	() => import('../../pages/cake-article-page/cake-article-page')
+);
 const CatalogPage = lazy(() => import('../../pages/catalog-page/catalog-page'));
-const ContactsPage = lazy(() => import('../../pages/contacts-page/contacts-page'));
-const DeliveryPage = lazy(() => import('../../pages/delivery-page/delivery-page'));
-const NotFoundPage = lazy(() => import('../../pages/not-found-page/not-found-page'));
-const OrderRegistrationPage = lazy(() => import('../../pages/order-registration-page/order-registration-page'));
-const ShoppingCartPage = lazy(() => import('../../pages/shopping-cart-page/shopping-cart-page'));
+const ContactsPage = lazy(
+	() => import('../../pages/contacts-page/contacts-page')
+);
+const DeliveryPage = lazy(
+	() => import('../../pages/delivery-page/delivery-page')
+);
+const NotFoundPage = lazy(
+	() => import('../../pages/not-found-page/not-found-page')
+);
+const OrderRegistrationPage = lazy(
+	() => import('../../pages/order-registration-page/order-registration-page')
+);
+const ShoppingCartPage = lazy(
+	() => import('../../pages/shopping-cart-page/shopping-cart-page')
+);
 const ThanksPage = lazy(() => import('../../pages/thanks-page/thanks-page'));
 
-const CatalogPageWrapper = ({ cakes, bentoCatalog, searchPage }: ComponentProps<typeof CatalogPage>) => {
+const CatalogPageWrapper = ({
+	cakes,
+	bentoCatalog,
+	searchPage
+}: ComponentProps<typeof CatalogPage>) => {
 	return (
-		<Suspense fallback={<Loader message="Loading..." />}>
-			<CatalogPage cakes={cakes} bentoCatalog={bentoCatalog} searchPage={searchPage} />
+		<Suspense fallback={<PageSkeleton message="Loading..." />}>
+			<CatalogPage
+				cakes={cakes}
+				bentoCatalog={bentoCatalog}
+				searchPage={searchPage}
+			/>
 		</Suspense>
 	);
 };
@@ -74,14 +95,16 @@ function App() {
 							/>
 						}
 					/>
-				<Route
-					path={AppRoute.About}
-					element={
-						<Suspense fallback={<Loader message="Loading..." />}>
-							<AboutPage />
-						</Suspense>
-					}
-				/>
+					<Route
+						path={AppRoute.About}
+						element={
+							<Suspense
+								fallback={<PageSkeleton message="Loading..." />}
+							>
+								<AboutPage />
+							</Suspense>
+						}
+					/>
 					<Route
 						path={AppRoute.Catalog}
 						element={
@@ -117,64 +140,78 @@ function App() {
 							/>
 						}
 					/>
+					<Route
+						path={AppRoute.Delivery}
+						element={
+							<Suspense
+								fallback={<PageSkeleton message="Loading..." />}
+							>
+								<DeliveryPage />
+							</Suspense>
+						}
+					/>
+					<Route
+						path={AppRoute.Contacts}
+						element={
+							<Suspense
+								fallback={<PageSkeleton message="Loading..." />}
+							>
+								<ContactsPage />
+							</Suspense>
+						}
+					/>
+				</Route>
 				<Route
-					path={AppRoute.Delivery}
+					path={AppRoute.CakeOfferArticle}
 					element={
-						<Suspense fallback={<Loader message="Loading..." />}>
-							<DeliveryPage />
+						<Suspense
+							fallback={<PageSkeleton message="Loading..." />}
+						>
+							<CakeArticlePage />
 						</Suspense>
 					}
 				/>
 				<Route
-					path={AppRoute.Contacts}
+					path={AppRoute.ShoppingCart}
 					element={
-						<Suspense fallback={<Loader message="Loading..." />}>
-							<ContactsPage />
+						<Suspense
+							fallback={<PageSkeleton message="Loading..." />}
+						>
+							<ShoppingCartPage />
 						</Suspense>
 					}
 				/>
-			</Route>
-			<Route
-				path={AppRoute.CakeOfferArticle}
-				element={
-					<Suspense fallback={<Loader message="Loading..." />}>
-						<CakeArticlePage />
-					</Suspense>
-				}
-			/>
-			<Route
-				path={AppRoute.ShoppingCart}
-				element={
-					<Suspense fallback={<Loader message="Loading..." />}>
-						<ShoppingCartPage />
-					</Suspense>
-				}
-			/>
-			<Route
-				path={AppRoute.OrderRegistration}
-				element={
-					<Suspense fallback={<Loader message="Loading..." />}>
-						<OrderRegistrationPage />
-					</Suspense>
-				}
-			/>
-			<Route
-				path={AppRoute.Thanks}
-				element={
-					<Suspense fallback={<Loader message="Loading..." />}>
-						<ThanksPage />
-					</Suspense>
-				}
-			/>
+				<Route
+					path={AppRoute.OrderRegistration}
+					element={
+						<Suspense
+							fallback={<PageSkeleton message="Loading..." />}
+						>
+							<OrderRegistrationPage />
+						</Suspense>
+					}
+				/>
+				<Route
+					path={AppRoute.Thanks}
+					element={
+						<Suspense
+							fallback={<PageSkeleton message="Loading..." />}
+						>
+							<ThanksPage />
+						</Suspense>
+					}
+				/>
 
-			<Route
-				path="*"
-				element={
-					<Suspense fallback={<Loader message="Loading..." />}>
-						<NotFoundPage />
-					</Suspense>
-				}
-			/>
+				<Route
+					path="*"
+					element={
+						<Suspense
+							fallback={<PageSkeleton message="Loading..." />}
+						>
+							<NotFoundPage />
+						</Suspense>
+					}
+				/>
 			</Routes>
 		</ErrorBoundary>
 	);
