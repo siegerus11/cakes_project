@@ -5,6 +5,7 @@ import ButtonController from '../../components/button-controller/button-controll
 import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clause';
 import Loader from '../../components/loader/loader';
+import PageSkeleton from '../../components/page-skeleton/page-skeleton';
 import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute, NAVS, LoadingStatus } from '../../constants';
@@ -50,10 +51,10 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 	);
 
 	if (loadingStatus === LoadingStatus.Loading) {
-		return <Loader message="Loading..." />;
+		return <PageSkeleton message="Loading..." />;
 	}
 	if (loadingStatus === LoadingStatus.Failed) {
-		return <Loader message="Data loading Error" />;
+		return <PageSkeleton message="Data loading Error" />;
 	}
 	return (
 		<>
