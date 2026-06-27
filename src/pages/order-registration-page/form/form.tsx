@@ -3,7 +3,7 @@ import { useState, SubmitEvent, ChangeEvent } from 'react';
 import SubmitButton from '../../../components/ui/button/submit-button';
 import { validation, LoadingStatus } from '../../../constants';
 import { useAppSelector } from '../../../hooks/useStore';
-import { selectOrderSendingStatus } from '../../../store/cake-offers-data/cake-offers-data';
+import { cakeOffersDataSelectors } from '../../../store/cake-offers-data/cake-offers-data';
 import { UserData } from '../../../types/types';
 import styles from './form.module.scss';
 
@@ -12,7 +12,9 @@ type FormProps = {
 };
 
 const Form = ({ onSubmit }: FormProps) => {
-	const orderSendingStatus = useAppSelector(selectOrderSendingStatus);
+	const orderSendingStatus = useAppSelector(
+		cakeOffersDataSelectors.selectOrderSendingStatus
+	);
 
 	const formValuesInitial = {
 		name: '',

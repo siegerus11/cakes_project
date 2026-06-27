@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { AppRoute } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
-import { selectShoppingCart } from '../../store/cart-process/cart-process';
+import { cartProcessSelectors } from '../../store/cart-process/cart-process';
 import styles from './shopping-cart-item.module.scss';
 
 type ShoppingCartItemProps = {
@@ -11,7 +11,7 @@ type ShoppingCartItemProps = {
 };
 
 const ShoppingCartItem = ({ className = '', fixed }: ShoppingCartItemProps) => {
-	const cart = useAppSelector(selectShoppingCart);
+	const cart = useAppSelector(cartProcessSelectors.selectShoppingCart);
 	const count = cart.length;
 	const location = useLocation();
 

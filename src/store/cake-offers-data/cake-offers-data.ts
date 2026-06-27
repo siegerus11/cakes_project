@@ -73,8 +73,6 @@ export const cakeOffersDataActions = {
 	sendOrderAction
 };
 
-export const {
-	selectCakeOffers,
-	selectOffersLoadingStatus,
-	selectOrderSendingStatus
-} = cakeOffersData.selectors;
+export const cakeOffersDataSelectors = {
+	...cakeOffersData.selectors
+};

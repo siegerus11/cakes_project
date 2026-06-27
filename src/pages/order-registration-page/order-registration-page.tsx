@@ -7,12 +7,9 @@ import { AppRoute, LoadingStatus } from '../../constants';
 import { useActionCreators, useAppSelector } from '../../hooks/useStore';
 import {
 	cakeOffersDataActions,
-	selectOrderSendingStatus
+	cakeOffersDataSelectors
 } from '../../store/cake-offers-data/cake-offers-data';
-import {
-	selectShoppingCart,
-	selectFinalSum
-} from '../../store/cart-process/cart-process';
+import { cartProcessSelectors } from '../../store/cart-process/cart-process';
 import { Order } from '../../types/types';
 import Form from './form/form';
 import styles from './order-registration-page.module.scss';
@@ -20,9 +17,11 @@ import styles from './order-registration-page.module.scss';
 const OrderRegistrationPage = () => {
 	const navigate = useNavigate();
 
-	const cart = useAppSelector(selectShoppingCart);
-	const orderSendingStatus = useAppSelector(selectOrderSendingStatus);
-	const sum = useAppSelector(selectFinalSum);
+	const cart = useAppSelector(cartProcessSelectors.selectShoppingCart);
+	const orderSendingStatus = useAppSelector(
+		cakeOffersDataSelectors.selectOrderSendingStatus
+	);
+	const sum = useAppSelector(cartProcessSelectors.selectFinalSum);
 
 	const { sendOrderAction } = useActionCreators(cakeOffersDataActions);
 

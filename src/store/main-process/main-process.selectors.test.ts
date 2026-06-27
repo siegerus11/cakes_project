@@ -1,11 +1,5 @@
 import { NameSpace } from '../../constants';
-import {
-	selectTotalPrice,
-	selectActiveOffer,
-	selectSortingStatus,
-	selectErrorMessage,
-	mainProcessState
-} from './main-process';
+import { mainProcessSelectors, mainProcessState } from './main-process';
 
 describe('Main-process selectors', () => {
 	const state: { [NameSpace.Main]: mainProcessState } = {
@@ -19,25 +13,25 @@ describe('Main-process selectors', () => {
 	};
 
 	it('Should return total price from state', () => {
-		const result = selectTotalPrice(state);
+		const result = mainProcessSelectors.selectTotalPrice(state);
 
 		expect(result).toBe(state[NameSpace.Main].totalPrice);
 	});
 
 	it('Should return activeOfferId from state', () => {
-		const result = selectActiveOffer(state);
+		const result = mainProcessSelectors.selectActiveOffer(state);
 
 		expect(result).toBe(state[NameSpace.Main].activeOffer);
 	});
 
 	it('Should return sortingStatus from state', () => {
-		const result = selectSortingStatus(state);
+		const result = mainProcessSelectors.selectSortingStatus(state);
 
 		expect(result).toBe(state[NameSpace.Main].sortingStatus);
 	});
 
 	it('Should return errorText from state', () => {
-		const result = selectErrorMessage(state);
+		const result = mainProcessSelectors.selectErrorMessage(state);
 
 		expect(result).toBe(state[NameSpace.Main].errorText);
 	});

@@ -9,8 +9,8 @@ import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import { AppRoute, NAVS, LoadingStatus } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
-import { selectOffersLoadingStatus } from '../../store/cake-offers-data/cake-offers-data';
-import { selectFinalSum } from '../../store/cart-process/cart-process';
+import { cakeOffersDataSelectors } from '../../store/cake-offers-data/cake-offers-data';
+import { cartProcessSelectors } from '../../store/cart-process/cart-process';
 import { CakeOffer } from '../../types/types';
 import getFormattedPrice from '../../utils/getFormattedPrice';
 import getRandomImages from '../../utils/getRandomImages';
@@ -22,8 +22,10 @@ type MainPageProps = {
 };
 
 const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
-	const totalPrice = useAppSelector(selectFinalSum);
-	const loadingStatus = useAppSelector(selectOffersLoadingStatus);
+	const totalPrice = useAppSelector(cartProcessSelectors.selectFinalSum);
+	const loadingStatus = useAppSelector(
+		cakeOffersDataSelectors.selectOffersLoadingStatus
+	);
 	const formattedPrice = useMemo(
 		() => getFormattedPrice(totalPrice),
 		[totalPrice]

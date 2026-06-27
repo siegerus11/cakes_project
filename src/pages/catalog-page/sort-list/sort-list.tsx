@@ -3,7 +3,7 @@ import { useCallback, memo } from 'react';
 import { SORT_KINDS } from '../../../constants';
 import { useAppSelector, useActionCreators } from '../../../hooks/useStore';
 import {
-	selectSortingStatus,
+	mainProcessSelectors,
 	mainProcessActions
 } from '../../../store/main-process/main-process';
 import styles from './sort-list.module.scss';
@@ -13,7 +13,9 @@ type SortItemProps = {
 };
 export const SortItem = memo(({ sortKind }: SortItemProps) => {
 	const { getSortingStatus } = useActionCreators(mainProcessActions);
-	const sortingStatus = useAppSelector(selectSortingStatus);
+	const sortingStatus = useAppSelector(
+		mainProcessSelectors.selectSortingStatus
+	);
 	const isActive = sortingStatus === sortKind;
 
 	const handleSortClick = useCallback(() => {

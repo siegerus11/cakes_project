@@ -68,10 +68,6 @@ export const mainProcess = createSlice({
 
 export const mainProcessActions = { ...mainProcess.actions };
 
-export const {
-	selectTotalPrice,
-	selectActiveOffer,
-	selectSortingStatus,
-	selectSearchQuery,
-	selectErrorMessage
-} = mainProcess.selectors;
+export const mainProcessSelectors = {
+	...mainProcess.selectors
+};

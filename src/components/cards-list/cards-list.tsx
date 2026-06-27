@@ -1,12 +1,9 @@
 import { useMemo } from 'react';
 
 import { useAppSelector } from '../../hooks/useStore';
-	import {
-		selectSortingStatus,
-		selectSearchQuery
-	} from '../../store/main-process/main-process';
-	import { CakeOffer } from '../../types/types';
-	import getByQuery from '../../utils/getQuery';
+import { mainProcessSelectors } from '../../store/main-process/main-process';
+import { CakeOffer } from '../../types/types';
+import getByQuery from '../../utils/getQuery';
 import getSortedByCategory from '../../utils/getSortedByCategory';
 import Card, { AllCard } from '../card/card';
 import styles from './cards-list.module.scss';
@@ -24,8 +21,10 @@ const CardsList = ({
 	isMainPage,
 	path
 }: CardsListProps) => {
-	const query = useAppSelector(selectSearchQuery);
-	const sortingStatus = useAppSelector(selectSortingStatus);
+	const query = useAppSelector(mainProcessSelectors.selectSearchQuery);
+	const sortingStatus = useAppSelector(
+		mainProcessSelectors.selectSortingStatus
+	);
 	const sortedCakes = useMemo(
 		() => getSortedByCategory(cakes, sortingStatus),
 		[cakes, sortingStatus]
