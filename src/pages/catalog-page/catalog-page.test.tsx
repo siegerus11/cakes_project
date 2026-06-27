@@ -107,7 +107,7 @@ describe('Component: CatalogPage', () => {
 		expect(screen.getByTestId(clausesTestId)).toBeInTheDocument();
 	});
 
-	it('should render nothing when loading status is not success', () => {
+	it('should render error when loading status is not Failed', () => {
 		const component = withHistory(
 			<CatalogPage
 				cakes={{ cakeOffers: [fakeCake], bentoCakesOffers: [fakeCake] }}
@@ -116,12 +116,14 @@ describe('Component: CatalogPage', () => {
 		const { withStoreComponent } = withStore(component, {
 			[NameSpace.Data]: {
 				cakeOffers: [],
-				offersLoadingStatus: LoadingStatus.Loading,
-				orderSendingStatus: 'Idle'
+				offersLoadingStatus: LoadingStatus.Failed,
+				orderSendingStatus: LoadingStatus.Idle
 			}
 		});
-		const { container } = render(withStoreComponent);
 
-		expect(container.innerHTML).toBe('');
+		const expectedErrorText = 'Data loading Error';
+		render(withStoreComponent);
+
+		expect(screen.getByText(expectedErrorText)).toBeInTheDocument();
 	});
 });
