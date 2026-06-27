@@ -10,7 +10,7 @@ import Button from '../../components/ui/button/button';
 import { AppRoute, NAVS, LoadingStatus } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
 import { selectOffersLoadingStatus } from '../../store/cake-offers-data/cake-offers-data';
-import { selectFinalSum } from '../../store/cart-process/cart-process';
+import { cartProcessSelectors } from '../../store/cart-process/cart-process';
 import { CakeOffer } from '../../types/types';
 import getFormattedPrice from '../../utils/getFormattedPrice';
 import getRandomImages from '../../utils/getRandomImages';
@@ -22,7 +22,7 @@ type MainPageProps = {
 };
 
 const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
-	const totalPrice = useAppSelector(selectFinalSum);
+	const totalPrice = useAppSelector(cartProcessSelectors.selectFinalSum);
 	const loadingStatus = useAppSelector(selectOffersLoadingStatus);
 	const formattedPrice = useMemo(
 		() => getFormattedPrice(totalPrice),

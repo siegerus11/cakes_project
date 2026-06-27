@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { NameSpace, LoadingStatus, discountValue } from '../../constants';
 import { CakeOrder } from '../../types/types';
 import { getDiscountAction } from '../api-actions';
+import selectFinalSum from './cart-process.selectors';
 
 export type CartProcessState = {
 	shoppingCart: CakeOrder[];
@@ -107,19 +108,16 @@ export const cartProcess = createSlice({
 
 	selectors: {
 		selectShoppingCart: state => state.shoppingCart,
-		selectFinalSum: state =>
-			state.shoppingCart.reduce(
-				(sum, order) => sum + order.price * order.quantity,
-				0
-			),
 		selectdiscountLoadingStatus: state => state.discountLoadingStatus
 	}
 });
 
 export const cartProcessActions = { ...cartProcess.actions, getDiscountAction };
 
-export const {
-	selectShoppingCart,
-	selectFinalSum,
-	selectdiscountLoadingStatus
-} = cartProcess.selectors;
+export const { selectShoppingCart, selectdiscountLoadingStatus } =
+	cartProcess.selectors;
+
+export const cartProcessSelectors = {
+	...cartProcess.selectors,
+	selectFinalSum
+};
