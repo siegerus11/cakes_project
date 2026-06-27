@@ -20,8 +20,7 @@ import useMediaQuery from '../../hooks/useMediaQuery';
 import { useAppSelector, useActionCreators } from '../../hooks/useStore';
 import useTouch from '../../hooks/useTouch';
 import {
-	selectFinalSum,
-	selectShoppingCart,
+	cartProcessSelectors,
 	cartProcessActions
 } from '../../store/cart-process/cart-process';
 import getFormattedPrice from '../../utils/getFormattedPrice';
@@ -36,10 +35,12 @@ const ShoppingCartPage = () => {
 	const [inputValue, setInputValue] = useState<string>('');
 	const [errorMessage, setErrorMessage] = useState<string>('');
 
-	const shoppingCart = useAppSelector(selectShoppingCart);
+	const shoppingCart = useAppSelector(
+		cartProcessSelectors.selectShoppingCart
+	);
 	const { clearCart, getDiscountAction } =
 		useActionCreators(cartProcessActions);
-	const finalSumValue = useAppSelector(selectFinalSum);
+	const finalSumValue = useAppSelector(cartProcessSelectors.selectFinalSum);
 	const finalSum = useMemo(
 		() => getFormattedPrice(finalSumValue),
 		[finalSumValue]

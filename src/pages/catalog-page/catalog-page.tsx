@@ -8,7 +8,7 @@ import Loader from '../../components/loader/loader';
 import Title from '../../components/title/title';
 import { NAVS, LoadingStatus } from '../../constants';
 import { useActionCreators, useAppSelector } from '../../hooks/useStore';
-import { selectOffersLoadingStatus } from '../../store/cake-offers-data/cake-offers-data';
+import { cakeOffersDataSelectors } from '../../store/cake-offers-data/cake-offers-data';
 import { mainProcessActions } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
 import getNavData from '../../utils/getNavData';
@@ -30,7 +30,9 @@ const CatalogPage = ({
 	const cakeOffers = bentoCatalog ? cakes.bentoCakesOffers : cakes.cakeOffers;
 	const { pathname } = useLocation();
 	const { getSortingStatus } = useActionCreators(mainProcessActions);
-	const loadingStatus = useAppSelector(selectOffersLoadingStatus);
+	const loadingStatus = useAppSelector(
+		cakeOffersDataSelectors.selectOffersLoadingStatus
+	);
 	const pageTitle = useMemo(() => {
 		const navData = getNavData(pathname, NAVS);
 		return navData?.title ?? 'Каталог';

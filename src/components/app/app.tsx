@@ -7,7 +7,7 @@ import '../../global.module.scss';
 import { useAppSelector, useActionCreators } from '../../hooks/useStore';
 import MainPage from '../../pages/main-page/main-page';
 import { ErrorFallbackComponent } from '../../pages/not-found-page/not-found-page';
-import { selectCakeOffers } from '../../store/cake-offers-data/cake-offers-data';
+import { cakeOffersDataSelectors } from '../../store/cake-offers-data/cake-offers-data';
 import {
 	selectShoppingCart,
 	cartProcessActions
@@ -64,7 +64,7 @@ function App() {
 		window.scrollTo(0, 0);
 	}, [location.pathname]);
 
-	const cakeOffers = useAppSelector(selectCakeOffers);
+	const cakeOffers = useAppSelector(cakeOffersDataSelectors.selectCakeOffers);
 	const bentoCakesOffers = cakeOffers.filter(cake => cake.isBento === true);
 	const { addCartItem } = useActionCreators(cartProcessActions);
 	const shoppingCart = useAppSelector(selectShoppingCart);
