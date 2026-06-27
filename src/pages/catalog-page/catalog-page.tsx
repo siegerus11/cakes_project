@@ -4,8 +4,9 @@ import { useLocation } from 'react-router-dom';
 import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
 import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clause';
+import Loader from '../../components/loader/loader';
 import Title from '../../components/title/title';
-import { NAVS } from '../../constants';
+import { NAVS, LoadingStatus } from '../../constants';
 import { useActionCreators, useAppSelector } from '../../hooks/useStore';
 import { selectOffersLoadingStatus } from '../../store/cake-offers-data/cake-offers-data';
 import { mainProcessActions } from '../../store/main-process/main-process';
@@ -39,8 +40,11 @@ const CatalogPage = ({
 		getSortingStatus('');
 	}, [getSortingStatus]);
 
-	if (loadingStatus !== 'Success') {
-		return null;
+	if (loadingStatus === LoadingStatus.Loading) {
+		return <Loader message="Loading..." />;
+	}
+	if (loadingStatus === LoadingStatus.Failed) {
+		return <Loader message="Data loading Error" />;
 	}
 	return (
 		<>
