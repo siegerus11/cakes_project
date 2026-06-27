@@ -96,88 +96,102 @@ describe('Application routing', () => {
 		expect(screen.getByText('Footer')).toBeInTheDocument();
 	});
 
-	it('Should render AboutPage when user navigate to "/about"', () => {
+	it('Should render AboutPage when user navigate to "/about"', async () => {
 		renderWithRoute(AppRoute.About);
 
-		expect(screen.getByText('AboutPage component')).toBeInTheDocument();
+		expect(
+			await screen.findByText('AboutPage component')
+		).toBeInTheDocument();
 		expect(screen.getByText('Header')).toBeInTheDocument();
 		expect(screen.getByText('Footer')).toBeInTheDocument();
 	});
 
-	it('Should render CatalogPage when user navigate to "/catalog/cakes"', () => {
+	it('Should render CatalogPage when user navigate to "/catalog/cakes"', async () => {
 		renderWithRoute(AppRoute.CakesCatalog);
 
-		expect(screen.getByText('CatalogPage component')).toBeInTheDocument();
+		expect(
+			await screen.findByText('CatalogPage component')
+		).toBeInTheDocument();
 		expect(screen.getByText('Header')).toBeInTheDocument();
 		expect(screen.getByText('Footer')).toBeInTheDocument();
 	});
 
-	it('Should render CatalogPage when user navigate to "/catalog/bento-cakes"', () => {
+	it('Should render CatalogPage when user navigate to "/catalog/bento-cakes"', async () => {
 		renderWithRoute(AppRoute.BentoCakesCatalog);
 
-		expect(screen.getByText('CatalogPage component')).toBeInTheDocument();
+		expect(
+			await screen.findByText('CatalogPage component')
+		).toBeInTheDocument();
 		expect(screen.getByText('Header')).toBeInTheDocument();
 		expect(screen.getByText('Footer')).toBeInTheDocument();
 	});
 
-	it('Should render CatalogPage when user navigate to "/catalog/search"', () => {
+	it('Should render CatalogPage when user navigate to "/catalog/search"', async () => {
 		renderWithRoute(AppRoute.Search);
 
-		expect(screen.getByText('CatalogPage component')).toBeInTheDocument();
+		expect(
+			await screen.findByText('CatalogPage component')
+		).toBeInTheDocument();
 		expect(screen.getByText('Header')).toBeInTheDocument();
 		expect(screen.getByText('Footer')).toBeInTheDocument();
 	});
 
-	it('Should render DeliveryPage when user navigate to "/delivery"', () => {
+	it('Should render DeliveryPage when user navigate to "/delivery"', async () => {
 		renderWithRoute(AppRoute.Delivery);
 
-		expect(screen.getByText('DeliveryPage component')).toBeInTheDocument();
+		expect(
+			await screen.findByText('DeliveryPage component')
+		).toBeInTheDocument();
 		expect(screen.getByText('Header')).toBeInTheDocument();
 		expect(screen.getByText('Footer')).toBeInTheDocument();
 	});
 
-	it('Should render ContactsPage when user navigate to "/contacts"', () => {
+	it('Should render ContactsPage when user navigate to "/contacts"', async () => {
 		renderWithRoute(AppRoute.Contacts);
 
-		expect(screen.getByText('ContactsPage component')).toBeInTheDocument();
+		expect(
+			await screen.findByText('ContactsPage component')
+		).toBeInTheDocument();
 		expect(screen.getByText('Header')).toBeInTheDocument();
 		expect(screen.getByText('Footer')).toBeInTheDocument();
 	});
 
-	it('Should render CakeArticlePage without layout when user navigate to "/cake-offer/:id"', () => {
+	it('Should render CakeArticlePage without layout when user navigate to "/cake-offer/:id"', async () => {
 		renderWithRoute('/cake-offer/1');
 
 		expect(
-			screen.getByText('CakeArticlePage component')
+			await screen.findByText('CakeArticlePage component')
 		).toBeInTheDocument();
 		expect(screen.queryByText('Header')).not.toBeInTheDocument();
 		expect(screen.queryByText('Footer')).not.toBeInTheDocument();
 	});
 
-	it('Should render ShoppingCartPage without layout when user navigate to "/shopping-cart"', () => {
+	it('Should render ShoppingCartPage without layout when user navigate to "/shopping-cart"', async () => {
 		renderWithRoute(AppRoute.ShoppingCart);
 
 		expect(
-			screen.getByText('ShoppingCartPage component')
+			await screen.findByText('ShoppingCartPage component')
 		).toBeInTheDocument();
 		expect(screen.queryByText('Header')).not.toBeInTheDocument();
 		expect(screen.queryByText('Footer')).not.toBeInTheDocument();
 	});
 
-	it('Should render OrderRegistrationPage without layout when user navigate to "/order-registration"', () => {
+	it('Should render OrderRegistrationPage without layout when user navigate to "/order-registration"', async () => {
 		renderWithRoute(AppRoute.OrderRegistration);
 
 		expect(
-			screen.getByText('OrderRegistrationPage component')
+			await screen.findByText('OrderRegistrationPage component')
 		).toBeInTheDocument();
 		expect(screen.queryByText('Header')).not.toBeInTheDocument();
 		expect(screen.queryByText('Footer')).not.toBeInTheDocument();
 	});
 
-	it('Should render ThanksPage without layout when user navigate to "/thanks-page"', () => {
+	it('Should render ThanksPage without layout when user navigate to "/thanks-page"', async () => {
 		renderWithRoute(AppRoute.Thanks);
 
-		expect(screen.getByText('ThanksPage component')).toBeInTheDocument();
+		expect(
+			await screen.findByText('ThanksPage component')
+		).toBeInTheDocument();
 		expect(screen.queryByText('Header')).not.toBeInTheDocument();
 		expect(screen.queryByText('Footer')).not.toBeInTheDocument();
 	});
