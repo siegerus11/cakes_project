@@ -2,6 +2,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { AppRoute } from '../../../constants';
+import useDebounce from '../../../hooks/useDebounce';
 import { useActionCreators } from '../../../hooks/useStore';
 import { mainProcessActions } from '../../../store/main-process/main-process';
 import styles from './search.module.scss';
@@ -11,22 +12,13 @@ type SearchComponentProps = {};
 const SearchComponent = (props: SearchComponentProps) => {
 	const { setSearchQuery } = useActionCreators(mainProcessActions);
 	const navigate = useNavigate();
-
 	const [searchValue, setSearchValue] = useState('');
+	const debouncedSearchValue = useDebounce(searchValue, 500);
 
 	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setSearchQuery(searchValue);
-
-			if (!searchValue.trim()) {
-				return;
-			}
-
-			navigate(AppRoute.Search);
-		}, 500);
-
-		return () => clearTimeout(timeout);
-	}, [searchValue, setSearchQuery]);
+		setSearchQuery(debouncedSearchValue);
+		if (debouncedSearchValue.trim()) navigate(AppRoute.Search);
+	}, [setSearchQuery, debouncedSearchValue]);
 
 	const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setSearchValue(e.target.value);
