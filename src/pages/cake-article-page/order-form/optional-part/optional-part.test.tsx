@@ -10,21 +10,21 @@ const mockOptionally: Optional[] = [
 		title: 'Ягоды',
 		price: 300,
 		isInclude: false,
-		image: '/img1.jpg'
+		image: '/img1.webp'
 	},
 	{
 		name: 'nuts',
 		title: 'Орехи',
 		price: 200,
 		isInclude: false,
-		image: '/img2.jpg'
+		image: '/img2.webp'
 	},
 	{
 		name: 'chocolate',
 		title: 'Шоколадная крошка',
 		price: 150,
 		isInclude: false,
-		image: '/img3.jpg'
+		image: '/img3.webp'
 	}
 ];
 
@@ -177,7 +177,7 @@ describe('Component: OptionalPart', () => {
 				title: 'Очень длинное название, которое содержит много символов',
 				price: 100,
 				isInclude: false,
-				image: '/img.jpg'
+				image: '/img.webp'
 			}
 		];
 		const cakeWithLongTitle = { ...fakeOffer, optionally: longTitleOption };

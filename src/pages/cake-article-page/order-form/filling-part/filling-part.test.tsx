@@ -11,7 +11,7 @@ const mockFillings: Filling[] = [
 		price: 500,
 		description: 'Описание 1',
 		isInclude: false,
-		image: '/img1.jpg'
+		image: '/img1.webp'
 	},
 	{
 		name: 'vanilla',
@@ -19,7 +19,7 @@ const mockFillings: Filling[] = [
 		price: 400,
 		description: 'Описание 2',
 		isInclude: false,
-		image: '/img2.jpg'
+		image: '/img2.webp'
 	},
 	{
 		name: 'strawberry',
@@ -27,7 +27,7 @@ const mockFillings: Filling[] = [
 		price: 600,
 		description: 'Описание 3',
 		isInclude: false,
-		image: '/img3.jpg'
+		image: '/img3.webp'
 	}
 ];
 

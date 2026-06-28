@@ -4,7 +4,7 @@ const makeFakeOrder = (): CakeOrder => ({
 	orderId: 'mock-id',
 	cakeId: 'id',
 	title: 'cake',
-	image: '/public/images/pictures/cake1.png',
+	image: '/public/images/pictures/cake1.webp',
 	weight: [{ weightValue: 1.5, isChecked: true }],
 	filling: { isChecked: true },
 	optional: {
