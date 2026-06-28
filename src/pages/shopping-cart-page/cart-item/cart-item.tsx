@@ -1,13 +1,13 @@
 import { useMemo, useCallback, memo } from 'react';
 
 import { ConfirmMessage } from '../../../constants';
-import useConfirm from '../../../hooks/useConfirm';
 import { useActionCreators, useAppSelector } from '../../../hooks/useStore';
 import {
 	cartProcessActions,
 	cartProcessSelectors
 } from '../../../store/cart-process/cart-process';
 import { CakeOrder } from '../../../types/types';
+import confirmAction from '../../../utils/confirmAction';
 import getChosen from '../../../utils/getChosen';
 import getFormattedPrice from '../../../utils/getFormattedPrice';
 import getPersonQuantity from '../../../utils/getPersonQuantity';
@@ -31,7 +31,6 @@ const CartItem = memo(({ order }: CartItemProps) => {
 	} = order;
 	const { setCartItemQuantity, removeCartItem } =
 		useActionCreators(cartProcessActions);
-	const confirm = useConfirm();
 
 	const fillingsSelected = useMemo(() => getChosen(filling), [filling]);
 	const optionalSelected = useMemo(() => getChosen(optional), [optional]);
@@ -45,7 +44,7 @@ const CartItem = memo(({ order }: CartItemProps) => {
 	const handleIncrClick = useCallback(
 		(id: string, num: number, increase: boolean) => {
 			if (quantity <= 1 && !increase) {
-				const answer = confirm(ConfirmMessage.ClearOrder);
+				const answer = confirmAction(ConfirmMessage.ClearOrder);
 				if (answer) {
 					removeCartItem(id);
 					localStorage.removeItem(`cake-cart-${id}`);
@@ -55,7 +54,7 @@ const CartItem = memo(({ order }: CartItemProps) => {
 			setCartItemQuantity({ id, num });
 			updateQuantity(quantity, num, orderId);
 		},
-		[confirm, setCartItemQuantity, removeCartItem, quantity, orderId]
+		[setCartItemQuantity, removeCartItem, quantity, orderId]
 	);
 
 	const handleDecrease = useCallback(
