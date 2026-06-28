@@ -36,7 +36,7 @@ const Card = memo(({ cake, isMainPage }: CardProps) => {
 			onClick={() => handleOfferLinkClick(cake.id)}
 		>
 			<div className={styles.imgWrap}>
-				<img src={images[0]} alt={title} width="282" height="282" />
+				<img src={images[0]} alt={title} width="282" height="282" loading="lazy" />
 			</div>
 			<h3 className={cardTitleClass}>{title}</h3>
 			<div className={styles.bottom}>
@@ -70,6 +70,7 @@ const AllCard = ({ images, path }: AllCardProps) => {
 						alt={`Торт "${image}" - изображение ${i + 1}`}
 						width="141"
 						height="141"
+						loading="lazy"
 						key={keyValue}
 					/>
 				);
