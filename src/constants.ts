@@ -40,7 +40,7 @@ export const LoadingStatus = {
 export const NAVS: Nav[] = [
 	{
 		title: 'О нас',
-		image: '../public/images/pictures/navs/nav-about.png',
+		image: '../public/images/pictures/navs/nav-about.webp',
 		path: AppRoute.About
 	},
 	{
@@ -50,7 +50,7 @@ export const NAVS: Nav[] = [
 	},
 	{
 		title: 'Доставка и оплата',
-		image: '../public/images/pictures/navs/nav-deliver.png',
+		image: '../public/images/pictures/navs/nav-deliver.webp',
 		path: AppRoute.Delivery
 	},
 	{
@@ -60,7 +60,7 @@ export const NAVS: Nav[] = [
 	},
 	{
 		title: 'Отзывы',
-		image: '../public/images/pictures/navs/nav-reviews.png',
+		image: '../public/images/pictures/navs/nav-reviews.webp',
 		path: `${AppRoute.About}#reviews`
 	},
 	{

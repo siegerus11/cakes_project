@@ -10,10 +10,10 @@ const cakeOffers: CakeOffer[] = [
 		category: 'Друзьям',
 		title: 'Короткое',
 		images: [
-			'../../../images/pictures/cake1.png',
-			'../../../images/pictures/cake2.png',
-			'../../../images/pictures/cake1.png',
-			'../../../images/pictures/cake2.png'
+			'../../../images/pictures/cake1.webp',
+			'../../../images/pictures/cake2.webp',
+			'../../../images/pictures/cake1.webp',
+			'../../../images/pictures/cake2.webp'
 		],
 		price: 3600,
 		description: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
@@ -151,10 +151,10 @@ const cakeOffers: CakeOffer[] = [
 		category: 'Родителям',
 		title: 'Длинное название на несколько строк таких',
 		images: [
-			'../../../images/pictures/cake3.png',
-			'../../../images/pictures/cake2.png',
-			'../../../images/pictures/cake3.png',
-			'../../../images/pictures/cake2.png'
+			'../../../images/pictures/cake3.webp',
+			'../../../images/pictures/cake2.webp',
+			'../../../images/pictures/cake3.webp',
+			'../../../images/pictures/cake2.webp'
 		],
 		price: 3600,
 		description: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
@@ -292,10 +292,10 @@ const cakeOffers: CakeOffer[] = [
 		category: 'Детям',
 		title: 'Торт с ягодами и безе',
 		images: [
-			'../../../images/pictures/cake4.png',
-			'../../../images/pictures/cake3.png',
-			'../../../images/pictures/cake4.png',
-			'../../../images/pictures/cake3.png'
+			'../../../images/pictures/cake4.webp',
+			'../../../images/pictures/cake3.webp',
+			'../../../images/pictures/cake4.webp',
+			'../../../images/pictures/cake3.webp'
 		],
 		price: 3600,
 		description: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
@@ -433,10 +433,10 @@ const cakeOffers: CakeOffer[] = [
 		category: 'Коллегам',
 		title: 'Торт с ягодами и безе',
 		images: [
-			'../../../images/pictures/cake1.png',
-			'../../../images/pictures/cake2.png',
-			'../../../images/pictures/cake1.png',
-			'../../../images/pictures/cake2.png'
+			'../../../images/pictures/cake1.webp',
+			'../../../images/pictures/cake2.webp',
+			'../../../images/pictures/cake1.webp',
+			'../../../images/pictures/cake2.webp'
 		],
 		price: 3600,
 		description: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
@@ -575,10 +575,10 @@ const cakeOffers: CakeOffer[] = [
 		category: 'Любимым',
 		title: 'Короткое',
 		images: [
-			'../../../images/pictures/cake2.png',
-			'../../../images/pictures/cake1.png',
-			'../../../images/pictures/cake1.png',
-			'../../../images/pictures/cake2.png'
+			'../../../images/pictures/cake2.webp',
+			'../../../images/pictures/cake1.webp',
+			'../../../images/pictures/cake1.webp',
+			'../../../images/pictures/cake2.webp'
 		],
 		price: 3600,
 		description: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
@@ -716,10 +716,10 @@ const cakeOffers: CakeOffer[] = [
 		category: 'Себе к чаю',
 		title: 'Длинное название на несколько строк таких',
 		images: [
-			'../../../images/pictures/cake5.png',
-			'../../../images/pictures/cake4.png',
-			'../../../images/pictures/cake5.png',
-			'../../../images/pictures/cake4.png'
+			'../../../images/pictures/cake5.webp',
+			'../../../images/pictures/cake4.webp',
+			'../../../images/pictures/cake5.webp',
+			'../../../images/pictures/cake4.webp'
 		],
 		price: 3600,
 		description: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
@@ -857,10 +857,10 @@ const cakeOffers: CakeOffer[] = [
 		category: 'Друзьям',
 		title: 'Торт с ягодами и безе',
 		images: [
-			'../../../images/pictures/cake2.png',
-			'../../../images/pictures/cake1.png',
-			'../../../images/pictures/cake1.png',
-			'../../../images/pictures/cake2.png'
+			'../../../images/pictures/cake2.webp',
+			'../../../images/pictures/cake1.webp',
+			'../../../images/pictures/cake1.webp',
+			'../../../images/pictures/cake2.webp'
 		],
 		price: 3600,
 		description: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.
@@ -998,10 +998,10 @@ const cakeOffers: CakeOffer[] = [
 		category: 'Друзьям',
 		title: 'Торт с ягодами и безе',
 		images: [
-			'../../../images/pictures/cake2.png',
-			'../../../images/pictures/cake1.png',
-			'../../../images/pictures/cake1.png',
-			'../../../images/pictures/cake2.png'
+			'../../../images/pictures/cake2.webp',
+			'../../../images/pictures/cake1.webp',
+			'../../../images/pictures/cake1.webp',
+			'../../../images/pictures/cake2.webp'
 		],
 		price: 3600,
 		description: `Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.

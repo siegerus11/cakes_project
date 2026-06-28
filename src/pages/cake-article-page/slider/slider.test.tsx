@@ -5,9 +5,9 @@ import { CakeOffer } from '../../../types/types';
 import Slider from './slider';
 
 const mockSlides = [
-	{ slideSrc: '/img1.jpg', slideAlt: 'Фото 1', isVisible: true },
-	{ slideSrc: '/img2.jpg', slideAlt: 'Фото 2', isVisible: false },
-	{ slideSrc: '/img3.jpg', slideAlt: 'Фото 3', isVisible: false }
+	{ slideSrc: '/img1.webp', slideAlt: 'Фото 1', isVisible: true },
+	{ slideSrc: '/img2.webp', slideAlt: 'Фото 2', isVisible: false },
+	{ slideSrc: '/img3.webp', slideAlt: 'Фото 3', isVisible: false }
 ];
 
 const mockHandleSlideButtonClick = jest.fn();
@@ -35,7 +35,7 @@ describe('Component: Slider', () => {
 			<Slider
 				cake={
 					{
-						images: ['/img1.jpg', '/img2.jpg', '/img3.jpg']
+						images: ['/img1.webp', '/img2.webp', '/img3.webp']
 					} as CakeOffer
 				}
 			/>
@@ -45,7 +45,7 @@ describe('Component: Slider', () => {
 
 	it('should render visible slide image', () => {
 		const imageAltText = 'Фото 1';
-		const expectedSrc = '/img1.jpg';
+		const expectedSrc = '/img1.webp';
 
 		renderSlider();
 

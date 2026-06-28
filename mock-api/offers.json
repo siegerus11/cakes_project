@@ -5,10 +5,10 @@
     "category": "Друзьям",
     "title": "Ягодный",
     "images": [
-      "/images/pictures/cake30.jpg",
-      "/images/pictures/cake31.jpg",
-      "/images/pictures/cake30.jpg",
-      "/images/pictures/cake31.jpg"
+      "/images/pictures/cake30.webp",
+      "/images/pictures/cake31.webp",
+      "/images/pictures/cake30.webp",
+      "/images/pictures/cake31.webp"
     ],
     "price": 3600,
     "description": "Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола. Очень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.\n\nОчень вкусный, полезный и красивый тортик. Яркий авторский торт со свежими сезонными ягодами — настоящее украшение вашего стола.",
@@ -19,7 +19,7 @@
         "price": 950,
         "description": "Нежный йогуртовый крем с кусочками спелой вишни на ванильном бисквите",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Вишня",
           "Йогуртовый крем на основе натурального йогурта",
@@ -42,7 +42,7 @@
         "price": 950,
         "description": "Воздушное суфле с кусочками персиков и нежным сливочным кремом",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Персики",
           "Сливочный крем",
@@ -64,7 +64,7 @@
         "price": 950,
         "description": "Ассорти из свежих лесных ягод: малина, черника, ежевика в нежном креме",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Малина",
           "Черника",
@@ -86,7 +86,7 @@
         "price": 950,
         "description": "Классический рецепт с заварным кром и песочным тестом, как у бабушки",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Молоко",
           "Яйца",
@@ -114,28 +114,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -145,10 +145,10 @@
     "category": "Родителям",
     "title": "Медовый с карамелью",
     "images": [
-      "/images/pictures/cake32.jpg",
-      "/images/pictures/cake33.jpg",
-      "/images/pictures/cake32.jpg",
-      "/images/pictures/cake33.jpg"
+      "/images/pictures/cake32.webp",
+      "/images/pictures/cake33.webp",
+      "/images/pictures/cake32.webp",
+      "/images/pictures/cake33.webp"
     ],
     "price": 2800,
     "description": "Классический медовый торт с карамельным прослоем и нежным сливочным кремом. Тонкие медовые коржи пропитаны воздушным кремом, который тает во рту.",
@@ -159,7 +159,7 @@
         "price": 750,
         "description": "Традиционный рецепт с натуральным мёдом и сливочным кремом",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Мёд натуральный",
           "Сливочное масло",
@@ -181,7 +181,7 @@
         "price": 850,
         "description": "Медовые коржи с добавлением домашней карамели",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Мёд натуральный",
           "Карамель домашняя",
@@ -203,7 +203,7 @@
         "price": 900,
         "description": "Медовые коржи с грецкими орехами и сгущённым молоком",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Мёд натуральный",
           "Грецкие орехи",
@@ -225,7 +225,7 @@
         "price": 800,
         "description": "Медовый торт с черносливом и нежным сметанным кремом",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Мёд натуральный",
           "Чернослив",
@@ -253,28 +253,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -284,10 +284,10 @@
     "category": "Детям",
     "title": "Торт с ягодами и безе",
     "images": [
-      "/images/pictures/cake41.jpg",
-      "/images/pictures/cake36.jpg",
-      "/images/pictures/cake36.jpg",
-      "/images/pictures/cake35.jpg"
+      "/images/pictures/cake41.webp",
+      "/images/pictures/cake36.webp",
+      "/images/pictures/cake36.webp",
+      "/images/pictures/cake35.webp"
     ],
     "price": 3200,
     "description": "Праздничный торт с хрустящим безе и свежими сезонными ягодами. Идеальный выбор для детского праздника — яркий, лёгкий и очень вкусный.",
@@ -298,7 +298,7 @@
         "price": 900,
         "description": "Клубника, малина и черника в нежном творожном креме",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Клубника",
           "Малина",
@@ -320,7 +320,7 @@
         "price": 1000,
         "description": "Хрустящее безе с начинкой из тропического манго и йогуртовым муссом",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Безе",
           "Манго",
@@ -341,7 +341,7 @@
         "price": 1100,
         "description": "Шоколадный бисквит с кремом на основе сливок и какао",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Какао",
           "Сливки",
@@ -362,7 +362,7 @@
         "price": 750,
         "description": "Классический ванильный торт с безе и лёгким сливочным кремом",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Ваниль",
           "Сливочный крем",
@@ -389,28 +389,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -420,10 +420,10 @@
     "category": "Коллегам",
     "title": "Шоколадный трюфель",
     "images": [
-      "/images/pictures/cake43.jpg",
-      "/images/pictures/cake42.jpg",
-      "/images/pictures/cake43.jpg",
-      "/images/pictures/cake42.jpg"
+      "/images/pictures/cake43.webp",
+      "/images/pictures/cake42.webp",
+      "/images/pictures/cake43.webp",
+      "/images/pictures/cake42.webp"
     ],
     "price": 4200,
     "description": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
@@ -434,7 +434,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -454,7 +454,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -475,7 +475,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -496,7 +496,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -522,28 +522,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -553,10 +553,10 @@
     "category": "Коллегам",
     "title": "Шоколадный трюфель",
     "images": [
-      "/images/pictures/cake16.jpg",
-      "/images/pictures/cake17.jpg",
-      "/images/pictures/cake16.jpg",
-      "/images/pictures/cake17.jpg"
+      "/images/pictures/cake16.webp",
+      "/images/pictures/cake17.webp",
+      "/images/pictures/cake16.webp",
+      "/images/pictures/cake17.webp"
     ],
     "price": 4200,
     "description": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
@@ -567,7 +567,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -587,7 +587,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -608,7 +608,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -629,7 +629,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -655,28 +655,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -686,10 +686,10 @@
     "category": "Детям",
     "title": "Шоколадный трюфель",
     "images": [
-      "/images/pictures/cake18.jpg",
-      "/images/pictures/cake19.jpg",
-      "/images/pictures/cake18.jpg",
-      "/images/pictures/cake19.jpg"
+      "/images/pictures/cake18.webp",
+      "/images/pictures/cake19.webp",
+      "/images/pictures/cake18.webp",
+      "/images/pictures/cake19.webp"
     ],
     "price": 4200,
     "description": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
@@ -700,7 +700,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -720,7 +720,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -741,7 +741,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -762,7 +762,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -788,28 +788,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -819,10 +819,10 @@
     "category": "Родителям",
     "title": "Шоколадный трюфель",
     "images": [
-      "/images/pictures/cake20.jpg",
-      "/images/pictures/cake21.jpg",
-      "/images/pictures/cake20.jpg",
-      "/images/pictures/cake21.jpg"
+      "/images/pictures/cake20.webp",
+      "/images/pictures/cake21.webp",
+      "/images/pictures/cake20.webp",
+      "/images/pictures/cake21.webp"
     ],
     "price": 4200,
     "description": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
@@ -833,7 +833,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -853,7 +853,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -874,7 +874,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -895,7 +895,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -921,28 +921,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -952,10 +952,10 @@
     "category": "Себе к чаю",
     "title": "Шоколадный трюфель",
     "images": [
-      "/images/pictures/cake41.jpg",
-      "/images/pictures/cake36.jpg",
-      "/images/pictures/cake36.jpg",
-      "/images/pictures/cake35.jpg"
+      "/images/pictures/cake41.webp",
+      "/images/pictures/cake36.webp",
+      "/images/pictures/cake36.webp",
+      "/images/pictures/cake35.webp"
     ],
     "price": 4200,
     "description": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
@@ -966,7 +966,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -986,7 +986,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -1007,7 +1007,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -1028,7 +1028,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -1054,28 +1054,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -1085,10 +1085,10 @@
     "category": "Коллегам",
     "title": "Шоколадный трюфель",
     "images": [
-      "/images/pictures/cake22.jpg",
-      "/images/pictures/cake23.jpg",
-      "/images/pictures/cake22.jpg",
-      "/images/pictures/cake23.jpg"
+      "/images/pictures/cake22.webp",
+      "/images/pictures/cake23.webp",
+      "/images/pictures/cake22.webp",
+      "/images/pictures/cake23.webp"
     ],
     "price": 4200,
     "description": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
@@ -1099,7 +1099,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -1119,7 +1119,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -1140,7 +1140,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -1161,7 +1161,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -1187,28 +1187,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -1218,10 +1218,10 @@
     "category": "Коллегам",
     "title": "Шоколадный трюфель",
     "images": [
-      "/images/pictures/cake32.jpg",
-      "/images/pictures/cake33.jpg",
-      "/images/pictures/cake32.jpg",
-      "/images/pictures/cake33.jpg"
+      "/images/pictures/cake32.webp",
+      "/images/pictures/cake33.webp",
+      "/images/pictures/cake32.webp",
+      "/images/pictures/cake33.webp"
     ],
     "price": 4200,
     "description": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
@@ -1232,7 +1232,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -1252,7 +1252,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -1273,7 +1273,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -1294,7 +1294,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -1320,28 +1320,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -1351,10 +1351,10 @@
     "category": "Коллегам",
     "title": "Шоколадный трюфель",
     "images": [
-      "/images/pictures/cake24.jpg",
-      "/images/pictures/cake25.jpg",
-      "/images/pictures/cake24.jpg",
-      "/images/pictures/cake25.jpg"
+      "/images/pictures/cake24.webp",
+      "/images/pictures/cake25.webp",
+      "/images/pictures/cake24.webp",
+      "/images/pictures/cake25.webp"
     ],
     "price": 4200,
     "description": "Изысканный торт с трюфельным шоколадом и прослойкой из натуральных ягод. Утончённый вкус для настоящих ценителей шоколада.",
@@ -1365,7 +1365,7 @@
         "price": 1200,
         "description": "Трюфель из бельгийского тёмного шоколада 72% какао",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Шоколад бельгийский 72%",
           "Сливки 33%",
@@ -1385,7 +1385,7 @@
         "price": 1100,
         "description": "Шоколадная начинка с поджаренным фундуком и нугой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Фундук",
@@ -1406,7 +1406,7 @@
         "price": 1000,
         "description": "Шоколадный торт с прослойкой из свежей малины и малинового конфи",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Малина",
@@ -1427,7 +1427,7 @@
         "price": 850,
         "description": "Лёгкая шоколадная начинка с воздушными взбитыми сливками",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Молочный шоколад",
           "Сливки взбитые",
@@ -1453,28 +1453,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -1484,10 +1484,10 @@
     "category": "Любимым",
     "title": "Клубничный бенто",
     "images": [
-      "/images/pictures/cake26.jpg",
-      "/images/pictures/cake27.jpg",
-      "/images/pictures/cake26.jpg",
-      "/images/pictures/cake27.jpg"
+      "/images/pictures/cake26.webp",
+      "/images/pictures/cake27.webp",
+      "/images/pictures/cake26.webp",
+      "/images/pictures/cake27.webp"
     ],
     "price": 3800,
     "description": "Компактный бенто-торт с клубникой и нежным кремом — идеальный порционный десерт для двоих. Украшён свежей клубникой и шоколадной глазурью.",
@@ -1498,7 +1498,7 @@
         "price": 350,
         "description": "Свежая клубника со сливочным кремом на бисквитной основе",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Клубника",
           "Сливки 33%",
@@ -1518,7 +1518,7 @@
         "price": 380,
         "description": "Свежая малина с нежным крем-чизом на шоколадном бисквите",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Малина",
           "Крем-чиз",
@@ -1538,7 +1538,7 @@
         "price": 400,
         "description": "Тропическая начинка из манго и маракуйи с йогуртовым муссом",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Манго",
           "Маракуйя",
@@ -1559,7 +1559,7 @@
         "price": 350,
         "description": "Домашняя солёная карамель с крем-чизом на ванильном бисквите",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Карамель",
           "Соль морская",
@@ -1586,28 +1586,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -1617,10 +1617,10 @@
     "category": "Себе к чаю",
     "title": "Шоколадный бенто",
     "images": [
-      "/images/pictures/cake34.jpg",
-      "/images/pictures/cake33.jpg",
-      "/images/pictures/cake33.jpg",
-      "/images/pictures/cake34.jpg"
+      "/images/pictures/cake34.webp",
+      "/images/pictures/cake33.webp",
+      "/images/pictures/cake33.webp",
+      "/images/pictures/cake34.webp"
     ],
     "price": 3650,
     "description": "Порционный бенто-торт из тёмного шоколада с брауни начинкой. Идеальный компактный десерт к чаю или кофе.",
@@ -1631,7 +1631,7 @@
         "price": 250,
         "description": "Шоколадный брауни с грецкими орехами внутри",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Тёмный шоколад",
           "Масло сливочное",
@@ -1653,7 +1653,7 @@
         "price": 300,
         "description": "Шоколадно-ореховый крем с нежной текстурой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Шоколадно-ореховый крем",
           "Бисквит",
@@ -1672,7 +1672,7 @@
         "price": 280,
         "description": "Коковое суфле с шоколадом на кокосовой стружке",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Кокосовая стружка",
           "Кокосовое молоко",
@@ -1693,7 +1693,7 @@
         "price": 270,
         "description": "Домашняя карамель с крем-чизом и морской солью",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Карамель",
           "Крем-чиз",
@@ -1719,28 +1719,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -1750,10 +1750,10 @@
     "category": "Любимым",
     "title": "Малиновый бенто",
     "images": [
-      "/images/pictures/cake38.jpg",
-      "/images/pictures/cake39.jpg",
-      "/images/pictures/cake38.jpg",
-      "/images/pictures/cake39.jpg"
+      "/images/pictures/cake38.webp",
+      "/images/pictures/cake39.webp",
+      "/images/pictures/cake38.webp",
+      "/images/pictures/cake39.webp"
     ],
     "price": 2950,
     "description": "Порционный бенто-торт с сочной малиной и муссовым кремом. Нежная ягодная кислинка идеально дополняет сладкий бисквит.",
@@ -1764,7 +1764,7 @@
         "price": 320,
         "description": "Воздушный малиновый мусс на ванильном бисквите",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Малина",
           "Сливки",
@@ -1785,7 +1785,7 @@
         "price": 380,
         "description": "Свежая малина с кремом маскарпоне на бисквитной основе",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Малина",
           "Маскарпоне",
@@ -1806,7 +1806,7 @@
         "price": 280,
         "description": "Лёгкий ванильный бисквит со сливками и малиновым конфи",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Ваниль",
           "Сливки",
@@ -1827,7 +1827,7 @@
         "price": 300,
         "description": "Йогуртовый крем с ягодным миксом на лёгкой бисквитной подложке",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Натуральный йогурт",
           "Малина",
@@ -1854,28 +1854,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -1885,10 +1885,10 @@
     "category": "Детям",
     "title": "Тирамису бенто",
     "images": [
-      "/images/pictures/cake44.jpg",
-      "/images/pictures/cake45.jpg",
-      "/images/pictures/cake44.jpg",
-      "/images/pictures/cake45.jpg"
+      "/images/pictures/cake44.webp",
+      "/images/pictures/cake45.webp",
+      "/images/pictures/cake44.webp",
+      "/images/pictures/cake45.webp"
     ],
     "price": 3900,
     "description": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
@@ -1899,7 +1899,7 @@
         "price": 400,
         "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -1921,7 +1921,7 @@
         "price": 450,
         "description": "Классический тирамису с добавлением ликёра Амаретто",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -1943,7 +1943,7 @@
         "price": 420,
         "description": "Тирамису с малиновым конфи и кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -1964,7 +1964,7 @@
         "price": 380,
         "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -1991,28 +1991,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -2022,10 +2022,10 @@
     "category": "Любимым",
     "title": "Тирамису бенто",
     "images": [
-      "/images/pictures/cake6.jpg",
-      "/images/pictures/cake7.jpg",
-      "/images/pictures/cake6.jpg",
-      "/images/pictures/cake7.jpg"
+      "/images/pictures/cake6.webp",
+      "/images/pictures/cake7.webp",
+      "/images/pictures/cake6.webp",
+      "/images/pictures/cake7.webp"
     ],
     "price": 3900,
     "description": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
@@ -2036,7 +2036,7 @@
         "price": 400,
         "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2058,7 +2058,7 @@
         "price": 450,
         "description": "Классический тирамису с добавлением ликёра Амаретто",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2080,7 +2080,7 @@
         "price": 420,
         "description": "Тирамису с малиновым конфи и кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2101,7 +2101,7 @@
         "price": 380,
         "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2128,28 +2128,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -2159,10 +2159,10 @@
     "category": "Родителям",
     "title": "Тирамису бенто",
     "images": [
-      "/images/pictures/cake8.jpg",
-      "/images/pictures/cake9.jpg",
-      "/images/pictures/cake8.jpg",
-      "/images/pictures/cake9.jpg"
+      "/images/pictures/cake8.webp",
+      "/images/pictures/cake9.webp",
+      "/images/pictures/cake8.webp",
+      "/images/pictures/cake9.webp"
     ],
     "price": 3900,
     "description": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
@@ -2173,7 +2173,7 @@
         "price": 400,
         "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2195,7 +2195,7 @@
         "price": 450,
         "description": "Классический тирамису с добавлением ликёра Амаретто",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2217,7 +2217,7 @@
         "price": 420,
         "description": "Тирамису с малиновым конфи и кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2238,7 +2238,7 @@
         "price": 380,
         "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2265,28 +2265,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -2296,10 +2296,10 @@
     "category": "Друзьям",
     "title": "Тирамису бенто",
     "images": [
-      "/images/pictures/cake10.jpg",
-      "/images/pictures/cake11.jpg",
-      "/images/pictures/cake10.jpg",
-      "/images/pictures/cake11.jpg"
+      "/images/pictures/cake10.webp",
+      "/images/pictures/cake11.webp",
+      "/images/pictures/cake10.webp",
+      "/images/pictures/cake11.webp"
     ],
     "price": 3900,
     "description": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
@@ -2310,7 +2310,7 @@
         "price": 400,
         "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2332,7 +2332,7 @@
         "price": 450,
         "description": "Классический тирамису с добавлением ликёра Амаретто",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2354,7 +2354,7 @@
         "price": 420,
         "description": "Тирамису с малиновым конфи и кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2375,7 +2375,7 @@
         "price": 380,
         "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2402,28 +2402,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -2433,10 +2433,10 @@
     "category": "Друзьям",
     "title": "Тирамису бенто",
     "images": [
-      "/images/pictures/cake12.jpg",
-      "/images/pictures/cake13.jpg",
-      "/images/pictures/cake12.jpg",
-      "/images/pictures/cake13.jpg"
+      "/images/pictures/cake12.webp",
+      "/images/pictures/cake13.webp",
+      "/images/pictures/cake12.webp",
+      "/images/pictures/cake13.webp"
     ],
     "price": 3900,
     "description": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
@@ -2447,7 +2447,7 @@
         "price": 400,
         "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2469,7 +2469,7 @@
         "price": 450,
         "description": "Классический тирамису с добавлением ликёра Амаретто",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2491,7 +2491,7 @@
         "price": 420,
         "description": "Тирамису с малиновым конфи и кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2512,7 +2512,7 @@
         "price": 380,
         "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2539,28 +2539,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   },
@@ -2570,10 +2570,10 @@
     "category": "Друзьям",
     "title": "Тирамису бенто",
     "images": [
-      "/images/pictures/cake14.jpg",
-      "/images/pictures/cake15.jpg",
-      "/images/pictures/cake14.jpg",
-      "/images/pictures/cake15.jpg"
+      "/images/pictures/cake14.webp",
+      "/images/pictures/cake15.webp",
+      "/images/pictures/cake14.webp",
+      "/images/pictures/cake15.webp"
     ],
     "price": 3900,
     "description": "Порционный бенто-торт в стиле тирамису — с кофейным бисквитом, кремом маскарпоне и какао. Для любителей итальянской классики.",
@@ -2584,7 +2584,7 @@
         "price": 400,
         "description": "Кофейные бисквиты савойardi с кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/pictures/fillings/cherry.jpg",
+        "image": "/images/pictures/fillings/cherry.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2606,7 +2606,7 @@
         "price": 450,
         "description": "Классический тирамису с добавлением ликёра Амаретто",
         "isInclude": false,
-        "image": "/images/pictures/fillings/peaches2.jpg",
+        "image": "/images/pictures/fillings/peaches2.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2628,7 +2628,7 @@
         "price": 420,
         "description": "Тирамису с малиновым конфи и кремом маскарпоне",
         "isInclude": false,
-        "image": "/images/pictures/fillings/berry.jpg",
+        "image": "/images/pictures/fillings/berry.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2649,7 +2649,7 @@
         "price": 380,
         "description": "Кокосовый вариант тирамису с кокосовым молоком и кокосовой стружкой",
         "isInclude": false,
-        "image": "/images/pictures/fillings/homemade.jpg",
+        "image": "/images/pictures/fillings/homemade.webp",
         "ingredients": [
           "Савойardi",
           "Маскарпоне",
@@ -2676,28 +2676,28 @@
         "title": "Свечи классические",
         "price": 0,
         "isInclude": false,
-        "image": "/images/pictures/optional/candles.jpg"
+        "image": "/images/pictures/optional/candles.webp"
       },
       {
         "name": "Свечи цифрами",
         "title": "Свечи цифрами",
         "price": 180,
         "isInclude": false,
-        "image": "/images/pictures/optional/num-candles.jpg"
+        "image": "/images/pictures/optional/num-candles.webp"
       },
       {
         "name": "Топпер «С Днём рождения»",
         "title": "Топпер «С Днём рождения»",
         "price": 120,
         "isInclude": false,
-        "image": "/images/pictures/optional/topper.jpg"
+        "image": "/images/pictures/optional/topper.webp"
       },
       {
         "name": "Ягодное украшение",
         "title": "Ягодное украшение",
         "price": 450,
         "isInclude": false,
-        "image": "/images/pictures/optional/berry-decoration.jpg"
+        "image": "/images/pictures/optional/berry-decoration.webp"
       }
     ]
   }
