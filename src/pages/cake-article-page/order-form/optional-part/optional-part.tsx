@@ -1,4 +1,4 @@
-import { ChangeEvent, useMemo, useCallback } from 'react';
+import { ChangeEvent, useCallback } from 'react';
 
 import { CakeOffer, Optional, CheckBoxValue } from '../../../../types/types';
 import styles from './optional-part.module.scss';

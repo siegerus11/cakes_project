@@ -15,7 +15,6 @@ import {
 import { CakeOrder } from '../../types/types';
 import getStorageCartValues from '../../utils/getStorageCartValues';
 import MainLayout from '../layout/main-layout';
-import Loader from '../loader/loader';
 import PageSkeleton from '../page-skeleton/page-skeleton';
 import './app.module.scss';
 
