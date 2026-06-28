@@ -131,6 +131,7 @@ const Form = ({ onSubmit }: FormProps) => {
 					type="text"
 					name="name"
 					id="name"
+					autoComplete="true"
 					value={formValues.name}
 					onChange={handleIputChange}
 				/>
@@ -143,6 +144,7 @@ const Form = ({ onSubmit }: FormProps) => {
 					type="text"
 					name="phone"
 					id="phone"
+					autoComplete="true"
 					value={formValues.phone}
 					onChange={handleIputChange}
 				/>
@@ -155,6 +157,7 @@ const Form = ({ onSubmit }: FormProps) => {
 					type="text"
 					name="address"
 					id="address"
+					autoComplete="true"
 					value={formValues.address}
 					onChange={handleIputChange}
 				/>

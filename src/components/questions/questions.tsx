@@ -9,7 +9,10 @@ type QuestionsItemProps = {
 	text: string;
 	isActive: boolean;
 	index: number;
-	onOpenButtonClick: (e: KeyboardEvent | MouseEvent, idx: number) => void;
+	onOpenButtonClick: (
+		e: KeyboardEvent<HTMLDivElement> | MouseEvent<HTMLDivElement>,
+		idx: number
+	) => void;
 };
 
 const QuestionsItem = ({
@@ -19,14 +22,25 @@ const QuestionsItem = ({
 	index,
 	onOpenButtonClick
 }: QuestionsItemProps) => {
+	const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			onOpenButtonClick(e, index);
+		}
+	};
+
+	const handleOpenButtonClick = (e: MouseEvent<HTMLDivElement>) => {
+		onOpenButtonClick(e, index);
+	};
+
 	return (
 		<li className={styles.item}>
 			<div
 				className={styles.headline}
 				role="button"
 				tabIndex={0}
-				onKeyDown={e => onOpenButtonClick(e, index)}
-				onClick={e => onOpenButtonClick(e, index)}
+				onKeyDown={handleKeyDown}
+				onClick={handleOpenButtonClick}
 			>
 				<Title
 					level="h4"
@@ -68,7 +82,10 @@ const Questions = ({
 		useState<Question[]>(questions);
 
 	const handleOpenButtonClick = useCallback(
-		(e: KeyboardEvent | MouseEvent, idx: number) => {
+		(
+			e: KeyboardEvent<HTMLDivElement> | MouseEvent<HTMLDivElement>,
+			idx: number
+		) => {
 			setRelevantQuestions(
 				relevantQuestions.map((question, i) => {
 					if (i === idx) {
