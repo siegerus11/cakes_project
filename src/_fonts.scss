@@ -5,7 +5,8 @@
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/fonts/Inter_18pt-Regular.woff') format('woff'),
+	src: url('/fonts/Inter_18pt-Regular.woff2') format('woff2'),
+		url('/fonts/Inter_18pt-Regular.woff') format('woff'),
 		url('/fonts/Inter_18pt-Regular.ttf') format('truetype');
 }
 
@@ -13,17 +14,9 @@
 	font-display: swap;
 	font-family: 'Inter';
 	font-style: normal;
-	font-weight: 500;
-	src: url('/fonts/Inter_18pt-Medium.woff') format('woff'),
-		url('/fonts/Inter_18pt-Medium.ttf') format('truetype');
-}
-
-@font-face {
-	font-display: swap;
-	font-family: 'Inter';
-	font-style: normal;
 	font-weight: 600;
-	src: url('/fonts/Inter_18pt-SemiBold.woff') format('woff'),
+	src: url('/fonts/Inter_18pt-SemiBold.woff2') format('woff2'),
+		url('/fonts/Inter_18pt-SemiBold.woff') format('woff'),
 		url('/fonts/Inter_18pt-SemiBold.ttf') format('truetype');
 }
 
@@ -32,7 +25,8 @@
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
-	src: url('/fonts/Inter_18pt-Bold.woff') format('woff'),
+	src: url('/fonts/Inter_18pt-Bold.woff2') format('woff2'),
+		url('/fonts/Inter_18pt-Bold.woff') format('woff'),
 		url('/fonts/Inter_18pt-Bold.ttf') format('truetype');
 }
 
@@ -41,7 +35,8 @@
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 800;
-	src: url('/fonts/Inter_18pt-ExtraBold.woff') format('woff'),
+	src: url('/fonts/Inter_18pt-ExtraBold.woff2') format('woff2'),
+		url('/fonts/Inter_18pt-ExtraBold.woff') format('woff'),
 		url('/fonts/Inter_18pt-ExtraBold.ttf') format('truetype');
 }
 
@@ -50,7 +45,8 @@
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 900;
-	src: url('/fonts/Inter_18pt-Black.woff') format('woff'),
+	src: url('/fonts/Inter_18pt-Black.woff2') format('woff2'),
+		url('/fonts/Inter_18pt-Black.woff') format('woff'),
 		url('/fonts/Inter_18pt-Black.ttf') format('truetype');
 }
 
@@ -59,6 +55,7 @@
 	font-family: 'Pribambas';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/fonts/Pribambas-Regular.woff') format('woff'),
+	src: url('/fonts/Pribambas-Regular.woff2') format('woff2'),
+		url('/fonts/Pribambas-Regular.woff') format('woff'),
 		url('/fonts/Pribambas-Regular.ttf') format('truetype');
 }
