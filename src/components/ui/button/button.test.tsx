@@ -1,129 +1,148 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ReactNode } from 'react';
 
 import { AppRoute } from '../../../constants';
 import withHistory from '../../../mocks/withHistory';
-import Button from './button';
+import { ActionButton, LinkButton, OuterLinkButton } from './button';
 
-describe('Component: Button', () => {
-	const renderButton = ({
+describe('Component: ActionButton', () => {
+	const renderActionButton = ({
 		className = 'test-button',
 		label,
-		isOuterLink,
-		url,
 		onClick,
-		onTouchStart,
-		path,
-		children = 'Click me'
+		children = 'Click'
 	}: {
 		className?: string;
 		label?: string;
-		isOuterLink?: boolean;
-		url?: string;
 		onClick?: () => void;
-		onTouchStart?: () => void;
-		path?: string;
 		children?: ReactNode;
-	} = {}) => {
-		const component = (
-			<Button
-				className={className}
-				label={label}
-				isOuterLink={isOuterLink}
-				url={url}
-				onClick={onClick}
-				onTouchStart={onTouchStart}
-				path={path}
-			>
+	} = {}) =>
+		render(
+			<ActionButton className={className} label={label} onClick={onClick}>
 				{children}
-			</Button>
+			</ActionButton>
 		);
-		return render(withHistory(component));
-	};
 
 	it('should render button by default', () => {
-		const expectedButtonText = 'Click me';
+		const expectedChildrenText = 'Click';
 
-		renderButton();
+		renderActionButton();
 
 		const button = screen.getByRole('button');
+
 		expect(button).toBeInTheDocument();
-		expect(button.textContent).toBe(expectedButtonText);
+		expect(button.textContent).toBe(expectedChildrenText);
 	});
 
-	it('should apply className to button', () => {
+	it('should apply className', () => {
 		const expectedClassName = 'custom-class';
 
-		renderButton({ className: expectedClassName });
+		renderActionButton({ className: expectedClassName });
 
-		const button = screen.getByRole('button');
-		expect(button.className).toBe(expectedClassName);
+		expect(screen.getByRole('button').className).toBe(expectedClassName);
 	});
 
-	it('should render as Link when path is provided', () => {
-		renderButton({ path: AppRoute.About });
+	it('should apply aria-label', () => {
+		const expectedLabel = 'action-button';
 
-		const link = screen.getByRole('link');
-		expect(link).toBeInTheDocument();
-		expect(link.getAttribute('href')).toBe(AppRoute.About);
+		renderActionButton({ label: expectedLabel });
+
+		expect(screen.getByLabelText(expectedLabel)).toBeInTheDocument();
 	});
 
-	it('should apply className to Link', () => {
-		const expectedClassName = 'link-class';
+	it('should set type="button"', () => {
+		renderActionButton();
 
-		renderButton({ path: AppRoute.Catalog, className: expectedClassName });
-
-		const link = screen.getByRole('link');
-		expect(link.className).toBe(expectedClassName);
-	});
-
-	it('should render as outer link when isOuterLink is true', () => {
-		const expectedUrl = 'https://example.com';
-
-		renderButton({ isOuterLink: true, url: expectedUrl });
-
-		const link = screen.getByRole('link');
-		expect(link).toBeInTheDocument();
-		expect(link.getAttribute('href')).toBe(expectedUrl);
-	});
-
-	it('should apply aria-label to outer link', () => {
-		const expectedLabelText = 'External';
-
-		renderButton({
-			isOuterLink: true,
-			url: 'https://example.com',
-			label: expectedLabelText
-		});
-
-		const link = screen.getByLabelText(expectedLabelText);
-		expect(link).toBeInTheDocument();
+		expect(screen.getByRole('button').getAttribute('type')).toBe('button');
 	});
 
 	it('should call onClick when button is clicked', () => {
 		const mockOnClick = jest.fn();
 
-		renderButton({ onClick: mockOnClick });
+		renderActionButton({ onClick: mockOnClick });
 
-		const button = screen.getByRole('button');
-		fireEvent.click(button);
+		screen.getByRole('button').click();
 
 		expect(mockOnClick).toHaveBeenCalledTimes(1);
 	});
+});
 
-	it('should apply aria-label to button', () => {
-		const expectedLabelText = 'Submit';
+describe('Component: LinkButton', () => {
+	const renderLinkButton = ({
+		className = 'test-link',
+		path = AppRoute.About,
+		label,
+		children
+	}: {
+		className?: string;
+		path?: string;
+		label?: string;
+		children?: ReactNode;
+	} = {}) =>
+		render(
+			withHistory(
+				<LinkButton className={className} path={path} label={label}>
+					{children}
+				</LinkButton>
+			)
+		);
 
-		renderButton({ label: 'Submit' });
+	it('should render as Link', () => {
+		renderLinkButton({ path: AppRoute.About });
 
-		const button = screen.getByLabelText(expectedLabelText);
-		expect(button).toBeInTheDocument();
+		const link = screen.getByRole('link');
+
+		expect(link).toBeInTheDocument();
+		expect(link.getAttribute('href')).toBe(AppRoute.About);
 	});
 
-	it('should set type="button" on button', () => {
-		renderButton();
+	it('should apply className', () => {
+		const expectedClassName = 'link-class';
 
-		const button = screen.getByRole('button');
-		expect(button.getAttribute('type')).toBe('button');
+		renderLinkButton({
+			className: expectedClassName,
+			path: AppRoute.Catalog
+		});
+		expect(screen.getByRole('link').className).toBe(expectedClassName);
+	});
+});
+
+describe('Component: OuterLinkButton', () => {
+	const expectedUrl = 'https://test.com';
+
+	const renderOuterLinkButton = ({
+		className = 'test-outer',
+		url = expectedUrl,
+		label,
+		children
+	}: {
+		className?: string;
+		url?: string;
+		label?: string;
+		children?: ReactNode;
+	} = {}) =>
+		render(
+			<OuterLinkButton className={className} url={url} label={label}>
+				{children}
+			</OuterLinkButton>
+		);
+
+	it('should render as external link', () => {
+		renderOuterLinkButton({ url: expectedUrl });
+
+		const link = screen.getByRole('link');
+
+		expect(link).toBeInTheDocument();
+		expect(link.getAttribute('href')).toBe(expectedUrl);
+	});
+
+	it('should apply aria-label', () => {
+		const expectedLabel = 'external';
+
+		renderOuterLinkButton({
+			url: expectedUrl,
+			label: expectedLabel
+		});
+		expect(screen.getByLabelText(expectedLabel)).toBeInTheDocument();
 	});
 });
