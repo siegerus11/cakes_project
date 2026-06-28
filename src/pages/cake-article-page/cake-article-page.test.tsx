@@ -44,7 +44,7 @@ jest.mock('../../components/ui/button/button', () => {
 	const MockButton = ({ children }: { children: ReactNode }) => (
 		<div data-testid="button">{children}</div>
 	);
-	return { __esModule: true, default: MockButton };
+	return { __esModule: true, ActionButton: MockButton, default: MockButton };
 });
 
 jest.mock('./slider/slider', () => {
@@ -72,6 +72,7 @@ describe('Component: CakeArticlePage', () => {
 				totalPrice: 0,
 				activeOffer: fakeCake.id,
 				sortingStatus: '',
+				searchQuery: '',
 				errorText: ''
 			}
 		});
