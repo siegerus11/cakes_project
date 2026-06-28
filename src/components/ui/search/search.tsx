@@ -36,6 +36,7 @@ const SearchComponent = (props: SearchComponentProps) => {
 			<input
 				className={styles.search__input}
 				value={searchValue}
+				name="search"
 				type="search"
 				placeholder="Поиск"
 				aria-label="Поиск по товарам"
