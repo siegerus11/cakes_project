@@ -1,5 +1,5 @@
 import Title from '../../components/title/title';
-import Button from '../../components/ui/button/button';
+import LinkButton from '../../components/ui/button/link-button';
 import { AppRoute } from '../../constants';
 import styles from './thanks-page.module.scss';
 
@@ -25,13 +25,13 @@ const ThanksPage = () => {
 						Свяжемся в ближайшее время, уточним детали и согласуем
 						доставку :)
 					</p>
-				<Button
+			<LinkButton
 					className={`button button_primary ${styles.button}`}
 					path={AppRoute.Root}
 					label="Вернуться на главную страницу"
 				>
-						<span>Вернуться на главную</span>{' '}
-					</Button>
+					<span>Вернуться на главную</span>{' '}
+				</LinkButton>
 				</div>
 			</div>
 		</main>

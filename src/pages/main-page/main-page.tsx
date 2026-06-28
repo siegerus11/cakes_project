@@ -6,7 +6,7 @@ import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clause';
 import PageSkeleton from '../../components/page-skeleton/page-skeleton';
 import Title from '../../components/title/title';
-import Button from '../../components/ui/button/button';
+import LinkButton from '../../components/ui/button/link-button';
 import { AppRoute, NAVS, LoadingStatus } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
 import { cakeOffersDataSelectors } from '../../store/cake-offers-data/cake-offers-data';
@@ -110,7 +110,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 				</main>
 			</div>
 			<ButtonController outerClass={styles.controller}>
-				<Button
+				<LinkButton
 					className={`button button_primary ${styles.button}`}
 					path={AppRoute.ShoppingCart}
 					label="Оформить заказ"
@@ -136,7 +136,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 							{formattedPrice} ₽
 						</span>
 					) : null}
-				</Button>
+				</LinkButton>
 			</ButtonController>
 		</>
 	);

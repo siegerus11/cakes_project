@@ -4,7 +4,7 @@ import { LAYOUT_NAVS, OuterRoute } from '../../constants';
 import getSecondaryNavs from '../../utils/getSecondaryNavs';
 import NavMenu from '../nav-menu/nav-menu';
 import SocialLinks from '../social-links/social-links';
-import Button from '../ui/button/button';
+import OuterLinkButton from '../ui/button/outer-link-button';
 import Hamburger from '../ui/hamburger/hamburger';
 import styles from './hamburger-popup.module.scss';
 
@@ -62,21 +62,20 @@ const HamburgerPopup = ({
 						linkClassName={styles.link}
 						isHeaderNav={false}
 					/>
-					<Button
-						className={`button button_secondary ${styles.button}`}
-						isOuterLink
-						url={OuterRoute.Telegram}
-						label="Написать в Telegram"
+				<OuterLinkButton
+					className={`button button_secondary ${styles.button}`}
+					url={OuterRoute.Telegram}
+					label="Написать в Telegram"
+				>
+					<span>Написать в Telegram</span>
+					<svg
+						className={styles.button__icon}
+						viewBox="0 0 15 13"
+						aria-hidden="true"
 					>
-						<span>Написать в Telegram</span>
-						<svg
-							className={styles.button__icon}
-							viewBox="0 0 15 13"
-							aria-hidden="true"
-						>
-							<use xlinkHref="#tg-sm"></use>
-						</svg>
-					</Button>
+						<use xlinkHref="#tg-sm"></use>
+					</svg>
+				</OuterLinkButton>
 					<SocialLinks>
 						<a
 							className={styles.icon}

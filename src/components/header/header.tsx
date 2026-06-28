@@ -9,7 +9,7 @@ import HamburgerPopup from '../hamburger-popup/hamburger-popup';
 import Logo from '../logo/logo';
 import NavMenu from '../nav-menu/nav-menu';
 import ShoppingCartItem from '../shopping-cart-item/shopping-cart-item';
-import Button from '../ui/button/button';
+import LinkButton from '../ui/button/link-button';
 import Hamburger from '../ui/hamburger/hamburger';
 import SearchComponent from '../ui/search/search';
 import styles from './header.module.scss';
@@ -56,27 +56,27 @@ const Header = () => {
 					</div>
 					<div className={styles.secondary}>
 						<ShoppingCartItem />
-						<Button
-							className={`button button_primary ${styles.button}`}
-							path={AppRoute.ShoppingCart}
-							label="Оформить заказ"
+					<LinkButton
+						className={`button button_primary ${styles.button}`}
+						path={AppRoute.ShoppingCart}
+						label="Оформить заказ"
+					>
+						<svg
+							className={styles.button__icon}
+							viewBox="0 0 40 40"
+							aria-hidden="true"
 						>
-							<svg
-								className={styles.button__icon}
-								viewBox="0 0 40 40"
-								aria-hidden="true"
-							>
-								<use xlinkHref="#cart"></use>
-							</svg>
-							<span className={styles.button__text}>
-								Оформить заказ
+							<use xlinkHref="#cart"></use>
+						</svg>
+						<span className={styles.button__text}>
+							Оформить заказ
+						</span>
+						{totalPrice ? (
+							<span className={styles.button__price}>
+								{formattedPrice} ₽
 							</span>
-							{totalPrice ? (
-								<span className={styles.button__price}>
-									{formattedPrice} ₽
-								</span>
-							) : null}
-						</Button>
+						) : null}
+					</LinkButton>
 						<Hamburger onHamburgerClick={handleHamburgerClick} />
 					</div>
 				</div>

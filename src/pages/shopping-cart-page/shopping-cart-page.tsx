@@ -12,7 +12,7 @@ import ButtonController from '../../components/button-controller/button-controll
 import Overlay from '../../components/overlay/overlay';
 import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
-import Button from '../../components/ui/button/button';
+import LinkButton from '../../components/ui/button/link-button';
 import SubmitButton from '../../components/ui/button/submit-button';
 import { AppRoute, ConfirmMessage, validation } from '../../constants';
 import useMediaQuery from '../../hooks/useMediaQuery';
@@ -165,24 +165,24 @@ const ShoppingCartPage = () => {
 							<span>Ввести промокод</span>
 						</button>
 					</div>
-					<Button
-						className={`button button_primary ${styles.button}`}
-						path={buttonPath}
-						label={buttonText}
-					>
-						<span>{buttonText}</span>
-					</Button>
+				<LinkButton
+					className={`button button_primary ${styles.button}`}
+					path={buttonPath}
+					label={buttonText}
+				>
+					<span>{buttonText}</span>
+				</LinkButton>
 				</div>
 			</div>
-			<ButtonController outerClass={`${styles.controller}`}>
-				<Button
-					className={`button button_primary ${styles.controller__button}`}
-					path={AppRoute.OrderRegistration}
-					label="Верно, далее"
-				>
-					<span>Верно, далее</span>
-				</Button>
-			</ButtonController>
+		<ButtonController outerClass={`${styles.controller}`}>
+			<LinkButton
+				className={`button button_primary ${styles.controller__button}`}
+				path={AppRoute.OrderRegistration}
+				label="Верно, далее"
+			>
+				<span>Верно, далее</span>
+			</LinkButton>
+		</ButtonController>
 			{popupIsVisible && (
 				<Overlay>
 					<Popup
