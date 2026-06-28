@@ -125,42 +125,45 @@ const Form = ({ onSubmit }: FormProps) => {
 				Стоимость и время доставки согласуем при подтверждении заказа
 			</div>
 			<div className={styles.fields}>
-				<input
-					className={styles.input}
-					placeholder="Имя"
-					type="text"
-					name="name"
-					id="name"
-					autoComplete="true"
-					value={formValues.name}
-					onChange={handleIputChange}
-				/>
+			<input
+				className={styles.input}
+				placeholder="Имя"
+				type="text"
+				name="name"
+				id="name"
+				autoComplete="true"
+				aria-label="Имя"
+				value={formValues.name}
+				onChange={handleIputChange}
+			/>
 				{formErrors.name && (
 					<span className="error-message">{formErrors.name}</span>
 				)}
-				<input
-					className={styles.input}
-					placeholder="Телефон"
-					type="text"
-					name="phone"
-					id="phone"
-					autoComplete="true"
-					value={formValues.phone}
-					onChange={handleIputChange}
-				/>
+			<input
+				className={styles.input}
+				placeholder="Телефон"
+				type="text"
+				name="phone"
+				id="phone"
+				autoComplete="true"
+				aria-label="Телефон"
+				value={formValues.phone}
+				onChange={handleIputChange}
+			/>
 				{formErrors.phone && (
 					<span className="error-message">{formErrors.phone}</span>
 				)}
-				<input
-					className={styles.input}
-					placeholder="Адрес"
-					type="text"
-					name="address"
-					id="address"
-					autoComplete="true"
-					value={formValues.address}
-					onChange={handleIputChange}
-				/>
+			<input
+				className={styles.input}
+				placeholder="Адрес"
+				type="text"
+				name="address"
+				id="address"
+				autoComplete="true"
+				aria-label="Адрес"
+				value={formValues.address}
+				onChange={handleIputChange}
+			/>
 				{formErrors.address && (
 					<span className="error-message">{formErrors.address}</span>
 				)}
@@ -174,14 +177,14 @@ const Form = ({ onSubmit }: FormProps) => {
 			</button>
 			{isAreaVisible && (
 				<>
-					<textarea
-						className={styles.textarea}
-						name="comment"
-						id="comment"
-						value={formValues.comment}
-						onChange={handleIputChange}
-						aria-label="comment"
-					></textarea>
+				<textarea
+					className={styles.textarea}
+					name="comment"
+					id="comment"
+					value={formValues.comment}
+					onChange={handleIputChange}
+					aria-label="Комментарий к заказу"
+				></textarea>
 					<span className={styles.counter}>
 						{maxLength - commentLength} символов осталось
 					</span>
