@@ -15,7 +15,6 @@ import Title from '../../components/title/title';
 import Button from '../../components/ui/button/button';
 import SubmitButton from '../../components/ui/button/submit-button';
 import { AppRoute, ConfirmMessage, validation } from '../../constants';
-import useConfirm from '../../hooks/useConfirm';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { useAppSelector, useActionCreators } from '../../hooks/useStore';
 import useTouch from '../../hooks/useTouch';
@@ -23,6 +22,7 @@ import {
 	cartProcessSelectors,
 	cartProcessActions
 } from '../../store/cart-process/cart-process';
+import confirmAction from '../../utils/confirmAction';
 import getFormattedPrice from '../../utils/getFormattedPrice';
 import CartList from './cart-item/cart-item';
 import styles from './shopping-cart-page.module.scss';
@@ -45,17 +45,16 @@ const ShoppingCartPage = () => {
 		() => getFormattedPrice(finalSumValue),
 		[finalSumValue]
 	);
-	const confirm = useConfirm();
 
 	const isMobile = useMediaQuery('(max-width: 576px)');
 
 	const handleTrashButtonClick = useCallback(() => {
-		const answer = confirm(ConfirmMessage.ClearCart);
+		const answer = confirmAction(ConfirmMessage.ClearCart);
 		if (answer) {
 			clearCart();
 			localStorage.clear();
 		}
-	}, [confirm, clearCart]);
+	}, [clearCart]);
 
 	const handlePopupTouchClose = useCallback(() => {
 		setIsAnimate(true);
