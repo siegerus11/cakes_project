@@ -1,4 +1,4 @@
-import Button from '../../components/ui/button/button';
+import { ActionButton, LinkButton } from '../../components/ui/button/button';
 import { AppRoute } from '../../constants';
 import styles from './not-found-page.module.scss';
 
@@ -24,12 +24,12 @@ const NotFoundPage = ({
 								Что то пошло не так
 							</h1>
 							<p className={styles.description}>{errorMessage}</p>
-							<Button
-								className={`button button_primary ${styles.button}`}
-								onClick={onHandleReset}
-							>
-								<span>Попробовать снова</span>
-							</Button>
+						<ActionButton
+							className={`button button_primary ${styles.button}`}
+							onClick={onHandleReset}
+						>
+							<span>Попробовать снова</span>
+						</ActionButton>
 						</>
 					) : (
 						<>
@@ -42,13 +42,13 @@ const NotFoundPage = ({
 								или страница была удалена.
 							</p>
 
-							<Button
-								className={`button button_primary ${styles.button}`}
-								path={AppRoute.Root}
-								label="Вернуться на главную страницу"
-							>
-								<span>На главную</span>
-							</Button>
+						<LinkButton
+							className={`button button_primary ${styles.button}`}
+							path={AppRoute.Root}
+							label="Вернуться на главную страницу"
+						>
+							<span>На главную</span>
+						</LinkButton>
 						</>
 					)}
 				</div>

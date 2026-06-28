@@ -5,7 +5,7 @@ import { AppRoute } from '../../constants';
 import { useActionCreators } from '../../hooks/useStore';
 import { mainProcessActions } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
-import Button from '../ui/button/button';
+import { ActionButton } from '../ui/button/button';
 import styles from './card.module.scss';
 
 type CardProps = {
@@ -41,7 +41,7 @@ const Card = memo(({ cake, isMainPage }: CardProps) => {
 			<h3 className={cardTitleClass}>{title}</h3>
 			<div className={styles.bottom}>
 				<span className={styles.cost}>{price} ₽</span>
-				<Button
+				<ActionButton
 					className={`button button_tertiary ${styles.button}`}
 					label="Добавить в корзину"
 				/>

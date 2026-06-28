@@ -1,59 +1,74 @@
-import { PropsWithChildren, MouseEventHandler, TouchEventHandler } from 'react';
+import {
+	PropsWithChildren,
+	MouseEventHandler,
+	TouchEventHandler
+} from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-type ButtonProps = PropsWithChildren<{
-	label?: string;
+type LinkButtonProps = PropsWithChildren<{
 	className: string;
-	isOuterLink?: boolean;
-	url?: string;
-	path?: string;
-	onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
-	onTouchStart?: TouchEventHandler<HTMLButtonElement | HTMLAnchorElement>;
+	path: string;
+	label?: string;
 }>;
 
-const Button = ({
+export const LinkButton = ({
 	children,
 	className,
-	label,
-	isOuterLink,
-	url,
-	onClick,
-	onTouchStart,
-	path
-}: ButtonProps) => {
+	path,
+	label
+}: LinkButtonProps) => {
 	const location = useLocation();
 
-	if (path) {
-		return (
-			<Link
-				className={className}
-				to={path}
-				state={{ from: location.pathname }}
-			>
-				{children}
-			</Link>
-		);
-	}
-
-	if (isOuterLink) {
-		return (
-			<a className={className} href={url} aria-label={label}>
-				{children}
-			</a>
-		);
-	}
-
 	return (
-		<button
+		<Link
 			className={className}
-			type="button"
-			onClick={onClick}
-			onTouchStart={onTouchStart}
+			to={path}
+			state={{ from: location.pathname }}
 			aria-label={label}
 		>
 			{children}
-		</button>
+		</Link>
 	);
 };
 
-export default Button;
+type OuterLinkButtonProps = PropsWithChildren<{
+	className: string;
+	url: string;
+	label?: string;
+}>;
+
+export const OuterLinkButton = ({
+	children,
+	className,
+	url,
+	label
+}: OuterLinkButtonProps) => (
+	<a className={className} href={url} aria-label={label}>
+		{children}
+	</a>
+);
+
+type ActionButtonProps = PropsWithChildren<{
+	className: string;
+	label?: string;
+	onClick?: MouseEventHandler<HTMLButtonElement>;
+	onTouchStart?: TouchEventHandler<HTMLButtonElement>;
+}>;
+
+export const ActionButton = ({
+	children,
+	className,
+	label,
+	onClick,
+	onTouchStart
+}: ActionButtonProps) => (
+	<button
+		className={className}
+		type="button"
+		onClick={onClick}
+		onTouchStart={onTouchStart}
+		aria-label={label}
+	>
+		{children}
+	</button>
+);
