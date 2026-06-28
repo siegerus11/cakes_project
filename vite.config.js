@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import crypto from 'crypto';
+import fs from 'fs';
 
 export default defineConfig({
 	plugins: [
@@ -16,6 +17,46 @@ export default defineConfig({
 					};
 				}
 				return null;
+			}
+		},
+		{
+			name: 'inline-critical-css',
+			apply: 'build',
+			closeBundle() {
+				const distDir = path.resolve(__dirname, 'dist');
+				const htmlPath = path.resolve(distDir, 'index.html');
+
+				if (!fs.existsSync(htmlPath)) {
+					return;
+				}
+
+				let html = fs.readFileSync(htmlPath, 'utf-8');
+
+				const cssLinkRegex = /<link[^>]*rel="stylesheet"[^>]*href=["']([^"']+)["'][^>]*>/g;
+				let match;
+				const cssFiles = [];
+
+				while ((match = cssLinkRegex.exec(html)) !== null) {
+					cssFiles.push(match[1]);
+				}
+
+				if (cssFiles.length === 0) return;
+
+				const inlineStyles = cssFiles
+					.map(href => {
+						const cssPath = path.resolve(distDir, href.replace(/^\//, ''));
+						if (!fs.existsSync(cssPath)) return null;
+						const cssContent = fs.readFileSync(cssPath, 'utf-8');
+						return `<style>${cssContent}</style>`;
+					})
+					.filter(Boolean)
+					.join('\n');
+
+				let result = html;
+				result = result.replace(cssLinkRegex, '');
+				result = result.replace('</head>', `${inlineStyles}\n</head>`);
+
+				fs.writeFileSync(htmlPath, result, 'utf-8');
 			}
 		}
 	],
@@ -40,17 +81,16 @@ export default defineConfig({
 		devSourcemap: true,
 		preprocessorOptions: {
 			scss: {
-				api: 'modern-compiler', // or "modern"
+				api: 'modern-compiler',
 				silenceDeprecations: ['legacy-js-api']
 			}
 		},
 		modules: {
-			/* generateScopedName: '[name]__[local]--[hash:base64:5]'  '[path][name]__[local]--[hash:base64:5]'  '[name]__[local]___[hash:base64:5]' */
 			generateScopedName: (className, filePath) => {
 				const cleanPath = filePath.split('?')[0];
 				const fileName = path.basename(
 					cleanPath,
-					'.module.scss' /* or '.module.css' for css */
+					'.module.scss'
 				);
 				const hash = crypto
 					.createHash('sha256')
