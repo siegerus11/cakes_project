@@ -5,7 +5,7 @@ import Overlay from '../../components/overlay/overlay';
 import Popup from '../../components/popup/popup';
 import ShoppingCartItem from '../../components/shopping-cart-item/shopping-cart-item';
 import Title from '../../components/title/title';
-import ActionButton from '../../components/ui/button/action-button';
+import { ActionButton } from '../../components/ui/button/button';
 import { AppRoute } from '../../constants';
 import useAnimate from '../../hooks/useAnimate';
 import useMediaQuery from '../../hooks/useMediaQuery';

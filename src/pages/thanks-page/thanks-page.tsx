@@ -1,5 +1,5 @@
 import Title from '../../components/title/title';
-import LinkButton from '../../components/ui/button/link-button';
+import { LinkButton } from '../../components/ui/button/button';
 import { AppRoute } from '../../constants';
 import styles from './thanks-page.module.scss';
 

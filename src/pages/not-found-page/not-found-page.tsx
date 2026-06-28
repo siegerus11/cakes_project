@@ -1,5 +1,4 @@
-import ActionButton from '../../components/ui/button/action-button';
-import LinkButton from '../../components/ui/button/link-button';
+import { ActionButton, LinkButton } from '../../components/ui/button/button';
 import { AppRoute } from '../../constants';
 import styles from './not-found-page.module.scss';
 

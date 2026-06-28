@@ -6,7 +6,7 @@ import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clause';
 import PageSkeleton from '../../components/page-skeleton/page-skeleton';
 import Title from '../../components/title/title';
-import LinkButton from '../../components/ui/button/link-button';
+import { LinkButton } from '../../components/ui/button/button';
 import { AppRoute, NAVS, LoadingStatus } from '../../constants';
 import { useAppSelector } from '../../hooks/useStore';
 import { cakeOffersDataSelectors } from '../../store/cake-offers-data/cake-offers-data';

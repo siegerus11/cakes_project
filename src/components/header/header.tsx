@@ -9,7 +9,7 @@ import HamburgerPopup from '../hamburger-popup/hamburger-popup';
 import Logo from '../logo/logo';
 import NavMenu from '../nav-menu/nav-menu';
 import ShoppingCartItem from '../shopping-cart-item/shopping-cart-item';
-import LinkButton from '../ui/button/link-button';
+import { LinkButton } from '../ui/button/button';
 import Hamburger from '../ui/hamburger/hamburger';
 import SearchComponent from '../ui/search/search';
 import styles from './header.module.scss';

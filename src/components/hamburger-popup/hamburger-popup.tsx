@@ -4,7 +4,7 @@ import { LAYOUT_NAVS, OuterRoute } from '../../constants';
 import getSecondaryNavs from '../../utils/getSecondaryNavs';
 import NavMenu from '../nav-menu/nav-menu';
 import SocialLinks from '../social-links/social-links';
-import OuterLinkButton from '../ui/button/outer-link-button';
+import { OuterLinkButton } from '../ui/button/button';
 import Hamburger from '../ui/hamburger/hamburger';
 import styles from './hamburger-popup.module.scss';
 

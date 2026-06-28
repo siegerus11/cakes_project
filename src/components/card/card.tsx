@@ -5,7 +5,7 @@ import { AppRoute } from '../../constants';
 import { useActionCreators } from '../../hooks/useStore';
 import { mainProcessActions } from '../../store/main-process/main-process';
 import { CakeOffer } from '../../types/types';
-import ActionButton from '../ui/button/action-button';
+import { ActionButton } from '../ui/button/button';
 import styles from './card.module.scss';
 
 type CardProps = {

@@ -12,7 +12,7 @@ import ButtonController from '../../components/button-controller/button-controll
 import Overlay from '../../components/overlay/overlay';
 import Popup from '../../components/popup/popup';
 import Title from '../../components/title/title';
-import LinkButton from '../../components/ui/button/link-button';
+import { LinkButton } from '../../components/ui/button/button';
 import SubmitButton from '../../components/ui/button/submit-button';
 import { AppRoute, ConfirmMessage, validation } from '../../constants';
 import useMediaQuery from '../../hooks/useMediaQuery';
