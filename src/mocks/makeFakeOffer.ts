@@ -132,10 +132,10 @@ const makeFakeCakeOffer = (): CakeOffer => ({
 	category: 'Друзьям',
 	title: 'title',
 	images: [
-		'../../../images/pictures/cake1.png',
-		'../../../images/pictures/cake2.png',
-		'../../../images/pictures/cake1.png',
-		'../../../images/pictures/cake2.png'
+		'../../../images/pictures/cake1.webp',
+		'../../../images/pictures/cake2.webp',
+		'../../../images/pictures/cake1.webp',
+		'../../../images/pictures/cake2.webp'
 	],
 	price: 3600,
 	description: 'description',
