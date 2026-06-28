@@ -72,13 +72,13 @@ describe('Component: Form', () => {
 		renderForm();
 
 		expect(
-			screen.queryByRole(textAreaRole, { name: /comment/i })
+			screen.queryByRole(textAreaRole, { name: /Комментарий/i })
 		).not.toBeInTheDocument();
 
 		await userEvent.click(screen.getByText(addButtonText));
 
 		expect(
-			screen.getByRole(textAreaRole, { name: /comment/i })
+			screen.getByRole(textAreaRole, { name: /Комментарий/i })
 		).toBeInTheDocument();
 	});
 
