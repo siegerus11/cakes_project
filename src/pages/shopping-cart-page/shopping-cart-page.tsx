@@ -22,7 +22,7 @@ import {
 	cartProcessSelectors,
 	cartProcessActions
 } from '../../store/cart-process/cart-process';
-import confirmAction from '../../utils/confirmAction';
+import applyСonfirm from '../../utils/applyСonfirm';
 import getFormattedPrice from '../../utils/getFormattedPrice';
 import CartList from './cart-item/cart-item';
 import styles from './shopping-cart-page.module.scss';
@@ -49,7 +49,7 @@ const ShoppingCartPage = () => {
 	const isMobile = useMediaQuery('(max-width: 576px)');
 
 	const handleTrashButtonClick = useCallback(() => {
-		const answer = confirmAction(ConfirmMessage.ClearCart);
+		const answer = applyСonfirm(ConfirmMessage.ClearCart);
 		if (answer) {
 			clearCart();
 			localStorage.clear();

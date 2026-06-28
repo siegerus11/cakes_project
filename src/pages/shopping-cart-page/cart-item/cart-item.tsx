@@ -7,7 +7,7 @@ import {
 	cartProcessSelectors
 } from '../../../store/cart-process/cart-process';
 import { CakeOrder } from '../../../types/types';
-import confirmAction from '../../../utils/confirmAction';
+import applyСonfirm from '../../../utils/applyСonfirm';
 import getChosen from '../../../utils/getChosen';
 import getFormattedPrice from '../../../utils/getFormattedPrice';
 import getPersonQuantity from '../../../utils/getPersonQuantity';
@@ -44,7 +44,7 @@ const CartItem = memo(({ order }: CartItemProps) => {
 	const handleIncrClick = useCallback(
 		(id: string, num: number, increase: boolean) => {
 			if (quantity <= 1 && !increase) {
-				const answer = confirmAction(ConfirmMessage.ClearOrder);
+				const answer = applyСonfirm(ConfirmMessage.ClearOrder);
 				if (answer) {
 					removeCartItem(id);
 					localStorage.removeItem(`cake-cart-${id}`);
