@@ -4,20 +4,11 @@ import path from 'path';
 import crypto from 'crypto';
 
 export default defineConfig({
+	define: {
+		'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+	},
 	plugins: [
 		react(),
-		{
-			name: 'inject-process',
-			transform(code, id) {
-				if (id.includes('react-draggable') && !code.includes('var process')) {
-					return {
-						code: `var process = { env: { NODE_ENV: 'development' } };\n${code}`,
-						map: null
-					};
-				}
-				return null;
-			}
-		}
 	],
 	build: {
 		rollupOptions: {
