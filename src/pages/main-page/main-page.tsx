@@ -55,7 +55,7 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 		return <PageSkeleton message="Loading..." />;
 	}
 	if (loadingStatus === LoadingStatus.Failed) {
-		return <PageSkeleton message="Data loading Error" />;
+		return <PageSkeleton message="Loading data Error..." />;
 	}
 	return (
 		<>
