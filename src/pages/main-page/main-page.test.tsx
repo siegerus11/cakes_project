@@ -155,7 +155,7 @@ describe('Component: MainPage', () => {
 
 		renderMainPage(mockCakes, mockBentoCakes, initialState);
 
-		expect(screen.getByText('Data loading Error')).toBeInTheDocument();
+		expect(screen.getByText('Loading data Error...')).toBeInTheDocument();
 	});
 
 	it('should render clauses section', () => {
