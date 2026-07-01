@@ -1,6 +1,7 @@
 import { useEffect, useState, TouchEvent, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { AppRoute } from '../constants';
 import { Slide } from '../types/types';
 import createSlidesInitial from '../utils/createSlidesInitial';
 
@@ -43,7 +44,7 @@ function useSlider(imagesSrc: string[]): {
 	}, []);
 
 	const handleCloseButtonClick = useCallback(() => {
-		navigate(-1);
+		navigate(AppRoute.Catalog);
 	}, [navigate]);
 
 	useEffect(() => {
