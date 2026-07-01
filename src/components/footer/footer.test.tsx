@@ -11,7 +11,7 @@ describe('Component: Footer', () => {
 	};
 
 	it('should render copyright text', () => {
-		const expectedCopyrightText = /© 2025 ООО «ВауКейк»/i;
+		const expectedCopyrightText = /© 2026 ООО «ВауКейк»/i;
 
 		renderFooter();
 
@@ -41,9 +41,13 @@ describe('Component: Footer', () => {
 
 		renderFooter();
 
-		expect(screen.getByLabelText(expectedTelegramLabel)).toBeInTheDocument();
+		expect(
+			screen.getByLabelText(expectedTelegramLabel)
+		).toBeInTheDocument();
 		expect(screen.getByLabelText(expectedVkLabel)).toBeInTheDocument();
-		expect(screen.getByLabelText(expectedInstagramLabel)).toBeInTheDocument();
+		expect(
+			screen.getByLabelText(expectedInstagramLabel)
+		).toBeInTheDocument();
 	});
 
 	it('should render Telegram button', () => {
