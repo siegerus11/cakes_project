@@ -16,7 +16,7 @@ const Footer = () => {
 				<div>
 					<ul className={styles.side}>
 						<li className={styles.agreementLink}>
-							© 2025 ООО «ВауКейк»
+							© 2026 ООО «ВауКейк»
 						</li>
 						<li>
 							<a className={styles.agreementLink} href="/">
@@ -77,20 +77,20 @@ const Footer = () => {
 								</svg>
 							</a>
 						</SocialLinks>
-					<OuterLinkButton
-						className={`button button_secondary ${styles.button}`}
-						url={OuterRoute.Telegram}
-						label="Написать в Telegram"
-					>
-						<span>Написать в Telegram</span>
-						<svg
-							className={styles.button__icon}
-							viewBox="0 0 15 13"
-							aria-hidden="true"
+						<OuterLinkButton
+							className={`button button_secondary ${styles.button}`}
+							url={OuterRoute.Telegram}
+							label="Написать в Telegram"
 						>
-							<use xlinkHref="#tg-sm"></use>
-						</svg>
-					</OuterLinkButton>
+							<span>Написать в Telegram</span>
+							<svg
+								className={styles.button__icon}
+								viewBox="0 0 15 13"
+								aria-hidden="true"
+							>
+								<use xlinkHref="#tg-sm"></use>
+							</svg>
+						</OuterLinkButton>
 					</div>
 				</div>
 			</div>
