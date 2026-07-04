@@ -2,6 +2,9 @@ const nameValidate = (value: string): boolean | string => {
 	if (!value || !value.length) return 'Введите имя';
 	if (!/^[a-zA-Zа-яА-Я\s-]+$/.test(value))
 		return 'Имя должно содержать только буквы';
+	const nonSpaceCount = value.replace(/\s/g, '').length;
+	if (nonSpaceCount < 2)
+		return 'Имя должно содержать минимум 2 символа';
 	return true;
 };
 
@@ -19,7 +22,10 @@ const phoneValidate = (value: string): boolean | string => {
 };
 
 const addressValidate = (value: string): boolean | string => {
-	if (!value || value.length < 5) return 'Введите адрес';
+	if (!value) return true;
+	const nonSpace = value.replace(/\s/g, '').length;
+	if (nonSpace < 6)
+		return 'Адрес должен содержать минимум 6 символов';
 	return true;
 };
 
