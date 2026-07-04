@@ -9,7 +9,10 @@ import {
 	cakeOffersDataActions,
 	cakeOffersDataSelectors
 } from '../../store/cake-offers-data/cake-offers-data';
-import { cartProcessSelectors } from '../../store/cart-process/cart-process';
+import {
+	cartProcessSelectors,
+	cartProcessActions
+} from '../../store/cart-process/cart-process';
 import { Order } from '../../types/types';
 import Form from './form/form';
 import styles from './order-registration-page.module.scss';
@@ -24,6 +27,7 @@ const OrderRegistrationPage = () => {
 	const sum = useAppSelector(cartProcessSelectors.selectFinalSum);
 
 	const { sendOrderAction } = useActionCreators(cakeOffersDataActions);
+	const { clearCart } = useActionCreators(cartProcessActions);
 
 	const handleFormSubmit = (formValues: Order['userData']) => {
 		const order: Order = {
@@ -34,6 +38,8 @@ const OrderRegistrationPage = () => {
 
 		sendOrderAction(order).then(response => {
 			if (response.meta.requestStatus === 'fulfilled') {
+				clearCart();
+				localStorage.clear();
 				navigate(AppRoute.Thanks);
 			}
 		});
