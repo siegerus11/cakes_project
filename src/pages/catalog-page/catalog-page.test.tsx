@@ -121,7 +121,7 @@ describe('Component: CatalogPage', () => {
 			}
 		});
 
-		const expectedErrorText = 'Data loading Error';
+		const expectedErrorText = 'Loading data Error...';
 		render(withStoreComponent);
 
 		expect(screen.getByText(expectedErrorText)).toBeInTheDocument();
