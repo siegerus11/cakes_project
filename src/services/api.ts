@@ -1,9 +1,10 @@
 import axios, { AxiosError, AxiosInstance } from 'axios';
 import { toast, Flip } from 'react-toastify';
 
-import BACKEND_URL from '../config/env';
 import { requestTimeout } from '../constants';
 import { processErrorHandle } from './process-error-handle';
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000';
 
 const createAPI = (): AxiosInstance => {
 	const api = axios.create({
