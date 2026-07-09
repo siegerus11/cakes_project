@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import BreadCrumbs from '../../components/bread-crumbs/bread-crumbs';
 import CardsList from '../../components/cards-list/cards-list';
 import Clauses from '../../components/clause/clause';
-import Loader from '../../components/loader/loader';
 import PageSkeleton from '../../components/page-skeleton/page-skeleton';
 import Title from '../../components/title/title';
 import { NAVS, LoadingStatus } from '../../constants';
