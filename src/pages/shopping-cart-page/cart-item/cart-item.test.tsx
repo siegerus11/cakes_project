@@ -13,7 +13,9 @@ describe('Component: CartList', () => {
 		const { withStoreComponent } = withStore(component, {
 			[NameSpace.Cart]: {
 				shoppingCart: cart,
-				discountLoadingStatus: LoadingStatus.Idle
+				discountLoadingStatus: LoadingStatus.Idle,
+				discount: 0,
+				discountError: null
 			}
 		});
 		return render(withStoreComponent);
@@ -58,7 +60,7 @@ describe('Component: CartList', () => {
 		expect(screen.getByText(/3\s?600\s?₽/)).toBeInTheDocument();
 	});
 
-		it('should render quantity controls', () => {
+	it('should render quantity controls', () => {
 		const incrementLabelText = 'Увеличить количество';
 		const decrementLabelText = 'Уменьшить количество';
 

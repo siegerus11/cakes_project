@@ -10,8 +10,8 @@ import {
 	cakeOffersDataSelectors
 } from '../../store/cake-offers-data/cake-offers-data';
 import {
-	cartProcessSelectors,
-	cartProcessActions
+	cartProcessActions,
+	cartProcessSelectors
 } from '../../store/cart-process/cart-process';
 import { Order } from '../../types/types';
 import Form from './form/form';
@@ -71,7 +71,7 @@ const OrderRegistrationPage = () => {
 							titleClass={`title_fw800 title_fz30 ${styles.title}`}
 							level="h1"
 						/>
-						<Form onSubmit={handleFormSubmit} />
+						<Form onSubmit={handleFormSubmit} finalSum={sum} />
 					</div>
 				</div>
 			</main>
