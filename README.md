@@ -2,8 +2,41 @@
 
 Веб-приложение для кондитерской — каталог тортов и бенто-тортов с возможностью оформления заказа.
 
+## Фичи
+
+-   **Каталог тортов** с фильтрацией и сортировкой (по цене, популярности)
+-   **Карточка торта** с интерактивным выбором:
+    -   Начинки (множественный выбор)
+    -   Вес (1.5кг, 3кг, 5кг с надбавкой)
+    -   Дополнительные опции (свечи, украшения)
+-   **Калькулятор цены** в реальном времени
+-   **Корзина** с сохранением в localStorage
+-   **Промокоды** (скидка 15%)
+-   **Интерактивная карта** с маршрутом до магазина (Leaflet)
+-   **Lazy Loading** страниц для оптимизации загрузки
+-   **Responsive дизайн** (брейкпоинты: 1200px, 992px, 767px, 576px)
+
 ## Live Demo
+
 [View Live](https://cakes-wow-project.vercel.app)
+
+## Screenshots
+
+### Главная страница
+
+![Main Page](public/images/screenshots/main-page.png)
+
+### Каталог тортов
+
+![Catalog](public/images/screenshots/catalog.png)
+
+### Карточка торта
+
+![Cake Card](public/images/screenshots/cake-card.png)
+
+### Корзина
+
+![Cart](public/images/screenshots/cart.png)
 
 ## Технологии
 
@@ -47,11 +80,26 @@ npm run dev
 | `npm run test`           | Запуск тестов               |
 | `npm run format`         | Форматирование Prettier     |
 
+## Тестирование
+
+```bash
+# Запуск всех тестов
+npm run test
+
+# Запуск тестов в watch-режиме
+npm run test -- --watch
+
+# Покрытие кода тестами
+npm run test -- --coverage
+```
+
+Тесты написаны с использованием **Jest 29** и **Testing Library**. Основное покрытие — уровень компонентов, Redux slices и thunks (API actions), Selectors.
+
 ## Структура проекта
 
 ```
 src/
-├── components/          # Переиспользуемые компоненты
+├── components/         # Переиспользуемые компоненты
 │   ├── app/            # Корневой компонент
 │   ├── ui/             # UI-компоненты (Button, Hamburger)
 │   ├── header/         # Шапка сайта
@@ -101,42 +149,44 @@ src/
 
 **Примечание:** Вложенные папки внутри `pages/` содержат компоненты, которые используются только на соответствующей странице.
 
-## Ленивая загрузка страниц
+## Lazy Loading
 
 Большинство страниц загружаются лениво через `React.lazy` + `Suspense` — код каждой страницы попадает в отдельный чанк и загружается только при переходе на маршрут. Это уменьшает размер начального бандла.
 
-Лениво загружаются:
-- `AboutPage`
-- `CakeArticlePage`
-- `CatalogPage` (через `CatalogPageWrapper` для проброса пропсов)
-- `ContactsPage`
-- `DeliveryPage`
-- `OrderRegistrationPage`
-- `ShoppingCartPage`
-- `ThanksPage`
-- `NotFoundPage`
+Загружаются с Lazy Loading:
+
+-   `AboutPage`
+-   `CakeArticlePage`
+-   `CatalogPage` (через `CatalogPageWrapper` для проброса пропсов)
+-   `ContactsPage`
+-   `DeliveryPage`
+-   `OrderRegistrationPage`
+-   `ShoppingCartPage`
+-   `ThanksPage`
+-   `NotFoundPage`
 
 Страницы, которые загружаются сразу:
-- `MainPage` — главная страница, нужна при старте
+
+-   `MainPage` — главная страница, нужна при старте
 
 Fallback при загрузке — компонент `PageSkeleton` (`src/components/page-skeleton/page-skeleton.tsx`).
 
 ## Маршруты
 
-| Путь                   | Страница               |
-| ---------------------- | ---------------------- |
-| `/`                    | Главная                |
-| `/about`               | О нас                  |
-| `/catalog`             | Каталог                |
-| `/catalog/cakes`       | Каталог тортов         |
-| `/catalog/bento-cakes` | Каталог бенто-тортов   |
-| `/cake-offer/:id`      | Карточка торта         |
-| `/contacts`            | Контакты               |
-| `/delivery`            | Доставка и оплата      |
-| `/shopping-cart`       | Корзина                |
-| `/order-registration` | Оформление заказа |
-| `/thanks-page` | Страница благодарности |
-| `*` | Страница не найдена (catch-all) |
+| Путь                   | Страница                        |
+| ---------------------- | ------------------------------- |
+| `/`                    | Главная                         |
+| `/about`               | О нас                           |
+| `/catalog`             | Каталог                         |
+| `/catalog/cakes`       | Каталог тортов                  |
+| `/catalog/bento-cakes` | Каталог бенто-тортов            |
+| `/cake-offer/:id`      | Карточка торта                  |
+| `/contacts`            | Контакты                        |
+| `/delivery`            | Доставка и оплата               |
+| `/shopping-cart`       | Корзина                         |
+| `/order-registration`  | Оформление заказа               |
+| `/thanks-page`         | Страница благодарности          |
+| `*`                    | Страница не найдена (catch-all) |
 
 ## Redux Store
 
@@ -157,7 +207,7 @@ type CheckBoxValue  // { [key: string]: boolean }
 type Radio          // { weightValue: number, isChecked: boolean }
 ```
 
-## CI
+## CI/CD
 
 При каждом пуше в `master`/`develop` и при PR в `master` автоматически запускаются:
 
@@ -165,6 +215,12 @@ type Radio          // { weightValue: number, isChecked: boolean }
 -   Stylelint
 -   Тесты (Jest)
 -   Сборка (Vite)
+
+### Деплой
+
+Приложение развертывается на Vercel. Автоматический деплой настроен через веб-интерфейс Vercel — после успешного завершения CI приложение публикуется на:
+
+-   **Production:** https://cakes-wow-project.vercel.app
 
 ## Бизнес-логика подсчёта стоимости
 
@@ -180,11 +236,11 @@ type Radio          // { weightValue: number, isChecked: boolean }
 
 **Надбавка за вес** — из `weightScale`:
 
-| Вес | Множитель |
-|-----|-----------|
-| 1.5 кг | × 0 (без надбавки) |
-| 3 кг | × 0.5 от базовой цены |
-| 5 кг | × 1.5 от базовой цены |
+| Вес    | Множитель             |
+| ------ | --------------------- |
+| 1.5 кг | × 0 (без надбавки)    |
+| 3 кг   | × 0.5 от базовой цены |
+| 5 кг   | × 1.5 от базовой цены |
 
 **Начинки** (`filling`) — checkboxes. Каждая начинка имеет свою цену (`Filling.price`). Можно выбрать несколько.
 
@@ -202,8 +258,8 @@ type Radio          // { weightValue: number, isChecked: boolean }
 
 При применении промокода (`getDiscountAction.fulfilled`):
 
-- Каждый товар в корзине пересчитывается: `price = price × (1 - 0.15)`
-- Скидка **15%** (значение `discountValue` в `constants.ts`)
+-   Каждый товар в корзине пересчитывается: `price = price × (1 - 0.15)`
+-   Скидка **15%** (применяется только к товарам, которые были в корзине на момент применения промокода).
 
 ### Форматирование
 

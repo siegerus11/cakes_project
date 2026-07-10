@@ -4,11 +4,11 @@ import { toast, Flip } from 'react-toastify';
 import { requestTimeout } from '../constants';
 import { processErrorHandle } from './process-error-handle';
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || '/mock-api';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || '/mock-api';
 
 const createAPI = (): AxiosInstance => {
 	const api = axios.create({
-		baseURL: BASE_URL,
+		baseURL: BACKEND_URL,
 		timeout: requestTimeout
 	});
 
