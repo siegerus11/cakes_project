@@ -36,7 +36,9 @@ describe('Component: MainPage', () => {
 		const { withStoreComponent } = withStore(component, {
 			[NameSpace.Cart]: {
 				shoppingCart: [],
-				discountLoadingStatus: LoadingStatus.Idle
+				discountLoadingStatus: LoadingStatus.Idle,
+				discount: 0,
+				discountError: null
 			},
 			...initialState
 		});
@@ -114,7 +116,9 @@ describe('Component: MainPage', () => {
 		const initialState = {
 			[NameSpace.Cart]: {
 				shoppingCart: [fakeOrder],
-				discountLoadingStatus: LoadingStatus.Idle
+				discountLoadingStatus: LoadingStatus.Idle,
+				discount: 0,
+				discountError: null
 			}
 		};
 

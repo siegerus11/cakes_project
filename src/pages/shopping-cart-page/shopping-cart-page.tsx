@@ -4,7 +4,8 @@
 	AnimationEvent,
 	FormEvent,
 	useMemo,
-	useCallback
+	useCallback,
+	useEffect
 } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ import useMediaQuery from '../../hooks/useMediaQuery';
 import { useAppSelector, useActionCreators } from '../../hooks/useStore';
 import useTouch from '../../hooks/useTouch';
 import {
+	selectShoppingCart,
 	cartProcessSelectors,
 	cartProcessActions
 } from '../../store/cart-process/cart-process';
@@ -35,8 +37,10 @@ const ShoppingCartPage = () => {
 	const [inputValue, setInputValue] = useState<string>('');
 	const [errorMessage, setErrorMessage] = useState<string>('');
 
-	const shoppingCart = useAppSelector(
-		cartProcessSelectors.selectShoppingCart
+	const shoppingCart = useAppSelector(selectShoppingCart);
+	const discount = useAppSelector(cartProcessSelectors.selectDiscount);
+	const discountError = useAppSelector(
+		cartProcessSelectors.selectDiscountError
 	);
 	const { clearCart, getDiscountAction } =
 		useActionCreators(cartProcessActions);
@@ -60,10 +64,6 @@ const ShoppingCartPage = () => {
 		setIsAnimate(true);
 	}, []);
 
-	const handlePopupClickClose = useCallback(() => {
-		if (!isMobile) setPopupIsVisible(false);
-	}, [isMobile]);
-
 	const { handleTouchStart, handleTouchMove, handleTouchEnd } = useTouch(
 		handlePopupTouchClose
 	);
@@ -83,6 +83,11 @@ const ShoppingCartPage = () => {
 		setInputValue('');
 		setErrorMessage('');
 	};
+
+	const handlePopupClickClose = useCallback(() => {
+		setErrorMessage('');
+		if (!isMobile) setPopupIsVisible(false);
+	}, [isMobile]);
 
 	const promoInputValidate = (value: string) => {
 		const result = validation.promo(value);
@@ -105,8 +110,17 @@ const ShoppingCartPage = () => {
 	const handlePromoSubmit = (e: FormEvent) => {
 		e.preventDefault();
 		if (!isValidPromo) return;
+		setErrorMessage('');
 		getDiscountAction(inputValue);
 	};
+
+	useEffect(() => {
+		if (discountError) {
+			setInputValue('');
+			setErrorMessage(discountError);
+		}
+		if (!discountError && discount > 0) setPopupIsVisible(false);
+	}, [discountError, discount]);
 
 	const buttonPath = useMemo(
 		() =>
@@ -154,9 +168,20 @@ const ShoppingCartPage = () => {
 					</div>
 					<CartList />
 					<div className={styles.total}>
-						<span className={styles.total__amount}>
-							Итого: {finalSum} ₽
-						</span>
+						{discount > 0 ? (
+							<div className={styles.total__discount}>
+								<span className={styles.total__promo}>
+									Скидка по промокоду: {discount}%
+								</span>
+								<span className={styles.total__old}>
+									Итого: {finalSum} ₽
+								</span>
+							</div>
+						) : (
+							<span className={styles.total__amount}>
+								Итого: {finalSum} ₽
+							</span>
+						)}
 						<button
 							className={`dot-lined ${styles.total__button}`}
 							type="button"
@@ -165,24 +190,24 @@ const ShoppingCartPage = () => {
 							<span>Ввести промокод</span>
 						</button>
 					</div>
-				<LinkButton
-					className={`button button_primary ${styles.button}`}
-					path={buttonPath}
-					label={buttonText}
-				>
-					<span>{buttonText}</span>
-				</LinkButton>
+					<LinkButton
+						className={`button button_primary ${styles.button}`}
+						path={buttonPath}
+						label={buttonText}
+					>
+						<span>{buttonText}</span>
+					</LinkButton>
 				</div>
 			</div>
-		<ButtonController outerClass={`${styles.controller}`}>
-			<LinkButton
-				className={`button button_primary ${styles.controller__button}`}
-				path={AppRoute.OrderRegistration}
-				label="Верно, далее"
-			>
-				<span>Верно, далее</span>
-			</LinkButton>
-		</ButtonController>
+			<ButtonController outerClass={`${styles.controller}`}>
+				<LinkButton
+					className={`button button_primary ${styles.controller__button}`}
+					path={AppRoute.OrderRegistration}
+					label="Верно, далее"
+				>
+					<span>Верно, далее</span>
+				</LinkButton>
+			</ButtonController>
 			{popupIsVisible && (
 				<Overlay>
 					<Popup

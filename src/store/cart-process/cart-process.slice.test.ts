@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { LoadingStatus, discountValue } from '../../constants';
+import { LoadingStatus } from '../../constants';
 import makeFakeOrder from '../../mocks/makeFakeOrder';
 import { cartProcess, cartProcessActions } from './cart-process';
 
@@ -9,7 +9,9 @@ describe('Cart-proecss slice', () => {
 		const emptyAction = { type: '' };
 		const expectedState = {
 			shoppingCart: [makeFakeOrder()],
-			discountLoadingStatus: LoadingStatus.Idle
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 0,
+			discountError: null
 		};
 
 		const result = cartProcess.reducer(expectedState, emptyAction);
@@ -21,7 +23,9 @@ describe('Cart-proecss slice', () => {
 		const emptyAction = { type: '' };
 		const expectedState = {
 			shoppingCart: [],
-			discountLoadingStatus: LoadingStatus.Idle
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 0,
+			discountError: null
 		};
 
 		const result = cartProcess.reducer(undefined, emptyAction);
@@ -32,10 +36,12 @@ describe('Cart-proecss slice', () => {
 	it('Should return state with discountLoadingStatus: Loading', () => {
 		const expectedState = {
 			shoppingCart: [],
-			discountLoadingStatus: LoadingStatus.Loading
+			discountLoadingStatus: LoadingStatus.Loading,
+			discount: 0,
+			discountError: null
 		};
 
-		const getDiscountActionPending = createAction(
+		const getDiscountActionPending = createAction<void>(
 			'cart/getDiscount/pending'
 		);
 		const result = cartProcess.reducer(
@@ -46,26 +52,27 @@ describe('Cart-proecss slice', () => {
 		expect(result).toEqual(expectedState);
 	});
 
-	it('Should return state with discountLoadingStatus: Success and discounted orders', () => {
-		const discountedOrder = {
-			...makeFakeOrder(),
-			price: Math.round(makeFakeOrder().price * (1 - discountValue / 100))
-		};
+	it('Should return state with discountLoadingStatus: Success and discount value', () => {
+		const fakeOrder = makeFakeOrder();
 		const initialState = {
-			shoppingCart: Array.from({ length: 3 }, makeFakeOrder),
-			discountLoadingStatus: LoadingStatus.Idle
+			shoppingCart: [fakeOrder],
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 0,
+			discountError: null
 		};
 		const expectedState = {
-			shoppingCart: [discountedOrder, discountedOrder, discountedOrder],
-			discountLoadingStatus: LoadingStatus.Success
+			shoppingCart: [fakeOrder],
+			discountLoadingStatus: LoadingStatus.Success,
+			discount: 15,
+			discountError: null
 		};
 
 		const result = cartProcess.reducer(
 			initialState,
 			cartProcessActions.getDiscountAction.fulfilled(
-				undefined,
-				'',
-				'code'
+				{ discount: 15, discountedSum: 3060 },
+				'code',
+				'requestId'
 			)
 		);
 
@@ -73,17 +80,25 @@ describe('Cart-proecss slice', () => {
 	});
 
 	it('Should return state with discountLoadingStatus: Failed', () => {
+		const initialState = {
+			shoppingCart: [],
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 0,
+			discountError: null
+		};
 		const expectedState = {
 			shoppingCart: [],
-			discountLoadingStatus: LoadingStatus.Failed
+			discountLoadingStatus: LoadingStatus.Failed,
+			discount: 0,
+			discountError: 'Неверный промокод'
 		};
 
-		const getDiscountActionRejected = createAction(
+		const getDiscountActionRejected = createAction<string>(
 			'cart/getDiscount/rejected'
 		);
 		const result = cartProcess.reducer(
-			expectedState,
-			getDiscountActionRejected()
+			initialState,
+			getDiscountActionRejected('invalid_promo')
 		);
 
 		expect(result).toEqual(expectedState);
@@ -93,11 +108,15 @@ describe('Cart-proecss slice', () => {
 		const fakeOrder = makeFakeOrder();
 		const initialState = {
 			shoppingCart: [],
-			discountLoadingStatus: LoadingStatus.Idle
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 0,
+			discountError: null
 		};
 		const expectedState = {
 			shoppingCart: [fakeOrder],
-			discountLoadingStatus: LoadingStatus.Idle
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 0,
+			discountError: null
 		};
 
 		const result = cartProcess.reducer(
@@ -115,11 +134,15 @@ describe('Cart-proecss slice', () => {
 		};
 		const initialState = {
 			shoppingCart: [fakeOrder],
-			discountLoadingStatus: LoadingStatus.Idle
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 0,
+			discountError: null
 		};
 		const expectedState = {
 			shoppingCart: [incremenedFakeOrder],
-			discountLoadingStatus: LoadingStatus.Idle
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 0,
+			discountError: null
 		};
 
 		const result = cartProcess.reducer(
@@ -136,11 +159,15 @@ describe('Cart-proecss slice', () => {
 	it('Should return state with empty cart', () => {
 		const initialState = {
 			shoppingCart: Array.from({ length: 3 }, makeFakeOrder),
-			discountLoadingStatus: LoadingStatus.Idle
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 15,
+			discountError: null
 		};
 		const expectedState = {
 			shoppingCart: [],
-			discountLoadingStatus: LoadingStatus.Idle
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 0,
+			discountError: null
 		};
 
 		const result = cartProcess.reducer(
@@ -158,11 +185,15 @@ describe('Cart-proecss slice', () => {
 		};
 		const initialState = {
 			shoppingCart: [makeFakeOrder(), expectDetetedOrder],
-			discountLoadingStatus: LoadingStatus.Idle
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 0,
+			discountError: null
 		};
 		const expectedState = {
 			shoppingCart: [makeFakeOrder()],
-			discountLoadingStatus: LoadingStatus.Idle
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 0,
+			discountError: null
 		};
 
 		const result = cartProcess.reducer(

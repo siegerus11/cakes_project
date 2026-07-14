@@ -48,6 +48,20 @@
 			}
 		},
 		{
+			"files": ["backend/**/*.{js,ts,jsx,tsx}"],
+			"parserOptions": {
+				"project": null
+			},
+			"rules": {
+				"react/react-in-jsx-scope": "off",
+				"react/jsx-filename-extension": "off",
+				"react/function-component-definition": "off",
+				"react/prop-types": "off",
+				"import/no-extraneous-dependencies": "off",
+				"import/extensions": ["error", { "ts": "never" }]
+			}
+		},
+		{
 			"files": ["src/**/*.{js,ts,jsx,tsx}"],
 			"rules": {
 				"react/prop-types": "off",
