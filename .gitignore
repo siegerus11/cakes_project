@@ -1,9 +1,16 @@
 logs
 *.log
 .env
+.kilo
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 node_modules
 dist
+cakes_project.code-workspace
+AGENTS.md
+backend/cakes.db
+*.db
+*.sqlite
+..bfg-report
