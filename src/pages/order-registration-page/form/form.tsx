@@ -8,10 +8,17 @@ import { UserData } from '../../../types/types';
 import styles from './form.module.scss';
 
 type FormProps = {
-	onSubmit: (formValues: UserData) => void;
+	onSubmit: (formValues: {
+		name: string;
+		phone: string;
+		address: string;
+		comment: string;
+	}) => void;
+	getPaymantStatus: (status: boolean) => void;
+	finalSum: number;
 };
 
-const Form = ({ onSubmit }: FormProps) => {
+const Form = ({ onSubmit, finalSum, getPaymantStatus }: FormProps) => {
 	const orderSendingStatus = useAppSelector(
 		cakeOffersDataSelectors.selectOrderSendingStatus
 	);
@@ -52,7 +59,119 @@ const Form = ({ onSubmit }: FormProps) => {
 		}));
 	};
 
-	const handleFormSubmit = (e: SubmitEvent) => {
+	// Создание платежа и открытие iframe
+	const handleCreatePayment = async (): Promise<boolean> => {
+		try {
+			setPaymentStatus('pending');
+			setPaymentError(null);
+			getPaymantStatus(true);
+
+			const response = await fetch(`${BACKEND_URL}/${APIRoute.payment}`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ amount: finalSum })
+			});
+
+			if (!response.ok) {
+				throw new Error('Payment creation failed');
+			}
+
+			const data = (await response.json()) as {
+				paymentId: string;
+				paymentUrl: string;
+			};
+			setPaymentId(data.paymentId);
+			// Формируем полный URL для iframe (бэкенд отдаёт относительный)
+			setPaymentUrl(`${BACKEND_URL}${data.paymentUrl}`);
+			setPaymentStatus('processing');
+
+			return true;
+		} catch (err) {
+			setPaymentStatus('failed');
+			setPaymentError('Не удалось создать платёж. Попробуйте позже.');
+			getPaymantStatus(false);
+			return false;
+		}
+	};
+
+	// Обработчик сообщений от iframe
+	const handleIframeMessage = useCallback(
+		(event: MessageEvent) => {
+			if (!paymentUrl) return;
+
+			if (event.data?.type === 'payment-cancelled') {
+				setPaymentStatus('idle');
+				setPaymentUrl(null);
+				setPaymentId(null);
+				getPaymantStatus(false);
+			}
+		},
+		[paymentUrl, getPaymantStatus]
+	);
+
+	useEffect(() => {
+		window.addEventListener('message', handleIframeMessage);
+		return () => window.removeEventListener('message', handleIframeMessage);
+	}, [handleIframeMessage]);
+
+	// Проверка статуса платежа (поллинг)
+	const checkPaymentStatus = useCallback(async (): Promise<boolean> => {
+		if (!paymentId) return false;
+
+		try {
+			const response = await fetch(
+				`${BACKEND_URL}/${APIRoute.payment}/status/${paymentId}`
+			);
+
+			if (!response.ok) {
+				return false;
+			}
+
+			const data = (await response.json()) as { status: string };
+
+			if (data.status === 'success') {
+				setPaymentStatus('success');
+				return true;
+			}
+
+			if (data.status === 'failed') {
+				setPaymentStatus('failed');
+				setPaymentError('Платёж был отклонён');
+				return false;
+			}
+
+			return false;
+		} catch {
+			return false;
+		}
+	}, [paymentId]);
+
+	// Периодическая проверка статуса платежа
+	useEffect(() => {
+		if (paymentStatus !== 'processing' || !paymentId) {
+			return undefined;
+		}
+
+		const interval = setInterval(async () => {
+			const isSuccess = await checkPaymentStatus();
+			if (isSuccess) {
+				clearInterval(interval);
+			}
+		}, 2000);
+
+		return () => {
+			clearInterval(interval);
+		};
+	}, [paymentStatus, paymentId, checkPaymentStatus]);
+
+	// Когда платеж успешен — вызываем onSubmit
+	useEffect(() => {
+		if (paymentStatus === 'success') {
+			onSubmit(formValues);
+		}
+	}, [paymentStatus]); // eslint-disable-line react-hooks/exhaustive-deps
+
+	const handleFormSubmit = async (e: FormEvent) => {
 		e.preventDefault();
 
 		const errors: Record<string, string> = {};
