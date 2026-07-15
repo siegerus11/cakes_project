@@ -202,10 +202,10 @@ const ShoppingCartPage = () => {
 			<ButtonController outerClass={`${styles.controller}`}>
 				<LinkButton
 					className={`button button_primary ${styles.controller__button}`}
-					path={AppRoute.OrderRegistration}
-					label="Верно, далее"
+					path={buttonPath}
+					label={buttonText}
 				>
-					<span>Верно, далее</span>
+					<span>{buttonText}</span>
 				</LinkButton>
 			</ButtonController>
 			{popupIsVisible && (
