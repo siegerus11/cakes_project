@@ -21,12 +21,13 @@ type FormProps = {
 		address: string;
 		comment: string;
 	}) => void;
+	getPaymantStatus: (status: boolean) => void;
 	finalSum: number;
 };
 
 type PaymentStatus = 'idle' | 'pending' | 'processing' | 'success' | 'failed';
 
-const Form = ({ onSubmit, finalSum }: FormProps) => {
+const Form = ({ onSubmit, finalSum, getPaymantStatus }: FormProps) => {
 	const orderSendingStatus = useAppSelector(
 		cakeOffersDataSelectors.selectOrderSendingStatus
 	);
@@ -77,6 +78,7 @@ const Form = ({ onSubmit, finalSum }: FormProps) => {
 		try {
 			setPaymentStatus('pending');
 			setPaymentError(null);
+			getPaymantStatus(true);
 
 			const response = await fetch(`${BACKEND_URL}/${APIRoute.payment}`, {
 				method: 'POST',
@@ -101,6 +103,7 @@ const Form = ({ onSubmit, finalSum }: FormProps) => {
 		} catch (err) {
 			setPaymentStatus('failed');
 			setPaymentError('Не удалось создать платёж. Попробуйте позже.');
+			getPaymantStatus(false);
 			return false;
 		}
 	};
@@ -114,9 +117,10 @@ const Form = ({ onSubmit, finalSum }: FormProps) => {
 				setPaymentStatus('idle');
 				setPaymentUrl(null);
 				setPaymentId(null);
+				getPaymantStatus(false);
 			}
 		},
-		[paymentUrl]
+		[paymentUrl, getPaymantStatus]
 	);
 
 	useEffect(() => {

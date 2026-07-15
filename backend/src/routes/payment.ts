@@ -62,21 +62,23 @@ router.get('/pay/:paymentId', (req: Request, res: Response) => {
 	<title>Оплата заказа</title>
 	<style>
 		* { margin: 0; padding: 0; box-sizing: border-box; }
+		html, body {
+			min-height: 100%;
+			margin: 0;
+			padding: 0;
+		}
 		body {
+		padding-top: 20px;
 			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 			background: #f8f5f0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			min-height: 100vh;
-			padding: 20px;
 		}
 		.card {
 			background: #fff;
 			border-radius: 16px;
-			padding: 32px;
+			padding: 20px 32px;
 			max-width: 400px;
 			width: 100%;
+			margin: 0 auto;
 			box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 		}
 		.card__title {
@@ -141,7 +143,7 @@ router.get('/pay/:paymentId', (req: Request, res: Response) => {
 		.btn:hover { opacity: 0.9; }
 		.btn:disabled { opacity: 0.5; cursor: not-allowed; }
 		.btn_primary {
-			background: #c9a96e;
+			background: #ff4c80;
 			color: #fff;
 		}
 		.btn_secondary {

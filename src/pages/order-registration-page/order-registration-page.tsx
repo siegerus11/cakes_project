@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import ButtonController from '../../components/button-controller/button-controller';
@@ -19,6 +20,8 @@ import styles from './order-registration-page.module.scss';
 
 const OrderRegistrationPage = () => {
 	const navigate = useNavigate();
+	const [isPaymantHasStatus, setIsPaymantHasStatus] =
+		useState<boolean>(false);
 
 	const cart = useAppSelector(cartProcessSelectors.selectShoppingCart);
 	const orderSendingStatus = useAppSelector(
@@ -49,6 +52,10 @@ const OrderRegistrationPage = () => {
 		navigate(-1);
 	};
 
+	const getPaymantStatus = (status: boolean) => {
+		setIsPaymantHasStatus(status);
+	};
+
 	return (
 		<>
 			<main className={`page ${styles.page}`}>
@@ -71,20 +78,28 @@ const OrderRegistrationPage = () => {
 							titleClass={`title_fw800 title_fz30 ${styles.title}`}
 							level="h1"
 						/>
-						<Form onSubmit={handleFormSubmit} finalSum={sum} />
+						<Form
+							onSubmit={handleFormSubmit}
+							finalSum={sum}
+							getPaymantStatus={getPaymantStatus}
+						/>
 					</div>
 				</div>
 			</main>
-			<ButtonController outerClass={styles.controller}>
-				<SubmitButton
-					className={`button button_primary ${styles.controller__button}`}
-					label="Оформить заказ"
-					formId="order-registration-form"
-					isDisabled={orderSendingStatus === LoadingStatus.Loading}
-				>
-					<span>Оформить заказ</span>
-				</SubmitButton>
-			</ButtonController>
+			{isPaymantHasStatus || (
+				<ButtonController outerClass={styles.controller}>
+					<SubmitButton
+						className={`button button_primary ${styles.controller__button}`}
+						label="Оформить заказ"
+						formId="order-registration-form"
+						isDisabled={
+							orderSendingStatus === LoadingStatus.Loading
+						}
+					>
+						<span>Оформить заказ</span>
+					</SubmitButton>
+				</ButtonController>
+			)}
 		</>
 	);
 };

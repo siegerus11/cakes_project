@@ -56,10 +56,10 @@
 	}
 
 	&__iframeWrapper {
-		overflow: hidden;
 		border: 1.5px solid variables.$color-bg-secondary;
 		margin-top: 12px;
 		border-radius: 12px;
+		overflow-y: auto;
 	}
 
 	&__iframeHeader {
@@ -73,7 +73,7 @@
 	&__iframe {
 		display: block;
 		width: 100%;
-		height: 420px;
+		min-height: 600px;
 		border: none;
 	}
 
