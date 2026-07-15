@@ -79,6 +79,11 @@
 			line-height: 119%;
 		}
 	}
+
+	&__discount {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 .button {

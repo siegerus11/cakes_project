@@ -20,7 +20,9 @@ describe('Component: OrderRegistrationPage', () => {
 		const { withStoreComponent } = withStore(component, {
 			[NameSpace.Cart]: {
 				shoppingCart: [],
-				discountLoadingStatus: LoadingStatus.Idle
+				discountLoadingStatus: LoadingStatus.Idle,
+				discount: 0,
+				discountError: null
 			}
 		});
 		return render(withStoreComponent);
