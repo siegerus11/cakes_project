@@ -165,24 +165,24 @@ const ShoppingCartPage = () => {
 							<span>Ввести промокод</span>
 						</button>
 					</div>
+					<LinkButton
+						className={`button button_primary ${styles.button}`}
+						path={buttonPath}
+						label={buttonText}
+					>
+						<span>{buttonText}</span>
+					</LinkButton>
+				</div>
+			</div>
+			<ButtonController outerClass={`${styles.controller}`}>
 				<LinkButton
-					className={`button button_primary ${styles.button}`}
+					className={`button button_primary ${styles.controller__button}`}
 					path={buttonPath}
 					label={buttonText}
 				>
 					<span>{buttonText}</span>
 				</LinkButton>
-				</div>
-			</div>
-		<ButtonController outerClass={`${styles.controller}`}>
-			<LinkButton
-				className={`button button_primary ${styles.controller__button}`}
-				path={AppRoute.OrderRegistration}
-				label="Верно, далее"
-			>
-				<span>Верно, далее</span>
-			</LinkButton>
-		</ButtonController>
+			</ButtonController>
 			{popupIsVisible && (
 				<Overlay>
 					<Popup
