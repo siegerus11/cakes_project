@@ -92,7 +92,8 @@ describe('Component: ShoppingCartPage', () => {
 
 		renderShoppingCartPage([]);
 
-		expect(screen.getByText(expectedText)).toBeInTheDocument();
+		const buttons = screen.getAllByText(expectedText);
+		expect(buttons.length).toBe(2);
 	});
 
 	it('should link to order registration when cart has items', () => {
