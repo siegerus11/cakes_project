@@ -36,3 +36,9 @@
 		line-height: 119%;
 	}
 }
+
+@media (max-width: 360px) {
+	.button {
+		padding: 17px 45px 16px;
+	}
+}

@@ -3,7 +3,7 @@ import { useState, TouchEvent, useCallback } from 'react';
 function useTouch(callback: () => void): {
 	handleTouchStart: (e: TouchEvent) => void;
 	handleTouchMove: (e: TouchEvent) => void;
-	handleTouchEnd: () => void;
+	handleTouchEnd: (e: TouchEvent) => void;
 } {
 	const [isTouchMove, setIsTouchMove] = useState<boolean>(false);
 
