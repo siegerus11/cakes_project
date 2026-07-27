@@ -32,6 +32,9 @@
 }
 
 .button {
+	@include mixins.active-overlay-accent;
+
+	justify-content: center;
 	padding: 17px 60px 16px;
 	margin-top: 40px;
 

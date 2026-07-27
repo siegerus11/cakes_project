@@ -14,6 +14,7 @@
 	font-size: 16px;
 	line-height: 169%;
 	text-decoration: none;
+	touch-action: none;
 
 	svg {
 		position: absolute;
@@ -42,7 +43,7 @@
 }
 
 .overlay {
-	animation: fadeIn 0.2s ease;
+	animation: fadeIn 0.2s forwards;
 
 	&_closing {
 		animation: fadeOut 0.2s forwards;
@@ -52,7 +53,7 @@
 .popup {
 	min-width: 1070px;
 	max-height: 666px;
-	animation: fadeIn 0.2s ease;
+	animation: fadeIn 0.2s forwards;
 	border-radius: 40px;
 
 	&_closing {
@@ -112,6 +113,7 @@
 		min-height: 18px;
 		border: none;
 		background: none;
+		touch-action: none;
 	}
 
 	&__image {
@@ -277,7 +279,7 @@
 		width: 100%;
 		height: 100%;
 		max-height: unset;
-		animation: heightIn 0.3s ease;
+		animation: heightIn 0.3s forwards;
 		transform: unset;
 
 		&__wrapper {
@@ -329,7 +331,7 @@
 		}
 
 		&_closing {
-			animation: heightOut 0.3s ease;
+			animation: heightOut 0.3s forwards;
 		}
 	}
 

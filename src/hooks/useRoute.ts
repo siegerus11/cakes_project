@@ -41,13 +41,13 @@ function useRoute(targetPos: [number, number]): {
 					setLoading(false);
 				}
 			},
-			() => {
+			e => {
 				setLoading(false);
 				setError(
-					'Не удалось определить ваше местоположение. Разрешите доступ к геолокации.'
+					`Не удалось определить ваше местоположение. ${e.message}`
 				);
 			},
-			{ enableHighAccuracy: true, timeout: 10000 }
+			{ timeout: 30000 }
 		);
 	}, [targetPos]);
 

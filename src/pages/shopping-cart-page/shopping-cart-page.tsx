@@ -2,9 +2,10 @@
 	useState,
 	ChangeEvent,
 	AnimationEvent,
-	FormEvent,
+	SubmitEvent,
 	useMemo,
 	useCallback,
+	TouchEvent,
 	useEffect
 } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -68,6 +69,21 @@ const ShoppingCartPage = () => {
 		handlePopupTouchClose
 	);
 
+	useCallback(() => {}, []);
+
+	const handleOverlayTouch = useCallback(
+		(e: TouchEvent) => {
+			const target = e.target as HTMLElement;
+			if (
+				target !== e.currentTarget ||
+				target.closest(`.${styles.popup}`)
+			)
+				return;
+			handlePopupTouchClose();
+		},
+		[handlePopupTouchClose]
+	);
+
 	const handlePopupAnimationEnd = useCallback((e: AnimationEvent) => {
 		if (e.animationName === styles.popupClosing) {
 			setPopupIsVisible(false);
@@ -107,7 +123,7 @@ const ShoppingCartPage = () => {
 	const validPromo = validation.promo(inputValue);
 	const isValidPromo = validPromo === true;
 
-	const handlePromoSubmit = (e: FormEvent) => {
+	const handlePromoSubmit = (e: SubmitEvent) => {
 		e.preventDefault();
 		if (!isValidPromo) return;
 		setErrorMessage('');
@@ -209,7 +225,7 @@ const ShoppingCartPage = () => {
 				</LinkButton>
 			</ButtonController>
 			{popupIsVisible && (
-				<Overlay>
+				<Overlay handleTouchStart={handleOverlayTouch}>
 					<Popup
 						outerClass={`popup ${styles.popup} ${
 							isAnimate ? styles.popup_closing : ''

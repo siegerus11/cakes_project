@@ -38,7 +38,7 @@ const CardsList = ({
 
 	const listClass = isMainPage
 		? styles.component
-		: `${styles.component} ${styles.component_mt30} ${styles.component_fw} ${styles.component_rg} ${styles.component_jcSpaceBtw}`;
+		: `${styles.component} ${styles.component_mt30} ${styles.component_fw} ${styles.component_rg} ${styles.component_jcSpecial}`;
 
 	return (
 		<ul className={listClass}>

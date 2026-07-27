@@ -79,18 +79,44 @@ describe('Component: MainPage', () => {
 		expect(openAllLinks.length).toBeGreaterThanOrEqual(2);
 	});
 
-	it('should render order button', () => {
+	it('should render order button when cart has items', () => {
+		const fakeOrder = makeFakeOrder();
+		const initialState = {
+			[NameSpace.Cart]: {
+				shoppingCart: [fakeOrder],
+				discountLoadingStatus: LoadingStatus.Idle,
+				discount: 0,
+				discountError: null
+			}
+		};
+
+		renderMainPage(mockCakes, mockBentoCakes, initialState);
+
 		const expectedButtonText = 'Оформить заказ';
+		expect(screen.getByText(expectedButtonText)).toBeInTheDocument();
+	});
+
+	it('should not render order button when cart is empty', () => {
+		const orderButtonText = 'Оформить заказ';
 
 		renderMainPage();
 
-		expect(screen.getByText(expectedButtonText)).toBeInTheDocument();
+		expect(screen.queryByText(orderButtonText)).not.toBeInTheDocument();
 	});
 
 	it('should link order button to shopping cart', () => {
 		const expectedPath = AppRoute.ShoppingCart;
+		const fakeOrder = makeFakeOrder();
+		const initialState = {
+			[NameSpace.Cart]: {
+				shoppingCart: [fakeOrder],
+				discountLoadingStatus: LoadingStatus.Idle,
+				discount: 0,
+				discountError: null
+			}
+		};
 
-		renderMainPage();
+		renderMainPage(mockCakes, mockBentoCakes, initialState);
 
 		const links = screen.getAllByRole('link');
 		const orderLink = links.find(
@@ -99,12 +125,21 @@ describe('Component: MainPage', () => {
 		expect(orderLink).toBeInTheDocument();
 	});
 
-	it('should not display price in order button when cart is empty', () => {
-		const orderButtonText = 'Оформить заказ';
+	it('should not display price in order button when cart has items but no price', () => {
+		const fakeOrder = makeFakeOrder();
+		fakeOrder.price = 0;
+		const initialState = {
+			[NameSpace.Cart]: {
+				shoppingCart: [fakeOrder],
+				discountLoadingStatus: LoadingStatus.Idle,
+				discount: 0,
+				discountError: null
+			}
+		};
 
-		renderMainPage();
+		renderMainPage(mockCakes, mockBentoCakes, initialState);
 
-		const orderButton = screen.getByText(orderButtonText).closest('a');
+		const orderButton = screen.getByText('Оформить заказ').closest('a');
 		const priceInButton = orderButton?.querySelector(
 			'[class*="button__price"]'
 		);
