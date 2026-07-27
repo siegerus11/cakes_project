@@ -23,7 +23,9 @@ describe('Component: ShoppingCartPage', () => {
 		const { withStoreComponent } = withStore(component, {
 			[NameSpace.Cart]: {
 				shoppingCart: cart,
-				discountLoadingStatus: 'Idle'
+				discountLoadingStatus: 'Idle',
+				discount: 0,
+				discountError: null
 			}
 		});
 		return render(withStoreComponent);

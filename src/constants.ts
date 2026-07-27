@@ -25,9 +25,10 @@ export const AppRoute = {
 } as const;
 
 export const APIRoute = {
-	offers: 'offers.json',
-	promoCode: 'promo',
-	order: 'order'
+	offers: 'api/offers',
+	promoCode: 'api/promo',
+	order: 'api/orders',
+	payment: 'api/payment'
 } as const;
 
 export const LoadingStatus = {
@@ -199,8 +200,6 @@ export const deliveryTimes: string[] = [
 	'с 15:00 до 18:00',
 	'с 17:00 до 20:00'
 ];
-
-export const discountValue = 15;
 
 export const validation = {
 	name: (value: string) => nameValidate(value),

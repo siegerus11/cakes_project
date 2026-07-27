@@ -23,7 +23,9 @@ describe('Component: ShoppingCartItem', () => {
 	it('should render cart link when cart is not empty', () => {
 		const initialState = {
 			shoppingCart: [fakeOrder],
-			discountLoadingStatus: 'idle'
+			discountLoadingStatus: 'idle',
+			discount: 0,
+			discountError: null
 		};
 		const cartLabel = 'Корзина';
 
@@ -35,7 +37,9 @@ describe('Component: ShoppingCartItem', () => {
 	it('should render orders count', () => {
 		const initialState = {
 			shoppingCart: [fakeOrder, fakeOrder, fakeOrder],
-			discountLoadingStatus: 'idle'
+			discountLoadingStatus: 'idle',
+			discount: 0,
+			discountError: null
 		};
 		const expectedCount = '3';
 

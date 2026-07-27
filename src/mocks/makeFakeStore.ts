@@ -19,7 +19,9 @@ export const makeFakeStore = (initialState: Partial<State>): Partial<State> => {
 		},
 		[NameSpace.Cart]: {
 			shoppingCart: Array.from({ length: 5 }, makeFakeOrder),
-			discountLoadingStatus: LoadingStatus.Idle
+			discountLoadingStatus: LoadingStatus.Idle,
+			discount: 0,
+			discountError: null
 		},
 		...(initialState ?? {})
 	};

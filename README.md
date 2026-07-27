@@ -66,6 +66,229 @@ npm install
 npm run dev
 ```
 
+## Бэкенд
+
+Серверная часть на **Node.js + Express + TypeScript**. Отвечает за:
+
+-   хранение и отдачу каталога тортов (`/api/offers`);
+-   валидацию и сохранение заказов в SQLite (`POST /api/orders`);
+-   обработку промокодов (`POST /api/promo`);
+-   эмуляцию приёма платежей (`/api/payment/*`);
+-   отправку уведомлений в Telegram и email.
+
+### Стек
+
+| Категория    | Стек                                   |
+| ------------ | -------------------------------------- |
+| Язык         | TypeScript 5                           |
+| Фреймворк    | Express 4                              |
+| Безопасность | `helmet`, `cors`, `express-rate-limit` |
+| Валидация    | Zod                                    |
+| База данных  | SQLite через `sql.js`                  |
+| Уведомления  | Nodemailer, Telegram Bot API           |
+
+### Структура проекта
+
+```
+backend/
+├── src/
+│   ├── config.ts          # Переменные окружения, валидация
+│   ├── index.ts           # Точка входа, middleware, роутинг
+│   ├── db.ts              # Подключение к SQLite, чтение/запись
+│   ├── data/
+│   │   └── offers.json    # Данные каталога тортов
+│   ├── middleware/
+│   │   └── idempotency.ts # Защита от дублирования заказов
+│   ├── routes/
+│   │   ├── offers.ts      # GET /api/offers
+│   │   ├── orders.ts      # POST /api/orders
+│   │   ├── promo.ts       # POST /api/promo
+│   │   └── payment.ts     # POST /api/payment и вспомогательные эндпоинты
+│   ├── services/
+│   │   ├── email.ts       # Отправка email-уведомлений
+│   │   └── telegram.ts    # Отправка в Telegram
+│   ├── types/
+│   │   └── order.ts       # TypeScript-типы заказа
+│   └── utils/
+│       ├── validation.ts  # Zod-схемы
+│       ├── orderMapper.ts # Маппинг фронтендового формата в DTO
+│       └── discount.ts    # Расчёт скидок
+├── package.json
+├── tsconfig.json
+├── .env.example
+└── .gitignore
+```
+
+### Переменные окружения
+
+Файл: `backend/.env`
+
+| Переменная           | Обязательная | Назначение                                                                       |
+| -------------------- | ------------ | -------------------------------------------------------------------------------- |
+| `TELEGRAM_BOT_TOKEN` | да           | Токен Telegram-бота                                                              |
+| `TELEGRAM_CHAT_ID`   | да           | ID чата для уведомлений                                                          |
+| `EMAIL_USER`         | нет          | Почта для отправки уведомлений                                                   |
+| `EMAIL_APP_PASSWORD` | нет          | Пароль приложения для почты                                                      |
+| `PORT`               | нет          | Порт сервера (по умолчанию `4000`)                                               |
+| `DB_PATH`            | нет          | Путь к файлу SQLite (по умолчанию `backend/cakes.db`)                            |
+| `CORS_ORIGIN`        | нет          | Разрешённые источники CORS (через запятую, по умолчанию `http://localhost:3000`) |
+| `DISCOUNT_PERCENT`   | нет          | Процент скидки по промокоду (по умолчанию `15`)                                  |
+
+Шаблон: `backend/.env.example`.
+
+### API
+
+Базовый путь: `/api` (порт по умолчанию `4000`).
+
+#### Эндпоинты
+
+| Метод | Путь                             | Назначение                             |
+| ----- | -------------------------------- | -------------------------------------- |
+| GET   | `/api/offers`                    | Получить каталог тортов                |
+| POST  | `/api/promo`                     | Проверить промокод и рассчитать скидку |
+| POST  | `/api/orders`                    | Создать заказ                          |
+| POST  | `/api/payment`                   | Создать платёж                         |
+| GET   | `/api/payment/pay/:paymentId`    | HTML-страница эмуляции оплаты (iframe) |
+| POST  | `/api/payment/confirm`           | Подтвердить/отменить платёж            |
+| GET   | `/api/payment/status/:paymentId` | Получить статус платежа                |
+
+Также доступен health-check: `GET /health` → `{ "status": "ok" }`.
+
+#### Примеры запросов
+
+**Получение каталога**
+
+```http
+GET /api/offers
+```
+
+Ответ `200`:
+
+```json
+[
+	{
+		"id": "1",
+		"isBento": false,
+		"price": 2500,
+		"filling": [{ "name": "Шоколадная", "price": 300 }],
+		"optionally": [{ "name": "Свечи", "price": 150 }]
+	}
+]
+```
+
+**Проверка промокода**
+
+```http
+POST /api/promo
+Content-Type: application/json
+
+{
+  "code": "CAKES15",
+  "shoppingCart": [
+    {
+      "price": 2500,
+      "quantity": 2
+    }
+  ]
+}
+```
+
+Ответ `200`:
+
+```json
+{
+	"valid": true,
+	"discount": 15,
+	"originalSum": 5000,
+	"discountedSum": 4250
+}
+```
+
+**Создание заказа**
+
+```http
+POST /api/orders
+Content-Type: application/json
+
+{
+  "shoppingCart": [
+    {
+      "orderId": "abc-123",
+      "cakeId": "1",
+      "title": "Торт «Медовик»",
+      "image": "/images/cake-1.jpg",
+      "weight": [
+        { "weightValue": 3, "isChecked": true }
+      ],
+      "filling": {
+        "Шоколадная": true
+      },
+      "optional": {
+        "Свечи": true
+      },
+      "price": 3050,
+      "quantity": 1
+    }
+  ],
+  "userData": {
+    "name": "Иван Иванов",
+    "phone": "+79991234567",
+    "address": "г. Москва, ул. Примерная, 1",
+    "comment": "Позвонить за час"
+  },
+  "finalSum": 3050
+}
+```
+
+Ответ `201`:
+
+```json
+{
+	"id": 1
+}
+```
+
+При ошибке валидации:
+
+```json
+{
+	"message": "Ошибка валидации",
+	"errors": {
+		"userData": {
+			"phone": ["Некорректный номер телефона"]
+		}
+	}
+}
+```
+
+### Запуск
+
+```bash
+# Установка зависимостей
+cd backend && npm install
+
+# Запуск dev-сервера (http://localhost:4000)
+cd backend && npm run dev
+
+# Сборка TypeScript
+cd backend && npm run build
+
+# Продакшен-запуск
+cd backend && npm run build && npm start
+```
+
+Сервер запускается на порту `4000` (можно изменить через переменную окружения `PORT`).
+
+Перед запуском создайте файл `backend/.env` на основе `backend/.env.example` и укажите обязательные переменные (`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`).
+
+### Безопасность
+
+-   **CORS**: разрешены только источники из `CORS_ORIGIN`.
+-   **Rate Limit**: 100 запросов за 15 минут на `/api/*`.
+-   **Helmet**: установлены защитные HTTP-заголовки.
+-   **Idempotency**: middleware на `/api/orders` предотвращает повторную отправку одного и того же заказа.
+-   **CSRF-проверка**: для `POST /api/promo` и `POST /api/orders` проверяется заголовок `Content-Type` и Origin.
+
 ## Скрипты
 
 | Команда                  | Описание                    |

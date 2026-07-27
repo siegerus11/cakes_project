@@ -11,8 +11,8 @@ import {
 	cakeOffersDataSelectors
 } from '../../store/cake-offers-data/cake-offers-data';
 import {
-	cartProcessSelectors,
-	cartProcessActions
+	cartProcessActions,
+	cartProcessSelectors
 } from '../../store/cart-process/cart-process';
 import { Order } from '../../types/types';
 import Form from './form/form';

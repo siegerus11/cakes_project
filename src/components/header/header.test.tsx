@@ -19,7 +19,9 @@ describe('Component: Header', () => {
 		const { withStoreComponent } = withStore(componentWithHistory, {
 			[NameSpace.Cart]: {
 				shoppingCart: [],
-				discountLoadingStatus: 'idle'
+				discountLoadingStatus: 'idle',
+				discount: 0,
+				discountError: null
 			},
 			...initialState
 		});
@@ -86,7 +88,9 @@ describe('Component: Header', () => {
 		const initialState = {
 			[NameSpace.Cart]: {
 				shoppingCart: [fakeOrder],
-				discountLoadingStatus: 'idle'
+				discountLoadingStatus: 'idle',
+				discount: 0,
+				discountError: null
 			}
 		};
 
