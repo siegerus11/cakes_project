@@ -58,6 +58,12 @@
 }
 
 @media (max-width: 992px) {
+	.controller {
+		&__button:hover {
+			color: variables.$color-text-inverted;
+		}
+	}
+
 	.list {
 		margin-top: 28px;
 	}

@@ -23,6 +23,7 @@ type MainPageProps = {
 
 const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 	const totalPrice = useAppSelector(cartProcessSelectors.selectFinalSum);
+	const cart = useAppSelector(cartProcessSelectors.selectShoppingCart);
 	const loadingStatus = useAppSelector(
 		cakeOffersDataSelectors.selectOffersLoadingStatus
 	);
@@ -109,35 +110,37 @@ const MainPage = ({ cakes, bentoCakes }: MainPageProps) => {
 					<Clauses />
 				</main>
 			</div>
-			<ButtonController outerClass={styles.controller}>
-				<LinkButton
-					className={`button button_primary ${styles.button}`}
-					path={AppRoute.ShoppingCart}
-					label="Оформить заказ"
-				>
-					<svg
-						className={styles.button__icon}
-						viewBox="0 0 40 40"
-						aria-hidden="true"
+			{!!cart.length && (
+				<ButtonController outerClass={styles.controller}>
+					<LinkButton
+						className={`button button_primary ${styles.button}`}
+						path={AppRoute.ShoppingCart}
+						label="Оформить заказ"
 					>
-						<use xlinkHref="#cart"></use>
-					</svg>
-					<span
-						className={`${styles.button__text} ${
-							!totalPrice ? styles.button__text_ml0 : ''
-						}`}
-					>
-						Оформить заказ
-					</span>
-					{totalPrice ? (
-						<span
-							className={`${styles.button__price} ${styles.button__text_ml0}`}
+						<svg
+							className={styles.button__icon}
+							viewBox="0 0 40 40"
+							aria-hidden="true"
 						>
-							{formattedPrice} ₽
+							<use xlinkHref="#cart"></use>
+						</svg>
+						<span
+							className={`${styles.button__text} ${
+								!totalPrice ? styles.button__text_ml0 : ''
+							}`}
+						>
+							Оформить заказ
 						</span>
-					) : null}
-				</LinkButton>
-			</ButtonController>
+						{totalPrice ? (
+							<span
+								className={`${styles.button__price} ${styles.button__text_ml0}`}
+							>
+								{formattedPrice} ₽
+							</span>
+						) : null}
+					</LinkButton>
+				</ButtonController>
+			)}
 		</>
 	);
 };

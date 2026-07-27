@@ -132,7 +132,7 @@
 
 @media (max-width: 576px) {
 	.outer {
-		width: 100%;
+		min-width: 100%;
 		max-width: 488px;
 	}
 
@@ -173,5 +173,11 @@
 
 	.close {
 		display: block;
+	}
+}
+
+@media (max-width: 360px) {
+	.component {
+		min-width: unset;
 	}
 }
